@@ -1,0 +1,28 @@
+{
+  "name": "@nsui/react",
+  "version": "1.0.0",
+  "description": "NSUI React components library.",
+  "keywords": [
+    "nsui",
+    "react",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --dts",
+    "clean": "rimraf dist .turbo",
+    "dev": "tsup --watch --dts",
+    "lint": "eslint . --ext ts,tsx"
+  },
+  "dependencies": {
+    "@nsui/provider": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
