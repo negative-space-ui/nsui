@@ -1,0 +1,31 @@
+{
+  "name": "@nsui/provider",
+  "version": "1.0.0",
+  "description": "Provider utilities for all NSUI components.",
+  "keywords": [
+    "nsui",
+    "provider",
+    "ui"
+  ],
+  "author": "Matheus Bastani",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "changelog": "auto-changelog -p --commit-filter 'git log --pretty=oneline -- packages/x'",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  },
+  "dependencies": {
+    "lint-staged": "^16.2.7"
+  }
+}
