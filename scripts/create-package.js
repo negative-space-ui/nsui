@@ -13,7 +13,7 @@ async function main() {
     output: process.stdout
   })
 
-  const inputPath = await questionAsync(rl, 'Enter the path from the root/packages: ')
+  const inputPath = await questionAsync(rl, 'enter the path from the root/packages: ')
   rl.close()
 
   const packagesRoot = path.join(process.cwd(), 'packages')
@@ -23,6 +23,7 @@ async function main() {
   createFolders(fullPath)
   createSrcIndex(fullPath)
   createTsConfig(fullPath, inputPath)
+  createTsupConfig(fullPath)
   createPackageJson(fullPath, folderName)
   createReadme(fullPath, folderName)
 
@@ -60,20 +61,45 @@ function createTsConfig(fullPath, inputPath) {
   )
 }
 
+function createTsupConfig(fullPath) {
+  const tsupContent = `import { defineConfig } from 'tsup'
+
+export default defineConfig({
+  entry: ['src/index.ts', '!src/scripts'],
+  format: ['cjs', 'esm'],
+  dts: true,
+  clean: true,
+  sourcemap: true,
+  target: 'esnext'
+})
+`
+  fs.writeFileSync(path.join(fullPath, 'tsup.config.ts'), tsupContent, 'utf-8')
+}
+
 function createPackageJson(fullPath, folderName) {
   const packageContent = {
     name: `@nsui/${folderName}`,
     version: '0.0.0',
     description: '',
     keywords: [],
-    author: 'Matheus Bastani',
     license: 'MIT',
+    repository: {
+      type: 'git',
+      url: 'git+https://github.com/matheusbastani/nsui',
+      directory: `packages/${folderName}`
+    },
     main: 'dist/index.js',
     types: 'dist/index.d.ts',
     scripts: {
       build: 'tsc',
+      clean: 'rimraf dist',
       dev: 'tsc --watch',
-      clean: 'rimraf dist'
+      lint: 'eslint . --ext ts,tsx'
+    },
+    devDependencies: {
+      '@types/react': '^19.2.7',
+      react: '^19.2.1',
+      typescript: '^5.9.3'
     }
   }
   fs.writeFileSync(
@@ -90,11 +116,9 @@ DESCRIPTION
 
 ## Installation
 
-\`\`\`sh
-yarn add @nsui/${folderName}
-# or
-npm i @nsui/${folderName}
-\`\`\`
+    yarn add @nsui/${folderName}
+    # or
+    npm i @nsui/${folderName}
 
 ## License
 
