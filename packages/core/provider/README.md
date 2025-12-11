@@ -1,14 +1,12 @@
 # @nsui/provider
 
-A React component that wraps your app and provides global configuration for the NSUI components library.
+React component to wrap your app and provide global configuration for NSUI components.
 
 ## Installation
 
-```sh
-yarn add @nsui/provider
-# or
-npm i @nsui/provider
-```
+    yarn add @nsui/provider
+    # or
+    npm i @nsui/provider
 
 ## License
 
