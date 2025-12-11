@@ -5,5 +5,5 @@
 ### Major Changes
 
 - Add new `Provider` component
-- Include `transition` duration prop for global transitions
 - Set up React context for the Provider
+- Include `transition` duration prop for global transitions

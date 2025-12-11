@@ -6,5 +6,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
-  target: 'esnext'
+  target: 'esnext',
+  splitting: false,
+  treeshake: true
 })
