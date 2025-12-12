@@ -17,18 +17,27 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, left, right, classNames, styles, disableRipple, ...props }, ref) => {
+  ({ children, left, right, classNames, styles, disableRipple, onClick, ...props }, ref) => {
     const { prefixCls, transitionDuration } = useNSUI()
+    const { createRipple } = useRipple()
+
+    const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+      if (!disableRipple) createRipple(e)
+      onClick?.(e)
+    }
 
     return (
       <button
         {...props}
         ref={ref}
         className={`${prefixCls}-btn ${classNames?.root ?? ''}`}
-        onClick={disableRipple ? undefined : useRipple}
+        onClick={handleClick}
         style={{
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          position: 'relative',
           transition: 'all ease-in-out',
           transitionDuration: `${transitionDuration}ms`,
           ...styles?.root
