@@ -1,6 +1,6 @@
 {
   "name": "@nsui/react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NSUI React components library.",
   "keywords": [
     "nsui",
@@ -20,6 +20,7 @@
     "lint": "eslint . --ext ts,tsx"
   },
   "dependencies": {
+    "@nsui/button": "workspace:*",
     "@nsui/provider": "workspace:*"
   },
   "devDependencies": {

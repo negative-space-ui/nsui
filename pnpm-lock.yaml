@@ -75,6 +75,9 @@ importers:
 
   packages/core/react:
     dependencies:
+      '@nsui/button':
+        specifier: workspace:*
+        version: link:../../ui/button
       '@nsui/provider':
         specifier: workspace:*
         version: link:../provider
