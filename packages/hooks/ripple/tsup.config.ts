@@ -8,8 +8,5 @@ export default defineConfig({
   sourcemap: true,
   target: 'esnext',
   splitting: false,
-  treeshake: true,
-  loader: {
-    '.css': 'copy'
-  }
+  treeshake: true
 })

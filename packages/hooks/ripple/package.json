@@ -15,18 +15,19 @@
     "directory": "packages/hooks/ripple"
   },
   "main": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "types": "src/index.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
-    "clean": "rimraf dist",
+    "build": "tsup && ts-node ../../../scripts/copy-css.js",
+    "clean": "rimraf dist .turbo",
     "dev": "tsup --watch",
     "lint": "eslint . --ext ts,tsx"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
+    "esbuild-plugin-copy": "^2.1.1",
     "react": "^19.2.1",
     "typescript": "^5.9.3"
   }

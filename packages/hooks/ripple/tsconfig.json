@@ -6,6 +6,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "noEmit": false,
+    "incremental": false,
     "types": ["../../../types.d.ts"]
   },
   "include": ["src"]

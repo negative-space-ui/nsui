@@ -91,11 +91,11 @@ function createPackageJson(fullPath, folderName, inputPath) {
       directory: `packages/${inputPath}`
     },
     main: 'src/index.ts',
-    types: 'dist/index.d.ts',
+    types: 'src/index.ts',
     files: ['dist'],
     scripts: {
       build: 'tsup',
-      clean: 'rimraf dist',
+      clean: 'rimraf dist .turbo',
       dev: 'tsup --watch',
       lint: 'eslint . --ext ts,tsx'
     },
