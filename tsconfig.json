@@ -11,9 +11,9 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "moduleResolution": "bundler",
-    "baseUrl": ".",
+    "importsNotUsedAsValues": "remove",
     "paths": {
-      "@nsui/*": ["packages/*/src"]
+      "@nsui/*": ["./packages/*/src"]
     }
   },
   "include": ["packages"],
