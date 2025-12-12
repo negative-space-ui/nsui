@@ -5,8 +5,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "noEmit": false,
-    "incremental": false
+    "noEmit": false
   },
   "include": ["src"]
 }
