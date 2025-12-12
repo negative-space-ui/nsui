@@ -1,0 +1,33 @@
+{
+  "name": "@nsui/ripple",
+  "version": "1.0.0",
+  "description": "Hook and ripple styles for clickable elements.",
+  "keywords": [
+    "nsui",
+    "ripple",
+    "hook",
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusbastani/nsui",
+    "directory": "packages/hooks/ripple"
+  },
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "dev": "tsup --watch",
+    "lint": "eslint . --ext ts,tsx"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "react": "^19.2.1",
+    "typescript": "^5.9.3"
+  }
+}
