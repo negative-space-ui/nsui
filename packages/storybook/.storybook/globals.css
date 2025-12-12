@@ -2,5 +2,5 @@
 @source '../../ui/*/src/*.stories.tsx';
 
 body {
-  @apply antialiased font-[arial];
+  @apply antialiased;
 }
