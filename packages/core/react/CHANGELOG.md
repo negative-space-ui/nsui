@@ -11,5 +11,5 @@
 
 ### Major Changes
 
-- Initial setup of React components.
-- Export `NSUIProvider`.
+- Initial setup of React components
+- Export `NSUIProvider`

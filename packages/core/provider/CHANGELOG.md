@@ -4,8 +4,8 @@
 
 ### Minor Changes
 
-- Added `prefixCls` prop to NSUIProvider for custom class name prefixes.
-- Default value remains 'nsui' for backward compatibility.
+- Added `prefixCls` prop to NSUIProvider for custom class name prefixes
+- Default value remains 'nsui' for backward compatibility
 
 ## 1.0.0
 
