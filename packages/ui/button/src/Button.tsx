@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNSUI } from '@nsui/provider'
 import { useRipple } from '@nsui/ripple'
+import { clsx } from 'clsx'
 import '@nsui/ripple/ripple.css'
 
 export interface ButtonProps extends Omit<
@@ -9,10 +10,10 @@ export interface ButtonProps extends Omit<
 > {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
-  classNames?: { root?: string; children?: string; prefix?: string; suffix?: string }
+  classNames?: { root?: string; content?: string; prefix?: string; suffix?: string }
   styles?: {
     root?: React.CSSProperties
-    children?: React.CSSProperties
+    content?: React.CSSProperties
     prefix?: React.CSSProperties
     suffix?: React.CSSProperties
   }
@@ -32,7 +33,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const { createRipple } = useRipple()
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-      if (!isRippleDisabledFinal && !disabled) createRipple(e)
+      if (!isRippleDisabledFinal && !disabled) {
+        createRipple(e)
+      }
       onClick?.(e)
     }
 
@@ -41,7 +44,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         ref={ref}
         disabled={disabled}
-        className={`${global.prefixCls}-btn ${classNames?.root ?? ''}`}
+        type="button"
+        aria-disabled={disabled ? true : undefined}
+        className={clsx(`${global.prefixCls}-btn`, classNames?.root)}
         onClick={handleClick}
         style={{
           display: 'flex',
@@ -51,15 +56,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           position: 'relative',
           gap: '0.2rem',
           padding: '0.5rem',
-          transition: 'all ease-in-out',
+          transition: `background-color ${transitionDuration}ms ease-in-out,
+          color ${transitionDuration}ms ease-in-out,
+          scale ${transitionDuration}ms ease-in-out`,
           cursor: disabled ? 'not-allowed' : 'pointer',
-          transitionDuration: `${transitionDuration}ms`,
           ...styles?.root
         }}
       >
         {prefix && (
           <span
-            className={`${global.prefixCls}-btn-left ${classNames?.prefix ?? ''}`}
+            className={clsx(`${global.prefixCls}-btn-left`, classNames?.prefix)}
             style={styles?.prefix}
           >
             {prefix}
@@ -67,15 +73,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
 
         <span
-          className={`${global.prefixCls}-btn-content ${classNames?.children ?? ''}`}
-          style={styles?.children}
+          className={clsx(`${global.prefixCls}-btn-content`, classNames?.content)}
+          style={styles?.content}
         >
           {children}
         </span>
 
         {suffix && (
           <span
-            className={`${global.prefixCls}-btn-right ${classNames?.suffix ?? ''}`}
+            className={clsx(`${global.prefixCls}-btn-right`, classNames?.suffix)}
             style={styles?.suffix}
           >
             {suffix}

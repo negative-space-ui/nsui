@@ -1,5 +1,12 @@
 # @nsui/react
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @nsui/button@1.2.0
+
 ## 1.0.4
 
 ### Patch Changes

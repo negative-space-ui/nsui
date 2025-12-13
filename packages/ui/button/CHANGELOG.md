@@ -1,5 +1,13 @@
 # @nsui/button
 
+## 1.2.0
+
+### Minor Changes
+
+- Rename styling prop from children to content
+- Improve accessibility
+- Refine style usage
+
 ## 1.1.0
 
 ### Minor Changes

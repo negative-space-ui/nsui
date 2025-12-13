@@ -1,6 +1,6 @@
 {
   "name": "@nsui/button",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "NSUI Button component.",
   "keywords": [
     "nsui",
@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "@nsui/provider": "workspace:*",
-    "@nsui/ripple": "workspace:*"
+    "@nsui/ripple": "workspace:*",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
