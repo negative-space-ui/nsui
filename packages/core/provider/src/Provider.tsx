@@ -19,6 +19,10 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
       button: {
         isRippleDisabled: components?.button?.isRippleDisabled ?? false,
         transitionDuration: components?.button?.transitionDuration
+      },
+      spinner: {
+        animationDuration: components?.spinner?.animationDuration ?? 1.2,
+        transitionDuration: components?.spinner?.transitionDuration
       }
     }
   }

@@ -1,7 +1,7 @@
 export type Components = 'button'
 
 export type CommonConfig = {
-  transitionDuration: number | undefined
+  transitionDuration?: number | undefined
 }
 
 export type GlobalConfig = {
@@ -22,11 +22,16 @@ export interface ButtonConfig extends CommonConfig {
    *
    * Defaults to `false`.
    */
-  isRippleDisabled: boolean
+  isRippleDisabled?: boolean
+}
+
+export interface SpinnerConfig extends CommonConfig {
+  animationDuration?: number
 }
 
 export type NSUIComponentsConfig = {
   button?: ButtonConfig
+  spinner?: SpinnerConfig
 }
 
 export type NSUIComponentsConfigRequired = Required<NSUIComponentsConfig>

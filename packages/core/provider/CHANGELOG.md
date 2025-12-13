@@ -1,5 +1,12 @@
 # @nsui/provider
 
+## 1.3.0
+
+### Minor Changes
+
+- Add Spinner configuration support
+- Add Spinner animationDuration option
+
 ## 1.2.0
 
 ### Minor Changes

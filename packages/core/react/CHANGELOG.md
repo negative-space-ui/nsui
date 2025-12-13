@@ -1,5 +1,19 @@
 # @nsui/react
 
+## 1.1.0
+
+### Minor Changes
+
+- Added dependencies
+  - @nsui/spinner@1.0.0
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @nsui/provider@1.3.0
+  - @nsui/button@1.2.1
+
 ## 1.0.5
 
 ### Patch Changes

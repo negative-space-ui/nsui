@@ -1,6 +1,6 @@
 {
   "name": "@nsui/react",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "NSUI React components library.",
   "keywords": [
     "nsui",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@nsui/button": "workspace:*",
+    "@nsui/spinner": "workspace:*",
     "@nsui/provider": "workspace:*"
   },
   "devDependencies": {
