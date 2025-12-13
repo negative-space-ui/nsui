@@ -2,7 +2,7 @@ import React from 'react'
 import { Spinner, type SpinnerProps } from './Spinner'
 
 export default {
-  title: 'Components/Spinner',
+  title: 'Feedback/Loaders/Spinner',
   component: Spinner,
   tags: ['autodocs'],
   argTypes: {

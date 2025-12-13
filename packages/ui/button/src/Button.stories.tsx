@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, type ButtonProps } from './Button'
 
 export default {
-  title: 'Components/Button',
+  title: 'Actions/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

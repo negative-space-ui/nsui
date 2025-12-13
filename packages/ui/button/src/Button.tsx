@@ -1,7 +1,7 @@
 import React from 'react'
+import { clsx } from 'clsx'
 import { useNSUI } from '@nsui/provider'
 import { useRipple } from '@nsui/ripple'
-import { clsx } from 'clsx'
 import '@nsui/ripple/ripple.css'
 
 export interface ButtonProps extends Omit<
@@ -22,7 +22,17 @@ export interface ButtonProps extends Omit<
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { children, prefix, suffix, classNames, styles, disabled, isRippleDisabled, onClick, ...props },
+    {
+      children,
+      prefix,
+      suffix,
+      classNames,
+      styles,
+      disabled = false,
+      isRippleDisabled,
+      onClick,
+      ...props
+    },
     ref
   ) => {
     const { global, components } = useNSUI()
