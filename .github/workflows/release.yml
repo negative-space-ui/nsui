@@ -1,18 +1,21 @@
-name: Release on Tag
+name: Version Packages
 
 on:
   push:
-    tags:
-      - '@*/*@*.*.*'
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  release:
+  version:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -20,34 +23,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '20'
           cache: 'pnpm'
 
-      - name: Install PNPM
-        run: npm install -g pnpm
-
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build
-        id: build
-        run: |
-          pnpm build || {
-            echo "Turbo build failed with exit code $?"
-            exit 1
-          }
-
-      - name: Publish to NPM
-        if: steps.build.outcome == 'success'
+      - name: Create Version Pull Request
         uses: changesets/action@v1
         with:
-          publish: pnpm release
-          title: 'chore(changesets): release packages'
-          commit: 'chore(changesets): release packages'
-          setupGitUser: false
+          version: pnpm changeset version
+          commit: 'chore: version packages'
+          title: 'chore: version packages'
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
