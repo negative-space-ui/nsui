@@ -2,6 +2,7 @@
 import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
+import { execSync } from 'child_process'
 
 function questionAsync(rl, question) {
   return new Promise((resolve) => rl.question(question, (answer) => resolve(answer)))
@@ -16,9 +17,11 @@ async function main() {
   const inputPath = await questionAsync(rl, 'enter the path from the root/packages: ')
   rl.close()
 
-  const packagesRoot = path.join(process.cwd(), 'packages')
+  const rootDir = process.cwd()
+  const packagesRoot = path.join(rootDir, 'packages')
   const fullPath = path.join(packagesRoot, inputPath)
   const folderName = path.basename(fullPath)
+  const packageName = `@negative-space/${folderName}`
 
   createFolders(fullPath)
   createSrcIndex(fullPath)
@@ -28,6 +31,17 @@ async function main() {
   createReadme(fullPath, folderName)
 
   console.log(`package "${folderName}" created at: ${fullPath}`)
+
+  runPnpmInstall(rootDir, packageName)
+}
+
+function runPnpmInstall(rootDir, packageName) {
+  console.log(`running pnpm install for ${packageName}...`)
+
+  execSync(`pnpm install --filter ${packageName}...`, {
+    cwd: rootDir,
+    stdio: 'inherit'
+  })
 }
 
 function createFolders(fullPath) {
@@ -54,6 +68,7 @@ function createTsConfig(fullPath, inputPath) {
     },
     include: ['src']
   }
+
   fs.writeFileSync(
     path.join(fullPath, 'tsconfig.json'),
     JSON.stringify(tsconfigContent, null, 2),
@@ -99,12 +114,16 @@ function createPackageJson(fullPath, folderName, inputPath) {
       dev: 'tsup --watch',
       lint: 'eslint . --ext ts,tsx'
     },
+    dependencies: {
+      clsx: '^2.1.1'
+    },
     devDependencies: {
       '@types/react': '^19.2.7',
       react: '^19.2.1',
       typescript: '^5.9.3'
     }
   }
+
   fs.writeFileSync(
     path.join(fullPath, 'package.json'),
     JSON.stringify(packageContent, null, 2),
