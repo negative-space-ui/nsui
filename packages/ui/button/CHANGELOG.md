@@ -1,5 +1,21 @@
 # @nsui/button
 
+## 1.3.0
+
+### Minor Changes
+
+- Reform span rendering in component
+- Move internal `classNames/styles` props from `root` to `btn`
+- Add spinner with `isLoading`, `spinnerPosition`, `spinner`, `spinnerProps`
+
+### Patch Changes
+
+- Separate scale transition from other transitions, now managed by `colorTransitionDuration` and `scaleTransitionDuration` (previously `transitionDuration`)
+- Updated dependencies
+- Updated dependencies
+  - @nsui/provider@1.4.0
+  - @nsui/spinner@1.0.1
+
 ## 1.2.1
 
 ### Patch Changes
