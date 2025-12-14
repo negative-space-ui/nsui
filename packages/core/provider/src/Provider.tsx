@@ -13,16 +13,15 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
   const contextValue: NSUIContextProps = {
     global: {
       prefixCls: global?.prefixCls ?? 'nsui',
-      transitionDuration: global?.transitionDuration ?? 300
+      colorTransitionDuration: global?.colorTransitionDuration ?? 300,
+      scaleTransitionDuration: global?.scaleTransitionDuration ?? 300
     },
     components: {
       button: {
-        isRippleDisabled: components?.button?.isRippleDisabled ?? false,
-        transitionDuration: components?.button?.transitionDuration
+        isRippleDisabled: components?.button?.isRippleDisabled ?? false
       },
       spinner: {
-        animationDuration: components?.spinner?.animationDuration ?? 1.2,
-        transitionDuration: components?.spinner?.transitionDuration
+        animationDuration: components?.spinner?.animationDuration ?? 1.2
       }
     }
   }

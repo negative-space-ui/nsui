@@ -1,5 +1,13 @@
 # @nsui/provider
 
+## 1.4.0
+
+### Minor Changes
+
+- Remove internal `transitionDuration` from each components object
+- Rename global `transitionDuration` prop to `colorTransitionDuration`
+- Add `scaleTransitionDuration` prop
+
 ## 1.3.0
 
 ### Minor Changes

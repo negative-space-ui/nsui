@@ -12,8 +12,6 @@ export const Spinner = ({ isLoading = true, className, style, ...props }: Spinne
 
   const { global, components } = useNSUI()
 
-  const transitionDuration = components?.spinner?.transitionDuration ?? global.transitionDuration
-
   return (
     <div
       {...props}
@@ -21,7 +19,7 @@ export const Spinner = ({ isLoading = true, className, style, ...props }: Spinne
       aria-busy="true"
       className={clsx(`${global.prefixCls}-spinner`, className)}
       style={{
-        transition: `border-color ${transitionDuration}ms ease-in-out`,
+        transition: `border-color ${global.colorTransitionDuration}ms ease-in-out, scale ${global.scaleTransitionDuration}ms ease-in-out`,
         borderRadius: '50%',
         animation: `spin ${components.spinner.animationDuration}s linear infinite`,
         display: 'inline-block',

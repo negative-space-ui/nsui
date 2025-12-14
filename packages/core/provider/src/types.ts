@@ -1,9 +1,5 @@
 export type Components = 'button'
 
-export type CommonConfig = {
-  transitionDuration?: number | undefined
-}
-
 export type GlobalConfig = {
   /** Prefix classname for all components.
    *
@@ -12,12 +8,16 @@ export type GlobalConfig = {
   /** Duration in milliseconds for transitions and animations of all components.
    *
    * Defaults to `300ms`. */
-  transitionDuration?: number
+  colorTransitionDuration?: number
+  /** Duration in milliseconds for transitions and animations of all components.
+   *
+   * Defaults to `300ms`. */
+  scaleTransitionDuration?: number
 }
 
 export type GlobalConfigRequired = Required<GlobalConfig>
 
-export interface ButtonConfig extends CommonConfig {
+export type ButtonConfig = {
   /** Defines if ripple effect should be disabled
    *
    * Defaults to `false`.
@@ -25,7 +25,7 @@ export interface ButtonConfig extends CommonConfig {
   isRippleDisabled?: boolean
 }
 
-export interface SpinnerConfig extends CommonConfig {
+export type SpinnerConfig = {
   animationDuration?: number
 }
 
