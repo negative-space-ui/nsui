@@ -1,12 +1,12 @@
-# @nsui/react
+# @negative-space/react
 
 NSUI React components library.
 
 ## Installation
 
-    yarn add @nsui/react
+    yarn add @negative-space/react
     # or
-    npm i @nsui/react
+    npm i @negative-space/react
 
 ## License
 

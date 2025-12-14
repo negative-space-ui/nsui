@@ -1,12 +1,12 @@
-# @nsui/ripple
+# @negative-space/ripple
 
 Hook and ripple styles for clickable elements.
 
 ## Installation
 
-    yarn add @nsui/ripple
+    yarn add @negative-space/ripple
     # or
-    npm i @nsui/ripple
+    npm i @negative-space/ripple
 
 ## License
 

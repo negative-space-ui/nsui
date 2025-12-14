@@ -1,12 +1,12 @@
-# @nsui/provider
+# @negative-space/provider
 
 React component to wrap your app and provide global configuration for NSUI components.
 
 ## Installation
 
-    yarn add @nsui/provider
+    yarn add @negative-space/provider
     # or
-    npm i @nsui/provider
+    npm i @negative-space/provider
 
 ## License
 

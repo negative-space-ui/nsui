@@ -1,9 +1,9 @@
 import React from 'react'
 import { clsx } from 'clsx'
-import { useNSUI } from '@nsui/provider'
-import { useRipple } from '@nsui/ripple'
-import { Spinner, type SpinnerProps } from '@nsui/spinner'
-import '@nsui/ripple/ripple.css'
+import { useNSUI } from '@negative-space/provider'
+import { useRipple } from '@negative-space/ripple'
+import { Spinner, type SpinnerProps } from '@negative-space/spinner'
+import '@negative-space/ripple/ripple.css'
 
 export interface BaseButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

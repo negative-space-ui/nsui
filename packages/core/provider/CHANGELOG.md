@@ -1,4 +1,4 @@
-# @nsui/provider
+# @negative-space/provider
 
 ## 1.4.0
 

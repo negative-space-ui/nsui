@@ -80,7 +80,7 @@ export default defineConfig({
 
 function createPackageJson(fullPath, folderName, inputPath) {
   const packageContent = {
-    name: `@nsui/${folderName}`,
+    name: `@negative-space/${folderName}`,
     version: '0.0.0',
     description: '',
     keywords: [],
@@ -113,15 +113,15 @@ function createPackageJson(fullPath, folderName, inputPath) {
 }
 
 function createReadme(fullPath, folderName) {
-  const readmeContent = `# @nsui/${folderName}
+  const readmeContent = `# @negative-space/${folderName}
 
 DESCRIPTION
 
 ## Installation
 
-    yarn add @nsui/${folderName}
+    yarn add @negative-space/${folderName}
     # or
-    npm i @nsui/${folderName}
+    npm i @negative-space/${folderName}
 
 ## License
 

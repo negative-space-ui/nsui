@@ -1,5 +1,5 @@
 'use client'
 
-export * from '@nsui/button'
-export * from '@nsui/spinner'
-export * from '@nsui/provider'
+export * from '@negative-space/button'
+export * from '@negative-space/spinner'
+export * from '@negative-space/provider'

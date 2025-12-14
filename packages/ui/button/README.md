@@ -1,12 +1,12 @@
-# @nsui/button
+# @negative-space/button
 
 Provides a reusable action element with a main children slot and optional left/right content, allowing flexible composition for icons or extra elements.
 
 ## Installation
 
-    yarn add @nsui/button
+    yarn add @negative-space/button
     # or
-    npm i @nsui/button
+    npm i @negative-space/button
 
 ## License
 

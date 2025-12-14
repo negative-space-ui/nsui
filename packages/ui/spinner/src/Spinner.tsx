@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import { useNSUI } from '@nsui/provider'
+import { useNSUI } from '@negative-space/provider'
 import './spinner.css'
 
 export interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {

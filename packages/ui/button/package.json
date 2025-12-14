@@ -1,5 +1,5 @@
 {
-  "name": "@nsui/button",
+  "name": "@negative-space/button",
   "version": "1.3.0",
   "description": "NSUI Button component.",
   "keywords": [
@@ -25,9 +25,9 @@
     "lint": "eslint . --ext ts,tsx"
   },
   "dependencies": {
-    "@nsui/provider": "workspace:*",
-    "@nsui/ripple": "workspace:*",
-    "@nsui/spinner": "workspace:*",
+    "@negative-space/provider": "workspace:*",
+    "@negative-space/ripple": "workspace:*",
+    "@negative-space/spinner": "workspace:*",
     "clsx": "^2.1.1"
   },
   "devDependencies": {

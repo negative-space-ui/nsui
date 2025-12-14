@@ -1,12 +1,12 @@
-# @nsui/spinner
+# @negative-space/spinner
 
 A simple, accessible loading spinner component for NSUI.
 
 ## Installation
 
-    yarn add @nsui/spinner
+    yarn add @negative-space/spinner
     # or
-    npm i @nsui/spinner
+    npm i @negative-space/spinner
 
 ## License
 

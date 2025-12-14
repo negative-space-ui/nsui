@@ -1,4 +1,4 @@
-# @nsui/react
+# @negative-space/react
 
 ## 1.1.1
 
@@ -7,30 +7,30 @@
 - Updated dependencies
 - Updated dependencies
 - Updated dependencies
-  - @nsui/button@1.3.0
-  - @nsui/provider@1.4.0
-  - @nsui/spinner@1.0.1
+  - @negative-space/button@1.3.0
+  - @negative-space/provider@1.4.0
+  - @negative-space/spinner@1.0.1
 
 ## 1.1.0
 
 ### Minor Changes
 
 - Added dependencies
-  - @nsui/spinner@1.0.0
+  - @negative-space/spinner@1.0.0
 
 ### Patch Changes
 
 - Updated dependencies
 - Updated dependencies
-  - @nsui/provider@1.3.0
-  - @nsui/button@1.2.1
+  - @negative-space/provider@1.3.0
+  - @negative-space/button@1.2.1
 
 ## 1.0.5
 
 ### Patch Changes
 
 - Updated dependencies
-  - @nsui/button@1.2.0
+  - @negative-space/button@1.2.0
 
 ## 1.0.4
 
@@ -38,29 +38,29 @@
 
 - Updated dependencies
 - Updated dependencies
-  - @nsui/button@1.1.0
-  - @nsui/provider@1.2.0
+  - @negative-space/button@1.1.0
+  - @negative-space/provider@1.2.0
 
 ## 1.0.3
 
 ### Patch Changes
 
 - Updated dependencies
-  - @nsui/button@1.0.1
+  - @negative-space/button@1.0.1
 
 ## 1.0.2
 
 ### Patch Changes
 
 - Added dependencies
-  - @nsui/button@1.0.0
+  - @negative-space/button@1.0.0
 
 ## 1.0.1
 
 ### Patch Changes
 
 - Updated dependencies
-  - @nsui/provider@1.1.0
+  - @negative-space/provider@1.1.0
 
 ## 1.0.0
 

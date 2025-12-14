@@ -1,5 +1,5 @@
 {
-  "name": "@nsui/storybook",
+  "name": "@negative-space/storybook",
   "private": true,
   "scripts": {
     "clean": "rimraf .next",
@@ -7,7 +7,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@nsui/provider": "workspace:*",
+    "@negative-space/provider": "workspace:*",
     "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1"

@@ -1,4 +1,4 @@
-# @nsui/ripple
+# @negative-space/ripple
 
 ## 1.0.0
 

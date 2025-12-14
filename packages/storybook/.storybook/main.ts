@@ -22,7 +22,7 @@ const config: StorybookConfig = {
       ...configVite.resolve,
       alias: {
         ...configVite.resolve?.alias,
-        '@nsui/ripple': resolve(__dirname, '../../hooks/ripple/src')
+        '@negative-space/ripple': resolve(__dirname, '../../hooks/ripple/src')
       }
     }
     return configVite

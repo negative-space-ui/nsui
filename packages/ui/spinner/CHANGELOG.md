@@ -1,4 +1,4 @@
-# @nsui/spinner
+# @negative-space/spinner
 
 ## 1.0.1
 
@@ -6,7 +6,7 @@
 
 - Separate scale transition from other transitions, now managed by `colorTransitionDuration` and `scaleTransitionDuration` (previously `transitionDuration`)
 - Updated dependencies
-  - @nsui/provider@1.4.0
+  - @negative-space/provider@1.4.0
 
 ## 1.0.0
 

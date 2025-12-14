@@ -1,5 +1,5 @@
 {
-  "name": "@nsui/ripple",
+  "name": "@negative-space/ripple",
   "version": "1.0.0",
   "description": "Hook and ripple styles for clickable elements.",
   "keywords": [

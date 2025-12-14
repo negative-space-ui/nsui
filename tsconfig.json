@@ -13,7 +13,7 @@
     "moduleResolution": "bundler",
     "importsNotUsedAsValues": "remove",
     "paths": {
-      "@nsui/*": ["./packages/*/src"]
+      "@negative-space/*": ["./packages/*/src"]
     }
   },
   "include": ["packages"],
