@@ -17,6 +17,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install PNPM
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
@@ -34,8 +45,8 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm release
-          title: 'ci(changesets): :package: version packages'
-          commit: 'ci(changesets): version packages'
+          title: 'chore(changesets): release packages'
+          commit: 'chore(changesets): release packages'
           setupGitUser: false
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
