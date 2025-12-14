@@ -16,16 +16,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '20'
           cache: 'pnpm'
-
-      - name: Enable Corepack & Prepare PNPM
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install
