@@ -1,16 +1,12 @@
-name: Version, Build and Release
+name: Version Packages
 
 on:
   push:
     branches:
       - main
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
-  version-build-release:
+  version:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -20,14 +16,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Node and PNPM
         uses: actions/setup-node@v3
         with:
           node-version: '20'
           cache: 'pnpm'
 
-      - name: Install PNPM
-        run: npm install -g pnpm
+      - name: Enable Corepack & Prepare PNPM
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install
@@ -40,21 +38,3 @@ jobs:
           git add .
           git commit -m "chore(changesets): version packages and update changelogs"
           git push origin main --follow-tags
-
-      - name: Build
-        run: |
-          pnpm build || {
-            echo "Build failed with exit code $?"
-            exit 1
-          }
-
-      - name: Publish to NPM
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-          title: 'chore(changesets): release packages'
-          commit: 'chore(changesets): release packages'
-          setupGitUser: false
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
