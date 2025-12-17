@@ -3,7 +3,6 @@ import { clsx } from 'clsx'
 import { useNSUI } from '@negative-space/provider'
 import { useRipple } from '@negative-space/ripple'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
-import '@negative-space/ripple/ripple.css'
 
 export interface BaseButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -35,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       suffix,
       classNames,
       styles,
-      disabled = false, // explicitly default value for autodocs
+      disabled = true, // explicitly default value for autodocs
       isRippleDisabled,
       onClick,
       isLoading = false,
@@ -48,7 +47,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const { global, components } = useNSUI()
     const isRippleDisabledFinal = isRippleDisabled ?? components?.button?.isRippleDisabled
-    const { createRipple } = useRipple()
+    const { createRipple } = useRipple(global.prefixCls)
     const isDisabled = disabled || isLoading
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -86,13 +85,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const visibleCount = sections.filter((s) => s.node || (isLoading && s.showSpinner)).length
     const sectionMaxWidth = `calc((100% - 1rem) / ${visibleCount})`
 
-    const baseSpanStyle: React.CSSProperties = {
-      display: 'inline-flex',
-      alignItems: 'center',
-      overflow: 'hidden',
-      flex: '1 1 0'
-    }
-
     return (
       <button
         {...props}
@@ -100,25 +92,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         role="button"
         aria-disabled={isDisabled}
-        className={clsx(`${global.prefixCls}-btn`, classNames?.btn)}
+        data-disabled={isDisabled}
         onClick={handleClick}
-        style={{
-          display: 'flex',
-          position: 'relative',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          padding: '0.5rem',
-          gap: '0.5rem',
-          transition: `background-color ${global.colorTransitionDuration}ms ease-in-out, color ${global.colorTransitionDuration}ms ease-in-out, scale ${global.scaleTransitionDuration}ms ease-in-out`,
-          cursor: isDisabled ? 'not-allowed' : 'pointer',
-          ...styles?.btn
-        }}
+        className={clsx(`${global.prefixCls}-btn`, classNames?.btn)}
+        style={{ ...styles?.btn }}
       >
         {isLoading && spinnerPosition === 'full' ? (
           <span
             className={clsx(`${global.prefixCls}-btn-content`, classNames?.content)}
-            style={{ ...baseSpanStyle, justifyContent: 'center', flex: 1, ...styles?.content }}
+            style={{ justifyContent: 'center', flex: 1, ...styles?.content }}
           >
             {renderSpinner()}
           </span>
@@ -136,7 +118,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                   s.className
                 )}
                 style={{
-                  ...baseSpanStyle,
                   justifyContent: s.justify,
                   maxWidth: sectionMaxWidth,
                   ...s.style
