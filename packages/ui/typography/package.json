@@ -1,0 +1,36 @@
+{
+  "name": "@negative-space/typography",
+  "version": "0.0.0",
+  "description": "Typography components, such as headings and paragraphs.",
+  "keywords": [
+    "nsui",
+    "typography",
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusbastani/nsui",
+    "directory": "packages/ui/typography"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "tsup --watch",
+    "lint": "eslint . --ext ts,tsx"
+  },
+  "dependencies": {
+    "@negative-space/provider": "workspace:*",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "react": "^19.2.1",
+    "typescript": "^5.9.3"
+  }
+}

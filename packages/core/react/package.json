@@ -21,8 +21,9 @@
   },
   "dependencies": {
     "@negative-space/button": "workspace:*",
+    "@negative-space/provider": "workspace:*",
     "@negative-space/spinner": "workspace:*",
-    "@negative-space/provider": "workspace:*"
+    "@negative-space/typography": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
