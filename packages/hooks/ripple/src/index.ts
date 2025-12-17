@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-export function useRipple() {
+export function useRipple(className?: string) {
   const createRipple = useCallback((event: React.MouseEvent<HTMLElement>) => {
     const target = event.currentTarget as HTMLElement
 
@@ -17,7 +17,7 @@ export function useRipple() {
     const y = event.clientY - rect.top - size / 2
 
     const ripple = document.createElement('span')
-    ripple.className = 'ripple'
+    ripple.className = className ?? 'ripple'
     ripple.style.width = ripple.style.height = `${size}px`
     ripple.style.left = `${x}px`
     ripple.style.top = `${y}px`
