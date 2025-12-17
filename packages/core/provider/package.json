@@ -24,6 +24,10 @@
     "dev": "tsup --watch",
     "lint": "eslint . --ext ts,tsx"
   },
+  "dependencies": {
+    "@negative-space/style": "workspace:*",
+    "@negative-space/types": "workspace:*"
+  },
   "devDependencies": {
     "@types/react": "^19.2.7",
     "react": "^19.2.1",
