@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 4bf8d95: - Added dependencies
+- 4bf8d95: Added dependencies
   - @negative-space/typography@1.0.0
 
 ### Patch Changes
