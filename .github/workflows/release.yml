@@ -39,3 +39,6 @@ jobs:
 
       - name: Push tags
         run: git push --follow-tags
+
+      - name: Delete release branch
+        run: git push origin --delete ${{ github.event.pull_request.head.ref }}
