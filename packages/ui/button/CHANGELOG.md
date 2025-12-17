@@ -1,5 +1,17 @@
 # @negative-space/button
 
+## 1.3.1
+
+### Patch Changes
+
+- a1028df: Updated Button to align with new ripple behavior and shared styles
+- Updated dependencies [5f08e0c]
+- Updated dependencies [a2ac6dd]
+- Updated dependencies [fdf47f3]
+  - @negative-space/provider@1.4.1
+  - @negative-space/spinner@1.0.2
+  - @negative-space/ripple@1.1.0
+
 ## 1.3.0
 
 ### Minor Changes
