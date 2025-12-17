@@ -1,5 +1,15 @@
 # @negative-space/provider
 
+## 1.4.1
+
+### Patch Changes
+
+- 5f08e0c: Updated Provider to consume shared types and styles
+- Updated dependencies [809e3d7]
+- Updated dependencies [5c71397]
+  - @negative-space/style@1.0.0
+  - @negative-space/types@1.0.0
+
 ## 1.4.0
 
 ### Minor Changes

@@ -1,5 +1,13 @@
 # @negative-space/spinner
 
+## 1.0.2
+
+### Patch Changes
+
+- a2ac6dd: Updated Spinner to use shared styles and removed local styling
+- Updated dependencies [5f08e0c]
+  - @negative-space/provider@1.4.1
+
 ## 1.0.1
 
 ### Patch Changes

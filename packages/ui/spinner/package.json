@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/spinner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple, accessible loading spinner component for NSUI.",
   "keywords": [
     "nsui",
