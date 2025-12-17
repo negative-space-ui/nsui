@@ -1,5 +1,3 @@
-export type Components = 'button'
-
 export type GlobalConfig = {
   /** Prefix classname for all components.
    *
@@ -29,9 +27,9 @@ export type SpinnerConfig = {
   animationDuration?: number
 }
 
-export type NSUIComponentsConfig = {
+export type ComponentsConfig = {
   button?: ButtonConfig
   spinner?: SpinnerConfig
 }
 
-export type NSUIComponentsConfigRequired = Required<NSUIComponentsConfig>
+export type ComponentsConfigRequired = Required<ComponentsConfig>
