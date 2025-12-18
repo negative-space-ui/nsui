@@ -1,5 +1,11 @@
 # @negative-space/style
 
+## 1.0.1
+
+### Patch Changes
+
+- 212c20a: Expose shared styles for consumption by other libraries
+
 ## 1.0.0
 
 ### Major Changes

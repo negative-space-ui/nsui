@@ -1,5 +1,20 @@
 # negative-space
 
+## 1.3.0
+
+### Minor Changes
+
+- 14f5fa0: Update package name
+
+### Patch Changes
+
+- Updated dependencies [9675466]
+- Updated dependencies [212c20a]
+  - @negative-space/typography@1.1.0
+  - @negative-space/provider@1.4.2
+  - @negative-space/button@1.3.2
+  - @negative-space/spinner@1.0.3
+
 ## 1.2.0
 
 ### Minor Changes

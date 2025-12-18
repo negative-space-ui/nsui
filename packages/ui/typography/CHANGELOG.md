@@ -1,5 +1,16 @@
 # @negative-space/typography
 
+## 1.1.0
+
+### Minor Changes
+
+- 9675466: Heading now supports `as="span"`
+
+### Patch Changes
+
+- 212c20a: Remove local style handling and consume shared style library
+  - @negative-space/provider@1.4.2
+
 ## 1.0.0
 
 ### Major Changes

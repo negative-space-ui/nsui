@@ -1,5 +1,12 @@
 # @negative-space/button
 
+## 1.3.2
+
+### Patch Changes
+
+- @negative-space/provider@1.4.2
+- @negative-space/spinner@1.0.3
+
 ## 1.3.1
 
 ### Patch Changes
