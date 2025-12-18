@@ -1,4 +1,4 @@
-# @negative-space/react
+# negative-space
 
 ## 1.2.0
 

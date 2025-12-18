@@ -1,12 +1,12 @@
-# @negative-space/react
+# negative-space
 
 NSUI React components library.
 
 ## Installation
 
-    yarn add @negative-space/react
+    yarn add negative-space
     # or
-    npm i @negative-space/react
+    npm i negative-space
 
 ## License
 
