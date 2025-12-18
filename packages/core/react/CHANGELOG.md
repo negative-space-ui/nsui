@@ -1,5 +1,11 @@
 # @negative-space/react
 
+## 1.3.4
+
+### Patch Changes
+
+- aeca717: Repository url changed
+
 ## 1.3.3
 
 ### Patch Changes
