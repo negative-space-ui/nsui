@@ -1,5 +1,14 @@
 # @negative-space/react
 
+## 1.3.3
+
+### Patch Changes
+
+- @negative-space/provider@1.4.3
+- @negative-space/button@1.3.3
+- @negative-space/spinner@1.0.4
+- @negative-space/typography@1.1.1
+
 ## 1.3.2
 
 ### Patch Changes
