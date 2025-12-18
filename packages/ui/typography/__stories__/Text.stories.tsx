@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Text } from './Text'
+import { Text } from '../src/Text'
 
 const meta: Meta<typeof Text> = {
   title: 'Typography/Text',

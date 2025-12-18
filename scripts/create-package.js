@@ -8,6 +8,10 @@ function questionAsync(rl, question) {
   return new Promise((resolve) => rl.question(question, (answer) => resolve(answer)))
 }
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 async function main() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -24,7 +28,8 @@ async function main() {
   const packageName = `@negative-space/${folderName}`
 
   createFolders(fullPath)
-  createSrcIndex(fullPath)
+  createSrcIndex(fullPath, folderName)
+  createStories(fullPath, folderName)
   createTsConfig(fullPath, inputPath)
   createTsupConfig(fullPath)
   createPackageJson(fullPath, folderName, inputPath)
@@ -37,7 +42,6 @@ async function main() {
 
 function runPnpmInstall(rootDir, packageName) {
   console.log(`running pnpm install for ${packageName}...`)
-
   execSync(`pnpm install --filter ${packageName}...`, {
     cwd: rootDir,
     stdio: 'inherit'
@@ -48,10 +52,25 @@ function createFolders(fullPath) {
   fs.mkdirSync(fullPath, { recursive: true })
 }
 
-function createSrcIndex(fullPath) {
+function createSrcIndex(fullPath, folderName) {
   const srcPath = path.join(fullPath, 'src')
   fs.mkdirSync(srcPath, { recursive: true })
   fs.writeFileSync(path.join(srcPath, 'index.ts'), '', 'utf-8')
+
+  const componentName = capitalize(folderName)
+  fs.writeFileSync(path.join(srcPath, `${componentName}.ts`), '', 'utf-8')
+}
+
+function createStories(fullPath, folderName) {
+  const storiesPath = path.join(fullPath, '__stories__')
+  fs.mkdirSync(storiesPath, { recursive: true })
+
+  const componentName = capitalize(folderName)
+  fs.writeFileSync(
+    path.join(storiesPath, `${componentName}.stories.tsx`),
+    `import React from 'react'\n\n// import { ${componentName} } from '../src/${componentName}'\n\nexport default {\n  title: '${componentName}',\n  component: ${componentName}\n}\n\nexport const Default = () => <div>${componentName} story</div>\n`,
+    'utf-8'
+  )
 }
 
 function createTsConfig(fullPath, inputPath) {

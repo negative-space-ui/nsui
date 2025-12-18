@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spinner, type SpinnerProps } from './Spinner'
+import { Spinner, type SpinnerProps } from '../src/Spinner'
 
 export default {
   title: 'Feedback/Loaders/Spinner',

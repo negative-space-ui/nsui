@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@source '../../ui/*/src/*.stories.tsx';
+@source '../../ui/*/__stories__/*.stories.tsx';
 
 body {
   @apply antialiased;
