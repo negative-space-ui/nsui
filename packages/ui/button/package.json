@@ -1,6 +1,9 @@
 {
   "name": "@negative-space/button",
   "version": "1.3.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "NSUI Button component.",
   "keywords": [
     "nsui",

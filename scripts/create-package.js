@@ -97,6 +97,9 @@ function createPackageJson(fullPath, folderName, inputPath) {
   const packageContent = {
     name: `@negative-space/${folderName}`,
     version: '0.0.0',
+    publishConfig: {
+      access: 'public'
+    },
     description: '',
     keywords: [],
     license: 'MIT',

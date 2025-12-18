@@ -1,6 +1,9 @@
 {
   "name": "@negative-space/provider",
   "version": "1.4.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Provider utilities for all NSUI components.",
   "keywords": [
     "nsui",
