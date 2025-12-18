@@ -1,5 +1,11 @@
 # negative-space
 
+## 1.3.1
+
+### Patch Changes
+
+- c753e51: Update publish configuration to explicitly set public access for the root unscoped package
+
 ## 1.3.0
 
 ### Minor Changes
