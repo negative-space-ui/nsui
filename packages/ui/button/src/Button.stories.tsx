@@ -10,6 +10,13 @@ export default {
     suffix: { control: { type: 'text' } },
     children: { control: { type: 'text' } },
     spinner: { control: { type: 'text' } },
+    spinnerPosition: {
+      control: {
+        type: 'select',
+        options: ['full', 'prefix', 'content', 'suffix'],
+        defaultValue: 'full'
+      }
+    },
     disabled: { control: { type: 'boolean' } }
   }
 }

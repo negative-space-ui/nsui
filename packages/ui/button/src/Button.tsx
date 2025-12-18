@@ -34,8 +34,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       suffix,
       classNames,
       styles,
-      disabled = true, // explicitly default value for autodocs
-      isRippleDisabled,
+      disabled = false, // explicitly default value for autodocs
+      isRippleDisabled = false,
       onClick,
       isLoading = false,
       spinner,
@@ -47,7 +47,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const { global, components } = useNSUI()
     const isRippleDisabledFinal = isRippleDisabled ?? components?.button?.isRippleDisabled
-    const { createRipple } = useRipple(global.prefixCls)
+    const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
     const isDisabled = disabled || isLoading
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
