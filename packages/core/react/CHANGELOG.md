@@ -1,5 +1,11 @@
 # @negative-space/react
 
+## 1.3.2
+
+### Patch Changes
+
+- d894415: Rename library package name
+
 ## 1.3.1
 
 ### Patch Changes
