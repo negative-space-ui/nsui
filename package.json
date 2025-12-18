@@ -1,5 +1,4 @@
 {
-  "name": "nsui",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.12.1",
@@ -12,13 +11,15 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:fast": "turbo run build:fast",
     "clean": "turbo run clean",
     "clean-node": "ts-node ./scripts/clean-node.js",
+    "create-package": "ts-node ./scripts/create-package.js",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "prepare": "husky install",
-    "create-package": "ts-node ./scripts/create-package.js",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
@@ -27,6 +28,7 @@
     "@eslint/js": "^9.39.1",
     "@storybook/react": "^10.1.8",
     "@types/node": "^25.0.0",
+    "clean-package": "^2.2.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
     "glob": "^13.0.0",

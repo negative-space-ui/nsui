@@ -1,14 +1,15 @@
 # @negative-space/spinner
 
-A simple, accessible loading spinner component for NSUI.
+React component for displaying loading spinners.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/spinner
-    # or
-    npm i @negative-space/spinner
 
-## License
+    # Using npm
+    npm install @negative-space/spinner
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

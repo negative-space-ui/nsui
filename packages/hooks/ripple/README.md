@@ -1,14 +1,15 @@
 # @negative-space/ripple
 
-Hook and ripple styles for clickable elements.
+React hook to add a ripple effect to your components. Easy to integrate and customizable for buttons, cards, or any clickable element.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/ripple
-    # or
-    npm i @negative-space/ripple
 
-## License
+    # Using npm
+    npm install @negative-space/ripple
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

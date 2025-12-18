@@ -1,17 +1,21 @@
 {
   "name": "@negative-space/types",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "src/index.js",
+  "module": "",
+  "types": "",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist .turbo",
-    "dev": "tsup --watch",
-    "lint": "eslint . --ext ts,tsx"
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

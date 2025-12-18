@@ -1,26 +1,40 @@
 {
-  "name": "@negative-space/react",
-  "version": "1.3.4",
+  "name": "negative-space",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "NSUI React components library.",
+  "description": "Main React package exporting all NSUI components for easy use in your app",
   "keywords": [
-    "nsui",
+    "components",
+    "design-system",
     "react",
+    "nsui",
     "ui"
   ],
   "license": "MIT",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "src/index.js",
+  "module": "",
+  "types": "",
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/button"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
   "scripts": {
-    "build": "tsup --dts",
+    "build": "tsup",
     "clean": "rimraf dist .turbo",
-    "dev": "tsup --watch --dts",
-    "lint": "eslint . --ext ts,tsx"
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@negative-space/button": "workspace:*",

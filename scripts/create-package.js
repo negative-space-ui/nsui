@@ -80,7 +80,7 @@ function createTsupConfig(fullPath) {
   const tsupContent = `import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.ts', '!src/scripts'],
+  entry: ['src/index.ts'],
   format: ['cjs', 'esm'],
   dts: true,
   clean: true,
@@ -103,26 +103,36 @@ function createPackageJson(fullPath, folderName, inputPath) {
     description: '',
     keywords: [],
     license: 'MIT',
+    main: 'src/index.ts',
+    module: '',
+    types: '',
+    files: ['dist'],
     repository: {
       type: 'git',
       url: 'git+https://github.com/negative-space-ui/nsui',
       directory: `packages/${inputPath}`
     },
-    main: 'src/index.ts',
-    types: 'src/index.ts',
-    files: ['dist'],
+    bugs: {
+      url: 'https://github.com/negative-space-ui/nsui/issues'
+    },
     scripts: {
       build: 'tsup',
       clean: 'rimraf dist .turbo',
-      dev: 'tsup --watch',
-      lint: 'eslint . --ext ts,tsx'
+      dev: 'pnpm build:fast --watch',
+      lint: 'eslint . --ext ts,tsx',
+      postpack: 'clean-package restore',
+      prepack: 'clean-package',
+      typecheck: 'tsc --noEmit'
     },
     dependencies: {
       clsx: '^2.1.1'
     },
+    peerDependencies: {
+      '@negative-space/provider': 'workspace:*',
+      react: '^19.2.1'
+    },
     devDependencies: {
       '@types/react': '^19.2.7',
-      react: '^19.2.1',
       typescript: '^5.9.3'
     }
   }
@@ -145,10 +155,9 @@ DESCRIPTION
     # or
     npm i @negative-space/${folderName}
 
-## License
+## Contributing
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+Feel free to fork, tweak, and send a pull request!
 `
   fs.writeFileSync(path.join(fullPath, 'README.md'), readmeContent, 'utf-8')
 }

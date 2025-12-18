@@ -1,14 +1,15 @@
-# @negative-space/react
+# negative-space
 
-NSUI React components library.
+The main package for NSUI, exporting all components for React applications. Import and use any NSUI component directly from here.
 
 ## Installation
 
-    yarn add @negative-space/react
-    # or
-    npm i @negative-space/react
+    # Using Yarn
+    yarn add negative-space
 
-## License
+    # Using npm
+    npm install negative-space
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

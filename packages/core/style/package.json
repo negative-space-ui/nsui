@@ -1,17 +1,21 @@
 {
   "name": "@negative-space/style",
-  "version": "1.0.2",
+  "version": "0.0.0",
   "private": true,
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "src/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist .turbo",
-    "dev": "tsup --watch",
-    "lint": "eslint . --ext ts,tsx"
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@negative-space/inject-css": "workspace:*",

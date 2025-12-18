@@ -1,37 +1,47 @@
 {
   "name": "@negative-space/ripple",
-  "version": "1.1.0",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Hook and ripple styles for clickable elements.",
+  "description": "React hook to add ripple effect to your components",
   "keywords": [
-    "nsui",
-    "ripple",
+    "animation",
+    "effects",
     "hook",
-    "ui"
+    "nsui",
+    "react",
+    "ripple"
   ],
   "license": "MIT",
+  "main": "src/index.js",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
     "directory": "packages/hooks/ripple"
   },
-  "main": "src/index.ts",
-  "types": "src/index.ts",
-  "files": [
-    "dist"
-  ],
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
   "scripts": {
-    "build": "tsup && ts-node ../../../scripts/copy-css.js",
+    "build": "tsup",
     "clean": "rimraf dist .turbo",
-    "dev": "tsup --watch",
-    "lint": "eslint . --ext ts,tsx"
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
-    "esbuild-plugin-copy": "^2.1.1",
-    "react": "^19.2.1",
     "typescript": "^5.9.3"
   }
 }

@@ -1,14 +1,15 @@
 # @negative-space/button
 
-Provides a reusable action element with a main children slot and optional left/right content, allowing flexible composition for icons or extra elements.
+React component for creating customizable buttons.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/button
-    # or
-    npm i @negative-space/button
 
-## License
+    # Using npm
+    npm install @negative-space/button
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

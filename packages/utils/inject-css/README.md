@@ -1,14 +1,15 @@
 # @negative-space/inject-css
 
-A runtime CSS and keyframes injection.
+Utility to dynamically inject CSS styles into your application. Perfect for runtime styling or adding custom themes.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/inject-css
-    # or
-    npm i @negative-space/inject-css
 
-## License
+    # Using npm
+    npm install @negative-space/inject-css
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

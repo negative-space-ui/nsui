@@ -1,5 +1,5 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '@negative-space/core/types'
+import { GlobalConfig } from '@negative-space/types'
 
 export const buttonStyles = (global: GlobalConfig) => {
   return {

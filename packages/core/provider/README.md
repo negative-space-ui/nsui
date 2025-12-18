@@ -1,14 +1,15 @@
 # @negative-space/provider
 
-React component to wrap your app and provide global configuration for NSUI components.
+React component to wrap your app and provide global configuration for NSUI components. It makes it easy to set themes, defaults, and behaviors for all NSUI components in your application.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/provider
-    # or
-    npm i @negative-space/provider
 
-## License
+    # Using npm
+    npm install @negative-space/provider
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!

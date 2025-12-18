@@ -1,14 +1,15 @@
 # @negative-space/typography
 
-NSUI typography components, such as headings and paragraphs.
+React component library for handling typography.
 
 ## Installation
 
+    # Using Yarn
     yarn add @negative-space/typography
-    # or
-    npm i @negative-space/typography
 
-## License
+    # Using npm
+    npm install @negative-space/typography
 
-This project is licensed under the terms of the
-[MIT license](https://github.com/nsui-inc/nsui/blob/master/LICENSE).
+## Contributing
+
+Feel free to fork, tweak, and send a pull request!
