@@ -19,8 +19,8 @@ export interface BaseButtonProps extends Omit<
   }
   isRippleDisabled?: boolean
   isLoading?: boolean
-  spinnerPosition?: 'full' | 'prefix' | 'content' | 'suffix'
   spinner?: React.ReactNode
+  spinnerPosition?: 'full' | 'prefix' | 'content' | 'suffix'
   spinnerProps?: SpinnerProps
 }
 
@@ -39,8 +39,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       isLoading = false,
       spinner,
-      spinnerProps,
       spinnerPosition = 'full',
+      spinnerProps,
       ...props
     },
     ref
