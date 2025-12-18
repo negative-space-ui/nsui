@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { useNSUI } from '@negative-space/provider'
 
-type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 
 export type HeadingProps<E extends HeadingElement = 'h1'> = {
   as?: E

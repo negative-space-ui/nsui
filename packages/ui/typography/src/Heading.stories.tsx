@@ -4,10 +4,11 @@ import { Heading } from './Heading'
 const meta: Meta<typeof Heading> = {
   title: 'Typography/Heading',
   component: Heading,
+  tags: ['autodocs'],
   argTypes: {
     as: {
       control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span']
     },
     children: {
       control: 'text'
@@ -17,9 +18,7 @@ const meta: Meta<typeof Heading> = {
 
 export default meta
 
-type Story = StoryObj<typeof Heading>
-
-export const Default: Story = {
+export const Default: StoryObj<typeof Heading> = {
   args: {
     as: 'h1',
     children: 'Hello World'
