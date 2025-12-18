@@ -1,5 +1,11 @@
 # @negative-space/inject-css
 
+## 1.0.1
+
+### Patch Changes
+
+- f3b6cae: Allow public publishing
+
 ## 1.0.0
 
 ### Major Changes

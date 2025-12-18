@@ -1,5 +1,12 @@
 # @negative-space/style
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [f3b6cae]
+  - @negative-space/inject-css@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes

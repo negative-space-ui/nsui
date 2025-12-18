@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.4.3
+
+### Patch Changes
+
+- @negative-space/style@1.0.2
+
 ## 1.4.2
 
 ### Patch Changes
