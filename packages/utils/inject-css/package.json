@@ -1,6 +1,9 @@
 {
   "name": "@negative-space/inject-css",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Runtime CSS and keyframes injection.",
   "keywords": [
     "nsui",
