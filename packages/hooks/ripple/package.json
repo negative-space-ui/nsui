@@ -14,7 +14,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matheusbastani/nsui",
+    "url": "git+https://github.com/negative-space-ui/nsui",
     "directory": "packages/hooks/ripple"
   },
   "main": "src/index.ts",

@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matheusbastani/nsui",
+    "url": "git+https://github.com/negative-space-ui/nsui",
     "directory": "packages/ui/button"
   },
   "main": "src/index.ts",

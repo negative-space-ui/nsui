@@ -105,7 +105,7 @@ function createPackageJson(fullPath, folderName, inputPath) {
     license: 'MIT',
     repository: {
       type: 'git',
-      url: 'git+https://github.com/matheusbastani/nsui',
+      url: 'git+https://github.com/negative-space-ui/nsui',
       directory: `packages/${inputPath}`
     },
     main: 'src/index.ts',

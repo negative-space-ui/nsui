@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -32,13 +33,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Publish to NPM
-        run: pnpm changeset publish
+      - name: Publish to NPM and create tags
+        uses: changesets/action@v1
+        with:
+          publish: pnpm changeset publish
+          createGithubReleases: true
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Push tags
-        run: git push --follow-tags
 
       - name: Delete release branch
         run: git push origin --delete ${{ github.event.pull_request.head.ref }}
