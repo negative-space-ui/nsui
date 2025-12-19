@@ -4,6 +4,16 @@ import { useNSUI } from '@negative-space/provider'
 
 type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 
+type HeadingDomMap = {
+  h1: HTMLHeadingElement
+  h2: HTMLHeadingElement
+  h3: HTMLHeadingElement
+  h4: HTMLHeadingElement
+  h5: HTMLHeadingElement
+  h6: HTMLHeadingElement
+  span: HTMLSpanElement
+}
+
 export type HeadingProps<E extends HeadingElement = 'h1'> = {
   as?: E
 } & React.ComponentPropsWithoutRef<E>
@@ -11,7 +21,7 @@ export type HeadingProps<E extends HeadingElement = 'h1'> = {
 export const Heading = forwardRef(
   <E extends HeadingElement = 'h1'>(
     { as, children, className, ...props }: HeadingProps<E>,
-    ref: React.Ref<HTMLElement>
+    ref: React.Ref<HeadingDomMap[E]>
   ) => {
     const Component = (as ?? 'h1') as React.ElementType
     const { global } = useNSUI()

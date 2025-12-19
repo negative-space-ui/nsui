@@ -4,6 +4,13 @@ import { useNSUI } from '@negative-space/provider'
 
 type TextElement = 'p' | 'span' | 'label' | 'small'
 
+type TextDomMap = {
+  p: HTMLParagraphElement
+  span: HTMLSpanElement
+  label: HTMLLabelElement
+  small: HTMLElement
+}
+
 export type TextProps<E extends TextElement = 'span'> = {
   as?: E
 } & React.ComponentPropsWithoutRef<E>
@@ -11,7 +18,7 @@ export type TextProps<E extends TextElement = 'span'> = {
 export const Text = forwardRef(
   <E extends TextElement = 'span'>(
     { as, children, className, ...props }: TextProps<E>,
-    ref: React.Ref<HTMLElement>
+    ref: React.Ref<TextDomMap[E]>
   ) => {
     const Component = (as ?? 'span') as React.ElementType
     const { global } = useNSUI()
