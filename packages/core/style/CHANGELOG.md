@@ -1,6 +1,6 @@
 # @negative-space/style
 
-## 1.1.0
+## 1.1.2
 
 ### Minor Changes
 
