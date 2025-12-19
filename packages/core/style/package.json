@@ -3,8 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "main": "src/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

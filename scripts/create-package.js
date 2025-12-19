@@ -113,6 +113,9 @@ export default defineConfig({
 }
 
 function createPackageJson(fullPath, folderName, inputPath) {
+  const depth = inputPath.split('/').filter(Boolean).length
+  const cleanPackagePath = `${'../'.repeat(depth)}clean-package.config.json`
+
   const packageContent = {
     name: `@negative-space/${folderName}`,
     version: '0.0.0',
@@ -153,7 +156,8 @@ function createPackageJson(fullPath, folderName, inputPath) {
     devDependencies: {
       '@types/react': '^19.2.7',
       typescript: '^5.9.3'
-    }
+    },
+    'clean-package': cleanPackagePath
   }
 
   fs.writeFileSync(

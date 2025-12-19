@@ -1,7 +1,7 @@
 {
-  "remove": ["devDependencies", "scripts"],
+  "remove": ["devDependencies"],
   "replace": {
-    "main": "src/index.js",
+    "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
     "exports": {
