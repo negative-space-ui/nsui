@@ -1,5 +1,16 @@
 # @negative-space/style
 
+## 1.1.0
+
+### Minor Changes
+
+- f151f21: Add new polymorphic List component with style support
+
+### Patch Changes
+
+- Updated dependencies [762eb69]
+  - @negative-space/inject-css@1.1.0
+
 ## 1.0.2
 
 ### Patch Changes
