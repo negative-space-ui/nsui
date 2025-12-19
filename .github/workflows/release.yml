@@ -33,13 +33,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Publish to NPM and create tags
+      - name: Publish scoped packages to NPM and create tags
         uses: changesets/action@v1
         with:
           publish: true
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish React package manually
+        run: |
+          cd packages/core/react
+          npm publish --access public
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Delete release branch
