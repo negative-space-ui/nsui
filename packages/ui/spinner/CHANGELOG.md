@@ -1,5 +1,11 @@
 # @negative-space/spinner
 
+## 1.0.5
+
+### Patch Changes
+
+- 3d5c022: Release version
+
 ## 1.0.3
 
 ### Patch Changes
