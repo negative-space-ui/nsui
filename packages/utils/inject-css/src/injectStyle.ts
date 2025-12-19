@@ -1,15 +1,26 @@
 import { getSheet, injected } from './styleSheet'
 import { parseRules, type CSSRules } from './parseRules'
 
-export function injectStyle(name: string, rules: CSSRules) {
+export function injectStyle(raw: string, rules: CSSRules) {
   const sheet = getSheet()
-  if (!sheet) return name
+  if (!sheet) return raw.split(/\s+/)[0]
+
+  const tokens = raw.trim().split(/\s+/)
+  const name = tokens[0]
+  const selector = tokens.slice(1).join(' ')
 
   const cssText = parseRules(rules)
-  const rule = `.${name} { ${cssText} }`
 
-  if (injected.has(name)) {
-    const idx = injected.get(name)!
+  const finalSelector = selector
+    ? selector.replace(/(^|,)\s*([^\s,]+)(?=\s*|,|$)/g, `$1$2.${name}`)
+    : `.${name}`
+
+  const rule = `${finalSelector} { ${cssText} }`
+
+  const key = selector ? `${name}__${selector}` : name
+
+  if (injected.has(key)) {
+    const idx = injected.get(key)!
     sheet.deleteRule(idx)
     sheet.insertRule(rule, idx)
     return name
@@ -17,7 +28,7 @@ export function injectStyle(name: string, rules: CSSRules) {
 
   const index = sheet.cssRules.length
   sheet.insertRule(rule, index)
-  injected.set(name, index)
+  injected.set(key, index)
 
   return name
 }
