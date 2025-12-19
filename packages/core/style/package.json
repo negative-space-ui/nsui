@@ -1,10 +1,34 @@
 {
   "name": "@negative-space/style",
-  "private": true,
+  "version": "1.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Core styling utility for NSUI components",
+  "keywords": [
+    "css",
+    "inject",
+    "nsui",
+    "styles",
+    "ui",
+    "utility"
+  ],
+  "license": "MIT",
   "main": "src/index.ts",
+  "module": "",
+  "types": "",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui.git",
+    "directory": "packages/core/style"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist .turbo",
@@ -20,5 +44,6 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3"
-  }
+  },
+  "clean-package": "../../../clean-package.config.json"
 }

@@ -1,10 +1,31 @@
 {
   "name": "@negative-space/types",
-  "private": true,
+  "version": "1.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Core types for NSUI library",
+  "keywords": [
+    "nsui",
+    "types",
+    "ui"
+  ],
+  "license": "MIT",
   "main": "src/index.ts",
+  "module": "",
+  "types": "",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui.git",
+    "directory": "packages/core/types"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist .turbo",
@@ -16,5 +37,6 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3"
-  }
+  },
+  "clean-package": "../../../clean-package.config.json"
 }
