@@ -36,7 +36,7 @@ jobs:
       - name: Publish to NPM and create tags
         uses: changesets/action@v1
         with:
-          publish: pnpm changeset publish
+          publish: true
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
