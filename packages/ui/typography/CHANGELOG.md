@@ -1,5 +1,11 @@
 # @negative-space/typography
 
+## 1.1.1
+
+### Patch Changes
+
+- c047a09: Fixed version for release
+
 ## 1.1.0
 
 ### Minor Changes
