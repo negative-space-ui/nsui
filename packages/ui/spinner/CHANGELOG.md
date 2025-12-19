@@ -1,5 +1,12 @@
 # @negative-space/spinner
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [ee40576]
+  - @negative-space/provider@1.0.2
+
 ## 1.0.1
 
 ### Major Changes

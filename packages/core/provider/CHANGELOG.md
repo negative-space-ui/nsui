@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.0.2
+
+### Patch Changes
+
+- ee40576: Release version
+
 ## 1.0.1
 
 ### Major Changes
