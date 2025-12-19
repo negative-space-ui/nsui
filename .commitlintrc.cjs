@@ -12,7 +12,8 @@ module.exports = {
         'style', // changes that do not affect the meaning of the code
         'refactor', // a code change that neither fixes a bug nor adds a feature
         'perf', // a code change that improves performance
-        'test' // adding missing tests
+        'test', // adding missing tests
+        'ci' // changes to our CI configuration files and scripts
       ]
     ],
 
