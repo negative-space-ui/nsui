@@ -1,5 +1,14 @@
 # negative-space
 
+## 1.0.8
+
+### Patch Changes
+
+- @negative-space/provider@1.0.5
+- @negative-space/button@1.0.6
+- @negative-space/spinner@1.0.7
+- @negative-space/typography@1.1.4
+
 ## 1.0.7
 
 ### Patch Changes
