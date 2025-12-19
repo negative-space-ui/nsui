@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/ripple",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
@@ -23,7 +23,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui",
+    "url": "git+https://github.com/negative-space-ui/nsui.git",
     "directory": "packages/hooks/ripple"
   },
   "bugs": {

@@ -1,6 +1,7 @@
 {
   "name": "negative-space",
   "version": "0.0.0",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
@@ -22,7 +23,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui",
+    "url": "git+https://github.com/negative-space-ui/nsui.git.git",
     "directory": "packages/ui/button"
   },
   "bugs": {
