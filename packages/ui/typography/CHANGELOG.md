@@ -1,5 +1,16 @@
 # @negative-space/typography
 
+## 1.1.0
+
+### Minor Changes
+
+- f151f21: Add new polymorphic List component with style support
+
+### Patch Changes
+
+- 5b88146: Fix polymorphic refs to use correct DOM element types based on the as prop
+  - @negative-space/provider@1.0.4
+
 ## 1.0.3
 
 ### Patch Changes

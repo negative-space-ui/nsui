@@ -1,5 +1,16 @@
 # negative-space
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [5b88146]
+- Updated dependencies [f151f21]
+  - @negative-space/typography@1.1.0
+  - @negative-space/provider@1.0.4
+  - @negative-space/button@1.0.5
+  - @negative-space/spinner@1.0.6
+
 ## 1.0.4
 
 ### Patch Changes
