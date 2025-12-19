@@ -13,6 +13,21 @@ export const typographyStyles = (global: GlobalConfig) => {
       transitionProperty: 'color, scale',
       transitionTimingFunction: 'ease-in-out',
       transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    }),
+
+    list: injectStyle(`${global.prefixCls}-list`, {
+      paddingLeft: '1rem',
+      transitionProperty: 'color, scale',
+      transitionTimingFunction: 'ease-in-out',
+      transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    }),
+
+    orderedList: injectStyle(`${global.prefixCls}-list ol li`, {
+      listStyleType: 'decimal'
+    }),
+
+    unorderedList: injectStyle(`${global.prefixCls}-list ul li`, {
+      listStyleType: 'disc'
     })
   }
 }
