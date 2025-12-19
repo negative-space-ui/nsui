@@ -1,5 +1,12 @@
 # negative-space
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [c047a09]
+  - @negative-space/typography@1.1.1
+
 ## 1.0.5
 
 ### Patch Changes
