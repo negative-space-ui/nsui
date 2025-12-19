@@ -2,7 +2,7 @@
   "name": "@negative-space/style",
   "version": "1.0.2",
   "private": true,
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "files": [
     "dist"
   ],
