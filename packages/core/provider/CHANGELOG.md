@@ -1,5 +1,13 @@
 # @negative-space/provider
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [6206a54]
+  - @negative-space/style@1.1.3
+  - @negative-space/types@1.0.3
+
 ## 1.0.4
 
 ### Patch Changes

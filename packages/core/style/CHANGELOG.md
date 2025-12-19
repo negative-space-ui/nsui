@@ -1,5 +1,13 @@
 # @negative-space/style
 
+## 1.1.3
+
+### Patch Changes
+
+- 6206a54: Read.me added
+- Updated dependencies [6206a54]
+  - @negative-space/types@1.0.3
+
 ## 1.1.2
 
 ### Minor Changes
