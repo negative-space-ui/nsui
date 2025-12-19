@@ -11,14 +11,7 @@
 - Updated dependencies [762eb69]
   - @negative-space/inject-css@1.1.0
 
-## 1.0.2
-
-### Patch Changes
-
-- Updated dependencies [10a96cf]
-  - @negative-space/inject-css@1.0.2
-
-## 1.0.1
+## 1.1.0
 
 ### Major Changes
 
@@ -26,7 +19,5 @@
 
 ### Patch Changes
 
-- Updated dependencies [2feb797]
-- Updated dependencies [2feb797]
-  - @negative-space/types@1.0.1
-  - @negative-space/inject-css@1.0.1
+- Updated dependencies [10a96cf]
+  - @negative-space/inject-css@1.0.2
