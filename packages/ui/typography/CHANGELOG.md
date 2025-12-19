@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 5882513: Release version fixed
+- 5882513: Fixed release version
 
 ## 1.1.2
 
