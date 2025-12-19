@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Preview } from '@storybook/nextjs-vite'
 import { NSUIProvider } from '@negative-space/provider'
+import '../global.d.ts'
 import './globals.css'
 
 const preview: Preview = {
