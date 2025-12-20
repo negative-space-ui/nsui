@@ -11,10 +11,9 @@ export const styles = (global: GlobalConfig, components: ComponentsConfigRequire
   spinKeyframes(global)
   rippleKeyframe(global)
 
-  return {
-    ...rippleStyle(global),
-    ...buttonStyles(global),
-    ...spinnerStyles(global, components.spinner),
-    ...typographyStyles(global)
-  }
+  rippleStyle(global)
+
+  buttonStyles(global)
+  spinnerStyles(global, components.spinner)
+  typographyStyles(global)
 }

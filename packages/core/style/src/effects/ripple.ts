@@ -11,15 +11,13 @@ export const rippleKeyframe = (global: GlobalConfig) => {
 }
 
 export const rippleStyle = (global: GlobalConfig) => {
-  return {
-    ripple: injectStyle(`.${global.prefixCls}-ripple`, {
-      position: 'absolute',
-      borderRadius: '50%',
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-      transform: 'scale(0)',
-      animation: `${global.prefixCls}-ripple 600ms ease-out`,
-      pointerEvents: 'none',
-      zIndex: 1
-    })
-  }
+  injectStyle(`.${global.prefixCls}-ripple`, {
+    position: 'absolute',
+    borderRadius: '50%',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    transform: 'scale(0)',
+    animation: `${global.prefixCls}-ripple 600ms ease-out`,
+    pointerEvents: 'none',
+    zIndex: 1
+  })
 }
