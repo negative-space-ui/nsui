@@ -3,7 +3,7 @@ import { GlobalConfig } from '@negative-space/types'
 
 export const buttonStyles = (global: GlobalConfig) => {
   return {
-    button: injectStyle(`${global.prefixCls}-btn`, {
+    button: injectStyle(`.${global.prefixCls}-btn`, {
       display: 'flex',
       position: 'relative',
       overflow: 'hidden',
@@ -18,21 +18,21 @@ export const buttonStyles = (global: GlobalConfig) => {
       transitionDuration: `${global.colorTransitionDuration}ms, ${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
     }),
 
-    buttonLeft: injectStyle(`${global.prefixCls}-btn-left`, {
+    buttonLeft: injectStyle(`.${global.prefixCls}-btn-left`, {
       display: 'inline-flex',
       overflow: 'hidden',
       alignItems: 'center',
       flex: '1 1 0'
     }),
 
-    buttonContent: injectStyle(`${global.prefixCls}-btn-content`, {
+    buttonContent: injectStyle(`.${global.prefixCls}-btn-content`, {
       display: 'inline-flex',
       overflow: 'hidden',
       alignItems: 'center',
       flex: '1 1 0'
     }),
 
-    buttonRight: injectStyle(`${global.prefixCls}-btn-right`, {
+    buttonRight: injectStyle(`.${global.prefixCls}-btn-right`, {
       display: 'inline-flex',
       overflow: 'hidden',
       alignItems: 'center',
