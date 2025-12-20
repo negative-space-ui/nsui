@@ -18,9 +18,24 @@ export type GlobalConfigRequired = Required<GlobalConfig>
 export type ButtonConfig = {
   /** Defines if ripple effect should be disabled
    *
-   * Defaults to `false`.
-   */
+   * Defaults to `false`. */
   isRippleDisabled?: boolean
+}
+
+export type ListConfig = {
+  /** Defines the direction of the list.
+   *
+   * Defaults to `vertical`. */
+  direction?: 'horizontal' | 'vertical'
+  olMarker?:
+    | 'decimal'
+    | 'decimal-leading-zero'
+    | 'lower-alpha'
+    | 'upper-alpha'
+    | 'lower-roman'
+    | 'upper-roman'
+    | 'none'
+  ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
 export type SpinnerConfig = {
@@ -29,6 +44,7 @@ export type SpinnerConfig = {
 
 export type ComponentsConfig = {
   button?: ButtonConfig
+  list?: ListConfig
   spinner?: SpinnerConfig
 }
 

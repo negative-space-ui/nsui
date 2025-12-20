@@ -21,6 +21,11 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
       button: {
         isRippleDisabled: components?.button?.isRippleDisabled ?? false
       },
+      list: {
+        direction: components?.list?.direction ?? 'vertical',
+        olMarker: components?.list?.olMarker ?? 'decimal',
+        ulMarker: components?.list?.ulMarker ?? 'disc'
+      },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2
       }

@@ -1,15 +1,38 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { List } from '../src/List'
+import { List, ListProps } from '../src/List'
 
-const meta: Meta<typeof List> = {
+const unorderedMarkers = ['disc', 'circle', 'square'] as const
+const orderedMarkers = [
+  'decimal',
+  'decimal-leading-zero',
+  'lower-alpha',
+  'upper-alpha',
+  'lower-roman',
+  'upper-roman'
+] as const
+
+type ListUnionProps = ListProps<'ul'> | ListProps<'ol'>
+
+const meta: Meta<ListUnionProps> = {
   title: 'Typography/List',
   component: List,
   tags: ['autodocs'],
+  args: {
+    children: [<li key="1">Item 1</li>, <li key="2">Item 2</li>, <li key="3">Item 3</li>]
+  },
   argTypes: {
     as: {
       control: 'select',
       options: ['ul', 'ol']
+    },
+    direction: {
+      control: 'select',
+      options: ['vertical', 'horizontal']
+    },
+    marker: {
+      control: 'select',
+      options: [...unorderedMarkers, ...orderedMarkers, 'none']
     },
     children: {
       control: 'object'
@@ -19,16 +42,37 @@ const meta: Meta<typeof List> = {
 
 export default meta
 
-export const Ordered: StoryObj<typeof List> = {
+export const Default: StoryObj<ListUnionProps> = {}
+
+export const Ordered: StoryObj<ListProps<'ol'>> = {
   args: {
     as: 'ol',
-    children: [<li key="1">Item 1</li>, <li key="2">Item 2</li>, <li key="3">Item 3</li>]
+    marker: 'decimal'
+  },
+  argTypes: {
+    marker: {
+      control: 'select',
+      options: [...orderedMarkers, 'none']
+    }
   }
 }
 
-export const Unordered: StoryObj<typeof List> = {
+export const Unordered: StoryObj<ListProps<'ul'>> = {
   args: {
     as: 'ul',
-    children: [<li key="1">Item 1</li>, <li key="2">Item 2</li>, <li key="3">Item 3</li>]
+    marker: 'disc'
+  },
+  argTypes: {
+    marker: {
+      control: 'select',
+      options: [...unorderedMarkers, 'none']
+    }
+  }
+}
+
+export const Horizontal: StoryObj<ListProps<'ul'>> = {
+  args: {
+    as: 'ul',
+    direction: 'horizontal'
   }
 }
