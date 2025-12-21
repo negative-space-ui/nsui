@@ -1,5 +1,11 @@
 # @negative-space/data-display
 
+## 1.0.1
+
+### Patch Changes
+
+- 1a64e46: Export bug fixed
+
 ## 1.0.0
 
 ### Major Changes
