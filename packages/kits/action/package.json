@@ -1,13 +1,15 @@
 {
-  "name": "@negative-space/{{name}}",
+  "name": "@negative-space/action",
   "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "Action components kit",
   "keywords": [
-    "{{name}}",
-    "nsui"
+    "action",
+    "components",
+    "nsui",
+    "ui"
   ],
   "license": "MIT",
   "main": "src/index.ts",
@@ -19,7 +21,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/{{layer}}/{{name}}"
+    "directory": "packages/kits/action"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -34,15 +36,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
-  },
-  "peerDependencies": {
-    "@negative-space/provider": "workspace:*",
-    "react": "^19.2.1"
+    "@negative-space/button": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "{{depth layer}}clean-package.config.json"
-  }
+  "clean-package": "../../../clean-package.config.json"
+}

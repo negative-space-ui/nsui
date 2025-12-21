@@ -1,25 +1,29 @@
 {
-  "name": "@negative-space/{{name}}",
-  "version": "0.0.0",
+  "name": "@negative-space/typography",
+  "version": "1.1.4",
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "React component kit for typography",
   "keywords": [
-    "{{name}}",
-    "nsui"
+    "nsui",
+    "react",
+    "text",
+    "typography",
+    "ui"
   ],
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "module": "",
   "types": "",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/{{layer}}/{{name}}"
+    "url": "git+https://github.com/negative-space-ui/nsui.git",
+    "directory": "packages/ui/typography"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -34,15 +38,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
-  },
-  "peerDependencies": {
-    "@negative-space/provider": "workspace:*",
-    "react": "^19.2.1"
+    "@negative-space/heading": "workspace:*",
+    "@negative-space/text": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "{{depth layer}}clean-package.config.json"
-  }
+  "clean-package": "../../../clean-package.config.json"
+}

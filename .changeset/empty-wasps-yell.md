@@ -1,5 +1,5 @@
 ---
-'@negative-space/typography': minor
+'@negative-space/list': minor
 '@negative-space/style': minor
 '@negative-space/provider': minor
 '@negative-space/types': minor

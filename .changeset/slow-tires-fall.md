@@ -1,6 +1,8 @@
 ---
 '@negative-space/provider': minor
-'@negative-space/typography': minor
+'@negative-space/list': minor
+'@negative-space/heading': minor
+'@negative-space/text': minor
 '@negative-space/types': minor
 ---
 

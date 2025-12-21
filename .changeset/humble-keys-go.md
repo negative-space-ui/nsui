@@ -1,5 +1,6 @@
 ---
-'@negative-space/typography': patch
+'@negative-space/text': patch
+'@negative-space/heading': patch
 '@negative-space/button': patch
 ---
 

@@ -1,6 +1,6 @@
 # @negative-space/typography
 
-React component library for handling typography.
+React component kit for typography.
 
 ## Installation
 
