@@ -34,8 +34,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       suffix,
       classNames,
       styles,
-      disabled = false, // explicitly default value for autodocs
-      isRippleDisabled = false,
+      disabled = false,
+      isRippleDisabled,
       onClick,
       isLoading = false,
       spinner,
@@ -46,7 +46,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const { global, components } = useNSUI()
-    const isRippleDisabledFinal = isRippleDisabled ?? components?.button?.isRippleDisabled
+    const isRippleDisabledFinal = isRippleDisabled ?? components.button.isRippleDisabled
+
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
     const isDisabled = disabled || isLoading
 

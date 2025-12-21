@@ -34,7 +34,8 @@ export const List = forwardRef(
     ref: React.Ref<ListDomMap[E]>
   ) => {
     const { global, components } = useNSUI()
-    const dir = direction || components.list.direction
+
+    const dir = direction ?? components.list.direction ?? 'vertical'
     const Component = (dir === 'horizontal' ? 'ol' : (as ?? 'ol')) as React.ElementType
 
     const defaultMarker =
