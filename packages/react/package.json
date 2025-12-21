@@ -47,5 +47,5 @@
   "devDependencies": {
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../clean-package.config.json"
 }

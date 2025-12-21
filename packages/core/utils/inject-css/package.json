@@ -1,20 +1,20 @@
 {
-  "name": "@negative-space/ripple",
-  "version": "1.0.1",
+  "name": "@negative-space/inject-css",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "React hook to add ripple effect to your components",
+  "description": "Utility to dynamically inject CSS styles into your application",
   "keywords": [
-    "animation",
-    "effects",
-    "hook",
+    "css",
+    "inject",
     "nsui",
-    "react",
-    "ripple"
+    "styles",
+    "ui",
+    "utility"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "module": "",
   "types": "",
   "files": [
@@ -24,7 +24,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui.git",
-    "directory": "packages/hooks/ripple"
+    "directory": "packages/utils/inject-css"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -38,12 +38,8 @@
     "prepack": "clean-package",
     "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "react": "^19.2.1"
-  },
   "devDependencies": {
-    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }
