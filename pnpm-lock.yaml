@@ -226,15 +226,18 @@ importers:
 
   packages/react:
     dependencies:
-      '@negative-space/button':
+      '@negative-space/action':
         specifier: workspace:*
-        version: link:../ui/button
+        version: link:../kits/action
+      '@negative-space/data-display':
+        specifier: workspace:*
+        version: link:../kits/data-display
+      '@negative-space/feedback':
+        specifier: workspace:*
+        version: link:../kits/feedback
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../core/provider
-      '@negative-space/spinner':
-        specifier: workspace:*
-        version: link:../ui/spinner
       '@negative-space/typography':
         specifier: workspace:*
         version: link:../kits/typography

@@ -39,9 +39,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/button": "workspace:*",
+    "@negative-space/action": "workspace:*",
+    "@negative-space/data-display": "workspace:*",
+    "@negative-space/feedback": "workspace:*",
     "@negative-space/provider": "workspace:*",
-    "@negative-space/spinner": "workspace:*",
     "@negative-space/typography": "workspace:*"
   },
   "devDependencies": {
