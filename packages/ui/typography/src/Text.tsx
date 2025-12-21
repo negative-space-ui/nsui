@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 import { useNSUI } from '@negative-space/provider'
 
-type TextElement = 'p' | 'span' | 'label' | 'small'
+type TextElement = 'span' | 'p' | 'label' | 'small'
 
 type TextDomMap = {
   p: HTMLParagraphElement
@@ -20,8 +20,8 @@ export const Text = forwardRef(
     { as, children, className, ...props }: TextProps<E>,
     ref: React.Ref<TextDomMap[E]>
   ) => {
-    const Component = (as ?? 'span') as React.ElementType
-    const { global } = useNSUI()
+    const { global, components } = useNSUI()
+    const Component = as ?? (components.text.typeElement as React.ElementType)
 
     return (
       <Component {...props} ref={ref} className={clsx(`${global.prefixCls}-text`, className)}>

@@ -19,6 +19,7 @@ type OrderedMarker =
   | 'upper-roman'
 
 type MarkerByElement<E extends ListElement> = E extends 'ol' ? OrderedMarker : UnorderedMarker
+
 type Direction = 'vertical' | 'horizontal'
 
 export type ListProps<E extends ListElement = 'ol'> = {
@@ -34,26 +35,22 @@ export const List = forwardRef(
     ref: React.Ref<ListDomMap[E]>
   ) => {
     const { global, components } = useNSUI()
+    const directionFinal = direction ?? components.list.direction
+    const listElement = as ?? components.list.typeElement
+    const Component = (directionFinal === 'horizontal' ? 'ol' : listElement) as React.ElementType
 
-    const dir = direction ?? components.list.direction ?? 'vertical'
-    const Component = (dir === 'horizontal' ? 'ol' : (as ?? 'ol')) as React.ElementType
-
-    const defaultMarker =
-      dir === 'horizontal'
+    const Marker =
+      directionFinal === 'horizontal'
         ? 'none'
-        : as === 'ol'
-          ? (components.list.olMarker ?? 'decimal')
-          : (components.list.ulMarker ?? 'disc')
-
-    const Marker = dir === 'horizontal' ? 'none' : (marker ?? defaultMarker)
+        : (marker ?? (listElement === 'ol' ? components.list.olMarker : components.list.ulMarker))
 
     return (
       <Component
         {...props}
         ref={ref}
         className={clsx(
-          `${global.prefixCls}-list ${global.prefixCls}-list-${dir} ${
-            dir !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''
+          `${global.prefixCls}-list ${global.prefixCls}-list-${directionFinal} ${
+            directionFinal !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''
           }`,
           className
         )}

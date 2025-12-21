@@ -22,11 +22,16 @@ export type ButtonConfig = {
   isRippleDisabled?: boolean
 }
 
+export type HeadingConfig = {
+  typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+}
+
 export type ListConfig = {
   /** Defines the direction of the list.
    *
    * Defaults to `vertical`. */
   direction?: 'horizontal' | 'vertical'
+  typeElement?: 'ol' | 'ul'
   olMarker?:
     | 'decimal'
     | 'decimal-leading-zero'
@@ -42,10 +47,16 @@ export type SpinnerConfig = {
   animationDuration?: number
 }
 
+export type TextConfig = {
+  typeElement?: 'span' | 'p' | 'label' | 'small'
+}
+
 export type ComponentsConfig = {
   button?: ButtonConfig
+  heading?: HeadingConfig
   list?: ListConfig
   spinner?: SpinnerConfig
+  text?: TextConfig
 }
 
 export type ComponentsConfigRequired = Required<ComponentsConfig>

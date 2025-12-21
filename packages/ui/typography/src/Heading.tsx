@@ -23,8 +23,8 @@ export const Heading = forwardRef(
     { as, children, className, ...props }: HeadingProps<E>,
     ref: React.Ref<HeadingDomMap[E]>
   ) => {
-    const Component = (as ?? 'h1') as React.ElementType
-    const { global } = useNSUI()
+    const { global, components } = useNSUI()
+    const Component = as ?? (components.heading.typeElement as React.ElementType)
 
     return (
       <Component {...props} ref={ref} className={clsx(`${global.prefixCls}-heading`, className)}>
