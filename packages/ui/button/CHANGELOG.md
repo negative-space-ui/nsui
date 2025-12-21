@@ -1,5 +1,15 @@
 # @negative-space/button
 
+## 2.0.0
+
+### Patch Changes
+
+- 27dfba8: Fix priority handling for component props
+- Updated dependencies [c47aaaa]
+- Updated dependencies [42d5418]
+  - @negative-space/provider@1.1.0
+  - @negative-space/spinner@2.0.0
+
 ## 1.0.6
 
 ### Patch Changes

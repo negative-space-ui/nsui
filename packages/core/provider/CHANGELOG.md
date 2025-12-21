@@ -1,5 +1,20 @@
 # @negative-space/provider
 
+## 1.1.0
+
+### Minor Changes
+
+- c47aaaa: Add marker, direction and style props to List component
+- 42d5418: Add default typeElement values for Heading, List, and Text components
+
+### Patch Changes
+
+- Updated dependencies [c47aaaa]
+- Updated dependencies [64e5ac0]
+- Updated dependencies [42d5418]
+  - @negative-space/style@1.2.0
+  - @negative-space/types@1.1.0
+
 ## 1.0.5
 
 ### Patch Changes

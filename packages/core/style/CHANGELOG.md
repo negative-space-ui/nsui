@@ -1,5 +1,20 @@
 # @negative-space/style
 
+## 1.2.0
+
+### Minor Changes
+
+- c47aaaa: Add marker, direction and style props to List component
+
+### Patch Changes
+
+- 64e5ac0: Execute style and keyframe injections directly without returning objects
+- Updated dependencies [1ad83ea]
+- Updated dependencies [c47aaaa]
+- Updated dependencies [42d5418]
+  - @negative-space/inject-css@1.2.0
+  - @negative-space/types@1.1.0
+
 ## 1.1.3
 
 ### Patch Changes

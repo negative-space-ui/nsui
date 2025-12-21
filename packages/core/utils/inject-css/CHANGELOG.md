@@ -1,5 +1,11 @@
 # @negative-space/inject-css
 
+## 1.2.0
+
+### Minor Changes
+
+- 1ad83ea: Unify injectStyle to accept raw CSS selectors instead of separate class and selector handling
+
 ## 1.1.0
 
 ### Minor Changes

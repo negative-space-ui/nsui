@@ -1,5 +1,20 @@
 # @negative-space/typography
 
+## 2.0.0
+
+### Major Changes
+
+- bec3b0e: Refactor Typography kit: remove List (breaking), export Text and Heading
+
+### Patch Changes
+
+- Updated dependencies [bec3b0e]
+- Updated dependencies [27dfba8]
+- Updated dependencies [bec3b0e]
+- Updated dependencies [42d5418]
+  - @negative-space/text@1.0.0
+  - @negative-space/heading@1.0.0
+
 ## 1.1.4
 
 ### Patch Changes
