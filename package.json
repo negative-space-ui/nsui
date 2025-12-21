@@ -11,14 +11,14 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "build:fast": "turbo run build:fast",
-    "clean": "turbo run clean",
+    "clean:pkgs": "turbo run clean",
     "clean:node-modules": "ts-node ./scripts/clean-node-modules.js",
-    "create:pkg": "ts-node ./scripts/create-package.js",
+    "create:pkg": "plop && pnpm install",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "plop": "ts-node ./scripts/warn-create-package.js",
     "prepare": "husky install",
-    "test": "turbo run test",
+    "prettier": "prettier --write .",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
@@ -34,6 +34,7 @@
     "glob": "^13.0.0",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
+    "plop": "^4.0.4",
     "prettier": "^3.7.4",
     "react": "^19.2.1",
     "rimraf": "^6.1.2",

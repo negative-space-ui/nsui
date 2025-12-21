@@ -7,5 +7,9 @@
   "files.insertFinalNewline": true,
   "javascript.format.enable": false,
   "typescript.format.enable": false,
-  "tailwindCSS.validate": false
+  "tailwindCSS.validate": false,
+
+  "material-icon-theme.folders.associations": {
+    "plop-templates": "template"
+  }
 }
