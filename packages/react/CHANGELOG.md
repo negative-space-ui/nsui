@@ -1,5 +1,13 @@
 # negative-space
 
+## 1.0.10
+
+### Patch Changes
+
+- 1a64e46: Updated React exports to provide kits instead of individual components
+- Updated dependencies [1a64e46]
+  - @negative-space/data-display@1.0.1
+
 ## 1.0.9
 
 ### Patch Changes
