@@ -4,20 +4,14 @@ import tseslint from 'typescript-eslint'
 import pluginReact from 'eslint-plugin-react'
 import { defineConfig } from 'eslint/config'
 
-export default defineConfig([
-  {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: globals.node }
+export default defineConfig({
+  plugins: { js },
+  extends: ['js/recommended', tseslint.configs.recommended, pluginReact.configs.flat.recommended],
+  languageOptions: { globals: globals.node },
+  settings: {
+    react: { version: 'detect' }
   },
-  tseslint.configs.recommended,
-  {
-    ...pluginReact.configs.flat.recommended,
-    settings: {
-      react: {
-        version: 'detect'
-      }
-    }
+  rules: {
+    '@typescript-eslint/no-require-imports': 'off'
   }
-])
+})

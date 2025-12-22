@@ -1,29 +1,28 @@
 {
-  "name": "@negative-space/spinner",
-  "version": "2.0.0",
+  "name": "@negative-space/heading",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "React component for displaying loading spinners",
+  "description": "Heading component library",
   "keywords": [
     "components",
+    "heading",
+    "typography",
     "nsui",
-    "react",
-    "spinner",
     "ui"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "module": "",
   "types": "",
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui.git",
-    "directory": "packages/ui/spinner"
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/heading"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -33,8 +32,8 @@
     "clean": "rimraf dist .turbo",
     "dev": "pnpm build:fast --watch",
     "lint": "eslint . --ext ts,tsx",
-    "prepack": "clean-package",
     "postpack": "clean-package restore",
+    "prepack": "clean-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -48,5 +47,5 @@
     "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }
