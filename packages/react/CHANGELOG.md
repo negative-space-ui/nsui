@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.0.0
+
+### Major Changes
+
+- b15dbc5: UI libs now exported under kit folders
+
 ## 1.0.10
 
 ### Patch Changes
