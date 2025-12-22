@@ -1,9 +1,14 @@
 import { spinKeyframes } from './effects/spin'
 import { rippleKeyframe, rippleStyle } from './effects/ripple'
 
-import { buttonStyles } from './components/button'
-import { spinnerStyles } from './components/spinner'
-import { typographyStyles } from './components/typography'
+import { buttonStyles } from './ui/action/button'
+
+import { listStyles } from './ui/data-display/list'
+
+import { spinnerStyles } from './ui/feedback/spinner'
+
+import { headingStyles } from './ui/typography/heading'
+import { textStyles } from './ui/typography/text'
 
 import { GlobalConfig, ComponentsConfigRequired } from '@negative-space/types'
 
@@ -14,6 +19,11 @@ export const styles = (global: GlobalConfig, components: ComponentsConfigRequire
   rippleStyle(global)
 
   buttonStyles(global)
+
+  listStyles(global)
+
   spinnerStyles(global, components.spinner)
-  typographyStyles(global)
+
+  headingStyles(global)
+  textStyles(global)
 }
