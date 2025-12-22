@@ -15,7 +15,7 @@ const orderedMarkers = [
 type ListUnionProps = ListProps<'ul'> | ListProps<'ol'>
 
 const meta: Meta<ListUnionProps> = {
-  title: 'Typography/List',
+  title: 'Data display/List',
   component: List,
   tags: ['autodocs'],
   args: {

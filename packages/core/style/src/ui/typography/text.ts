@@ -1,4 +1,4 @@
-import { injectStyle } from '@negative-space/core/utils/inject-css'
+import { injectStyle } from '@negative-space/inject-css'
 import { GlobalConfig } from '@negative-space/types'
 
 export const textStyles = (global: GlobalConfig) => {

@@ -1,4 +1,4 @@
-import { injectKeyframes } from '@negative-space/core/utils/inject-css'
+import { injectKeyframes } from '@negative-space/inject-css'
 import type { GlobalConfig } from '@negative-space/types'
 
 export const spinKeyframes = (global: GlobalConfig) => {

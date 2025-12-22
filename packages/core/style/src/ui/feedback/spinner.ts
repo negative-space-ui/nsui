@@ -1,4 +1,4 @@
-import { injectStyle } from '@negative-space/core/utils/inject-css'
+import { injectStyle } from '@negative-space/inject-css'
 import { GlobalConfig, SpinnerConfig } from '@negative-space/types'
 
 export const spinnerStyles = (global: GlobalConfig, spinner: SpinnerConfig) =>

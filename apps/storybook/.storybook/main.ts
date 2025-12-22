@@ -9,7 +9,7 @@ function getAbsolutePath(value: string): string {
 }
 
 const config: StorybookConfig = {
-  stories: ['../../../packages/ui/*/__stories__/*.stories.tsx'],
+  stories: ['../../../packages/ui/*/*/__stories__/*.stories.tsx'],
   addons: [
     getAbsolutePath('@chromatic-com/storybook'),
     getAbsolutePath('@storybook/addon-vitest'),
@@ -22,7 +22,7 @@ const config: StorybookConfig = {
       ...configVite.resolve,
       alias: {
         ...configVite.resolve?.alias,
-        '@negative-space/*': resolve(__dirname, '../../../packages/ui/*/src')
+        '@negative-space/*': resolve(__dirname, '../../../packages/*/*/src')
       }
     }
     return configVite
