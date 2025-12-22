@@ -185,7 +185,7 @@ importers:
     dependencies:
       '@negative-space/button':
         specifier: workspace:*
-        version: link:../../ui/button
+        version: link:../../ui/action/button
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -195,7 +195,7 @@ importers:
     dependencies:
       '@negative-space/list':
         specifier: workspace:*
-        version: link:../../ui/list
+        version: link:../../ui/data-entry/list
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -205,7 +205,7 @@ importers:
     dependencies:
       '@negative-space/spinner':
         specifier: workspace:*
-        version: link:../../ui/spinner
+        version: link:../../ui/feedback/spinner
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -215,10 +215,10 @@ importers:
     dependencies:
       '@negative-space/heading':
         specifier: workspace:*
-        version: link:../../ui/heading
+        version: link:../../ui/typography/heading
       '@negative-space/text':
         specifier: workspace:*
-        version: link:../../ui/text
+        version: link:../../ui/typography/text
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -246,17 +246,17 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/button:
+  packages/ui/action/button:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
-        version: link:../../core/provider
+        version: link:../../../core/provider
       '@negative-space/ripple':
         specifier: workspace:*
-        version: link:../../core/hooks/ripple
+        version: link:../../../core/hooks/ripple
       '@negative-space/spinner':
         specifier: workspace:*
-        version: link:../spinner
+        version: link:../../feedback/spinner
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -271,11 +271,11 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/heading:
+  packages/ui/data-entry/list:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
-        version: link:../../core/provider
+        version: link:../../../core/provider
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -290,11 +290,11 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/list:
+  packages/ui/feedback/spinner:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
-        version: link:../../core/provider
+        version: link:../../../core/provider
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -309,11 +309,11 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/spinner:
+  packages/ui/typography/heading:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
-        version: link:../../core/provider
+        version: link:../../../core/provider
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -328,11 +328,11 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/text:
+  packages/ui/typography/text:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
-        version: link:../../core/provider
+        version: link:../../../core/provider
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
