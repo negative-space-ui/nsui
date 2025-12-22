@@ -3,8 +3,9 @@ const path = require('path')
 
 module.exports = function (plop) {
   plop.setHelper('capitalize', (text) => text.charAt(0).toUpperCase() + text.slice(1))
-  plop.setHelper('depth', (layer) => {
-    const parts = layer.split('/').length + 2
+  plop.setHelper('depth', (answers) => {
+    const fullPath = [answers.layer, answers.subLayer, answers.uiSubLayer].filter(Boolean).join('/')
+    const parts = fullPath.split('/').length + 2
     return '../'.repeat(parts)
   })
 
