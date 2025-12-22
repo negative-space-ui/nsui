@@ -1,5 +1,1 @@
-export * from '@negative-space/action'
-export * from '@negative-space/data-display'
-export * from '@negative-space/feedback'
 export * from '@negative-space/provider'
-export * from '@negative-space/typography'
