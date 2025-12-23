@@ -1,5 +1,12 @@
 # @negative-space/action
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [7a606af]
+  - @negative-space/button@3.0.0
+
 ## 1.0.0
 
 ### Major Changes

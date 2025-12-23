@@ -1,5 +1,11 @@
 # @negative-space/data-display
 
+## 1.0.2
+
+### Patch Changes
+
+- @negative-space/list@2.0.0
+
 ## 1.0.1
 
 ### Patch Changes

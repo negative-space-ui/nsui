@@ -1,5 +1,23 @@
 # @negative-space/provider
 
+## 1.2.0
+
+### Minor Changes
+
+- 4655bec: Flex component added
+- 34b97d8: List default markers updated to `none`
+- 4655bec: Ol/Ul default markers updated to 'none'
+
+### Patch Changes
+
+- Updated dependencies [0c7486e]
+- Updated dependencies [4655bec]
+- Updated dependencies [34b97d8]
+- Updated dependencies [7a606af]
+- Updated dependencies [4655bec]
+  - @negative-space/style@1.3.0
+  - @negative-space/types@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
