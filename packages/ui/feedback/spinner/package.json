@@ -38,10 +38,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@negative-space/provider": "workspace:*",
     "clsx": "^2.1.1"
   },
   "peerDependencies": {
-    "@negative-space/provider": "workspace:*",
     "react": "^19.2.1"
   },
   "devDependencies": {
