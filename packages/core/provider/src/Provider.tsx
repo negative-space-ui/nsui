@@ -27,8 +27,8 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
       list: {
         direction: components?.list?.direction ?? 'vertical',
         typeElement: components?.list?.typeElement ?? 'ol',
-        olMarker: components?.list?.olMarker ?? 'decimal',
-        ulMarker: components?.list?.ulMarker ?? 'disc'
+        olMarker: components?.list?.olMarker ?? 'none',
+        ulMarker: components?.list?.ulMarker ?? 'none'
       },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2

@@ -40,7 +40,7 @@ export type ListConfig = {
   typeElement?: 'ol' | 'ul'
   /** Defines the marker style of the list.
    *
-   * Defaults to `decimal`. */
+   * Defaults to `none`. */
   olMarker?:
     | 'decimal'
     | 'decimal-leading-zero'
@@ -51,7 +51,7 @@ export type ListConfig = {
     | 'none'
   /** Defines the marker style of the list.
    *
-   * Defaults to `disc`. */
+   * Defaults to `none`. */
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
