@@ -261,6 +261,9 @@ importers:
 
   packages/ui/action/button:
     dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../../../core/provider

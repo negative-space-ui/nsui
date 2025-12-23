@@ -1,6 +1,7 @@
 import React from 'react'
 import { clsx } from 'clsx'
 import { useNSUI } from '@negative-space/provider'
+import { Flex } from '@negative-space/flex'
 import { useRipple } from '@negative-space/ripple'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
 
@@ -10,7 +11,12 @@ export interface BaseButtonProps extends Omit<
 > {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
-  classNames?: { btn?: string; content?: string; prefix?: string; suffix?: string }
+  classNames?: {
+    btn?: string
+    content?: string
+    prefix?: string
+    suffix?: string
+  }
   styles?: {
     btn?: React.CSSProperties
     content?: React.CSSProperties
@@ -46,92 +52,69 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const { global, components } = useNSUI()
-    const isRippleDisabledFinal = isRippleDisabled ?? components.button.isRippleDisabled
+    const rippleDisabled = isRippleDisabled ?? components.button.isRippleDisabled
 
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
     const isDisabled = disabled || isLoading
 
+    const resolvedSpinner = spinner ?? <Spinner {...spinnerProps} />
+
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-      if (!isRippleDisabledFinal && !isDisabled) createRipple(e)
+      if (isDisabled) return
+      if (!rippleDisabled) createRipple(e)
       onClick?.(e)
     }
 
-    const finalSpinnerProps = !spinner ? (spinnerProps ?? {}) : {}
-    const renderSpinner = () => spinner ?? <Spinner {...finalSpinnerProps} />
-
-    const sections = [
-      {
-        node: prefix,
-        showSpinner: spinnerPosition === 'prefix',
-        className: classNames?.prefix,
-        style: styles?.prefix,
-        justify: 'flex-start'
-      },
-      {
-        node: children,
-        showSpinner: spinnerPosition === 'content',
-        className: classNames?.content,
-        style: styles?.content,
-        justify: 'center'
-      },
-      {
-        node: suffix,
-        showSpinner: spinnerPosition === 'suffix',
-        className: classNames?.suffix,
-        style: styles?.suffix,
-        justify: 'flex-end'
-      }
-    ]
-
-    const visibleCount = sections.filter((s) => s.node || (isLoading && s.showSpinner)).length
-    const sectionMaxWidth = `calc((100% - 1rem) / ${visibleCount})`
+    const showPrefix = prefix || (isLoading && spinnerPosition === 'prefix')
+    const showContent = children || (isLoading && spinnerPosition === 'content')
+    const showSuffix = suffix || (isLoading && spinnerPosition === 'suffix')
 
     return (
-      <button
+      <Flex
         {...props}
         ref={ref}
+        as="button"
+        alignItems="center"
+        justify="center"
         disabled={isDisabled}
-        role="button"
-        aria-disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
         className={clsx(`${global.prefixCls}-btn`, classNames?.btn)}
-        style={{ ...styles?.btn }}
+        style={styles?.btn}
       >
-        {isLoading && spinnerPosition === 'full' ? (
-          <span
-            className={clsx(`${global.prefixCls}-btn-content`, classNames?.content)}
-            style={{ justifyContent: 'center', flex: 1, ...styles?.content }}
-          >
-            {renderSpinner()}
-          </span>
+        {spinnerPosition === 'full' && isLoading ? (
+          resolvedSpinner
         ) : (
-          sections.map((s, idx) =>
-            s.node || (isLoading && s.showSpinner) ? (
+          <>
+            {showPrefix && (
               <span
-                key={idx}
-                className={clsx(
-                  idx === 0
-                    ? `${global.prefixCls}-btn-left`
-                    : idx === 1
-                      ? `${global.prefixCls}-btn-content`
-                      : `${global.prefixCls}-btn-right`,
-                  s.className
-                )}
-                style={{
-                  justifyContent: s.justify,
-                  maxWidth: sectionMaxWidth,
-                  ...s.style
-                }}
+                className={clsx(`${global.prefixCls}-btn-prefix`, classNames?.prefix)}
+                style={styles?.prefix}
               >
-                {isLoading && s.showSpinner ? renderSpinner() : s.node}
+                {spinnerPosition === 'prefix' && isLoading ? resolvedSpinner : prefix}
               </span>
-            ) : (
-              <span key={idx} style={{ flex: '1 1 0' }} />
-            )
-          )
+            )}
+
+            {showContent && (
+              <span
+                className={clsx(`${global.prefixCls}-btn-content`, classNames?.content)}
+                style={styles?.content}
+              >
+                {spinnerPosition === 'content' && isLoading ? resolvedSpinner : children}
+              </span>
+            )}
+
+            {showSuffix && (
+              <span
+                className={clsx(`${global.prefixCls}-btn-suffix`, classNames?.suffix)}
+                style={styles?.suffix}
+              >
+                {spinnerPosition === 'suffix' && isLoading ? resolvedSpinner : suffix}
+              </span>
+            )}
+          </>
         )}
-      </button>
+      </Flex>
     )
   }
 )

@@ -39,6 +39,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@negative-space/flex": "workspace:*",
     "@negative-space/ripple": "workspace:*",
     "@negative-space/spinner": "workspace:*",
     "clsx": "^2.1.1"
