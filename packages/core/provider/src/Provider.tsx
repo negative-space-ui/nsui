@@ -21,6 +21,13 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
       button: {
         isRippleDisabled: components?.button?.isRippleDisabled ?? false
       },
+      flex: {
+        typeElement: components?.flex?.typeElement ?? 'div',
+        direction: components?.flex?.direction ?? 'row',
+        wrap: components?.flex?.wrap ?? 'nowrap',
+        alignItems: components?.flex?.alignItems ?? 'start',
+        justify: components?.flex?.justify ?? 'start'
+      },
       heading: {
         typeElement: components?.heading?.typeElement ?? 'h1'
       },

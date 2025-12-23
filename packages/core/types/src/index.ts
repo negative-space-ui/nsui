@@ -22,6 +22,47 @@ export type ButtonConfig = {
   isRippleDisabled?: boolean
 }
 
+export type FlexConfig = {
+  /** Defines the type of the flex element.
+   *
+   * Defaults to `div`. */
+  typeElement?:
+    | 'div'
+    | 'aside'
+    | 'header'
+    | 'footer'
+    | 'main'
+    | 'section'
+    | 'nav'
+    | 'article'
+    | 'label'
+    | 'fieldset'
+    | 'ol'
+    | 'ul'
+    | 'li'
+    | 'dl'
+    | 'dt'
+    | 'dd'
+    | 'button'
+    | 'form'
+  /** Defines the direction of the flex container.
+   *
+   * Defaults to `row`. */
+  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+  /** Defines the wrapping behavior of the flex container.
+   *
+   * Defaults to `nowrap`. */
+  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+  /** Defines the alignment of the flex items.
+   *
+   * Defaults to `start`. */
+  alignItems?: 'start' | 'center' | 'end' | 'stretch'
+  /** Defines the alignment of the flex items.
+   *
+   * Defaults to `start`. */
+  justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
+}
+
 export type HeadingConfig = {
   /** Defines the type of the heading element.
    *
@@ -71,6 +112,7 @@ export type TextConfig = {
 
 export type ComponentsConfig = {
   button?: ButtonConfig
+  flex?: FlexConfig
   heading?: HeadingConfig
   list?: ListConfig
   spinner?: SpinnerConfig

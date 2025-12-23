@@ -1,14 +1,14 @@
 {
-  "name": "negative-space",
-  "version": "2.0.0",
+  "name": "@negative-space/layout",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Main React package exporting all NSUI components for easy use in your app",
+  "description": "A layout kit for NSUI",
   "keywords": [
     "components",
-    "design-system",
-    "react",
+    "layout",
+    "kit",
     "nsui",
     "ui"
   ],
@@ -19,11 +19,10 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui.git.git",
-    "directory": "packages/ui/button"
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/kits/layout"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -38,15 +37,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/action": "workspace:*",
-    "@negative-space/data-display": "workspace:*",
-    "@negative-space/feedback": "workspace:*",
-    "@negative-space/layout": "workspace:*",
-    "@negative-space/provider": "workspace:*",
-    "@negative-space/typography": "workspace:*"
+    "@negative-space/flex": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../clean-package.config.json"
+  "clean-package": "../../../clean-package.config.json"
 }
