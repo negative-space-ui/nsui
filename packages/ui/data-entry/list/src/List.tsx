@@ -1,5 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react'
 import clsx from 'clsx'
+import { Flex } from '@negative-space/flex'
 import { useNSUI } from '@negative-space/provider'
 
 type ListElement = 'ol' | 'ul'
@@ -37,7 +38,7 @@ export const List = forwardRef(
     const { global, components } = useNSUI()
     const directionFinal = direction ?? components.list.direction
     const listElement = as ?? components.list.typeElement
-    const Component = (directionFinal === 'horizontal' ? 'ol' : listElement) as React.ElementType
+    const Component = directionFinal === 'horizontal' ? 'ul' : listElement
 
     const Marker =
       directionFinal === 'horizontal'
@@ -45,18 +46,19 @@ export const List = forwardRef(
         : (marker ?? (listElement === 'ol' ? components.list.olMarker : components.list.ulMarker))
 
     return (
-      <Component
+      <Flex
         {...props}
         ref={ref}
+        as={Component}
+        direction={directionFinal === 'horizontal' ? 'row' : 'column'}
         className={clsx(
-          `${global.prefixCls}-list ${global.prefixCls}-list-${directionFinal} ${
-            directionFinal !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''
-          }`,
+          `${global.prefixCls}-list
+          ${directionFinal !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''}`,
           className
         )}
       >
         {children}
-      </Component>
+      </Flex>
     )
   }
 )

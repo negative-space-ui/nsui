@@ -14,24 +14,12 @@ export const listStyles = (global: GlobalConfig) => {
     transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
   })
 
-  injectStyle(`.${global.prefixCls}-list-vertical`, {
-    paddingLeft: '1rem'
-  })
-
-  injectStyle(`.${global.prefixCls}-list-horizontal`, {
-    display: 'flex',
-    gap: '0.5rem'
-  })
-
   const unorderedMarkers = ['disc', 'circle', 'square', 'none']
   unorderedMarkers.forEach((marker) => {
-    injectStyle(
-      `ul.${global.prefixCls}-list.${global.prefixCls}-list-vertical.${global.prefixCls}-marker-${marker}`,
-      {
-        listStyleType: marker === 'none' ? 'none' : marker,
-        paddingLeft: marker === 'none' ? 0 : '1rem'
-      }
-    )
+    injectStyle(`ul.${global.prefixCls}-list.${global.prefixCls}-marker-${marker}`, {
+      listStyleType: marker === 'none' ? 'none' : marker,
+      paddingLeft: marker === 'none' ? 0 : '1rem'
+    })
   })
 
   const orderedMarkers = [
@@ -45,12 +33,9 @@ export const listStyles = (global: GlobalConfig) => {
   ] as const
 
   orderedMarkers.forEach((marker) => {
-    injectStyle(
-      `ol.${global.prefixCls}-list.${global.prefixCls}-list-vertical.${global.prefixCls}-marker-${marker}`,
-      {
-        listStyleType: marker === 'none' ? 'none' : marker,
-        paddingLeft: marker === 'none' ? 0 : '1rem'
-      }
-    )
+    injectStyle(`ol.${global.prefixCls}-list.${global.prefixCls}-marker-${marker}`, {
+      listStyleType: marker === 'none' ? 'none' : marker,
+      paddingLeft: marker === 'none' ? 0 : '1rem'
+    })
   })
 }

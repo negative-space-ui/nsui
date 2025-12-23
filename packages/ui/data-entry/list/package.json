@@ -37,6 +37,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@negative-space/flex": "workspace:*",
     "@negative-space/provider": "workspace:*",
     "clsx": "^2.1.1"
   },
