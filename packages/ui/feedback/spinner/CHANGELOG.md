@@ -11,6 +11,10 @@
 
 ## 2.0.0
 
+### Major Changes
+
+- c47aaaa: Major bump triggered by unexpected peer change, no actual API changes
+
 ### Patch Changes
 
 - Updated dependencies [c47aaaa]

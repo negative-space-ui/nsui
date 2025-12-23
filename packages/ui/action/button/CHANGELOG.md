@@ -18,6 +18,10 @@
 
 ## 2.0.0
 
+### Major Changes
+
+- 27dfba8: Major bump triggered by unexpected peer change, no actual API changes
+
 ### Patch Changes
 
 - 27dfba8: Fix priority handling for component props
