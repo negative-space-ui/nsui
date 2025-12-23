@@ -1,5 +1,20 @@
 # @negative-space/style
 
+## 1.3.0
+
+### Minor Changes
+
+- 4655bec: Flex component added
+- 7a606af: Button component now uses Flex
+
+### Patch Changes
+
+- 0c7486e: Set Spinner display to block
+- Updated dependencies [4655bec]
+- Updated dependencies [34b97d8]
+- Updated dependencies [4655bec]
+  - @negative-space/types@1.2.0
+
 ## 1.2.0
 
 ### Minor Changes
