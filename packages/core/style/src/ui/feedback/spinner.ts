@@ -3,8 +3,7 @@ import { GlobalConfig, SpinnerConfig } from '@negative-space/types'
 
 export const spinnerStyles = (global: GlobalConfig, spinner: SpinnerConfig) =>
   injectStyle(`.${global.prefixCls}-spinner`, {
-    display: 'inline-block',
-    borderRadius: '50%',
+    display: 'block',
     transitionProperty: 'border, scale',
     transitionTimingFunction: 'ease-in-out',
     transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`,
