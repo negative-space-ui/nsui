@@ -61,7 +61,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return
-      if (!rippleDisabled) createRipple(e)
+      const isKeyboard = e.detail === 0
+      if (!rippleDisabled) createRipple(e, { centered: isKeyboard })
+
       onClick?.(e)
     }
 
