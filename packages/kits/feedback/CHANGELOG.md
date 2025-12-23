@@ -1,5 +1,11 @@
 # @negative-space/feedback
 
+## 1.0.1
+
+### Patch Changes
+
+- @negative-space/spinner@2.0.1
+
 ## 1.0.0
 
 ### Major Changes

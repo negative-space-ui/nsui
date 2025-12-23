@@ -1,5 +1,21 @@
 # @negative-space/button
 
+## 2.1.0
+
+### Minor Changes
+
+- 7a606af: Button component now uses Flex
+
+### Patch Changes
+
+- Updated dependencies [4655bec]
+- Updated dependencies [4655bec]
+- Updated dependencies [34b97d8]
+- Updated dependencies [4655bec]
+  - @negative-space/flex@1.0.0
+  - @negative-space/provider@1.2.0
+  - @negative-space/spinner@2.0.1
+
 ## 2.0.0
 
 ### Patch Changes
