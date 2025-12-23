@@ -8,6 +8,7 @@ import { listStyles } from './ui/data-display/list'
 import { spinnerStyles } from './ui/feedback/spinner'
 
 import { flexStyles } from './ui/layout/flex'
+import { gridStyles } from './ui/layout/grid'
 
 import { headingStyles } from './ui/typography/heading'
 import { textStyles } from './ui/typography/text'
@@ -27,6 +28,7 @@ export const styles = (global: GlobalConfig, components: ComponentsConfigRequire
   spinnerStyles(global, components.spinner)
 
   flexStyles(global)
+  gridStyles(global)
 
   headingStyles(global)
   textStyles(global)

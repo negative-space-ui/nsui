@@ -28,6 +28,13 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
         alignItems: components?.flex?.alignItems ?? 'start',
         justify: components?.flex?.justify ?? 'start'
       },
+      grid: {
+        typeElement: components?.grid?.typeElement ?? 'div',
+        alignItems: components?.grid?.alignItems ?? 'start',
+        justifyItems: components?.grid?.justifyItems ?? 'start',
+        alignContent: components?.grid?.alignContent ?? 'start',
+        justifyContent: components?.grid?.justifyContent ?? 'start'
+      },
       heading: {
         typeElement: components?.heading?.typeElement ?? 'h1'
       },

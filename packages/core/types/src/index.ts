@@ -63,6 +63,46 @@ export type FlexConfig = {
   justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
 }
 
+export type GridConfig = {
+  /** Defines the type of the grid element.
+   *
+   * Defaults to `div`. */
+  typeElement?:
+    | 'div'
+    | 'aside'
+    | 'header'
+    | 'footer'
+    | 'main'
+    | 'section'
+    | 'nav'
+    | 'article'
+    | 'label'
+    | 'fieldset'
+    | 'ol'
+    | 'ul'
+    | 'li'
+    | 'dl'
+    | 'dt'
+    | 'dd'
+    | 'form'
+  /** Defines the alignment of the grid items.
+   *
+   * Defaults to `start`. */
+  alignItems?: 'start' | 'center' | 'end' | 'stretch'
+  /** Defines the alignment of the grid items.
+   *
+   * Defaults to `start`. */
+  justifyItems?: 'start' | 'center' | 'end' | 'stretch'
+  /** Defines the alignment of the grid content.
+   *
+   * Defaults to `start`. */
+  alignContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
+  /** Defines the alignment of the grid content.
+   *
+   * Defaults to `start`. */
+  justifyContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
+}
+
 export type HeadingConfig = {
   /** Defines the type of the heading element.
    *
@@ -113,6 +153,7 @@ export type TextConfig = {
 export type ComponentsConfig = {
   button?: ButtonConfig
   flex?: FlexConfig
+  grid?: GridConfig
   heading?: HeadingConfig
   list?: ListConfig
   spinner?: SpinnerConfig

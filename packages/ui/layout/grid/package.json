@@ -1,14 +1,14 @@
 {
-  "name": "@negative-space/layout",
-  "version": "1.0.0",
+  "name": "@negative-space/grid",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "A layout kit for NSUI",
+  "description": "A flexible grid layout component for React applications",
   "keywords": [
     "components",
+    "grid",
     "layout",
-    "kit",
     "nsui",
     "ui"
   ],
@@ -22,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/kits/layout"
+    "directory": "packages/ui/grid"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -37,11 +37,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/grid": "workspace:*"
+    "@negative-space/provider": "workspace:*",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1"
   },
   "devDependencies": {
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }
