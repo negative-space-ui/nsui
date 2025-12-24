@@ -5,6 +5,7 @@ import { buttonStyles } from './ui/action/button'
 
 import { listStyles } from './ui/data-display/list'
 
+import { checkboxStyle } from './ui/data-entry/checkbox'
 import { radioStyle } from './ui/data-entry/radio'
 
 import { spinnerStyles } from './ui/feedback/spinner'
@@ -29,6 +30,7 @@ export const styles = (global: GlobalConfig, components: ComponentsConfigRequire
 
   listStyles(global)
 
+  checkboxStyle(global)
   radioStyle(global, components.radio)
 
   spinnerStyles(global, components.spinner)

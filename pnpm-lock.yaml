@@ -203,12 +203,12 @@ importers:
 
   packages/kits/data-entry:
     dependencies:
+      '@negative-space/checkbox':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/checkbox
       '@negative-space/radio':
         specifier: workspace:*
         version: link:../../ui/data-entry/radio
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -320,6 +320,28 @@ importers:
         version: 5.9.3
 
   packages/ui/data-display/list:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/provider':
+        specifier: workspace:*
+        version: link:../../../core/provider
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^19.2.1
+        version: 19.2.1
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/checkbox:
     dependencies:
       '@negative-space/flex':
         specifier: workspace:*
