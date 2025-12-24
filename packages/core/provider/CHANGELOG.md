@@ -1,5 +1,23 @@
 # @negative-space/provider
 
+## 1.3.0
+
+### Minor Changes
+
+- e89ceb9: Initial release of Link component
+- 40fc14c: Initial release of Radio and RadioGroup components
+- 414edd2: Initial release of Grid component
+
+### Patch Changes
+
+- Updated dependencies [65cce72]
+- Updated dependencies [e89ceb9]
+- Updated dependencies [40fc14c]
+- Updated dependencies [e48e5ea]
+- Updated dependencies [414edd2]
+  - @negative-space/style@1.4.0
+  - @negative-space/types@1.3.0
+
 ## 1.2.0
 
 ### Minor Changes

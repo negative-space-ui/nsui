@@ -1,5 +1,29 @@
 # negative-space
 
+## 2.2.0
+
+### Minor Changes
+
+- e89ceb9: Initial release of Link component
+- 40fc14c: Initial release of Radio and RadioGroup components
+
+### Patch Changes
+
+- Updated dependencies [e89ceb9]
+- Updated dependencies [40fc14c]
+- Updated dependencies [e89ceb9]
+- Updated dependencies [e48e5ea]
+- Updated dependencies [40fc14c]
+- Updated dependencies [414edd2]
+  - @negative-space/provider@1.3.0
+  - @negative-space/nav@1.0.0
+  - @negative-space/data-entry@1.0.0
+  - @negative-space/layout@1.1.0
+  - @negative-space/data-display@1.0.3
+  - @negative-space/action@1.0.2
+  - @negative-space/feedback@1.0.2
+  - @negative-space/typography@2.0.2
+
 ## 2.1.0
 
 ### Minor Changes
