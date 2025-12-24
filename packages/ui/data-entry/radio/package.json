@@ -1,15 +1,14 @@
 {
-  "name": "negative-space",
-  "version": "2.1.0",
-  "private": true,
+  "name": "@negative-space/radio",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Main React package exporting all NSUI components for easy use in your app",
+  "description": "Radio button component",
   "keywords": [
     "components",
-    "design-system",
-    "react",
+    "data entry",
+    "radio",
     "nsui",
     "ui"
   ],
@@ -20,11 +19,10 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui.git.git",
-    "directory": "packages/ui/button"
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/radio"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,17 +37,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/action": "workspace:*",
-    "@negative-space/data-display": "workspace:*",
-    "@negative-space/data-entry": "workspace:*",
-    "@negative-space/feedback": "workspace:*",
-    "@negative-space/layout": "workspace:*",
-    "@negative-space/nav": "workspace:*",
+    "@negative-space/flex": "workspace:*",
     "@negative-space/provider": "workspace:*",
-    "@negative-space/typography": "workspace:*"
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1"
   },
   "devDependencies": {
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }

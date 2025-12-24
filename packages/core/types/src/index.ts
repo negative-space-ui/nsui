@@ -143,6 +143,17 @@ export type ListConfig = {
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
+export type RadioConfig = {
+  /** Defines the color of the radio when selected.
+   *
+   * Defaults to `black`. */
+  accentColor?: string
+  /** Defines the direction of the radio group.
+   *
+   * Defaults to `vertical`. */
+  direction?: 'horizontal' | 'vertical'
+}
+
 export type SpinnerConfig = {
   /** Defines the animation duration of the spinner.
    *
@@ -164,6 +175,7 @@ export type ComponentsConfig = {
   heading?: HeadingConfig
   link?: LinkConfig
   list?: ListConfig
+  radio?: RadioConfig
   spinner?: SpinnerConfig
   text?: TextConfig
 }

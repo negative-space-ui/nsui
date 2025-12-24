@@ -47,6 +47,10 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
         olMarker: components?.list?.olMarker ?? 'none',
         ulMarker: components?.list?.ulMarker ?? 'none'
       },
+      radio: {
+        accentColor: components?.radio?.accentColor ?? 'black',
+        direction: components?.radio?.direction ?? 'vertical'
+      },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2
       },

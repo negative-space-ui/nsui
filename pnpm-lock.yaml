@@ -195,7 +195,20 @@ importers:
     dependencies:
       '@negative-space/list':
         specifier: workspace:*
-        version: link:../../ui/data-entry/list
+        version: link:../../ui/data-display/list
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/kits/data-entry:
+    dependencies:
+      '@negative-space/radio':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/radio
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -255,6 +268,9 @@ importers:
       '@negative-space/data-display':
         specifier: workspace:*
         version: link:../kits/data-display
+      '@negative-space/data-entry':
+        specifier: workspace:*
+        version: link:../kits/data-entry
       '@negative-space/feedback':
         specifier: workspace:*
         version: link:../kits/feedback
@@ -303,7 +319,29 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/data-entry/list:
+  packages/ui/data-display/list:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/provider':
+        specifier: workspace:*
+        version: link:../../../core/provider
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^19.2.1
+        version: 19.2.1
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/radio:
     dependencies:
       '@negative-space/flex':
         specifier: workspace:*
