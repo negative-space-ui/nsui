@@ -55,8 +55,8 @@ export const Grid = forwardRef(
   <E extends GridElement = 'div'>(
     {
       as,
-      columns = '1',
-      rows = 'auto',
+      columns = '2',
+      rows = '1',
       alignItems,
       justifyItems,
       alignContent,

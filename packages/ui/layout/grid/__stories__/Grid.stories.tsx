@@ -58,6 +58,7 @@ export default meta
 
 export const Default: StoryObj<typeof Grid> = {
   args: {
+    className: 'w-md',
     children: (
       <>
         <span>Grid Item 1</span>
