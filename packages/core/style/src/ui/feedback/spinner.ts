@@ -8,5 +8,5 @@ export const spinnerStyles = (global: GlobalConfig, spinner: SpinnerConfig) =>
     transitionProperty: 'border, scale',
     transitionTimingFunction: 'ease-in-out',
     transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`,
-    animation: `${global.prefixCls}-spin ${spinner.animationDuration}s linear infinite`
+    animation: `${global.prefixCls}-spin ${spinner.animationDuration!}s linear infinite`
   })
