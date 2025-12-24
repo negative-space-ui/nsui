@@ -10,6 +10,8 @@ import { spinnerStyles } from './ui/feedback/spinner'
 import { flexStyles } from './ui/layout/flex'
 import { gridStyles } from './ui/layout/grid'
 
+import { linkStyle } from './ui/nav/link'
+
 import { headingStyles } from './ui/typography/heading'
 import { textStyles } from './ui/typography/text'
 
@@ -29,6 +31,8 @@ export const styles = (global: GlobalConfig, components: ComponentsConfigRequire
 
   flexStyles(global)
   gridStyles(global)
+
+  linkStyle(global)
 
   headingStyles(global)
   textStyles(global)

@@ -6,7 +6,7 @@ export const buttonStyles = (global: GlobalConfig) => {
     overflow: 'hidden',
     padding: '0.5rem',
     cursor: 'pointer',
-    '&[disabled]': { cursor: 'not-allowed' },
+    '&[data-disabled="true"]': { cursor: 'not-allowed' },
     transitionProperty: 'background-color, color, scale',
     transitionTimingFunction: 'ease-in-out',
     transitionDuration: `${global.colorTransitionDuration}ms, ${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`

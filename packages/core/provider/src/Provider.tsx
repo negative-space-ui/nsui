@@ -38,6 +38,9 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
       heading: {
         typeElement: components?.heading?.typeElement ?? 'h1'
       },
+      link: {
+        underline: components?.link?.underline ?? false
+      },
       list: {
         direction: components?.list?.direction ?? 'vertical',
         typeElement: components?.list?.typeElement ?? 'ol',

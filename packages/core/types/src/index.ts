@@ -110,6 +110,13 @@ export type HeadingConfig = {
   typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 }
 
+export type LinkConfig = {
+  /** Defines if the link should be underlined.
+   *
+   * Defaults to `false`. */
+  underline?: boolean
+}
+
 export type ListConfig = {
   /** Defines the direction of the list.
    *
@@ -155,6 +162,7 @@ export type ComponentsConfig = {
   flex?: FlexConfig
   grid?: GridConfig
   heading?: HeadingConfig
+  link?: LinkConfig
   list?: ListConfig
   spinner?: SpinnerConfig
   text?: TextConfig

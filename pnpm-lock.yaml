@@ -224,6 +224,16 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/kits/nav:
+    dependencies:
+      '@negative-space/link':
+        specifier: workspace:*
+        version: link:../../ui/nav/link
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/kits/typography:
     dependencies:
       '@negative-space/heading':
@@ -251,6 +261,9 @@ importers:
       '@negative-space/layout':
         specifier: workspace:*
         version: link:../kits/layout
+      '@negative-space/nav':
+        specifier: workspace:*
+        version: link:../kits/nav
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../core/provider
@@ -351,6 +364,25 @@ importers:
         version: 5.9.3
 
   packages/ui/layout/grid:
+    dependencies:
+      '@negative-space/provider':
+        specifier: workspace:*
+        version: link:../../../core/provider
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^19.2.1
+        version: 19.2.1
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/nav/link:
     dependencies:
       '@negative-space/provider':
         specifier: workspace:*
