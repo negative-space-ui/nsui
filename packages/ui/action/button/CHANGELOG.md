@@ -1,5 +1,22 @@
 # @negative-space/button
 
+## 2.2.0
+
+### Minor Changes
+
+- 6df49d0: Button now centers ripple for keyboard, keeps normal for mouse
+
+### Patch Changes
+
+- Updated dependencies [e89ceb9]
+- Updated dependencies [40fc14c]
+- Updated dependencies [6df49d0]
+- Updated dependencies [414edd2]
+  - @negative-space/provider@1.3.0
+  - @negative-space/ripple@1.1.0
+  - @negative-space/spinner@2.0.2
+  - @negative-space/flex@1.0.1
+
 ## 2.1.0
 
 ### Minor Changes
