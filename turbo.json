@@ -10,8 +10,7 @@
       "outputs": []
     },
     "dev": {
-      "cache": false,
-      "inputs": ["!packages/storybook"]
+      "cache": false
     },
     "lint": {
       "outputs": []

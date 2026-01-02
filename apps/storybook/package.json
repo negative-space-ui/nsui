@@ -4,8 +4,8 @@
   "scripts": {
     "build": "storybook build",
     "clean": "rimraf .turbo",
-    "dev": "storybook dev -p 6006",
     "lint": "eslint",
+    "start": "storybook dev -p 6006",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
