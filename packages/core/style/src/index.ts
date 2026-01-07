@@ -1,4 +1,5 @@
 import { spinKeyframes } from './effects/spin'
+import { popKeyframe, popStyle } from './effects/pop'
 import { rippleKeyframe, rippleStyle } from './effects/ripple'
 
 import { buttonStyles } from './ui/action/button'
@@ -18,20 +19,29 @@ import { linkStyle } from './ui/nav/link'
 import { headingStyles } from './ui/typography/heading'
 import { textStyles } from './ui/typography/text'
 
-import { GlobalConfig, ComponentsConfigRequired } from '@negative-space/types'
+import type {
+  AnimationsConfigRequired,
+  ComponentsConfigRequired,
+  GlobalConfigRequired
+} from '@negative-space/types'
 
-export const styles = (global: GlobalConfig, components: ComponentsConfigRequired) => {
+export const styles = (
+  animation: AnimationsConfigRequired,
+  components: ComponentsConfigRequired,
+  global: GlobalConfigRequired
+) => {
   spinKeyframes(global)
+  popKeyframe(global)
+  popStyle(global, animation.popDuration)
   rippleKeyframe(global)
-
-  rippleStyle(global)
+  rippleStyle(global, animation.rippleDuration)
 
   buttonStyles(global)
 
   listStyles(global)
 
   checkboxStyle(global)
-  radioStyle(global, components.radio)
+  radioStyle(global)
 
   spinnerStyles(global, components.spinner)
 
