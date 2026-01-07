@@ -12,43 +12,68 @@ export interface RadioProps extends Omit<
   classNames?: {
     label?: string
     radio?: string
+    inner?: string
   }
   styles?: {
     label?: React.CSSProperties
     radio?: React.CSSProperties
+    inner?: React.CSSProperties
   }
+  isPopDisabled?: boolean
 }
 
-export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
-  ({ classNames, styles, value, children, disabled: disabledProp, ...props }, ref) => {
-    const { global } = useNSUI()
+export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
+  ({ classNames, styles, value, children, disabled, isPopDisabled, ...props }, ref) => {
+    const { global, components } = useNSUI()
+    const { selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
+    const Disabled = disabled ?? groupDisabled
+    const checked = selectedValue === value
+    const IsPopDisabled = isPopDisabled ?? components.radio.isPopDisabled
 
-    const { name, selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
+    const handleClick = () => {
+      if (!Disabled) onChange?.(value)
+    }
 
-    const disabled = disabledProp ?? groupDisabled
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (Disabled) return
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        onChange?.(value)
+      }
+    }
 
     return (
       <Flex
         as="label"
         alignItems="center"
-        disabled={disabled}
-        data-disabled={disabled}
+        justify="start"
+        disabled={Disabled}
+        data-disabled={Disabled}
+        onClick={handleClick}
         className={clsx(`${global.prefixCls}-radio-label`, classNames?.label)}
         style={styles?.label}
       >
-        <input
+        <div
           {...props}
           ref={ref}
-          type="radio"
-          name={name}
-          value={value}
-          disabled={disabled}
-          data-disabled={disabled}
-          checked={selectedValue === value}
-          onChange={() => onChange?.(value)}
+          role="radio"
+          aria-checked={checked}
+          data-checked={checked}
+          tabIndex={Disabled ? -1 : 0}
+          onKeyDown={handleKeyDown}
+          data-disabled={Disabled}
           className={clsx(`${global.prefixCls}-radio`, classNames?.radio)}
-          style={styles?.radio}
-        />
+          style={{ ...styles?.radio }}
+        >
+          <div
+            className={clsx(
+              `${global.prefixCls}-radio-inner`,
+              checked && !IsPopDisabled && `${global.prefixCls}-pop`,
+              classNames?.inner
+            )}
+            style={{ ...styles?.inner }}
+          />
+        </div>
         {children}
       </Flex>
     )
