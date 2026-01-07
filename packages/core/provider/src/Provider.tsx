@@ -1,25 +1,36 @@
 import { ReactNode, createElement } from 'react'
 import { NSUIContext, type NSUIContextProps } from './ProviderContext'
-import type { GlobalConfig, ComponentsConfig } from '@negative-space/types'
+import type { AnimationsConfig, ComponentsConfig, GlobalConfig } from '@negative-space/types'
 import { styles } from '@negative-space/style'
 
 export type NSUIProviderProps = {
   children: ReactNode
-  global?: GlobalConfig
+  animations?: AnimationsConfig
   components?: ComponentsConfig
+  global?: GlobalConfig
 }
 
 /** NSUIProvider wraps your app and provides global configuration for the NSUI components library. */
-export const NSUIProvider = ({ children, global, components }: NSUIProviderProps) => {
+export const NSUIProvider = ({ children, animations, components, global }: NSUIProviderProps) => {
   const contextValue: NSUIContextProps = {
     global: {
       prefixCls: global?.prefixCls ?? 'nsui',
       colorTransitionDuration: global?.colorTransitionDuration ?? 300,
       scaleTransitionDuration: global?.scaleTransitionDuration ?? 300
     },
+    animations: {
+      popDuration: animations?.popDuration ?? 600,
+      rippleDuration: animations?.rippleDuration ?? 600
+    },
     components: {
       button: {
         isRippleDisabled: components?.button?.isRippleDisabled ?? false
+      },
+      checkbox: {
+        isPopDisabled: components?.checkbox?.isPopDisabled ?? false
+      },
+      checkmark: {
+        isPopDisabled: components?.checkmark?.isPopDisabled ?? false
       },
       flex: {
         typeElement: components?.flex?.typeElement ?? 'div',
@@ -48,8 +59,8 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
         ulMarker: components?.list?.ulMarker ?? 'none'
       },
       radio: {
-        accentColor: components?.radio?.accentColor ?? 'black',
-        direction: components?.radio?.direction ?? 'vertical'
+        direction: components?.radio?.direction ?? 'vertical',
+        isPopDisabled: components?.radio?.isPopDisabled ?? false
       },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2
@@ -60,7 +71,7 @@ export const NSUIProvider = ({ children, global, components }: NSUIProviderProps
     }
   }
 
-  styles(contextValue.global, contextValue.components)
+  styles(contextValue.animations, contextValue.components, contextValue.global)
 
   return createElement(NSUIContext.Provider, { value: contextValue }, children)
 }

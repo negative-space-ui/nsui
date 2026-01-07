@@ -10,13 +10,13 @@ export const rippleKeyframe = (global: GlobalConfig) => {
   })
 }
 
-export const rippleStyle = (global: GlobalConfig) => {
+export const rippleStyle = (global: GlobalConfig, rippleDuration: number) => {
   injectStyle(`.${global.prefixCls}-ripple`, {
     position: 'absolute',
     borderRadius: '50%',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     transform: 'scale(0)',
-    animation: `${global.prefixCls}-ripple 600ms ease-out`,
+    animation: `${global.prefixCls}-ripple ${rippleDuration}ms ease-out`,
     pointerEvents: 'none',
     zIndex: 1
   })
