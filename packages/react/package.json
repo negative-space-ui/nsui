@@ -45,6 +45,7 @@
     "@negative-space/feedback": "workspace:*",
     "@negative-space/layout": "workspace:*",
     "@negative-space/nav": "workspace:*",
+    "@negative-space/primitive": "workspace:*",
     "@negative-space/provider": "workspace:*",
     "@negative-space/typography": "workspace:*"
   },

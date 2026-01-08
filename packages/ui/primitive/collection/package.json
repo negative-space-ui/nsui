@@ -1,0 +1,54 @@
+{
+  "name": "@negative-space/collection",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Collection component library",
+  "keywords": [
+    "components",
+    "collection",
+    "primitive",
+    "nsui",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/collection"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@negative-space/divider": "workspace:*",
+    "@negative-space/grid": "workspace:*",
+    "@negative-space/provider": "workspace:*",
+    "@negative-space/text": "workspace:*",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}
