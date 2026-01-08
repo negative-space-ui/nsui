@@ -22,6 +22,20 @@ export type ButtonConfig = {
   isRippleDisabled?: boolean
 }
 
+export type CheckboxConfig = {
+  /** Defines if animation should be disabled
+   *
+   * Defaults to `false`. */
+  isPopDisabled?: boolean
+}
+
+export type CheckmarkConfig = {
+  /** Defines if animation should be disabled
+   *
+   * Defaults to `false`. */
+  isPopDisabled?: boolean
+}
+
 export type FlexConfig = {
   /** Defines the type of the flex element.
    *
@@ -144,14 +158,14 @@ export type ListConfig = {
 }
 
 export type RadioConfig = {
-  /** Defines the color of the radio when selected.
-   *
-   * Defaults to `black`. */
-  accentColor?: string
   /** Defines the direction of the radio group.
    *
    * Defaults to `vertical`. */
   direction?: 'horizontal' | 'vertical'
+  /** Defines if the animation should be disabled.
+   *
+   * Defaults to `false`. */
+  isPopDisabled?: boolean
 }
 
 export type SpinnerConfig = {
@@ -170,6 +184,8 @@ export type TextConfig = {
 
 export type ComponentsConfig = {
   button?: ButtonConfig
+  checkbox?: CheckboxConfig
+  checkmark?: CheckmarkConfig
   flex?: FlexConfig
   grid?: GridConfig
   heading?: HeadingConfig
@@ -179,5 +195,18 @@ export type ComponentsConfig = {
   spinner?: SpinnerConfig
   text?: TextConfig
 }
+
+export type AnimationsConfig = {
+  /** Defines the duration of the pop animation.
+   *
+   * Defaults to `600`. */
+  popDuration?: number
+  /** Defines the duration of the ripple animation.
+   *
+   * Defaults to `600`. */
+  rippleDuration?: number
+}
+
+export type AnimationsConfigRequired = Required<AnimationsConfig>
 
 export type ComponentsConfigRequired = Required<ComponentsConfig>

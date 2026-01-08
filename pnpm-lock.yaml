@@ -216,6 +216,9 @@ importers:
 
   packages/kits/feedback:
     dependencies:
+      '@negative-space/checkmark':
+        specifier: workspace:*
+        version: link:../../ui/feedback/checkmark
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../ui/feedback/spinner
@@ -343,6 +346,9 @@ importers:
 
   packages/ui/data-entry/checkbox:
     dependencies:
+      '@negative-space/checkmark':
+        specifier: workspace:*
+        version: link:../../feedback/checkmark
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
@@ -368,6 +374,25 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
+      '@negative-space/provider':
+        specifier: workspace:*
+        version: link:../../../core/provider
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: ^19.2.1
+        version: 19.2.1
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/checkmark:
+    dependencies:
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../../../core/provider
