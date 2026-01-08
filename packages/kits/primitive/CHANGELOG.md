@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- 29f28da: Primitive kit added using Collection
+- 29f28da: Add Primitive kit using Collection
 
 ### Patch Changes
 

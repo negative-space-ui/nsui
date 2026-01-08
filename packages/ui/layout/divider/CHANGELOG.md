@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- c245689: Divider component added
+- c245689: Add Divider component
 
 ### Patch Changes
 

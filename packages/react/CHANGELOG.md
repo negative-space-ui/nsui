@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 29f28da: Primitive kit added using Collection
+- 29f28da: Add Primitive kit using Collection
 
 ### Patch Changes
 
@@ -53,7 +53,7 @@
 
 ### Minor Changes
 
-- 4655bec: Flex component added
+- 4655bec: Add Flex component
 
 ### Patch Changes
 

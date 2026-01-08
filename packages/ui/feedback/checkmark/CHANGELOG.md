@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- e12a510: Checkmark component added
+- e12a510: Add Checkmark component
 
 ### Patch Changes
 

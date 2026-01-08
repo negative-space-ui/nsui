@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 86ff870: Listbox component added
+- 86ff870: Add Listbox component
 
 ### Patch Changes
 

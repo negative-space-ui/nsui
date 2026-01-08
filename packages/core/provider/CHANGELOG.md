@@ -6,11 +6,11 @@
 
 - 0a96c4c: Ripple effect now has its own duration configuration
 - 13d0c79: Checkbox now uses a div instead of an input and supports animations
-- e12a510: Checkmark component added
+- e12a510: Add Checkmark component
 
 ### Patch Changes
 
-- c45d05a: Version bumped to avoid conflicts
+- c45d05a: Bump version to avoid conflicts
 - Updated dependencies [5d6d61d]
 - Updated dependencies [86ff870]
 - Updated dependencies [0a96c4c]
@@ -43,9 +43,9 @@
 
 ### Minor Changes
 
-- 4655bec: Flex component added
-- 34b97d8: List default markers updated to `none`
-- 4655bec: Ol/Ul default markers updated to 'none'
+- 4655bec: Add flex component
+- 34b97d8: Update List default markers to `none`
+- 4655bec: Update Ol/Ul default markers to `none`
 
 ### Patch Changes
 

@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- 29f28da: Collection component added
+- 29f28da: Add Collection component
 
 ### Patch Changes
 

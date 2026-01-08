@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- c45d05a: Version bumped to avoid conflicts
+- c45d05a: Bump version to avoid conflicts
 
 ## 1.1.0
 
