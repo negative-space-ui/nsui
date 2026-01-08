@@ -1,7 +1,7 @@
 import { ReactNode, createElement } from 'react'
 import { NSUIContext, type NSUIContextProps } from './ProviderContext'
-import type { AnimationsConfig, ComponentsConfig, GlobalConfig } from '@negative-space/types'
-import { styles } from '@negative-space/style'
+import type { AnimationsConfig, ComponentsConfig, GlobalConfig } from './types'
+import { styles } from './styles'
 
 export type NSUIProviderProps = {
   children: ReactNode

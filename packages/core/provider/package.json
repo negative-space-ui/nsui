@@ -36,10 +36,6 @@
     "prepack": "clean-package",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "@negative-space/style": "workspace:*",
-    "@negative-space/types": "workspace:*"
-  },
   "peerDependencies": {
     "react": "^19.2.1"
   },

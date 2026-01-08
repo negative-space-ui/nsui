@@ -3,7 +3,7 @@ import type {
   AnimationsConfigRequired,
   ComponentsConfigRequired,
   GlobalConfigRequired
-} from '@negative-space/types'
+} from './types'
 
 export type NSUIContextProps = {
   animations: AnimationsConfigRequired
