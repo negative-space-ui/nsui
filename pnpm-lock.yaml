@@ -206,6 +206,9 @@ importers:
       '@negative-space/checkbox':
         specifier: workspace:*
         version: link:../../ui/data-entry/checkbox
+      '@negative-space/listbox':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/listbox
       '@negative-space/radio':
         specifier: workspace:*
         version: link:../../ui/data-entry/radio
