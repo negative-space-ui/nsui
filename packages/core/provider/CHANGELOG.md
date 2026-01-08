@@ -1,5 +1,26 @@
 # @negative-space/provider
 
+## 1.5.0
+
+### Minor Changes
+
+- 0a96c4c: Ripple effect now has its own duration configuration
+- 13d0c79: Checkbox now uses a div instead of an input and supports animations
+- e12a510: Checkmark component added
+
+### Patch Changes
+
+- c45d05a: Version bumped to avoid conflicts
+- Updated dependencies [5d6d61d]
+- Updated dependencies [86ff870]
+- Updated dependencies [0a96c4c]
+- Updated dependencies [13d0c79]
+- Updated dependencies [e12a510]
+- Updated dependencies [746189a]
+- Updated dependencies [c245689]
+  - @negative-space/style@1.5.0
+  - @negative-space/types@1.4.0
+
 ## 1.3.0
 
 ### Minor Changes

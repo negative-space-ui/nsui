@@ -1,5 +1,20 @@
 # @negative-space/radio
 
+## 1.1.0
+
+### Minor Changes
+
+- 5d6d61d: Radio now uses a div instead of an input and supports animations
+
+### Patch Changes
+
+- Updated dependencies [0a96c4c]
+- Updated dependencies [13d0c79]
+- Updated dependencies [e12a510]
+- Updated dependencies [c45d05a]
+  - @negative-space/provider@1.5.0
+  - @negative-space/flex@1.0.2
+
 ## 1.0.0
 
 ### Major Changes

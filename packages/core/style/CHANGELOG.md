@@ -1,5 +1,25 @@
 # @negative-space/style
 
+## 1.5.0
+
+### Minor Changes
+
+- 5d6d61d: Radio now uses a div instead of an input and supports animations
+- 86ff870: Listbox component added
+- 0a96c4c: Ripple effect now has its own duration configuration
+- 13d0c79: Checkbox now uses a div instead of an input and supports animations
+- 746189a: Pop effect added
+- c245689: Divider component added
+
+### Patch Changes
+
+- Updated dependencies [5d6d61d]
+- Updated dependencies [0a96c4c]
+- Updated dependencies [13d0c79]
+- Updated dependencies [e12a510]
+- Updated dependencies [746189a]
+  - @negative-space/types@1.4.0
+
 ## 1.4.0
 
 ### Minor Changes

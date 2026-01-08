@@ -1,5 +1,20 @@
 # @negative-space/data-entry
 
+## 1.1.0
+
+### Minor Changes
+
+- 86ff870: Listbox component added
+
+### Patch Changes
+
+- Updated dependencies [5d6d61d]
+- Updated dependencies [86ff870]
+- Updated dependencies [13d0c79]
+  - @negative-space/radio@1.1.0
+  - @negative-space/listbox@1.0.0
+  - @negative-space/checkbox@1.1.0
+
 ## 1.0.0
 
 ### Major Changes

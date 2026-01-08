@@ -1,5 +1,11 @@
 # @negative-space/ripple
 
+## 1.1.1
+
+### Patch Changes
+
+- c45d05a: Version bumped to avoid conflicts
+
 ## 1.1.0
 
 ### Minor Changes

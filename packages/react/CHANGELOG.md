@@ -1,5 +1,30 @@
 # negative-space
 
+## 2.3.0
+
+### Minor Changes
+
+- 29f28da: Primitive kit added using Collection
+
+### Patch Changes
+
+- Updated dependencies [86ff870]
+- Updated dependencies [0a96c4c]
+- Updated dependencies [13d0c79]
+- Updated dependencies [e12a510]
+- Updated dependencies [29f28da]
+- Updated dependencies [c45d05a]
+- Updated dependencies [c245689]
+  - @negative-space/data-entry@1.1.0
+  - @negative-space/provider@1.5.0
+  - @negative-space/feedback@1.1.0
+  - @negative-space/primitive@1.0.0
+  - @negative-space/layout@1.2.0
+  - @negative-space/action@1.0.3
+  - @negative-space/data-display@1.0.4
+  - @negative-space/nav@1.0.1
+  - @negative-space/typography@2.0.3
+
 ## 2.2.0
 
 ### Minor Changes
