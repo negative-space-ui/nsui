@@ -1,5 +1,18 @@
 # @negative-space/layout
 
+## 1.2.0
+
+### Minor Changes
+
+- c245689: Divider component added
+
+### Patch Changes
+
+- Updated dependencies [c245689]
+  - @negative-space/divider@1.0.0
+  - @negative-space/flex@1.0.2
+  - @negative-space/grid@1.0.1
+
 ## 1.1.0
 
 ### Minor Changes

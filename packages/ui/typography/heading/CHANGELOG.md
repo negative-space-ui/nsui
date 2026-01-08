@@ -1,5 +1,15 @@
 # @negative-space/heading
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [0a96c4c]
+- Updated dependencies [13d0c79]
+- Updated dependencies [e12a510]
+- Updated dependencies [c45d05a]
+  - @negative-space/provider@1.5.0
+
 ## 1.0.2
 
 ### Patch Changes

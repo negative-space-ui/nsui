@@ -1,5 +1,17 @@
 # @negative-space/feedback
 
+## 1.1.0
+
+### Minor Changes
+
+- e12a510: Checkmark component added
+
+### Patch Changes
+
+- Updated dependencies [e12a510]
+  - @negative-space/checkmark@1.0.0
+  - @negative-space/spinner@2.0.3
+
 ## 1.0.2
 
 ### Patch Changes

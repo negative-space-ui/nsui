@@ -1,5 +1,15 @@
 # @negative-space/types
 
+## 1.4.0
+
+### Minor Changes
+
+- 5d6d61d: Radio now uses a div instead of an input and supports animations
+- 0a96c4c: Ripple effect now has its own duration configuration
+- 13d0c79: Checkbox now uses a div instead of an input and supports animations
+- e12a510: Checkmark component added
+- 746189a: Pop effect added
+
 ## 1.3.0
 
 ### Minor Changes
