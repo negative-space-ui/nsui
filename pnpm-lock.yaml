@@ -274,9 +274,6 @@ importers:
       '@negative-space/nav':
         specifier: workspace:*
         version: link:../kits/nav
-      '@negative-space/primitive':
-        specifier: workspace:*
-        version: link:../kits/primitive
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../core/provider
