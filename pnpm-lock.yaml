@@ -274,16 +274,6 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/kits/primitive:
-    dependencies:
-      '@negative-space/collection':
-        specifier: workspace:*
-        version: link:../../ui/primitive/collection
-    devDependencies:
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/kits/typography:
     dependencies:
       '@negative-space/heading':
