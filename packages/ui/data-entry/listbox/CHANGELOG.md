@@ -1,5 +1,14 @@
 # @negative-space/listbox
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+  - @negative-space/checkmark@1.0.1
+  - @negative-space/collection@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

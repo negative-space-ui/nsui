@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.6.0
+
+### Minor Changes
+
+- 9911188: Unify types and styles inside provider
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @negative-space/text
 
+## 1.0.4
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+
 ## 1.0.3
 
 ### Patch Changes

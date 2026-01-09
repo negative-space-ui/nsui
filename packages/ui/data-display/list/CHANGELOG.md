@@ -1,5 +1,13 @@
 # @negative-space/list
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+  - @negative-space/flex@1.0.3
+
 ## 1.1.1
 
 ### Patch Changes
