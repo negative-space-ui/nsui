@@ -1,1 +1,21 @@
 @import 'tailwindcss';
+
+body {
+  @apply bg-neutral-950 text-neutral-50;
+}
+
+.nsui-btn {
+  @apply bg-neutral-200 text-neutral-800 font-medium border-1 border-neutral-300 rounded-md transition-colors;
+}
+
+.nsui-btn:hover {
+  @apply bg-neutral-300 border-neutral-400;
+}
+
+.nsui-heading {
+  @apply font-bold mb-3;
+}
+
+.nsui-text.secondary {
+  @apply text-neutral-300;
+}
