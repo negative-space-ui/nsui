@@ -21,6 +21,16 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./action": "./src/action/index.ts",
+    "./data-display": "./src/data-display/index.ts",
+    "./data-entry": "./src/data-entry/index.ts",
+    "./feedback": "./src/feedback/index.ts",
+    "./layout": "./src/layout/index.ts",
+    "./nav": "./src/nav/index.ts",
+    "./typography": "./src/typography/index.ts"
+  },
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -51,6 +61,5 @@
   },
   "devDependencies": {
     "typescript": "^5.9.3"
-  },
-  "clean-package": "../../clean-package.config.json"
+  }
 }

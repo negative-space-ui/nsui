@@ -1,0 +1,46 @@
+{
+  "remove": ["devDependencies"],
+  "replace": {
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+      "./action": {
+        "types": "./dist/action/index.d.ts",
+        "import": "./dist/action/index.mjs",
+        "require": "./dist/action/index.js"
+      },
+      "./data-display": {
+        "types": "./dist/data-display/index.d.ts",
+        "import": "./dist/data-display/index.mjs",
+        "require": "./dist/data-display/index.js"
+      },
+      "./data-entry": {
+        "types": "./dist/data-entry/index.d.ts",
+        "import": "./dist/data-entry/index.mjs",
+        "require": "./dist/data-entry/index.js"
+      },
+      "./feedback": {
+        "types": "./dist/feedback/index.d.ts",
+        "import": "./dist/feedback/index.mjs",
+        "require": "./dist/feedback/index.js"
+      },
+      "./layout": {
+        "types": "./dist/layout/index.d.ts",
+        "import": "./dist/layout/index.mjs",
+        "require": "./dist/layout/index.js"
+      },
+      "./nav": {
+        "types": "./dist/nav/index.d.ts",
+        "import": "./dist/nav/index.mjs",
+        "require": "./dist/nav/index.js"
+      },
+      "./typography": {
+        "types": "./dist/typography/index.d.ts",
+        "import": "./dist/typography/index.mjs",
+        "require": "./dist/typography/index.js"
+      },
+      "./package.json": "./package.json"
+    }
+  }
+}
