@@ -1,5 +1,5 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '@negative-space/types'
+import { GlobalConfig } from '../../../types'
 
 export const gridStyles = (global: GlobalConfig) => {
   injectStyle(`.${global.prefixCls}-grid`, {

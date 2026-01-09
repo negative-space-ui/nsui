@@ -1,5 +1,5 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig, SpinnerConfig } from '@negative-space/types'
+import { GlobalConfig, SpinnerConfig } from '../../../types'
 
 export const spinnerStyles = (global: GlobalConfig, spinner: SpinnerConfig) =>
   injectStyle(`.${global.prefixCls}-spinner`, {
