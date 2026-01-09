@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Text component library",
+  "description": "Headless Text component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
     "text",

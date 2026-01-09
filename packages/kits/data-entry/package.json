@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Data entry components kit",
+  "description": "Data Entry components by Negative Space, providing flexible and accessible input elements",
   "keywords": [
     "components",
     "data-entry",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

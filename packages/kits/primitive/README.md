@@ -1,6 +1,6 @@
 # @negative-space/primitive
 
-Primitive components kit
+A lightweight set of Primitive components from Negative Space, built for fully custom low-level UI building blocks
 
 ## Installation
 

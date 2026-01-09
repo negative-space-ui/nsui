@@ -4,8 +4,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "React component for creating customizable buttons",
+  "description": "Headless Button component by Negative Space, providing behavior and accessibility without visual constraints",
   "keywords": [
+    "action",
     "button",
     "components",
     "nsui",

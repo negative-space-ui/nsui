@@ -1,6 +1,6 @@
 # @negative-space/divider
 
-A simple divider component
+A lightweight Divider component from Negative Space, crafted for fully custom UI layouts.
 
 ## Installation
 

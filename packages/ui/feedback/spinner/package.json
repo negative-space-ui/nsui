@@ -4,9 +4,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "React component for displaying loading spinners",
+  "description": "Headless Spinner component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
+    "feedback",
     "nsui",
     "react",
     "spinner",

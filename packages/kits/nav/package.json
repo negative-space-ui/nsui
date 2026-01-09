@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Navigation components for Negative Space UI",
+  "description": "Nav components by Negative Space, providing flexible and accessible navigation elements",
   "keywords": [
     "components",
     "nav",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

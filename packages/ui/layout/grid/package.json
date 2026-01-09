@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "A flexible grid layout component for React applications",
+  "description": "Headless Grid component by Negative Space, providing layout behavior without visual constraints",
   "keywords": [
     "components",
     "grid",
     "layout",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

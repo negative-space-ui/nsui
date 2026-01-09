@@ -1,6 +1,6 @@
 # @negative-space/collection
 
-Collection component library
+A lightweight Collection component from Negative Space, designed for fully custom UI structures.
 
 ## Installation
 

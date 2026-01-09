@@ -4,10 +4,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "Headless Checkbox component by Negative Space, delivering accessible behavior without visual constraints",
   "keywords": [
+    "components",
+    "data-entry",
     "checkbox",
-    "nsui"
+    "react",
+    "nsui",
+    "ui"
   ],
   "license": "MIT",
   "main": "src/index.ts",

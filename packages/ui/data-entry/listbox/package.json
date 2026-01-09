@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "Headless Listbox component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
     "data-entry",
     "listbox",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

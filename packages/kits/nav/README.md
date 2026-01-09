@@ -1,6 +1,6 @@
 # @negative-space/nav
 
-A navigation kit for React applications.
+A lightweight set of Nav components from Negative Space, crafted for fully custom navigation UI.
 
 ## Installation
 

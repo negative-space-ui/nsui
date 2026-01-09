@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "React component kit for typography",
+  "description": "Typography components by Negative Space, providing flexible and accessible text elements",
   "keywords": [
+    "components",
+    "kit",
     "nsui",
-    "react",
-    "text",
     "typography",
+    "react",
     "ui"
   ],
   "license": "MIT",

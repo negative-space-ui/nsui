@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Primitive components for Negative Space UI",
+  "description": "Primitive components by Negative Space, providing flexible and accessible low-level UI elements",
   "keywords": [
     "primitive",
     "components",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

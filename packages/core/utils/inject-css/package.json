@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Utility to dynamically inject CSS styles into your application",
+  "description": "CSS injection functions by Negative Space, designed for flexible and fully custom styling",
   "keywords": [
     "css",
     "inject",

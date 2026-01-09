@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "Headless Flex component by Negative Space, providing layout behavior without visual constraints",
   "keywords": [
     "components",
     "flex",
     "layout",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

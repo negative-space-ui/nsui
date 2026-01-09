@@ -1,6 +1,6 @@
 # @negative-space/checkmark
 
-A checkmark component for React applications.
+A lightweight Checkmark component from Negative Space, built for fully custom UI experiences.
 
 ## Installation
 

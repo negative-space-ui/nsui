@@ -1,6 +1,6 @@
 # @negative-space/ripple
 
-React hook to add a ripple effect to your components. Easy to integrate and customizable for buttons, cards, or any clickable element.
+A lightweight Ripple hook from Negative Space, enabling fully custom interactive effects.
 
 ## Installation
 

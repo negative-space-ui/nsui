@@ -1,6 +1,6 @@
 # @negative-space/grid
 
-A flexible grid layout component for React applications.
+A lightweight Grid component from Negative Space, enabling fully custom UI layouts.
 
 ## Installation
 

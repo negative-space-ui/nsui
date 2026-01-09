@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "A layout kit for NSUI",
+  "description": "Feedback components by Negative Space, providing flexible and accessible UI response elements",
   "keywords": [
     "components",
     "layout",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

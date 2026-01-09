@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Data display components kit",
+  "description": "Data Display components by Negative Space, providing flexible and accessible UI elements",
   "keywords": [
     "components",
     "data-display",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

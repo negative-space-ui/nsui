@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "List component library",
+  "description": "Headless List component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
-    "data display",
+    "data-display",
     "list",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

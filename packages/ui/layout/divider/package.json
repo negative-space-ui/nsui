@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Divider component library",
+  "description": "Headless Divider component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
     "divider",
     "layout",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

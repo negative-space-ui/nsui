@@ -4,11 +4,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "React provider component for global configuration of NSUI components",
+  "description": "Provider from Negative Space, designed for flexible and centralized UI state control",
   "keywords": [
     "configuration",
     "provider",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Feedback components kit",
+  "description": "Feedback components by Negative Space, providing flexible and accessible UI response elements",
   "keywords": [
     "components",
     "feedback",
     "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

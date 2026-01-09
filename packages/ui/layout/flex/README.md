@@ -1,6 +1,6 @@
 # @negative-space/flex
 
-Flex component library.
+A lightweight Flex component from Negative Space, enabling fully custom UI layouts.
 
 ## Installation
 

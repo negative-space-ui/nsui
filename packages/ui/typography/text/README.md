@@ -1,6 +1,6 @@
 # @negative-space/text
 
-A React Text component.
+A lightweight Text component from Negative Space, designed for fully custom UI layouts.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # @negative-space/spinner
 
-React component for displaying loading spinners.
+A lightweight Spinner component from Negative Space, designed for fully custom UI experiences.
 
 ## Installation
 

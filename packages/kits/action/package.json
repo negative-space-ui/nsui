@@ -4,11 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Action components kit",
+  "description": "Action components by Negative Space, providing flexible and accessible interactive elements",
   "keywords": [
     "action",
     "components",
+    "kit",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

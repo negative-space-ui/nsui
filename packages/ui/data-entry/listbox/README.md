@@ -1,6 +1,6 @@
 # @negative-space/listbox
 
-A listbox component library
+A lightweight Listbox component from Negative Space, enabling fully custom UI experiences.
 
 ## Installation
 

@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Heading component library",
+  "description": "Headless Heading component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
     "heading",
     "typography",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

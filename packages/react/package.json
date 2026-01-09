@@ -5,7 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Main React package exporting all NSUI components for easy use in your app",
+  "description": "Negative Space core, providing flexible building blocks for custom and accessible UI development",
   "keywords": [
     "components",
     "design-system",

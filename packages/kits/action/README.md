@@ -1,6 +1,6 @@
 # @negative-space/action
 
-Action components kit.
+A lightweight set of Action components from Negative Space, crafted for fully custom interactive UI experiences.
 
 ## Installation
 

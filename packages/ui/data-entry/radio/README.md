@@ -1,6 +1,6 @@
 # @negative-space/radio
 
-React component for creating radio buttons.
+A lightweight Radio component from Negative Space, crafted for fully custom UI experiences.
 
 ## Installation
 

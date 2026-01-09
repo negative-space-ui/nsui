@@ -1,6 +1,6 @@
 # @negative-space/data-entry
 
-A data entry kit for Negative Space UI.
+A lightweight set of Data Entry components from Negative Space, built for fully custom UI input experiences.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # @negative-space/button
 
-React component for creating customizable buttons.
+A lightweight Button component from Negative Space, letting you craft fully custom UI experiences.
 
 ## Installation
 

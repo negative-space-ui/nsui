@@ -1,6 +1,6 @@
 # @negative-space/heading
 
-A React component for creating headings.
+A lightweight Heading component from Negative Space, crafted for fully custom UI layouts.
 
 ## Installation
 

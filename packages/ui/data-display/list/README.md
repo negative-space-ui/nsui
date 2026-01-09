@@ -1,6 +1,6 @@
 # @negative-space/list
 
-A list component library
+A lightweight List component from Negative Space, built for fully custom UI structures.
 
 ## Installation
 

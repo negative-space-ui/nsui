@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Collection component library",
+  "description": "Headless Collection component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
-    "components",
     "collection",
+    "components",
     "primitive",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

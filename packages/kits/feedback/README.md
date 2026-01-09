@@ -1,6 +1,6 @@
 # @negative-space/feedback
 
-A React component kit for displaying feedback.
+A lightweight set of Feedback components from Negative Space, built for fully custom UI notifications and responses.
 
 ## Installation
 

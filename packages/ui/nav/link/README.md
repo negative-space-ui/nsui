@@ -1,6 +1,6 @@
 # @negative-space/link
 
-Navigation link component for React applications.
+A lightweight Link component from Negative Space, crafted for fully custom UI experiences.
 
 ## Installation
 

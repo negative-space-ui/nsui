@@ -1,6 +1,6 @@
 # @negative-space/data-display
 
-Data display components kit
+A lightweight set of Data Display components from Negative Space, crafted for fully custom UI presentation.
 
 ## Installation
 

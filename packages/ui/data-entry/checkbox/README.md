@@ -1,6 +1,6 @@
 # @negative-space/checkbox
 
-Description
+A lightweight Checkbox component from Negative Space, designed for fully custom UI experiences.
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # negative-space
 
-The main package for NSUI, exporting all components for React applications. Import and use any NSUI component directly from here.
+Negative Space: a lightweight foundation for building fully custom, flexible, and accessible UI components.
 
 ## Installation
 

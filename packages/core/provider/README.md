@@ -1,6 +1,6 @@
 # @negative-space/provider
 
-React component to wrap your app and provide global configuration for NSUI components. It makes it easy to set themes, defaults, and behaviors for all NSUI components in your application.
+Lightweight Provider from Negative Space, enabling centralized and fully custom UI state management.
 
 ## Installation
 

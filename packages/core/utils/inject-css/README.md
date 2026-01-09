@@ -1,6 +1,6 @@
 # @negative-space/inject-css
 
-Utility to dynamically inject CSS styles into your application. Perfect for runtime styling or adding custom themes.
+Lightweight CSS injection functions from Negative Space, giving full control over custom styling.
 
 ## Installation
 

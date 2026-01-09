@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Radio button component",
+  "description": "Headless Radio component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
-    "data entry",
-    "radio",
+    "data-entry",
     "nsui",
+    "radio",
+    "react",
     "ui"
   ],
   "license": "MIT",

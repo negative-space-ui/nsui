@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Checkmark component library",
+  "description": "Headless Checkmark component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "components",
     "checkmark",
     "feedback",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

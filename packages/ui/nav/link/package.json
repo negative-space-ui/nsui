@@ -4,12 +4,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "Navigation link component for React applications",
+  "description": "Headless Link component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
     "component",
     "link",
     "navigation",
     "nsui",
+    "react",
     "ui"
   ],
   "license": "MIT",

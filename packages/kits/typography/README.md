@@ -1,6 +1,6 @@
 # @negative-space/typography
 
-React component kit for typography.
+A lightweight set of Typography components from Negative Space, crafted for fully custom text styles and layouts.
 
 ## Installation
 

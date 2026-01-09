@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "React hook to add ripple effect to your components",
+  "description": "Ripple hook by Negative Space, providing interactive behavior without visual constraints.",
   "keywords": [
     "animation",
     "effects",
