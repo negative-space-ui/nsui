@@ -1,5 +1,23 @@
 # negative-space
 
+## 2.4.0
+
+### Minor Changes
+
+- ef08e8c: Remove Primitive Kit export
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+  - @negative-space/action@1.0.4
+  - @negative-space/data-display@1.0.5
+  - @negative-space/data-entry@1.1.1
+  - @negative-space/feedback@1.1.1
+  - @negative-space/layout@1.2.1
+  - @negative-space/nav@1.0.2
+  - @negative-space/typography@2.0.4
+
 ## 2.3.0
 
 ### Minor Changes

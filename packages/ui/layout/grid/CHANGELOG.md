@@ -1,5 +1,12 @@
 # @negative-space/grid
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+
 ## 1.0.1
 
 ### Patch Changes

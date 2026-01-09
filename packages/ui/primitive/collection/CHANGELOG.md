@@ -1,5 +1,15 @@
 # @negative-space/collection
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [9911188]
+  - @negative-space/provider@1.6.0
+  - @negative-space/divider@1.0.1
+  - @negative-space/grid@1.0.2
+  - @negative-space/text@1.0.4
+
 ## 1.0.0
 
 ### Major Changes
