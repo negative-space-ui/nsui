@@ -9,6 +9,7 @@
     "components",
     "grid",
     "layout",
+    "negative-space",
     "nsui",
     "react",
     "ui"
