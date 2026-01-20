@@ -193,6 +193,19 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/core/system:
+    dependencies:
+      '@negative-space/provider':
+        specifier: workspace:*
+        version: link:../provider
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/core/utils/inject-css:
     devDependencies:
       typescript:
@@ -323,18 +336,15 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
-      '@negative-space/provider':
-        specifier: workspace:*
-        version: link:../../../core/provider
       '@negative-space/ripple':
         specifier: workspace:*
         version: link:../../../core/hooks/ripple
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../feedback/spinner
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -351,12 +361,9 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -376,12 +383,9 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -401,12 +405,9 @@ importers:
       '@negative-space/collection':
         specifier: workspace:*
         version: link:../../primitive/collection
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -423,12 +424,9 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -442,12 +440,9 @@ importers:
 
   packages/ui/feedback/checkmark:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -461,12 +456,9 @@ importers:
 
   packages/ui/feedback/spinner:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -480,12 +472,9 @@ importers:
 
   packages/ui/layout/divider:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -499,12 +488,9 @@ importers:
 
   packages/ui/layout/flex:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -518,12 +504,9 @@ importers:
 
   packages/ui/layout/grid:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -537,12 +520,9 @@ importers:
 
   packages/ui/nav/link:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -562,15 +542,12 @@ importers:
       '@negative-space/grid':
         specifier: workspace:*
         version: link:../../layout/grid
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
+        version: link:../../../core/system
       '@negative-space/text':
         specifier: workspace:*
         version: link:../../typography/text
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -584,12 +561,9 @@ importers:
 
   packages/ui/typography/heading:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1
@@ -603,12 +577,9 @@ importers:
 
   packages/ui/typography/text:
     dependencies:
-      '@negative-space/provider':
+      '@negative-space/system':
         specifier: workspace:*
-        version: link:../../../core/provider
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
+        version: link:../../../core/system
       react:
         specifier: ^19.2.1
         version: 19.2.1

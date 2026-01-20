@@ -1,6 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { Collection, type CollectionProps } from '@negative-space/collection'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 
@@ -41,7 +40,7 @@ export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
         {...props}
         ref={ref}
         role="listbox"
-        className={clsx(`${global.prefixCls}-listbox`, classNames?.listbox)}
+        className={cn(`${global.prefixCls}-listbox`, classNames?.listbox)}
         style={styles?.listbox}
       >
         {options.map((option, index) => {
@@ -61,11 +60,11 @@ export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
                   onChange?.(option.value)
                 }
               }}
-              className={clsx(`${global.prefixCls}-listbox-option`, classNames?.option)}
+              className={cn(`${global.prefixCls}-listbox-option`, classNames?.option)}
               style={styles?.option}
             >
               <span
-                className={clsx(`${global.prefixCls}-listbox-label`, classNames?.label)}
+                className={cn(`${global.prefixCls}-listbox-label`, classNames?.label)}
                 style={styles?.label}
               >
                 {option.label}

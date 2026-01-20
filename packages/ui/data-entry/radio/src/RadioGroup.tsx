@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
-import clsx from 'clsx'
-import { useId } from 'react'
-import { useNSUI } from '@negative-space/provider'
+import React, { useState, useId } from 'react'
+import { cn, useNSUI } from '@negative-space/system'
 import { Flex } from '@negative-space/flex'
 import { RadioProvider } from './RadioProvider'
 import { Radio } from './Radio'
@@ -61,7 +59,7 @@ export const RadioGroup = ({
       <Flex
         {...props}
         direction={Direction === 'vertical' ? 'column' : 'row'}
-        className={clsx(`${global.prefixCls}-radio-group`, className)}
+        className={cn(`${global.prefixCls}-radio-group`, className)}
       >
         {children}
       </Flex>

@@ -1,6 +1,5 @@
 import React, { useId } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { Text, TextProps } from '@negative-space/text'
 
 export interface CollectionGroupProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,9 +22,9 @@ export const CollectionGroup = ({
       {...props}
       role="group"
       aria-labelledby={id}
-      className={(clsx(`${global.prefixCls}-group`), className)}
+      className={(cn(`${global.prefixCls}-group`), className)}
     >
-      <Text {...labelProps} id={id} as="p" className={clsx(`${global.prefixCls}-group-label`)}>
+      <Text {...labelProps} id={id} as="p" className={cn(`${global.prefixCls}-group-label`)}>
         {label}
       </Text>
       {children}

@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 
@@ -27,7 +26,7 @@ export const Heading = forwardRef(
     const Component = as ?? (components.heading.typeElement as React.ElementType)
 
     return (
-      <Component {...props} ref={ref} className={clsx(`${global.prefixCls}-heading`, className)}>
+      <Component {...props} ref={ref} className={cn(`${global.prefixCls}-heading`, className)}>
         {children}
       </Component>
     )

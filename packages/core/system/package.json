@@ -1,14 +1,13 @@
 {
-  "name": "@negative-space/flex",
-  "version": "1.0.3",
+  "name": "@negative-space/system",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Headless Flex component by Negative Space, providing layout behavior without visual constraints",
+  "description": "Internal system configuration from Negative Space, designed for flexible and centralized UI state control",
   "keywords": [
-    "components",
-    "flex",
-    "layout",
+    "configuration",
+    "provider",
     "negative-space",
     "nsui",
     "react",
@@ -21,10 +20,11 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/ui/flex"
+    "url": "git+https://github.com/negative-space-ui/nsui.git",
+    "directory": "packages/core/system"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,14 +39,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/system": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^19.2.1"
+    "@negative-space/provider": "workspace:*",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../../clean-package.config.json"
+  "clean-package": "../../../clean-package.config.json"
 }

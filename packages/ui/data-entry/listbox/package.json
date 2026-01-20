@@ -41,8 +41,7 @@
   "dependencies": {
     "@negative-space/checkmark": "workspace:*",
     "@negative-space/collection": "workspace:*",
-    "@negative-space/provider": "workspace:*",
-    "clsx": "^2.1.1"
+    "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.1"

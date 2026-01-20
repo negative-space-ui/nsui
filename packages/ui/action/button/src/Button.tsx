@@ -1,9 +1,8 @@
 import React from 'react'
-import { clsx } from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { Flex } from '@negative-space/flex'
-import { useRipple } from '@negative-space/ripple'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
+import { useRipple } from '@negative-space/ripple'
 
 export interface BaseButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -81,7 +80,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
-        className={clsx(`${global.prefixCls}-btn`, classNames?.btn)}
+        className={cn(`${global.prefixCls}-btn`, classNames?.btn)}
         style={styles?.btn}
       >
         {spinnerPosition === 'full' && isLoading ? (
@@ -90,7 +89,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <>
             {showPrefix && (
               <span
-                className={clsx(`${global.prefixCls}-btn-prefix`, classNames?.prefix)}
+                className={cn(`${global.prefixCls}-btn-prefix`, classNames?.prefix)}
                 style={styles?.prefix}
               >
                 {spinnerPosition === 'prefix' && isLoading ? resolvedSpinner : prefix}
@@ -99,7 +98,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
             {showContent && (
               <span
-                className={clsx(`${global.prefixCls}-btn-content`, classNames?.content)}
+                className={cn(`${global.prefixCls}-btn-content`, classNames?.content)}
                 style={styles?.content}
               >
                 {spinnerPosition === 'content' && isLoading ? resolvedSpinner : children}
@@ -108,7 +107,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
             {showSuffix && (
               <span
-                className={clsx(`${global.prefixCls}-btn-suffix`, classNames?.suffix)}
+                className={cn(`${global.prefixCls}-btn-suffix`, classNames?.suffix)}
                 style={styles?.suffix}
               >
                 {spinnerPosition === 'suffix' && isLoading ? resolvedSpinner : suffix}

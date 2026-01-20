@@ -41,9 +41,8 @@
   "dependencies": {
     "@negative-space/divider": "workspace:*",
     "@negative-space/grid": "workspace:*",
-    "@negative-space/provider": "workspace:*",
-    "@negative-space/text": "workspace:*",
-    "clsx": "^2.1.1"
+    "@negative-space/system": "workspace:*",
+    "@negative-space/text": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.1"

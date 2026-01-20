@@ -1,6 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 export interface CheckmarkProps extends React.SVGProps<SVGSVGElement> {
   checked?: boolean
@@ -24,7 +23,7 @@ export const Checkmark = ({ checked = true, isPopDisabled, ...props }: Checkmark
       strokeWidth={3}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={clsx(
+      className={cn(
         `${global.prefixCls}-checkmark`,
         !IsPopDisabled && `${global.prefixCls}-pop ${global.scaleTransitionDuration}ms`,
         props.className

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { Flex } from '@negative-space/flex'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 
@@ -62,7 +61,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         ref={ref}
         as="label"
         alignItems="center"
-        className={clsx(`${global.prefixCls}-checkbox-label`, classNames?.label)}
+        className={cn(`${global.prefixCls}-checkbox-label`, classNames?.label)}
         style={styles?.label}
         role="checkbox"
         aria-checked={isChecked}
@@ -76,12 +75,12 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           aria-hidden="true"
           data-checked={isChecked}
           data-disabled={disabled}
-          className={clsx(`${global.prefixCls}-checkbox`, classNames?.checkbox)}
+          className={cn(`${global.prefixCls}-checkbox`, classNames?.checkbox)}
           style={styles?.checkbox}
         >
           <span
             data-checked={isChecked}
-            className={clsx(
+            className={cn(
               `${global.prefixCls}-checkbox-inner`,
               isChecked && !IsPopDisabled && `${global.prefixCls}-pop`,
               classNames?.checkboxInner

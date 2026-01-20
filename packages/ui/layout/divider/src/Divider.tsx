@@ -1,6 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 export interface DividerProps extends React.HTMLAttributes<HTMLDivElement> {
   orientation?: 'horizontal' | 'vertical'
@@ -13,7 +12,7 @@ export const Divider = ({ orientation = 'horizontal', className, ...props }: Div
     <div
       {...props}
       aria-hidden="true"
-      className={clsx(
+      className={cn(
         `${global.prefixCls}-divider`,
         `${global.prefixCls}-divider-${orientation}`,
         className

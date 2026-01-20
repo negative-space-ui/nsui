@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 type FlexElement =
   | 'div'
@@ -70,7 +69,7 @@ export const Flex = forwardRef(
       <Component
         {...props}
         ref={ref}
-        className={clsx(
+        className={cn(
           `${prefix}-flex`,
           Direction && `${prefix}-flex-${Direction}`,
           Wrap && `${prefix}-flex-${Wrap}`,

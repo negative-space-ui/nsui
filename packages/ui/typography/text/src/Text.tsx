@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 type TextElement = 'span' | 'p' | 'label' | 'small'
 
@@ -24,7 +23,7 @@ export const Text = forwardRef(
     const Component = as ?? (components.text.typeElement as React.ElementType)
 
     return (
-      <Component {...props} ref={ref} className={clsx(`${global.prefixCls}-text`, className)}>
+      <Component {...props} ref={ref} className={cn(`${global.prefixCls}-text`, className)}>
         {children}
       </Component>
     )

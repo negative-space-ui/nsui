@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 type GridElement =
   | 'div'
@@ -81,7 +80,7 @@ export const Grid = forwardRef(
       <Component
         {...props}
         ref={ref}
-        className={clsx(
+        className={cn(
           `${prefix}-grid`,
           columns && `${prefix}-grid-cols-${columns}`,
           rows && `${prefix}-grid-rows-${rows}`,

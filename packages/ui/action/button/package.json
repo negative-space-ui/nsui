@@ -42,10 +42,9 @@
   },
   "dependencies": {
     "@negative-space/flex": "workspace:*",
-    "@negative-space/provider": "workspace:*",
     "@negative-space/ripple": "workspace:*",
-    "@negative-space/spinner": "workspace:*",
-    "clsx": "^2.1.1"
+    "@negative-space/system": "workspace:*",
+    "@negative-space/spinner": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.1"

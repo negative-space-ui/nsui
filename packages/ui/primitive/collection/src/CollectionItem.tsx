@@ -1,6 +1,5 @@
 import React, { useEffect, useId, useRef } from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { useCollectionContext } from './CollectionContext'
 
 export interface CollectionItemProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -32,7 +31,7 @@ export const CollectionItem = ({
       tabIndex={disabled ? undefined : isActive ? 0 : -1}
       aria-disabled={disabled}
       onFocus={() => setActiveId(id)}
-      className={clsx(`${global.prefixCls}-collection-item`, className)}
+      className={cn(`${global.prefixCls}-collection-item`, className)}
     >
       {children}
     </div>

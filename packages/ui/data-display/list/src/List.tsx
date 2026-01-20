@@ -1,7 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react'
-import clsx from 'clsx'
+import { cn, useNSUI } from '@negative-space/system'
 import { Flex } from '@negative-space/flex'
-import { useNSUI } from '@negative-space/provider'
 
 type ListElement = 'ol' | 'ul'
 
@@ -51,7 +50,7 @@ export const List = forwardRef(
         ref={ref}
         as={Component}
         direction={directionFinal === 'horizontal' ? 'row' : 'column'}
-        className={clsx(
+        className={cn(
           `${global.prefixCls}-list
           ${directionFinal !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''}`,
           className

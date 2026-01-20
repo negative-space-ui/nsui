@@ -1,6 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 
 export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   disabled?: boolean
@@ -26,7 +25,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) 
       data-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
       onClick={disabled ? (e) => e.preventDefault() : props.onClick}
-      className={clsx(
+      className={cn(
         `${global.prefixCls}-link ${Underline ? `${global.prefixCls}-link-underline` : ''}`,
         className
       )}

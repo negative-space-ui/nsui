@@ -1,6 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
-import { useNSUI } from '@negative-space/provider'
+import { cn, useNSUI } from '@negative-space/system'
 import { Flex } from '@negative-space/flex'
 import { useRadioContext } from './useRadioContext'
 
@@ -50,7 +49,7 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
         disabled={Disabled}
         data-disabled={Disabled}
         onClick={handleClick}
-        className={clsx(`${global.prefixCls}-radio-label`, classNames?.label)}
+        className={cn(`${global.prefixCls}-radio-label`, classNames?.label)}
         style={styles?.label}
       >
         <div
@@ -62,11 +61,11 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
           tabIndex={Disabled ? -1 : 0}
           onKeyDown={handleKeyDown}
           data-disabled={Disabled}
-          className={clsx(`${global.prefixCls}-radio`, classNames?.radio)}
+          className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
           style={{ ...styles?.radio }}
         >
           <div
-            className={clsx(
+            className={cn(
               `${global.prefixCls}-radio-inner`,
               checked && !IsPopDisabled && `${global.prefixCls}-pop`,
               classNames?.inner
