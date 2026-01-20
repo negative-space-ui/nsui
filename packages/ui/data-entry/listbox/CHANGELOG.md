@@ -1,5 +1,19 @@
 # @negative-space/listbox
 
+## 1.1.0
+
+### Minor Changes
+
+- a1f9906: Replace clsx and provider dependencies with the system library
+
+### Patch Changes
+
+- Updated dependencies [a1f9906]
+- Updated dependencies [a1f9906]
+  - @negative-space/collection@1.1.0
+  - @negative-space/checkmark@1.1.0
+  - @negative-space/system@1.0.0
+
 ## 1.0.1
 
 ### Patch Changes

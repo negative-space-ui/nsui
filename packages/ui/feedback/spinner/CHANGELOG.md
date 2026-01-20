@@ -1,5 +1,16 @@
 # @negative-space/spinner
 
+## 2.1.0
+
+### Minor Changes
+
+- a1f9906: Replace clsx and provider dependencies with the system library
+
+### Patch Changes
+
+- Updated dependencies [a1f9906]
+  - @negative-space/system@1.0.0
+
 ## 2.0.4
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @negative-space/button
 
+## 2.3.0
+
+### Minor Changes
+
+- a1f9906: Replace clsx and provider dependencies with the system library
+
+### Patch Changes
+
+- Updated dependencies [a1f9906]
+- Updated dependencies [a1f9906]
+  - @negative-space/spinner@2.1.0
+  - @negative-space/flex@1.1.0
+  - @negative-space/system@1.0.0
+
 ## 2.2.2
 
 ### Patch Changes
