@@ -1,5 +1,14 @@
 # @negative-space/data-entry
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [a1f9906]
+  - @negative-space/checkbox@1.2.0
+  - @negative-space/listbox@1.1.0
+  - @negative-space/radio@1.2.0
+
 ## 1.1.1
 
 ### Patch Changes

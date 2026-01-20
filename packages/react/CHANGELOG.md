@@ -1,5 +1,17 @@
 # negative-space
 
+## 2.4.1
+
+### Patch Changes
+
+- @negative-space/data-entry@1.1.2
+- @negative-space/feedback@1.1.2
+- @negative-space/typography@2.0.5
+- @negative-space/data-display@1.0.6
+- @negative-space/layout@1.2.2
+- @negative-space/action@1.0.5
+- @negative-space/nav@1.0.3
+
 ## 2.4.0
 
 ### Minor Changes

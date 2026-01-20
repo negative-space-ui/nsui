@@ -1,5 +1,13 @@
 # @negative-space/typography
 
+## 2.0.5
+
+### Patch Changes
+
+- Updated dependencies [a1f9906]
+  - @negative-space/heading@1.1.0
+  - @negative-space/text@1.1.0
+
 ## 2.0.4
 
 ### Patch Changes
