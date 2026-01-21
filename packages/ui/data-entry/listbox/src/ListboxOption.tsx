@@ -1,18 +1,20 @@
 import React, { useEffect, useId, useRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
-import { Checkmark } from '@negative-space/checkmark'
+import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 import { useListboxContext } from './ListboxContext'
 
 export interface ListboxOptionProps extends Omit<FlexProps<'li'>, 'as' | 'onClick'> {
   value: string
   disabled?: boolean
+  checkmarkProps?: CheckmarkProps
   onClick?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void
 }
 
 export const ListboxOption = ({
   children,
   className,
+  checkmarkProps,
   value,
   disabled,
   onClick,
@@ -63,7 +65,7 @@ export const ListboxOption = ({
       className={cn(`${global.prefixCls}-listbox-option`, className)}
     >
       <span>{children}</span>
-      {selected && <Checkmark />}
+      {selected && <Checkmark {...checkmarkProps} />}
     </Flex>
   )
 }
