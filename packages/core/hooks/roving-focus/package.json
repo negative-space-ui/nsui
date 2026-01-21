@@ -1,0 +1,48 @@
+{
+  "name": "@negative-space/roving-focus",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Roving focus hook by Negative Space, providing interactive behavior without visual constraints",
+  "keywords": [
+    "hook",
+    "keyboard",
+    "negative-space",
+    "nsui",
+    "react",
+    "roving-focus"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/core/roving-focus"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}
