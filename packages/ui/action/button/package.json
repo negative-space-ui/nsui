@@ -47,7 +47,7 @@
     "@negative-space/spinner": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^19.2.1"
+    "react": "^19.2.3"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
