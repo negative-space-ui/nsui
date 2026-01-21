@@ -1,12 +1,12 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex } from '@negative-space/flex'
+import { Flex, FlexProps } from '@negative-space/flex'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
 import { useRipple } from '@negative-space/ripple'
 
-export interface BaseButtonProps extends Omit<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  'prefix' | 'className' | 'style'
+export interface ButtonProps extends Omit<
+  FlexProps<'button'>,
+  'as' | 'prefix' | 'className' | 'style'
 > {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
@@ -29,8 +29,6 @@ export interface BaseButtonProps extends Omit<
   spinnerProps?: SpinnerProps
 }
 
-export type ButtonProps = BaseButtonProps
-
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
@@ -46,6 +44,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       spinner,
       spinnerPosition = 'full',
       spinnerProps,
+      alignItems = 'center',
+      justify = 'center',
       ...props
     },
     ref
@@ -75,8 +75,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         ref={ref}
         as="button"
-        alignItems="center"
-        justify="center"
+        alignItems={alignItems}
+        justify={justify}
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}

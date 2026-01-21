@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex } from '@negative-space/flex'
+import { Flex, type FlexProps } from '@negative-space/flex'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 
 export interface CheckboxProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'type' | 'className' | 'style'
+  FlexProps<'label'>,
+  'as' | 'type' | 'className' | 'style'
 > {
+  checked?: boolean
+  defaultChecked?: boolean
+  disabled?: boolean
   classNames?: {
     label?: string
     checkbox?: string
@@ -32,6 +35,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
       disabled,
       isPopDisabled,
       checkmarkProps,
+      alignItems = 'center',
       ...props
     },
     ref
@@ -60,7 +64,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         {...props}
         ref={ref}
         as="label"
-        alignItems="center"
+        alignItems={alignItems}
         className={cn(`${global.prefixCls}-checkbox-label`, classNames?.label)}
         style={styles?.label}
         role="checkbox"

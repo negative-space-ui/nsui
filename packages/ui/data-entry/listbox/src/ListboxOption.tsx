@@ -4,7 +4,7 @@ import { Flex, type FlexProps } from '@negative-space/flex'
 import { Checkmark } from '@negative-space/checkmark'
 import { useListboxContext } from './ListboxContext'
 
-export interface ListboxOptionProps extends Omit<FlexProps, 'onClick'> {
+export interface ListboxOptionProps extends Omit<FlexProps<'li'>, 'as' | 'onClick'> {
   value: string
   disabled?: boolean
   onClick?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void
@@ -16,6 +16,7 @@ export const ListboxOption = ({
   value,
   disabled,
   onClick,
+  alignItems = 'center',
   ...props
 }: ListboxOptionProps) => {
   const { global } = useNSUI()
@@ -51,7 +52,7 @@ export const ListboxOption = ({
       {...props}
       as="li"
       role="option"
-      alignItems="center"
+      alignItems={alignItems}
       ref={ref}
       tabIndex={disabled ? undefined : isActive ? 0 : -1}
       aria-disabled={disabled}

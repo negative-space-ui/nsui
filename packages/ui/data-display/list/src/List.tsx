@@ -1,6 +1,6 @@
 import React, { forwardRef, ReactNode } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex } from '@negative-space/flex'
+import { Flex, type FlexProps } from '@negative-space/flex'
 
 type ListElement = 'ol' | 'ul'
 
@@ -27,7 +27,8 @@ export type ListProps<E extends ListElement = 'ol'> = {
   children: ReactNode
   marker?: MarkerByElement<E>
   direction?: Direction
-} & React.ComponentPropsWithoutRef<E>
+} & Omit<FlexProps, 'as'> &
+  React.ComponentPropsWithoutRef<E>
 
 export const List = forwardRef(
   <E extends ListElement = 'ol'>(
