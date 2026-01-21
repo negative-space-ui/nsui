@@ -52,29 +52,31 @@ export type FlexProps<E extends FlexElement = 'div'> = {
 
 export const Flex = forwardRef(
   <E extends FlexElement = 'div'>(
-    { as, direction, wrap, alignItems, justify, className, children, ...props }: FlexProps<E>,
+    {
+      as,
+      alignItems = 'start',
+      direction = 'row',
+      justify = 'start',
+      wrap = 'nowrap',
+      className,
+      children,
+      ...props
+    }: FlexProps<E>,
     ref: React.Ref<FlexDomMap[E]>
   ) => {
-    const { global, components } = useNSUI()
-    const prefix = global.prefixCls
-
-    const Component = as ?? (components.flex?.typeElement as React.ElementType)
-
-    const Direction = direction ?? components.flex?.direction
-    const Wrap = wrap ?? components.flex?.wrap
-    const AlignItems = alignItems ?? components.flex?.alignItems
-    const Justify = justify ?? components.flex?.justify
+    const Component = as ?? ('div' as React.ElementType)
+    const { global } = useNSUI()
 
     return (
       <Component
         {...props}
         ref={ref}
         className={cn(
-          `${prefix}-flex`,
-          Direction && `${prefix}-flex-${Direction}`,
-          Wrap && `${prefix}-flex-${Wrap}`,
-          AlignItems && `${prefix}-flex-align-${AlignItems}`,
-          Justify && `${prefix}-flex-justify-${Justify}`,
+          `${global.prefixCls}-flex`,
+          `${global.prefixCls}-flex-${direction}`,
+          `${global.prefixCls}-flex-${wrap}`,
+          `${global.prefixCls}-flex-align-${alignItems}`,
+          `${global.prefixCls}-flex-justify-${justify}`,
           className
         )}
       >

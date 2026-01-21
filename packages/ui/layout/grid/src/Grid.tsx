@@ -56,38 +56,31 @@ export const Grid = forwardRef(
       as,
       columns = '2',
       rows = '1',
-      alignItems,
-      justifyItems,
-      alignContent,
-      justifyContent,
+      alignItems = 'start',
+      justifyItems = 'start',
+      alignContent = 'start',
+      justifyContent = 'start',
       className,
       children,
       ...props
     }: GridProps<E>,
     ref: React.Ref<GridDomMap[E]>
   ) => {
-    const { global, components } = useNSUI()
-    const prefix = global.prefixCls
-
-    const Component = as ?? (components.grid?.typeElement as React.ElementType)
-
-    const AlignItems = alignItems ?? components.grid?.alignItems
-    const JustifyItems = justifyItems ?? components.grid?.justifyItems
-    const AlignContent = alignContent ?? components.grid?.alignContent
-    const JustifyContent = justifyContent ?? components.grid?.justifyContent
+    const Component = as ?? ('div' as React.ElementType)
+    const { global } = useNSUI()
 
     return (
       <Component
         {...props}
         ref={ref}
         className={cn(
-          `${prefix}-grid`,
-          columns && `${prefix}-grid-cols-${columns}`,
-          rows && `${prefix}-grid-rows-${rows}`,
-          AlignItems && `${prefix}-grid-align-items-${AlignItems}`,
-          JustifyItems && `${prefix}-grid-justify-items-${JustifyItems}`,
-          AlignContent && `${prefix}-grid-align-content-${AlignContent}`,
-          JustifyContent && `${prefix}-grid-justify-content-${JustifyContent}`,
+          `${global.prefixCls}-grid`,
+          columns && `${global.prefixCls}-grid-cols-${columns}`,
+          rows && `${global.prefixCls}-grid-rows-${rows}`,
+          `${global.prefixCls}-grid-align-items-${alignItems}`,
+          `${global.prefixCls}-grid-justify-items-${justifyItems}`,
+          `${global.prefixCls}-grid-align-content-${alignContent}`,
+          `${global.prefixCls}-grid-justify-content-${justifyContent}`,
           className
         )}
       >
