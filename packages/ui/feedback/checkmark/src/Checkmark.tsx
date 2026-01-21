@@ -25,7 +25,7 @@ export const Checkmark = ({ checked = true, isPopDisabled, ...props }: Checkmark
       strokeLinejoin="round"
       className={cn(
         `${global.prefixCls}-checkmark`,
-        !IsPopDisabled && `${global.prefixCls}-pop ${global.scaleTransitionDuration}ms`,
+        !IsPopDisabled && `${global.prefixCls}-pop`,
         props.className
       )}
     >
