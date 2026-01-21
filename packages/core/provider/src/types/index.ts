@@ -68,10 +68,6 @@ export type LinkConfig = {
 }
 
 export type ListConfig = {
-  /** Defines the direction of the list.
-   *
-   * Defaults to `vertical`. */
-  direction?: 'horizontal' | 'vertical'
   /** Defines the marker of the list.
    *
    * Defaults to `ol`. */

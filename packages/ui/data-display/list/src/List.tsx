@@ -36,12 +36,11 @@ export const List = forwardRef(
     ref: React.Ref<ListDomMap[E]>
   ) => {
     const { global, components } = useNSUI()
-    const directionFinal = direction ?? components.list.direction
     const listElement = as ?? components.list.typeElement
-    const Component = directionFinal === 'horizontal' ? 'ul' : listElement
+    const Component = direction === 'horizontal' ? 'ul' : listElement
 
     const Marker =
-      directionFinal === 'horizontal'
+      direction === 'horizontal'
         ? 'none'
         : (marker ?? (listElement === 'ol' ? components.list.olMarker : components.list.ulMarker))
 
@@ -50,10 +49,10 @@ export const List = forwardRef(
         {...props}
         ref={ref}
         as={Component}
-        direction={directionFinal === 'horizontal' ? 'row' : 'column'}
+        direction={direction === 'horizontal' ? 'row' : 'column'}
         className={cn(
           `${global.prefixCls}-list
-          ${directionFinal !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''}`,
+          ${direction !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''}`,
           className
         )}
       >

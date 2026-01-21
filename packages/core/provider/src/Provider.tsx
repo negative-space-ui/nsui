@@ -38,7 +38,6 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         underline: components?.link?.underline ?? false
       },
       list: {
-        direction: components?.list?.direction ?? 'vertical',
         typeElement: components?.list?.typeElement ?? 'ol',
         olMarker: components?.list?.olMarker ?? 'none',
         ulMarker: components?.list?.ulMarker ?? 'none'
