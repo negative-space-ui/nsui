@@ -415,12 +415,24 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
-      '@negative-space/collection':
+      '@negative-space/divider':
         specifier: workspace:*
-        version: link:../../primitive/collection
+        version: link:../../layout/divider
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/grid':
+        specifier: workspace:*
+        version: link:../../layout/grid
+      '@negative-space/roving-focus':
+        specifier: workspace:*
+        version: link:../../../core/hooks/roving-focus
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      '@negative-space/text':
+        specifier: workspace:*
+        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3

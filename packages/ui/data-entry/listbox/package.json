@@ -40,8 +40,12 @@
   },
   "dependencies": {
     "@negative-space/checkmark": "workspace:*",
-    "@negative-space/collection": "workspace:*",
-    "@negative-space/system": "workspace:*"
+    "@negative-space/divider": "workspace:*",
+    "@negative-space/flex": "workspace:*",
+    "@negative-space/grid": "workspace:*",
+    "@negative-space/roving-focus": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/text": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.3"
