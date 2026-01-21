@@ -1,14 +1,14 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const radioStyle = (config: GlobalConfig) => {
+export const radioStyle = (config: GlobalConfigRequired) => {
   injectStyle(`.${config.prefixCls}-radio-label`, {
     cursor: 'pointer',
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     userSelect: 'none',
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-radio`, {
@@ -20,7 +20,7 @@ export const radioStyle = (config: GlobalConfig) => {
     borderRadius: '50%',
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-radio-inner`, {
@@ -29,7 +29,7 @@ export const radioStyle = (config: GlobalConfig) => {
     display: 'flex',
     borderRadius: '50%',
     opacity: 0,
-    transition: `opacity ${config.colorTransitionDuration}ms ease-in-out`
+    transition: `opacity ${config.motionDurations.color}ms ease-in-out`
   })
 
   injectStyle(`.${config.prefixCls}-radio[data-checked="true"] .${config.prefixCls}-radio-inner`, {

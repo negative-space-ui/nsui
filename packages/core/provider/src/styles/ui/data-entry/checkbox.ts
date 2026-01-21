@@ -1,14 +1,14 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const checkboxStyle = (config: GlobalConfig) => {
+export const checkboxStyle = (config: GlobalConfigRequired) => {
   injectStyle(`.${config.prefixCls}-checkbox-label`, {
     cursor: 'pointer',
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     userSelect: 'none',
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-checkbox`, {
@@ -19,7 +19,7 @@ export const checkboxStyle = (config: GlobalConfig) => {
     overflow: 'hidden',
     transitionProperty: 'background-color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-checkbox-inner`, {
@@ -32,7 +32,7 @@ export const checkboxStyle = (config: GlobalConfig) => {
     '&[data-checked="true"]': { opacity: 1 },
     transitionProperty: 'opacity, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-checkbox .${config.prefixCls}-checkmark`, {
@@ -45,7 +45,7 @@ export const checkboxStyle = (config: GlobalConfig) => {
     right: 0,
     bottom: 0,
     margin: 'auto',
-    transition: `opacity ${config.colorTransitionDuration}ms ease-in-out`
+    transition: `opacity ${config.motionDurations.color}ms ease-in-out`
   })
 
   injectStyle(`.${config.prefixCls}-checkbox[data-checked="true"] .${config.prefixCls}-checkmark`, {

@@ -1,17 +1,17 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const listStyles = (global: GlobalConfig) => {
+export const listStyles = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-list`, {
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   injectStyle(`.${global.prefixCls}-list li`, {
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   const unorderedMarkers = ['disc', 'circle', 'square', 'none']

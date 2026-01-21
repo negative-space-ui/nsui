@@ -1,16 +1,33 @@
+export type MotionDurations = {
+  /** Duration in milliseconds for transitions and animations of all components.
+   *
+   * Defaults to `300ms`. */
+  color?: number
+
+  /** Duration in milliseconds for transitions and animations of all components.
+   *
+   * Defaults to `300ms`. */
+  scale?: number
+
+  /** Defines the duration of the pop animation.
+   *
+   * Defaults to `600`. */
+  pop?: number
+
+  /** Defines the duration of the ripple animation.
+   *
+   * Defaults to `600`. */
+  ripple?: number
+}
+
 export type GlobalConfig = {
+  /** Duration in milliseconds for transitions and animations of all components. */
+  motionDurations?: MotionDurations
+
   /** Prefix classname for all components.
    *
    * Ex: `nsui-button` */
   prefixCls?: string
-  /** Duration in milliseconds for transitions and animations of all components.
-   *
-   * Defaults to `300ms`. */
-  colorTransitionDuration?: number
-  /** Duration in milliseconds for transitions and animations of all components.
-   *
-   * Defaults to `300ms`. */
-  scaleTransitionDuration?: number
 }
 
 export type GlobalConfigRequired = Required<GlobalConfig>
@@ -34,87 +51,6 @@ export type CheckmarkConfig = {
    *
    * Defaults to `false`. */
   isPopDisabled?: boolean
-}
-
-export type FlexConfig = {
-  /** Defines the type of the flex element.
-   *
-   * Defaults to `div`. */
-  typeElement?:
-    | 'div'
-    | 'aside'
-    | 'header'
-    | 'footer'
-    | 'main'
-    | 'section'
-    | 'nav'
-    | 'article'
-    | 'label'
-    | 'fieldset'
-    | 'ol'
-    | 'ul'
-    | 'li'
-    | 'dl'
-    | 'dt'
-    | 'dd'
-    | 'button'
-    | 'form'
-  /** Defines the direction of the flex container.
-   *
-   * Defaults to `row`. */
-  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  /** Defines the wrapping behavior of the flex container.
-   *
-   * Defaults to `nowrap`. */
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
-  /** Defines the alignment of the flex items.
-   *
-   * Defaults to `start`. */
-  alignItems?: 'start' | 'center' | 'end' | 'stretch'
-  /** Defines the alignment of the flex items.
-   *
-   * Defaults to `start`. */
-  justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
-}
-
-export type GridConfig = {
-  /** Defines the type of the grid element.
-   *
-   * Defaults to `div`. */
-  typeElement?:
-    | 'div'
-    | 'aside'
-    | 'header'
-    | 'footer'
-    | 'main'
-    | 'section'
-    | 'nav'
-    | 'article'
-    | 'label'
-    | 'fieldset'
-    | 'ol'
-    | 'ul'
-    | 'li'
-    | 'dl'
-    | 'dt'
-    | 'dd'
-    | 'form'
-  /** Defines the alignment of the grid items.
-   *
-   * Defaults to `start`. */
-  alignItems?: 'start' | 'center' | 'end' | 'stretch'
-  /** Defines the alignment of the grid items.
-   *
-   * Defaults to `start`. */
-  justifyItems?: 'start' | 'center' | 'end' | 'stretch'
-  /** Defines the alignment of the grid content.
-   *
-   * Defaults to `start`. */
-  alignContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
-  /** Defines the alignment of the grid content.
-   *
-   * Defaults to `start`. */
-  justifyContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
 }
 
 export type HeadingConfig = {
@@ -186,8 +122,6 @@ export type ComponentsConfig = {
   button?: ButtonConfig
   checkbox?: CheckboxConfig
   checkmark?: CheckmarkConfig
-  flex?: FlexConfig
-  grid?: GridConfig
   heading?: HeadingConfig
   link?: LinkConfig
   list?: ListConfig
@@ -195,18 +129,5 @@ export type ComponentsConfig = {
   spinner?: SpinnerConfig
   text?: TextConfig
 }
-
-export type AnimationsConfig = {
-  /** Defines the duration of the pop animation.
-   *
-   * Defaults to `600`. */
-  popDuration?: number
-  /** Defines the duration of the ripple animation.
-   *
-   * Defaults to `600`. */
-  rippleDuration?: number
-}
-
-export type AnimationsConfigRequired = Required<AnimationsConfig>
 
 export type ComponentsConfigRequired = Required<ComponentsConfig>

@@ -1,13 +1,13 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const listboxStyle = (global: GlobalConfig) => {
+export const listboxStyle = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-listbox`, {
     gap: '0px !important',
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   injectStyle(`.${global.prefixCls}-listbox-option`, {
@@ -19,7 +19,7 @@ export const listboxStyle = (global: GlobalConfig) => {
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   injectStyle(`.${global.prefixCls}-listbox-label`, {

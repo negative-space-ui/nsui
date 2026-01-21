@@ -1,13 +1,13 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const flexStyles = (global: GlobalConfig) => {
+export const flexStyles = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-flex`, {
     display: 'flex',
     gap: '0.5rem',
     transitionProperty: 'background-color, color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   const direction = ['row', 'column', 'row-reverse', 'column-reverse']

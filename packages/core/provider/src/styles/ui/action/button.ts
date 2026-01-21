@@ -1,7 +1,7 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const buttonStyles = (global: GlobalConfig) => {
+export const buttonStyles = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-btn`, {
     overflow: 'hidden',
     padding: '0.5rem',
@@ -9,6 +9,6 @@ export const buttonStyles = (global: GlobalConfig) => {
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     transitionProperty: 'background-color, color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 }

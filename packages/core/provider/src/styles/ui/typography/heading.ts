@@ -1,10 +1,10 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const headingStyles = (global: GlobalConfig) => {
+export const headingStyles = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-heading`, {
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 }

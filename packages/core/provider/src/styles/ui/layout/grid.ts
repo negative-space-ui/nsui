@@ -1,13 +1,13 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export const gridStyles = (global: GlobalConfig) => {
+export const gridStyles = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-grid`, {
     display: 'grid',
     gap: '0.5rem',
     transitionProperty: 'background-color, color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${global.colorTransitionDuration}ms, ${global.colorTransitionDuration}ms, ${global.scaleTransitionDuration}ms`
+    transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
   const gridColumns = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']

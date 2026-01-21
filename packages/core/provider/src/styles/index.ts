@@ -1,8 +1,4 @@
-import type {
-  AnimationsConfigRequired,
-  ComponentsConfigRequired,
-  GlobalConfigRequired
-} from '@negative-space/types'
+import type { ComponentsConfigRequired, GlobalConfigRequired } from '../types'
 
 import { spinKeyframes } from './effects/spin'
 import { popKeyframe, popStyle } from './effects/pop'
@@ -27,16 +23,12 @@ import { linkStyle } from './ui/nav/link'
 import { headingStyles } from './ui/typography/heading'
 import { textStyles } from './ui/typography/text'
 
-export const styles = (
-  animation: AnimationsConfigRequired,
-  components: ComponentsConfigRequired,
-  global: GlobalConfigRequired
-) => {
+export const styles = (components: ComponentsConfigRequired, global: GlobalConfigRequired) => {
   spinKeyframes(global)
   popKeyframe(global)
-  popStyle(global, animation.popDuration)
+  popStyle(global)
   rippleKeyframe(global)
-  rippleStyle(global, animation.rippleDuration)
+  rippleStyle(global)
 
   buttonStyles(global)
 

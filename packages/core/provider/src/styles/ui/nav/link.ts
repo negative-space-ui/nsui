@@ -1,13 +1,13 @@
 import { injectStyle } from '@negative-space/inject-css'
-import { GlobalConfig } from '../../../types'
+import type { GlobalConfigRequired } from '../../../types'
 
-export function linkStyle(config: GlobalConfig) {
+export function linkStyle(config: GlobalConfigRequired) {
   injectStyle(`.${config.prefixCls}-link`, {
     cursor: 'pointer',
     '&[data-disabled="true"]': { cursor: 'not-allowed' },
     transitionProperty: 'color, scale',
     transitionTimingFunction: 'ease-in-out',
-    transitionDuration: `${config.colorTransitionDuration}ms, ${config.scaleTransitionDuration}ms`
+    transitionDuration: `${config.motionDurations.color}ms, ${config.motionDurations.scale}ms`
   })
 
   injectStyle(`.${config.prefixCls}-link-underline`, {
