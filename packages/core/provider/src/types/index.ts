@@ -90,10 +90,6 @@ export type ListConfig = {
 }
 
 export type RadioConfig = {
-  /** Defines the direction of the radio group.
-   *
-   * Defaults to `vertical`. */
-  direction?: 'horizontal' | 'vertical'
   /** Defines if the animation should be disabled.
    *
    * Defaults to `false`. */

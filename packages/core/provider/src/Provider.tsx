@@ -43,7 +43,6 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         ulMarker: components?.list?.ulMarker ?? 'none'
       },
       radio: {
-        direction: components?.radio?.direction ?? 'vertical',
         isPopDisabled: components?.radio?.isPopDisabled ?? false
       },
       spinner: {

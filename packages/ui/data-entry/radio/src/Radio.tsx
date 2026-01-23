@@ -1,12 +1,10 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex } from '@negative-space/flex'
+import { Flex, type FlexProps } from '@negative-space/flex'
 import { useRadioContext } from './useRadioContext'
 
-export interface RadioProps extends Omit<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  'type' | 'name' | 'checked' | 'onChange' | 'className' | 'style'
-> {
+export interface RadioProps extends Omit<FlexProps<'label'>, 'className' | 'style'> {
+  disabled?: boolean
   value: string | number
   classNames?: {
     label?: string
@@ -22,7 +20,19 @@ export interface RadioProps extends Omit<
 }
 
 export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
-  ({ classNames, styles, value, children, disabled, isPopDisabled, ...props }, ref) => {
+  (
+    {
+      classNames,
+      alignItems = 'center',
+      styles,
+      value,
+      children,
+      disabled,
+      isPopDisabled,
+      ...props
+    },
+    ref
+  ) => {
     const { global, components } = useNSUI()
     const { selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
     const Disabled = disabled ?? groupDisabled
@@ -43,17 +53,16 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
 
     return (
       <Flex
+        {...props}
         as="label"
-        alignItems="center"
-        justify="start"
-        disabled={Disabled}
+        alignItems={alignItems}
+        aria-disabled={Disabled}
         data-disabled={Disabled}
         onClick={handleClick}
         className={cn(`${global.prefixCls}-radio-label`, classNames?.label)}
         style={styles?.label}
       >
         <div
-          {...props}
           ref={ref}
           role="radio"
           aria-checked={checked}

@@ -1,20 +1,18 @@
 import React, { useState, useId } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex } from '@negative-space/flex'
+import { Flex, FlexProps } from '@negative-space/flex'
 import { RadioProvider } from './RadioProvider'
 import { Radio } from './Radio'
 
-export interface RadioGroupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  direction?: 'vertical' | 'horizontal'
+export interface RadioGroupProps extends Omit<FlexProps, 'onChange'> {
   name?: string
   disabled?: boolean
   value?: string | number
   onChange?: (value: string | number) => void
-  children: React.ReactNode
 }
 
 export const RadioGroup = ({
-  direction,
+  direction = 'column',
   className,
   value: valueProp,
   onChange,
@@ -23,15 +21,13 @@ export const RadioGroup = ({
   children,
   ...props
 }: RadioGroupProps) => {
-  const { global, components } = useNSUI()
+  const { global } = useNSUI()
 
   const autoName = useId()
   const name = nameProp ?? autoName
 
   const [internalValue, setInternalValue] = useState<string | number | undefined>(valueProp)
   const value = valueProp !== undefined ? valueProp : internalValue
-
-  const Direction = direction ?? components.radio.direction
 
   const handleChange = (newValue: string | number) => {
     if (valueProp === undefined) setInternalValue(newValue)
@@ -58,7 +54,7 @@ export const RadioGroup = ({
     <RadioProvider name={name} selectedValue={value} onChange={handleChange} disabled={disabled}>
       <Flex
         {...props}
-        direction={Direction === 'vertical' ? 'column' : 'row'}
+        direction={direction}
         className={cn(`${global.prefixCls}-radio-group`, className)}
       >
         {children}
