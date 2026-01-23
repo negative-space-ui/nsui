@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
@@ -25,8 +25,8 @@ export const ListboxOption = ({
   const { registerOption, unregisterOption, activeId, setActiveId, toggleSelection, isSelected } =
     useListboxContext()
 
-  const id = useId()
   const ref = useRef<HTMLDivElement>(null)
+  const id = value
   const isActive = activeId === id
   const selected = isSelected(value)
 
@@ -36,14 +36,15 @@ export const ListboxOption = ({
   }, [id, disabled, registerOption, unregisterOption])
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!disabled) {
-      toggleSelection(value)
-      onClick?.(value, event)
-    }
+    if (disabled) return
+    setActiveId(id)
+    toggleSelection(value)
+    onClick?.(value, event)
   }
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!disabled && (event.key === 'Enter' || event.key === ' ')) {
+    if (disabled) return
+    if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault()
       toggleSelection(value)
     }
@@ -54,8 +55,8 @@ export const ListboxOption = ({
       {...props}
       as="li"
       role="option"
-      alignItems={alignItems}
       ref={ref}
+      alignItems={alignItems}
       tabIndex={disabled ? undefined : isActive ? 0 : -1}
       aria-disabled={disabled}
       aria-selected={selected}

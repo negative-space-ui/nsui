@@ -12,7 +12,7 @@ export type ListboxComponent =
   | { option: Omit<ListboxOptionProps, 'className' | 'style'> }
   | { separator: Omit<ListboxSeparatorProps, 'className' | 'style'> }
 
-export interface ListboxRootProps extends Omit<GridProps, 'className' | 'style'> {
+export interface ListboxProps extends Omit<GridProps, 'children' | 'className' | 'style'> {
   classNames?: {
     root?: string
     group?: string
@@ -27,80 +27,82 @@ export interface ListboxRootProps extends Omit<GridProps, 'className' | 'style'>
     checkmark?: React.CSSProperties
     separator?: React.CSSProperties
   }
+  disabled?: boolean
   items: ListboxComponent[]
   selectionMode?: SelectionMode
-  defaultValue?: string[]
+  defaultValue?: string | string[]
   onValueChange?: (value: string | string[]) => void
 }
 
-export const ListboxRoot = React.forwardRef<HTMLDivElement, ListboxRootProps>(
+export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
   (
     {
       classNames,
       styles,
+      disabled,
       items,
-      columns = '1',
+      columns = 1,
       selectionMode = 'single',
-      defaultValue = [],
+      defaultValue,
       onValueChange,
       ...props
     },
     ref
   ) => {
     const { global } = useNSUI()
-    const rovingFocus = useRovingFocus()
+    const roving = useRovingFocus()
 
-    const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set(defaultValue))
+    const initialSelectedIds = useMemo(() => {
+      if (selectionMode === 'single') {
+        return defaultValue ? new Set([defaultValue as string]) : new Set<string>()
+      }
+      return new Set((defaultValue as string[]) ?? [])
+    }, [defaultValue, selectionMode])
+
+    const [selectedIds, setSelectedIds] = useState<Set<string>>(initialSelectedIds)
+
+    const emitChange = useCallback(
+      (next: Set<string>) => {
+        if (!onValueChange) return
+        const value = selectionMode === 'single' ? Array.from(next)[0] : Array.from(next)
+        onValueChange(value)
+      },
+      [onValueChange, selectionMode]
+    )
 
     const toggleSelection = useCallback(
       (value: string) => {
+        if (disabled) return
         setSelectedIds((prev) => {
-          const newSelected = new Set(prev)
-
+          const next = new Set(prev)
           if (selectionMode === 'single') {
-            newSelected.clear()
-            newSelected.add(value)
+            next.clear()
+            next.add(value)
           } else {
-            if (newSelected.has(value)) newSelected.delete(value)
-            else newSelected.add(value)
+            if (next.has(value)) next.delete(value)
+            else next.add(value)
           }
-
-          if (onValueChange) {
-            const newValue =
-              selectionMode === 'single' ? Array.from(newSelected)[0] : Array.from(newSelected)
-            onValueChange(newValue)
-          }
-
-          return newSelected
+          emitChange(next)
+          return next
         })
       },
-      [selectionMode, onValueChange]
+      [selectionMode, emitChange, disabled]
     )
 
     const isSelected = useCallback((value: string) => selectedIds.has(value), [selectedIds])
 
-    const registerOption = useCallback(() => {}, [])
-    const unregisterOption = useCallback(() => {}, [])
-
     const contextValue = useMemo(
       () => ({
-        ...rovingFocus,
+        ...roving,
+        registerOption: roving.registerItem,
+        unregisterOption: roving.unregisterItem,
         selectedIds,
         toggleSelection,
         isSelected,
         selectionMode,
-        registerOption,
-        unregisterOption
+        disabled
       }),
-      [
-        rovingFocus,
-        selectedIds,
-        toggleSelection,
-        isSelected,
-        selectionMode,
-        registerOption,
-        unregisterOption
-      ]
+      [roving, selectedIds, toggleSelection, isSelected, selectionMode, disabled]
     )
 
     return (
@@ -109,28 +111,31 @@ export const ListboxRoot = React.forwardRef<HTMLDivElement, ListboxRootProps>(
           {...props}
           ref={ref}
           role="listbox"
-          className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
-          style={styles?.root}
+          tabIndex={disabled ? -1 : 0}
+          aria-disabled={disabled}
+          data-disabled={disabled}
           aria-multiselectable={selectionMode === 'multiple'}
           columns={columns}
-          tabIndex={0}
-          onKeyDown={rovingFocus.onKeyDown}
-          onFocus={rovingFocus.onFocus}
-          onBlur={rovingFocus.onBlur}
+          className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
+          style={styles?.root}
+          onKeyDown={disabled ? undefined : roving.onKeyDown}
+          onFocus={disabled ? undefined : roving.onFocus}
+          onBlur={disabled ? undefined : roving.onBlur}
         >
           {items.map((component, index) => {
-            const key = `Listbox-${index}`
-
-            if ('group' in component)
+            if ('group' in component) {
               return (
                 <ListboxGroup
-                  key={key}
+                  key={`group-${index}`}
                   className={classNames?.group}
                   style={styles?.group}
                   {...component.group}
                 />
               )
-            if ('option' in component)
+            }
+
+            if ('option' in component) {
+              const key = component.option.value ?? `option-${index}`
               return (
                 <ListboxOption
                   key={key}
@@ -143,15 +148,18 @@ export const ListboxRoot = React.forwardRef<HTMLDivElement, ListboxRootProps>(
                   {...component.option}
                 />
               )
-            if ('separator' in component)
+            }
+
+            if ('separator' in component) {
               return (
                 <ListboxSeparator
-                  key={key}
+                  key={`separator-${index}`}
                   className={classNames?.separator}
                   style={styles?.separator}
                   {...component.separator}
                 />
               )
+            }
 
             return null
           })}
@@ -161,4 +169,4 @@ export const ListboxRoot = React.forwardRef<HTMLDivElement, ListboxRootProps>(
   }
 )
 
-ListboxRoot.displayName = 'Listbox'
+Listbox.displayName = 'Listbox'

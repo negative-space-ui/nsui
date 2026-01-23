@@ -9,6 +9,13 @@ export const listboxStyle = (global: GlobalConfigRequired) => {
     transitionDuration: `${global.motionDurations.color}ms, ${global.motionDurations.scale}ms`
   })
 
+  injectStyle(
+    `.${global.prefixCls}-listbox[data-disabled="true"] .${global.prefixCls}-listbox-option`,
+    {
+      cursor: 'not-allowed'
+    }
+  )
+
   injectStyle(`.${global.prefixCls}-listbox-option`, {
     cursor: 'pointer',
     padding: '0.3rem',

@@ -6,9 +6,9 @@ export default {
   component: Listbox,
   tags: ['autodocs'],
   args: {
-    defaultValue: ['2'],
+    defaultValue: '2',
     classNames: {
-      checkmark: 'w-5 h-5 text-neutral-600'
+      checkmark: 'text-neutral-600'
     },
     items: [
       { option: { value: '1', children: 'Option 1' } },
