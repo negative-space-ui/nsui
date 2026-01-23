@@ -42,8 +42,8 @@ type GridDomMap = {
 
 export type GridProps<E extends GridElement = 'div'> = {
   as?: E
-  columns?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12'
-  rows?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto'
+  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+  rows?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto'
   alignItems?: 'start' | 'center' | 'end' | 'stretch'
   justifyItems?: 'start' | 'center' | 'end' | 'stretch'
   alignContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
@@ -54,8 +54,8 @@ export const Grid = forwardRef(
   <E extends GridElement = 'div'>(
     {
       as,
-      columns = '2',
-      rows = '1',
+      columns = 2,
+      rows = 1,
       alignItems = 'start',
       justifyItems = 'start',
       alignContent = 'start',
