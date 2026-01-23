@@ -12,6 +12,7 @@ import { checkboxStyle } from './ui/data-entry/checkbox'
 import { listboxStyle } from './ui/data-entry/listbox'
 import { radioStyle } from './ui/data-entry/radio'
 
+import { checkmarkStyles } from './ui/feedback/checkmark'
 import { spinnerStyles } from './ui/feedback/spinner'
 
 import { dividerStyles } from './ui/layout/divider'
@@ -38,6 +39,7 @@ export const styles = (components: ComponentsConfigRequired, global: GlobalConfi
   listboxStyle(global)
   radioStyle(global)
 
+  checkmarkStyles(global)
   spinnerStyles(global, components.spinner)
 
   dividerStyles(global)
