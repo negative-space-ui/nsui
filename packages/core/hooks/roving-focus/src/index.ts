@@ -11,7 +11,8 @@ export const useRovingFocus = <Item extends RovingFocusItem<Id>, Id extends stri
   const [activeId, setActiveId] = useState<Id | null>(null)
 
   const registerItem = useCallback((item: Item) => {
-    items.current.push(item)
+    if (items.current.some((i) => i.id === item.id)) return
+    items.current = [...items.current, item]
   }, [])
 
   const unregisterItem = useCallback((id: Id) => {
@@ -20,17 +21,8 @@ export const useRovingFocus = <Item extends RovingFocusItem<Id>, Id extends stri
 
   const focusItem = useCallback((item?: Item) => {
     if (!item || item.disabled) return
-
     setActiveId(item.id)
     item.ref.current?.focus()
-  }, [])
-
-  const focusFirst = useCallback(() => {
-    focusItem(items.current.find((i) => !i.disabled))
-  }, [focusItem])
-
-  const resetActive = useCallback(() => {
-    setActiveId(null)
   }, [])
 
   const moveFocus = useCallback(
@@ -39,10 +31,9 @@ export const useRovingFocus = <Item extends RovingFocusItem<Id>, Id extends stri
       if (!enabled.length) return
 
       const index = enabled.findIndex((i) => i.id === activeId)
-      const next =
-        index === -1 ? enabled[0] : enabled[(index + offset + enabled.length) % enabled.length]
+      const nextIndex = index === -1 ? 0 : (index + offset + enabled.length) % enabled.length
 
-      focusItem(next)
+      focusItem(enabled[nextIndex])
     },
     [activeId, focusItem]
   )
@@ -53,7 +44,6 @@ export const useRovingFocus = <Item extends RovingFocusItem<Id>, Id extends stri
         event.preventDefault()
         moveFocus(1)
       }
-
       if (event.key === 'ArrowUp') {
         event.preventDefault()
         moveFocus(-1)
@@ -62,19 +52,17 @@ export const useRovingFocus = <Item extends RovingFocusItem<Id>, Id extends stri
     [moveFocus]
   )
 
-  const onFocus = useCallback(() => {
-    if (activeId !== null) return
-    focusFirst()
-  }, [activeId, focusFirst])
+  const onFocus = useCallback((event: React.FocusEvent) => {
+    if (event.target === event.currentTarget) {
+      setActiveId(null)
+    }
+  }, [])
 
-  const onBlur = useCallback(
-    (event: React.FocusEvent) => {
-      if (!event.currentTarget.contains(event.relatedTarget as Node)) {
-        resetActive()
-      }
-    },
-    [resetActive]
-  )
+  const onBlur = useCallback((event: React.FocusEvent) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setActiveId(null)
+    }
+  }, [])
 
   return {
     registerItem,
