@@ -1,5 +1,11 @@
 # @negative-space/ripple
 
+## 1.1.2
+
+### Patch Changes
+
+- 9b64223: Fix `dist` folder
+
 ## 1.1.1
 
 ### Patch Changes

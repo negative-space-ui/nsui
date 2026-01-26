@@ -1,5 +1,13 @@
 # @negative-space/data-entry
 
+## 1.1.4
+
+### Patch Changes
+
+- @negative-space/checkbox@1.2.2
+- @negative-space/listbox@1.2.1
+- @negative-space/radio@1.3.1
+
 ## 1.1.3
 
 ### Patch Changes

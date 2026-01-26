@@ -1,5 +1,16 @@
 # @negative-space/listbox
 
+## 1.2.1
+
+### Patch Changes
+
+- @negative-space/system@1.0.2
+- @negative-space/checkmark@1.1.2
+- @negative-space/divider@1.1.2
+- @negative-space/flex@1.1.2
+- @negative-space/grid@1.2.1
+- @negative-space/text@1.1.2
+
 ## 1.2.0
 
 ### Minor Changes

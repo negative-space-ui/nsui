@@ -1,5 +1,11 @@
 # @negative-space/system
 
+## 1.0.2
+
+### Patch Changes
+
+- @negative-space/provider@1.7.1
+
 ## 1.0.1
 
 ### Patch Changes
