@@ -29,6 +29,9 @@ jobs:
       - name: Install all workspaces
         run: pnpm install
 
+      - name: Build all workspaces
+        run: pnpm build
+
       - name: Publish scoped packages to NPM and create tags/releases
         uses: changesets/action@v1
         with:
