@@ -35,7 +35,7 @@ jobs:
       - name: Publish scoped packages to NPM and create tags/releases
         uses: changesets/action@v1
         with:
-          publish: pnpm release
+          publish: pnpm changeset publish
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
