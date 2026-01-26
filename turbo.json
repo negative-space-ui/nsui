@@ -3,7 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["!packages/storybook"],
+      "inputs": ["!apps/storybook", "!apps/website"],
       "outputs": [".next/**", "dist/**"]
     },
     "clean": {
