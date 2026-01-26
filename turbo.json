@@ -3,8 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["!apps/storybook", "!apps/website"],
-      "outputs": [".next/**", "dist/**"]
+      "outputs": ["dist/**"]
     },
     "clean": {
       "outputs": []
