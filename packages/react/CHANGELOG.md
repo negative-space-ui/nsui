@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.4.3
+
+### Patch Changes
+
+- Add `replace-workspace-versions` script
+
 ## 2.4.2
 
 ### Patch Changes

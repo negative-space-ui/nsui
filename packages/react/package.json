@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.4.2",
+  "version": "2.4.4",
   "private": true,
   "publishConfig": {
     "access": "public"
@@ -46,7 +46,7 @@
     "dev": "pnpm build:fast --watch",
     "lint": "eslint . --ext ts,tsx",
     "postpack": "clean-package restore",
-    "prepack": "clean-package",
+    "prepack": "node scripts/replace-workspace-versions.js && clean-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
