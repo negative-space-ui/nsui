@@ -11,7 +11,7 @@
     "packages/**"
   ],
   "scripts": {
-    "build": "turbo run build --filter='!storybook' --filter='!website'",
+    "build": "turbo run build --filter='!@negative-space/storybook' --filter='!website'",
     "clean:pkgs": "turbo run clean",
     "clean:node-modules": "ts-node ./scripts/clean-node-modules.js",
     "create:pkg": "plop && pnpm install",

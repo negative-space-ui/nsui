@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@negative-space/storybook",
   "private": true,
   "scripts": {
     "build": "storybook build",
@@ -25,8 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "storybook": "^undefined",
-    "tailwindcss": "^4",
+    "storybook": "^10.1.8",
     "typescript": "^5"
   }
 }
