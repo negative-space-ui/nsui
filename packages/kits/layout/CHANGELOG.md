@@ -1,5 +1,14 @@
 # @negative-space/layout
 
+## 1.2.3
+
+### Patch Changes
+
+- Updated dependencies [8f295ce]
+  - @negative-space/grid@1.2.0
+  - @negative-space/divider@1.1.1
+  - @negative-space/flex@1.1.1
+
 ## 1.2.2
 
 ### Patch Changes

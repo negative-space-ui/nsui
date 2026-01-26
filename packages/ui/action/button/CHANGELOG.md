@@ -1,5 +1,13 @@
 # @negative-space/button
 
+## 2.3.1
+
+### Patch Changes
+
+- @negative-space/system@1.0.1
+- @negative-space/spinner@2.1.1
+- @negative-space/flex@1.1.1
+
 ## 2.3.0
 
 ### Minor Changes
