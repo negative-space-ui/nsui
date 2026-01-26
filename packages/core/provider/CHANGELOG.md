@@ -1,5 +1,15 @@
 # @negative-space/provider
 
+## 1.7.0
+
+### Minor Changes
+
+- 28ddef0: Add Checkmark style
+- cca4112: Remove global `direction` prop
+- 311a486: Move transition and animation props to `motionDurations`
+- f80efee: Inherit flex prop and fix disabled behavior
+- 311a486: Remove flex and grid props from `components`
+
 ## 1.6.0
 
 ### Minor Changes

@@ -1,5 +1,24 @@
 # @negative-space/listbox
 
+## 1.2.0
+
+### Minor Changes
+
+- 737e730: Add context, group, option and separator
+- ea6b11e: Add disabled and fix focus
+
+### Patch Changes
+
+- Updated dependencies [ff84ccd]
+- Updated dependencies [8f295ce]
+  - @negative-space/roving-focus@1.0.0
+  - @negative-space/grid@1.2.0
+  - @negative-space/system@1.0.1
+  - @negative-space/checkmark@1.1.1
+  - @negative-space/divider@1.1.1
+  - @negative-space/flex@1.1.1
+  - @negative-space/text@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

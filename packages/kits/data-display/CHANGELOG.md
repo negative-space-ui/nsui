@@ -1,5 +1,12 @@
 # @negative-space/data-display
 
+## 1.0.7
+
+### Patch Changes
+
+- Updated dependencies [cca4112]
+  - @negative-space/list@1.3.0
+
 ## 1.0.6
 
 ### Patch Changes

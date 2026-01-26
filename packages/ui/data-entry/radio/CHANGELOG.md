@@ -1,5 +1,16 @@
 # @negative-space/radio
 
+## 1.3.0
+
+### Minor Changes
+
+- f80efee: Inherit flex prop and fix disabled behavior
+
+### Patch Changes
+
+- @negative-space/system@1.0.1
+- @negative-space/flex@1.1.1
+
 ## 1.2.0
 
 ### Minor Changes

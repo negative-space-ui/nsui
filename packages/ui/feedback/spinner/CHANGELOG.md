@@ -1,5 +1,11 @@
 # @negative-space/spinner
 
+## 2.1.1
+
+### Patch Changes
+
+- @negative-space/system@1.0.1
+
 ## 2.1.0
 
 ### Minor Changes
