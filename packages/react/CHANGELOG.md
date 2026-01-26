@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.4.6
+
+### Patch Changes
+
+- Fix prepack script
+
 ## 2.4.5
 
 ### Patch Changes
