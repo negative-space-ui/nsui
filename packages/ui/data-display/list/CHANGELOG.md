@@ -1,5 +1,16 @@
 # @negative-space/list
 
+## 1.3.0
+
+### Minor Changes
+
+- cca4112: Remove global `direction` prop
+
+### Patch Changes
+
+- @negative-space/system@1.0.1
+- @negative-space/flex@1.1.1
+
 ## 1.2.0
 
 ### Minor Changes

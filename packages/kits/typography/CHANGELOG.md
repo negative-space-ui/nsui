@@ -1,5 +1,12 @@
 # @negative-space/typography
 
+## 2.0.6
+
+### Patch Changes
+
+- @negative-space/heading@1.1.1
+- @negative-space/text@1.1.1
+
 ## 2.0.5
 
 ### Patch Changes
