@@ -1,5 +1,11 @@
 # @negative-space/inject-css
 
+## 1.2.1
+
+### Patch Changes
+
+- 9b64223: Fix `dist` folder
+
 ## 1.2.0
 
 ### Minor Changes
