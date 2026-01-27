@@ -14,8 +14,7 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
   const contextValue: NSUIContextProps = {
     global: {
       motionDurations: {
-        color: global?.motionDurations?.color ?? 300,
-        scale: global?.motionDurations?.scale ?? 300,
+        fade: global?.motionDurations?.fade ?? 300,
         pop: global?.motionDurations?.pop ?? 600,
         ripple: global?.motionDurations?.ripple ?? 600
       },

@@ -65,7 +65,10 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         ref={ref}
         as="label"
         alignItems={alignItems}
-        className={cn(`${global.prefixCls}-checkbox-label`, classNames?.label)}
+        className={cn(
+          `${global.prefixCls}-checkbox-label ${global.prefixCls}-clickable`,
+          classNames?.label
+        )}
         style={styles?.label}
         role="checkbox"
         aria-checked={isChecked}
@@ -80,7 +83,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           data-checked={isChecked}
           data-disabled={disabled}
           className={cn(`${global.prefixCls}-checkbox`, classNames?.checkbox)}
-          style={styles?.checkbox}
+          style={{ overflow: 'hidden', ...styles?.checkbox }}
         >
           <span
             data-checked={isChecked}
@@ -91,7 +94,12 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
             )}
             style={styles?.checkboxInner}
           />
-          <Checkmark {...checkmarkProps} checked={isChecked} />
+          <Checkmark
+            {...checkmarkProps}
+            checked={isChecked}
+            className={cn(`${global.prefixCls}-checkmark`, checkmarkProps?.className)}
+            style={{ scale: '80%', ...checkmarkProps?.style }}
+          />
         </span>
 
         {children}

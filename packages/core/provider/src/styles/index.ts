@@ -1,53 +1,14 @@
-import type { ComponentsConfigRequired, GlobalConfigRequired } from '../types'
-
+import { baseStyle } from './base'
 import { spinKeyframes } from './effects/spin'
 import { popKeyframe, popStyle } from './effects/pop'
 import { rippleKeyframe, rippleStyle } from './effects/ripple'
-
-import { buttonStyles } from './ui/action/button'
-
-import { listStyles } from './ui/data-display/list'
-
-import { checkboxStyle } from './ui/data-entry/checkbox'
-import { listboxStyle } from './ui/data-entry/listbox'
-import { radioStyle } from './ui/data-entry/radio'
-
-import { checkmarkStyles } from './ui/feedback/checkmark'
-import { spinnerStyles } from './ui/feedback/spinner'
-
-import { dividerStyles } from './ui/layout/divider'
-import { flexStyles } from './ui/layout/flex'
-import { gridStyles } from './ui/layout/grid'
-
-import { linkStyle } from './ui/nav/link'
-
-import { headingStyles } from './ui/typography/heading'
-import { textStyles } from './ui/typography/text'
+import type { ComponentsConfigRequired, GlobalConfigRequired } from '../types'
 
 export const styles = (components: ComponentsConfigRequired, global: GlobalConfigRequired) => {
-  spinKeyframes(global)
+  baseStyle(global)
+  spinKeyframes(global, components.spinner)
   popKeyframe(global)
   popStyle(global)
   rippleKeyframe(global)
   rippleStyle(global)
-
-  buttonStyles(global)
-
-  listStyles(global)
-
-  checkboxStyle(global)
-  listboxStyle(global)
-  radioStyle(global)
-
-  checkmarkStyles(global)
-  spinnerStyles(global, components.spinner)
-
-  dividerStyles(global)
-  flexStyles(global)
-  gridStyles(global)
-
-  linkStyle(global)
-
-  headingStyles(global)
-  textStyles(global)
 }

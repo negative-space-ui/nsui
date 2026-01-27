@@ -50,11 +50,8 @@ export const List = forwardRef(
         ref={ref}
         as={Component}
         direction={direction === 'horizontal' ? 'row' : 'column'}
-        className={cn(
-          `${global.prefixCls}-list
-          ${direction !== 'horizontal' ? `${global.prefixCls}-marker-${Marker}` : ''}`,
-          className
-        )}
+        className={cn(`${global.prefixCls}-list`, className)}
+        style={{ listStyleType: Marker, ...props.style }}
       >
         {children}
       </Flex>

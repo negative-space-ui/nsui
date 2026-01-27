@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, CSSProperties } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
 type FlexElement =
@@ -44,41 +44,47 @@ type FlexDomMap = {
 
 export type FlexProps<E extends FlexElement = 'div'> = {
   as?: E
-  direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
-  alignItems?: 'start' | 'center' | 'end' | 'stretch'
-  justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
-} & React.ComponentPropsWithoutRef<E>
+  direction?: CSSProperties['flexDirection']
+  wrap?: CSSProperties['flexWrap']
+  alignItems?: CSSProperties['alignItems']
+  justify?: CSSProperties['justifyContent']
+  gap?: CSSProperties['gap']
+} & Omit<React.ComponentPropsWithoutRef<E>, 'style'>
 
 export const Flex = forwardRef(
   <E extends FlexElement = 'div'>(
     {
       as,
-      alignItems = 'start',
       direction = 'row',
-      justify = 'start',
       wrap = 'nowrap',
+      alignItems = 'flex-start',
+      justify = 'flex-start',
+      gap = '0.5rem',
       className,
+      style,
       children,
       ...props
-    }: FlexProps<E>,
+    }: FlexProps<E> & { style?: CSSProperties },
     ref: React.Ref<FlexDomMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
     const { global } = useNSUI()
 
+    const defaultFlex: CSSProperties = {
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: wrap,
+      alignItems,
+      justifyContent: justify,
+      gap
+    }
+
     return (
       <Component
         {...props}
         ref={ref}
-        className={cn(
-          `${global.prefixCls}-flex`,
-          `${global.prefixCls}-flex-${direction}`,
-          `${global.prefixCls}-flex-${wrap}`,
-          `${global.prefixCls}-flex-align-${alignItems}`,
-          `${global.prefixCls}-flex-justify-${justify}`,
-          className
-        )}
+        className={cn(`${global.prefixCls}-flex`, className)}
+        style={{ ...defaultFlex, ...style }}
       >
         {children}
       </Component>

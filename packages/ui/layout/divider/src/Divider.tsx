@@ -5,7 +5,12 @@ export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   orientation?: 'horizontal' | 'vertical'
 }
 
-export const Divider = ({ orientation = 'horizontal', className, ...props }: DividerProps) => {
+export const Divider = ({
+  orientation = 'horizontal',
+  className,
+  style,
+  ...props
+}: DividerProps) => {
   const { global } = useNSUI()
 
   return (
@@ -17,6 +22,7 @@ export const Divider = ({ orientation = 'horizontal', className, ...props }: Div
         `${global.prefixCls}-divider-${orientation}`,
         className
       )}
+      style={{ border: 'none', ...style }}
     />
   )
 }

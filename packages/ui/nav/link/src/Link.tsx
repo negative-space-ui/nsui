@@ -26,7 +26,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) 
       tabIndex={disabled ? -1 : undefined}
       onClick={disabled ? (e) => e.preventDefault() : props.onClick}
       className={cn(
-        `${global.prefixCls}-link ${Underline ? `${global.prefixCls}-link-underline` : ''}`,
+        `${global.prefixCls}-link ${global.prefixCls}-clickable ${Underline ? `${global.prefixCls}-underline` : ''}`,
         className
       )}
     />

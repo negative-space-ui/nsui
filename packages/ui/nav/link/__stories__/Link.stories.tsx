@@ -4,7 +4,11 @@ import { Link, type LinkProps } from '../src/Link'
 export default {
   title: 'Nav/Link',
   component: Link,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  args: {
+    disabled: false,
+    underline: false
+  }
 }
 
 export const Default = (args: LinkProps) => (

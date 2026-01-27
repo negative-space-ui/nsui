@@ -16,7 +16,7 @@ export const rippleStyle = (global: GlobalConfigRequired) => {
     borderRadius: '50%',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     transform: 'scale(0)',
-    animation: `${global.prefixCls}-ripple ${global.motionDurations.ripple}ms ease-out`,
+    animation: `${global.prefixCls}-ripple ${global.motionDurations.ripple}ms ease-in-out`,
     pointerEvents: 'none',
     zIndex: 1
   })

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, CSSProperties } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
 type GridElement =
@@ -44,11 +44,12 @@ export type GridProps<E extends GridElement = 'div'> = {
   as?: E
   columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
   rows?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto'
-  alignItems?: 'start' | 'center' | 'end' | 'stretch'
-  justifyItems?: 'start' | 'center' | 'end' | 'stretch'
-  alignContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
-  justifyContent?: 'start' | 'center' | 'end' | 'stretch' | 'between' | 'around' | 'evenly'
-} & React.ComponentPropsWithoutRef<E>
+  gap?: CSSProperties['gap']
+  alignItems?: CSSProperties['alignItems']
+  justifyItems?: CSSProperties['justifyItems']
+  alignContent?: CSSProperties['alignContent']
+  justifyContent?: CSSProperties['justifyContent']
+} & Omit<React.ComponentPropsWithoutRef<E>, 'style'>
 
 export const Grid = forwardRef(
   <E extends GridElement = 'div'>(
@@ -56,33 +57,38 @@ export const Grid = forwardRef(
       as,
       columns = 2,
       rows = 1,
+      gap = '0.5rem',
       alignItems = 'start',
       justifyItems = 'start',
       alignContent = 'start',
       justifyContent = 'start',
       className,
+      style,
       children,
       ...props
-    }: GridProps<E>,
+    }: GridProps<E> & { style?: CSSProperties },
     ref: React.Ref<GridDomMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
     const { global } = useNSUI()
 
+    const defaultGrid: CSSProperties = {
+      display: 'grid',
+      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      gridTemplateRows: rows === 'auto' ? 'auto' : `repeat(${rows}, 1fr)`,
+      gap,
+      alignItems,
+      justifyItems,
+      alignContent,
+      justifyContent
+    }
+
     return (
       <Component
         {...props}
         ref={ref}
-        className={cn(
-          `${global.prefixCls}-grid`,
-          columns && `${global.prefixCls}-grid-cols-${columns}`,
-          rows && `${global.prefixCls}-grid-rows-${rows}`,
-          `${global.prefixCls}-grid-align-items-${alignItems}`,
-          `${global.prefixCls}-grid-justify-items-${justifyItems}`,
-          `${global.prefixCls}-grid-align-content-${alignContent}`,
-          `${global.prefixCls}-grid-justify-content-${justifyContent}`,
-          className
-        )}
+        className={cn(`${global.prefixCls}-grid`, className)}
+        style={{ ...defaultGrid, ...style }}
       >
         {children}
       </Component>

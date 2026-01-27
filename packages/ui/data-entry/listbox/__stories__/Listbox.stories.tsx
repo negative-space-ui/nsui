@@ -8,7 +8,7 @@ export default {
   args: {
     defaultValue: '2',
     classNames: {
-      checkmark: 'text-neutral-600'
+      checkmark: 'w-4 h-4 text-neutral-600'
     },
     items: [
       { option: { value: '1', children: 'Option 1' } },

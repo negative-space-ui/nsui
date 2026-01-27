@@ -11,7 +11,7 @@ export default {
     onChange: () => {},
     classNames: {
       radio: 'w-4 h-4 border-1 border-neutral-400 data-[checked=true]:border-neutral-600',
-      inner: 'w-3 h-3 bg-neutral-500'
+      inner: 'w-2 h-2 bg-neutral-500'
     }
   }
 }

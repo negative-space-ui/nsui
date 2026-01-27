@@ -59,7 +59,10 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
         aria-disabled={Disabled}
         data-disabled={Disabled}
         onClick={handleClick}
-        className={cn(`${global.prefixCls}-radio-label`, classNames?.label)}
+        className={cn(
+          `${global.prefixCls}-radio-label ${global.prefixCls}-clickable`,
+          classNames?.label
+        )}
         style={styles?.label}
       >
         <div
@@ -71,15 +74,26 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
           onKeyDown={handleKeyDown}
           data-disabled={Disabled}
           className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
-          style={{ ...styles?.radio }}
+          style={{
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            ...styles?.radio
+          }}
         >
           <div
+            data-visible={checked}
             className={cn(
-              `${global.prefixCls}-radio-inner`,
+              `${global.prefixCls}-radio-inner ${global.prefixCls}-fade`,
               checked && !IsPopDisabled && `${global.prefixCls}-pop`,
               classNames?.inner
             )}
-            style={{ ...styles?.inner }}
+            style={{
+              borderRadius: '50%',
+              ...styles?.inner
+            }}
           />
         </div>
         {children}

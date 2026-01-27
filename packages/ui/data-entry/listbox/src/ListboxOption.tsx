@@ -63,7 +63,7 @@ export const ListboxOption = ({
       onFocus={() => setActiveId(id)}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={cn(`${global.prefixCls}-listbox-option`, className)}
+      className={cn(`${global.prefixCls}-listbox-option ${global.prefixCls}-clickable`, className)}
     >
       <span>{children}</span>
       {selected && <Checkmark {...checkmarkProps} />}
