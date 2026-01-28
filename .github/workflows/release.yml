@@ -22,6 +22,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Enable Corepack
         run: corepack enable
@@ -49,15 +52,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Delete release branch if no open PR exists
-        run: |
-          open_prs=$(gh pr list --head ${{ github.event.pull_request.head.ref }} --state open --json number | jq '. | length')
-          echo "Open PRs for branch: $open_prs"
-          if [ "$open_prs" -eq "0" ]; then
-            echo "No open PRs, deleting branch..."
-            git push origin --delete ${{ github.event.pull_request.head.ref }}
-          else
-            echo "Branch has open PRs, skipping deletion"
-          fi
+      - name: Delete release branch
+        run: git push origin --delete ${{ github.event.pull_request.head.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

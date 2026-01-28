@@ -1,19 +1,13 @@
 name: Pre-Release
 
 on:
-  push:
-    branches:
-      - main
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_dispatch:
 
 jobs:
   version:
-    if: github.event_name == 'push' && !startsWith(github.event.head_commit.message, 'Merge pull request')
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
@@ -40,7 +34,8 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm changeset version
-          commit: 'chore(release): version packages'
-          title: 'chore: version packages'
+          commit: 'chore(release): apply changesets versions'
+          title: 'chore(release): apply changesets versions'
+          branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
