@@ -20,6 +20,7 @@
     "plop": "ts-node ./scripts/warn-create-package.js",
     "prepare": "husky install",
     "prettier": "prettier --write .",
+    "start": "cd apps/storybook && pnpm start",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
