@@ -49,7 +49,8 @@ export type FlexProps<E extends FlexElement = 'div'> = {
   alignItems?: CSSProperties['alignItems']
   justify?: CSSProperties['justifyContent']
   gap?: CSSProperties['gap']
-} & Omit<React.ComponentPropsWithoutRef<E>, 'style'>
+  style?: CSSProperties
+} & React.ComponentPropsWithoutRef<E>
 
 export const Flex = forwardRef(
   <E extends FlexElement = 'div'>(
@@ -64,19 +65,20 @@ export const Flex = forwardRef(
       style,
       children,
       ...props
-    }: FlexProps<E> & { style?: CSSProperties },
+    }: FlexProps<E>,
     ref: React.Ref<FlexDomMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
     const { global } = useNSUI()
 
-    const defaultFlex: CSSProperties = {
+    const flexStyle: CSSProperties = {
       display: 'flex',
       flexDirection: direction,
       flexWrap: wrap,
       alignItems,
       justifyContent: justify,
-      gap
+      gap,
+      ...style
     }
 
     return (
@@ -84,7 +86,7 @@ export const Flex = forwardRef(
         {...props}
         ref={ref}
         className={cn(`${global.prefixCls}-flex`, className)}
-        style={{ ...defaultFlex, ...style }}
+        style={flexStyle}
       >
         {children}
       </Component>

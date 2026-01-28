@@ -49,7 +49,8 @@ export type GridProps<E extends GridElement = 'div'> = {
   justifyItems?: CSSProperties['justifyItems']
   alignContent?: CSSProperties['alignContent']
   justifyContent?: CSSProperties['justifyContent']
-} & Omit<React.ComponentPropsWithoutRef<E>, 'style'>
+  style?: CSSProperties
+} & React.ComponentPropsWithoutRef<E>
 
 export const Grid = forwardRef(
   <E extends GridElement = 'div'>(
@@ -66,13 +67,13 @@ export const Grid = forwardRef(
       style,
       children,
       ...props
-    }: GridProps<E> & { style?: CSSProperties },
+    }: GridProps<E>,
     ref: React.Ref<GridDomMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
     const { global } = useNSUI()
 
-    const defaultGrid: CSSProperties = {
+    const gridStyle: CSSProperties = {
       display: 'grid',
       gridTemplateColumns: `repeat(${columns}, 1fr)`,
       gridTemplateRows: rows === 'auto' ? 'auto' : `repeat(${rows}, 1fr)`,
@@ -80,7 +81,8 @@ export const Grid = forwardRef(
       alignItems,
       justifyItems,
       alignContent,
-      justifyContent
+      justifyContent,
+      ...style
     }
 
     return (
@@ -88,7 +90,7 @@ export const Grid = forwardRef(
         {...props}
         ref={ref}
         className={cn(`${global.prefixCls}-grid`, className)}
-        style={{ ...defaultGrid, ...style }}
+        style={gridStyle}
       >
         {children}
       </Component>
