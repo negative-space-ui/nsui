@@ -1,5 +1,21 @@
 # negative-space
 
+## 2.4.8
+
+### Patch Changes
+
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [0fe5889]
+  - @negative-space/provider@1.8.0
+  - @negative-space/layout@1.2.5
+  - @negative-space/data-entry@1.1.5
+  - @negative-space/feedback@1.1.5
+  - @negative-space/data-display@1.0.9
+  - @negative-space/action@1.0.8
+  - @negative-space/nav@1.0.6
+  - @negative-space/typography@2.0.8
+
 ## 2.4.7
 
 ### Patch Changes

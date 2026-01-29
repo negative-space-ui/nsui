@@ -1,5 +1,17 @@
 # @negative-space/checkbox
 
+## 1.2.3
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [cd52e70]
+- Updated dependencies [d4eb6c0]
+  - @negative-space/flex@1.2.0
+  - @negative-space/system@1.1.0
+  - @negative-space/checkmark@1.1.3
+
 ## 1.2.2
 
 ### Patch Changes

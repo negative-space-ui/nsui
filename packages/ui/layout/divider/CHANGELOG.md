@@ -1,5 +1,14 @@
 # @negative-space/divider
 
+## 1.1.3
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- 9375472: Replace div with hr for semantic markup
+- Updated dependencies [cd52e70]
+  - @negative-space/system@1.1.0
+
 ## 1.1.2
 
 ### Patch Changes

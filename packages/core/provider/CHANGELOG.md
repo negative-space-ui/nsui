@@ -1,5 +1,18 @@
 # @negative-space/provider
 
+## 1.8.0
+
+### Minor Changes
+
+- d4eb6c0: Remove transitions props
+- 0fe5889: Add `IconButton` and `ButtonGroup`
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [a0d69a6]
+  - @negative-space/inject-css@1.3.0
+
 ## 1.7.1
 
 ### Patch Changes

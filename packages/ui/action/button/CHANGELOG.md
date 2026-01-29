@@ -1,5 +1,21 @@
 # @negative-space/button
 
+## 2.4.0
+
+### Minor Changes
+
+- 0fe5889: Add `IconButton` and `ButtonGroup`
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [cd52e70]
+- Updated dependencies [d4eb6c0]
+  - @negative-space/flex@1.2.0
+  - @negative-space/system@1.1.0
+  - @negative-space/spinner@2.1.3
+
 ## 2.3.2
 
 ### Patch Changes

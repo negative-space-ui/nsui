@@ -1,5 +1,23 @@
 # @negative-space/listbox
 
+## 1.2.2
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [44eb1a5]
+- Updated dependencies [cd52e70]
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [9375472]
+  - @negative-space/flex@1.2.0
+  - @negative-space/grid@1.3.0
+  - @negative-space/roving-focus@1.1.0
+  - @negative-space/system@1.1.0
+  - @negative-space/checkmark@1.1.3
+  - @negative-space/divider@1.1.3
+  - @negative-space/text@1.1.3
+
 ## 1.2.1
 
 ### Patch Changes

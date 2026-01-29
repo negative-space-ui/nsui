@@ -1,5 +1,13 @@
 # @negative-space/feedback
 
+## 1.1.5
+
+### Patch Changes
+
+- Updated dependencies [d4eb6c0]
+  - @negative-space/checkmark@1.1.3
+  - @negative-space/spinner@2.1.3
+
 ## 1.1.4
 
 ### Patch Changes

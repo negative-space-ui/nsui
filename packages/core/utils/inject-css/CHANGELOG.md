@@ -1,5 +1,11 @@
 # @negative-space/inject-css
 
+## 1.3.0
+
+### Minor Changes
+
+- a0d69a6: Make styleSheet safe for SSR
+
 ## 1.2.1
 
 ### Patch Changes
