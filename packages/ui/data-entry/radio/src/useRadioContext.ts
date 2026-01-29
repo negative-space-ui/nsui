@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { RadioContext } from './RadioProvider'
+import { RadioContext } from './RadioContext'
 
 export const useRadioContext = () => {
   const ctx = useContext(RadioContext)

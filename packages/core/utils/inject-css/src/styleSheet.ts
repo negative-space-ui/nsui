@@ -1,8 +1,17 @@
-export const styleTag = document.createElement('style')
-document.head.appendChild(styleTag)
-
 export const injected = new Map<string, number>()
 
-export function getSheet() {
-  return styleTag.sheet
+let styleTag: HTMLStyleElement | null = null
+
+function getOrCreateStyleTag() {
+  if (typeof window === 'undefined') return null
+  if (!styleTag) {
+    styleTag = document.createElement('style')
+    document.head.appendChild(styleTag)
+  }
+  return styleTag
+}
+
+export function getSheet(): CSSStyleSheet | null {
+  const tag = getOrCreateStyleTag()
+  return tag?.sheet || null
 }

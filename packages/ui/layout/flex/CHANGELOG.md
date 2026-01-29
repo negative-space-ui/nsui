@@ -1,5 +1,17 @@
 # @negative-space/flex
 
+## 1.2.0
+
+### Minor Changes
+
+- d4eb6c0: Add `gap` prop
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [cd52e70]
+  - @negative-space/system@1.1.0
+
 ## 1.1.2
 
 ### Patch Changes

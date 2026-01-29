@@ -1,5 +1,20 @@
 # @negative-space/list
 
+## 1.4.0
+
+### Minor Changes
+
+- 71f59c5: Remove `children` and add `items` prop
+
+### Patch Changes
+
+- d4eb6c0: Change classNames
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [cd52e70]
+- Updated dependencies [d4eb6c0]
+  - @negative-space/flex@1.2.0
+  - @negative-space/system@1.1.0
+
 ## 1.3.1
 
 ### Patch Changes

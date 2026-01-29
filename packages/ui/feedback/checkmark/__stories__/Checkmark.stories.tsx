@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
   args: {
     checked: true,
-    className: 'w-6 h-6'
+    className: 'w-6 h-6 text-neutral-600'
   }
 }
 

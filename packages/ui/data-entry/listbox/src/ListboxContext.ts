@@ -1,30 +1,16 @@
 import React from 'react'
-
-export interface ListboxOptionRecord {
-  id: string
-  ref: React.RefObject<HTMLElement | null>
-  disabled?: boolean
-}
+import { useRovingFocus } from '@negative-space/roving-focus'
 
 export type SelectionMode = 'single' | 'multiple'
 
-export interface ListboxContextValue {
-  registerOption(option: ListboxOptionRecord): void
-  unregisterOption(id: string): void
-  activeId: string | null
-  setActiveId(id: string): void
-  selectedIds: Set<string>
-  toggleSelection(id: string): void
-  isSelected(id: string): boolean
+export type ListboxContextValue = {
+  disabled?: boolean
   selectionMode: SelectionMode
+  value: string | string[] | null
+  onChange?: (value: string | string[]) => void
+  activeId?: string | null
+  setActiveId?: (id: string | null) => void
+  roving: ReturnType<typeof useRovingFocus>
 }
 
 export const ListboxContext = React.createContext<ListboxContextValue | null>(null)
-
-export const useListboxContext = () => {
-  const ctx = React.useContext(ListboxContext)
-  if (!ctx) {
-    throw new Error('Listbox components must be used within Listbox')
-  }
-  return ctx
-}

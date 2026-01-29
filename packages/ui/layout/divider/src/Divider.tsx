@@ -1,15 +1,20 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
-export interface DividerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   orientation?: 'horizontal' | 'vertical'
 }
 
-export const Divider = ({ orientation = 'horizontal', className, ...props }: DividerProps) => {
+export const Divider = ({
+  orientation = 'horizontal',
+  className,
+  style,
+  ...props
+}: DividerProps) => {
   const { global } = useNSUI()
 
   return (
-    <div
+    <hr
       {...props}
       aria-hidden="true"
       className={cn(
@@ -17,6 +22,7 @@ export const Divider = ({ orientation = 'horizontal', className, ...props }: Div
         `${global.prefixCls}-divider-${orientation}`,
         className
       )}
+      style={{ border: 'none', ...style }}
     />
   )
 }

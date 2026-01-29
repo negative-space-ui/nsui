@@ -1,64 +1,102 @@
-import React, { useState, useId } from 'react'
-import { cn, useNSUI } from '@negative-space/system'
-import { Flex, FlexProps } from '@negative-space/flex'
-import { RadioProvider } from './RadioProvider'
-import { Radio } from './Radio'
+import React, { useCallback, useMemo, useState, useId } from 'react'
+import { cn, mergeClassNames, useNSUI } from '@negative-space/system'
+import { Flex, type FlexProps } from '@negative-space/flex'
+import { useRovingFocus } from '@negative-space/roving-focus'
+import { RadioOption, type RadioOptionProps } from './RadioOption'
+import { RadioContext } from './RadioContext'
 
-export interface RadioGroupProps extends Omit<FlexProps, 'onChange'> {
+export interface RadioGroupProps extends Omit<FlexProps, 'children' | 'onChange'> {
+  classNames?: {
+    root?: string
+    option?: {
+      label?: string
+      radio?: string
+      inner?: string
+    }
+  }
+  styles?: {
+    root?: React.CSSProperties
+    option?: {
+      label?: React.CSSProperties
+      radio?: React.CSSProperties
+      inner?: React.CSSProperties
+    }
+  }
   name?: string
   disabled?: boolean
-  value?: string | number
-  onChange?: (value: string | number) => void
+  options?: RadioOptionProps[]
+  defaultValue?: string
+  onValueChange?: (value: string) => void
 }
 
-export const RadioGroup = ({
-  direction = 'column',
-  className,
-  value: valueProp,
-  onChange,
-  name: nameProp,
-  disabled = false,
-  children,
-  ...props
-}: RadioGroupProps) => {
-  const { global } = useNSUI()
+export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
+  (
+    {
+      classNames,
+      styles,
+      disabled = false,
+      options,
+      direction = 'column',
+      name: nameProp,
+      defaultValue,
+      onValueChange,
+      ...props
+    },
+    ref
+  ) => {
+    const { global } = useNSUI()
+    const autoName = useId()
+    const name = nameProp ?? autoName
 
-  const autoName = useId()
-  const name = nameProp ?? autoName
+    const [selectedValue, setSelectedValue] = useState(defaultValue)
+    const roving = useRovingFocus()
 
-  const [internalValue, setInternalValue] = useState<string | number | undefined>(valueProp)
-  const value = valueProp !== undefined ? valueProp : internalValue
+    const handleChange = useCallback(
+      (value: string) => {
+        setSelectedValue(value)
+        roving.setActiveId(value)
+        onValueChange?.(value)
+      },
+      [onValueChange, roving]
+    )
 
-  const handleChange = (newValue: string | number) => {
-    if (valueProp === undefined) setInternalValue(newValue)
-    onChange?.(newValue)
+    const contextValue = useMemo(
+      () => ({
+        name,
+        disabled,
+        selectedValue,
+        onChange: handleChange,
+        roving
+      }),
+      [name, disabled, selectedValue, handleChange, roving]
+    )
+
+    return (
+      <RadioContext.Provider value={contextValue}>
+        <Flex
+          {...props}
+          as="fieldset"
+          ref={ref}
+          direction={direction}
+          role="radiogroup"
+          tabIndex={roving.hasInteracted ? -1 : 0}
+          onKeyDown={roving.handleGroupKeyDown}
+          onBlur={roving.handleGroupBlur}
+          className={cn(`${global.prefixCls}-radio-group`, classNames?.root)}
+          style={styles?.root}
+        >
+          {options?.map((option, index) => (
+            <RadioOption
+              key={option.value ?? index}
+              {...option}
+              classNames={mergeClassNames(classNames?.option, option.classNames)}
+              styles={{ ...styles?.option, ...option.styles }}
+            />
+          ))}
+        </Flex>
+      </RadioContext.Provider>
+    )
   }
+)
 
-  if (process.env.NODE_ENV !== 'production') {
-    const countRadios = (nodes: React.ReactNode): number => {
-      return React.Children.toArray(nodes).reduce((acc: number, child) => {
-        if (!React.isValidElement(child)) return acc
-        if (child.type === Radio) return acc + 1
-        const childChildren = (child.props as { children?: React.ReactNode })?.children
-        return acc + countRadios(childChildren)
-      }, 0)
-    }
-
-    const radiosCount = countRadios(children)
-    if (radiosCount === 1) {
-      console.warn('RadioGroup has only one Radio. Consider using multiple options for clarity.')
-    }
-  }
-
-  return (
-    <RadioProvider name={name} selectedValue={value} onChange={handleChange} disabled={disabled}>
-      <Flex
-        {...props}
-        direction={direction}
-        className={cn(`${global.prefixCls}-radio-group`, className)}
-      >
-        {children}
-      </Flex>
-    </RadioProvider>
-  )
-}
+RadioGroup.displayName = 'RadioGroup'

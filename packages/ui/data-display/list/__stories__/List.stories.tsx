@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import { List, ListProps } from '../src/List'
 
@@ -19,7 +18,7 @@ const meta: Meta<ListUnionProps> = {
   component: List,
   tags: ['autodocs'],
   args: {
-    children: [<li key="1">Item 1</li>, <li key="2">Item 2</li>, <li key="3">Item 3</li>]
+    items: [{ content: 'Item 1' }, { content: 'Item 2' }, { content: 'Item 3' }]
   },
   argTypes: {
     as: {
@@ -70,9 +69,8 @@ export const Unordered: StoryObj<ListProps<'ul'>> = {
   }
 }
 
-export const Horizontal: StoryObj<ListProps<'ul'>> = {
+export const Horizontal: StoryObj<ListUnionProps> = {
   args: {
-    as: 'ul',
-    direction: 'horizontal'
+    direction: 'row'
   }
 }

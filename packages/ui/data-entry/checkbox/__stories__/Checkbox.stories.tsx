@@ -15,7 +15,7 @@ export default {
         'w-4 h-4 border-1 border-neutral-500 data-[checked=true]:border-neutral-600 rounded-sm transition-colors will-change-border',
       checkboxInner: 'bg-neutral-600'
     },
-    checkmarkProps: { className: 'text-[12px] text-neutral-300' }
+    checkmarkProps: { className: 'text-[12px] text-neutral-600' }
   }
 }
 

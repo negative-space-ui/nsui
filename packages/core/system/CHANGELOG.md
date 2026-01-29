@@ -1,5 +1,18 @@
 # @negative-space/system
 
+## 1.1.0
+
+### Minor Changes
+
+- cd52e70: Add `mergeClassnames` util
+
+### Patch Changes
+
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [d4eb6c0]
+- Updated dependencies [0fe5889]
+  - @negative-space/provider@1.8.0
+
 ## 1.0.2
 
 ### Patch Changes

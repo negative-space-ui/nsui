@@ -3,6 +3,7 @@ import { cn, useNSUI } from '@negative-space/system'
 import { Flex, FlexProps } from '@negative-space/flex'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
 import { useRipple } from '@negative-space/ripple'
+import { useButtonContextConditional } from './useButtonContext'
 
 export interface ButtonProps extends Omit<
   FlexProps<'button'>,
@@ -22,6 +23,7 @@ export interface ButtonProps extends Omit<
     prefix?: React.CSSProperties
     suffix?: React.CSSProperties
   }
+  controlled?: boolean
   isRippleDisabled?: boolean
   isLoading?: boolean
   spinner?: React.ReactNode
@@ -36,6 +38,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       prefix,
       suffix,
       classNames,
+      controlled,
       styles,
       disabled = false,
       isRippleDisabled,
@@ -51,11 +54,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const { global, components } = useNSUI()
+    const context = useButtonContextConditional(!!controlled)
+    const groupDisabled = context.disabled
+
     const rippleDisabled = isRippleDisabled ?? components.button.isRippleDisabled
-
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
-    const isDisabled = disabled || isLoading
 
+    const isDisabled = disabled || isLoading || (controlled ? groupDisabled : false)
     const resolvedSpinner = spinner ?? <Spinner {...spinnerProps} />
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -80,7 +85,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
-        className={cn(`${global.prefixCls}-btn`, classNames?.btn)}
+        className={cn(`${global.prefixCls}-btn ${global.prefixCls}-clickable`, classNames?.btn)}
         style={styles?.btn}
       >
         {spinnerPosition === 'full' && isLoading ? (

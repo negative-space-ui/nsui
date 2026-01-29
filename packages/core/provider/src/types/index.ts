@@ -1,14 +1,8 @@
 export type MotionDurations = {
-  /** Duration in milliseconds for transitions and animations of all components.
+  /** Defines the duration of the fade animation.
    *
-   * Defaults to `300ms`. */
-  color?: number
-
-  /** Duration in milliseconds for transitions and animations of all components.
-   *
-   * Defaults to `300ms`. */
-  scale?: number
-
+   * Defaults to `300`. */
+  fade?: number
   /** Defines the duration of the pop animation.
    *
    * Defaults to `600`. */
@@ -21,9 +15,8 @@ export type MotionDurations = {
 }
 
 export type GlobalConfig = {
-  /** Duration in milliseconds for transitions and animations of all components. */
+  /** Duration in milliseconds for animations of all components. */
   motionDurations?: MotionDurations
-
   /** Prefix classname for all components.
    *
    * Ex: `nsui-button` */
@@ -36,6 +29,13 @@ export type ButtonConfig = {
   /** Defines if ripple effect should be disabled
    *
    * Defaults to `false`. */
+  isRippleDisabled?: boolean
+}
+
+export type IconButtonConfig = {
+  /** Defines if ripple effect should be disabled
+   *
+   * Defaults to `true`. */
   isRippleDisabled?: boolean
 }
 
@@ -112,6 +112,7 @@ export type TextConfig = {
 
 export type ComponentsConfig = {
   button?: ButtonConfig
+  iconButton?: IconButtonConfig
   checkbox?: CheckboxConfig
   checkmark?: CheckmarkConfig
   heading?: HeadingConfig
