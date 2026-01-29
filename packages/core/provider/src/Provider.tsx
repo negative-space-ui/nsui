@@ -24,6 +24,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       button: {
         isRippleDisabled: components?.button?.isRippleDisabled ?? false
       },
+      iconButton: {
+        isRippleDisabled: components?.iconButton?.isRippleDisabled ?? true
+      },
       checkbox: {
         isPopDisabled: components?.checkbox?.isPopDisabled ?? false
       },

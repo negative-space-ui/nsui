@@ -32,6 +32,13 @@ export type ButtonConfig = {
   isRippleDisabled?: boolean
 }
 
+export type IconButtonConfig = {
+  /** Defines if ripple effect should be disabled
+   *
+   * Defaults to `true`. */
+  isRippleDisabled?: boolean
+}
+
 export type CheckboxConfig = {
   /** Defines if animation should be disabled
    *
@@ -105,6 +112,7 @@ export type TextConfig = {
 
 export type ComponentsConfig = {
   button?: ButtonConfig
+  iconButton?: IconButtonConfig
   checkbox?: CheckboxConfig
   checkmark?: CheckmarkConfig
   heading?: HeadingConfig
