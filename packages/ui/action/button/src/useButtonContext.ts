@@ -1,7 +1,9 @@
 import { useContext } from 'react'
-import { ButtonContext } from './ButtonContext'
+import { ButtonContext, type ButtonContextValue } from './ButtonContext'
 
-export const useButtonContextConditional = (controlled: boolean) => {
+export const useButtonContextConditional = (
+  controlled: boolean
+): ButtonContextValue | { disabled: false } => {
   const ctx = useContext(ButtonContext)
 
   if (controlled && !ctx) {

@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { RadioContext } from './RadioContext'
+import { RadioContext, type RadioContextValue } from './RadioContext'
 
-export const useRadioContext = () => {
+export const useRadioContext = (): RadioContextValue => {
   const ctx = useContext(RadioContext)
 
   if (!ctx) {
