@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
 import { useRadioContext } from './useRadioContext'
 
-export interface RadioProps extends Omit<FlexProps<'label'>, 'className' | 'style'> {
-  disabled?: boolean
-  value: string | number
+export interface RadioOptionProps extends Omit<
+  FlexProps<'label'>,
+  'as' | 'className' | 'style' | 'onClick'
+> {
   classNames?: {
     label?: string
     radio?: string
@@ -16,49 +17,35 @@ export interface RadioProps extends Omit<FlexProps<'label'>, 'className' | 'styl
     radio?: React.CSSProperties
     inner?: React.CSSProperties
   }
+  disabled?: boolean
+  value: string
+  label: React.ReactNode
   isPopDisabled?: boolean
 }
 
-export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
-  (
-    {
-      classNames,
-      alignItems = 'center',
-      styles,
-      value,
-      children,
-      disabled,
-      isPopDisabled,
-      ...props
-    },
-    ref
-  ) => {
-    const { global, components } = useNSUI()
-    const { selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
-    const Disabled = disabled ?? groupDisabled
+export const RadioOption = React.forwardRef<HTMLDivElement, RadioOptionProps>(
+  ({ value, label, disabled, classNames, styles, ...props }) => {
+    const { global } = useNSUI()
+    const { selectedValue, onChange, disabled: groupDisabled, roving } = useRadioContext()
+
+    const ref = useRef<HTMLDivElement>(null)
+    const isDisabled = disabled ?? groupDisabled
     const checked = selectedValue === value
-    const IsPopDisabled = isPopDisabled ?? components.radio.isPopDisabled
 
-    const handleClick = () => {
-      if (!Disabled) onChange?.(value)
-    }
-
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-      if (Disabled) return
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault()
-        onChange?.(value)
-      }
-    }
+    useEffect(() => {
+      roving.registerItem({
+        id: value,
+        ref: ref as React.RefObject<HTMLElement>,
+        disabled: isDisabled
+      })
+      return () => roving.unregisterItem(value)
+    }, [value, isDisabled, roving])
 
     return (
       <Flex
         {...props}
         as="label"
-        alignItems={alignItems}
-        aria-disabled={Disabled}
-        data-disabled={Disabled}
-        onClick={handleClick}
+        alignItems="center"
         className={cn(
           `${global.prefixCls}-radio-label ${global.prefixCls}-clickable`,
           classNames?.label
@@ -70,9 +57,15 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
           role="radio"
           aria-checked={checked}
           data-checked={checked}
-          tabIndex={Disabled ? -1 : 0}
-          onKeyDown={handleKeyDown}
-          data-disabled={Disabled}
+          tabIndex={roving.hasInteracted && roving.activeId === value ? 0 : -1}
+          data-disabled={isDisabled}
+          onClick={() => {
+            if (!isDisabled) {
+              roving.focusItem(value)
+              onChange?.(value)
+            }
+          }}
+          onKeyDown={(e) => roving.handleItemKeyDown(e, value, onChange)}
           className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
           style={{
             borderRadius: '50%',
@@ -87,7 +80,6 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
             data-visible={checked}
             className={cn(
               `${global.prefixCls}-radio-inner ${global.prefixCls}-fade`,
-              checked && !IsPopDisabled && `${global.prefixCls}-pop`,
               classNames?.inner
             )}
             style={{
@@ -96,10 +88,10 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
             }}
           />
         </div>
-        {children}
+        {label}
       </Flex>
     )
   }
 )
 
-Radio.displayName = 'Radio'
+RadioOption.displayName = 'RadioOption'
