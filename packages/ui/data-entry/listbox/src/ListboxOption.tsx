@@ -1,52 +1,82 @@
-import React, { useEffect, useRef } from 'react'
+import React, { cloneElement, isValidElement, useRef, useEffect } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
-import { useListboxContext } from './ListboxContext'
+import { useListboxContext } from './useListboxContext'
 
-export interface ListboxOptionProps extends Omit<FlexProps<'li'>, 'as' | 'onClick'> {
+export interface ListboxOptionProps extends Omit<
+  FlexProps<'li'>,
+  'as' | 'className' | 'onClick' | 'style'
+> {
   value: string
   disabled?: boolean
-  checkmarkProps?: CheckmarkProps
+  classNames?: {
+    label?: string
+    checkmark?: string
+  }
+  styles?: {
+    label?: React.CSSProperties
+    checkmark?: React.CSSProperties
+  }
+  checkmark?: React.ReactNode
+  checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
   onClick?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void
 }
 
 export const ListboxOption = ({
   children,
-  className,
-  checkmarkProps,
   value,
   disabled,
+  classNames,
+  styles,
+  checkmark = <Checkmark />,
+  checkmarkProps,
   onClick,
   alignItems = 'center',
   ...props
 }: ListboxOptionProps) => {
   const { global } = useNSUI()
-  const { registerOption, unregisterOption, activeId, setActiveId, toggleSelection, isSelected } =
-    useListboxContext()
-
+  const ctx = useListboxContext()
   const ref = useRef<HTMLDivElement>(null)
-  const id = value
-  const isActive = activeId === id
-  const selected = isSelected(value)
+
+  if (!ctx) return null
+
+  const { value: selectedValue, onChange, selectionMode, roving } = ctx
+
+  const isActive = roving.activeId === value
+
+  const isSelected =
+    selectionMode === 'multiple'
+      ? Array.isArray(selectedValue) && selectedValue.includes(value)
+      : selectedValue === value
 
   useEffect(() => {
-    registerOption({ id, ref, disabled })
-    return () => unregisterOption(id)
-  }, [id, disabled, registerOption, unregisterOption])
+    roving.registerItem({
+      id: value,
+      ref: ref as React.RefObject<HTMLElement>,
+      disabled
+    })
+    return () => roving.unregisterItem(value)
+  }, [value, disabled, roving])
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const select = () => {
     if (disabled) return
-    setActiveId(id)
-    toggleSelection(value)
-    onClick?.(value, event)
+
+    if (selectionMode === 'multiple') {
+      const current = Array.isArray(selectedValue) ? selectedValue : []
+      const next = isSelected ? current.filter((v) => v !== value) : [...current, value]
+
+      onChange?.(next)
+    } else {
+      onChange?.(value)
+    }
   }
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (disabled) return
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      toggleSelection(value)
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!disabled) {
+      roving.focusItem(value)
+      select()
+      onClick?.(value, event)
     }
   }
 
@@ -57,16 +87,37 @@ export const ListboxOption = ({
       role="option"
       ref={ref}
       alignItems={alignItems}
-      tabIndex={disabled ? undefined : isActive ? 0 : -1}
+      tabIndex={disabled ? -1 : roving.hasInteracted && isActive ? 0 : -1}
       aria-disabled={disabled}
-      aria-selected={selected}
-      onFocus={() => setActiveId(id)}
+      aria-selected={isSelected}
+      onFocus={() => roving.focusItem(value)}
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
-      className={cn(`${global.prefixCls}-listbox-option ${global.prefixCls}-clickable`, className)}
+      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) =>
+        roving.handleItemKeyDown(e, value, select, {
+          role: 'option',
+          allowHorizontal: false
+        })
+      }
+      className={cn(
+        `${global.prefixCls}-listbox-option ${global.prefixCls}-clickable`,
+        classNames?.label
+      )}
+      style={styles?.label}
     >
       <span>{children}</span>
-      {selected && <Checkmark {...checkmarkProps} />}
+
+      {isValidElement(checkmark)
+        ? cloneElement(checkmark, {
+            ...(checkmark.type === Checkmark
+              ? {
+                  checked: isSelected,
+                  className: classNames?.checkmark,
+                  style: styles?.checkmark
+                }
+              : {}),
+            ...checkmarkProps
+          })
+        : checkmark}
     </Flex>
   )
 }
