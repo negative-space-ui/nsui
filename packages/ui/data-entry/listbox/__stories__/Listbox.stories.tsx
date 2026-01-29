@@ -8,7 +8,9 @@ export default {
   args: {
     defaultValue: '2',
     classNames: {
-      checkmark: 'w-4 h-4 text-neutral-600'
+      option: {
+        checkmark: 'w-4 h-4 text-neutral-600'
+      }
     },
     items: [
       { option: { value: '1', children: 'Option 1' } },
