@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, type ButtonProps } from '../src/Button'
+import { Button, type ButtonProps } from '../src'
 
 export default {
   title: 'Actions/Buttons/Button',
