@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
-export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
+export interface DividerProps extends Omit<React.HTMLAttributes<HTMLHRElement>, 'aria-hidden'> {
   orientation?: 'horizontal' | 'vertical'
 }
 
@@ -22,7 +22,7 @@ export const Divider = ({
         `${global.prefixCls}-divider-${orientation}`,
         className
       )}
-      style={{ border: 'none', ...style }}
+      style={style}
     />
   )
 }

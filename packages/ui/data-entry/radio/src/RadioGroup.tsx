@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState, useId } from 'react'
-import { cn, mergeClassNames, useNSUI } from '@negative-space/system'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
 import { useRovingFocus } from '@negative-space/roving-focus'
 import { RadioOption, type RadioOptionProps } from './RadioOption'
@@ -89,7 +89,7 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
             <RadioOption
               key={option.value ?? index}
               {...option}
-              classNames={mergeClassNames(classNames?.option, option.classNames)}
+              classNames={mergeCn(classNames?.option, option.classNames)}
               styles={{ ...styles?.option, ...option.styles }}
             />
           ))}

@@ -13,14 +13,14 @@ export interface ButtonProps extends Omit<
   suffix?: React.ReactNode
   classNames?: {
     btn?: string
-    content?: string
     prefix?: string
+    content?: string
     suffix?: string
   }
   styles?: {
     btn?: React.CSSProperties
-    content?: React.CSSProperties
     prefix?: React.CSSProperties
+    content?: React.CSSProperties
     suffix?: React.CSSProperties
   }
   controlled?: boolean
@@ -28,7 +28,7 @@ export interface ButtonProps extends Omit<
   isLoading?: boolean
   spinner?: React.ReactNode
   spinnerPosition?: 'full' | 'prefix' | 'content' | 'suffix'
-  spinnerProps?: SpinnerProps
+  spinnerProps?: Omit<SpinnerProps, 'isLoading'>
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -61,7 +61,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
 
     const isDisabled = disabled || isLoading || (controlled ? groupDisabled : false)
-    const resolvedSpinner = spinner ?? <Spinner {...spinnerProps} />
+    const resolvedSpinner = spinner ?? <Spinner isLoading {...spinnerProps} />
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return

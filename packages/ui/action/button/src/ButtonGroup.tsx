@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn, mergeClassNames, useNSUI } from '@negative-space/system'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
 import { Button, type ButtonProps } from './Button'
 import { IconButton, type IconButtonProps } from './IconButton'
@@ -52,7 +52,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                 <Button
                   key={index}
                   controlled
-                  classNames={mergeClassNames(classNames?.button, item.button.classNames)}
+                  classNames={mergeCn(classNames?.button, item.button.classNames)}
                   styles={{ ...styles?.button, ...item.button.styles }}
                   {...item.button}
                 />

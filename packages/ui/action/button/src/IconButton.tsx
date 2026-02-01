@@ -30,11 +30,11 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
     return (
       <button
         ref={ref}
-        className={cn(`${global.prefixCls}-icon-btn ${global.prefixCls}-clickable`, className)}
-        style={style}
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
+        className={cn(`${global.prefixCls}-icon-btn ${global.prefixCls}-clickable`, className)}
+        style={style}
         {...props}
       />
     )

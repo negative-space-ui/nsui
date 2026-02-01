@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { cn, mergeClassNames, useNSUI } from '@negative-space/system'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import { Grid, type GridProps } from '@negative-space/grid'
 import { useRovingFocus } from '@negative-space/roving-focus'
 import { ListboxOption, type ListboxOptionProps } from './ListboxOption'
@@ -101,7 +101,7 @@ export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
                 <ListboxGroup
                   key={`group-${index}`}
                   {...component.group}
-                  classNames={mergeClassNames(classNames?.group, component.group.classNames)}
+                  classNames={mergeCn(classNames?.group, component.group.classNames)}
                   styles={{ ...styles?.group, ...component.group.styles }}
                 />
               )
@@ -114,7 +114,7 @@ export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
                 <ListboxOption
                   key={key}
                   {...component.option}
-                  classNames={mergeClassNames(classNames?.option, component.option.classNames)}
+                  classNames={mergeCn(classNames?.option, component.option.classNames)}
                   styles={{ ...styles?.option, ...component.option.styles }}
                 />
               )

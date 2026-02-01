@@ -33,7 +33,7 @@ export type ListProps<E extends ListElement = 'ol'> = {
     item?: React.CSSProperties
   }
   as?: E
-  items: ListItemProps[]
+  items: Omit<ListItemProps, 'className' | 'style'>[]
   marker?: MarkerByElement<E>
 } & Omit<FlexProps, 'as' | 'children' | 'className' | 'style'> &
   Omit<React.ComponentPropsWithoutRef<E>, 'className' | 'style'>

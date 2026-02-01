@@ -1,7 +1,10 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
-export interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SpinnerProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  'role' | 'aria-busy'
+> {
   isLoading?: boolean
 }
 

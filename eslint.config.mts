@@ -12,6 +12,7 @@ export default defineConfig({
     react: { version: 'detect' }
   },
   rules: {
-    '@typescript-eslint/no-require-imports': 'off'
+    '@typescript-eslint/no-require-imports': 'off',
+    'react/prop-types': 'off'
   }
 })

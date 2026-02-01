@@ -14,14 +14,16 @@ export interface CheckboxProps extends Omit<
     label?: string
     checkbox?: string
     checkboxInner?: string
+    checkmark?: string
   }
   styles?: {
     label?: React.CSSProperties
     checkbox?: React.CSSProperties
     checkboxInner?: React.CSSProperties
+    checkmark?: React.CSSProperties
   }
   isPopDisabled?: boolean
-  checkmarkProps?: CheckmarkProps
+  checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
 }
 
 export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
@@ -97,8 +99,8 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           <Checkmark
             {...checkmarkProps}
             checked={isChecked}
-            className={cn(`${global.prefixCls}-checkmark`, checkmarkProps?.className)}
-            style={{ scale: '80%', ...checkmarkProps?.style }}
+            className={cn(`${global.prefixCls}-checkmark`, classNames?.checkmark)}
+            style={{ scale: '80%', ...styles?.checkmark }}
           />
         </span>
 
