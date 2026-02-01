@@ -1,9 +1,6 @@
 import { cn } from './cn'
 
-export function mergeClassNames<T extends Record<string, string | undefined>>(
-  base?: T,
-  override?: T
-): T {
+export function mergeCn<T extends Record<string, string | undefined>>(base?: T, override?: T): T {
   const result: Record<string, string | undefined> = {}
 
   for (const key in { ...base, ...override }) {
