@@ -1,52 +1,25 @@
-import React, { useId } from 'react'
+import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Text, TextProps } from '@negative-space/text'
+import { CollectionGroup, type CollectionGroupProps } from '@negative-space/system'
 
-export interface ListboxGroupProps extends Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  'className' | 'style'
-> {
-  classNames?: {
-    root?: string
-    label?: string
-  }
-  styles?: {
-    root?: React.CSSProperties
-    label?: React.CSSProperties
-  }
-  label: string
-  labelProps?: TextProps
-}
+export type ListboxGroupProps = CollectionGroupProps
 
-export const ListboxGroup = ({
-  children,
-  classNames,
-  styles,
-  label,
-  labelProps,
-  ...props
-}: ListboxGroupProps) => {
+export function ListboxGroup({ children, classNames, styles, label, ...props }: ListboxGroupProps) {
   const { global } = useNSUI()
-  const id = useId()
 
   return (
-    <div
+    <CollectionGroup
       {...props}
-      role="group"
-      aria-labelledby={id}
-      className={(cn(`${global.prefixCls}-listbox-group`), classNames?.root)}
-      style={styles?.root}
+      label={label}
+      classNames={{
+        root: cn(`${global.prefixCls}-listbox-group`, classNames?.root),
+        label: cn(`${global.prefixCls}-listbox-group-label`, classNames?.label)
+      }}
+      styles={styles}
     >
-      <Text
-        {...labelProps}
-        id={id}
-        as="p"
-        className={cn(`${global.prefixCls}-listbox-group-label`, classNames?.label)}
-        style={styles?.label}
-      >
-        {label}
-      </Text>
       {children}
-    </div>
+    </CollectionGroup>
   )
 }
+
+ListboxGroup.displayName = 'ListboxGroup'

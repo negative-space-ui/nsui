@@ -1,18 +1,17 @@
 import React, { useMemo, useState } from 'react'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
-import { Grid, type GridProps } from '@negative-space/grid'
-import { useRovingFocus } from '@negative-space/roving-focus'
-import { ListboxOption, type ListboxOptionProps } from './ListboxOption'
-import { ListboxGroup, type ListboxGroupProps } from './ListboxGroup'
-import { ListboxSeparator, type ListboxSeparatorProps } from './ListboxSeparator'
+import { Collection, type CollectionProps } from '@negative-space/system'
 import { ListboxContext, type SelectionMode } from './ListboxContext'
+import { ListboxGroup, type ListboxGroupProps } from './ListboxGroup'
+import { ListboxOption, type ListboxOptionProps } from './ListboxOption'
+import { ListboxSeparator, type ListboxSeparatorProps } from './ListboxSeparator'
 
 export type ListboxComponent =
-  | { group: ListboxGroupProps }
-  | { option: ListboxOptionProps }
-  | { separator: ListboxSeparatorProps }
+  | { group: ListboxGroupProps; option?: never; separator?: never }
+  | { option: ListboxOptionProps; group?: never; separator?: never }
+  | { separator: ListboxSeparatorProps; group?: never; option?: never }
 
-export interface ListboxProps extends Omit<GridProps, 'children' | 'className' | 'style'> {
+export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {
     root?: string
     group?: {
@@ -20,7 +19,7 @@ export interface ListboxProps extends Omit<GridProps, 'children' | 'className' |
       label?: string
     }
     option?: {
-      label?: string
+      root?: string
       checkmark?: string
     }
     separator?: string
@@ -32,111 +31,92 @@ export interface ListboxProps extends Omit<GridProps, 'children' | 'className' |
       label?: React.CSSProperties
     }
     option?: {
-      label?: React.CSSProperties
+      root?: React.CSSProperties
       checkmark?: React.CSSProperties
     }
     separator?: React.CSSProperties
   }
-  disabled?: boolean
   items: ListboxComponent[]
   selectionMode?: SelectionMode
   defaultValue?: string | string[]
   onValueChange?: (value: string | string[]) => void
 }
 
-export const Listbox = React.forwardRef<HTMLDivElement, ListboxProps>(
-  (
-    {
-      classNames,
-      styles,
+export function Listbox({
+  items,
+  classNames,
+  styles,
+  disabled,
+  selectionMode = 'single',
+  defaultValue,
+  onValueChange,
+  ...props
+}: ListboxProps) {
+  const { global } = useNSUI()
+  const [value, setValue] = useState<string | string[] | null>(
+    defaultValue ?? (selectionMode === 'multiple' ? [] : null)
+  )
+
+  const contextValue = useMemo(
+    () => ({
       disabled,
-      items,
-      columns = 1,
-      selectionMode = 'single',
-      defaultValue,
-      onValueChange,
-      ...props
-    },
-    ref
-  ) => {
-    const { global } = useNSUI()
-    const roving = useRovingFocus()
+      selectionMode,
+      value,
+      onChange: (next: string | string[]) => {
+        setValue(next)
+        onValueChange?.(next)
+      }
+    }),
+    [disabled, selectionMode, value, onValueChange]
+  )
 
-    const [value, setValue] = useState<string | string[] | null>(
-      defaultValue ?? (selectionMode === 'multiple' ? [] : null)
-    )
-
-    const contextValue = useMemo(
-      () => ({
-        disabled,
-        selectionMode,
-        value,
-        onChange: (next: string | string[]) => {
-          setValue(next)
-          onValueChange?.(next)
-        },
-        roving
-      }),
-      [disabled, selectionMode, value, onValueChange, roving]
-    )
-
-    return (
-      <ListboxContext.Provider value={contextValue}>
-        <Grid
-          {...props}
-          ref={ref}
-          role="listbox"
-          tabIndex={disabled ? -1 : roving.hasInteracted ? -1 : 0}
-          aria-disabled={disabled}
-          aria-multiselectable={selectionMode === 'multiple'}
-          columns={columns}
-          className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
-          style={styles?.root}
-          onKeyDown={disabled ? undefined : roving.handleGroupKeyDown}
-          onBlur={disabled ? undefined : roving.handleGroupBlur}
-        >
-          {items.map((component, index) => {
-            if ('group' in component) {
-              return (
-                <ListboxGroup
-                  key={`group-${index}`}
-                  {...component.group}
-                  classNames={mergeCn(classNames?.group, component.group.classNames)}
-                  styles={{ ...styles?.group, ...component.group.styles }}
-                />
-              )
-            }
-
-            if ('option' in component) {
-              const key = component.option.value ?? `option-${index}`
-
-              return (
-                <ListboxOption
-                  key={key}
-                  {...component.option}
-                  classNames={mergeCn(classNames?.option, component.option.classNames)}
-                  styles={{ ...styles?.option, ...component.option.styles }}
-                />
-              )
-            }
-
-            if ('separator' in component) {
-              return (
-                <ListboxSeparator
-                  key={`separator-${index}`}
-                  {...component.separator}
-                  className={cn(classNames?.separator, component.separator.className)}
-                  style={{ ...styles?.separator, ...component.separator.style }}
-                />
-              )
-            }
-
-            return null
-          })}
-        </Grid>
-      </ListboxContext.Provider>
-    )
-  }
-)
+  return (
+    <ListboxContext.Provider value={contextValue}>
+      <Collection
+        role="listbox"
+        aria-multiselectable={selectionMode === 'multiple' || undefined}
+        disabled={disabled}
+        rovingOptions={{ containerRole: 'listbox' }}
+        className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
+        style={styles?.root}
+        {...props}
+      >
+        {items.map((item, index) => {
+          if ('group' in item && item.group) {
+            return (
+              <ListboxGroup
+                key={index}
+                classNames={mergeCn(classNames?.group, item.group.classNames)}
+                styles={{ ...styles?.group, ...item.group.styles }}
+                {...item.group}
+              />
+            )
+          }
+          if ('option' in item && item.option) {
+            return (
+              <ListboxOption
+                key={item.option.value ?? index}
+                classNames={mergeCn(classNames?.option, item.option.classNames)}
+                styles={{ ...styles?.option, ...item.option.styles }}
+                {...item.option}
+              />
+            )
+          }
+          if ('separator' in item && item.separator) {
+            return (
+              <ListboxSeparator
+                key={index}
+                className={classNames?.separator}
+                style={styles?.separator}
+                {...item.separator}
+              />
+            )
+          }
+          return null
+        })}
+      </Collection>
+    </ListboxContext.Provider>
+  )
+}
 
 Listbox.displayName = 'Listbox'

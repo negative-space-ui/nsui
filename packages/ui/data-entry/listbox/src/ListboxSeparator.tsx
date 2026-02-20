@@ -1,8 +1,10 @@
 import React from 'react'
-import { Divider, type DividerProps } from '@negative-space/divider'
+import { CollectionSeparator, type CollectionSeparatorProps } from '@negative-space/system'
 
-export type ListboxSeparatorProps = DividerProps
+export type ListboxSeparatorProps = CollectionSeparatorProps
 
-export const ListboxSeparator = (props: ListboxSeparatorProps) => {
-  return <Divider role="separator" {...props} />
+export function ListboxSeparator(props: ListboxSeparatorProps) {
+  return <CollectionSeparator {...props} />
 }
+
+ListboxSeparator.displayName = 'ListboxSeparator'

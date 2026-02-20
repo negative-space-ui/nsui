@@ -1,8 +1,8 @@
 import React from 'react'
-import { Divider, type DividerProps } from '@negative-space/divider'
+import { CollectionSeparator, type CollectionSeparatorProps } from '@negative-space/system'
 
-export type MenuSeparatorProps = DividerProps
+export type MenuSeparatorProps = CollectionSeparatorProps
 
-export const MenuSeparator = (props: MenuSeparatorProps) => {
-  return <Divider role="separator" {...props} />
-}
+export const MenuSeparator = (props: MenuSeparatorProps) => <CollectionSeparator {...props} />
+
+MenuSeparator.displayName = 'MenuSeparator'
