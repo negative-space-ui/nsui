@@ -18,7 +18,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "plop": "ts-node ./scripts/warn-create-package.js",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --write .",
     "start": "cd apps/storybook && pnpm start",
     "typecheck": "turbo run typecheck"
