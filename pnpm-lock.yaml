@@ -208,9 +208,24 @@ importers:
 
   packages/core/system:
     dependencies:
+      '@negative-space/divider':
+        specifier: workspace:*
+        version: link:../../ui/layout/divider
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../ui/layout/flex
+      '@negative-space/grid':
+        specifier: workspace:*
+        version: link:../../ui/layout/grid
+      '@negative-space/heading':
+        specifier: workspace:*
+        version: link:../../ui/typography/heading
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../provider
+      '@negative-space/roving-focus':
+        specifier: workspace:*
+        version: link:../hooks/roving-focus
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -418,24 +433,9 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
-      '@negative-space/divider':
-        specifier: workspace:*
-        version: link:../../layout/divider
-      '@negative-space/flex':
-        specifier: workspace:*
-        version: link:../../layout/flex
-      '@negative-space/grid':
-        specifier: workspace:*
-        version: link:../../layout/grid
-      '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
-      '@negative-space/text':
-        specifier: workspace:*
-        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -567,27 +567,12 @@ importers:
 
   packages/ui/nav/menu:
     dependencies:
-      '@negative-space/divider':
-        specifier: workspace:*
-        version: link:../../layout/divider
-      '@negative-space/flex':
-        specifier: workspace:*
-        version: link:../../layout/flex
-      '@negative-space/grid':
-        specifier: workspace:*
-        version: link:../../layout/grid
       '@negative-space/link':
         specifier: workspace:*
         version: link:../link
-      '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
-      '@negative-space/text':
-        specifier: workspace:*
-        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3
