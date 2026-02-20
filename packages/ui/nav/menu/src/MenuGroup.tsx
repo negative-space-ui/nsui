@@ -1,52 +1,22 @@
-import React, { useId } from 'react'
+import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Text, TextProps } from '@negative-space/text'
+import { CollectionGroup, type CollectionGroupProps } from '@negative-space/system'
 
-export interface MenuGroupProps extends Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  'className' | 'style'
-> {
-  classNames?: {
-    root?: string
-    label?: string
-  }
-  styles?: {
-    root?: React.CSSProperties
-    label?: React.CSSProperties
-  }
-  label: string
-  labelProps?: TextProps
-}
+export type MenuGroupProps = CollectionGroupProps
 
-export const MenuGroup = ({
-  children,
-  classNames,
-  styles,
-  label,
-  labelProps,
-  ...props
-}: MenuGroupProps) => {
+export const MenuGroup = ({ classNames, styles, ...props }: MenuGroupProps) => {
   const { global } = useNSUI()
-  const id = useId()
 
   return (
-    <div
+    <CollectionGroup
       {...props}
-      role="group"
-      aria-labelledby={id}
-      className={cn(`${global.prefixCls}-menu-group`, classNames?.root)}
-      style={styles?.root}
-    >
-      <Text
-        {...labelProps}
-        id={id}
-        as="p"
-        className={cn(`${global.prefixCls}-menu-group-label`, classNames?.label)}
-        style={styles?.label}
-      >
-        {label}
-      </Text>
-      {children}
-    </div>
+      classNames={{
+        root: cn(`${global.prefixCls}-menu-group`, classNames?.root),
+        label: cn(`${global.prefixCls}-menu-group-label`, classNames?.label)
+      }}
+      styles={styles}
+    />
   )
 }
+
+MenuGroup.displayName = 'MenuGroup'

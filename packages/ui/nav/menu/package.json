@@ -35,13 +35,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/divider": "workspace:*",
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/grid": "workspace:*",
     "@negative-space/link": "workspace:*",
-    "@negative-space/roving-focus": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "@negative-space/text": "workspace:*"
+    "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.3"

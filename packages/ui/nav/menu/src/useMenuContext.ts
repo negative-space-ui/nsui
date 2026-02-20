@@ -1,10 +1,10 @@
 import React from 'react'
 import { MenuContext, type MenuContextValue } from './MenuContext'
 
-export const useMenuContext = (): MenuContextValue => {
+export function useMenuContext(): MenuContextValue {
   const ctx = React.useContext(MenuContext)
   if (!ctx) {
-    throw new Error('Menu components must be used within Menu')
+    throw new Error('useMenuContext must be used within a <Menu> component.')
   }
   return ctx
 }

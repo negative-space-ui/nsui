@@ -1,136 +1,114 @@
-import React, { useRef, useEffect, useId } from 'react'
+import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex, type FlexProps } from '@negative-space/flex'
+import { Link, type LinkProps } from '@negative-space/link'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/system'
 import { useMenuContext } from './useMenuContext'
 
 export interface MenuItemProps extends Omit<
-  React.HTMLAttributes<HTMLLIElement>,
-  'content' | 'className' | 'style' | 'prefix'
+  LinkProps,
+  'content' | 'className' | 'style' | 'tabIndex' | 'aria-disabled' | 'children' | 'prefix'
 > {
   classNames?: {
     root?: string
+    link?: string
     prefix?: string
     content?: string
     suffix?: string
-    link?: string
   }
   styles?: {
     root?: React.CSSProperties
+    link?: React.CSSProperties
     prefix?: React.CSSProperties
     content?: React.CSSProperties
     suffix?: React.CSSProperties
-    link?: React.CSSProperties
   }
-  disabled?: boolean
+  value?: CollectionItemProps['value']
+  disabled?: CollectionItemProps['disabled']
+  direction?: CollectionItemProps['direction']
+  alignItems?: CollectionItemProps['alignItems']
+  gap?: CollectionItemProps['gap']
   prefix?: React.ReactNode
   content: React.ReactNode
   suffix?: React.ReactNode
-  linkProps?: Omit<FlexProps, 'className' | 'style' | 'as' | 'direction' | 'align'>
-  onClick?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export const MenuItem = React.forwardRef<HTMLElement, MenuItemProps>(
-  (
-    { classNames, styles, disabled, prefix, content, suffix, linkProps, onClick, ...props },
-    ref
-  ) => {
-    const { global } = useNSUI()
-    const ctx = useMenuContext()
-    const innerRef = useRef<HTMLElement>(null!)
-    const id = useId()
+export const MenuItem = ({
+  value,
+  disabled,
+  direction,
+  alignItems,
+  gap,
+  prefix,
+  content,
+  suffix,
+  classNames,
+  styles,
+  onClick,
+  ...linkProps
+}: MenuItemProps) => {
+  const { global } = useNSUI()
+  const { disabled: groupDisabled } = useMenuContext()
+  const isDisabled = disabled || groupDisabled
 
-    if (!ctx) return null
-
-    const { roving } = ctx
-    const isActive = roving.activeId === id
-    const isDisabled = disabled || ctx.disabled
-
-    useEffect(() => {
-      roving.registerItem({
-        id,
-        ref: innerRef,
-        disabled: isDisabled
-      })
-      return () => roving.unregisterItem(id)
-    }, [id, isDisabled, roving])
-
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-      if (!isDisabled) {
-        roving.focusItem(id)
-        onClick?.(event)
-      }
-    }
-
-    return (
-      <li
-        {...props}
-        className={cn(`${global.prefixCls}-menu-item`, classNames?.root)}
-        style={styles?.root}
-      >
-        <Flex
-          {...linkProps}
-          ref={(node) => {
-            innerRef.current = node
-            if (typeof ref === 'function') {
-              ref(node)
-            } else if (ref) {
-              ref.current = node
-            }
-          }}
-          as="a"
-          role="menuitem"
-          direction="row"
-          alignItems="center"
-          tabIndex={isDisabled ? -1 : roving.hasInteracted && isActive ? 0 : -1}
-          aria-disabled={isDisabled}
-          onFocus={() => roving.focusItem(id)}
-          onClick={handleClick}
-          onKeyDown={(e: React.KeyboardEvent<HTMLElement>) =>
-            roving.handleItemKeyDown(
-              e,
-              id,
-              () => {
-                handleClick(e as unknown as React.MouseEvent<HTMLElement>)
-              },
-              {
-                allowHorizontal: false
-              }
-            )
+  return (
+    <CollectionItem
+      value={value}
+      disabled={isDisabled}
+      direction={direction}
+      alignItems={alignItems}
+      gap={gap}
+      role="menuitem"
+      onSelect={() => {
+        onClick?.({} as React.MouseEvent<HTMLAnchorElement>)
+        if (linkProps.href && !isDisabled) {
+          if (linkProps.target === '_blank') {
+            window.open(linkProps.href, '_blank', 'noopener,noreferrer')
+          } else {
+            window.location.href = linkProps.href
           }
-          className={cn(
-            `${global.prefixCls}-menu-link ${global.prefixCls}-clickable`,
-            classNames?.link
-          )}
-          style={styles?.link}
-        >
-          {prefix && (
-            <span
-              className={cn(`${global.prefixCls}-menu-prefix`, classNames?.prefix)}
-              style={styles?.prefix}
-            >
-              {prefix}
-            </span>
-          )}
-
+        }
+      }}
+      classNames={{ root: cn(`${global.prefixCls}-menu-item`, classNames?.root) }}
+      styles={{ root: styles?.root }}
+    >
+      <Link
+        {...linkProps}
+        tabIndex={-1}
+        aria-disabled={isDisabled || undefined}
+        onClick={(e) => {
+          e.stopPropagation()
+          if (!isDisabled) onClick?.(e as unknown as React.MouseEvent<HTMLAnchorElement>)
+        }}
+        className={cn(`${global.prefixCls}-menu-link`, classNames?.link)}
+        style={styles?.link}
+      >
+        {prefix && (
           <span
-            className={cn(`${global.prefixCls}-menu-content`, classNames?.content)}
-            style={styles?.content}
+            className={cn(`${global.prefixCls}-menu-prefix`, classNames?.prefix)}
+            style={styles?.prefix}
           >
-            {content}
+            {prefix}
           </span>
+        )}
 
-          {suffix && (
-            <span
-              className={cn(`${global.prefixCls}-menu-suffix`, classNames?.suffix)}
-              style={styles?.suffix}
-            >
-              {suffix}
-            </span>
-          )}
-        </Flex>
-      </li>
-    )
-  }
-)
+        <span
+          className={cn(`${global.prefixCls}-menu-content`, classNames?.content)}
+          style={styles?.content}
+        >
+          {content}
+        </span>
+
+        {suffix && (
+          <span
+            className={cn(`${global.prefixCls}-menu-suffix`, classNames?.suffix)}
+            style={styles?.suffix}
+          >
+            {suffix}
+          </span>
+        )}
+      </Link>
+    </CollectionItem>
+  )
+}
 
 MenuItem.displayName = 'MenuItem'
