@@ -13,6 +13,7 @@ export type NSUIProviderProps = {
 export const NSUIProvider = ({ children, components, global }: NSUIProviderProps) => {
   const contextValue: NSUIContextProps = {
     global: {
+      colors: global?.colors ?? { error: 'hsl(0, 85%, 55%)' },
       motionDurations: {
         fade: global?.motionDurations?.fade ?? 300,
         pop: global?.motionDurations?.pop ?? 600,
