@@ -5,12 +5,12 @@ import { Text } from '@negative-space/text'
 
 export interface FieldProps extends Omit<FlexProps<'fieldset'>, 'as' | 'className' | 'style'> {
   classNames?: {
-    field?: string
+    root?: string
     label?: string
     error?: string
   }
   styles?: {
-    field?: React.CSSProperties
+    root?: React.CSSProperties
     label?: React.CSSProperties
     error?: React.CSSProperties
   }
@@ -34,8 +34,8 @@ export const Field = ({
     <Flex
       as="fieldset"
       direction={direction}
-      className={cn(`${global.prefixCls}-field`, classNames?.field)}
-      style={styles?.field}
+      className={cn(`${global.prefixCls}-field`, classNames?.root)}
+      style={styles?.root}
       {...props}
     >
       {label && (

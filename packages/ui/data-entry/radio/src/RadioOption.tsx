@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { Flex, type FlexProps } from '@negative-space/flex'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/system'
 import { useRadioContext } from './useRadioContext'
 
 export interface RadioOptionProps extends Omit<
-  FlexProps<'label'>,
-  'as' | 'className' | 'style' | 'onClick'
+  CollectionItemProps,
+  'onClick' | 'selected' | 'value' | 'role' | 'classNames' | 'styles'
 > {
   classNames?: {
     label?: string
@@ -20,78 +20,73 @@ export interface RadioOptionProps extends Omit<
   disabled?: boolean
   value: string
   label: React.ReactNode
-  isPopDisabled?: boolean
 }
 
-export const RadioOption = React.forwardRef<HTMLDivElement, RadioOptionProps>(
-  ({ value, label, disabled, classNames, styles, ...props }) => {
-    const { global } = useNSUI()
-    const { selectedValue, onChange, disabled: groupDisabled, roving } = useRadioContext()
+export function RadioOption({
+  value,
+  label,
+  disabled,
+  classNames,
+  styles,
+  ...props
+}: RadioOptionProps) {
+  const { global } = useNSUI()
+  const { selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
 
-    const ref = useRef<HTMLDivElement>(null)
-    const isDisabled = disabled ?? groupDisabled
-    const checked = selectedValue === value
+  const isDisabled = disabled ?? groupDisabled ?? false
+  const checked = selectedValue === value
 
-    useEffect(() => {
-      roving.registerItem({
-        id: value,
-        ref: ref as React.RefObject<HTMLElement>,
-        disabled: isDisabled
-      })
-      return () => roving.unregisterItem(value)
-    }, [value, isDisabled, roving])
+  const select = () => {
+    if (!isDisabled) onChange?.(value)
+  }
 
-    return (
-      <Flex
-        {...props}
-        as="label"
-        alignItems="center"
-        className={cn(
-          `${global.prefixCls}-radio-label ${global.prefixCls}-clickable`,
+  return (
+    <CollectionItem
+      {...props}
+      role="radio"
+      value={value}
+      disabled={isDisabled}
+      onClick={select}
+      onSelect={select}
+      data-checked={checked}
+      aria-checked={checked}
+      classNames={{
+        root: cn(
+          `${global.prefixCls}-radio-label`,
+          `${global.prefixCls}-clickable`,
           classNames?.label
-        )}
-        style={styles?.label}
+        )
+      }}
+      styles={{ root: styles?.label }}
+    >
+      <div
+        data-checked={checked}
+        className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
+        style={{
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          ...styles?.radio
+        }}
       >
         <div
-          ref={ref}
-          role="radio"
-          aria-checked={checked}
-          data-checked={checked}
-          tabIndex={roving.hasInteracted && roving.activeId === value ? 0 : -1}
-          data-disabled={isDisabled}
-          onClick={() => {
-            if (!isDisabled) {
-              roving.focusItem(value)
-              onChange?.(value)
-            }
-          }}
-          onKeyDown={(e) => roving.handleItemKeyDown(e, value, onChange)}
-          className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
+          data-visible={checked}
+          className={cn(
+            `${global.prefixCls}-radio-inner ${global.prefixCls}-fade`,
+            classNames?.inner
+          )}
           style={{
             borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden',
-            ...styles?.radio
+            ...styles?.inner
           }}
-        >
-          <div
-            data-visible={checked}
-            className={cn(
-              `${global.prefixCls}-radio-inner ${global.prefixCls}-fade`,
-              classNames?.inner
-            )}
-            style={{
-              borderRadius: '50%',
-              ...styles?.inner
-            }}
-          />
-        </div>
-        {label}
-      </Flex>
-    )
-  }
-)
+        />
+      </div>
+
+      {label}
+    </CollectionItem>
+  )
+}
 
 RadioOption.displayName = 'RadioOption'

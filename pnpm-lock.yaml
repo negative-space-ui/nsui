@@ -414,6 +414,9 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
@@ -436,6 +439,9 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -452,12 +458,9 @@ importers:
 
   packages/ui/data-entry/radio:
     dependencies:
-      '@negative-space/flex':
+      '@negative-space/field':
         specifier: workspace:*
-        version: link:../../layout/flex
-      '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
+        version: link:../../layout/field
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system

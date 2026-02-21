@@ -1,6 +1,7 @@
 ---
+'@negative-space/checkbox': minor
 '@negative-space/listbox': minor
 '@negative-space/radio': minor
 ---
 
-Refactor internal components using Collection
+Wrap component with Field

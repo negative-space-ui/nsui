@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
+import { Field } from '@negative-space/field'
 import { Collection, type CollectionProps } from '@negative-space/system'
 import { ListboxContext, type SelectionMode } from './ListboxContext'
 import { ListboxGroup, type ListboxGroupProps } from './ListboxGroup'
@@ -13,6 +14,10 @@ export type ListboxComponent =
 
 export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {
+    field?: {
+      root?: string
+      error?: string
+    }
     root?: string
     group?: {
       root?: string
@@ -25,6 +30,10 @@ export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
     separator?: string
   }
   styles?: {
+    field?: {
+      root?: React.CSSProperties
+      error?: React.CSSProperties
+    }
     root?: React.CSSProperties
     group?: {
       root?: React.CSSProperties
@@ -36,6 +45,7 @@ export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
     }
     separator?: React.CSSProperties
   }
+  error?: string
   items: ListboxComponent[]
   selectionMode?: SelectionMode
   defaultValue?: string | string[]
@@ -46,6 +56,7 @@ export function Listbox({
   items,
   classNames,
   styles,
+  error,
   disabled,
   selectionMode = 'single',
   defaultValue,
@@ -72,49 +83,51 @@ export function Listbox({
 
   return (
     <ListboxContext.Provider value={contextValue}>
-      <Collection
-        role="listbox"
-        aria-multiselectable={selectionMode === 'multiple' || undefined}
-        disabled={disabled}
-        rovingOptions={{ containerRole: 'listbox' }}
-        className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
-        style={styles?.root}
-        {...props}
-      >
-        {items.map((item, index) => {
-          if ('group' in item && item.group) {
-            return (
-              <ListboxGroup
-                key={index}
-                classNames={mergeCn(classNames?.group, item.group.classNames)}
-                styles={{ ...styles?.group, ...item.group.styles }}
-                {...item.group}
-              />
-            )
-          }
-          if ('option' in item && item.option) {
-            return (
-              <ListboxOption
-                key={item.option.value ?? index}
-                classNames={mergeCn(classNames?.option, item.option.classNames)}
-                styles={{ ...styles?.option, ...item.option.styles }}
-                {...item.option}
-              />
-            )
-          }
-          if ('separator' in item && item.separator) {
-            return (
-              <ListboxSeparator
-                key={index}
-                className={classNames?.separator}
-                style={styles?.separator}
-                {...item.separator}
-              />
-            )
-          }
-          return null
-        })}
-      </Collection>
+      <Field classNames={classNames?.field} styles={styles?.field} error={error}>
+        <Collection
+          role="listbox"
+          aria-multiselectable={selectionMode === 'multiple' || undefined}
+          disabled={disabled}
+          rovingOptions={{ containerRole: 'listbox' }}
+          className={cn(`${global.prefixCls}-listbox`, classNames?.root)}
+          style={styles?.root}
+          {...props}
+        >
+          {items.map((item, index) => {
+            if ('group' in item && item.group) {
+              return (
+                <ListboxGroup
+                  key={index}
+                  classNames={mergeCn(classNames?.group, item.group.classNames)}
+                  styles={{ ...styles?.group, ...item.group.styles }}
+                  {...item.group}
+                />
+              )
+            }
+            if ('option' in item && item.option) {
+              return (
+                <ListboxOption
+                  key={item.option.value ?? index}
+                  classNames={mergeCn(classNames?.option, item.option.classNames)}
+                  styles={{ ...styles?.option, ...item.option.styles }}
+                  {...item.option}
+                />
+              )
+            }
+            if ('separator' in item && item.separator) {
+              return (
+                <ListboxSeparator
+                  key={index}
+                  className={classNames?.separator}
+                  style={styles?.separator}
+                  {...item.separator}
+                />
+              )
+            }
+            return null
+          })}
+        </Collection>
+      </Field>
     </ListboxContext.Provider>
   )
 }

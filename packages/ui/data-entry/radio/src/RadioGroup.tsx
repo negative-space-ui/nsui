@@ -1,12 +1,16 @@
 import React, { useCallback, useMemo, useState, useId } from 'react'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
-import { Flex, type FlexProps } from '@negative-space/flex'
-import { useRovingFocus } from '@negative-space/roving-focus'
+import { Field } from '@negative-space/field'
+import { Collection, type CollectionProps } from '@negative-space/system'
 import { RadioOption, type RadioOptionProps } from './RadioOption'
 import { RadioContext } from './RadioContext'
 
-export interface RadioGroupProps extends Omit<FlexProps, 'children' | 'onChange'> {
+export interface RadioGroupProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {
+    field?: {
+      root?: string
+      error?: string
+    }
     root?: string
     option?: {
       label?: string
@@ -15,6 +19,10 @@ export interface RadioGroupProps extends Omit<FlexProps, 'children' | 'onChange'
     }
   }
   styles?: {
+    field?: {
+      root?: React.CSSProperties
+      error?: React.CSSProperties
+    }
     root?: React.CSSProperties
     option?: {
       label?: React.CSSProperties
@@ -25,63 +33,54 @@ export interface RadioGroupProps extends Omit<FlexProps, 'children' | 'onChange'
   name?: string
   disabled?: boolean
   options?: RadioOptionProps[]
+  error?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
 }
 
-export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
-  (
-    {
-      classNames,
-      styles,
-      disabled = false,
-      options,
-      direction = 'column',
-      name: nameProp,
-      defaultValue,
-      onValueChange,
-      ...props
+export function RadioGroup({
+  classNames,
+  styles,
+  disabled = false,
+  options,
+  error,
+  name: nameProp,
+  defaultValue,
+  onValueChange,
+  ...props
+}: RadioGroupProps) {
+  const { global } = useNSUI()
+  const autoName = useId()
+  const name = nameProp ?? autoName
+
+  const [selectedValue, setSelectedValue] = useState(defaultValue)
+
+  const handleChange = useCallback(
+    (value: string) => {
+      setSelectedValue(value)
+      onValueChange?.(value)
     },
-    ref
-  ) => {
-    const { global } = useNSUI()
-    const autoName = useId()
-    const name = nameProp ?? autoName
+    [onValueChange]
+  )
 
-    const [selectedValue, setSelectedValue] = useState(defaultValue)
-    const roving = useRovingFocus()
+  const contextValue = useMemo(
+    () => ({
+      name,
+      disabled,
+      selectedValue,
+      onChange: handleChange
+    }),
+    [name, disabled, selectedValue, handleChange]
+  )
 
-    const handleChange = useCallback(
-      (value: string) => {
-        setSelectedValue(value)
-        roving.setActiveId(value)
-        onValueChange?.(value)
-      },
-      [onValueChange, roving]
-    )
-
-    const contextValue = useMemo(
-      () => ({
-        name,
-        disabled,
-        selectedValue,
-        onChange: handleChange,
-        roving
-      }),
-      [name, disabled, selectedValue, handleChange, roving]
-    )
-
-    return (
-      <RadioContext.Provider value={contextValue}>
-        <Flex
+  return (
+    <RadioContext.Provider value={contextValue}>
+      <Field classNames={classNames?.field} styles={styles?.field} error={error}>
+        <Collection
           {...props}
-          as="fieldset"
-          ref={ref}
-          direction={direction}
           role="radiogroup"
-          tabIndex={roving.hasInteracted ? -1 : 0}
-          onKeyDown={roving.handleGroupKeyDown}
-          onBlur={roving.handleGroupBlur}
+          disabled={disabled}
+          rovingOptions={{ containerRole: 'radiogroup' }}
           className={cn(`${global.prefixCls}-radio-group`, classNames?.root)}
           style={styles?.root}
         >
@@ -93,10 +92,10 @@ export const RadioGroup = React.forwardRef<HTMLDivElement, RadioGroupProps>(
               styles={{ ...styles?.option, ...option.styles }}
             />
           ))}
-        </Flex>
-      </RadioContext.Provider>
-    )
-  }
-)
+        </Collection>
+      </Field>
+    </RadioContext.Provider>
+  )
+}
 
 RadioGroup.displayName = 'RadioGroup'

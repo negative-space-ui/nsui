@@ -39,8 +39,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/roving-focus": "workspace:*",
+    "@negative-space/field": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
