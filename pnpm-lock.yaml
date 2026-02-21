@@ -208,9 +208,24 @@ importers:
 
   packages/core/system:
     dependencies:
+      '@negative-space/divider':
+        specifier: workspace:*
+        version: link:../../ui/layout/divider
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../ui/layout/flex
+      '@negative-space/grid':
+        specifier: workspace:*
+        version: link:../../ui/layout/grid
+      '@negative-space/heading':
+        specifier: workspace:*
+        version: link:../../ui/typography/heading
       '@negative-space/provider':
         specifier: workspace:*
         version: link:../provider
+      '@negative-space/roving-focus':
+        specifier: workspace:*
+        version: link:../hooks/roving-focus
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -279,6 +294,9 @@ importers:
       '@negative-space/divider':
         specifier: workspace:*
         version: link:../../ui/layout/divider
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../ui/layout/field
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../ui/layout/flex
@@ -295,6 +313,9 @@ importers:
       '@negative-space/link':
         specifier: workspace:*
         version: link:../../ui/nav/link
+      '@negative-space/menu':
+        specifier: workspace:*
+        version: link:../../ui/nav/menu
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -393,6 +414,9 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
@@ -415,24 +439,12 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
-      '@negative-space/divider':
+      '@negative-space/field':
         specifier: workspace:*
-        version: link:../../layout/divider
-      '@negative-space/flex':
-        specifier: workspace:*
-        version: link:../../layout/flex
-      '@negative-space/grid':
-        specifier: workspace:*
-        version: link:../../layout/grid
-      '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
+        version: link:../../layout/field
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
-      '@negative-space/text':
-        specifier: workspace:*
-        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -446,12 +458,9 @@ importers:
 
   packages/ui/data-entry/radio:
     dependencies:
-      '@negative-space/flex':
+      '@negative-space/field':
         specifier: workspace:*
-        version: link:../../layout/flex
-      '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
+        version: link:../../layout/field
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -514,6 +523,28 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/ui/layout/field:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      '@negative-space/text':
+        specifier: workspace:*
+        version: link:../../typography/text
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/ui/layout/flex:
     dependencies:
       '@negative-space/system':
@@ -548,6 +579,25 @@ importers:
 
   packages/ui/nav/link:
     dependencies:
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/nav/menu:
+    dependencies:
+      '@negative-space/link':
+        specifier: workspace:*
+        version: link:../link
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system

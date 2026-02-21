@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { List, ListProps } from '../src/List'
+import { List, ListProps } from '../src'
 
 const unorderedMarkers = ['disc', 'circle', 'square'] as const
 const orderedMarkers = [
@@ -41,7 +41,14 @@ const meta: Meta<ListUnionProps> = {
 
 export default meta
 
-export const Default: StoryObj<ListUnionProps> = {}
+export const Default: StoryObj<ListUnionProps> = {
+  argTypes: {
+    marker: {
+      control: 'select',
+      options: [...unorderedMarkers, ...orderedMarkers, 'none']
+    }
+  }
+}
 
 export const Ordered: StoryObj<ListProps<'ol'>> = {
   args: {

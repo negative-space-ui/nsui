@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/radio",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "publishConfig": {
     "access": "public"
   },
@@ -39,8 +39,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/roving-focus": "workspace:*",
+    "@negative-space/field": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {

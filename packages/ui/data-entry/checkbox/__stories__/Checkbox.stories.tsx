@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkbox, type CheckboxProps } from '../src/Checkbox'
+import { Checkbox, type CheckboxProps } from '../src'
 
 export default {
   title: 'Data Entry/Checkbox',

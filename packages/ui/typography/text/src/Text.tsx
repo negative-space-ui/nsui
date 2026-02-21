@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
-type TextElement = 'span' | 'p' | 'label' | 'small'
+export type TextElement = 'span' | 'p' | 'label' | 'small'
 
 type TextDomMap = {
   p: HTMLParagraphElement

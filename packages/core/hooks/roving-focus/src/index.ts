@@ -1,116 +1,155 @@
 import { useCallback, useRef, useState } from 'react'
 
-interface Item {
+export interface RovingFocusItem {
   id: string
   ref: React.RefObject<HTMLElement>
   disabled?: boolean
 }
 
-export function useRovingFocus() {
-  const items = useRef<Item[]>([])
-  const [activeId, setActiveId] = useState<string | null>(null)
-  const [hasInteracted, setHasInteracted] = useState(false)
+export interface UseRovingFocusOptions {
+  wrap?: boolean
+  allowHorizontal?: boolean
+  containerRole?: string
+}
+
+export function useRovingFocus(options: UseRovingFocusOptions = {}) {
+  const { wrap = true, allowHorizontal = true, containerRole } = options
+
+  const items = useRef<RovingFocusItem[]>([])
+  const activeIdRef = useRef<string | null>(null)
+  const [activeId, _setActiveId] = useState<string | null>(null)
+  const hasInteractedRef = useRef(false)
+  const [hasInteracted, _setHasInteracted] = useState(false)
+
+  const setActiveId = useCallback((id: string | null) => {
+    activeIdRef.current = id
+    _setActiveId(id)
+  }, [])
+
+  const setHasInteracted = useCallback((value: boolean) => {
+    hasInteractedRef.current = value
+    _setHasInteracted(value)
+  }, [])
 
   const registerItem = useCallback(
-    (item: Item) => {
-      const existingIndex = items.current.findIndex((i) => i.id === item.id)
-
-      if (existingIndex === -1) {
+    (item: RovingFocusItem) => {
+      const idx = items.current.findIndex((i) => i.id === item.id)
+      if (idx === -1) {
         items.current.push(item)
       } else {
-        items.current[existingIndex] = item
+        items.current[idx] = item
       }
-
-      if (!activeId && !item.disabled) {
+      if (!activeIdRef.current && !item.disabled) {
         setActiveId(item.id)
       }
     },
-    [activeId]
+    [setActiveId]
   )
 
-  const unregisterItem = useCallback((id: string) => {
-    items.current = items.current.filter((i) => i.id !== id)
-  }, [])
+  const unregisterItem = useCallback(
+    (id: string) => {
+      items.current = items.current.filter((i) => i.id !== id)
+      if (activeIdRef.current === id) {
+        const next = items.current.find((i) => !i.disabled)
+        setActiveId(next?.id ?? null)
+      }
+    },
+    [setActiveId]
+  )
 
   const move = useCallback(
     (dir: 1 | -1) => {
       setHasInteracted(true)
-
       const enabled = items.current.filter((i) => !i.disabled)
       if (!enabled.length) return
-
-      const index = enabled.findIndex((i) => i.id === activeId)
-      const next = enabled[(index + dir + enabled.length) % enabled.length]
-
+      const idx = enabled.findIndex((i) => i.id === activeIdRef.current)
+      const nextIdx = wrap
+        ? (idx + dir + enabled.length) % enabled.length
+        : Math.min(Math.max(idx + dir, 0), enabled.length - 1)
+      const next = enabled[nextIdx]
       setActiveId(next.id)
       next.ref.current?.focus()
     },
-    [activeId]
+    [wrap, setActiveId, setHasInteracted]
   )
 
-  const focusItem = useCallback((itemId: string) => {
-    setHasInteracted(true)
-    setActiveId(itemId)
-  }, [])
-
   const focusFirst = useCallback(() => {
-    const enabled = items.current.filter((i) => !i.disabled)
-    if (enabled.length > 0) {
-      const first = enabled[0]
-      setHasInteracted(true)
-      setActiveId(first.id)
-      first.ref.current?.focus()
-    }
-  }, [])
+    const first = items.current.find((i) => !i.disabled)
+    if (!first) return
+    setHasInteracted(true)
+    setActiveId(first.id)
+    first.ref.current?.focus()
+  }, [setActiveId, setHasInteracted])
 
-  const getFirstEnabledId = useCallback(() => {
+  const focusLast = useCallback(() => {
     const enabled = items.current.filter((i) => !i.disabled)
-    return enabled[0]?.id ?? null
-  }, [])
+    const last = enabled[enabled.length - 1]
+    if (!last) return
+    setHasInteracted(true)
+    setActiveId(last.id)
+    last.ref.current?.focus()
+  }, [setActiveId, setHasInteracted])
+
+  const focusItem = useCallback(
+    (id: string) => {
+      setHasInteracted(true)
+      setActiveId(id)
+    },
+    [setActiveId, setHasInteracted]
+  )
+
+  const getFirstEnabledId = useCallback(
+    () => items.current.find((i) => !i.disabled)?.id ?? null,
+    []
+  )
 
   const reset = useCallback(() => {
     setHasInteracted(false)
-  }, [])
+  }, [setHasInteracted])
 
   const handleGroupKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
-      if (!hasInteracted) {
-        if (
-          e.key === 'ArrowDown' ||
-          e.key === 'ArrowRight' ||
-          e.key === 'ArrowUp' ||
-          e.key === 'ArrowLeft'
-        ) {
-          e.preventDefault()
-          focusFirst()
-        }
-      }
+      const isArrow = ['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight'].includes(e.key)
+      if (!isArrow) return
+      if (!e.currentTarget.contains(document.activeElement)) return
+      if (e.currentTarget !== document.activeElement) return
+      e.preventDefault()
+      focusFirst()
     },
-    [hasInteracted, focusFirst]
+    [focusFirst]
+  )
+
+  const handleGroupBlur = useCallback(
+    (e: React.FocusEvent) => {
+      const currentTarget = e.currentTarget
+      setTimeout(() => {
+        if (!currentTarget.contains(document.activeElement)) reset()
+      }, 0)
+    },
+    [reset]
   )
 
   const handleItemKeyDown = useCallback(
     (
       e: React.KeyboardEvent,
       itemId: string,
-      onSelect?: (value: string) => void,
-      options?: {
-        role?: 'radio' | 'option'
-        allowHorizontal?: boolean
-      }
+      onSelect?: (id: string) => void,
+      containerRef?: React.RefObject<HTMLElement>
     ) => {
-      const role = options?.role ?? 'radio'
-      const allowHorizontal = options?.allowHorizontal ?? true
-
-      if (e.key === 'Tab' && e.shiftKey) {
-        e.preventDefault()
-        reset()
-        if (role === 'radio') {
-          const fieldset = (e.target as HTMLElement).closest('[role="radiogroup"]') as HTMLElement
-          fieldset?.focus()
-        } else if (role === 'option') {
-          const listbox = (e.target as HTMLElement).closest('[role="listbox"]') as HTMLElement
-          listbox?.focus()
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          e.preventDefault()
+          reset()
+          const container: HTMLElement | null =
+            containerRef?.current ??
+            (containerRole
+              ? ((e.target as HTMLElement).closest(
+                  `[role="${containerRole}"]`
+                ) as HTMLElement | null)
+              : null)
+          container?.focus()
+        } else {
+          reset()
         }
         return
       }
@@ -120,31 +159,28 @@ export function useRovingFocus() {
         move(1)
         return
       }
-
       if (e.key === 'ArrowUp' || (allowHorizontal && e.key === 'ArrowLeft')) {
         e.preventDefault()
         move(-1)
         return
       }
+      if (e.key === 'Home') {
+        e.preventDefault()
+        focusFirst()
+        return
+      }
+      if (e.key === 'End') {
+        e.preventDefault()
+        focusLast()
+        return
+      }
 
-      if (e.key === ' ' || e.key === 'Enter') {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault()
         onSelect?.(itemId)
       }
     },
-    [move, reset]
-  )
-
-  const handleGroupBlur = useCallback(
-    (e: React.FocusEvent) => {
-      const currentTarget = e.currentTarget
-      setTimeout(() => {
-        if (!currentTarget.contains(document.activeElement)) {
-          reset()
-        }
-      }, 0)
-    },
-    [reset]
+    [allowHorizontal, move, focusFirst, focusLast, reset, containerRole]
   )
 
   return {
@@ -152,10 +188,9 @@ export function useRovingFocus() {
     hasInteracted,
     registerItem,
     unregisterItem,
-    move,
-    setActiveId,
     focusItem,
     focusFirst,
+    focusLast,
     getFirstEnabledId,
     reset,
     handleGroupKeyDown,
@@ -163,3 +198,5 @@ export function useRovingFocus() {
     handleGroupBlur
   }
 }
+
+export type RovingFocusReturn = ReturnType<typeof useRovingFocus>

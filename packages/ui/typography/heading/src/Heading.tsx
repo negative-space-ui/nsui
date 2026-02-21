@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
 
-type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 
 type HeadingDomMap = {
   h1: HTMLHeadingElement

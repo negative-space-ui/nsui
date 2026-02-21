@@ -1,0 +1,49 @@
+{
+  "name": "@negative-space/menu",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "",
+  "keywords": [
+    "menu",
+    "negative-space",
+    "nsui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/menu"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@negative-space/link": "workspace:*",
+    "@negative-space/system": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}

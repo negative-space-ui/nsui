@@ -1,5 +1,5 @@
 import React from 'react'
-import { Checkmark, type CheckmarkProps } from '../src/Checkmark'
+import { Checkmark, type CheckmarkProps } from '../src'
 
 export default {
   title: 'Feedback/Checkmark',

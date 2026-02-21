@@ -1,5 +1,17 @@
 # @negative-space/text
 
+## 1.2.0
+
+### Minor Changes
+
+- eefa502: Export TextElement type
+
+### Patch Changes
+
+- Updated dependencies [f4c9f81]
+- Updated dependencies [bdda654]
+  - @negative-space/system@1.2.0
+
 ## 1.1.3
 
 ### Patch Changes

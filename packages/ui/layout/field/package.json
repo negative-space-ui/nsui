@@ -1,0 +1,52 @@
+{
+  "name": "@negative-space/field",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Headless Field component by Negative Space, providing accessible behavior without visual constraints",
+  "keywords": [
+    "field",
+    "layout",
+    "negative-space",
+    "nsui",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/field"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@negative-space/flex": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/text": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}

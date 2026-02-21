@@ -33,7 +33,7 @@ export type ListProps<E extends ListElement = 'ol'> = {
     item?: React.CSSProperties
   }
   as?: E
-  items: ListItemProps[]
+  items: Omit<ListItemProps, 'className' | 'style'>[]
   marker?: MarkerByElement<E>
 } & Omit<FlexProps, 'as' | 'children' | 'className' | 'style'> &
   Omit<React.ComponentPropsWithoutRef<E>, 'className' | 'style'>
@@ -45,7 +45,7 @@ export const List = React.forwardRef(
   ) => {
     const { global, components } = useNSUI()
     const listElement = as ?? components.list.typeElement
-    const Component = direction === 'row' ? 'ul' : listElement
+    const Component = listElement
 
     const Marker: ListMarker | 'none' =
       direction === 'row'
@@ -59,10 +59,12 @@ export const List = React.forwardRef(
         {...props}
         ref={ref}
         as={Component}
-        direction={direction}
+        direction={direction === 'row' ? 'row' : 'column'}
         className={cn(`${global.prefixCls}-list`, classNames?.root)}
         style={{
           listStyleType: Marker,
+          padding: 0,
+          margin: 0,
           ...styles?.root
         }}
       >
@@ -71,10 +73,17 @@ export const List = React.forwardRef(
           return (
             <ListItem
               key={key}
-              {...(classNames?.item && { classNames: classNames.item })}
-              {...(styles?.item && { styles: styles.item })}
+              {...(classNames?.item && { className: classNames.item })}
+              {...(styles?.item && { style: styles.item })}
               {...item}
-            />
+              style={{
+                display: 'list-item',
+                marginRight: direction === 'row' ? '16px' : undefined,
+                ...styles?.item
+              }}
+            >
+              {item.content}
+            </ListItem>
           )
         })}
       </Flex>

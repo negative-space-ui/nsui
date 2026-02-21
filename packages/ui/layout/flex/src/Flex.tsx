@@ -12,6 +12,7 @@ type FlexElement =
   | 'article'
   | 'label'
   | 'fieldset'
+  | 'a'
   | 'ol'
   | 'ul'
   | 'li'
@@ -32,6 +33,7 @@ type FlexDomMap = {
   article: HTMLElement
   label: HTMLLabelElement
   fieldset: HTMLFieldSetElement
+  a: HTMLAnchorElement
   ol: HTMLOListElement
   ul: HTMLUListElement
   li: HTMLLIElement

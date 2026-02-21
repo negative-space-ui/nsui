@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/checkbox",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "publishConfig": {
     "access": "public"
   },
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@negative-space/checkmark": "workspace:*",
+    "@negative-space/field": "workspace:*",
     "@negative-space/flex": "workspace:*",
     "@negative-space/system": "workspace:*"
   },

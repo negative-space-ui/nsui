@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "storybook build",
-    "clean": "rimraf .turbo",
+    "clean": "rimraf .next .turbo",
     "lint": "eslint",
     "start": "storybook dev -p 6006",
     "typecheck": "tsc --noEmit"

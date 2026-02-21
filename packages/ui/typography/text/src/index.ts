@@ -1,1 +1,2 @@
-export { Text, type TextProps } from './Text'
+export { Text } from './Text'
+export type { TextElement, TextProps } from './Text'

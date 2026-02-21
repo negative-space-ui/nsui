@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/nav",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -39,7 +39,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/link": "workspace:*"
+    "@negative-space/link": "workspace:*",
+    "@negative-space/menu": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

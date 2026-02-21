@@ -14,7 +14,13 @@ export type MotionDurations = {
   ripple?: number
 }
 
+export type Colors = {
+  error: string
+}
+
 export type GlobalConfig = {
+  /** Global colors. */
+  colors?: Colors
   /** Duration in milliseconds for animations of all components. */
   motionDurations?: MotionDurations
   /** Prefix classname for all components.
