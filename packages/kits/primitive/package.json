@@ -1,13 +1,13 @@
 {
-  "name": "@negative-space/system",
-  "version": "1.2.0",
+  "name": "@negative-space/primitive",
+  "version": "2.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Internal system configuration from Negative Space, designed for flexible and centralized UI state control",
+  "description": "Primitive components by Negative Space, providing flexible and accessible UI elements",
   "keywords": [
-    "configuration",
-    "provider",
+    "kit",
+    "primitive",
     "negative-space",
     "nsui",
     "react",
@@ -20,11 +20,10 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui.git",
-    "directory": "packages/core/system"
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/kits/primitive"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,8 +38,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/provider": "workspace:*",
-    "clsx": "^2.1.1"
+    "@negative-space/collection": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

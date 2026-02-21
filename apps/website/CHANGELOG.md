@@ -4,7 +4,8 @@
 
 ### Patch Changes
 
-- negative-space@2.4.9
+- Updated dependencies [c66e035]
+  - negative-space@2.5.0
 
 ## 0.0.8
 

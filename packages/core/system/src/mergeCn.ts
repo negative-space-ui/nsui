@@ -1,4 +1,4 @@
-import { cn } from './cn'
+import { cn } from '.'
 
 export function mergeCn<T extends Record<string, string | undefined>>(base?: T, override?: T): T {
   const result: Record<string, string | undefined> = {}

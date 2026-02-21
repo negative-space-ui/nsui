@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { Link, type LinkProps } from '@negative-space/link'
-import { CollectionItem, type CollectionItemProps } from '@negative-space/system'
 import { useMenuContext } from './useMenuContext'
 
 export interface MenuItemProps extends Omit<

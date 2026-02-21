@@ -8,6 +8,7 @@
 
 ### Patch Changes
 
+- Updated dependencies [c66e035]
 - Updated dependencies [22a4a34]
   - @negative-space/menu@1.0.0
   - @negative-space/link@1.1.4

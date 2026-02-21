@@ -35,6 +35,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@negative-space/collection": "workspace:*",
     "@negative-space/link": "workspace:*",
     "@negative-space/system": "workspace:*"
   },

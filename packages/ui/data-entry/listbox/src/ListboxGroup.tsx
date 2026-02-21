@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { CollectionGroup, type CollectionGroupProps } from '@negative-space/system'
+import { CollectionGroup, type CollectionGroupProps } from '@negative-space/collection'
 
 export type ListboxGroupProps = CollectionGroupProps
 

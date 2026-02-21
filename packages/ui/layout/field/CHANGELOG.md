@@ -8,6 +8,7 @@
 
 ### Patch Changes
 
+- Updated dependencies [c66e035]
 - Updated dependencies [f4c9f81]
 - Updated dependencies [bdda654]
 - Updated dependencies [eefa502]

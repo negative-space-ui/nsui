@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { CollectionItem, type CollectionItemProps } from '@negative-space/system'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { useRadioContext } from './useRadioContext'
 
 export interface RadioOptionProps extends Omit<

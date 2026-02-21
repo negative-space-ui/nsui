@@ -1,6 +1,6 @@
 import React, { cloneElement, isValidElement } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
-import { CollectionItem, type CollectionItemProps } from '@negative-space/system'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 import { useListboxContext } from './useListboxContext'
 

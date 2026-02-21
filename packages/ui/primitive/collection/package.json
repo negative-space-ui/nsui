@@ -1,17 +1,15 @@
 {
-  "name": "@negative-space/radio",
-  "version": "1.5.0",
+  "name": "@negative-space/collection",
+  "version": "2.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Headless Radio component by Negative Space, providing accessible behavior without visual constraints",
+  "description": "Headless Collection component by Negative Space, providing accessible behavior without visual constraints",
   "keywords": [
-    "components",
-    "data-entry",
+    "collection",
     "negative-space",
     "nsui",
-    "radio",
-    "react",
+    "primitive",
     "ui"
   ],
   "license": "MIT",
@@ -24,7 +22,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/ui/radio"
+    "directory": "packages/ui/collection"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,8 +37,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/collection": "workspace:*",
-    "@negative-space/field": "workspace:*",
+    "@negative-space/divider": "workspace:*",
+    "@negative-space/flex": "workspace:*",
+    "@negative-space/grid": "workspace:*",
+    "@negative-space/heading": "workspace:*",
+    "@negative-space/roving-focus": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {

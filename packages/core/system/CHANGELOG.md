@@ -4,18 +4,9 @@
 
 ### Minor Changes
 
+- c66e035: Remove Collection component
 - f4c9f81: Rename `mergeClassnames` to `mergeCn`
 - bdda654: Add Collection component
-
-### Patch Changes
-
-- Updated dependencies [e9a6d47]
-- Updated dependencies [eefa502]
-  - @negative-space/roving-focus@1.2.0
-  - @negative-space/heading@1.2.0
-  - @negative-space/divider@1.1.4
-  - @negative-space/flex@1.2.1
-  - @negative-space/grid@1.3.1
 
 ## 1.1.0
 
