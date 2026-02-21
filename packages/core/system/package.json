@@ -39,12 +39,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/divider": "workspace:*",
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/grid": "workspace:*",
-    "@negative-space/heading": "workspace:*",
     "@negative-space/provider": "workspace:*",
-    "@negative-space/roving-focus": "workspace:*",
     "clsx": "^2.1.1"
   },
   "devDependencies": {

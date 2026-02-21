@@ -1,14 +1,17 @@
 {
-  "name": "@negative-space/menu",
-  "version": "0.0.0",
+  "name": "@negative-space/primitive",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "Primitive components by Negative Space, providing flexible and accessible UI elements",
   "keywords": [
-    "menu",
+    "kit",
+    "primitive",
     "negative-space",
-    "nsui"
+    "nsui",
+    "react",
+    "ui"
   ],
   "license": "MIT",
   "main": "src/index.ts",
@@ -20,7 +23,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/ui/menu"
+    "directory": "packages/kits/primitive"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -35,16 +38,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/collection": "workspace:*",
-    "@negative-space/link": "workspace:*",
-    "@negative-space/system": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "^19.2.3"
+    "@negative-space/collection": "workspace:*"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../../clean-package.config.json"
+  "clean-package": "../../../clean-package.config.json"
 }

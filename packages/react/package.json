@@ -29,6 +29,7 @@
     "./feedback": "./src/feedback/index.ts",
     "./layout": "./src/layout/index.ts",
     "./nav": "./src/nav/index.ts",
+    "./primitive": "./src/primitive/index.ts",
     "./typography": "./src/typography/index.ts"
   },
   "sideEffects": false,
@@ -56,6 +57,7 @@
     "@negative-space/feedback": "workspace:*",
     "@negative-space/layout": "workspace:*",
     "@negative-space/nav": "workspace:*",
+    "@negative-space/primitive": "workspace:*",
     "@negative-space/provider": "workspace:*",
     "@negative-space/typography": "workspace:*"
   },

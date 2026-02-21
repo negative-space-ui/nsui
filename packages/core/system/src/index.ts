@@ -1,3 +1,3 @@
 export { NSUIProvider, useNSUI, type NSUIProviderProps } from '@negative-space/provider'
-export * from './primitives/collection'
-export * from './utils'
+export { cn } from './cn'
+export { mergeCn } from './mergeCn'

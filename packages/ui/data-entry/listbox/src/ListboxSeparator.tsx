@@ -1,5 +1,5 @@
 import React from 'react'
-import { CollectionSeparator, type CollectionSeparatorProps } from '@negative-space/system'
+import { CollectionSeparator, type CollectionSeparatorProps } from '@negative-space/collection'
 
 export type ListboxSeparatorProps = CollectionSeparatorProps
 

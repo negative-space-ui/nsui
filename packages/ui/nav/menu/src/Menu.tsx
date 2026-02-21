@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
-import { Collection, type CollectionProps } from '@negative-space/system'
+import { Collection, type CollectionProps } from '@negative-space/collection'
 import { MenuContext } from './MenuContext'
 import { MenuItem, type MenuItemProps } from './MenuItem'
 import { MenuGroup, type MenuGroupProps } from './MenuGroup'

@@ -40,6 +40,11 @@
         "import": "./dist/nav/index.mjs",
         "require": "./dist/nav/index.js"
       },
+      "./primitive": {
+        "types": "./dist/primitive/index.d.ts",
+        "import": "./dist/primitive/index.mjs",
+        "require": "./dist/primitive/index.js"
+      },
       "./typography": {
         "types": "./dist/typography/index.d.ts",
         "import": "./dist/typography/index.mjs",

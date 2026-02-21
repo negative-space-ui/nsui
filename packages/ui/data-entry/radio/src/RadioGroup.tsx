@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState, useId } from 'react'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import { Field } from '@negative-space/field'
-import { Collection, type CollectionProps } from '@negative-space/system'
+import { Collection, type CollectionProps } from '@negative-space/collection'
 import { RadioOption, type RadioOptionProps } from './RadioOption'
 import { RadioContext } from './RadioContext'
 
