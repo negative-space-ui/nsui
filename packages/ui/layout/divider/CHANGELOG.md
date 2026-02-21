@@ -1,5 +1,14 @@
 # @negative-space/divider
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies [c66e035]
+- Updated dependencies [f4c9f81]
+- Updated dependencies [bdda654]
+  - @negative-space/system@1.2.0
+
 ## 1.1.3
 
 ### Patch Changes

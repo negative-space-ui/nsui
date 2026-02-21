@@ -1,5 +1,18 @@
 # @negative-space/heading
 
+## 1.2.0
+
+### Minor Changes
+
+- eefa502: Export HeadingElement type
+
+### Patch Changes
+
+- Updated dependencies [c66e035]
+- Updated dependencies [f4c9f81]
+- Updated dependencies [bdda654]
+  - @negative-space/system@1.2.0
+
 ## 1.1.3
 
 ### Patch Changes

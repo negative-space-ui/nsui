@@ -1,5 +1,22 @@
 # @negative-space/checkbox
 
+## 1.3.0
+
+### Minor Changes
+
+- a6d5bca: Wrap component with Field
+
+### Patch Changes
+
+- Updated dependencies [0e4b044]
+- Updated dependencies [c66e035]
+- Updated dependencies [f4c9f81]
+- Updated dependencies [bdda654]
+  - @negative-space/field@1.0.0
+  - @negative-space/system@1.2.0
+  - @negative-space/checkmark@1.1.4
+  - @negative-space/flex@1.2.1
+
 ## 1.2.3
 
 ### Patch Changes

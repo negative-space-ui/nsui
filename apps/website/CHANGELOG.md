@@ -1,5 +1,12 @@
 # website
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [c66e035]
+  - negative-space@2.5.0
+
 ## 0.0.8
 
 ### Patch Changes

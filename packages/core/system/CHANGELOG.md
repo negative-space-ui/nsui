@@ -1,5 +1,13 @@
 # @negative-space/system
 
+## 1.2.0
+
+### Minor Changes
+
+- c66e035: Remove Collection component
+- f4c9f81: Rename `mergeClassnames` to `mergeCn`
+- bdda654: Add Collection component
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @negative-space/typography
 
+## 2.0.9
+
+### Patch Changes
+
+- Updated dependencies [eefa502]
+- Updated dependencies [eefa502]
+  - @negative-space/heading@1.2.0
+  - @negative-space/text@1.2.0
+
 ## 2.0.8
 
 ### Patch Changes

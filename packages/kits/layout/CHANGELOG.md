@@ -1,5 +1,19 @@
 # @negative-space/layout
 
+## 1.3.0
+
+### Minor Changes
+
+- 0e4b044: Add Field component
+
+### Patch Changes
+
+- Updated dependencies [0e4b044]
+  - @negative-space/field@1.0.0
+  - @negative-space/divider@1.1.4
+  - @negative-space/flex@1.2.1
+  - @negative-space/grid@1.3.1
+
 ## 1.2.5
 
 ### Patch Changes
