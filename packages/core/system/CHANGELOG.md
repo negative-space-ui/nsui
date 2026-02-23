@@ -1,5 +1,11 @@
 # @negative-space/system
 
+## 1.3.0
+
+### Minor Changes
+
+- b187578: Add Eye and EyeOff icons
+
 ## 1.2.0
 
 ### Minor Changes

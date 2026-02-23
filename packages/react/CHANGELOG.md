@@ -1,5 +1,19 @@
 # negative-space
 
+## 2.5.1
+
+### Patch Changes
+
+- Updated dependencies [cf50ddd]
+  - @negative-space/data-entry@1.2.0
+  - @negative-space/action@1.0.10
+  - @negative-space/data-display@1.0.11
+  - @negative-space/feedback@1.1.7
+  - @negative-space/layout@1.3.1
+  - @negative-space/nav@1.1.1
+  - @negative-space/primitive@2.0.1
+  - @negative-space/typography@2.0.10
+
 ## 2.5.0
 
 ### Minor Changes

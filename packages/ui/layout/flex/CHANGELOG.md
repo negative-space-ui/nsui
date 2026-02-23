@@ -1,5 +1,12 @@
 # @negative-space/flex
 
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+
 ## 1.2.1
 
 ### Patch Changes

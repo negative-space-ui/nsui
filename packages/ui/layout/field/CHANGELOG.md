@@ -1,5 +1,14 @@
 # @negative-space/field
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+  - @negative-space/flex@1.2.2
+  - @negative-space/text@1.2.1
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,12 @@
 # @negative-space/grid
 
+## 1.3.2
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+
 ## 1.3.1
 
 ### Patch Changes
