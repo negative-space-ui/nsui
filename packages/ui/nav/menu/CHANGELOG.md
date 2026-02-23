@@ -1,5 +1,14 @@
 # @negative-space/menu
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+  - @negative-space/link@1.1.5
+  - @negative-space/collection@2.0.1
+
 ## 1.0.0
 
 ### Major Changes

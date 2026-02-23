@@ -1,5 +1,11 @@
 # website
 
+## 0.0.10
+
+### Patch Changes
+
+- negative-space@2.5.1
+
 ## 0.0.9
 
 ### Patch Changes

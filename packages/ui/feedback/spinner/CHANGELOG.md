@@ -1,5 +1,12 @@
 # @negative-space/spinner
 
+## 2.1.5
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+
 ## 2.1.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @negative-space/checkbox
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [b187578]
+  - @negative-space/system@1.3.0
+  - @negative-space/checkmark@1.1.5
+  - @negative-space/field@1.0.1
+  - @negative-space/flex@1.2.2
+
 ## 1.3.0
 
 ### Minor Changes

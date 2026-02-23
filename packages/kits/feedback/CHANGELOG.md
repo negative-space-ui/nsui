@@ -1,5 +1,12 @@
 # @negative-space/feedback
 
+## 1.1.7
+
+### Patch Changes
+
+- @negative-space/checkmark@1.1.5
+- @negative-space/spinner@2.1.5
+
 ## 1.1.6
 
 ### Patch Changes

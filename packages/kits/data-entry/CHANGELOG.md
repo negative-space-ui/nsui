@@ -1,5 +1,19 @@
 # @negative-space/data-entry
 
+## 1.2.0
+
+### Minor Changes
+
+- cf50ddd: Add Input and InputPassword component
+
+### Patch Changes
+
+- Updated dependencies [cf50ddd]
+  - @negative-space/input@1.0.0
+  - @negative-space/checkbox@1.3.1
+  - @negative-space/listbox@1.3.1
+  - @negative-space/radio@1.5.1
+
 ## 1.1.6
 
 ### Patch Changes
