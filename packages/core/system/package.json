@@ -42,6 +42,9 @@
     "@negative-space/provider": "workspace:*",
     "clsx": "^2.1.1"
   },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
   "devDependencies": {
     "typescript": "^5.9.3"
   },
