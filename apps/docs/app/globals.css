@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f7f7;
+  --foreground: #171717;
+  --secondary: #afafaf;
+  --secondary-accent: #9c9c9c;
+  --transition: 0.3s;
+}
+
+:root.dark {
+  --background: #171717;
+  --foreground: #f7f7f7;
+  --secondary: #afafaf;
+  --secondary-accent: #9c9c9c;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] font-sans
+  transition-colors duration-[var(--transition)] ease-in-out;
+}
+
+h1.nsui-heading {
+  @apply font-bold
+  transition-colors duration-[var(--transition)] ease-in-out;
+}
+
+.nsui-text {
+  @apply transition-colors duration-[var(--transition)] ease-in-out;
+}
+
+.nsui-text.secondary,
+.nsui-link.secondary {
+  @apply text-[var(--secondary)];
+}
+
+.nsui-btn {
+  @apply w-26 h-10 rounded-md font-medium bg-[var(--secondary)] text-[var(--background)] border-1 border-[var(--secondary-accent)]
+  hover:bg-[var(--secondary-accent)]
+  transition-colors duration-[var(--transition)] ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--secondary)] rounded-md;
+}

@@ -36,6 +36,8 @@ export function CollectionItem({
   onClick,
   onSelect,
   alignItems = 'center',
+  justify = 'center',
+  gap = '20px',
   ...props
 }: CollectionItemProps) {
   const ref = useRef<HTMLLIElement>(null)
@@ -91,6 +93,8 @@ export function CollectionItem({
       as="li"
       role={role}
       alignItems={alignItems}
+      justify={justify}
+      gap={gap}
       tabIndex={tabIndex}
       aria-disabled={isDisabled || undefined}
       aria-selected={selected}
