@@ -1,5 +1,25 @@
 # negative-space
 
+## 2.5.0
+
+### Minor Changes
+
+- c66e035: Add Collection lib
+
+### Patch Changes
+
+- Updated dependencies [0e4b044]
+- Updated dependencies [22a4a34]
+- Updated dependencies [c66e035]
+  - @negative-space/layout@1.3.0
+  - @negative-space/nav@1.1.0
+  - @negative-space/primitive@2.0.0
+  - @negative-space/data-entry@1.1.6
+  - @negative-space/typography@2.0.9
+  - @negative-space/action@1.0.9
+  - @negative-space/data-display@1.0.10
+  - @negative-space/feedback@1.1.6
+
 ## 2.4.8
 
 ### Patch Changes

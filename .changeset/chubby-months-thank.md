@@ -1,6 +1,0 @@
----
-'@negative-space/listbox': minor
-'@negative-space/radio': minor
----
-
-Refactor internal components using Collection

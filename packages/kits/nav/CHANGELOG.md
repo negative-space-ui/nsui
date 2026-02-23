@@ -1,5 +1,18 @@
 # @negative-space/nav
 
+## 1.1.0
+
+### Minor Changes
+
+- 22a4a34: Initial release of Menu component
+
+### Patch Changes
+
+- Updated dependencies [c66e035]
+- Updated dependencies [22a4a34]
+  - @negative-space/menu@1.0.0
+  - @negative-space/link@1.1.4
+
 ## 1.0.6
 
 ### Patch Changes
