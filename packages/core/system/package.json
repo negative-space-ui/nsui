@@ -46,6 +46,7 @@
     "react": "^19.2.3"
   },
   "devDependencies": {
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
   "clean-package": "../../../clean-package.config.json"
