@@ -214,6 +214,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
     devDependencies:
       typescript:
         specifier: ^5.9.3
