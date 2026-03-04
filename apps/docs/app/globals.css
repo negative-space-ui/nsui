@@ -17,13 +17,11 @@
 }
 
 body {
-  @apply bg-[var(--background)] text-[var(--foreground)] font-sans
-  transition-colors duration-[var(--transition)] ease-in-out;
+  @apply bg-[var(--background)] font-sans text-[var(--foreground)] transition-colors duration-[var(--transition)] ease-in-out;
 }
 
 h1.nsui-heading {
-  @apply font-bold
-  transition-colors duration-[var(--transition)] ease-in-out;
+  @apply font-bold transition-colors duration-[var(--transition)] ease-in-out;
 }
 
 .nsui-text {
@@ -36,9 +34,7 @@ h1.nsui-heading {
 }
 
 .nsui-btn {
-  @apply w-26 h-10 rounded-md font-medium bg-[var(--secondary)] text-[var(--background)] border-1 border-[var(--secondary-accent)]
-  hover:bg-[var(--secondary-accent)]
-  transition-colors duration-[var(--transition)] ease-in-out;
+  @apply h-10 w-26 rounded-md border-1 border-[var(--secondary-accent)] bg-[var(--secondary)] font-medium text-[var(--background)] transition-colors duration-[var(--transition)] ease-in-out hover:bg-[var(--secondary-accent)];
 }
 
 ::-webkit-scrollbar {
@@ -51,5 +47,5 @@ h1.nsui-heading {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[var(--secondary)] rounded-md;
+  @apply rounded-md bg-[var(--secondary)];
 }

@@ -1,7 +1,7 @@
 import { Flex, FlexProps } from '@negative-space/flex'
 import { useRipple } from '@negative-space/ripple'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
-import { type ClickableAnimation,cn, useNSUI } from '@negative-space/system'
+import { type ClickableAnimation, cn, useNSUI } from '@negative-space/system'
 import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'

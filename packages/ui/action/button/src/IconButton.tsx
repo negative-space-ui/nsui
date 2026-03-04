@@ -1,5 +1,5 @@
 import { useRipple } from '@negative-space/ripple'
-import { type ClickableAnimation,cn, useNSUI } from '@negative-space/system'
+import { type ClickableAnimation, cn, useNSUI } from '@negative-space/system'
 import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'

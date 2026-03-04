@@ -19,7 +19,6 @@
     "lint": "turbo run lint",
     "plop": "ts-node ./scripts/warn-create-package.js",
     "prepare": "husky",
-    "prettier": "prettier --write .",
     "start": "cd apps/storybook && pnpm start",
     "typecheck": "turbo run typecheck"
   },

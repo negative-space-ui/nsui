@@ -1,5 +1,5 @@
-import { FloatingArrow,FloatingFocusManager, FloatingPortal } from '@floating-ui/react'
-import { cn, type OverlayAnimation,useNSUI } from '@negative-space/system'
+import { FloatingArrow, FloatingFocusManager, FloatingPortal } from '@floating-ui/react'
+import { cn, type OverlayAnimation, useNSUI } from '@negative-space/system'
 import React, { useEffect, useState } from 'react'
 
 import { type PopoverHandle, type PopoverTrigger } from './usePopover'

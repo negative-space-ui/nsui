@@ -25,9 +25,9 @@ export default function DocsCRS({ children }: { children: React.ReactNode }) {
   ])
 
   return (
-    <div className="p-4 pt-14 flex gap-6">
+    <div className="flex gap-6 p-4 pt-14">
       <Header />
-      <aside className="overflow-auto h-[calc(100dvh-4.5rem)]">
+      <aside className="h-[calc(100dvh-4.5rem)] overflow-auto">
         <Menu
           gap="0"
           classNames={{

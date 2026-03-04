@@ -6,13 +6,13 @@ import { Heading, Text } from 'negative-space/typography'
 
 export default function HomeCRS() {
   return (
-    <main className="w-full h-screen flex items-center justify-center">
+    <main className="flex h-screen w-full items-center justify-center">
       <Flex as="section" direction="column" gap="1rem" className="w-[34rem]">
         <Flex direction="column" gap="0">
           <Heading as="h1" className="text-6xl">
             Negative Space UI
           </Heading>
-          <Text as="p" className="text-2xl text-justify secondary">
+          <Text as="p" className="secondary text-justify text-2xl">
             A lightweight foundation for building fully custom, flexible, and accessible UI
             components.
           </Text>

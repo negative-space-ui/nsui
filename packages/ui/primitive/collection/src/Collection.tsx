@@ -1,6 +1,6 @@
 import { Grid, type GridProps } from '@negative-space/grid'
 import { useRovingFocus, type UseRovingFocusOptions } from '@negative-space/roving-focus'
-import React, { useMemo,useRef } from 'react'
+import React, { useMemo, useRef } from 'react'
 
 import { CollectionContext } from './CollectionContext'
 

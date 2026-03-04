@@ -1,5 +1,5 @@
 import { IconButton, type IconButtonProps } from '@negative-space/button'
-import { cn, Eye, EyeOff,useNSUI } from '@negative-space/system'
+import { cn, Eye, EyeOff, useNSUI } from '@negative-space/system'
 import React from 'react'
 
 import { Input, type InputProps } from '.'

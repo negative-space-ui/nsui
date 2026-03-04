@@ -1,5 +1,5 @@
 import { cn, useNSUI } from '@negative-space/system'
-import React, { CSSProperties,forwardRef } from 'react'
+import React, { CSSProperties, forwardRef } from 'react'
 
 type FlexElement =
   | 'div'

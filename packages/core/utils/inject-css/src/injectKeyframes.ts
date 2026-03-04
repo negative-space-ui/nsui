@@ -1,4 +1,4 @@
-import { type CSSRules,parseRules } from './parseRules'
+import { type CSSRules, parseRules } from './parseRules'
 import { getSheet, injected } from './styleSheet'
 
 export function injectKeyframes(name: string, frames: CSSRules) {
