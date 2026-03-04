@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
   args: {
     className: 'w-8 h-8 border-4 border-solid border-neutral-300 border-t-blue-500',
-    isLoading: true
+    loading: true
   },
   argTypes: {
     className: { control: 'text' },

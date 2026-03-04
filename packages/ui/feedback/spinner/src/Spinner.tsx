@@ -5,11 +5,11 @@ export interface SpinnerProps extends Omit<
   React.HTMLAttributes<HTMLDivElement>,
   'role' | 'aria-busy'
 > {
-  isLoading?: boolean
+  loading?: boolean
 }
 
-export const Spinner = ({ isLoading = true, className, style, ...props }: SpinnerProps) => {
-  if (!isLoading) return null
+export const Spinner = ({ loading = true, className, style, ...props }: SpinnerProps) => {
+  if (!loading) return null
 
   const { global } = useNSUI()
 
