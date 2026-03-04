@@ -9,18 +9,24 @@ export interface InputPasswordProps extends Omit<
 > {
   classNames?: InputProps['classNames'] & {
     button?: string
+    icon?: string
   }
   styles?: InputProps['styles'] & {
     button?: React.CSSProperties
+    icon?: React.CSSProperties
   }
   onToggleVisibility?: (visible: boolean) => void
   buttonProps?: Omit<IconButtonProps, 'onClick' | 'aria-label'>
 }
 
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>(
-  ({ onToggleVisibility, classNames, styles, buttonProps, ...rest }, ref) => {
-    const { global } = useNSUI()
+  ({ onToggleVisibility, title, classNames, styles, buttonProps, ...rest }, ref) => {
+    const { global, components } = useNSUI()
     const [visible, setVisible] = React.useState(false)
+
+    const Title =
+      title ??
+      (visible ? components.inputPassword.textTitle : components.inputPassword.passwordTitle)
 
     const handleToggle = () => {
       setVisible((prev) => {
@@ -45,11 +51,16 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
           <IconButton
             {...buttonProps}
             onClick={handleToggle}
-            aria-label={visible ? 'Hide password' : 'Show password'}
+            title={Title}
+            aria-label={Title}
             className={classNames?.button}
             style={styles?.button}
           >
-            {visible ? <EyeOff /> : <Eye />}
+            {visible ? (
+              <EyeOff className={classNames?.icon} style={styles?.icon} />
+            ) : (
+              <Eye className={classNames?.icon} style={styles?.icon} />
+            )}
           </IconButton>
         }
       />

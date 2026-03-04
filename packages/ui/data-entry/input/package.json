@@ -40,6 +40,7 @@
     "@negative-space/button": "workspace:*",
     "@negative-space/field": "workspace:*",
     "@negative-space/flex": "workspace:*",
+    "@negative-space/spinner": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
