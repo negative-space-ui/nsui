@@ -9,6 +9,10 @@
   "typescript.format.enable": false,
   "tailwindCSS.validate": false,
 
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+
   "material-icon-theme.folders.associations": {
     "plop-templates": "template"
   }
