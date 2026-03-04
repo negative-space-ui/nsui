@@ -4,7 +4,7 @@ import { Popover, type PopoverProps } from '../src'
 import { usePopover } from '../src'
 
 export default {
-  title: 'Data Display/Popover',
+  title: 'Feedback/Popover',
   component: Popover,
   tags: ['autodocs']
 }
