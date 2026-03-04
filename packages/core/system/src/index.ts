@@ -1,5 +1,10 @@
-export { NSUIProvider, useNSUI, type NSUIProviderProps } from '@negative-space/provider'
-export { cn } from './cn'
-export { mergeCn } from './mergeCn'
+export { useNSUI } from '@negative-space/provider'
+export type {
+  GlobalConfigRequired,
+  ClickableAnimation,
+  OverlayAnimation
+} from '@negative-space/provider'
 
-export { Eye, EyeOff } from './icons'
+export { cn, mergeCn } from './cn'
+
+export { Check, Eye, EyeOff, type LucideProps } from 'lucide-react'
