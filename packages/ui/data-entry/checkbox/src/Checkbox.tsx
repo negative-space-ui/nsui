@@ -32,7 +32,6 @@ export interface CheckboxProps extends Omit<
     checkmark?: React.CSSProperties
   }
   error?: string
-  isPopDisabled?: boolean
   checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
 }
 
@@ -45,18 +44,17 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
       checked,
       defaultChecked = false,
       disabled,
-      isPopDisabled,
       checkmarkProps,
       alignItems = 'center',
+      justify = 'center',
       error,
       ...props
     },
     ref
   ) => {
-    const { global, components } = useNSUI()
+    const { global } = useNSUI()
     const [internalChecked, setInternalChecked] = useState(defaultChecked)
     const isChecked = checked !== undefined ? checked : internalChecked
-    const IsPopDisabled = isPopDisabled ?? components.checkbox.isPopDisabled
 
     const toggleChecked = () => {
       if (disabled) return
@@ -79,6 +77,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           ref={ref}
           as="label"
           alignItems={alignItems}
+          justify={justify}
           className={cn(
             `${global.prefixCls}-checkbox-label ${global.prefixCls}-clickable`,
             classNames?.label
@@ -97,22 +96,34 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
             data-checked={isChecked}
             data-disabled={disabled}
             className={cn(`${global.prefixCls}-checkbox`, classNames?.checkbox)}
-            style={{ overflow: 'hidden', ...styles?.checkbox }}
+            style={{
+              position: 'relative',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              ...styles?.checkbox
+            }}
           >
             <span
               data-checked={isChecked}
-              className={cn(
-                `${global.prefixCls}-checkbox-inner`,
-                isChecked && !IsPopDisabled && `${global.prefixCls}-pop`,
-                classNames?.checkboxInner
-              )}
-              style={styles?.checkboxInner}
+              className={cn(`${global.prefixCls}-checkbox-inner`, classNames?.checkboxInner)}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                ...styles?.checkboxInner
+              }}
             />
+
             <Checkmark
               {...checkmarkProps}
               checked={isChecked}
-              className={cn(`${global.prefixCls}-checkmark`, classNames?.checkmark)}
-              style={{ scale: '80%', ...styles?.checkmark }}
+              className={classNames?.checkmark}
+              style={{
+                scale: '0.8',
+                display: 'block',
+                transformOrigin: 'center',
+                ...styles?.checkmark
+              }}
             />
           </span>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
+import { cn, useNSUI, type OverlayAnimation } from '@negative-space/system'
 import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { useRadioContext } from './useRadioContext'
 
@@ -17,6 +17,7 @@ export interface RadioOptionProps extends Omit<
     radio?: React.CSSProperties
     inner?: React.CSSProperties
   }
+  animation?: OverlayAnimation
   disabled?: boolean
   value: string
   label: React.ReactNode
@@ -25,16 +26,19 @@ export interface RadioOptionProps extends Omit<
 export function RadioOption({
   value,
   label,
+  animation,
   disabled,
   classNames,
   styles,
   ...props
 }: RadioOptionProps) {
-  const { global } = useNSUI()
+  const { global, components } = useNSUI()
   const { selectedValue, onChange, disabled: groupDisabled } = useRadioContext()
 
   const isDisabled = disabled ?? groupDisabled ?? false
   const checked = selectedValue === value
+
+  const Animation = animation ?? components.radio.animation
 
   const select = () => {
     if (!isDisabled) onChange?.(value)
@@ -50,6 +54,7 @@ export function RadioOption({
       onSelect={select}
       data-checked={checked}
       aria-checked={checked}
+      data-visible={checked}
       classNames={{
         root: cn(
           `${global.prefixCls}-radio-label`,
@@ -74,7 +79,8 @@ export function RadioOption({
         <div
           data-visible={checked}
           className={cn(
-            `${global.prefixCls}-radio-inner ${global.prefixCls}-fade`,
+            `${global.prefixCls}-radio-inner`,
+            Animation !== 'none' && `${global.prefixCls}-${Animation}`,
             classNames?.inner
           )}
           style={{

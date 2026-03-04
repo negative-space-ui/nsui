@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
+import { cn, useNSUI, type ClickableAnimation } from '@negative-space/system'
 import { Flex, FlexProps } from '@negative-space/flex'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
 import { useRipple } from '@negative-space/ripple'
@@ -16,19 +16,20 @@ export interface ButtonProps extends Omit<
     prefix?: string
     content?: string
     suffix?: string
+    spinner?: string
   }
   styles?: {
     btn?: React.CSSProperties
     prefix?: React.CSSProperties
     content?: React.CSSProperties
     suffix?: React.CSSProperties
+    spinner?: React.CSSProperties
   }
+  animation?: ClickableAnimation
   controlled?: boolean
-  isRippleDisabled?: boolean
-  isLoading?: boolean
-  spinner?: React.ReactNode
+  loading?: boolean
   spinnerPosition?: 'full' | 'prefix' | 'content' | 'suffix'
-  spinnerProps?: Omit<SpinnerProps, 'isLoading'>
+  spinnerProps?: Omit<SpinnerProps, 'loading' | 'className' | 'style'>
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -41,10 +42,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       controlled,
       styles,
       disabled = false,
-      isRippleDisabled,
+      animation,
       onClick,
-      isLoading = false,
-      spinner,
+      loading = false,
       spinnerPosition = 'full',
       spinnerProps,
       alignItems = 'center',
@@ -57,11 +57,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const context = useButtonContextConditional(!!controlled)
     const groupDisabled = context.disabled
 
-    const rippleDisabled = isRippleDisabled ?? components.button.isRippleDisabled
+    const rippleDisabled = (animation ?? components.button.animation) !== 'ripple'
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
 
-    const isDisabled = disabled || isLoading || (controlled ? groupDisabled : false)
-    const resolvedSpinner = spinner ?? <Spinner isLoading {...spinnerProps} />
+    const isDisabled = disabled || loading || (controlled ? groupDisabled : false)
+    const resolvedSpinner = (
+      <Spinner loading className={classNames?.spinner} style={styles?.spinner} {...spinnerProps} />
+    )
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return
@@ -71,9 +73,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick?.(e)
     }
 
-    const showPrefix = prefix || (isLoading && spinnerPosition === 'prefix')
-    const showContent = children || (isLoading && spinnerPosition === 'content')
-    const showSuffix = suffix || (isLoading && spinnerPosition === 'suffix')
+    const showPrefix = prefix || (loading && spinnerPosition === 'prefix')
+    const showContent = children || (loading && spinnerPosition === 'content')
+    const showSuffix = suffix || (loading && spinnerPosition === 'suffix')
 
     return (
       <Flex
@@ -83,12 +85,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         alignItems={alignItems}
         justify={justify}
         disabled={isDisabled}
+        data-loading={loading}
         data-disabled={isDisabled}
         onClick={handleClick}
         className={cn(`${global.prefixCls}-btn ${global.prefixCls}-clickable`, classNames?.btn)}
         style={styles?.btn}
       >
-        {spinnerPosition === 'full' && isLoading ? (
+        {spinnerPosition === 'full' && loading ? (
           resolvedSpinner
         ) : (
           <>
@@ -97,7 +100,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(`${global.prefixCls}-btn-prefix`, classNames?.prefix)}
                 style={styles?.prefix}
               >
-                {spinnerPosition === 'prefix' && isLoading ? resolvedSpinner : prefix}
+                {spinnerPosition === 'prefix' && loading ? resolvedSpinner : prefix}
               </span>
             )}
 
@@ -106,7 +109,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(`${global.prefixCls}-btn-content`, classNames?.content)}
                 style={styles?.content}
               >
-                {spinnerPosition === 'content' && isLoading ? resolvedSpinner : children}
+                {spinnerPosition === 'content' && loading ? resolvedSpinner : children}
               </span>
             )}
 
@@ -115,7 +118,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(`${global.prefixCls}-btn-suffix`, classNames?.suffix)}
                 style={styles?.suffix}
               >
-                {spinnerPosition === 'suffix' && isLoading ? resolvedSpinner : suffix}
+                {spinnerPosition === 'suffix' && loading ? resolvedSpinner : suffix}
               </span>
             )}
           </>

@@ -16,26 +16,29 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       colors: global?.colors ?? { error: 'hsl(0, 85%, 55%)' },
       motionDurations: {
         fade: global?.motionDurations?.fade ?? 300,
+        fadeScale: global?.motionDurations?.fadeScale ?? 400,
         pop: global?.motionDurations?.pop ?? 600,
         ripple: global?.motionDurations?.ripple ?? 600
       },
-      prefixCls: global?.prefixCls ?? 'nsui'
+      prefixCls: global?.prefixCls ?? 'nsui',
+      tooltip: global?.tooltip ?? true
     },
     components: {
       button: {
-        isRippleDisabled: components?.button?.isRippleDisabled ?? false
+        animation: components?.button?.animation ?? 'ripple'
       },
       iconButton: {
-        isRippleDisabled: components?.iconButton?.isRippleDisabled ?? true
-      },
-      checkbox: {
-        isPopDisabled: components?.checkbox?.isPopDisabled ?? false
+        animation: components?.iconButton?.animation ?? 'ripple'
       },
       checkmark: {
-        isPopDisabled: components?.checkmark?.isPopDisabled ?? false
+        animation: components?.checkmark?.animation ?? 'pop'
       },
       heading: {
         typeElement: components?.heading?.typeElement ?? 'h1'
+      },
+      inputPassword: {
+        textTitle: components?.inputPassword?.textTitle ?? 'Hide password',
+        passwordTitle: components?.inputPassword?.passwordTitle ?? 'Show password'
       },
       link: {
         underline: components?.link?.underline ?? false
@@ -45,8 +48,11 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         olMarker: components?.list?.olMarker ?? 'none',
         ulMarker: components?.list?.ulMarker ?? 'none'
       },
+      popover: {
+        animation: components?.popover?.animation ?? 'pop'
+      },
       radio: {
-        isPopDisabled: components?.radio?.isPopDisabled ?? false
+        animation: components?.radio?.animation ?? 'pop'
       },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2

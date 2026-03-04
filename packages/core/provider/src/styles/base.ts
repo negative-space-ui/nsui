@@ -13,10 +13,47 @@ export const baseStyle = (global: GlobalConfigRequired) => {
   })
 
   injectStyle(`.${global.prefixCls}-fade`, {
-    opacity: 0,
-    '&[data-visible="true"]': { opacity: 1 },
-    transitionProperty: 'opacity',
-    transitionTimingFunction: `ease-in-out`,
-    transitionDuration: `${global.motionDurations.fade}ms`
+    transition: `opacity ${global.motionDurations.fade}ms ease-in-out`
+  })
+
+  injectStyle(`.${global.prefixCls}-fade[data-visible="false"]`, {
+    opacity: 0
+  })
+
+  injectStyle(`.${global.prefixCls}-fade[data-visible="true"]`, {
+    opacity: 1
+  })
+
+  injectStyle(`.${global.prefixCls}-fade-scale`, {
+    transitionProperty: 'opacity, transform',
+    transitionDuration: `${global.motionDurations.fadeScale}ms`,
+    transitionTimingFunction: 'ease-in-out'
+  })
+
+  injectStyle(`.${global.prefixCls}-fade-scale[data-visible="false"]`, {
+    transform: 'scale(0)',
+    opacity: 0
+  })
+
+  injectStyle(`.${global.prefixCls}-fade-scale[data-visible="true"]`, {
+    transform: 'scale(1)',
+    opacity: 1
+  })
+
+  injectStyle(`.${global.prefixCls}-pop`, {
+    transformOrigin: 'center',
+    transitionProperty: 'opacity, transform',
+    transitionDuration: `${global.motionDurations.pop}ms`,
+    transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+  })
+
+  injectStyle(`.${global.prefixCls}-pop[data-visible="false"]`, {
+    transform: 'scale(0)',
+    opacity: 0
+  })
+
+  injectStyle(`.${global.prefixCls}-pop[data-visible="true"]`, {
+    transform: 'scale(1)',
+    opacity: 1
   })
 }

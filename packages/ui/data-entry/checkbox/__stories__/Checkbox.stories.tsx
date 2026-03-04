@@ -8,14 +8,14 @@ export default {
   args: {
     children: 'Checkbox',
     disabled: false,
+    animation: 'pop',
     onChange: () => {},
     classNames: {
       label: 'w-fit px-4 py-2 border-1 border-neutral-300 rounded-md',
       checkbox:
         'w-4 h-4 border-1 border-neutral-500 data-[checked=true]:border-neutral-600 rounded-sm transition-colors will-change-border',
-      checkboxInner: 'bg-neutral-600'
-    },
-    checkmarkProps: { className: 'text-[12px] text-neutral-600' }
+      checkmark: 'text-[12px] text-neutral-600'
+    }
   }
 }
 

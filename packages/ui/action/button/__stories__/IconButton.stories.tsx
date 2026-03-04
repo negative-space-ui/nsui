@@ -6,7 +6,8 @@ export default {
   component: IconButton,
   tags: ['autodocs'],
   args: {
-    children: '🔍'
+    children: '🔍',
+    animation: 'ripple'
   },
   argTypes: {
     disabled: { control: 'boolean' }
