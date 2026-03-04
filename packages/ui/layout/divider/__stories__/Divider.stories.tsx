@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Divider, type DividerProps } from '../src'
 
 export default {

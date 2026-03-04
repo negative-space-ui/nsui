@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { MenuContext, type MenuContextValue } from './MenuContext'
 
 export function useMenuContext(): MenuContextValue {

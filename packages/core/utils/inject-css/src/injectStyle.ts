@@ -1,5 +1,5 @@
+import { type CSSRules,parseRules } from './parseRules'
 import { getSheet, injected } from './styleSheet'
-import { parseRules, type CSSRules } from './parseRules'
 
 export function injectStyle(selector: string, rules: CSSRules) {
   const sheet = getSheet()

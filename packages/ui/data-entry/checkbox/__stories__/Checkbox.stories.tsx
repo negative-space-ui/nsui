@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Checkbox, type CheckboxProps } from '../src'
 
 export default {

@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react'
-import { cn, mergeCn, useNSUI } from '@negative-space/system'
-import { Field } from '@negative-space/field'
 import { Collection, type CollectionProps } from '@negative-space/collection'
+import { Field } from '@negative-space/field'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
+import React, { useMemo, useState } from 'react'
+
 import { ListboxContext, type SelectionMode } from './ListboxContext'
 import { ListboxGroup, type ListboxGroupProps } from './ListboxGroup'
 import { ListboxOption, type ListboxOptionProps } from './ListboxOption'

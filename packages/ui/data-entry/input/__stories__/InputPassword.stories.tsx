@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { InputPassword, type InputPasswordProps } from '../src/'
 
 export default {

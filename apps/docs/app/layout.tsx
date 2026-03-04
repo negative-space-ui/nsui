@@ -1,7 +1,9 @@
+import './globals.css'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
 import RootCRS from '@/components/layouts/RootCRS'
-import './globals.css'
 
 const inter = Inter({
   variable: '--inter'

@@ -1,9 +1,10 @@
-import React from 'react'
-import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { Button, type ButtonProps } from './Button'
-import { IconButton, type IconButtonProps } from './IconButton'
 import { ButtonContext } from './ButtonContext'
+import { IconButton, type IconButtonProps } from './IconButton'
 
 export type ButtonComponent =
   | { button: Omit<ButtonProps, 'controlled'> }

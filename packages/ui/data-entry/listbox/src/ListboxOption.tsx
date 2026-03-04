@@ -1,7 +1,8 @@
-import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
-import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
+import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { useListboxContext } from './useListboxContext'
 
 export interface ListboxOptionProps extends Omit<

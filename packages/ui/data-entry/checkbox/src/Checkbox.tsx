@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { cn, useNSUI } from '@negative-space/system'
+import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
 import { Field } from '@negative-space/field'
 import { Flex, type FlexProps } from '@negative-space/flex'
-import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
+import { cn, useNSUI } from '@negative-space/system'
+import React, { useState } from 'react'
 
 export interface CheckboxProps extends Omit<
   FlexProps<'label'>,

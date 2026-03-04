@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Input, type InputProps } from '../src'
 
 export default {

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Checkmark, type CheckmarkProps } from '../src'
 
 export default {

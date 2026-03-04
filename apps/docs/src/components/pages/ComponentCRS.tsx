@@ -1,8 +1,9 @@
 'use client'
 
-import { useParams } from 'next/navigation'
-import { Heading } from 'negative-space/typography'
 import { Link } from 'negative-space/nav'
+import { Heading } from 'negative-space/typography'
+import { useParams } from 'next/navigation'
+
 import { ComponentsMap } from '@/consts/components'
 
 export default function ComponentCRS() {

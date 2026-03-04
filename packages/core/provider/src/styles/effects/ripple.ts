@@ -1,4 +1,5 @@
 import { injectKeyframes, injectStyle } from '@negative-space/inject-css'
+
 import type { GlobalConfigRequired } from '../../types'
 
 export const rippleKeyframe = (global: GlobalConfigRequired) => {

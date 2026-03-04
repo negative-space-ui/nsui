@@ -1,7 +1,8 @@
-import React from 'react'
+import 'prismjs/themes/prism-tomorrow.css'
+
 import { cn, useNSUI } from '@negative-space/system'
 import Prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
+import React from 'react'
 
 export interface CodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
   language?: string

@@ -1,10 +1,8 @@
-export { useNSUI } from '@negative-space/provider'
+export { cn, mergeCn } from './cn'
 export type {
-  GlobalConfigRequired,
   ClickableAnimation,
+  GlobalConfigRequired,
   OverlayAnimation
 } from '@negative-space/provider'
-
-export { cn, mergeCn } from './cn'
-
+export { useNSUI } from '@negative-space/provider'
 export { Check, Eye, EyeOff, type LucideProps } from 'lucide-react'

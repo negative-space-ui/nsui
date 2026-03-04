@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Listbox, type ListboxProps } from '../src'
 
 export default {

@@ -1,7 +1,7 @@
-import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
+import { cn, useNSUI } from '@negative-space/system'
 import { Text } from '@negative-space/text'
+import React from 'react'
 
 export interface FieldProps extends Omit<FlexProps<'fieldset'>, 'as' | 'className' | 'style'> {
   classNames?: {

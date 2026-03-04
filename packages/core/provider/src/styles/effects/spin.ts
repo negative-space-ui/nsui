@@ -1,4 +1,5 @@
 import { injectKeyframes, injectStyle } from '@negative-space/inject-css'
+
 import type { GlobalConfigRequired, SpinnerConfig } from '../../types'
 
 export const spinKeyframes = (global: GlobalConfigRequired, spinner: SpinnerConfig) => {

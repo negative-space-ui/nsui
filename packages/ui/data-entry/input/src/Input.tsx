@@ -1,8 +1,8 @@
-import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
 import { Field } from '@negative-space/field'
 import { Flex } from '@negative-space/flex'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
+import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
 
 export interface InputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,

@@ -1,7 +1,8 @@
-import { ReactNode, createElement } from 'react'
+import { createElement,ReactNode } from 'react'
+
 import { NSUIContext, type NSUIContextProps } from './ProviderContext'
-import type { ComponentsConfig, GlobalConfig } from './types'
 import { styles } from './styles'
+import type { ComponentsConfig, GlobalConfig } from './types'
 
 export type NSUIProviderProps = {
   children: ReactNode

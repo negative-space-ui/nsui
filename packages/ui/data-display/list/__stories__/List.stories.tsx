@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { List, ListProps } from '../src'
 
 const unorderedMarkers = ['disc', 'circle', 'square'] as const

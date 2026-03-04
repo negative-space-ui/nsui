@@ -1,6 +1,7 @@
-import React from 'react'
 import { useRipple } from '@negative-space/ripple'
-import { cn, useNSUI, type ClickableAnimation } from '@negative-space/system'
+import { type ClickableAnimation,cn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { useButtonContextConditional } from './useButtonContext'
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

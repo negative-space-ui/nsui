@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { IconButton, type IconButtonProps } from '../src'
 
 export default {

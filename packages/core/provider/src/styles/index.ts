@@ -1,7 +1,7 @@
-import { baseStyle } from './base'
-import { spinKeyframes } from './effects/spin'
-import { rippleKeyframe, rippleStyle } from './effects/ripple'
 import type { ComponentsConfigRequired, GlobalConfigRequired } from '../types'
+import { baseStyle } from './base'
+import { rippleKeyframe, rippleStyle } from './effects/ripple'
+import { spinKeyframes } from './effects/spin'
 
 export const styles = (components: ComponentsConfigRequired, global: GlobalConfigRequired) => {
   baseStyle(global)

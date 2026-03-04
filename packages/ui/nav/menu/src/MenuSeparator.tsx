@@ -1,5 +1,5 @@
-import React from 'react'
 import { CollectionSeparator, type CollectionSeparatorProps } from '@negative-space/collection'
+import React from 'react'
 
 export type MenuSeparatorProps = CollectionSeparatorProps
 

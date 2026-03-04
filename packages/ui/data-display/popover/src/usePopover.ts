@@ -1,21 +1,20 @@
-import { useRef, useState, useCallback, type CSSProperties, type HTMLProps } from 'react'
 import {
-  useFloating,
-  autoUpdate,
-  offset,
-  flip,
-  shift,
   arrow,
-  useClick,
-  useHover,
-  useDismiss,
-  useRole,
-  useInteractions,
-  type Placement,
-  type OffsetOptions,
+  autoUpdate,
+  flip,
   type FlipOptions,
-  type ShiftOptions
-} from '@floating-ui/react'
+  offset,
+  type OffsetOptions,
+  type Placement,
+  shift,
+  type ShiftOptions,
+  useClick,
+  useDismiss,
+  useFloating,
+  useHover,
+  useInteractions,
+  useRole} from '@floating-ui/react'
+import { type CSSProperties, type HTMLProps,useCallback, useRef, useState } from 'react'
 
 export type PopoverTrigger = 'click' | 'hover' | 'press'
 

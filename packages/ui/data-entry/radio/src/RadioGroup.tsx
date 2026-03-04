@@ -1,9 +1,10 @@
-import React, { useCallback, useMemo, useState, useId } from 'react'
-import { cn, mergeCn, useNSUI } from '@negative-space/system'
-import { Field } from '@negative-space/field'
 import { Collection, type CollectionProps } from '@negative-space/collection'
-import { RadioOption, type RadioOptionProps } from './RadioOption'
+import { Field } from '@negative-space/field'
+import { cn, mergeCn, useNSUI } from '@negative-space/system'
+import React, { useCallback, useId,useMemo, useState } from 'react'
+
 import { RadioContext } from './RadioContext'
+import { RadioOption, type RadioOptionProps } from './RadioOption'
 
 export interface RadioGroupProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {

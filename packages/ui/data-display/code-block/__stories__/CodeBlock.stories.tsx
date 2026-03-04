@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { CodeBlock, type CodeBlockProps } from '../src'
 
 export default {

@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useId, useContext } from 'react'
 import { Flex, type FlexProps } from '@negative-space/flex'
+import React, { useContext,useEffect, useId, useRef } from 'react'
+
 import { CollectionContext } from './CollectionContext'
 
 export interface CollectionItemProps extends Omit<

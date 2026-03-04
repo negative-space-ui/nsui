@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react'
+
 import type { ComponentsConfigRequired, GlobalConfigRequired } from './types'
 
 export type NSUIContextProps = {

@@ -1,5 +1,5 @@
-import React, { useId } from 'react'
 import { Heading, type HeadingElement } from '@negative-space/heading'
+import React, { useId } from 'react'
 
 export interface CollectionGroupProps extends Omit<
   React.HTMLAttributes<HTMLDivElement>,

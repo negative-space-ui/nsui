@@ -1,6 +1,7 @@
-import React from 'react'
-import { cn, useNSUI, type OverlayAnimation } from '@negative-space/system'
 import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
+import { cn, type OverlayAnimation,useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { useRadioContext } from './useRadioContext'
 
 export interface RadioOptionProps extends Omit<

@@ -1,5 +1,5 @@
-import React from 'react'
 import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
 
 export interface SpinnerProps extends Omit<
   React.HTMLAttributes<HTMLDivElement>,

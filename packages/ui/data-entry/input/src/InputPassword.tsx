@@ -1,7 +1,8 @@
-import React from 'react'
-import { cn, useNSUI, Eye, EyeOff } from '@negative-space/system'
-import { Input, type InputProps } from '.'
 import { IconButton, type IconButtonProps } from '@negative-space/button'
+import { cn, Eye, EyeOff,useNSUI } from '@negative-space/system'
+import React from 'react'
+
+import { Input, type InputProps } from '.'
 
 export interface InputPasswordProps extends Omit<
   InputProps,
