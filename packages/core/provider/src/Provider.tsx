@@ -50,7 +50,7 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         ulMarker: components?.list?.ulMarker ?? 'none'
       },
       popover: {
-        animation: components?.popover?.animation ?? 'pop'
+        animation: components?.popover?.animation ?? 'fade-scale'
       },
       radio: {
         animation: components?.radio?.animation ?? 'pop'
