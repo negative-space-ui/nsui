@@ -1,5 +1,27 @@
 # @negative-space/feedback
 
+## 1.2.0
+
+### Minor Changes
+
+- 6bd586a: Move Popover from Data Display to Feedback kit
+- c1a80ba: Initial release of Modal component
+- c1a916d: Initial release of Tooltip component
+
+### Patch Changes
+
+- Updated dependencies [c898af7]
+- Updated dependencies [dec1c6b]
+- Updated dependencies [c1a80ba]
+- Updated dependencies [c1a916d]
+- Updated dependencies [790cd3a]
+- Updated dependencies [da14fba]
+  - @negative-space/popover@1.0.0
+  - @negative-space/spinner@2.2.0
+  - @negative-space/modal@1.0.0
+  - @negative-space/tooltip@1.0.0
+  - @negative-space/checkmark@1.2.0
+
 ## 1.1.7
 
 ### Patch Changes

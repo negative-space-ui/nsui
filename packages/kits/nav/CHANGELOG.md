@@ -1,5 +1,11 @@
 # @negative-space/nav
 
+## 1.1.2
+
+### Patch Changes
+
+- @negative-space/menu@1.0.2
+
 ## 1.1.1
 
 ### Patch Changes
