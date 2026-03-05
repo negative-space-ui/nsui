@@ -2,7 +2,7 @@ import { FloatingArrow, FloatingFocusManager, FloatingPortal } from '@floating-u
 import { cn, type OverlayAnimation, useNSUI } from '@negative-space/system'
 import React, { useEffect, useState } from 'react'
 
-import { type PopoverHandle, type PopoverTrigger } from './usePopover'
+import { FIXED_POSITION_STYLES, type PopoverHandle, type PopoverTrigger } from './usePopover'
 
 export interface PopoverProps extends Omit<
   React.HTMLProps<HTMLDivElement>,
@@ -12,11 +12,13 @@ export interface PopoverProps extends Omit<
     root?: string
     content?: string
     arrow?: string
+    overlay?: string
   }
   styles?: {
     root?: React.CSSProperties
     content?: React.CSSProperties
     arrow?: React.CSSProperties
+    overlay?: React.CSSProperties
   }
   animation?: OverlayAnimation
   popover: PopoverHandle
@@ -45,23 +47,18 @@ export const Popover = ({
   const shouldTrapFocus = opts.trapFocus && !NON_FOCUS_TRIGGERS.includes(opts.trigger)
 
   useEffect(() => {
-    if (isOpen) {
-      setMounted(true)
-    } else {
-      setVisible(false)
-    }
+    if (isOpen) setMounted(true)
+    else setVisible(false)
   }, [isOpen])
 
   useEffect(() => {
     if (!mounted) return
-
     let id2: number
     const id = requestAnimationFrame(() => {
       id2 = requestAnimationFrame(() => {
         if (isOpen) setVisible(true)
       })
     })
-
     return () => {
       cancelAnimationFrame(id)
       cancelAnimationFrame(id2)
@@ -74,45 +71,67 @@ export const Popover = ({
 
   if (!mounted) return null
 
-  const panel = (
-    <FloatingFocusManager context={context} disabled={!shouldTrapFocus}>
-      <div
-        ref={floatingRef}
-        style={{
-          ...floatingStyles,
-          zIndex: opts.zIndex,
-          pointerEvents: visible ? 'auto' : 'none'
-        }}
-      >
-        <div
-          {...(getFloatingProps(props) as React.HTMLProps<HTMLDivElement>)}
-          data-visible={visible ? 'true' : 'false'}
-          data-trigger={opts.trigger}
-          onTransitionEnd={handleTransitionEnd}
-          className={cn(
-            Animation !== 'none' && `${global.prefixCls}-${Animation}`,
-            classNames?.root
-          )}
-          style={styles?.root}
-        >
-          <div
-            className={cn(`${global.prefixCls}-popover-content`, classNames?.content)}
-            style={styles?.content}
-          >
-            {children}
-          </div>
+  const positionStyles = opts.fixedPosition
+    ? {
+        ...FIXED_POSITION_STYLES[opts.fixedPosition],
+        zIndex: opts.zIndex,
+        pointerEvents: visible ? 'auto' : 'none'
+      }
+    : { ...floatingStyles, zIndex: opts.zIndex, pointerEvents: visible ? 'auto' : 'none' }
 
-          {opts.showArrow && (
-            <FloatingArrow
-              ref={arrowRef}
-              context={context}
-              className={cn(`${global.prefixCls}-popover-arrow`, classNames?.arrow)}
-              style={styles?.arrow}
-            />
+  const panel = (
+    <>
+      {opts.overlay && (
+        <div
+          aria-hidden="true"
+          data-visible={visible}
+          onClick={() => popover.close()}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: opts.zIndex - 1,
+            pointerEvents: visible ? 'auto' : 'none',
+            ...styles?.overlay
+          }}
+          className={cn(
+            `${global.prefixCls}-popover-overlay`,
+            Animation !== 'none' && `${global.prefixCls}-fade`,
+            classNames?.overlay
           )}
+        />
+      )}
+      <FloatingFocusManager context={context} disabled={!shouldTrapFocus}>
+        <div ref={floatingRef} style={positionStyles as React.CSSProperties}>
+          <div
+            {...(getFloatingProps(props) as React.HTMLProps<HTMLDivElement>)}
+            data-visible={visible ? 'true' : 'false'}
+            data-trigger={opts.trigger}
+            onTransitionEnd={handleTransitionEnd}
+            className={cn(
+              Animation !== 'none' && `${global.prefixCls}-${Animation}`,
+              classNames?.root
+            )}
+            style={styles?.root}
+          >
+            <div
+              className={cn(`${global.prefixCls}-popover-content`, classNames?.content)}
+              style={styles?.content}
+            >
+              {children}
+            </div>
+
+            {opts.showArrow && (
+              <FloatingArrow
+                ref={arrowRef}
+                context={context}
+                className={cn(`${global.prefixCls}-popover-arrow`, classNames?.arrow)}
+                style={styles?.arrow}
+              />
+            )}
+          </div>
         </div>
-      </div>
-    </FloatingFocusManager>
+      </FloatingFocusManager>
+    </>
   )
 
   return opts.usePortal ? <FloatingPortal>{panel}</FloatingPortal> : panel

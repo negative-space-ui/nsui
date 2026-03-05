@@ -18,6 +18,7 @@ import {
 import { type CSSProperties, type HTMLProps, useCallback, useRef, useState } from 'react'
 
 export type PopoverTrigger = 'click' | 'hover' | 'press'
+export type FixedPosition = 'center' | 'top' | 'bottom'
 
 export interface UsePopoverOptions {
   placement?: Placement
@@ -35,6 +36,12 @@ export interface UsePopoverOptions {
   onOpenChange?: (open: boolean) => void
   trigger?: PopoverTrigger
   hoverDelay?: { open?: number; close?: number } | number
+  overlay?: boolean
+  /**
+   * When set, disables floating-ui anchor positioning and places the element
+   * at a fixed position on the screen. Useful for modals and drawers.
+   */
+  fixedPosition?: FixedPosition
 }
 
 export interface PopoverInternal {
@@ -45,8 +52,11 @@ export interface PopoverInternal {
   context: ReturnType<typeof useFloating>['context']
   getFloatingProps: (props?: HTMLProps<HTMLElement>) => Record<string, unknown>
   opts: Required<
-    Pick<UsePopoverOptions, 'showArrow' | 'trapFocus' | 'usePortal' | 'zIndex' | 'trigger'>
-  >
+    Pick<
+      UsePopoverOptions,
+      'showArrow' | 'trapFocus' | 'usePortal' | 'zIndex' | 'trigger' | 'overlay'
+    >
+  > & { fixedPosition: FixedPosition | false }
 }
 
 export interface PopoverHandle {
@@ -57,6 +67,14 @@ export interface PopoverHandle {
   isOpen: boolean
   _internal: PopoverInternal
 }
+
+const FIXED_POSITION_STYLES: Record<FixedPosition, CSSProperties> = {
+  center: { position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' },
+  top: { position: 'fixed', top: '5%', left: '50%', transform: 'translateX(-50%)' },
+  bottom: { position: 'fixed', bottom: '5%', left: '50%', transform: 'translateX(-50%)' }
+}
+
+export { FIXED_POSITION_STYLES }
 
 export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
   const {
@@ -74,7 +92,9 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
     open: controlledOpen,
     onOpenChange,
     trigger = 'click',
-    hoverDelay = { open: 100, close: 150 }
+    overlay = false,
+    hoverDelay = { open: 100, close: 150 },
+    fixedPosition
   } = options
 
   const isControlled = controlledOpen !== undefined
@@ -94,18 +114,18 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
     open: isOpen,
     onOpenChange: setOpen,
     placement,
-    whileElementsMounted: autoUpdate,
-    middleware: [
-      offset(offsetValue),
-      flip(flipOptions),
-      shift({ padding: 8, ...shiftOptions }),
-      ...(showArrow ? [arrow({ element: arrowRef })] : [])
-    ]
+    whileElementsMounted: fixedPosition ? undefined : autoUpdate,
+    middleware: fixedPosition
+      ? []
+      : [
+          offset(offsetValue),
+          flip(flipOptions),
+          shift({ padding: 8, ...shiftOptions }),
+          ...(showArrow ? [arrow({ element: arrowRef })] : [])
+        ]
   })
 
-  const clickInteraction = useClick(floating.context, {
-    enabled: trigger === 'click'
-  })
+  const clickInteraction = useClick(floating.context, { enabled: trigger === 'click' })
 
   const normalizedDelay =
     typeof hoverDelay === 'number' ? { open: hoverDelay, close: hoverDelay } : hoverDelay
@@ -152,12 +172,8 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
             e.preventDefault()
             setOpen(true)
           },
-          onPointerUp: () => {
-            setOpen(false)
-          },
-          onPointerLeave: () => {
-            setOpen(false)
-          }
+          onPointerUp: () => setOpen(false),
+          onPointerLeave: () => setOpen(false)
         }
       : baseTriggerProps
 
@@ -174,7 +190,15 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
       arrowRef,
       context: floating.context,
       getFloatingProps,
-      opts: { showArrow, trapFocus, usePortal, zIndex, trigger }
+      opts: {
+        showArrow,
+        trapFocus,
+        usePortal,
+        zIndex,
+        trigger,
+        overlay,
+        fixedPosition: fixedPosition ?? false
+      }
     }
   }
 }
