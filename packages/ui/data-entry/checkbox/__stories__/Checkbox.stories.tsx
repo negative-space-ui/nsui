@@ -15,7 +15,7 @@ export default {
       label: 'w-fit px-4 py-2 border-1 border-neutral-300 rounded-md',
       checkbox:
         'w-4 h-4 border-1 border-neutral-500 data-[checked=true]:border-neutral-600 rounded-sm transition-colors will-change-border',
-      checkmark: 'text-[12px] text-neutral-600'
+      checkmark: 'w-4 h-4 text-neutral-800'
     }
   }
 }

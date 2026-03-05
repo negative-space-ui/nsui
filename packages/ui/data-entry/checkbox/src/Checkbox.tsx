@@ -119,7 +119,6 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
               checked={isChecked}
               className={classNames?.checkmark}
               style={{
-                scale: '0.8',
                 display: 'block',
                 transformOrigin: 'center',
                 ...styles?.checkmark
