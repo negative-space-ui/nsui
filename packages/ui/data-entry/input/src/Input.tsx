@@ -1,7 +1,8 @@
-import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
 import { Field } from '@negative-space/field'
 import { Flex } from '@negative-space/flex'
+import { Spinner, type SpinnerProps } from '@negative-space/spinner'
+import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
 
 export interface InputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -17,6 +18,7 @@ export interface InputProps extends Omit<
     prefix?: string
     content?: string
     suffix?: string
+    spinner?: string
   }
   styles?: {
     field?: {
@@ -28,19 +30,47 @@ export interface InputProps extends Omit<
     prefix?: React.CSSProperties
     content?: React.CSSProperties
     suffix?: React.CSSProperties
+    spinner?: React.CSSProperties
   }
   label?: string
   error?: string
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   htmlFor?: string
+  loading?: boolean
+  spinnerPosition?: 'prefix' | 'suffix'
+  spinnerProps?: Omit<SpinnerProps, 'loading' | 'className' | 'style'>
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ classNames, styles, label, error, prefix, suffix, htmlFor, id, ...props }, ref) => {
+  (
+    {
+      classNames,
+      styles,
+      label,
+      error,
+      prefix,
+      suffix,
+      htmlFor,
+      id,
+      loading = false,
+      spinnerPosition = 'suffix',
+      spinnerProps,
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
     const { global } = useNSUI()
     const generatedId = React.useId()
     const inputId = id ?? generatedId
+
+    const resolvedSpinner = (
+      <Spinner loading className={classNames?.spinner} style={styles?.spinner} {...spinnerProps} />
+    )
+
+    const showPrefix = prefix || (loading && spinnerPosition === 'prefix')
+    const showSuffix = suffix || (loading && spinnerPosition === 'suffix')
 
     return (
       <Field
@@ -55,12 +85,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className={cn(`${global.prefixCls}-input-root`, classNames?.root)}
           style={{ marginTop: '6px', ...styles?.root }}
         >
-          {prefix && (
+          {showPrefix && (
             <span
               className={cn(`${global.prefixCls}-input-prefix`, classNames?.prefix)}
-              style={styles?.prefix}
+              style={{ display: 'flex', alignItems: 'center', ...styles?.prefix }}
             >
-              {prefix}
+              {loading && spinnerPosition === 'prefix' ? resolvedSpinner : prefix}
             </span>
           )}
 
@@ -68,16 +98,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {...props}
             ref={ref}
             id={inputId}
+            disabled={disabled || loading}
+            data-loading={loading}
             className={cn(`${global.prefixCls}-input-content`, classNames?.content)}
-            style={{ outline: 'none', ...styles?.content }}
+            style={{ outline: 'none', flex: 1, minWidth: 0, ...styles?.content }}
           />
 
-          {suffix && (
+          {showSuffix && (
             <span
               className={cn(`${global.prefixCls}-input-suffix`, classNames?.suffix)}
-              style={styles?.suffix}
+              style={{ display: 'flex', alignItems: 'center', ...styles?.suffix }}
             >
-              {suffix}
+              {loading && spinnerPosition === 'suffix' ? resolvedSpinner : suffix}
             </span>
           )}
         </Flex>

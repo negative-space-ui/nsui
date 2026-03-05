@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Listbox, type ListboxProps } from '../src'
 
 export default {
@@ -8,6 +9,7 @@ export default {
   args: {
     defaultValue: '2',
     classNames: {
+      root: 'w-26',
       option: {
         checkmark: 'w-4 h-4 text-neutral-600'
       }

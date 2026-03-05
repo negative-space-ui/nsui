@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { cn, useNSUI } from '@negative-space/system'
+import React, { forwardRef } from 'react'
 
 export type TextElement = 'span' | 'p' | 'label' | 'small'
 

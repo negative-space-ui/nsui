@@ -1,0 +1,54 @@
+{
+  "name": "@negative-space/code-block",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A code block component for displaying code snippets with syntax highlighting",
+  "keywords": [
+    "components",
+    "data-display",
+    "code-block",
+    "negative-space",
+    "nsui",
+    "react",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/code-block"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@negative-space/system": "workspace:*",
+    "@types/prismjs": "^1.26.6",
+    "prismjs": "^1.30.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}

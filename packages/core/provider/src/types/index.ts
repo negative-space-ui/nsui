@@ -12,10 +12,14 @@ export type MotionDurations = {
    *
    * Defaults to `600`. */
   ripple?: number
+  /** Defines the duration of the fade-scale animation.
+   *
+   * Defaults to `400`. */
+  fadeScale?: number
 }
 
 export type Colors = {
-  error: string
+  error?: string
 }
 
 export type GlobalConfig = {
@@ -27,36 +31,36 @@ export type GlobalConfig = {
    *
    * Ex: `nsui-button` */
   prefixCls?: string
+  /** Defines if it should render the tooltip.
+   *
+   * Defaults to `true`. */
+  tooltip?: boolean
 }
 
 export type GlobalConfigRequired = Required<GlobalConfig>
 
+export type ClickableAnimation = 'ripple' | 'none'
+export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
+
 export type ButtonConfig = {
-  /** Defines if ripple effect should be disabled
+  /** Defines the animation of the button.
    *
-   * Defaults to `false`. */
-  isRippleDisabled?: boolean
+   * Defaults to `ripple`. */
+  animation?: ClickableAnimation
 }
 
 export type IconButtonConfig = {
-  /** Defines if ripple effect should be disabled
+  /** Defines the animation of the icon button.
    *
-   * Defaults to `true`. */
-  isRippleDisabled?: boolean
-}
-
-export type CheckboxConfig = {
-  /** Defines if animation should be disabled
-   *
-   * Defaults to `false`. */
-  isPopDisabled?: boolean
+   * Defaults to `ripple`. */
+  animation?: ClickableAnimation
 }
 
 export type CheckmarkConfig = {
-  /** Defines if animation should be disabled
+  /** Defines the animation of the checkmark.
    *
-   * Defaults to `false`. */
-  isPopDisabled?: boolean
+   * Defaults to `fade`. */
+  animation?: OverlayAnimation
 }
 
 export type HeadingConfig = {
@@ -64,6 +68,11 @@ export type HeadingConfig = {
    *
    * Defaults to `h1`. */
   typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+}
+
+export type InputPasswordConfig = {
+  textTitle?: string
+  passwordTitle?: string
 }
 
 export type LinkConfig = {
@@ -95,11 +104,18 @@ export type ListConfig = {
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
-export type RadioConfig = {
-  /** Defines if the animation should be disabled.
+export type PopoverConfig = {
+  /** Defines the animation of the popover.
    *
-   * Defaults to `false`. */
-  isPopDisabled?: boolean
+   * Defaults to `fade-scale`. */
+  animation?: OverlayAnimation
+}
+
+export type RadioConfig = {
+  /** Defines the animation of the radio.
+   *
+   * Defaults to `fade`. */
+  animation?: OverlayAnimation
 }
 
 export type SpinnerConfig = {
@@ -119,11 +135,12 @@ export type TextConfig = {
 export type ComponentsConfig = {
   button?: ButtonConfig
   iconButton?: IconButtonConfig
-  checkbox?: CheckboxConfig
   checkmark?: CheckmarkConfig
   heading?: HeadingConfig
+  inputPassword?: InputPasswordConfig
   link?: LinkConfig
   list?: ListConfig
+  popover?: PopoverConfig
   radio?: RadioConfig
   spinner?: SpinnerConfig
   text?: TextConfig

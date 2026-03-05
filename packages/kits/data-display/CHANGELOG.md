@@ -1,5 +1,18 @@
 # @negative-space/data-display
 
+## 1.1.0
+
+### Minor Changes
+
+- 6bd586a: Move Popover from Data Display to Feedback kit
+- 0212402: Initial release of CodeBlock component
+- da14fba: Initial release of Popover component
+
+### Patch Changes
+
+- Updated dependencies [0212402]
+  - @negative-space/code-block@1.0.0
+
 ## 1.0.11
 
 ### Patch Changes

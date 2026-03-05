@@ -1,5 +1,16 @@
 # @negative-space/radio
 
+## 1.6.0
+
+### Minor Changes
+
+- 790cd3a: Update animations to `animation` prop
+
+### Patch Changes
+
+- Updated dependencies [60d5122]
+  - @negative-space/collection@2.0.2
+
 ## 1.5.1
 
 ### Patch Changes

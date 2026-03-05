@@ -1,7 +1,8 @@
-import React, { cloneElement, isValidElement } from 'react'
-import { cn, useNSUI } from '@negative-space/system'
-import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { Checkmark, type CheckmarkProps } from '@negative-space/checkmark'
+import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
+import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { useListboxContext } from './useListboxContext'
 
 export interface ListboxOptionProps extends Omit<
@@ -17,7 +18,6 @@ export interface ListboxOptionProps extends Omit<
     checkmark?: React.CSSProperties
   }
   value: string
-  checkmark?: React.ReactNode
   checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
   onClick?: (value: string, event: React.MouseEvent<HTMLLIElement>) => void
 }
@@ -28,7 +28,6 @@ export function ListboxOption({
   disabled,
   classNames,
   styles,
-  checkmark = <Checkmark />,
   checkmarkProps,
   onClick,
   ...props
@@ -78,19 +77,12 @@ export function ListboxOption({
       styles={{ root: styles?.root }}
     >
       <span>{children}</span>
-
-      {isValidElement(checkmark)
-        ? cloneElement(checkmark as React.ReactElement<Record<string, unknown>>, {
-            ...(checkmark.type === Checkmark
-              ? {
-                  checked: isSelected,
-                  className: classNames?.checkmark,
-                  style: styles?.checkmark
-                }
-              : {}),
-            ...checkmarkProps
-          })
-        : checkmark}
+      <Checkmark
+        checked={isSelected}
+        className={classNames?.checkmark}
+        style={styles?.checkmark}
+        {...checkmarkProps}
+      />
     </CollectionItem>
   )
 }

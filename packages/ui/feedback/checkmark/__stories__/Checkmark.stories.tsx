@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Checkmark, type CheckmarkProps } from '../src'
 
 export default {
@@ -7,6 +8,7 @@ export default {
   tags: ['autodocs'],
   args: {
     checked: true,
+    animation: 'pop',
     className: 'w-6 h-6 text-neutral-600'
   }
 }

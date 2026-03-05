@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/input",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -40,7 +40,9 @@
     "@negative-space/button": "workspace:*",
     "@negative-space/field": "workspace:*",
     "@negative-space/flex": "workspace:*",
-    "@negative-space/system": "workspace:*"
+    "@negative-space/spinner": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/tooltip": "workspace:*"
   },
   "peerDependencies": {
     "react": "^19.2.3"

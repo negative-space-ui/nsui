@@ -1,6 +1,7 @@
-import React from 'react'
-import { cn, useNSUI } from '@negative-space/system'
 import { Flex, type FlexProps } from '@negative-space/flex'
+import { cn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { ListItem, type ListItemProps } from './ListItem'
 
 type ListElement = 'ol' | 'ul'

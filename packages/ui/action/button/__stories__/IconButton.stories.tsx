@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { IconButton, type IconButtonProps } from '../src'
 
 export default {
@@ -6,7 +7,8 @@ export default {
   component: IconButton,
   tags: ['autodocs'],
   args: {
-    children: '🔍'
+    children: '🔍',
+    animation: 'ripple'
   },
   argTypes: {
     disabled: { control: 'boolean' }

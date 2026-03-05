@@ -1,5 +1,5 @@
-import React from 'react'
 import type { RovingFocusReturn } from '@negative-space/roving-focus'
+import React from 'react'
 
 export interface CollectionContextValue {
   registerItem: RovingFocusReturn['registerItem']

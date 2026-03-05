@@ -1,5 +1,11 @@
 # @negative-space/collection
 
+## 2.0.2
+
+### Patch Changes
+
+- 60d5122: Use default gap value
+
 ## 2.0.1
 
 ### Patch Changes

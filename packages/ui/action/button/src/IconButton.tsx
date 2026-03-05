@@ -1,17 +1,18 @@
-import React from 'react'
 import { useRipple } from '@negative-space/ripple'
-import { cn, useNSUI } from '@negative-space/system'
+import { type ClickableAnimation, cn, useNSUI } from '@negative-space/system'
+import React from 'react'
+
 import { useButtonContextConditional } from './useButtonContext'
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   controlled?: boolean
-  isRippleDisabled?: boolean
+  animation?: ClickableAnimation
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, controlled, style, disabled, isRippleDisabled, onClick, ...props }, ref) => {
+  ({ className, controlled, style, disabled, animation, onClick, ...props }, ref) => {
     const { global, components } = useNSUI()
-    const rippleDisabled = isRippleDisabled ?? components.iconButton.isRippleDisabled
+    const rippleDisabled = (animation ?? components.iconButton.animation) !== 'ripple'
 
     const context = useButtonContextConditional(!!controlled)
     const groupDisabled = context.disabled

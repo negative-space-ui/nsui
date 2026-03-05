@@ -1,5 +1,11 @@
 # @negative-space/spinner
 
+## 2.2.0
+
+### Minor Changes
+
+- dec1c6b: Rename `isLoading` prop to `loading`
+
 ## 2.1.5
 
 ### Patch Changes

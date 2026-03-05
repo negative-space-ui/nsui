@@ -1,5 +1,16 @@
 # @negative-space/checkbox
 
+## 1.4.0
+
+### Minor Changes
+
+- 790cd3a: Update animations to `animation` prop
+
+### Patch Changes
+
+- Updated dependencies [790cd3a]
+  - @negative-space/checkmark@1.2.0
+
 ## 1.3.1
 
 ### Patch Changes

@@ -40,7 +40,8 @@
   },
   "dependencies": {
     "@negative-space/provider": "workspace:*",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.576.0"
   },
   "peerDependencies": {
     "react": "^19.2.3"

@@ -1,5 +1,5 @@
-import React from 'react'
 import { Divider, type DividerProps } from '@negative-space/divider'
+import React from 'react'
 
 export type CollectionSeparatorProps = Omit<DividerProps, 'role'>
 

@@ -1,5 +1,5 @@
+import { type CSSRules, parseRules } from './parseRules'
 import { getSheet, injected } from './styleSheet'
-import { parseRules, type CSSRules } from './parseRules'
 
 export function injectKeyframes(name: string, frames: CSSRules) {
   const sheet = getSheet()
