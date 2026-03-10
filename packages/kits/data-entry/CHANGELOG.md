@@ -1,5 +1,21 @@
 # @negative-space/data-entry
 
+## 1.3.0
+
+### Minor Changes
+
+- 752ded5: Add Switch component
+
+### Patch Changes
+
+- Updated dependencies [a3bbbef]
+- Updated dependencies [752ded5]
+  - @negative-space/checkbox@1.5.0
+  - @negative-space/listbox@1.5.0
+  - @negative-space/input@1.2.0
+  - @negative-space/radio@1.7.0
+  - @negative-space/switch@1.0.0
+
 ## 1.2.1
 
 ### Patch Changes

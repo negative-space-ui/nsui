@@ -1,5 +1,11 @@
 # @negative-space/field
 
+## 1.1.0
+
+### Minor Changes
+
+- adb2f7a: Update `label` and `error` props from string to ReactNode
+
 ## 1.0.1
 
 ### Patch Changes

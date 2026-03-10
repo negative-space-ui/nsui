@@ -1,5 +1,13 @@
 # negative-space
 
+## 2.5.3
+
+### Patch Changes
+
+- Updated dependencies [752ded5]
+  - @negative-space/data-entry@1.3.0
+  - @negative-space/layout@1.3.2
+
 ## 2.5.2
 
 ### Patch Changes

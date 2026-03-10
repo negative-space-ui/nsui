@@ -1,0 +1,12 @@
+# @negative-space/switch
+
+## 1.0.0
+
+### Major Changes
+
+- 752ded5: Initial release of Switch component
+
+### Patch Changes
+
+- Updated dependencies [adb2f7a]
+  - @negative-space/field@1.1.0

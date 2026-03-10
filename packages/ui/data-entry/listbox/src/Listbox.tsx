@@ -46,7 +46,7 @@ export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
     }
     separator?: React.CSSProperties
   }
-  error?: string
+  error?: React.ReactNode
   items: ListboxComponent[]
   selectionMode?: SelectionMode
   defaultValue?: string | string[]
