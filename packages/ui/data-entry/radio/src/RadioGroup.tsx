@@ -34,7 +34,7 @@ export interface RadioGroupProps extends Omit<CollectionProps, 'rovingOptions'> 
   name?: string
   disabled?: boolean
   options?: RadioOptionProps[]
-  error?: string
+  error?: React.ReactNode
   defaultValue?: string
   onValueChange?: (value: string) => void
 }

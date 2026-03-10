@@ -32,8 +32,8 @@ export interface InputProps extends Omit<
     suffix?: React.CSSProperties
     spinner?: React.CSSProperties
   }
-  label?: string
-  error?: string
+  label?: React.ReactNode
+  error?: React.ReactNode
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   htmlFor?: string

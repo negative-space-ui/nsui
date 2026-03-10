@@ -31,7 +31,7 @@ export interface CheckboxProps extends Omit<
     checkboxInner?: React.CSSProperties
     checkmark?: React.CSSProperties
   }
-  error?: string
+  error?: React.ReactNode
   checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
 }
 
