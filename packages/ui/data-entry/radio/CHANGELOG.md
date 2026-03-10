@@ -1,5 +1,16 @@
 # @negative-space/radio
 
+## 1.7.0
+
+### Minor Changes
+
+- a3bbbef: Update `label` and `error` props from string to ReactNode
+
+### Patch Changes
+
+- Updated dependencies [adb2f7a]
+  - @negative-space/field@1.1.0
+
 ## 1.6.0
 
 ### Minor Changes
