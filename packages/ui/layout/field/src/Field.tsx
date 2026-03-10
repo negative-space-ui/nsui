@@ -14,8 +14,8 @@ export interface FieldProps extends Omit<FlexProps<'fieldset'>, 'as' | 'classNam
     label?: React.CSSProperties
     error?: React.CSSProperties
   }
-  label?: string
-  error?: string
+  label?: React.ReactNode
+  error?: React.ReactNode
   htmlFor?: string
 }
 
