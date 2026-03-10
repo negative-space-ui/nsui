@@ -277,6 +277,9 @@ importers:
       '@negative-space/radio':
         specifier: workspace:*
         version: link:../../ui/data-entry/radio
+      '@negative-space/switch':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/switch
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -545,6 +548,25 @@ importers:
       '@negative-space/collection':
         specifier: workspace:*
         version: link:../../primitive/collection
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/switch:
+    dependencies:
       '@negative-space/field':
         specifier: workspace:*
         version: link:../../layout/field
