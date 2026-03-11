@@ -268,6 +268,9 @@ importers:
       '@negative-space/checkbox':
         specifier: workspace:*
         version: link:../../ui/data-entry/checkbox
+      '@negative-space/form':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/form
       '@negative-space/input':
         specifier: workspace:*
         version: link:../../ui/data-entry/input
@@ -480,6 +483,31 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
     devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/form:
+    dependencies:
+      '@negative-space/grid':
+        specifier: workspace:*
+        version: link:../../layout/grid
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
+    devDependencies:
+      '@negative-space/input':
+        specifier: workspace:*
+        version: link:../input
       '@types/react':
         specifier: ^19.2.7
         version: 19.2.7
@@ -4876,6 +4904,9 @@ packages:
   zod@4.3.5:
     resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+
 snapshots:
 
   '@adobe/css-tools@4.4.4': {}
@@ -9113,3 +9144,5 @@ snapshots:
       zod: 4.3.5
 
   zod@4.3.5: {}
+
+  zod@4.3.6: {}
