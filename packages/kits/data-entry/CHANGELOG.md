@@ -1,5 +1,16 @@
 # @negative-space/data-entry
 
+## 1.4.0
+
+### Minor Changes
+
+- 1a61e65: Add Form component
+
+### Patch Changes
+
+- Updated dependencies [1a61e65]
+  - @negative-space/form@1.0.0
+
 ## 1.3.0
 
 ### Minor Changes
