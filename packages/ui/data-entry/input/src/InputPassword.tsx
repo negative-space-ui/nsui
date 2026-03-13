@@ -30,7 +30,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 
     const Title =
       title ??
-      (visible ? components.inputPassword.passwordTitle : components.inputPassword.textTitle)
+      (visible ? components.inputPassword?.passwordTitle : components.inputPassword?.textTitle)
 
     const tooltip = useTooltip()
 
@@ -61,13 +61,19 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
               onClick={handleToggle}
               title={!global.tooltip ? Title : undefined}
               aria-label={Title}
-              className={classNames?.button}
+              className={cn(`${global.prefixCls}-input-password-button`, classNames?.button)}
               style={styles?.button}
             >
               {visible ? (
-                <EyeOff className={classNames?.icon} style={styles?.icon} />
+                <EyeOff
+                  className={cn(`${global.prefixCls}-input-password-icon`, classNames?.icon)}
+                  style={styles?.icon}
+                />
               ) : (
-                <Eye className={classNames?.icon} style={styles?.icon} />
+                <Eye
+                  className={cn(`${global.prefixCls}-input-password-icon`, classNames?.icon)}
+                  style={styles?.icon}
+                />
               )}
             </IconButton>
           }
