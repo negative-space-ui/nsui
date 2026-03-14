@@ -6,12 +6,23 @@ import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'
 
-export interface ButtonProps extends Omit<
+type ButtonAccessibility =
+  | {
+      children: React.ReactNode
+      ariaLabel?: false | string
+    }
+  | {
+      children?: undefined
+      ariaLabel: string
+    }
+
+interface ButtonBaseProps extends Omit<
   FlexProps<'button'>,
-  'as' | 'prefix' | 'className' | 'style'
+  'as' | 'prefix' | 'className' | 'style' | 'aria-label'
 > {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
+
   classNames?: {
     btn?: string
     prefix?: string
@@ -19,6 +30,7 @@ export interface ButtonProps extends Omit<
     suffix?: string
     spinner?: string
   }
+
   styles?: {
     btn?: React.CSSProperties
     prefix?: React.CSSProperties
@@ -26,12 +38,15 @@ export interface ButtonProps extends Omit<
     suffix?: React.CSSProperties
     spinner?: React.CSSProperties
   }
+
   animation?: ClickableAnimation
   controlled?: boolean
   loading?: boolean
   spinnerPosition?: 'full' | 'prefix' | 'content' | 'suffix'
   spinnerProps?: Omit<SpinnerProps, 'loading' | 'className' | 'style'>
 }
+
+export type ButtonProps = ButtonBaseProps & ButtonAccessibility
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -50,6 +65,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       spinnerProps,
       alignItems = 'center',
       justify = 'center',
+      ariaLabel,
       ...props
     },
     ref
@@ -62,13 +78,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
 
     const isDisabled = disabled || loading || (controlled ? groupDisabled : false)
+
     const resolvedSpinner = (
       <Spinner loading className={classNames?.spinner} style={styles?.spinner} {...spinnerProps} />
     )
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return
+
       const isKeyboard = e.detail === 0
+
       if (!rippleDisabled) createRipple(e, { centered: isKeyboard })
 
       onClick?.(e)
@@ -77,6 +96,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const showPrefix = prefix || (loading && spinnerPosition === 'prefix')
     const showContent = children || (loading && spinnerPosition === 'content')
     const showSuffix = suffix || (loading && spinnerPosition === 'suffix')
+
+    const resolvedAriaLabel =
+      ariaLabel === false
+        ? undefined
+        : (ariaLabel ?? (typeof children === 'string' ? children : undefined))
 
     return (
       <Flex
@@ -88,6 +112,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isDisabled}
         data-loading={loading}
         data-disabled={isDisabled}
+        aria-label={resolvedAriaLabel}
         onClick={handleClick}
         className={cn(`${global.prefixCls}-btn ${global.prefixCls}-clickable`, classNames?.btn)}
         style={styles?.btn}
