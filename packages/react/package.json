@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "private": true,
   "publishConfig": {
     "access": "public"
