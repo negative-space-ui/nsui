@@ -28,7 +28,7 @@
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@eslint/js": "^9.39.1",
-    "@storybook/react": "^10.1.8",
+    "@storybook/react": "^10.2.19",
     "@types/node": "^25.0.0",
     "clean-package": "^2.2.0",
     "eslint": "^9.39.1",
