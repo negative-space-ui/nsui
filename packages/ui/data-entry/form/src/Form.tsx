@@ -1,6 +1,6 @@
 import { Grid, GridProps } from '@negative-space/grid'
 import { cn, useNSUI } from '@negative-space/system'
-import React, { useContext, useRef, useState } from 'react'
+import React, { useCallback, useContext, useRef, useState } from 'react'
 
 import {
   FormContext,
@@ -16,6 +16,33 @@ function extractValue(e: unknown): unknown {
     return t.type === 'checkbox' ? t.checked : t.value
   }
   return e
+}
+
+function injectFields<T extends FormValues>(
+  node: React.ReactNode,
+  ctx: FormContextValue<T>
+): React.ReactNode {
+  if (!React.isValidElement(node)) return node
+  const el = node as React.ReactElement<Record<string, unknown>>
+  const { name, children: elChildren } = el.props
+
+  const injectedChildren = elChildren
+    ? React.Children.map(elChildren as React.ReactNode, (child) => injectFields(child, ctx))
+    : undefined
+
+  if (name && typeof name === 'string') {
+    return (
+      <ConnectedField
+        key={el.key ?? name}
+        __type={el.type as React.ElementType}
+        {...el.props}
+        name={name}
+        {...(injectedChildren ? { children: injectedChildren } : {})}
+      />
+    )
+  }
+
+  return injectedChildren ? React.cloneElement(el, { children: injectedChildren }) : node
 }
 
 function ConnectedField({
@@ -89,7 +116,9 @@ export function Form<T extends FormValues = FormValues>({
   const valuesRef = useRef(values)
   valuesRef.current = values
 
-  const runValidate = (v: T) => validate?.(v) ?? {}
+  const validateRef = useRef(validate)
+  validateRef.current = validate
+  const runValidate = useCallback((v: T) => validateRef.current?.(v) ?? {}, [])
 
   const isDirty = JSON.stringify(values) !== JSON.stringify(initialRef.current)
   const isValid = Object.values(errors).every((e) => !e)
@@ -175,30 +204,6 @@ export function Form<T extends FormValues = FormValues>({
     }
   }
 
-  function injectFields(node: React.ReactNode): React.ReactNode {
-    if (!React.isValidElement(node)) return node
-    const el = node as React.ReactElement<Record<string, unknown>>
-    const { name, children: elChildren } = el.props
-
-    const injectedChildren = elChildren
-      ? React.Children.map(elChildren as React.ReactNode, injectFields)
-      : undefined
-
-    if (name && typeof name === 'string') {
-      return (
-        <ConnectedField
-          key={el.key ?? name}
-          __type={el.type as React.ElementType}
-          {...el.props}
-          name={name}
-          {...(injectedChildren ? { children: injectedChildren } : {})}
-        />
-      )
-    }
-
-    return injectedChildren ? React.cloneElement(el, { children: injectedChildren }) : node
-  }
-
   return (
     <FormContext.Provider value={ctx as FormContextValue}>
       <Grid
@@ -214,8 +219,10 @@ export function Form<T extends FormValues = FormValues>({
       >
         {typeof children === 'function'
           ? children(ctx)
-          : React.Children.map(children, injectFields)}
+          : React.Children.map(children, (child) => injectFields(child, ctx))}
       </Grid>
     </FormContext.Provider>
   )
 }
+
+Form.displayName = 'Form'
