@@ -2,14 +2,13 @@ import { createContext } from 'react'
 
 export type FormValues = Record<string, unknown>
 export type FormErrors = Record<string, string | undefined>
-export type TouchedFields = Record<string, boolean>
-
 export type ValidationMode = 'onSubmit' | 'onChange' | 'onBlur' | 'all'
 
 export interface FormContextValue<T extends FormValues = FormValues> {
   values: T
   errors: FormErrors
-  touched: TouchedFields
+  touched: Record<string, boolean>
+  validationMode: ValidationMode
   isSubmitting: boolean
   isDirty: boolean
   isValid: boolean
@@ -19,6 +18,7 @@ export interface FormContextValue<T extends FormValues = FormValues> {
   clearError: (name: string) => void
   clearErrors: () => void
   markTouched: (name: string) => void
+  handleBlur: (name: string) => void
   reset: (values?: T) => void
   submit: () => void
 }
