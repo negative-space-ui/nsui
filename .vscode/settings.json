@@ -5,15 +5,9 @@
   "editor.detectIndentation": false,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "javascript.format.enable": false,
-  "typescript.format.enable": false,
   "tailwindCSS.validate": false,
 
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
-  },
-
-  "material-icon-theme.folders.associations": {
-    "plop-templates": "template"
   }
 }
