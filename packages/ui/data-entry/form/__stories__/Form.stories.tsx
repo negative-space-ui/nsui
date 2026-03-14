@@ -2,50 +2,39 @@ import { Input } from '@negative-space/input'
 import React from 'react'
 import { z } from 'zod'
 
-import { Form, type FormProps, useField, zodAdaptor } from '../src'
+import { Form, type FormProps, zodAdaptor } from '../src'
 
 export default {
   title: 'Data Entry/Form',
   component: Form,
-  tags: ['autodocs']
-}
-
-function NameField() {
-  const { value, error, onChange, onBlur } = useField('name')
-  return (
-    <div>
-      <Input placeholder="Name" value={value as string} onChange={onChange} onBlur={onBlur} />
-      {error && <span style={{ color: 'red', fontSize: 12 }}>{error}</span>}
-    </div>
-  )
-}
-
-function EmailField() {
-  const { value, error, onChange, onBlur } = useField('email')
-  return (
-    <div>
-      <Input placeholder="Email" value={value as string} onChange={onChange} onBlur={onBlur} />
-      {error && <span style={{ color: 'red', fontSize: 12 }}>{error}</span>}
-    </div>
-  )
+  tags: ['autodocs'],
+  args: {
+    validationMode: 'onChange'
+  },
+  argTypes: {
+    validate: { control: 'object' }
+  }
 }
 
 export const Default = (args: FormProps) => (
   <Form
     {...args}
     initialValues={{ name: '', email: '' }}
-    validationMode="onBlur"
     validate={(values) => {
       const errors: Record<string, string> = {}
+
       if (!values.name) errors.name = 'Name is required'
+
       if (!values.email) errors.email = 'Email is required'
       else if (!/\S+@\S+\.\S+/.test(values.email as string)) errors.email = 'Invalid email'
+
       return errors
     }}
     onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
   >
-    <NameField />
-    <EmailField />
+    <Input name="name" placeholder="Name" />
+    <Input name="email" placeholder="Email" />
+
     <button type="submit">Submit</button>
   </Form>
 )
@@ -59,11 +48,11 @@ export const WithZod = (args: FormProps) => (
   <Form
     {...args}
     {...zodAdaptor(schema)}
-    validationMode="onBlur"
     onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
   >
-    <NameField />
-    <EmailField />
+    <Input name="name" placeholder="Name" />
+    <Input name="email" placeholder="Email" />
+
     <button type="submit">Submit</button>
   </Form>
 )

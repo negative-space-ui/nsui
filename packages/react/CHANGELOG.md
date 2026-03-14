@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.5.5
+
+### Patch Changes
+
+- @negative-space/data-entry@1.4.1
+
 ## 2.5.4
 
 ### Patch Changes

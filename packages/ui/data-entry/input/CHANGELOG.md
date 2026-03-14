@@ -1,5 +1,11 @@
 # @negative-space/input
 
+## 1.3.0
+
+### Minor Changes
+
+- 3e7ddc0: Add icon classNames and fix title
+
 ## 1.2.0
 
 ### Minor Changes

@@ -18,7 +18,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "plop": "ts-node ./scripts/warn-create-package.js",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "prettier": "prettier --write .",
     "start": "cd apps/storybook && pnpm start",
     "typecheck": "turbo run typecheck"
@@ -36,7 +36,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "glob": "^13.0.0",
     "globals": "^16.5.0",
-    "husky": "^9.1.7",
+    "lefthook": "^2.1.4",
     "plop": "^4.0.4",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",

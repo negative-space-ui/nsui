@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.1.0
+
+### Minor Changes
+
+- c6a0dc3: Fix Form validation
+
 ## 1.0.0
 
 ### Major Changes
