@@ -49,14 +49,18 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
         >
           {items.map((item, index) => {
             if ('button' in item) {
+              const { children, ...buttonProps } = item.button
+
               return (
                 <Button
                   key={index}
                   controlled
-                  classNames={mergeCn(classNames?.button, item.button.classNames)}
-                  styles={{ ...styles?.button, ...item.button.styles }}
-                  {...item.button}
-                />
+                  {...buttonProps}
+                  classNames={mergeCn(classNames?.button, buttonProps.classNames)}
+                  styles={{ ...styles?.button, ...buttonProps.styles }}
+                >
+                  {children}
+                </Button>
               )
             }
 
@@ -65,9 +69,9 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                 <IconButton
                   key={index}
                   controlled
+                  {...item.iconButton}
                   className={cn(classNames?.iconButton, item.iconButton.className)}
                   style={{ ...styles?.iconButton, ...item.iconButton.style }}
-                  {...item.iconButton}
                 />
               )
             }
