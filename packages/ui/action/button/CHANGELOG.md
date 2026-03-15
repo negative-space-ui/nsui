@@ -1,5 +1,11 @@
 # @negative-space/button
 
+## 2.6.0
+
+### Minor Changes
+
+- a113b9e: Update Button accessibility
+
 ## 2.5.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @negative-space/modal
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [a113b9e]
+  - @negative-space/button@2.6.0
+
 ## 1.0.0
 
 ### Major Changes

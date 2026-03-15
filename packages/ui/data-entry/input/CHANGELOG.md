@@ -1,5 +1,12 @@
 # @negative-space/input
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [a113b9e]
+  - @negative-space/button@2.6.0
+
 ## 1.3.0
 
 ### Minor Changes

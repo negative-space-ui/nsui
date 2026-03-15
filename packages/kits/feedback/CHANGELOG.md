@@ -1,5 +1,11 @@
 # @negative-space/feedback
 
+## 1.2.1
+
+### Patch Changes
+
+- @negative-space/modal@1.0.1
+
 ## 1.2.0
 
 ### Minor Changes
