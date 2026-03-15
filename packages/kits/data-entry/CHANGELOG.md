@@ -1,5 +1,12 @@
 # @negative-space/data-entry
 
+## 1.4.3
+
+### Patch Changes
+
+- @negative-space/input@1.3.1
+- @negative-space/form@1.2.0
+
 ## 1.4.2
 
 ### Patch Changes
