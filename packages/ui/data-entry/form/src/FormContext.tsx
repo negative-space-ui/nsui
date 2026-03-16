@@ -1,14 +1,15 @@
+import type { ValidationMode } from '@negative-space/system'
 import { createContext } from 'react'
 
 export type FormValues = Record<string, unknown>
 export type FormErrors = Record<string, string | undefined>
-export type ValidationMode = 'onSubmit' | 'onChange' | 'onBlur' | 'all'
 
 export interface FormContextValue<T extends FormValues = FormValues> {
   values: T
   errors: FormErrors
   touched: Record<string, boolean>
   validationMode: ValidationMode
+  validationDelay: number | undefined
   isSubmitting: boolean
   isDirty: boolean
   isValid: boolean
