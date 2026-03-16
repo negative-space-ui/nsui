@@ -1,5 +1,11 @@
 # @negative-space/grid
 
+## 1.3.3
+
+### Patch Changes
+
+- @negative-space/system@1.3.1
+
 ## 1.3.2
 
 ### Patch Changes

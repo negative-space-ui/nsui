@@ -1,5 +1,15 @@
 # @negative-space/system
 
+## 1.3.1
+
+### Patch Changes
+
+- Updated dependencies [43dca63]
+- Updated dependencies [ab6834f]
+- Updated dependencies [43dca63]
+- Updated dependencies [f826377]
+  - @negative-space/provider@1.9.0
+
 ## 1.3.0
 
 ### Minor Changes

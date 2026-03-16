@@ -1,5 +1,14 @@
 # @negative-space/provider
 
+## 1.9.0
+
+### Minor Changes
+
+- 43dca63: Add global modal close tooltip option
+- ab6834f: Add global validationMode and validationDelay
+- 43dca63: Add global modal close title
+- f826377: Update types
+
 ## 1.8.0
 
 ### Minor Changes

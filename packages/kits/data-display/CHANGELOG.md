@@ -1,5 +1,12 @@
 # @negative-space/data-display
 
+## 1.1.1
+
+### Patch Changes
+
+- @negative-space/code-block@1.0.1
+- @negative-space/list@1.4.3
+
 ## 1.1.0
 
 ### Minor Changes

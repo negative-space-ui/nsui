@@ -1,5 +1,19 @@
 # @negative-space/modal
 
+## 1.1.0
+
+### Minor Changes
+
+- 43dca63: Add global modal close tooltip option
+- 43dca63: Add global modal close title
+
+### Patch Changes
+
+- @negative-space/system@1.3.1
+- @negative-space/button@2.6.1
+- @negative-space/popover@1.0.1
+- @negative-space/tooltip@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes

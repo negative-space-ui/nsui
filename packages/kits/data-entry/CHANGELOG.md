@@ -1,5 +1,17 @@
 # @negative-space/data-entry
 
+## 1.4.5
+
+### Patch Changes
+
+- Updated dependencies [ab6834f]
+  - @negative-space/form@1.4.0
+  - @negative-space/checkbox@1.5.1
+  - @negative-space/input@1.3.2
+  - @negative-space/listbox@1.5.1
+  - @negative-space/radio@1.7.1
+  - @negative-space/switch@1.0.1
+
 ## 1.4.4
 
 ### Patch Changes

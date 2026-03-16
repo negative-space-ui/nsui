@@ -1,5 +1,17 @@
 # @negative-space/feedback
 
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [43dca63]
+- Updated dependencies [43dca63]
+  - @negative-space/modal@1.1.0
+  - @negative-space/checkmark@1.2.1
+  - @negative-space/popover@1.0.1
+  - @negative-space/spinner@2.2.1
+  - @negative-space/tooltip@1.0.1
+
 ## 1.2.1
 
 ### Patch Changes
