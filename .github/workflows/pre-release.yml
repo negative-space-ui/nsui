@@ -1,9 +1,11 @@
 name: Pre-Release
 
 on:
-  push:
+  pull_request:
     branches:
       - development
+    types:
+      - closed
 
 jobs:
   version:
@@ -12,6 +14,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    if: |
+      github.event.pull_request.merged == true &&
+      github.event.pull_request.head.ref != 'main'
 
     steps:
       - name: Checkout code
