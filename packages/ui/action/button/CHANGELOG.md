@@ -1,5 +1,11 @@
 # @negative-space/button
 
+## 2.7.0
+
+### Minor Changes
+
+- 13e9d23: Update Button and IconButton `type` default to `button`
+
 ## 2.6.1
 
 ### Patch Changes
