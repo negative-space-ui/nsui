@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.3.0
+
+### Minor Changes
+
+- e01d475: Fix Form onBlur
+
 ## 1.2.0
 
 ### Minor Changes
