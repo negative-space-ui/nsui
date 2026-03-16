@@ -1,14 +1,8 @@
 import { Grid, GridProps } from '@negative-space/grid'
-import { cn, useNSUI } from '@negative-space/system'
+import { cn, useNSUI, type ValidationMode } from '@negative-space/system'
 import React, { useCallback, useContext, useRef, useState } from 'react'
 
-import {
-  FormContext,
-  type FormContextValue,
-  type FormErrors,
-  type FormValues,
-  type ValidationMode
-} from './FormContext'
+import { FormContext, type FormContextValue, type FormErrors, type FormValues } from './FormContext'
 
 function extractValue(e: unknown): unknown {
   if (typeof e === 'object' && e !== null && 'target' in e) {
@@ -63,15 +57,15 @@ function ConnectedField({
     onBlur: () => ctxRef.current.handleBlur(name)
   })
 
-  const showError =
-    ctx.validationMode === 'onChange' || ctx.validationMode === 'all' || ctx.touched[name]
+  const { validationMode, touched, errors } = ctx
+  const showError = validationMode === 'onChange' || validationMode === 'all' || touched[name]
 
   return (
     <Component
       {...props}
       name={name}
       value={ctx.values[name] ?? ''}
-      error={showError ? ctx.errors[name] : undefined}
+      error={showError ? errors[name] : undefined}
       onChange={handlers.current.onChange}
       onBlur={handlers.current.onBlur}
     />
@@ -85,6 +79,7 @@ export interface FormProps<T extends FormValues = FormValues> extends Omit<
   validate?: (values: T) => FormErrors
   initialValues?: T
   validationMode?: ValidationMode
+  validationDelay?: number
   onSubmit: (values: T) => void | Promise<void>
   onChange?: (values: T) => void
   onError?: (errors: FormErrors) => void
@@ -96,7 +91,8 @@ export function Form<T extends FormValues = FormValues>({
   validate,
   columns = 1,
   initialValues = {} as T,
-  validationMode = 'onSubmit',
+  validationMode,
+  validationDelay,
   onSubmit,
   onChange,
   onError,
@@ -105,7 +101,13 @@ export function Form<T extends FormValues = FormValues>({
   className,
   id
 }: FormProps<T>) {
-  const { global } = useNSUI()
+  const { global, components } = useNSUI()
+
+  const resolvedMode = (validationMode ?? components.form.validationMode) as ValidationMode
+  const validationModeRef = useRef<ValidationMode | undefined>(resolvedMode)
+  validationModeRef.current = resolvedMode
+
+  const resolvedDelay = validationDelay ?? components.form.validationDelay
 
   const [values, setValues] = useState<T>(initialValues)
   const [errors, setErrors] = useState<FormErrors>({})
@@ -120,6 +122,40 @@ export function Form<T extends FormValues = FormValues>({
   validateRef.current = validate
   const runValidate = useCallback((v: T) => validateRef.current?.(v) ?? {}, [])
 
+  const shouldValidateOn = useCallback((trigger: 'onChange' | 'onBlur') => {
+    const mode = validationModeRef.current
+    return mode === trigger || mode === 'all'
+  }, [])
+
+  const validationDelayRef = useRef(resolvedDelay)
+  validationDelayRef.current = resolvedDelay
+
+  const pendingValidationRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const maybeValidate = useCallback(
+    (vals: T, field?: string) => {
+      const errs = runValidate(vals)
+      setErrors((prev) => (field ? { ...prev, [field]: errs[field] } : errs))
+    },
+    [runValidate]
+  )
+
+  const maybeValidateDelayed = useCallback(
+    (vals: T, field?: string) => {
+      const delay = validationDelayRef.current
+      if (!delay) {
+        maybeValidate(vals, field)
+        return
+      }
+      if (pendingValidationRef.current) clearTimeout(pendingValidationRef.current)
+      pendingValidationRef.current = setTimeout(() => {
+        pendingValidationRef.current = null
+        maybeValidate(vals, field)
+      }, delay)
+    },
+    [maybeValidate]
+  )
+
   const isDirty = JSON.stringify(values) !== JSON.stringify(initialRef.current)
   const isValid = Object.values(errors).every((e) => !e)
 
@@ -127,7 +163,8 @@ export function Form<T extends FormValues = FormValues>({
     values,
     errors,
     touched,
-    validationMode,
+    validationMode: resolvedMode,
+    validationDelay: resolvedDelay,
     isSubmitting,
     isDirty,
     isValid,
@@ -136,10 +173,7 @@ export function Form<T extends FormValues = FormValues>({
       const next = { ...valuesRef.current, [name]: value } as T
       valuesRef.current = next
       setValues(next)
-      if (validationMode === 'onChange' || validationMode === 'all') {
-        const errs = runValidate(next)
-        setErrors((prev) => ({ ...prev, [name]: errs[name] }))
-      }
+      if (shouldValidateOn('onChange')) maybeValidateDelayed(next, name)
       onChange?.(next)
     },
 
@@ -147,9 +181,7 @@ export function Form<T extends FormValues = FormValues>({
       const next = { ...valuesRef.current, ...partial } as T
       valuesRef.current = next
       setValues(next)
-      if (validationMode === 'onChange' || validationMode === 'all') {
-        setErrors(runValidate(next))
-      }
+      if (shouldValidateOn('onChange')) maybeValidateDelayed(next)
       onChange?.(next)
     },
 
@@ -168,13 +200,14 @@ export function Form<T extends FormValues = FormValues>({
 
     handleBlur: (name) => {
       setTouched((prev) => (prev[name] ? prev : { ...prev, [name]: true }))
-      if (validationMode === 'onBlur' || validationMode === 'all') {
-        const errs = runValidate(valuesRef.current)
-        setErrors((prev) => ({ ...prev, [name]: errs[name] }))
-      }
+      if (shouldValidateOn('onBlur')) maybeValidateDelayed(valuesRef.current, name)
     },
 
     reset: (newValues) => {
+      if (pendingValidationRef.current) {
+        clearTimeout(pendingValidationRef.current)
+        pendingValidationRef.current = null
+      }
       const v = newValues ?? initialRef.current
       initialRef.current = v
       valuesRef.current = v
@@ -186,6 +219,10 @@ export function Form<T extends FormValues = FormValues>({
     },
 
     submit: async () => {
+      if (pendingValidationRef.current) {
+        clearTimeout(pendingValidationRef.current)
+        pendingValidationRef.current = null
+      }
       const cur = valuesRef.current
       setTouched(Object.keys(cur).reduce((a, k) => ({ ...a, [k]: true }), {}))
       const errs = runValidate(cur)
