@@ -40,7 +40,9 @@
   },
   "dependencies": {
     "@negative-space/code-block": "workspace:*",
-    "@negative-space/list": "workspace:*"
+    "@negative-space/list": "workspace:*",
+    "@negative-space/popover": "workspace:*",
+    "@negative-space/tooltip": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

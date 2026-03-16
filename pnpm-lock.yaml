@@ -258,6 +258,12 @@ importers:
       '@negative-space/list':
         specifier: workspace:*
         version: link:../../ui/data-display/list
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../ui/data-display/popover
+      '@negative-space/tooltip':
+        specifier: workspace:*
+        version: link:../../ui/data-display/tooltip
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -296,15 +302,9 @@ importers:
       '@negative-space/modal':
         specifier: workspace:*
         version: link:../../ui/feedback/modal
-      '@negative-space/popover':
-        specifier: workspace:*
-        version: link:../../ui/feedback/popover
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../ui/feedback/spinner
-      '@negative-space/tooltip':
-        specifier: workspace:*
-        version: link:../../ui/feedback/tooltip
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -329,14 +329,14 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/kits/nav:
+  packages/kits/navigation:
     dependencies:
       '@negative-space/link':
         specifier: workspace:*
-        version: link:../../ui/nav/link
+        version: link:../../ui/navigation/link
       '@negative-space/menu':
         specifier: workspace:*
-        version: link:../../ui/nav/menu
+        version: link:../../ui/navigation/menu
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -382,9 +382,9 @@ importers:
       '@negative-space/layout':
         specifier: workspace:*
         version: link:../kits/layout
-      '@negative-space/nav':
+      '@negative-space/navigation':
         specifier: workspace:*
-        version: link:../kits/nav
+        version: link:../kits/navigation
       '@negative-space/primitive':
         specifier: workspace:*
         version: link:../kits/primitive
@@ -451,6 +451,44 @@ importers:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/popover:
+    dependencies:
+      '@floating-ui/react':
+        specifier: ^0.27.18
+        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/tooltip:
+    dependencies:
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../popover
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -534,7 +572,7 @@ importers:
         version: link:../../../core/system
       '@negative-space/tooltip':
         specifier: workspace:*
-        version: link:../../feedback/tooltip
+        version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -635,32 +673,13 @@ importers:
         version: link:../../action/button
       '@negative-space/popover':
         specifier: workspace:*
-        version: link:../popover
+        version: link:../../data-display/popover
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
       '@negative-space/tooltip':
         specifier: workspace:*
-        version: link:../tooltip
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.7
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/ui/feedback/popover:
-    dependencies:
-      '@floating-ui/react':
-        specifier: ^0.27.18
-        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@negative-space/system':
-        specifier: workspace:*
-        version: link:../../../core/system
+        version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -674,25 +693,6 @@ importers:
 
   packages/ui/feedback/spinner:
     dependencies:
-      '@negative-space/system':
-        specifier: workspace:*
-        version: link:../../../core/system
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.7
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/ui/feedback/tooltip:
-    dependencies:
-      '@negative-space/popover':
-        specifier: workspace:*
-        version: link:../popover
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -777,7 +777,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/nav/link:
+  packages/ui/navigation/link:
     dependencies:
       '@negative-space/system':
         specifier: workspace:*
@@ -793,7 +793,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/nav/menu:
+  packages/ui/navigation/menu:
     dependencies:
       '@negative-space/collection':
         specifier: workspace:*

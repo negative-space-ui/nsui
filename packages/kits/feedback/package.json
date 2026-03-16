@@ -41,9 +41,7 @@
   "dependencies": {
     "@negative-space/checkmark": "workspace:*",
     "@negative-space/modal": "workspace:*",
-    "@negative-space/popover": "workspace:*",
-    "@negative-space/spinner": "workspace:*",
-    "@negative-space/tooltip": "workspace:*"
+    "@negative-space/spinner": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
