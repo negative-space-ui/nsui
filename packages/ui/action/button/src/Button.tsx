@@ -63,6 +63,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loading = false,
       spinnerPosition = 'full',
       spinnerProps,
+      type = 'button',
       alignItems = 'center',
       justify = 'center',
       ariaLabel,
@@ -107,6 +108,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         ref={ref}
         as="button"
+        type={type}
         alignItems={alignItems}
         justify={justify}
         disabled={isDisabled}

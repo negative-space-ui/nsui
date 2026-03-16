@@ -1,5 +1,13 @@
 # negative-space
 
+## 2.5.11
+
+### Patch Changes
+
+- @negative-space/action@1.0.14
+- @negative-space/data-entry@1.4.7
+- @negative-space/feedback@1.2.3
+
 ## 2.5.10
 
 ### Patch Changes
