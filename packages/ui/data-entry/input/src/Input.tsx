@@ -8,6 +8,7 @@ export interface InputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   'className' | 'prefix' | 'style'
 > {
+  mask?: (value: string) => string
   classNames?: {
     field?: {
       root?: string
@@ -57,6 +58,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       spinnerPosition = 'suffix',
       spinnerProps,
       disabled,
+      mask,
+      onChange,
+      onPaste,
       ...props
     },
     ref
@@ -71,6 +75,38 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const showPrefix = prefix || (loading && spinnerPosition === 'prefix')
     const showSuffix = suffix || (loading && spinnerPosition === 'suffix')
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (mask) {
+        e.target.value = mask(e.target.value)
+      }
+      onChange?.(e)
+    }
+
+    const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
+      if (!mask) {
+        onPaste?.(e)
+        return
+      }
+
+      e.preventDefault()
+
+      const pasted = e.clipboardData.getData('text')
+      const masked = mask(pasted)
+
+      const input = e.currentTarget
+      const start = input.selectionStart ?? input.value.length
+      const end = input.selectionEnd ?? input.value.length
+
+      const newValue = input.value.slice(0, start) + masked + input.value.slice(end)
+
+      input.value = mask(newValue)
+
+      const changeEvent = new Event('input', { bubbles: true })
+      input.dispatchEvent(changeEvent)
+
+      onPaste?.(e)
+    }
 
     return (
       <Field
@@ -100,6 +136,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             id={inputId}
             disabled={disabled || loading}
             data-loading={loading}
+            onChange={handleChange}
+            onPaste={handlePaste}
             className={cn(`${global.prefixCls}-input-content`, classNames?.content)}
             style={{ outline: 'none', flex: 1, minWidth: 0, ...styles?.content }}
           />
