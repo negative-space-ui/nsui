@@ -92,18 +92,21 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       e.preventDefault()
 
       const pasted = e.clipboardData.getData('text')
-      const masked = mask(pasted)
-
       const input = e.currentTarget
       const start = input.selectionStart ?? input.value.length
       const end = input.selectionEnd ?? input.value.length
 
-      const newValue = input.value.slice(0, start) + masked + input.value.slice(end)
+      const newValue = mask(input.value.slice(0, start) + pasted + input.value.slice(end))
 
-      input.value = mask(newValue)
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value'
+      )?.set
 
-      const changeEvent = new Event('input', { bubbles: true })
-      input.dispatchEvent(changeEvent)
+      nativeInputValueSetter?.call(input, newValue)
+      const syntheticEvent = new Event('input', { bubbles: true })
+
+      input.dispatchEvent(syntheticEvent)
 
       onPaste?.(e)
     }
