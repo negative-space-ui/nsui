@@ -1,5 +1,11 @@
 # @negative-space/nav
 
+## 1.0.0
+
+### Major Changes
+
+- ceb3dc3: Initial release of Navigation Kit with Link and Menu components
+
 ## 1.1.3
 
 ### Patch Changes

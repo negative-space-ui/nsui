@@ -1,5 +1,20 @@
 # negative-space
 
+## 2.6.0
+
+### Minor Changes
+
+- ceb3dc3: Nav Kit changet to Navigation Kit
+
+### Patch Changes
+
+- Updated dependencies [ceb3dc3]
+- Updated dependencies [42d23fc]
+- Updated dependencies [42d23fc]
+  - @negative-space/navigation@1.0.0
+  - @negative-space/feedback@1.3.0
+  - @negative-space/data-display@1.2.0
+
 ## 2.5.11
 
 ### Patch Changes

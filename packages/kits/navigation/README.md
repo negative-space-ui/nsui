@@ -1,6 +1,6 @@
 # @negative-space/nav
 
-A lightweight set of Nav components from Negative Space, crafted for fully custom navigation UI.
+A lightweight set of Navigation components from Negative Space, crafted for fully custom navigation UI.
 
 ## Installation
 

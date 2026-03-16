@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [ceb3dc3]
+  - negative-space@2.6.0
+
 ## 0.0.10
 
 ### Patch Changes

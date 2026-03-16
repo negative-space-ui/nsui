@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.5.11",
+  "version": "2.6.0",
   "private": true,
   "publishConfig": {
     "access": "public"
@@ -28,7 +28,7 @@
     "./data-entry": "./src/data-entry/index.ts",
     "./feedback": "./src/feedback/index.ts",
     "./layout": "./src/layout/index.ts",
-    "./nav": "./src/nav/index.ts",
+    "./navigation": "./src/navigation/index.ts",
     "./primitive": "./src/primitive/index.ts",
     "./typography": "./src/typography/index.ts"
   },
@@ -56,7 +56,7 @@
     "@negative-space/data-entry": "workspace:*",
     "@negative-space/feedback": "workspace:*",
     "@negative-space/layout": "workspace:*",
-    "@negative-space/nav": "workspace:*",
+    "@negative-space/navigation": "workspace:*",
     "@negative-space/primitive": "workspace:*",
     "@negative-space/provider": "workspace:*",
     "@negative-space/typography": "workspace:*"

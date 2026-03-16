@@ -3,7 +3,7 @@ import React from 'react'
 import { Tooltip, type TooltipProps, useTooltip } from '../src'
 
 export default {
-  title: 'Feedback/Overlay/Tooltip',
+  title: 'Data Display/Overlay/Tooltip',
   component: Tooltip,
   tags: ['autodocs'],
   args: {

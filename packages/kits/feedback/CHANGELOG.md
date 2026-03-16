@@ -1,5 +1,11 @@
 # @negative-space/feedback
 
+## 1.3.0
+
+### Minor Changes
+
+- 42d23fc: Remove Popover and Tooltip libs
+
 ## 1.2.3
 
 ### Patch Changes
