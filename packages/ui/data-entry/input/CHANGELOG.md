@@ -1,5 +1,11 @@
 # @negative-space/input
 
+## 1.4.0
+
+### Minor Changes
+
+- 5b9ab2b: Add `mask` prop
+
 ## 1.3.2
 
 ### Patch Changes
