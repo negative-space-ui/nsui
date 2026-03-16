@@ -1,5 +1,3 @@
 export * from '@negative-space/checkmark'
 export * from '@negative-space/modal'
-export * from '@negative-space/popover'
 export * from '@negative-space/spinner'
-export * from '@negative-space/tooltip'
