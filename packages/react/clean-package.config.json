@@ -35,10 +35,10 @@
         "import": "./dist/layout/index.mjs",
         "require": "./dist/layout/index.js"
       },
-      "./nav": {
-        "types": "./dist/nav/index.d.ts",
-        "import": "./dist/nav/index.mjs",
-        "require": "./dist/nav/index.js"
+      "./navigation": {
+        "types": "./dist/navigation/index.d.ts",
+        "import": "./dist/navigation/index.mjs",
+        "require": "./dist/navigation/index.js"
       },
       "./primitive": {
         "types": "./dist/primitive/index.d.ts",

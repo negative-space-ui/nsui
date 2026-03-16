@@ -329,14 +329,14 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/kits/nav:
+  packages/kits/navigation:
     dependencies:
       '@negative-space/link':
         specifier: workspace:*
-        version: link:../../ui/nav/link
+        version: link:../../ui/navigation/link
       '@negative-space/menu':
         specifier: workspace:*
-        version: link:../../ui/nav/menu
+        version: link:../../ui/navigation/menu
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -382,9 +382,9 @@ importers:
       '@negative-space/layout':
         specifier: workspace:*
         version: link:../kits/layout
-      '@negative-space/nav':
+      '@negative-space/navigation':
         specifier: workspace:*
-        version: link:../kits/nav
+        version: link:../kits/navigation
       '@negative-space/primitive':
         specifier: workspace:*
         version: link:../kits/primitive
@@ -777,7 +777,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/nav/link:
+  packages/ui/navigation/link:
     dependencies:
       '@negative-space/system':
         specifier: workspace:*
@@ -793,7 +793,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/ui/nav/menu:
+  packages/ui/navigation/menu:
     dependencies:
       '@negative-space/collection':
         specifier: workspace:*
