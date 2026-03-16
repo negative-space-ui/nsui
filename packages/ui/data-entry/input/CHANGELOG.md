@@ -1,5 +1,11 @@
 # @negative-space/input
 
+## 1.5.0
+
+### Minor Changes
+
+- 9a5bb14: Fix Input OnPaste bug
+
 ## 1.4.1
 
 ### Patch Changes
