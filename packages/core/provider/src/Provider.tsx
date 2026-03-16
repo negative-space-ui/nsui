@@ -34,6 +34,10 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       checkmark: {
         animation: components?.checkmark?.animation ?? 'pop'
       },
+      form: {
+        validationDelay: components?.form?.validationDelay ?? 0,
+        validationMode: components?.form?.validationMode ?? 'onBlur'
+      },
       heading: {
         typeElement: components?.heading?.typeElement ?? 'h1'
       },
@@ -48,6 +52,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         typeElement: components?.list?.typeElement ?? 'ol',
         olMarker: components?.list?.olMarker ?? 'none',
         ulMarker: components?.list?.ulMarker ?? 'none'
+      },
+      modal: {
+        closeTitle: components?.modal?.closeTitle ?? 'Close'
       },
       popover: {
         animation: components?.popover?.animation ?? 'fade-scale'

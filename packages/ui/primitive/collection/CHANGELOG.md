@@ -1,5 +1,15 @@
 # @negative-space/collection
 
+## 2.0.3
+
+### Patch Changes
+
+- @negative-space/system@1.3.1
+- @negative-space/divider@1.1.6
+- @negative-space/flex@1.2.3
+- @negative-space/grid@1.3.3
+- @negative-space/heading@1.2.2
+
 ## 2.0.2
 
 ### Patch Changes

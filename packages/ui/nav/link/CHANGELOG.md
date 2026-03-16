@@ -1,5 +1,11 @@
 # @negative-space/link
 
+## 1.1.6
+
+### Patch Changes
+
+- @negative-space/system@1.3.1
+
 ## 1.1.5
 
 ### Patch Changes

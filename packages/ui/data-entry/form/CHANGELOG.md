@@ -1,5 +1,16 @@
 # @negative-space/form
 
+## 1.4.0
+
+### Minor Changes
+
+- ab6834f: Add global validationMode and validationDelay
+
+### Patch Changes
+
+- @negative-space/system@1.3.1
+- @negative-space/grid@1.3.3
+
 ## 1.3.0
 
 ### Minor Changes
