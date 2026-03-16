@@ -42,6 +42,8 @@ export type GlobalConfigRequired = Required<GlobalConfig>
 export type ClickableAnimation = 'ripple' | 'none'
 export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
 
+export type ValidationMode = 'onBlur' | 'onChange' | 'onSubmit' | 'all'
+
 export type ButtonConfig = {
   /** Defines the animation of the button.
    *
@@ -61,6 +63,11 @@ export type CheckmarkConfig = {
    *
    * Defaults to `fade`. */
   animation?: OverlayAnimation
+}
+
+export type FormConfig = {
+  validationDelay?: number
+  validationMode?: ValidationMode
 }
 
 export type HeadingConfig = {
@@ -104,6 +111,10 @@ export type ListConfig = {
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
+export type ModalConfig = {
+  closeTitle?: string
+}
+
 export type PopoverConfig = {
   /** Defines the animation of the popover.
    *
@@ -136,10 +147,12 @@ export type ComponentsConfig = {
   button?: ButtonConfig
   iconButton?: IconButtonConfig
   checkmark?: CheckmarkConfig
+  form?: FormConfig
   heading?: HeadingConfig
   inputPassword?: InputPasswordConfig
   link?: LinkConfig
   list?: ListConfig
+  modal?: ModalConfig
   popover?: PopoverConfig
   radio?: RadioConfig
   spinner?: SpinnerConfig
