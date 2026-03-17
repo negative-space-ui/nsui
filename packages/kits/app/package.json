@@ -1,18 +1,14 @@
 {
-  "name": "@negative-space/data-entry",
-  "version": "1.4.9",
+  "name": "@negative-space/app",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Data Entry components by Negative Space, providing flexible and accessible input elements",
+  "description": "",
   "keywords": [
-    "components",
-    "data-entry",
-    "kit",
+    "app",
     "negative-space",
-    "nsui",
-    "react",
-    "ui"
+    "nsui"
   ],
   "license": "MIT",
   "main": "src/index.ts",
@@ -24,7 +20,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/kits/data-entry"
+    "directory": "packages/kits/app"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,12 +35,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/checkbox": "workspace:*",
-    "@negative-space/form": "workspace:*",
-    "@negative-space/input": "workspace:*",
-    "@negative-space/listbox": "workspace:*",
-    "@negative-space/radio": "workspace:*",
-    "@negative-space/switch": "workspace:*"
+    "@negative-space/theme": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "private": true,
   "publishConfig": {
     "access": "public"
@@ -24,6 +24,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./action": "./src/action/index.ts",
+    "./app": "./src/app/index.ts",
     "./data-display": "./src/data-display/index.ts",
     "./data-entry": "./src/data-entry/index.ts",
     "./feedback": "./src/feedback/index.ts",
@@ -52,6 +53,7 @@
   },
   "dependencies": {
     "@negative-space/action": "workspace:*",
+    "@negative-space/app": "workspace:*",
     "@negative-space/data-display": "workspace:*",
     "@negative-space/data-entry": "workspace:*",
     "@negative-space/feedback": "workspace:*",
