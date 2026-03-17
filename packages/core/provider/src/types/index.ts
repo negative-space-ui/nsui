@@ -66,7 +66,13 @@ export type CheckmarkConfig = {
 }
 
 export type FormConfig = {
+  /** Delay in milliseconds before validating the form
+   *
+   * Defaults to `0`. */
   validationDelay?: number
+  /** Defines the validation mode of the form.
+   *
+   * Defaults to `onBlur`. */
   validationMode?: ValidationMode
 }
 
@@ -78,7 +84,13 @@ export type HeadingConfig = {
 }
 
 export type InputPasswordConfig = {
+  /** Placeholder for the text input.
+   *
+   * Defaults to `Hide password`. */
   textTitle?: string
+  /** Placeholder for the password input.
+   *
+   * Defaults to `Show password`. */
   passwordTitle?: string
 }
 
