@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.5.0
+
+### Minor Changes
+
+- b0978c5: Add `onValidate` and `disableSubmitOnError` props
+
 ## 1.4.0
 
 ### Minor Changes

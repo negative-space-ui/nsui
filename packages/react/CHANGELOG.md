@@ -1,5 +1,17 @@
 # negative-space
 
+## 2.7.0
+
+### Minor Changes
+
+- f887a2e: Add App Kit
+
+### Patch Changes
+
+- Updated dependencies [74bdbbb]
+  - @negative-space/app@1.0.0
+  - @negative-space/data-entry@1.4.9
+
 ## 2.6.1
 
 ### Patch Changes
