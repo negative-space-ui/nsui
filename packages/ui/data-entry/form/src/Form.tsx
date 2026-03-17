@@ -1,6 +1,6 @@
 import { Grid, GridProps } from '@negative-space/grid'
 import { cn, useNSUI, type ValidationMode } from '@negative-space/system'
-import React, { useCallback, useContext, useRef, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react'
 
 import { FormContext, type FormContextValue, type FormErrors, type FormValues } from './FormContext'
 
@@ -14,15 +14,32 @@ function extractValue(e: unknown): unknown {
 
 function injectFields<T extends FormValues>(
   node: React.ReactNode,
-  ctx: FormContextValue<T>
+  ctx: FormContextValue<T>,
+  disableSubmitOnError: boolean
 ): React.ReactNode {
   if (!React.isValidElement(node)) return node
   const el = node as React.ReactElement<Record<string, unknown>>
   const { name, children: elChildren } = el.props
 
   const injectedChildren = elChildren
-    ? React.Children.map(elChildren as React.ReactNode, (child) => injectFields(child, ctx))
+    ? React.Children.map(elChildren as React.ReactNode, (child) =>
+        injectFields(child, ctx, disableSubmitOnError)
+      )
     : undefined
+
+  if (disableSubmitOnError) {
+    const elType = el.type
+    const propType = el.props.type
+    const isSubmitButton =
+      (elType === 'button' && (propType === 'submit' || propType === undefined)) ||
+      (elType === 'input' && propType === 'submit')
+    if (isSubmitButton) {
+      return React.cloneElement(el, {
+        ...(injectedChildren ? { children: injectedChildren } : {}),
+        disabled: el.props.disabled ?? !ctx.isValid
+      })
+    }
+  }
 
   if (name && typeof name === 'string') {
     return (
@@ -83,7 +100,9 @@ export interface FormProps<T extends FormValues = FormValues> extends Omit<
   onSubmit: (values: T) => void | Promise<void>
   onChange?: (values: T) => void
   onError?: (errors: FormErrors) => void
+  onValidate?: (values: T) => void
   onReset?: () => void
+  disableSubmitOnError?: boolean
   children: React.ReactNode | ((ctx: FormContextValue<T>) => React.ReactNode)
 }
 
@@ -96,7 +115,9 @@ export function Form<T extends FormValues = FormValues>({
   onSubmit,
   onChange,
   onError,
+  onValidate,
   onReset,
+  disableSubmitOnError = true,
   children,
   className,
   id
@@ -158,6 +179,23 @@ export function Form<T extends FormValues = FormValues>({
 
   const isDirty = JSON.stringify(values) !== JSON.stringify(initialRef.current)
   const isValid = Object.values(errors).every((e) => !e)
+
+  const onValidateRef = useRef(onValidate)
+  onValidateRef.current = onValidate
+  const wasValidRef = useRef<boolean | null>(null)
+  useEffect(() => {
+    if (wasValidRef.current === null) {
+      wasValidRef.current = isValid
+      return
+    }
+    if (isValid && !wasValidRef.current) {
+      onValidateRef.current?.(values)
+    }
+    wasValidRef.current = isValid
+  }, [isValid, values])
+
+  const disableSubmitOnErrorRef = useRef(disableSubmitOnError)
+  disableSubmitOnErrorRef.current = disableSubmitOnError
 
   const ctx: FormContextValue<T> = {
     values,
@@ -256,7 +294,7 @@ export function Form<T extends FormValues = FormValues>({
       >
         {typeof children === 'function'
           ? children(ctx)
-          : React.Children.map(children, (child) => injectFields(child, ctx))}
+          : React.Children.map(children, (child) => injectFields(child, ctx, disableSubmitOnError))}
       </Grid>
     </FormContext.Provider>
   )
