@@ -15,6 +15,11 @@
         "import": "./dist/action/index.mjs",
         "require": "./dist/action/index.js"
       },
+      "./app": {
+        "types": "./dist/app/index.d.ts",
+        "import": "./dist/app/index.mjs",
+        "require": "./dist/app/index.js"
+      },
       "./data-display": {
         "types": "./dist/data-display/index.d.ts",
         "import": "./dist/data-display/index.mjs",
