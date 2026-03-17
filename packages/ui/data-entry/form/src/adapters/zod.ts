@@ -22,6 +22,10 @@ export function zodAdaptor<T extends FormValues>(schema: ZodSchema<T>) {
       }
 
       return errors
+    },
+
+    parse: (values: T): T => {
+      return schema.parse(values)
     }
   }
 }
