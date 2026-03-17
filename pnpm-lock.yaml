@@ -250,6 +250,16 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/kits/app:
+    dependencies:
+      '@negative-space/theme':
+        specifier: workspace:*
+        version: link:../../ui/app/theme
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/kits/data-display:
     dependencies:
       '@negative-space/code-block':
@@ -370,6 +380,9 @@ importers:
       '@negative-space/action':
         specifier: workspace:*
         version: link:../kits/action
+      '@negative-space/app':
+        specifier: workspace:*
+        version: link:../kits/app
       '@negative-space/data-display':
         specifier: workspace:*
         version: link:../kits/data-display
@@ -410,6 +423,22 @@ importers:
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../feedback/spinner
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/app/theme:
+    dependencies:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
