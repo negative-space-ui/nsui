@@ -1,5 +1,13 @@
 # @negative-space/radio
 
+## 1.7.2
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/field@1.1.2
+- @negative-space/collection@2.0.4
+
 ## 1.7.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.10.0
+
+### Minor Changes
+
+- 2436ed8: Add global `disableSubmitOnError` prop and update zodAdapter
+
 ## 1.9.0
 
 ### Minor Changes

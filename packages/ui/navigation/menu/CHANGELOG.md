@@ -1,5 +1,13 @@
 # @negative-space/menu
 
+## 1.0.4
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/link@1.1.7
+- @negative-space/collection@2.0.4
+
 ## 1.0.3
 
 ### Patch Changes

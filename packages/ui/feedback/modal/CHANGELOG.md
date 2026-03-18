@@ -1,5 +1,14 @@
 # @negative-space/modal
 
+## 1.1.2
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/button@2.7.1
+- @negative-space/popover@1.0.2
+- @negative-space/tooltip@1.0.2
+
 ## 1.1.1
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @negative-space/data-display
 
+## 1.2.1
+
+### Patch Changes
+
+- @negative-space/code-block@1.0.2
+- @negative-space/list@1.4.4
+- @negative-space/popover@1.0.2
+- @negative-space/tooltip@1.0.2
+
 ## 1.2.0
 
 ### Minor Changes
