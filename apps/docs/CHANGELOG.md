@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies [b0d0940]
+  - negative-space@2.7.2
+
 ## 0.0.14
 
 ### Patch Changes
