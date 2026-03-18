@@ -42,7 +42,7 @@ export const Default = (args: FormProps) => (
 
 const schema = z.object({
   name: z.string().min(1, 'Name is required').default(''),
-  email: z.string().min(1, 'Email is required').email('Invalid email').default('')
+  email: z.email('Invalid email').min(1, 'Email is required').default('')
 })
 
 export const WithZod = (args: FormProps) => (
