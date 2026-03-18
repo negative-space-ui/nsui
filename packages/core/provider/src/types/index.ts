@@ -66,6 +66,10 @@ export type CheckmarkConfig = {
 }
 
 export type FormConfig = {
+  /** Defines if the submit button should be disabled if there are errors.
+   *
+   * Defaults to `false`. */
+  disableSubmitOnError?: boolean
   /** Delay in milliseconds before validating the form
    *
    * Defaults to `0`. */
