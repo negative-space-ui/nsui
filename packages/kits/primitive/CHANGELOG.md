@@ -1,5 +1,11 @@
 # @negative-space/primitive
 
+## 2.0.4
+
+### Patch Changes
+
+- @negative-space/collection@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes

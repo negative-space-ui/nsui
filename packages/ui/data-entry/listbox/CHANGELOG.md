@@ -1,5 +1,14 @@
 # @negative-space/listbox
 
+## 1.5.2
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/checkmark@1.2.2
+- @negative-space/field@1.1.2
+- @negative-space/collection@2.0.4
+
 ## 1.5.1
 
 ### Patch Changes

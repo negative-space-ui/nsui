@@ -1,5 +1,16 @@
 # @negative-space/form
 
+## 1.6.0
+
+### Minor Changes
+
+- 2436ed8: Add global `disableSubmitOnError` prop and update zodAdapter
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/grid@1.3.4
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @negative-space/list
 
+## 1.4.4
+
+### Patch Changes
+
+- @negative-space/system@1.3.2
+- @negative-space/flex@1.2.4
+
 ## 1.4.3
 
 ### Patch Changes

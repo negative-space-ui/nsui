@@ -1,5 +1,11 @@
 # @negative-space/action
 
+## 1.0.15
+
+### Patch Changes
+
+- @negative-space/button@2.7.1
+
 ## 1.0.14
 
 ### Patch Changes

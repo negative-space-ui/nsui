@@ -1,5 +1,14 @@
 # @negative-space/layout
 
+## 1.3.4
+
+### Patch Changes
+
+- @negative-space/divider@1.1.7
+- @negative-space/field@1.1.2
+- @negative-space/flex@1.2.4
+- @negative-space/grid@1.3.4
+
 ## 1.3.3
 
 ### Patch Changes
