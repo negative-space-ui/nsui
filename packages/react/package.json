@@ -47,7 +47,7 @@
     "dev": "pnpm build:fast --watch",
     "lint": "eslint . --ext ts,tsx",
     "postpack": "clean-package restore",
-    "prepack": "pnpm build && node scripts/replace-workspace-versions.js && clean-package",
+    "prepack": "node scripts/replace-workspace-versions.js && clean-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
