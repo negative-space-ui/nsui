@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.7.2
+
+### Patch Changes
+
+- b0d0940: Lib set to public
+
 ## 2.7.1
 
 ### Patch Changes
