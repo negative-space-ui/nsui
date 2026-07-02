@@ -60,7 +60,7 @@ export const Flex = forwardRef(
       as,
       direction = 'row',
       wrap = 'nowrap',
-      alignItems = 'flex-start',
+      alignItems = 'stretch',
       justify = 'flex-start',
       gap = '0.5rem',
       className,
