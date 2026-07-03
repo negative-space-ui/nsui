@@ -10,10 +10,7 @@ export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  (
-    { className, controlled, style, type = 'button', disabled, animation, onClick, ...props },
-    ref
-  ) => {
+  ({ className, controlled, type = 'button', disabled, animation, onClick, ...props }, ref) => {
     const { global, components } = useNSUI()
     const rippleDisabled = (animation ?? components.iconButton.animation) !== 'ripple'
 
@@ -33,14 +30,13 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 
     return (
       <button
+        {...props}
         ref={ref}
         type={type}
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
         className={cn(`${global.prefixCls}-icon-btn ${global.prefixCls}-clickable`, className)}
-        style={style}
-        {...props}
       />
     )
   }
