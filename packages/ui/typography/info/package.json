@@ -1,17 +1,16 @@
 {
-  "name": "@negative-space/typography",
-  "version": "2.0.12",
+  "name": "@negative-space/info",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Typography components by Negative Space, providing flexible and accessible text elements",
+  "description": "A lightweight Info component from Negative Space, enabling fully custom interactive UI experiences",
   "keywords": [
-    "components",
-    "kit",
+    "info",
     "negative-space",
     "nsui",
-    "typography",
     "react",
+    "typography",
     "ui"
   ],
   "license": "MIT",
@@ -21,11 +20,10 @@
   "files": [
     "dist"
   ],
-  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/negative-space-ui/nsui.git",
-    "directory": "packages/ui/typography"
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/info"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -41,11 +39,15 @@
   },
   "dependencies": {
     "@negative-space/heading": "workspace:*",
-    "@negative-space/info": "workspace:*",
+    "@negative-space/system": "workspace:*",
     "@negative-space/text": "workspace:*"
   },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
   "devDependencies": {
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }
