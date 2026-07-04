@@ -16,7 +16,7 @@ export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBar>((props,
       {...rest}
       ref={ref}
       className={cn(`${global.prefixCls}-progress-bar`, className)}
-      style={{ width: `${(value / max) * 100}%` }}
+      style={{ width: `${(value / max) * 100}%`, ...rest.style }}
     />
   )
 })

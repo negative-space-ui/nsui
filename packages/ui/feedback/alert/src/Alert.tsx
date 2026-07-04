@@ -164,7 +164,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             )}
           </Flex>
 
-          {progressBar && progressBar.value && (
+          {progressBar && progressBar.value !== undefined && (
             <ProgressBar
               {...progressBar}
               value={progressBar.value}
