@@ -3,7 +3,7 @@ import React from 'react'
 import { IconButton, type IconButtonProps } from '../src'
 
 export default {
-  title: 'Actions/Buttons/IconButton',
+  title: 'Actions/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   args: {

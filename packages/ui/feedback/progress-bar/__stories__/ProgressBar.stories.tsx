@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ProgressBar, type ProgressBarProps } from '..'
 
 export default {
-  title: 'Feedback/Loaders/ProgressBar',
+  title: 'Feedback/ProgressBar',
   component: ProgressBar,
   tags: ['autodocs'],
   args: {

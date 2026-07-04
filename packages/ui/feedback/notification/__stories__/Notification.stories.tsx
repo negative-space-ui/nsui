@@ -5,7 +5,7 @@ import React from 'react'
 import { NotificationProvider, useNotification } from '../src'
 
 export default {
-  title: 'Feedback/Overlay/Notification',
+  title: 'Feedback/Notification',
   component: NotificationProvider,
   autodocs: true
 }
