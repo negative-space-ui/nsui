@@ -7,7 +7,11 @@ export default {
   component: ButtonGroup,
   tags: ['autodocs'],
   args: {
-    items: [{ iconButton: { children: '🔍' } }, { button: { children: 'Button 1' } }],
+    items: [
+      { button: { children: 'Button 1' } },
+      { iconButton: { children: '🔍' } },
+      { closeButton: {} }
+    ],
     classNames: { button: { btn: 'p-2 bg-neutral-300 rounded-md' }, iconButton: 'p-2' }
   },
   argTypes: {

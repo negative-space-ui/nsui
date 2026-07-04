@@ -4,13 +4,37 @@ import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'className' | 'style'
+> {
+  classNames?: {
+    root?: string
+    icon?: string
+  }
+  styles?: {
+    root?: React.CSSProperties
+    icon?: React.CSSProperties
+  }
   controlled?: boolean
   animation?: ClickableAnimation
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, controlled, type = 'button', disabled, animation, onClick, ...props }, ref) => {
+  (
+    {
+      classNames,
+      styles,
+      controlled,
+      type = 'button',
+      children,
+      disabled,
+      animation,
+      onClick,
+      ...props
+    },
+    ref
+  ) => {
     const { global, components } = useNSUI()
     const rippleDisabled = (animation ?? components.iconButton.animation) !== 'ripple'
 
@@ -36,8 +60,19 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
-        className={cn(`${global.prefixCls}-icon-btn ${global.prefixCls}-clickable`, className)}
-      />
+        className={cn(
+          `${global.prefixCls}-icon-button ${global.prefixCls}-clickable`,
+          classNames?.root
+        )}
+        style={styles?.root}
+      >
+        <span
+          className={cn(`${global.prefixCls}-icon-button-icon`, classNames?.icon)}
+          style={styles?.icon}
+        >
+          {children}
+        </span>
+      </button>
     )
   }
 )

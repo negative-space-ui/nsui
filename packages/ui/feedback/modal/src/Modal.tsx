@@ -8,18 +8,17 @@ import { type ModalHandle } from './useModal'
 
 export interface ModalProps extends Omit<PopoverProps, 'popover' | 'classNames' | 'styles'> {
   classNames?: Omit<NonNullable<PopoverProps['classNames']>, 'arrow'> & {
-    closeButton?: string
+    closeButton?: CloseButtonProps['classNames']
     closeIcon?: string
     tooltip?: TooltipProps['classNames']
   }
   styles?: Omit<NonNullable<PopoverProps['styles']>, 'arrow'> & {
-    closeButton?: React.CSSProperties
+    closeButton?: CloseButtonProps['styles']
     closeIcon?: React.CSSProperties
     tooltip?: TooltipProps['styles']
   }
   closable?: boolean
   closeTitle?: string
-  closeButtonProps?: Omit<CloseButtonProps, 'onClick' | 'aria-label' | 'className' | 'style'>
   modal: ModalHandle
 }
 
@@ -62,8 +61,11 @@ export const Modal = ({
             aria-label={CloseTitle}
             title={!global.tooltip ? CloseTitle : undefined}
             onClick={modal.close}
-            className={classNames?.closeButton}
-            style={{ position: 'absolute', right: '0.5rem', top: '0.5rem', ...styles?.closeButton }}
+            classNames={classNames?.closeButton}
+            styles={{
+              root: { position: 'absolute', right: '0.5rem', top: '0.5rem', ...styles?.closeIcon },
+              ...styles?.closeButton
+            }}
           />
         )}
         {children}
