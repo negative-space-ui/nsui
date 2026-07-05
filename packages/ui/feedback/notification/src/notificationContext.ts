@@ -1,14 +1,16 @@
 import React from 'react'
 
-import { NotificationProps } from './Notification'
+import { NotificationHandle, NotificationProps } from './Notification'
+
+export type NotificationFn = (notification: NotificationProps) => NotificationHandle
 
 export interface NotificationController {
-  default: (notification: NotificationProps) => string | number
-  success: (notification: NotificationProps) => string | number
-  error: (notification: NotificationProps) => string | number
-  info: (notification: NotificationProps) => string | number
-  warning: (notification: NotificationProps) => string | number
-  hide: (id?: string | number) => void
+  (notification: NotificationProps): NotificationHandle
+  success: NotificationFn
+  error: NotificationFn
+  info: NotificationFn
+  warning: NotificationFn
+  hide: (id?: string | number | NotificationHandle) => void
   clear: () => void
 }
 

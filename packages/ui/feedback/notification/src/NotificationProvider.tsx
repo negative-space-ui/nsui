@@ -1,9 +1,12 @@
 import { Alert } from '@negative-space/alert'
+import { Button } from '@negative-space/button'
 import React from 'react'
 import { toast, Toaster } from 'sonner'
 
 import {
   mergeNotificationProps,
+  NotificationActionProps,
+  NotificationHandle,
   NotificationProps,
   NotificationVariant,
   NotificationVariantsConfig,
@@ -24,6 +27,7 @@ interface NotificationInternalProps {
   duration: number
   showProgress: boolean
   autoClose: boolean
+  action?: NotificationActionProps
   id: string | number
 }
 
@@ -33,6 +37,7 @@ const Notification: React.FC<NotificationInternalProps> = ({
   duration,
   showProgress,
   autoClose,
+  action,
   id
 }) => {
   const [value, setValue] = React.useState(0)
@@ -65,6 +70,7 @@ const Notification: React.FC<NotificationInternalProps> = ({
       variant={toAlertVariant(variant)}
       tooltip={false}
       {...(autoClose && showProgress ? { progressBar: { max: duration, value } } : {})}
+      {...(action ? { suffix: <Button {...action} /> } : {})}
       onClose={() => toast.dismiss(id)}
     />
   )
@@ -78,61 +84,69 @@ export const NotificationProvider: React.FC<React.PropsWithChildren<Notification
   autoClose = true
 }) => {
   const show = React.useCallback(
-    (variant: NotificationVariant, notification: NotificationProps) => {
+    (variant: NotificationVariant, notification: NotificationProps): NotificationHandle => {
       const merged = mergeNotificationProps(variants?.[variant], notification)
 
       const notificationDuration = merged.duration ?? duration
       const notificationShowProgress = merged.showProgress ?? showProgress
       const notificationAutoClose = merged.autoClose ?? autoClose
+      const state: { action?: NotificationActionProps } = {}
 
-      return toast.custom(
-        (t) => (
-          <Notification
-            merged={merged}
-            variant={variant}
-            duration={notificationDuration}
-            showProgress={notificationShowProgress}
-            autoClose={notificationAutoClose}
-            id={t}
-          />
-        ),
-        {
-          duration: notificationAutoClose ? notificationDuration : Infinity
-        }
+      const renderNotification = (t: string | number) => (
+        <Notification
+          merged={merged}
+          variant={variant}
+          duration={notificationDuration}
+          showProgress={notificationShowProgress}
+          autoClose={notificationAutoClose}
+          action={state.action}
+          id={t}
+        />
       )
+
+      const toastOptions = {
+        duration: notificationAutoClose ? notificationDuration : Infinity
+      }
+
+      const id = toast.custom(renderNotification, toastOptions)
+
+      const handle: NotificationHandle = {
+        id,
+        action(action: NotificationActionProps) {
+          state.action = action
+          toast.custom(renderNotification, { ...toastOptions, id })
+          return handle
+        }
+      }
+
+      return handle
     },
     [variants, duration, showProgress, autoClose]
   )
 
-  const notificationDefault = React.useCallback(
-    (n: NotificationProps) => show('default', n),
-    [show]
-  )
-
-  const success = React.useCallback((n: NotificationProps) => show('success', n), [show])
-  const error = React.useCallback((n: NotificationProps) => show('error', n), [show])
-  const info = React.useCallback((n: NotificationProps) => show('info', n), [show])
-  const warning = React.useCallback((n: NotificationProps) => show('warning', n), [show])
-
-  const hide = React.useCallback((id?: string | number) => {
-    if (id !== undefined) toast.dismiss(id)
-    else toast.dismiss()
+  const hide = React.useCallback((id?: string | number | NotificationHandle) => {
+    if (id === undefined) {
+      toast.dismiss()
+      return
+    }
+    toast.dismiss(typeof id === 'object' ? id.id : id)
   }, [])
 
   const clear = React.useCallback(() => toast.dismiss(), [])
 
-  const value = React.useMemo<NotificationController>(
-    () => ({
-      default: notificationDefault,
-      success,
-      error,
-      info,
-      warning,
-      hide,
-      clear
-    }),
-    [notificationDefault, success, error, info, warning, hide, clear]
-  )
+  const value = React.useMemo<NotificationController>(() => {
+    const controller = ((notification: NotificationProps) =>
+      show('default', notification)) as NotificationController
+
+    controller.success = (notification) => show('success', notification)
+    controller.error = (notification) => show('error', notification)
+    controller.info = (notification) => show('info', notification)
+    controller.warning = (notification) => show('warning', notification)
+    controller.hide = hide
+    controller.clear = clear
+
+    return controller
+  }, [show, hide, clear])
 
   return (
     <NotificationContext.Provider value={value}>

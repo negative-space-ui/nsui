@@ -1,4 +1,5 @@
 import { AlertProps, AlertVariant } from '@negative-space/alert'
+import { ButtonProps } from '@negative-space/button'
 
 export type NotificationVariant = 'default' | 'success' | 'error' | 'info' | 'warning'
 
@@ -6,6 +7,13 @@ export interface NotificationProps extends Omit<AlertProps, 'onClose' | 'variant
   duration?: number
   showProgress?: boolean
   autoClose?: boolean
+}
+
+export type NotificationActionProps = ButtonProps
+
+export interface NotificationHandle {
+  id: string | number
+  action: (action: NotificationActionProps) => NotificationHandle
 }
 
 export type NotificationVariantConfig = Partial<NotificationProps>
