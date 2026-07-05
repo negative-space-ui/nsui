@@ -8,6 +8,8 @@ export {
   EyeOff,
   Info,
   type LucideProps,
+  PanelLeft,
+  PanelRight,
   TriangleAlert,
   X,
   XCircle

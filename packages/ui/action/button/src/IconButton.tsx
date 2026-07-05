@@ -4,18 +4,27 @@ import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'
 
+type IconChildProps = {
+  className?: string
+  style?: React.CSSProperties
+}
+
 export interface IconButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
-  'className' | 'style'
+  'className' | 'style' | 'children'
 > {
+  children: React.ReactElement<IconChildProps>
+
   classNames?: {
     root?: string
     icon?: string
   }
+
   styles?: {
     root?: React.CSSProperties
     icon?: React.CSSProperties
   }
+
   controlled?: boolean
   animation?: ClickableAnimation
 }
@@ -46,11 +55,24 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return
+
       const isKeyboard = e.detail === 0
       if (!rippleDisabled) createRipple(e, { centered: isKeyboard })
 
       onClick?.(e)
     }
+
+    const child = React.cloneElement(children, {
+      className: cn(
+        `${global.prefixCls}-icon-button-icon`,
+        classNames?.icon,
+        children.props.className
+      ),
+      style: {
+        ...styles?.icon,
+        ...children.props.style
+      }
+    })
 
     return (
       <button
@@ -66,12 +88,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         )}
         style={styles?.root}
       >
-        <span
-          className={cn(`${global.prefixCls}-icon-button-icon`, classNames?.icon)}
-          style={styles?.icon}
-        >
-          {children}
-        </span>
+        {child}
       </button>
     )
   }
