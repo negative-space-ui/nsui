@@ -299,6 +299,9 @@ importers:
       '@negative-space/radio':
         specifier: workspace:*
         version: link:../../ui/data-entry/radio
+      '@negative-space/select':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/select
       '@negative-space/switch':
         specifier: workspace:*
         version: link:../../ui/data-entry/switch
@@ -683,6 +686,34 @@ importers:
       '@negative-space/field':
         specifier: workspace:*
         version: link:../../layout/field
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/select:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/listbox':
+        specifier: workspace:*
+        version: link:../listbox
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
