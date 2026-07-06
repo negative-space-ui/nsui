@@ -346,6 +346,12 @@ importers:
       '@negative-space/grid':
         specifier: workspace:*
         version: link:../../ui/layout/grid
+      '@negative-space/resizable':
+        specifier: workspace:*
+        version: link:../../ui/layout/resizable
+      '@negative-space/sidebar':
+        specifier: workspace:*
+        version: link:../../ui/layout/sidebar
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -901,6 +907,47 @@ importers:
 
   packages/ui/layout/grid:
     dependencies:
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/layout/resizable:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/layout/sidebar:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/resizable':
+        specifier: workspace:*
+        version: link:../resizable
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
