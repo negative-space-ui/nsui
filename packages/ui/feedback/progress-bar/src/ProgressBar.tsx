@@ -1,12 +1,12 @@
 import { cn, useNSUI } from '@negative-space/system'
 import React from 'react'
 
-export interface ProgressBar extends React.HTMLAttributes<HTMLDivElement> {
+export interface ProgressBarProgress extends React.HTMLAttributes<HTMLDivElement> {
   value: number
   max?: number
 }
 
-export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBar>((props, ref) => {
+export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProgress>((props, ref) => {
   const { value, max = 100, className, ...rest } = props
 
   const { global } = useNSUI()
