@@ -16,12 +16,12 @@ export interface ButtonGroupProps extends Omit<FlexProps, 'as' | 'className' | '
   classNames?: {
     root?: string
     button?: ButtonProps['classNames']
-    iconButton?: string
+    iconButton?: IconButtonProps['classNames']
   }
   styles?: {
     root?: React.CSSProperties
     button?: ButtonProps['styles']
-    iconButton?: React.CSSProperties
+    iconButton?: IconButtonProps['styles']
   }
   disabled?: boolean
   items: ButtonComponent[]
@@ -62,8 +62,8 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                   key={index}
                   controlled
                   {...item.iconButton}
-                  className={classNames?.iconButton}
-                  style={styles?.iconButton}
+                  classNames={classNames?.iconButton}
+                  styles={styles?.iconButton}
                 />
               )
             }
@@ -74,8 +74,8 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                   key={index}
                   controlled
                   {...item.closeButton}
-                  className={classNames?.iconButton}
-                  style={styles?.iconButton}
+                  classNames={classNames?.iconButton}
+                  styles={styles?.iconButton}
                 />
               )
             }
