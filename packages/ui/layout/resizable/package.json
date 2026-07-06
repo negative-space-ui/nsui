@@ -1,17 +1,17 @@
 {
-  "name": "@negative-space/layout",
-  "version": "1.3.4",
+  "name": "@negative-space/resizable",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Feedback components by Negative Space, providing flexible and accessible UI response elements",
+  "description": "A lightweight and accessible resizable component by Negative Space, providing layout behavior without visual constraints",
   "keywords": [
     "components",
     "layout",
-    "kit",
     "negative-space",
-    "nsui",
     "react",
+    "resizable",
+    "nsui",
     "ui"
   ],
   "license": "MIT",
@@ -24,7 +24,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/kits/layout"
+    "directory": "packages/ui/resizable"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -39,15 +39,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/divider": "workspace:*",
-    "@negative-space/field": "workspace:*",
     "@negative-space/flex": "workspace:*",
-    "@negative-space/grid": "workspace:*",
-    "@negative-space/resizable": "workspace:*",
-    "@negative-space/sidebar": "workspace:*"
+    "@negative-space/system": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
   },
   "devDependencies": {
+    "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }
