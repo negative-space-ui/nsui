@@ -56,13 +56,11 @@ export function RadioOption({
       data-checked={checked}
       aria-checked={checked}
       data-visible={checked}
-      classNames={{
-        root: cn(
-          `${global.prefixCls}-radio-label`,
-          `${global.prefixCls}-clickable`,
-          classNames?.label
-        )
-      }}
+      className={cn(
+        `${global.prefixCls}-radio-label`,
+        `${global.prefixCls}-clickable`,
+        classNames?.label
+      )}
       styles={{ root: styles?.label }}
     >
       <div
