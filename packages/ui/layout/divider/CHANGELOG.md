@@ -1,5 +1,12 @@
 # @negative-space/divider
 
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+
 ## 1.1.7
 
 ### Patch Changes

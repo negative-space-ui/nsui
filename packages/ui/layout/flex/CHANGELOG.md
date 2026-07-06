@@ -1,5 +1,13 @@
 # @negative-space/flex
 
+## 1.2.5
+
+### Patch Changes
+
+- c243753: Update default align items
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+
 ## 1.2.4
 
 ### Patch Changes

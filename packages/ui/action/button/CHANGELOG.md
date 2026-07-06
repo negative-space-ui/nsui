@@ -1,5 +1,19 @@
 # @negative-space/button
 
+## 2.8.0
+
+### Minor Changes
+
+- 87a382c: Add CloseButton component
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+- Updated dependencies [c243753]
+  - @negative-space/system@1.4.0
+  - @negative-space/flex@1.2.5
+  - @negative-space/spinner@2.2.3
+
 ## 2.7.1
 
 ### Patch Changes

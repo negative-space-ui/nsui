@@ -10,12 +10,12 @@ export interface InputPasswordProps extends Omit<
   'classNames' | 'styles' | 'suffix' | 'type'
 > {
   classNames?: InputProps['classNames'] & {
-    button?: string
+    button?: IconButtonProps['classNames']
     icon?: string
     tooltip?: TooltipProps['classNames']
   }
   styles?: InputProps['styles'] & {
-    button?: React.CSSProperties
+    button?: IconButtonProps['styles']
     icon?: React.CSSProperties
     tooltip?: TooltipProps['styles']
   }
@@ -61,8 +61,11 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
               onClick={handleToggle}
               title={!global.tooltip ? Title : undefined}
               aria-label={Title}
-              className={cn(`${global.prefixCls}-input-password-button`, classNames?.button)}
-              style={styles?.button}
+              classNames={{
+                root: cn(`${global.prefixCls}-input-password-button`, classNames?.button?.root),
+                ...classNames?.button
+              }}
+              styles={styles?.button}
             >
               {visible ? (
                 <EyeOff

@@ -1,5 +1,17 @@
 # @negative-space/system
 
+## 1.4.0
+
+### Minor Changes
+
+- 87a382c: Add new icons export
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+- Updated dependencies [87a382c]
+  - @negative-space/provider@1.10.1
+
 ## 1.3.2
 
 ### Patch Changes

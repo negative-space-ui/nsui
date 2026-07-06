@@ -1,5 +1,15 @@
 # @negative-space/listbox
 
+## 1.5.3
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+  - @negative-space/checkmark@1.2.3
+  - @negative-space/field@1.1.3
+  - @negative-space/collection@2.0.5
+
 ## 1.5.2
 
 ### Patch Changes

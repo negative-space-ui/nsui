@@ -1,5 +1,13 @@
 # @negative-space/switch
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+  - @negative-space/field@1.1.3
+
 ## 1.0.2
 
 ### Patch Changes

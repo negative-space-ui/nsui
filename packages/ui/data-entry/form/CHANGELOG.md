@@ -1,5 +1,14 @@
 # @negative-space/form
 
+## 1.6.1
+
+### Patch Changes
+
+- c243753: Fix grid props
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+  - @negative-space/grid@1.3.5
+
 ## 1.6.0
 
 ### Minor Changes

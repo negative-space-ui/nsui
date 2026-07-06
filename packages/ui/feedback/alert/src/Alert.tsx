@@ -38,7 +38,7 @@ export interface AlertProps {
     info?: InfoProps['classNames']
     suffix?: string
     closeButton?: CloseButtonProps['classNames']
-    progressBar?: ProgressBarProps['classNames']
+    progressBar?: string
     tooltip?: TooltipProps['classNames']
   }
   styles?: {
@@ -50,7 +50,7 @@ export interface AlertProps {
     info?: InfoProps['styles']
     suffix?: React.CSSProperties
     closeButton?: CloseButtonProps['styles']
-    progressBar?: ProgressBarProps['styles']
+    progressBar?: React.CSSProperties
     tooltip?: TooltipProps['styles']
   }
   open?: boolean
