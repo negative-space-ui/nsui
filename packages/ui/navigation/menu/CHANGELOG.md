@@ -1,5 +1,18 @@
 # @negative-space/menu
 
+## 1.1.0
+
+### Minor Changes
+
+- 8dfc51e: Add collapsed prop
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+  - @negative-space/link@1.1.8
+  - @negative-space/collection@2.0.5
+
 ## 1.0.4
 
 ### Patch Changes

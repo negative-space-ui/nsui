@@ -1,5 +1,12 @@
 # @negative-space/provider
 
+## 1.10.1
+
+### Patch Changes
+
+- 87a382c: Update modal props
+- 87a382c: Add CloseButton component
+
 ## 1.10.0
 
 ### Minor Changes

@@ -1,5 +1,26 @@
 # @negative-space/feedback
 
+## 1.4.0
+
+### Minor Changes
+
+- 6c962d1: Initial release of Alert component
+- 09115bb: Initial release of Notification component
+- fec8e8a: Initial release of Progress Bar component
+
+### Patch Changes
+
+- Updated dependencies [6c962d1]
+- Updated dependencies [09115bb]
+- Updated dependencies [87a382c]
+- Updated dependencies [fec8e8a]
+  - @negative-space/alert@1.0.0
+  - @negative-space/notification@1.0.0
+  - @negative-space/modal@1.1.3
+  - @negative-space/progress-bar@1.0.0
+  - @negative-space/checkmark@1.2.3
+  - @negative-space/spinner@2.2.3
+
 ## 1.3.1
 
 ### Patch Changes

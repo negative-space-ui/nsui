@@ -1,5 +1,17 @@
 # @negative-space/checkbox
 
+## 1.5.3
+
+### Patch Changes
+
+- 87a382c: Fix checkbox checked prop
+- Updated dependencies [87a382c]
+- Updated dependencies [c243753]
+  - @negative-space/system@1.4.0
+  - @negative-space/flex@1.2.5
+  - @negative-space/checkmark@1.2.3
+  - @negative-space/field@1.1.3
+
 ## 1.5.2
 
 ### Patch Changes

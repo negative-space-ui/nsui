@@ -1,5 +1,17 @@
 # @negative-space/modal
 
+## 1.1.3
+
+### Patch Changes
+
+- 87a382c: Update modal props
+- Updated dependencies [87a382c]
+- Updated dependencies [87a382c]
+  - @negative-space/system@1.4.0
+  - @negative-space/button@2.8.0
+  - @negative-space/popover@1.0.3
+  - @negative-space/tooltip@1.0.3
+
 ## 1.1.2
 
 ### Patch Changes

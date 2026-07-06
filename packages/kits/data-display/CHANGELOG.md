@@ -1,5 +1,20 @@
 # @negative-space/data-display
 
+## 1.3.0
+
+### Minor Changes
+
+- d44d2b2: Add surface component
+
+### Patch Changes
+
+- Updated dependencies [d44d2b2]
+  - @negative-space/surface@1.0.0
+  - @negative-space/code-block@1.0.3
+  - @negative-space/list@1.4.5
+  - @negative-space/popover@1.0.3
+  - @negative-space/tooltip@1.0.3
+
 ## 1.2.1
 
 ### Patch Changes

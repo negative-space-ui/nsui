@@ -1,5 +1,24 @@
 # @negative-space/data-entry
 
+## 1.5.0
+
+### Minor Changes
+
+- 83ad3d2: Initial release of Select component
+
+### Patch Changes
+
+- Updated dependencies [87a382c]
+- Updated dependencies [c243753]
+- Updated dependencies [83ad3d2]
+  - @negative-space/checkbox@1.5.3
+  - @negative-space/form@1.6.1
+  - @negative-space/select@1.0.0
+  - @negative-space/input@1.5.2
+  - @negative-space/listbox@1.5.3
+  - @negative-space/radio@1.7.3
+  - @negative-space/switch@1.0.3
+
 ## 1.4.10
 
 ### Patch Changes

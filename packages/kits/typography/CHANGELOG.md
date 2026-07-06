@@ -1,5 +1,18 @@
 # @negative-space/typography
 
+## 2.1.0
+
+### Minor Changes
+
+- 9891459: Initial release of Info component
+
+### Patch Changes
+
+- Updated dependencies [9891459]
+  - @negative-space/info@1.0.0
+  - @negative-space/heading@1.2.4
+  - @negative-space/text@1.2.4
+
 ## 2.0.12
 
 ### Patch Changes

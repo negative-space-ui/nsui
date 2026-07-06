@@ -1,5 +1,24 @@
 # @negative-space/layout
 
+## 1.4.0
+
+### Minor Changes
+
+- e75df46: Initial release of Resizable component
+- cfcfaed: Initial release of Sidebar component
+
+### Patch Changes
+
+- Updated dependencies [c243753]
+- Updated dependencies [e75df46]
+- Updated dependencies [cfcfaed]
+  - @negative-space/flex@1.2.5
+  - @negative-space/resizable@1.0.0
+  - @negative-space/sidebar@1.0.0
+  - @negative-space/divider@1.1.8
+  - @negative-space/field@1.1.3
+  - @negative-space/grid@1.3.5
+
 ## 1.3.4
 
 ### Patch Changes
