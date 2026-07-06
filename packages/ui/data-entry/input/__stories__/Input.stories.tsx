@@ -3,7 +3,7 @@ import React from 'react'
 import { Input, type InputProps } from '../src'
 
 export default {
-  title: 'Data Entry/Inputs/Input',
+  title: 'Data Entry/Input',
   component: Input,
   tags: ['autodocs'],
   args: {

@@ -4,7 +4,7 @@ import { Popover, type PopoverProps } from '../src'
 import { usePopover } from '../src'
 
 export default {
-  title: 'Data Display/Overlay/Popover',
+  title: 'Data Display/Popover',
   component: Popover,
   tags: ['autodocs'],
   args: {

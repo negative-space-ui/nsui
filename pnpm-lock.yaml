@@ -22,7 +22,7 @@ importers:
         version: 9.39.2
       '@storybook/react':
         specifier: ^10.2.19
-        version: 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
+        version: 10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       '@storybook/test':
         specifier: ^8.6.15
         version: 8.6.15
@@ -271,6 +271,9 @@ importers:
       '@negative-space/popover':
         specifier: workspace:*
         version: link:../../ui/data-display/popover
+      '@negative-space/surface':
+        specifier: workspace:*
+        version: link:../../ui/data-display/surface
       '@negative-space/tooltip':
         specifier: workspace:*
         version: link:../../ui/data-display/tooltip
@@ -296,6 +299,9 @@ importers:
       '@negative-space/radio':
         specifier: workspace:*
         version: link:../../ui/data-entry/radio
+      '@negative-space/select':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/select
       '@negative-space/switch':
         specifier: workspace:*
         version: link:../../ui/data-entry/switch
@@ -306,12 +312,21 @@ importers:
 
   packages/kits/feedback:
     dependencies:
+      '@negative-space/alert':
+        specifier: workspace:*
+        version: link:../../ui/feedback/alert
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../ui/feedback/checkmark
       '@negative-space/modal':
         specifier: workspace:*
         version: link:../../ui/feedback/modal
+      '@negative-space/notification':
+        specifier: workspace:*
+        version: link:../../ui/feedback/notification
+      '@negative-space/progress-bar':
+        specifier: workspace:*
+        version: link:../../ui/feedback/progress-bar
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../ui/feedback/spinner
@@ -334,6 +349,12 @@ importers:
       '@negative-space/grid':
         specifier: workspace:*
         version: link:../../ui/layout/grid
+      '@negative-space/resizable':
+        specifier: workspace:*
+        version: link:../../ui/layout/resizable
+      '@negative-space/sidebar':
+        specifier: workspace:*
+        version: link:../../ui/layout/sidebar
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -367,6 +388,9 @@ importers:
       '@negative-space/heading':
         specifier: workspace:*
         version: link:../../ui/typography/heading
+      '@negative-space/info':
+        specifier: workspace:*
+        version: link:../../ui/typography/info
       '@negative-space/text':
         specifier: workspace:*
         version: link:../../ui/typography/text
@@ -498,7 +522,23 @@ importers:
     dependencies:
       '@floating-ui/react':
         specifier: ^0.27.18
-        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/surface:
+    dependencies:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -660,6 +700,34 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/ui/data-entry/select:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/listbox':
+        specifier: workspace:*
+        version: link:../listbox
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/ui/data-entry/switch:
     dependencies:
       '@negative-space/field':
@@ -668,6 +736,37 @@ importers:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/alert:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/info':
+        specifier: workspace:*
+        version: link:../../typography/info
+      '@negative-space/progress-bar':
+        specifier: workspace:*
+        version: link:../progress-bar
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      '@negative-space/tooltip':
+        specifier: workspace:*
+        version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -709,6 +808,53 @@ importers:
       '@negative-space/tooltip':
         specifier: workspace:*
         version: link:../../data-display/tooltip
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/notification:
+    dependencies:
+      '@negative-space/alert':
+        specifier: workspace:*
+        version: link:../alert
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+      react-dom:
+        specifier: ^19.2.7
+        version: 19.2.7(react@19.2.3)
+      sonner:
+        specifier: ^2.0.7
+        version: 2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+    devDependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      '@types/react-dom':
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.7)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/progress-bar:
+    dependencies:
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -806,6 +952,47 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/ui/layout/resizable:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/layout/sidebar:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/resizable':
+        specifier: workspace:*
+        version: link:../resizable
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/ui/navigation/link:
     dependencies:
       '@negative-space/system':
@@ -880,6 +1067,28 @@ importers:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.7
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/typography/info:
+    dependencies:
+      '@negative-space/heading':
+        specifier: workspace:*
+        version: link:../heading
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      '@negative-space/text':
+        specifier: workspace:*
+        version: link:../text
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -4232,6 +4441,11 @@ packages:
     peerDependencies:
       react: ^19.2.3
 
+  react-dom@19.2.7:
+    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
+    peerDependencies:
+      react: ^19.2.7
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -4418,6 +4632,12 @@ packages:
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+
+  sonner@2.0.7:
+    resolution: {integrity: sha512-W6ZN4p58k8aDKA4XPcx2hpIQXBRAgyiWVkYhT7CvK6D3iAu7xjvVyhQHg2/iaKJZ1XVJ4r7XuwGL+WGEK37i9w==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5474,18 +5694,18 @@ snapshots:
       '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/react-dom@2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react-dom@2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@floating-ui/dom': 1.7.5
       react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
+      react-dom: 19.2.7(react@19.2.3)
 
-  '@floating-ui/react@0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react@0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@floating-ui/utils': 0.2.10
       react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
+      react-dom: 19.2.7(react@19.2.3)
       tabbable: 6.4.0
 
   '@floating-ui/utils@0.2.10': {}
@@ -5925,6 +6145,11 @@ snapshots:
       react-dom: 19.2.3(react@19.2.3)
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
 
+  '@storybook/react-dom-shim@10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.7(react@19.2.3)
+
   '@storybook/react-vite@10.2.19(esbuild@0.27.2)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)(rollup@4.53.5)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))(typescript@5.9.3)(vite@7.3.0(@types/node@20.19.27)(jiti@2.6.1)(lightningcss@1.30.2))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.6.4(typescript@5.9.3)(vite@7.3.0(@types/node@20.19.27)(jiti@2.6.1)(lightningcss@1.30.2))
@@ -5960,13 +6185,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/react@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
+  '@storybook/react@10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))
+      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-docgen: 8.0.2
-      react-dom: 19.2.3(react@19.2.3)
+      react-dom: 19.2.7(react@19.2.3)
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -8393,6 +8618,11 @@ snapshots:
       react: 19.2.3
       scheduler: 0.27.0
 
+  react-dom@19.2.7(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+      scheduler: 0.27.0
+
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -8652,6 +8882,11 @@ snapshots:
   signal-exit@4.1.0: {}
 
   slash@3.0.0: {}
+
+  sonner@2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.7(react@19.2.3)
 
   source-map-js@1.2.1: {}
 

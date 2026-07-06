@@ -39,8 +39,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@negative-space/alert": "workspace:*",
     "@negative-space/checkmark": "workspace:*",
     "@negative-space/modal": "workspace:*",
+    "@negative-space/notification": "workspace:*",
+    "@negative-space/progress-bar": "workspace:*",
     "@negative-space/spinner": "workspace:*"
   },
   "devDependencies": {

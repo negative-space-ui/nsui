@@ -4,31 +4,23 @@ import React from 'react'
 
 import { Button, type ButtonProps } from './Button'
 import { ButtonContext } from './ButtonContext'
+import { CloseButton, type CloseButtonProps } from './CloseButton'
 import { IconButton, type IconButtonProps } from './IconButton'
 
 export type ButtonComponent =
   | { button: Omit<ButtonProps, 'controlled'> }
   | { iconButton: Omit<IconButtonProps, 'controlled'> }
+  | { closeButton: Omit<CloseButtonProps, 'controlled'> }
 
 export interface ButtonGroupProps extends Omit<FlexProps, 'as' | 'className' | 'style'> {
   classNames?: {
     root?: string
-    button?: {
-      btn?: string
-      content?: string
-      prefix?: string
-      suffix?: string
-    }
+    button?: ButtonProps['classNames']
     iconButton?: string
   }
   styles?: {
     root?: React.CSSProperties
-    button?: {
-      btn?: React.CSSProperties
-      content?: React.CSSProperties
-      prefix?: React.CSSProperties
-      suffix?: React.CSSProperties
-    }
+    button?: ButtonProps['styles']
     iconButton?: React.CSSProperties
   }
   disabled?: boolean
@@ -70,8 +62,20 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                   key={index}
                   controlled
                   {...item.iconButton}
-                  className={cn(classNames?.iconButton, item.iconButton.className)}
-                  style={{ ...styles?.iconButton, ...item.iconButton.style }}
+                  className={classNames?.iconButton}
+                  style={styles?.iconButton}
+                />
+              )
+            }
+
+            if ('closeButton' in item) {
+              return (
+                <CloseButton
+                  key={index}
+                  controlled
+                  {...item.closeButton}
+                  className={classNames?.iconButton}
+                  style={styles?.iconButton}
                 />
               )
             }

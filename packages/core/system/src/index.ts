@@ -1,4 +1,16 @@
 export { cn, mergeCn } from './cn'
 export type { ClickableAnimation, OverlayAnimation, ValidationMode } from '@negative-space/provider'
 export { useNSUI } from '@negative-space/provider'
-export { Check, Eye, EyeOff, type LucideProps, X } from 'lucide-react'
+export {
+  Check,
+  CheckCircle2,
+  Eye,
+  EyeOff,
+  Info,
+  type LucideProps,
+  PanelLeft,
+  PanelRight,
+  TriangleAlert,
+  X,
+  XCircle
+} from 'lucide-react'

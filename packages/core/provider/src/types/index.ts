@@ -44,6 +44,14 @@ export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
 
 export type ValidationMode = 'onBlur' | 'onChange' | 'onSubmit' | 'all'
 
+export type Alert = {
+  /** Defines if the alert should be closable.
+   *
+   * Defaults to `true`. */
+  closable?: boolean
+  closeTitle?: string
+}
+
 export type ButtonConfig = {
   /** Defines the animation of the button.
    *
@@ -54,7 +62,14 @@ export type ButtonConfig = {
 export type IconButtonConfig = {
   /** Defines the animation of the icon button.
    *
-   * Defaults to `ripple`. */
+   * Defaults to `none`. */
+  animation?: ClickableAnimation
+}
+
+export type CloseButton = {
+  /** Defines the animation of the close button.
+   *
+   * Defaults to `none`. */
   animation?: ClickableAnimation
 }
 
@@ -160,8 +175,10 @@ export type TextConfig = {
 }
 
 export type ComponentsConfig = {
+  alert?: Alert
   button?: ButtonConfig
   iconButton?: IconButtonConfig
+  closeButton?: CloseButton
   checkmark?: CheckmarkConfig
   form?: FormConfig
   heading?: HeadingConfig

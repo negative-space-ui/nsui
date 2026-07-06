@@ -25,11 +25,18 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       tooltip: global?.tooltip ?? true
     },
     components: {
+      alert: {
+        closable: components?.alert?.closable ?? true,
+        closeTitle: components?.alert?.closeTitle ?? 'Close'
+      },
       button: {
         animation: components?.button?.animation ?? 'ripple'
       },
       iconButton: {
-        animation: components?.iconButton?.animation ?? 'ripple'
+        animation: components?.iconButton?.animation ?? 'none'
+      },
+      closeButton: {
+        animation: components?.closeButton?.animation ?? 'none'
       },
       checkmark: {
         animation: components?.checkmark?.animation ?? 'pop'

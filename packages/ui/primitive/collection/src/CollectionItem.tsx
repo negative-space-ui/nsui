@@ -20,7 +20,6 @@ export interface CollectionItemProps extends Omit<
   disabled?: boolean
   selected?: boolean
   role?: React.AriaRole
-  classNames?: { root?: string }
   styles?: { root?: React.CSSProperties }
   onClick?: (value: string | undefined, event: React.MouseEvent<HTMLLIElement>) => void
   onSelect?: (value: string | undefined) => void
@@ -32,7 +31,6 @@ export function CollectionItem({
   disabled = false,
   selected,
   role = 'option',
-  classNames,
   styles,
   onClick,
   onSelect,
@@ -100,7 +98,6 @@ export function CollectionItem({
       onFocus={handleFocus}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      className={classNames?.root}
       style={styles?.root}
       {...props}
     >

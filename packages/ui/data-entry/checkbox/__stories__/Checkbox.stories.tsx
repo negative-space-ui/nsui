@@ -8,9 +8,7 @@ export default {
   tags: ['autodocs'],
   args: {
     children: 'Checkbox',
-    disabled: false,
     animation: 'pop',
-    onChange: () => {},
     classNames: {
       label: 'w-fit px-4 py-2 border-1 border-neutral-300 rounded-md',
       checkbox:
@@ -20,4 +18,17 @@ export default {
   }
 }
 
-export const Default = (args: CheckboxProps) => <Checkbox {...args} />
+export const Default = (args: CheckboxProps) => {
+  const [checked, setChecked] = React.useState(args.checked)
+
+  return (
+    <Checkbox
+      {...args}
+      checked={checked}
+      onChange={(value) => {
+        setChecked(value)
+        args.onChange?.(value)
+      }}
+    />
+  )
+}

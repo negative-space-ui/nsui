@@ -42,6 +42,7 @@
     "@negative-space/code-block": "workspace:*",
     "@negative-space/list": "workspace:*",
     "@negative-space/popover": "workspace:*",
+    "@negative-space/surface": "workspace:*",
     "@negative-space/tooltip": "workspace:*"
   },
   "devDependencies": {

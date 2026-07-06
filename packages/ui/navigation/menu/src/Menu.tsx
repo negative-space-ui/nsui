@@ -37,15 +37,16 @@ export interface MenuProps extends Omit<CollectionProps, 'rovingOptions' | 'clas
     }
     separator?: React.CSSProperties
   }
+  collapsed?: boolean
   items: MenuComponent[]
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
-  ({ classNames, styles, disabled, items, columns = 1, ...props }, ref) => {
+  ({ classNames, styles, disabled, collapsed = false, items, columns = 1, ...props }, ref) => {
     const { global } = useNSUI()
 
     return (
-      <MenuContext.Provider value={{ disabled }}>
+      <MenuContext.Provider value={{ disabled, collapsed }}>
         <Collection
           {...({ ref } as object)}
           role="menu"
@@ -70,6 +71,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
                 />
               )
             }
+
             if ('item' in component && component.item) {
               return (
                 <MenuItem
@@ -80,6 +82,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
                 />
               )
             }
+
             if ('separator' in component && component.separator) {
               return (
                 <MenuSeparator
@@ -90,6 +93,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
                 />
               )
             }
+
             return null
           })}
         </Collection>

@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@negative-space/heading": "workspace:*",
+    "@negative-space/info": "workspace:*",
     "@negative-space/text": "workspace:*"
   },
   "devDependencies": {

@@ -115,7 +115,8 @@ export function Form<T extends FormValues = FormValues>({
   disableSubmitOnError,
   children,
   className,
-  id
+  id,
+  ...gridProps
 }: FormProps<T>) {
   const { global, components } = useNSUI()
 
@@ -147,6 +148,7 @@ export function Form<T extends FormValues = FormValues>({
           ctx.submit()
         }}
         noValidate
+        {...gridProps}
       >
         {typeof children === 'function'
           ? children(ctx)

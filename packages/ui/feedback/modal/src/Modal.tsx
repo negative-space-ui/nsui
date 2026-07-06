@@ -1,6 +1,6 @@
-import { IconButton, type IconButtonProps } from '@negative-space/button/src/IconButton'
+import { CloseButton, type CloseButtonProps } from '@negative-space/button'
 import { Popover, type PopoverProps } from '@negative-space/popover'
-import { cn, useNSUI, X } from '@negative-space/system'
+import { cn, useNSUI } from '@negative-space/system'
 import { Tooltip, type TooltipProps, useTooltip } from '@negative-space/tooltip'
 import React from 'react'
 
@@ -8,32 +8,32 @@ import { type ModalHandle } from './useModal'
 
 export interface ModalProps extends Omit<PopoverProps, 'popover' | 'classNames' | 'styles'> {
   classNames?: Omit<NonNullable<PopoverProps['classNames']>, 'arrow'> & {
-    closeButton?: string
+    closeButton?: CloseButtonProps['classNames']
     closeIcon?: string
     tooltip?: TooltipProps['classNames']
   }
   styles?: Omit<NonNullable<PopoverProps['styles']>, 'arrow'> & {
-    closeButton?: React.CSSProperties
+    closeButton?: CloseButtonProps['styles']
     closeIcon?: React.CSSProperties
     tooltip?: TooltipProps['styles']
   }
-  hideCloseButton?: boolean
-  buttonProps?: Omit<IconButtonProps, 'onClick' | 'aria-label' | 'className' | 'style'>
+  closable?: boolean
+  closeTitle?: string
   modal: ModalHandle
 }
 
 export const Modal = ({
   modal,
-  hideCloseButton,
+  closable = true,
   classNames,
   styles,
-  title,
+  closeTitle,
   children,
   ...popoverProps
 }: ModalProps) => {
   const { global, components } = useNSUI()
 
-  const Title = title ?? components.modal?.closeTitle
+  const CloseTitle = closeTitle ?? components.modal?.closeTitle
 
   const tooltip = useTooltip()
 
@@ -54,27 +54,25 @@ export const Modal = ({
           overlay: { ...styles?.overlay }
         }}
       >
-        {!hideCloseButton && (
-          <IconButton
+        {closable && (
+          <CloseButton
             {...modal.triggerProps}
             {...tooltip.triggerProps}
-            aria-label={Title}
-            title={!global.tooltip ? Title : undefined}
+            aria-label={CloseTitle}
+            title={!global.tooltip ? CloseTitle : undefined}
             onClick={modal.close}
-            className={cn(`${global.prefixCls}-modal-close-button`, classNames?.closeButton)}
-            style={{ position: 'absolute', right: '0.5rem', top: '0.5rem', ...styles?.closeButton }}
-          >
-            <X
-              className={cn(`${global.prefixCls}-modal-close-icon`, classNames?.closeIcon)}
-              style={styles?.closeIcon}
-            />
-          </IconButton>
+            classNames={classNames?.closeButton}
+            styles={{
+              root: { position: 'absolute', right: '0.5rem', top: '0.5rem', ...styles?.closeIcon },
+              ...styles?.closeButton
+            }}
+          />
         )}
         {children}
       </Popover>
       {global.tooltip && modal.isOpen && (
         <Tooltip tooltip={tooltip} classNames={classNames?.tooltip} styles={styles?.tooltip}>
-          {Title}
+          {CloseTitle}
         </Tooltip>
       )}
     </>

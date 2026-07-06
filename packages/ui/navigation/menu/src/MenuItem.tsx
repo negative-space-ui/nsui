@@ -25,9 +25,9 @@ export interface MenuItemProps extends Omit<
   }
   value?: CollectionItemProps['value']
   disabled?: CollectionItemProps['disabled']
-  direction?: CollectionItemProps['direction']
-  alignItems?: CollectionItemProps['alignItems']
   gap?: CollectionItemProps['gap']
+  alignItems?: CollectionItemProps['alignItems']
+  direction?: CollectionItemProps['direction']
   prefix?: React.ReactNode
   content: React.ReactNode
   suffix?: React.ReactNode
@@ -36,52 +36,36 @@ export interface MenuItemProps extends Omit<
 export const MenuItem = ({
   value,
   disabled,
-  direction,
-  alignItems,
-  gap,
   prefix,
   content,
   suffix,
   classNames,
   styles,
-  onClick,
+  gap = '0.5rem',
+  alignItems = 'center',
+  direction = 'row',
   ...linkProps
 }: MenuItemProps) => {
   const { global } = useNSUI()
-  const { disabled: groupDisabled } = useMenuContext()
+  const { disabled: groupDisabled, collapsed } = useMenuContext()
+
   const isDisabled = disabled || groupDisabled
+  const isCollapsed = !!collapsed
 
   return (
     <CollectionItem
       value={value}
       disabled={isDisabled}
-      direction={direction}
-      alignItems={alignItems}
-      gap={gap}
       role="menuitem"
-      onSelect={() => {
-        onClick?.({} as React.MouseEvent<HTMLAnchorElement>)
-        if (linkProps.href && !isDisabled) {
-          if (linkProps.target === '_blank') {
-            window.open(linkProps.href, '_blank', 'noopener,noreferrer')
-          } else {
-            window.location.href = linkProps.href
-          }
-        }
-      }}
-      classNames={{ root: cn(`${global.prefixCls}-menu-item`, classNames?.root) }}
+      className={cn(`${global.prefixCls}-menu-item`, classNames?.root)}
       styles={{ root: styles?.root }}
     >
       <Link
         {...linkProps}
+        disabled={isDisabled}
         tabIndex={-1}
-        aria-disabled={isDisabled || undefined}
-        onClick={(e) => {
-          e.stopPropagation()
-          if (!isDisabled) onClick?.(e as unknown as React.MouseEvent<HTMLAnchorElement>)
-        }}
         className={cn(`${global.prefixCls}-menu-link`, classNames?.link)}
-        style={styles?.link}
+        style={{ display: 'flex', flexDirection: direction, gap, alignItems, ...styles?.link }}
       >
         {prefix && (
           <span
@@ -92,14 +76,16 @@ export const MenuItem = ({
           </span>
         )}
 
-        <span
-          className={cn(`${global.prefixCls}-menu-content`, classNames?.content)}
-          style={styles?.content}
-        >
-          {content}
-        </span>
+        {!isCollapsed && (
+          <span
+            className={cn(`${global.prefixCls}-menu-content`, classNames?.content)}
+            style={styles?.content}
+          >
+            {content}
+          </span>
+        )}
 
-        {suffix && (
+        {!isCollapsed && suffix && (
           <span
             className={cn(`${global.prefixCls}-menu-suffix`, classNames?.suffix)}
             style={styles?.suffix}

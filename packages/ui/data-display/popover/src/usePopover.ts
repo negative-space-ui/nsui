@@ -37,10 +37,6 @@ export interface UsePopoverOptions {
   trigger?: PopoverTrigger
   hoverDelay?: { open?: number; close?: number } | number
   overlay?: boolean
-  /**
-   * When set, disables floating-ui anchor positioning and places the element
-   * at a fixed position on the screen. Useful for modals and drawers.
-   */
   fixedPosition?: FixedPosition
 }
 

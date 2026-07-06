@@ -6,11 +6,11 @@ import React, { useState } from 'react'
 
 export interface CheckboxProps extends Omit<
   FlexProps<'label'>,
-  'as' | 'type' | 'className' | 'style'
+  'as' | 'type' | 'className' | 'style' | 'onChange'
 > {
   checked?: boolean
-  defaultChecked?: boolean
   disabled?: boolean
+  onChange?: (checked: boolean) => void
   classNames?: {
     field?: {
       root?: string
@@ -35,39 +35,53 @@ export interface CheckboxProps extends Omit<
   checkmarkProps?: Omit<CheckmarkProps, 'checked' | 'className' | 'style'>
 }
 
-export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
+export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
   (
     {
       classNames,
       styles,
       children,
       checked,
-      defaultChecked = false,
+      onChange,
       disabled,
       checkmarkProps,
       alignItems = 'center',
       justify = 'center',
       error,
+      onClick,
+      onKeyDown,
       ...props
     },
     ref
   ) => {
     const { global } = useNSUI()
-    const [internalChecked, setInternalChecked] = useState(defaultChecked)
-    const isChecked = checked !== undefined ? checked : internalChecked
+    const [internalChecked, setInternalChecked] = useState(checked ?? false)
+    const isControlled = checked !== undefined
+    const isChecked = isControlled ? checked : internalChecked
 
     const toggleChecked = () => {
       if (disabled) return
-      if (checked === undefined) {
-        setInternalChecked(!internalChecked)
+      const next = !isChecked
+
+      if (!isControlled) {
+        setInternalChecked(next)
       }
+
+      onChange?.(next)
     }
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const handleClick: React.ComponentProps<'label'>['onClick'] = (e) => {
+      toggleChecked()
+      onClick?.(e)
+    }
+
+    const handleKeyDown: React.ComponentProps<'label'>['onKeyDown'] = (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault()
         toggleChecked()
       }
+
+      onKeyDown?.(e)
     }
 
     return (
@@ -88,7 +102,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
           aria-disabled={disabled}
           data-disabled={disabled}
           tabIndex={disabled ? -1 : 0}
-          onClick={toggleChecked}
+          onClick={handleClick}
           onKeyDown={handleKeyDown}
         >
           <span

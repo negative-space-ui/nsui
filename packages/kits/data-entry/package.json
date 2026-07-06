@@ -44,6 +44,7 @@
     "@negative-space/input": "workspace:*",
     "@negative-space/listbox": "workspace:*",
     "@negative-space/radio": "workspace:*",
+    "@negative-space/select": "workspace:*",
     "@negative-space/switch": "workspace:*"
   },
   "devDependencies": {

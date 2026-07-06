@@ -42,7 +42,9 @@
     "@negative-space/divider": "workspace:*",
     "@negative-space/field": "workspace:*",
     "@negative-space/flex": "workspace:*",
-    "@negative-space/grid": "workspace:*"
+    "@negative-space/grid": "workspace:*",
+    "@negative-space/resizable": "workspace:*",
+    "@negative-space/sidebar": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

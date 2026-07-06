@@ -4,7 +4,7 @@ import { Modal, type ModalProps } from '../src'
 import { useModal } from '../src'
 
 export default {
-  title: 'Feedback/Overlay/Modal',
+  title: 'Feedback/Modal',
   component: Modal,
   tags: ['autodocs'],
   args: {

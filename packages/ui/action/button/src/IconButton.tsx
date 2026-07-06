@@ -4,14 +4,44 @@ import React from 'react'
 
 import { useButtonContextConditional } from './useButtonContext'
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type IconChildProps = {
+  className?: string
+  style?: React.CSSProperties
+}
+
+export interface IconButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'className' | 'style' | 'children'
+> {
+  children: React.ReactElement<IconChildProps>
+
+  classNames?: {
+    root?: string
+    icon?: string
+  }
+
+  styles?: {
+    root?: React.CSSProperties
+    icon?: React.CSSProperties
+  }
+
   controlled?: boolean
   animation?: ClickableAnimation
 }
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    { className, controlled, style, type = 'button', disabled, animation, onClick, ...props },
+    {
+      classNames,
+      styles,
+      controlled,
+      type = 'button',
+      children,
+      disabled,
+      animation,
+      onClick,
+      ...props
+    },
     ref
   ) => {
     const { global, components } = useNSUI()
@@ -25,23 +55,41 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (isDisabled) return
+
       const isKeyboard = e.detail === 0
       if (!rippleDisabled) createRipple(e, { centered: isKeyboard })
 
       onClick?.(e)
     }
 
+    const child = React.cloneElement(children, {
+      className: cn(
+        `${global.prefixCls}-icon-button-icon`,
+        classNames?.icon,
+        children.props.className
+      ),
+      style: {
+        ...styles?.icon,
+        ...children.props.style
+      }
+    })
+
     return (
       <button
+        {...props}
         ref={ref}
         type={type}
         disabled={isDisabled}
         data-disabled={isDisabled}
         onClick={handleClick}
-        className={cn(`${global.prefixCls}-icon-btn ${global.prefixCls}-clickable`, className)}
-        style={style}
-        {...props}
-      />
+        className={cn(
+          `${global.prefixCls}-icon-button ${global.prefixCls}-clickable`,
+          classNames?.root
+        )}
+        style={styles?.root}
+      >
+        {child}
+      </button>
     )
   }
 )

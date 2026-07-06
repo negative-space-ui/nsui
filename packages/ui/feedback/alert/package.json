@@ -1,0 +1,57 @@
+{
+  "name": "@negative-space/alert",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A lightweight Alert component from Negative Space, enabling fully custom interactive UI experiences",
+  "keywords": [
+    "alert",
+    "component",
+    "feedback",
+    "negative-space",
+    "nsui",
+    "react",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/alert"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "dev": "pnpm build:fast --watch",
+    "lint": "eslint . --ext ts,tsx",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@negative-space/button": "workspace:*",
+    "@negative-space/flex": "workspace:*",
+    "@negative-space/info": "workspace:*",
+    "@negative-space/progress-bar": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/tooltip": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}
