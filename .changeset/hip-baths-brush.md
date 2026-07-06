@@ -3,4 +3,4 @@
 '@negative-space/typography': minor
 ---
 
-Initial release of Info Component
+Initial release of Info component
