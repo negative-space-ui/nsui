@@ -45,20 +45,20 @@
     "build": "tsup",
     "clean": "rimraf dist .turbo dist",
     "postpack": "clean-package restore",
-    "prepack": "node scripts/replace-workspace-versions.js && clean-package",
+    "prepack": "pnpm tsx tools/replace-workspace-versions.ts && clean-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/action": "workspace:*",
-    "@negative-space/app": "workspace:*",
-    "@negative-space/data-display": "workspace:*",
-    "@negative-space/data-entry": "workspace:*",
-    "@negative-space/feedback": "workspace:*",
-    "@negative-space/layout": "workspace:*",
-    "@negative-space/navigation": "workspace:*",
-    "@negative-space/primitive": "workspace:*",
-    "@negative-space/provider": "workspace:*",
-    "@negative-space/typography": "workspace:*"
+    "@negative-space/action": "1.0.16",
+    "@negative-space/app": "1.0.2",
+    "@negative-space/data-display": "1.3.0",
+    "@negative-space/data-entry": "1.5.0",
+    "@negative-space/feedback": "1.4.0",
+    "@negative-space/layout": "1.4.0",
+    "@negative-space/navigation": "1.0.2",
+    "@negative-space/primitive": "2.0.5",
+    "@negative-space/provider": "1.10.1",
+    "@negative-space/typography": "2.1.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

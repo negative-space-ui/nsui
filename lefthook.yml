@@ -1,4 +1,11 @@
+pre-commit:
+  commands:
+    check:
+      run: pnpm lint
+      glob: '*.{ts,tsx}'
+      stage_fixed: true
+
 commit-msg:
   commands:
-    commitlint:
-      run: npx commitlint --edit {1}
+    validate-commit:
+      run: pnpm tsx tools/commit-msg.ts {1}
