@@ -67,11 +67,7 @@ export function ListboxOption({
       onClick={handleClick}
       onSelect={select}
       data-selected={isSelected}
-      className={cn(
-        `${global.prefixCls}-listbox-option`,
-        `${global.prefixCls}-clickable`,
-        classNames?.root
-      )}
+      className={cn(`${global.prefixCls}-listbox-option`, classNames?.root)}
       styles={{ root: styles?.root }}
     >
       <span>{children}</span>

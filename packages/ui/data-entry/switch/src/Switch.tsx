@@ -61,10 +61,7 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             if (typeof ref === 'function') ref(node)
             else if (ref) ref.current = node
           }}
-          className={cn(
-            `${global.prefixCls}-switch ${global.prefixCls}-clickable`,
-            classNames?.root
-          )}
+          className={cn(classNames?.root)}
           style={{ position: 'relative', ...styles?.root }}
           {...props}
         >

@@ -116,7 +116,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-disabled={isDisabled}
         aria-label={resolvedAriaLabel}
         onClick={handleClick}
-        className={cn(`${global.prefixCls}-btn ${global.prefixCls}-clickable`, classNames?.btn)}
+        className={cn(`${global.prefixCls}-btn`, classNames?.btn)}
         style={styles?.btn}
       >
         {spinnerPosition === 'full' && loading ? (

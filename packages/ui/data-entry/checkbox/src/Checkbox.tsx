@@ -92,10 +92,7 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
           as="label"
           alignItems={alignItems}
           justify={justify}
-          className={cn(
-            `${global.prefixCls}-checkbox-label ${global.prefixCls}-clickable`,
-            classNames?.label
-          )}
+          className={cn(`${global.prefixCls}-checkbox-label`, classNames?.label)}
           style={styles?.label}
           role="checkbox"
           aria-checked={isChecked}
