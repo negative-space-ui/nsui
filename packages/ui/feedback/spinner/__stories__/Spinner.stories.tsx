@@ -16,4 +16,8 @@ export default {
   }
 }
 
-export const Default = (args: SpinnerProps) => <Spinner {...args} />
+export const Default = (args: SpinnerProps) => (
+  <div className="h-8 w-8">
+    <Spinner {...args} />
+  </div>
+)
