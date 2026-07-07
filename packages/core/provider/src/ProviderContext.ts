@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react'
 
-import type { ComponentsConfigRequired, GlobalConfigRequired } from './types'
+import type { ComponentsConfigRequired } from './types/components'
+import type { GlobalConfigRequired } from './types/global'
 
 export type NSUIContextProps = {
   components: ComponentsConfigRequired

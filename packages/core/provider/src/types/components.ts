@@ -1,29 +1,50 @@
-import react from 'react'
-
-export type MotionDurations = {
-  fade?: number
-  pop?: number
-  ripple?: number
-  fadeScale?: number
-}
-
-export type Colors = {
-  error: NonNullable<react.CSSProperties['color']>
-}
-
-export type GlobalConfig = {
-  colors?: Colors
-  motionDurations?: MotionDurations
-  prefixCls?: string
-  tooltip?: boolean
-}
-
-export type GlobalConfigRequired = Required<GlobalConfig>
-
 export type ClickableAnimation = 'ripple' | 'none'
 export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
 
 export type ValidationMode = 'onBlur' | 'onChange' | 'onSubmit' | 'all'
+
+export type PolymorphicElement =
+  | 'div'
+  | 'aside'
+  | 'header'
+  | 'footer'
+  | 'main'
+  | 'section'
+  | 'nav'
+  | 'article'
+  | 'label'
+  | 'fieldset'
+  | 'a'
+  | 'ol'
+  | 'ul'
+  | 'li'
+  | 'dl'
+  | 'dt'
+  | 'dd'
+  | 'button'
+  | 'form'
+
+export type PolymorphicElementMap = {
+  div: HTMLDivElement
+  aside: HTMLElement
+  header: HTMLElement
+  footer: HTMLElement
+  main: HTMLElement
+  section: HTMLElement
+  nav: HTMLElement
+  article: HTMLElement
+  label: HTMLLabelElement
+  fieldset: HTMLFieldSetElement
+  a: HTMLAnchorElement
+  ol: HTMLOListElement
+  ul: HTMLUListElement
+  li: HTMLLIElement
+  dl: HTMLDListElement
+  dt: HTMLElement
+  dd: HTMLElement
+  button: HTMLButtonElement
+  form: HTMLFormElement
+}
 
 export type Alert = {
   closable?: boolean

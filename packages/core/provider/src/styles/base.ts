@@ -1,6 +1,6 @@
 import { injectStyle } from '@negative-space/inject-css'
 
-import type { GlobalConfigRequired } from '../types'
+import type { GlobalConfigRequired } from '../types/global'
 
 export const baseColors = (global: GlobalConfigRequired) => {
   injectStyle(':root', {

@@ -1,5 +1,11 @@
 export { cn, mergeCn } from './cn'
-export type { ClickableAnimation, OverlayAnimation, ValidationMode } from '@negative-space/provider'
+export type {
+  ClickableAnimation,
+  OverlayAnimation,
+  PolymorphicElement,
+  PolymorphicElementMap,
+  ValidationMode
+} from '@negative-space/provider'
 export { useNSUI } from '@negative-space/provider'
 export {
   Check,
