@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Divider, type DividerProps } from '../src'
+import { Divider, type DividerProps } from '..'
 
 export default {
   title: 'Layout/Divider',

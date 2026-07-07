@@ -1,7 +1,7 @@
 import { Eye } from '@negative-space/system'
 import React, { useState } from 'react'
 
-import { Alert, type AlertProps } from '../src'
+import { Alert, type AlertProps } from '..'
 
 export default {
   title: 'Feedback/Alert',

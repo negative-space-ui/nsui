@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Field, type FieldProps } from '../src'
+import { Field, type FieldProps } from '..'
 
 export default {
   title: 'Layout/Field',

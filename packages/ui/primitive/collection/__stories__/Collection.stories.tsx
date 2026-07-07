@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Collection, type CollectionProps } from '../src'
+import { Collection, type CollectionProps } from '..'
 
 export default {
   title: 'Primitive/Collection',

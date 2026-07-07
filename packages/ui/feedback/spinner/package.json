@@ -32,9 +32,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "clean": "rimraf dist .turbo",
-    "dev": "pnpm build:fast --watch",
-    "lint": "eslint . --ext ts,tsx",
+    "clean": "rimraf dist .turbo dist",
     "prepack": "clean-package",
     "postpack": "clean-package restore",
     "typecheck": "tsc --noEmit"

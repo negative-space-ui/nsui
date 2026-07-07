@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Switch, type SwitchProps } from '../src'
+import { Switch, type SwitchProps } from '..'
 
 export default {
   title: 'Data Entry/Switch',

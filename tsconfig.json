@@ -12,10 +12,12 @@
     "noEmit": true,
     "moduleResolution": "bundler",
     "importsNotUsedAsValues": "remove",
+    "types": ["node"],
     "paths": {
       "@negative-space/*": ["./packages/*/src"]
     }
   },
-  "include": ["packages"],
+
+  "include": ["packages", "tools"],
   "exclude": ["**/node_modules", "**/dist", "**/.turbo"]
 }

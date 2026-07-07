@@ -1,5 +1,6 @@
 dist
 node_modules
 plop-templates
+pnpm-lock.yaml
 .changeset
 .next
