@@ -16,7 +16,7 @@ importers:
         version: 9.39.2
       '@storybook/react':
         specifier: ^10.2.19
-        version: 10.2.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@5.9.3)
+        version: 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       '@storybook/test':
         specifier: ^8.6.15
         version: 8.6.15
@@ -25,7 +25,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: ^16.3.2
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
@@ -60,11 +60,11 @@ importers:
         specifier: ^0.7.2
         version: 0.7.2(prettier@3.7.4)
       react:
-        specifier: ^19.2.7
-        version: 19.2.7
+        specifier: ^19.2.3
+        version: 19.2.3
       react-dom:
-        specifier: 19.2.7
-        version: 19.2.7(react@19.2.7)
+        specifier: 19.2.3
+        version: 19.2.3(react@19.2.3)
       rimraf:
         specifier: ^6.1.2
         version: 6.1.2
@@ -183,7 +183,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -196,7 +196,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -212,7 +212,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -234,7 +234,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -409,34 +409,34 @@ importers:
     dependencies:
       '@negative-space/action':
         specifier: 1.0.16
-        version: 1.0.16(react@19.2.7)
+        version: 1.0.16(react@19.2.3)
       '@negative-space/app':
         specifier: 1.0.2
-        version: 1.0.2(react@19.2.7)
+        version: 1.0.2(react@19.2.3)
       '@negative-space/data-display':
         specifier: 1.3.0
-        version: 1.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 1.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@negative-space/data-entry':
         specifier: 1.5.0
-        version: 1.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.3.6)
+        version: 1.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@4.3.6)
       '@negative-space/feedback':
         specifier: 1.4.0
-        version: 1.4.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 1.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@negative-space/layout':
         specifier: 1.4.0
-        version: 1.4.0(react@19.2.7)
+        version: 1.4.0(react@19.2.3)
       '@negative-space/navigation':
         specifier: 1.0.2
-        version: 1.0.2(react@19.2.7)
+        version: 1.0.2(react@19.2.3)
       '@negative-space/primitive':
         specifier: 2.0.5
-        version: 2.0.5(react@19.2.7)
+        version: 2.0.5(react@19.2.3)
       '@negative-space/provider':
         specifier: 1.10.1
-        version: 1.10.1(react@19.2.7)
+        version: 1.10.1(react@19.2.3)
       '@negative-space/typography':
         specifier: 2.1.0
-        version: 2.1.0(react@19.2.7)
+        version: 2.1.0(react@19.2.3)
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -461,7 +461,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -477,7 +477,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -499,7 +499,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -518,7 +518,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -528,7 +528,7 @@ importers:
     dependencies:
       '@floating-ui/react':
         specifier: ^0.27.18
-        version: 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -537,7 +537,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -553,7 +553,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -572,7 +572,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -597,7 +597,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -622,7 +622,7 @@ importers:
         specifier: workspace:*
         version: link:../input
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -653,7 +653,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -678,7 +678,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -700,7 +700,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -728,7 +728,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -747,7 +747,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -778,7 +778,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -794,7 +794,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -819,7 +819,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -837,17 +837,17 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3
       react-dom:
-        specifier: ^19.2.7
-        version: 19.2.7(react@19.2.3)
+        specifier: ^19.2.3
+        version: 19.2.3(react@19.2.3)
       sonner:
         specifier: ^2.0.7
-        version: 2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+        version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@negative-space/button':
         specifier: workspace:*
         version: link:../../action/button
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       '@types/react-dom':
         specifier: ^19.2.3
@@ -866,7 +866,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -882,7 +882,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -898,7 +898,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -920,7 +920,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -936,7 +936,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -952,7 +952,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -960,6 +960,9 @@ importers:
 
   packages/ui/layout/resizable:
     dependencies:
+      '@negative-space/divider':
+        specifier: workspace:*
+        version: link:../divider
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../flex
@@ -971,7 +974,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -993,7 +996,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1009,7 +1012,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1031,7 +1034,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1062,7 +1065,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1078,7 +1081,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1100,7 +1103,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -1116,7 +1119,7 @@ importers:
         version: 19.2.3
     devDependencies:
       '@types/react':
-        specifier: ^19.2.7
+        specifier: ^19.2.3
         version: 19.2.7
       typescript:
         specifier: ^5.9.3
@@ -5325,10 +5328,6 @@ packages:
     resolution: {integrity: sha512-Ku/hhYbVjOQnXDZFv2+RibmLFGwFdeeKHFcOTlrt7xplBnya5OGn/hIRDsqDiSUcfORsDC7MPxwork8jBwsIWA==}
     engines: {node: '>=0.10.0'}
 
-  react@19.2.7:
-    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
-    engines: {node: '>=0.10.0'}
-
   read-yaml-file@1.1.0:
     resolution: {integrity: sha512-VIMnQi/Z4HT2Fxuwg5KrY174U1VdUIASQVWXXyqtNRtxSr9IYkn1rsI6Tb6HsrHCmB7gVpNwX6JxPTHcH6IoTA==}
     engines: {node: '>=6'}
@@ -6762,17 +6761,25 @@ snapshots:
       '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.10
 
+  '@floating-ui/react-dom@2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      '@floating-ui/dom': 1.7.5
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+
   '@floating-ui/react-dom@2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@floating-ui/dom': 1.7.5
       react: 19.2.3
       react-dom: 19.2.7(react@19.2.3)
 
-  '@floating-ui/react-dom@2.1.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@floating-ui/react@0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/dom': 1.7.5
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@floating-ui/utils': 0.2.10
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+      tabbable: 6.4.0
 
   '@floating-ui/react@0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -6780,14 +6787,6 @@ snapshots:
       '@floating-ui/utils': 0.2.10
       react: 19.2.3
       react-dom: 19.2.7(react@19.2.3)
-      tabbable: 6.4.0
-
-  '@floating-ui/react@0.27.18(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@floating-ui/utils': 0.2.10
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
       tabbable: 6.4.0
 
   '@floating-ui/utils@0.2.10': {}
@@ -7179,331 +7178,359 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@negative-space/action@1.0.16(react@19.2.7)':
+  '@negative-space/action@1.0.16(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
+      '@negative-space/button': 2.8.0(react@19.2.3)
     transitivePeerDependencies:
       - react
 
-  '@negative-space/alert@1.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/alert@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/info': 1.0.0(react@19.2.7)
-      '@negative-space/progress-bar': 1.0.0(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/info': 1.0.0(react@19.2.3)
+      '@negative-space/progress-bar': 1.0.0(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/app@1.0.2(react@19.2.7)':
+  '@negative-space/alert@1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/theme': 1.0.2(react@19.2.7)
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/info': 1.0.0(react@19.2.3)
+      '@negative-space/progress-bar': 1.0.0(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      react: 19.2.3
+    transitivePeerDependencies:
+      - react-dom
+
+  '@negative-space/app@1.0.2(react@19.2.3)':
+    dependencies:
+      '@negative-space/theme': 1.0.2(react@19.2.3)
     transitivePeerDependencies:
       - react
 
-  '@negative-space/button@2.8.0(react@19.2.7)':
+  '@negative-space/button@2.8.0(react@19.2.3)':
     dependencies:
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/ripple': 1.1.2(react@19.2.7)
-      '@negative-space/spinner': 2.2.3(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/ripple': 1.1.2(react@19.2.3)
+      '@negative-space/spinner': 2.2.3(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/checkbox@1.5.3(react@19.2.7)':
+  '@negative-space/checkbox@1.5.3(react@19.2.3)':
     dependencies:
-      '@negative-space/checkmark': 1.2.3(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/checkmark': 1.2.3(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/checkmark@1.2.3(react@19.2.7)':
+  '@negative-space/checkmark@1.2.3(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/code-block@1.0.3(react@19.2.7)':
+  '@negative-space/code-block@1.0.3(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
+      '@negative-space/system': 1.4.0(react@19.2.3)
       '@types/prismjs': 1.26.6
       prismjs: 1.30.0
-      react: 19.2.7
+      react: 19.2.3
 
-  '@negative-space/collection@2.0.5(react@19.2.7)':
+  '@negative-space/collection@2.0.5(react@19.2.3)':
     dependencies:
-      '@negative-space/divider': 1.1.8(react@19.2.7)
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/grid': 1.3.5(react@19.2.7)
-      '@negative-space/heading': 1.2.4(react@19.2.7)
-      '@negative-space/roving-focus': 1.2.0(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/divider': 1.1.8(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/grid': 1.3.5(react@19.2.3)
+      '@negative-space/heading': 1.2.4(react@19.2.3)
+      '@negative-space/roving-focus': 1.2.0(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/data-display@1.3.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/data-display@1.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/code-block': 1.0.3(react@19.2.7)
-      '@negative-space/list': 1.4.5(react@19.2.7)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/surface': 1.0.0(react@19.2.7)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@negative-space/code-block': 1.0.3(react@19.2.3)
+      '@negative-space/list': 1.4.5(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/surface': 1.0.0(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@negative-space/data-entry@1.5.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.3.6)':
+  '@negative-space/data-entry@1.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@4.3.6)':
     dependencies:
-      '@negative-space/checkbox': 1.5.3(react@19.2.7)
-      '@negative-space/form': 1.6.1(react@19.2.7)(zod@4.3.6)
-      '@negative-space/input': 1.5.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/listbox': 1.5.3(react@19.2.7)
-      '@negative-space/radio': 1.7.3(react@19.2.7)
-      '@negative-space/select': 1.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/switch': 1.0.3(react@19.2.7)
+      '@negative-space/checkbox': 1.5.3(react@19.2.3)
+      '@negative-space/form': 1.6.1(react@19.2.3)(zod@4.3.6)
+      '@negative-space/input': 1.5.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/listbox': 1.5.3(react@19.2.3)
+      '@negative-space/radio': 1.7.3(react@19.2.3)
+      '@negative-space/select': 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/switch': 1.0.3(react@19.2.3)
     transitivePeerDependencies:
       - react
       - react-dom
       - zod
 
-  '@negative-space/divider@1.1.8(react@19.2.7)':
+  '@negative-space/divider@1.1.8(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/feedback@1.4.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/feedback@1.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/alert': 1.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/checkmark': 1.2.3(react@19.2.7)
-      '@negative-space/modal': 1.1.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/notification': 1.0.0(react@19.2.7)
-      '@negative-space/progress-bar': 1.0.0(react@19.2.7)
-      '@negative-space/spinner': 2.2.3(react@19.2.7)
+      '@negative-space/alert': 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/checkmark': 1.2.3(react@19.2.3)
+      '@negative-space/modal': 1.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/notification': 1.0.0(react@19.2.3)
+      '@negative-space/progress-bar': 1.0.0(react@19.2.3)
+      '@negative-space/spinner': 2.2.3(react@19.2.3)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@negative-space/field@1.1.3(react@19.2.7)':
+  '@negative-space/field@1.1.3(react@19.2.3)':
     dependencies:
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      '@negative-space/text': 1.2.4(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/text': 1.2.4(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/flex@1.2.5(react@19.2.7)':
+  '@negative-space/flex@1.2.5(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/form@1.6.1(react@19.2.7)(zod@4.3.6)':
+  '@negative-space/form@1.6.1(react@19.2.3)(zod@4.3.6)':
     dependencies:
-      '@negative-space/grid': 1.3.5(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/grid': 1.3.5(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
       zod: 4.3.6
 
-  '@negative-space/grid@1.3.5(react@19.2.7)':
+  '@negative-space/grid@1.3.5(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/heading@1.2.4(react@19.2.7)':
+  '@negative-space/heading@1.2.4(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/info@1.0.0(react@19.2.7)':
+  '@negative-space/info@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/heading': 1.2.4(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      '@negative-space/text': 1.2.4(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/heading': 1.2.4(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/text': 1.2.4(react@19.2.3)
+      react: 19.2.3
 
   '@negative-space/inject-css@1.3.0': {}
 
-  '@negative-space/input@1.5.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/input@1.5.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/spinner': 2.2.3(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/spinner': 2.2.3(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/layout@1.4.0(react@19.2.7)':
+  '@negative-space/layout@1.4.0(react@19.2.3)':
     dependencies:
-      '@negative-space/divider': 1.1.8(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/grid': 1.3.5(react@19.2.7)
-      '@negative-space/resizable': 1.0.0(react@19.2.7)
-      '@negative-space/sidebar': 1.0.0(react@19.2.7)
+      '@negative-space/divider': 1.1.8(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/grid': 1.3.5(react@19.2.3)
+      '@negative-space/resizable': 1.0.0(react@19.2.3)
+      '@negative-space/sidebar': 1.0.0(react@19.2.3)
     transitivePeerDependencies:
       - react
 
-  '@negative-space/link@1.1.8(react@19.2.7)':
+  '@negative-space/link@1.1.8(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/list@1.4.5(react@19.2.7)':
+  '@negative-space/list@1.4.5(react@19.2.3)':
     dependencies:
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/listbox@1.5.3(react@19.2.7)':
+  '@negative-space/listbox@1.5.3(react@19.2.3)':
     dependencies:
-      '@negative-space/checkmark': 1.2.3(react@19.2.7)
-      '@negative-space/collection': 2.0.5(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/checkmark': 1.2.3(react@19.2.3)
+      '@negative-space/collection': 2.0.5(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/menu@1.1.0(react@19.2.7)':
+  '@negative-space/menu@1.1.0(react@19.2.3)':
     dependencies:
-      '@negative-space/collection': 2.0.5(react@19.2.7)
-      '@negative-space/link': 1.1.8(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/collection': 2.0.5(react@19.2.3)
+      '@negative-space/link': 1.1.8(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/modal@1.1.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/modal@1.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/navigation@1.0.2(react@19.2.7)':
+  '@negative-space/navigation@1.0.2(react@19.2.3)':
     dependencies:
-      '@negative-space/link': 1.1.8(react@19.2.7)
-      '@negative-space/menu': 1.1.0(react@19.2.7)
+      '@negative-space/link': 1.1.8(react@19.2.3)
+      '@negative-space/menu': 1.1.0(react@19.2.3)
     transitivePeerDependencies:
       - react
 
-  '@negative-space/notification@1.0.0(react@19.2.7)':
+  '@negative-space/notification@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/alert': 1.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
-      sonner: 2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@negative-space/alert': 1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
+      react-dom: 19.2.7(react@19.2.3)
+      sonner: 2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
 
-  '@negative-space/popover@1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/popover@1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/react': 0.27.18(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@floating-ui/react': 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/primitive@2.0.5(react@19.2.7)':
+  '@negative-space/popover@1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/collection': 2.0.5(react@19.2.7)
+      '@floating-ui/react': 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
+    transitivePeerDependencies:
+      - react-dom
+
+  '@negative-space/primitive@2.0.5(react@19.2.3)':
+    dependencies:
+      '@negative-space/collection': 2.0.5(react@19.2.3)
     transitivePeerDependencies:
       - react
 
-  '@negative-space/progress-bar@1.0.0(react@19.2.7)':
+  '@negative-space/progress-bar@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/provider@1.10.1(react@19.2.7)':
+  '@negative-space/provider@1.10.1(react@19.2.3)':
     dependencies:
       '@negative-space/inject-css': 1.3.0
-      react: 19.2.7
+      react: 19.2.3
 
-  '@negative-space/radio@1.7.3(react@19.2.7)':
+  '@negative-space/radio@1.7.3(react@19.2.3)':
     dependencies:
-      '@negative-space/collection': 2.0.5(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/collection': 2.0.5(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/resizable@1.0.0(react@19.2.7)':
+  '@negative-space/resizable@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/flex': 1.2.5(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/flex': 1.2.5(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/ripple@1.1.2(react@19.2.7)':
+  '@negative-space/ripple@1.1.2(react@19.2.3)':
     dependencies:
-      react: 19.2.7
+      react: 19.2.3
 
-  '@negative-space/roving-focus@1.2.0(react@19.2.7)':
+  '@negative-space/roving-focus@1.2.0(react@19.2.3)':
     dependencies:
-      react: 19.2.7
+      react: 19.2.3
 
-  '@negative-space/select@1.0.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/select@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/listbox': 1.5.3(react@19.2.7)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/listbox': 1.5.3(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/sidebar@1.0.0(react@19.2.7)':
+  '@negative-space/sidebar@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.7)
-      '@negative-space/resizable': 1.0.0(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/button': 2.8.0(react@19.2.3)
+      '@negative-space/resizable': 1.0.0(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/spinner@2.2.3(react@19.2.7)':
+  '@negative-space/spinner@2.2.3(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/surface@1.0.0(react@19.2.7)':
+  '@negative-space/surface@1.0.0(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/switch@1.0.3(react@19.2.7)':
+  '@negative-space/switch@1.0.3(react@19.2.3)':
     dependencies:
-      '@negative-space/field': 1.1.3(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/field': 1.1.3(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/system@1.4.0(react@19.2.7)':
+  '@negative-space/system@1.4.0(react@19.2.3)':
     dependencies:
-      '@negative-space/provider': 1.10.1(react@19.2.7)
+      '@negative-space/provider': 1.10.1(react@19.2.3)
       clsx: 2.1.1
-      lucide-react: 0.576.0(react@19.2.7)
-      react: 19.2.7
+      lucide-react: 0.576.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/text@1.2.4(react@19.2.7)':
+  '@negative-space/text@1.2.4(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/theme@1.0.2(react@19.2.7)':
+  '@negative-space/theme@1.0.2(react@19.2.3)':
     dependencies:
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
 
-  '@negative-space/tooltip@1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@negative-space/tooltip@1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@negative-space/system': 1.4.0(react@19.2.7)
-      react: 19.2.7
+      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
     transitivePeerDependencies:
       - react-dom
 
-  '@negative-space/typography@2.1.0(react@19.2.7)':
+  '@negative-space/tooltip@1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/heading': 1.2.4(react@19.2.7)
-      '@negative-space/info': 1.0.0(react@19.2.7)
-      '@negative-space/text': 1.2.4(react@19.2.7)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      '@negative-space/system': 1.4.0(react@19.2.3)
+      react: 19.2.3
+    transitivePeerDependencies:
+      - react-dom
+
+  '@negative-space/typography@2.1.0(react@19.2.3)':
+    dependencies:
+      '@negative-space/heading': 1.2.4(react@19.2.3)
+      '@negative-space/info': 1.0.0(react@19.2.3)
+      '@negative-space/text': 1.2.4(react@19.2.3)
     transitivePeerDependencies:
       - react
 
@@ -7680,10 +7707,10 @@ snapshots:
     dependencies:
       '@mdx-js/react': 3.1.1(@types/react@19.2.7)(react@19.2.3)
       '@storybook/csf-plugin': 10.2.19(esbuild@0.28.1)(rollup@4.53.5)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))(vite@7.3.0(@types/node@20.19.27)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.23.0))
-      '@storybook/icons': 2.0.1(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
-      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))
+      '@storybook/icons': 2.0.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))
       react: 19.2.3
-      react-dom: 19.2.7(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
       ts-dedent: 2.2.0
     transitivePeerDependencies:
@@ -7729,10 +7756,10 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.1(react@19.2.3)
 
-  '@storybook/icons@2.0.1(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
+  '@storybook/icons@2.0.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       react: 19.2.3
-      react-dom: 19.2.7(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
 
   '@storybook/instrumenter@8.6.15':
     dependencies:
@@ -7767,16 +7794,11 @@ snapshots:
       react-dom: 19.2.1(react@19.2.3)
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
 
-  '@storybook/react-dom-shim@10.2.19(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))':
+  '@storybook/react-dom-shim@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))':
     dependencies:
       react: 19.2.3
-      react-dom: 19.2.7(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
-
-  '@storybook/react-dom-shim@10.2.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
-    dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
 
   '@storybook/react-vite@10.2.19(esbuild@0.28.1)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)(rollup@4.53.5)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))(typescript@5.9.3)(vite@7.3.0(@types/node@20.19.27)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.23.0))':
     dependencies:
@@ -7813,13 +7835,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/react@10.2.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@5.9.3)':
+  '@storybook/react@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      react: 19.2.7
+      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))
+      react: 19.2.3
       react-docgen: 8.0.2
-      react-dom: 19.2.7(react@19.2.7)
+      react-dom: 19.2.3(react@19.2.3)
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -7949,12 +7971,12 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@testing-library/react@16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@babel/runtime': 7.28.4
       '@testing-library/dom': 10.4.1
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
     optionalDependencies:
       '@types/react': 19.2.7
       '@types/react-dom': 19.2.3(@types/react@19.2.7)
@@ -8978,7 +9000,7 @@ snapshots:
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.2(jiti@2.6.1))
@@ -9011,7 +9033,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -9026,7 +9048,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -10364,10 +10386,6 @@ snapshots:
     dependencies:
       react: 19.2.3
 
-  lucide-react@0.576.0(react@19.2.7):
-    dependencies:
-      react: 19.2.7
-
   lz-string@1.5.0: {}
 
   magic-string@0.30.21:
@@ -10843,11 +10861,6 @@ snapshots:
       react: 19.2.3
       scheduler: 0.27.0
 
-  react-dom@19.2.7(react@19.2.7):
-    dependencies:
-      react: 19.2.7
-      scheduler: 0.27.0
-
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -10857,8 +10870,6 @@ snapshots:
   react-is@19.2.7: {}
 
   react@19.2.3: {}
-
-  react@19.2.7: {}
 
   read-yaml-file@1.1.0:
     dependencies:
@@ -11124,15 +11135,15 @@ snapshots:
 
   slash@3.0.0: {}
 
+  sonner@2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+
   sonner@2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3):
     dependencies:
       react: 19.2.3
       react-dom: 19.2.7(react@19.2.3)
-
-  sonner@2.0.7(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
-    dependencies:
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
 
   source-map-js@1.2.1: {}
 
