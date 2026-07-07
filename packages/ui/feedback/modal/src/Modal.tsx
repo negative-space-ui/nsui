@@ -62,10 +62,7 @@ export const Modal = ({
             title={!global.tooltip ? CloseTitle : undefined}
             onClick={modal.close}
             classNames={classNames?.closeButton}
-            styles={{
-              root: { position: 'absolute', right: '0.5rem', top: '0.5rem', ...styles?.closeIcon },
-              ...styles?.closeButton
-            }}
+            styles={styles?.closeButton}
           />
         )}
         {children}

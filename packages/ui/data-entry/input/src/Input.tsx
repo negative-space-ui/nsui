@@ -122,12 +122,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <Flex
           alignItems="center"
           className={cn(`${global.prefixCls}-input-root`, classNames?.root)}
-          style={{ marginTop: '6px', ...styles?.root }}
+          style={styles?.root}
         >
           {showPrefix && (
             <span
               className={cn(`${global.prefixCls}-input-prefix`, classNames?.prefix)}
-              style={{ display: 'flex', alignItems: 'center', ...styles?.prefix }}
+              style={styles?.prefix}
             >
               {loading && spinnerPosition === 'prefix' ? resolvedSpinner : prefix}
             </span>
@@ -142,13 +142,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             onChange={handleChange}
             onPaste={handlePaste}
             className={cn(`${global.prefixCls}-input-content`, classNames?.content)}
-            style={{ outline: 'none', flex: 1, minWidth: 0, ...styles?.content }}
+            style={styles?.content}
           />
 
           {showSuffix && (
             <span
               className={cn(`${global.prefixCls}-input-suffix`, classNames?.suffix)}
-              style={{ display: 'flex', alignItems: 'center', ...styles?.suffix }}
+              style={styles?.suffix}
             >
               {loading && spinnerPosition === 'suffix' ? resolvedSpinner : suffix}
             </span>

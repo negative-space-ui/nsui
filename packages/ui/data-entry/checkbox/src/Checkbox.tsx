@@ -107,33 +107,19 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
             data-checked={isChecked}
             data-disabled={disabled}
             className={cn(`${global.prefixCls}-checkbox`, classNames?.checkbox)}
-            style={{
-              position: 'relative',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              ...styles?.checkbox
-            }}
+            style={styles?.checkbox}
           >
             <span
               data-checked={isChecked}
               className={cn(`${global.prefixCls}-checkbox-inner`, classNames?.checkboxInner)}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                ...styles?.checkboxInner
-              }}
+              style={styles?.checkboxInner}
             />
 
             <Checkmark
               {...checkmarkProps}
               checked={isChecked}
               className={classNames?.checkmark}
-              style={{
-                display: 'block',
-                transformOrigin: 'center',
-                ...styles?.checkmark
-              }}
+              style={styles?.checkmark}
             />
           </span>
 

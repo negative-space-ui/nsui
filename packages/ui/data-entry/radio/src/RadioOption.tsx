@@ -62,14 +62,7 @@ export function RadioOption({
       <div
         data-checked={checked}
         className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
-        style={{
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          ...styles?.radio
-        }}
+        style={styles?.radio}
       >
         <div
           data-visible={checked}
@@ -78,10 +71,7 @@ export function RadioOption({
             Animation !== 'none' && `${global.prefixCls}-${Animation}`,
             classNames?.inner
           )}
-          style={{
-            borderRadius: '50%',
-            ...styles?.inner
-          }}
+          style={styles?.inner}
         />
       </div>
 

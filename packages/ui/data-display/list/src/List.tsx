@@ -64,8 +64,6 @@ export const List = React.forwardRef(
         className={cn(`${global.prefixCls}-list`, classNames?.root)}
         style={{
           listStyleType: Marker,
-          padding: 0,
-          margin: 0,
           ...styles?.root
         }}
       >
@@ -77,11 +75,7 @@ export const List = React.forwardRef(
               {...(classNames?.item && { className: classNames.item })}
               {...(styles?.item && { style: styles.item })}
               {...item}
-              style={{
-                display: 'list-item',
-                marginRight: direction === 'row' ? '16px' : undefined,
-                ...styles?.item
-              }}
+              style={styles?.item}
             >
               {item.content}
             </ListItem>

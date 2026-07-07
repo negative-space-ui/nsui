@@ -62,14 +62,12 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             else if (ref) ref.current = node
           }}
           className={cn(classNames?.root)}
-          style={{ position: 'relative', ...styles?.root }}
+          style={styles?.root}
           {...props}
         >
           <span
             className={cn(`${global.prefixCls}-switch-inner`, classNames?.inner)}
             style={{
-              display: 'block',
-              borderRadius: '50%',
               transform: checked ? `translateX(${offset}px)` : 'translateX(0)',
               ...styles?.inner
             }}
