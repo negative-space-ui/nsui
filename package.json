@@ -11,17 +11,15 @@
     "packages/**"
   ],
   "scripts": {
-    "build": "turbo run build --filter='!@negative-space/storybook' --filter='!docs'",
+    "build": "turbo run build --filter=!docs",
     "clean:pkgs": "turbo run clean",
     "clean:node-modules": "ts-node ./scripts/clean-node-modules.js",
     "create:pkg": "plop && pnpm install",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "plop": "ts-node ./scripts/warn-create-package.js",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "prepare": "lefthook install",
     "prettier": "prettier --write .",
-    "start": "cd apps/storybook && pnpm start",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
