@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link, type LinkProps } from '../src'
+import { Link, type LinkProps } from '..'
 
 export default {
   title: 'Nav/Link',

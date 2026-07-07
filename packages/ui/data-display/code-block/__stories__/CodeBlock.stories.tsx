@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CodeBlock, type CodeBlockProps } from '../src'
+import { CodeBlock, type CodeBlockProps } from '..'
 
 export default {
   title: 'Data Display/CodeBlock',

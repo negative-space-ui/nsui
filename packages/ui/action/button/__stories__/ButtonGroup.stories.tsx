@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ButtonGroup, type ButtonGroupProps } from '../src'
+import { ButtonGroup, type ButtonGroupProps } from '..'
 
 export default {
   title: 'Actions/ButtonGroup',

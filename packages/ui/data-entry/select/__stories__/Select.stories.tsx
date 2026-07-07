@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Select, type SelectProps } from '../src'
+import { Select, type SelectProps } from '..'
 
 export default {
   title: 'Data Entry/Select',

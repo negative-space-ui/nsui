@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { IconButton, type IconButtonProps } from '../src'
+import { IconButton, type IconButtonProps } from '..'
 
 export default {
   title: 'Actions/IconButton',

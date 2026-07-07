@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Input, type InputProps } from '../src'
+import { Input, type InputProps } from '..'
 
 export default {
   title: 'Data Entry/Input',
