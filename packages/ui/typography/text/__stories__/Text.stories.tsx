@@ -1,27 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import { Text, type TextElement, type TextProps } from '..'
 
-import { Text } from '..'
-
-const meta: Meta<typeof Text> = {
+export default {
   title: 'Typography/Text',
   component: Text,
   tags: ['autodocs'],
-  argTypes: {
-    as: {
-      control: 'select',
-      options: ['span', 'p', 'label', 'small']
-    },
-    children: {
-      control: 'text'
-    }
-  }
-}
-
-export default meta
-
-export const Default: StoryObj<typeof Text> = {
   args: {
     as: 'span',
     children: 'Hello World'
+  },
+  children: {
+    control: 'text'
   }
 }
+
+export const Default = (args: TextProps<TextElement>) => <Text {...args} />

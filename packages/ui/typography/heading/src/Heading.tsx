@@ -23,6 +23,7 @@ export const Heading = forwardRef(
     ref: React.Ref<HeadingDomMap[E]>
   ) => {
     const { global, components } = useNSUI()
+
     const Component = as ?? (components.heading.typeElement as React.ElementType)
 
     return (
