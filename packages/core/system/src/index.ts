@@ -1,4 +1,5 @@
 export { cn, mergeCn } from './cn'
+export { mergeRefs } from './ref'
 export type {
   ClickableAnimation,
   OverlayAnimation,

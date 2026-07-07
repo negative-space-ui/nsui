@@ -7,16 +7,15 @@ import { ResizableProvider } from './ResizableProvider'
 export type ResizableProps = FlexProps
 
 export const Resizable = forwardRef<HTMLDivElement, ResizableProps>(
-  ({ direction = 'row', className, children, ...props }, ref) => {
+  ({ children, className, direction = 'row', ...props }, ref) => {
     const { global } = useNSUI()
 
     return (
       <ResizableProvider direction={direction}>
         <Flex
-          gap="0"
           {...props}
-          direction={direction}
           ref={ref}
+          direction={direction}
           className={cn(`${global.prefixCls}-resizable`, className)}
         >
           {children}
