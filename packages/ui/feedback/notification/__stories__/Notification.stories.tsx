@@ -2,7 +2,7 @@ import { Button } from '@negative-space/button'
 import type { Decorator } from '@storybook/react'
 import React from 'react'
 
-import { NotificationProvider, useNotification } from '../src'
+import { NotificationProvider, useNotification } from '..'
 
 export default {
   title: 'Feedback/Notification',

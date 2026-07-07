@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Surface, type SurfaceProps } from '../src'
+import { Surface, type SurfaceProps } from '..'
 
 export default {
   title: 'Data Display/Surface',

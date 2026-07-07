@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Menu, type MenuProps } from '../src'
+import { Menu, type MenuProps } from '..'
 
 export default {
   title: 'Nav/Menu',

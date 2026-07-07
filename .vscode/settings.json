@@ -1,10 +1,8 @@
 {
-  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
   "editor.detectIndentation": false,
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
+  "json.schemaDownload.enable": true,
   "tailwindCSS.validate": false,
 
   "editor.codeActionsOnSave": {

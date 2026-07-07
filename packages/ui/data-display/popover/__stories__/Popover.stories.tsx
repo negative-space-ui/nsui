@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Popover, type PopoverProps } from '../src'
-import { usePopover } from '../src'
+import { Popover, type PopoverProps } from '..'
+import { usePopover } from '..'
 
 export default {
   title: 'Data Display/Popover',

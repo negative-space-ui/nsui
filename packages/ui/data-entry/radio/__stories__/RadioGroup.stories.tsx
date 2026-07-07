@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { RadioGroup, type RadioGroupProps } from '../src'
+import { RadioGroup, type RadioGroupProps } from '..'
 
 export default {
   title: 'Data Entry/Radio',

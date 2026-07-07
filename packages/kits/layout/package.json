@@ -31,12 +31,9 @@
   },
   "scripts": {
     "build": "tsup",
-    "clean": "rimraf dist .turbo",
-    "dev": "pnpm build:fast --watch",
-    "lint": "eslint . --ext ts,tsx",
+    "clean": "rimraf dist .turbo dist",
     "postpack": "clean-package restore",
-    "prepack": "clean-package",
-    "typecheck": "tsc --noEmit"
+    "prepack": "clean-package"
   },
   "dependencies": {
     "@negative-space/divider": "workspace:*",

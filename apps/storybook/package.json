@@ -2,7 +2,6 @@
   "name": "@negative-space/storybook",
   "private": true,
   "scripts": {
-    "build": "storybook build",
     "clean": "rimraf .next .turbo",
     "lint": "eslint",
     "start": "storybook dev -p 6006",

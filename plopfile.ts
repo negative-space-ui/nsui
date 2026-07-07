@@ -1,13 +1,23 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'node:fs'
+import path from 'node:path'
 
-module.exports = function (plop) {
-  plop.setHelper('capitalize', (text) => text.charAt(0).toUpperCase() + text.slice(1))
+import type { NodePlopAPI } from 'plop'
 
-  plop.setHelper('depth', function (_, options) {
+type Answers = {
+  layer: 'core' | 'kits' | 'ui'
+  subLayer?: 'hooks' | 'utils'
+  uiSubLayer?: string
+  name: string
+}
+
+export default function (plop: NodePlopAPI) {
+  plop.setHelper('capitalize', (text: string) => text.charAt(0).toUpperCase() + text.slice(1))
+
+  plop.setHelper('depth', (_, options) => {
     const answers = options.data.root
     const fullPath = [answers.layer, answers.subLayer, answers.uiSubLayer].filter(Boolean).join('/')
     const parts = fullPath.split('/').length + 2
+
     return '../'.repeat(parts)
   })
 
@@ -33,8 +43,10 @@ module.exports = function (plop) {
         message: 'Choose subfolder (only for UI packages)',
         when: (answers) => answers.layer === 'ui',
         choices: () => {
-          const uiPath = path.join(__dirname, 'packages/ui')
+          const uiPath = path.join(import.meta.dirname, 'packages/ui')
+
           if (!fs.existsSync(uiPath)) return []
+
           return fs
             .readdirSync(uiPath)
             .filter((f) => fs.statSync(path.join(uiPath, f)).isDirectory())
@@ -71,27 +83,28 @@ module.exports = function (plop) {
         type: 'add',
         path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/src/index.ts',
         templateFile: 'plop-templates/index.ts.hbs',
-        skip: (answers) => (answers.layer === 'ui' ? 'Ui packages have no empty index' : false)
+        skip: (answers: Answers) =>
+          answers.layer === 'ui' ? 'UI packages have no empty index' : false
       },
       {
         type: 'add',
         path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/src/index.ts',
         templateFile: 'plop-templates/ui-index.ts.hbs',
-        skip: (answers) =>
+        skip: (answers: Answers) =>
           answers.layer !== 'ui' ? 'Default UI index is only available for UI packages' : false
       },
       {
         type: 'add',
         path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/src/{{capitalize name}}.tsx',
         templateFile: 'plop-templates/component.tsx.hbs',
-        skip: (answers) =>
+        skip: (answers: Answers) =>
           answers.layer !== 'ui' ? 'Components are only available for UI packages' : false
       },
       {
         type: 'add',
         path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/__stories__/{{capitalize name}}.stories.tsx',
         templateFile: 'plop-templates/component.stories.tsx.hbs',
-        skip: (answers) =>
+        skip: (answers: Answers) =>
           answers.layer !== 'ui' ? 'Stories are only available for UI packages' : false
       }
     ]

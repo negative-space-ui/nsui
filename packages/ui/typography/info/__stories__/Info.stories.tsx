@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Info, type InfoProps } from '../src'
+import { Info, type InfoProps } from '..'
 
 export default {
   title: 'Typography/Info',

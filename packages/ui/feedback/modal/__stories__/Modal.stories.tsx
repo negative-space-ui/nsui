@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Modal, type ModalProps } from '../src'
-import { useModal } from '../src'
+import { Modal, type ModalProps } from '..'
+import { useModal } from '..'
 
 export default {
   title: 'Feedback/Modal',

@@ -3,7 +3,7 @@ import { expect, userEvent, within } from '@storybook/test'
 import React, { useEffect, useRef } from 'react'
 import { z } from 'zod'
 
-import { Form, type FormProps, zodAdaptor } from '../src'
+import { Form, type FormProps, zodAdaptor } from '..'
 
 export default {
   title: 'Data Entry/Form',

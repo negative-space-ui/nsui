@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Listbox, type ListboxProps } from '../src'
+import { Listbox, type ListboxProps } from '..'
 
 export default {
   title: 'Data Entry/Listbox',

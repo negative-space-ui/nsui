@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Tooltip, type TooltipProps, useTooltip } from '../src'
+import { Tooltip, type TooltipProps, useTooltip } from '..'
 
 export default {
   title: 'Data Display/Tooltip',
