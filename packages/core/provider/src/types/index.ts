@@ -1,39 +1,20 @@
-export type MotionDurations = {
-  /** Defines the duration of the fade animation.
-   *
-   * Defaults to `300`. */
-  fade?: number
-  /** Defines the duration of the pop animation.
-   *
-   * Defaults to `600`. */
-  pop?: number
+import react from 'react'
 
-  /** Defines the duration of the ripple animation.
-   *
-   * Defaults to `600`. */
+export type MotionDurations = {
+  fade?: number
+  pop?: number
   ripple?: number
-  /** Defines the duration of the fade-scale animation.
-   *
-   * Defaults to `400`. */
   fadeScale?: number
 }
 
 export type Colors = {
-  error?: string
+  error: NonNullable<react.CSSProperties['color']>
 }
 
 export type GlobalConfig = {
-  /** Global colors. */
   colors?: Colors
-  /** Duration in milliseconds for animations of all components. */
   motionDurations?: MotionDurations
-  /** Prefix classname for all components.
-   *
-   * Ex: `nsui-button` */
   prefixCls?: string
-  /** Defines if it should render the tooltip.
-   *
-   * Defaults to `true`. */
   tooltip?: boolean
 }
 
@@ -45,89 +26,47 @@ export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
 export type ValidationMode = 'onBlur' | 'onChange' | 'onSubmit' | 'all'
 
 export type Alert = {
-  /** Defines if the alert should be closable.
-   *
-   * Defaults to `true`. */
   closable?: boolean
   closeTitle?: string
 }
 
 export type ButtonConfig = {
-  /** Defines the animation of the button.
-   *
-   * Defaults to `ripple`. */
   animation?: ClickableAnimation
 }
 
 export type IconButtonConfig = {
-  /** Defines the animation of the icon button.
-   *
-   * Defaults to `none`. */
   animation?: ClickableAnimation
 }
 
 export type CloseButton = {
-  /** Defines the animation of the close button.
-   *
-   * Defaults to `none`. */
   animation?: ClickableAnimation
 }
 
 export type CheckmarkConfig = {
-  /** Defines the animation of the checkmark.
-   *
-   * Defaults to `fade`. */
   animation?: OverlayAnimation
 }
 
 export type FormConfig = {
-  /** Defines if the submit button should be disabled if there are errors.
-   *
-   * Defaults to `false`. */
   disableSubmitOnError?: boolean
-  /** Delay in milliseconds before validating the form
-   *
-   * Defaults to `0`. */
   validationDelay?: number
-  /** Defines the validation mode of the form.
-   *
-   * Defaults to `onBlur`. */
   validationMode?: ValidationMode
 }
 
 export type HeadingConfig = {
-  /** Defines the type of the heading element.
-   *
-   * Defaults to `h1`. */
   typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 }
 
 export type InputPasswordConfig = {
-  /** Placeholder for the text input.
-   *
-   * Defaults to `Hide password`. */
   textTitle?: string
-  /** Placeholder for the password input.
-   *
-   * Defaults to `Show password`. */
   passwordTitle?: string
 }
 
 export type LinkConfig = {
-  /** Defines if the link should be underlined.
-   *
-   * Defaults to `false`. */
   underline?: boolean
 }
 
 export type ListConfig = {
-  /** Defines the marker of the list.
-   *
-   * Defaults to `ol`. */
   typeElement?: 'ol' | 'ul'
-  /** Defines the marker style of the list.
-   *
-   * Defaults to `none`. */
   olMarker?:
     | 'decimal'
     | 'decimal-leading-zero'
@@ -136,9 +75,6 @@ export type ListConfig = {
     | 'lower-roman'
     | 'upper-roman'
     | 'none'
-  /** Defines the marker style of the list.
-   *
-   * Defaults to `none`. */
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
@@ -147,30 +83,18 @@ export type ModalConfig = {
 }
 
 export type PopoverConfig = {
-  /** Defines the animation of the popover.
-   *
-   * Defaults to `fade-scale`. */
   animation?: OverlayAnimation
 }
 
 export type RadioConfig = {
-  /** Defines the animation of the radio.
-   *
-   * Defaults to `fade`. */
   animation?: OverlayAnimation
 }
 
 export type SpinnerConfig = {
-  /** Defines the animation duration of the spinner.
-   *
-   * Defaults to `1.2`. */
   animationDuration?: number
 }
 
 export type TextConfig = {
-  /** Defines the type of the text element.
-   *
-   * Defaults to `span`. */
   typeElement?: 'span' | 'p' | 'label' | 'small'
 }
 

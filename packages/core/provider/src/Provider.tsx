@@ -10,7 +10,6 @@ export type NSUIProviderProps = {
   global?: GlobalConfig
 }
 
-/** NSUIProvider wraps your app and provides global configuration for the NSUI components library. */
 export const NSUIProvider = ({ children, components, global }: NSUIProviderProps) => {
   const contextValue: NSUIContextProps = {
     global: {
