@@ -38,13 +38,15 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
 
     useEffect(() => {
       if (buttonRef.current) {
-        const btn = buttonRef.current
-        const inner = btn.querySelector<HTMLSpanElement>('.' + `${global.prefixCls}-switch-inner`)
+        const button = buttonRef.current
+        const inner = button.querySelector<HTMLSpanElement>(
+          '.' + `${global.prefixCls}-switch-inner`
+        )
         if (inner) {
-          const btnStyles = getComputedStyle(btn)
-          const paddingLeft = parseFloat(btnStyles.paddingLeft)
-          const paddingRight = parseFloat(btnStyles.paddingRight)
-          const move = btn.clientWidth - inner.offsetWidth - paddingLeft - paddingRight
+          const buttonStyles = getComputedStyle(button)
+          const paddingLeft = parseFloat(buttonStyles.paddingLeft)
+          const paddingRight = parseFloat(buttonStyles.paddingRight)
+          const move = button.clientWidth - inner.offsetWidth - paddingLeft - paddingRight
           setOffset(move)
         }
       }

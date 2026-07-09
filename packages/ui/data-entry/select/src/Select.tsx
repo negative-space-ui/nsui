@@ -37,7 +37,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             ref={ref}
             type="button"
             classNames={{
-              btn: cn(`${global.prefixCls}-select`, classNames?.trigger?.btn),
+              root: cn(`${global.prefixCls}-select`, classNames?.trigger?.root),
               ...classNames?.trigger
             }}
             styles={styles?.trigger}

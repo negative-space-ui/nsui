@@ -16,7 +16,7 @@ const NotificationButton = () => {
   return (
     <Button
       classNames={{
-        btn: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
+        root: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
       }}
       onClick={() =>
         notification.success({
@@ -36,7 +36,7 @@ const NotificationDefaultCallButton = () => {
   return (
     <Button
       classNames={{
-        btn: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
+        root: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
       }}
       onClick={() =>
         notification({
@@ -60,7 +60,7 @@ const NotificationActionButton = () => {
   return (
     <Button
       classNames={{
-        btn: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
+        root: 'bg-neutral-300 border border-neutral-400/50 px-2 py-1 rounded-md active:scale-97'
       }}
       onClick={() => {
         const toast = notification.info({
@@ -77,7 +77,7 @@ const NotificationActionButton = () => {
         toast.action({
           children: 'Undo',
           classNames: {
-            btn: 'bg-blue-600 border border-blue-700/50 px-2 text-white rounded-md active:scale-97'
+            root: 'bg-blue-600 border border-blue-700/50 px-2 text-white rounded-md active:scale-97'
           },
           onClick: () => {
             notification.hide(toast)

@@ -8,6 +8,7 @@ export default {
   tags: ['autodocs'],
   args: {
     children: '🔍',
+    classNames: { root: 'cursor-pointer' },
     animation: 'ripple'
   },
   argTypes: {

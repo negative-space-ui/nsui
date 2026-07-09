@@ -10,7 +10,7 @@ export default {
     children: 'Select',
     classNames: {
       trigger: {
-        btn: 'p-2 bg-neutral-200 rounded-md border border-neutral-300 w-20'
+        root: 'p-2 bg-neutral-200 rounded-md border border-neutral-300 w-20'
       },
       popover: { root: 'px-1 py-1 bg-neutral-200 rounded-md border border-neutral-300' }
     },

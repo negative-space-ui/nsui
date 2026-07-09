@@ -6,29 +6,29 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   underline?: boolean
 }
 
-export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
-  const { className, disabled = false, underline, target, rel, ...rest } = props
+export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ className, disabled = false, underline, onClick, target, rel, ...props }, ref) => {
+    const { global, components } = useNSUI()
 
-  const { global, components } = useNSUI()
+    const Underline = underline ?? components.link.underline
 
-  const Underline = underline ?? components.link.underline
+    const isExternal = target === '_blank'
 
-  const isExternal = target === '_blank'
-
-  return (
-    <a
-      ref={ref}
-      {...rest}
-      rel={isExternal ? 'noopener noreferrer' : rel}
-      target={target}
-      aria-disabled={disabled}
-      data-disabled={disabled}
-      data-underline={Underline}
-      tabIndex={disabled ? -1 : undefined}
-      onClick={disabled ? (e) => e.preventDefault() : props.onClick}
-      className={cn(`${global.prefixCls}-link`, className)}
-    />
-  )
-})
+    return (
+      <a
+        {...props}
+        ref={ref}
+        rel={isExternal ? 'noopener noreferrer' : rel}
+        target={target}
+        aria-disabled={disabled}
+        data-disabled={disabled}
+        data-underline={Underline}
+        tabIndex={disabled ? -1 : undefined}
+        onClick={disabled ? (e) => e.preventDefault() : onClick}
+        className={cn(`${global.prefixCls}-link`, className)}
+      />
+    )
+  }
+)
 
 Link.displayName = 'Link'
