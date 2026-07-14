@@ -11,6 +11,14 @@ type Answers = {
 }
 
 export default function (plop: NodePlopAPI) {
+  plop.setHelper('depth', (_, options) => {
+    const answers = options.data.root
+    const fullPath = [answers.layer, answers.subLayer, answers.uiSubLayer].filter(Boolean).join('/')
+    const parts = fullPath.split('/').length + 2
+
+    return '../'.repeat(parts)
+  })
+
   plop.setHelper('capitalize', (text: string) => text.charAt(0).toUpperCase() + text.slice(1))
 
   plop.setHelper('snakeCase', (text: string) =>
