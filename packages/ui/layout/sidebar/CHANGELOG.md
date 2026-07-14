@@ -1,5 +1,15 @@
 # @negative-space/sidebar
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/button@2.8.1
+  - @negative-space/resizable@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

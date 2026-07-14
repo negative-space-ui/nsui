@@ -1,5 +1,19 @@
 # @negative-space/alert
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+- Updated dependencies [74f6f05]
+  - @negative-space/system@1.5.0
+  - @negative-space/progress-bar@1.0.1
+  - @negative-space/button@2.8.1
+  - @negative-space/tooltip@1.0.4
+  - @negative-space/flex@1.2.6
+  - @negative-space/info@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

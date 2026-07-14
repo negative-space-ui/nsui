@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+  - negative-space@2.8.0
+
 ## 0.0.16
 
 ### Patch Changes

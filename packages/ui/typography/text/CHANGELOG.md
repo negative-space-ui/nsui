@@ -1,5 +1,13 @@
 # @negative-space/text
 
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+
 ## 1.2.4
 
 ### Patch Changes

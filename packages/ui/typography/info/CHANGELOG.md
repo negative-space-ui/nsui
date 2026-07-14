@@ -1,5 +1,15 @@
 # @negative-space/info
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/heading@1.2.5
+  - @negative-space/text@1.2.5
+
 ## 1.0.0
 
 ### Major Changes

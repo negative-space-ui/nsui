@@ -1,5 +1,18 @@
 # @negative-space/input
 
+## 1.5.3
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/button@2.8.1
+  - @negative-space/tooltip@1.0.4
+  - @negative-space/spinner@2.2.4
+  - @negative-space/field@1.1.4
+  - @negative-space/flex@1.2.6
+
 ## 1.5.2
 
 ### Patch Changes

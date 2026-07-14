@@ -1,5 +1,17 @@
 # @negative-space/feedback
 
+## 1.4.1
+
+### Patch Changes
+
+- Updated dependencies [74f6f05]
+  - @negative-space/progress-bar@1.0.1
+  - @negative-space/alert@1.0.1
+  - @negative-space/checkmark@1.2.4
+  - @negative-space/modal@1.1.4
+  - @negative-space/notification@1.0.1
+  - @negative-space/spinner@2.2.4
+
 ## 1.4.0
 
 ### Minor Changes
