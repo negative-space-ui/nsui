@@ -1,0 +1,45 @@
+{
+  "name": "@negative-space/skeleton",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "",
+  "keywords": [
+    "skeleton",
+    "negative-space",
+    "nsui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/skeleton"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo dist",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package"
+  },
+  "dependencies": {
+    "@negative-space/system": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+  }

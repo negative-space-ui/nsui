@@ -327,6 +327,9 @@ importers:
       '@negative-space/progress-bar':
         specifier: workspace:^
         version: link:../../ui/feedback/progress-bar
+      '@negative-space/skeleton':
+        specifier: workspace:^
+        version: link:../../ui/feedback/skeleton
       '@negative-space/spinner':
         specifier: workspace:^
         version: link:../../ui/feedback/spinner
@@ -851,6 +854,22 @@ importers:
         version: 5.9.3
 
   packages/ui/feedback/progress-bar:
+    dependencies:
+      '@negative-space/system':
+        specifier: workspace:^
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/skeleton:
     dependencies:
       '@negative-space/system':
         specifier: workspace:^

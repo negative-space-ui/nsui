@@ -73,6 +73,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       select: {
         animation: components?.select?.animation ?? 'none'
       },
+      skeleton: {
+        animationDuration: components?.skeleton?.animationDuration ?? 1.8
+      },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2
       },

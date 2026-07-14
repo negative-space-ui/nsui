@@ -41,6 +41,7 @@
     "@negative-space/modal": "workspace:^",
     "@negative-space/notification": "workspace:^",
     "@negative-space/progress-bar": "workspace:^",
+    "@negative-space/skeleton": "workspace:^",
     "@negative-space/spinner": "workspace:^"
   },
   "devDependencies": {

@@ -13,6 +13,7 @@ export type ComponentSettings = {
   popover?: PopoverSettings
   radio?: RadioSettings
   select?: SelectSettings
+  skeleton?: SkeletonSettings
   spinner?: SpinnerSettings
   text?: TextSettings
 }
@@ -132,6 +133,10 @@ export type RadioSettings = {
 
 export type SelectSettings = {
   animation?: ClickableAnimation
+}
+
+export type SkeletonSettings = {
+  animationDuration?: number
 }
 
 export type SpinnerSettings = {
