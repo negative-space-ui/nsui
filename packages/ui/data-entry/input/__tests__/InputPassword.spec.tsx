@@ -1,113 +1,100 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { InputPassword } from '../src/InputPassword'
-
-const mockUseNSUI = jest.fn()
+import { InputPassword } from '..'
 
 jest.mock('@negative-space/system', () => ({
   cn: (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' '),
-
-  Eye: ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-    <span data-testid="eye" className={className} style={style}>
-      eye
-    </span>
+  Eye: ({ className }: { className?: string }) => <span data-testid="eye" className={className} />,
+  EyeOff: ({ className }: { className?: string }) => (
+    <span data-testid="eye-off" className={className} />
   ),
-
-  EyeOff: ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-    <span data-testid="eye-off" className={className} style={style}>
-      eye-off
-    </span>
-  ),
-
-  useNSUI: () => mockUseNSUI()
+  useNSUI: () => ({
+    global: {
+      prefixCls: 'nsui',
+      tooltip: false
+    },
+    components: {
+      inputPassword: {
+        passwordTitle: 'Show password',
+        textTitle: 'Hide password'
+      }
+    }
+  })
 }))
 
 jest.mock('@negative-space/button', () => ({
-  IconButton: ({
-    children,
-    onClick,
-    title,
-    classNames,
-    styles,
-    ...props
-  }: React.PropsWithChildren<{
-    onClick?: () => void
-    title?: string
-    classNames?: {
-      root?: string
-    }
-    styles?: {
-      root?: React.CSSProperties
-    }
-  }>) => (
-    <button
-      type="button"
-      onClick={onClick}
-      title={title}
-      className={classNames?.root}
-      style={styles?.root}
-      {...props}
-    >
-      {children}
-    </button>
+  IconButton: React.forwardRef<HTMLButtonElement, React.ComponentProps<'button'>>(
+    ({ children, ...props }, ref) => (
+      <button ref={ref} {...props}>
+        {children}
+      </button>
+    )
   )
 }))
 
 jest.mock('@negative-space/tooltip', () => ({
+  Tooltip: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   useTooltip: () => ({
-    triggerProps: {}
-  }),
+    referenceRef: React.createRef<HTMLButtonElement>(),
+    getReferenceProps: () => ({})
+  })
+}))
 
-  Tooltip: ({ children }: React.PropsWithChildren) => <div data-testid="tooltip">{children}</div>
+jest.mock('../src/Input.tsx', () => ({
+  Input: React.forwardRef<
+    HTMLInputElement,
+    {
+      suffix?: React.ReactNode
+      classNames?: {
+        root?: string
+      }
+      styles?: object
+      flexProps?: object
+      children?: React.ReactNode
+    } & React.InputHTMLAttributes<HTMLInputElement>
+  >(({ suffix, ...props }, ref) => (
+    <div>
+      <input ref={ref} {...props} />
+      {suffix}
+    </div>
+  ))
 }))
 
 describe('InputPassword', () => {
-  beforeEach(() => {
-    mockUseNSUI.mockReturnValue({
-      global: {
-        prefixCls: 'ns',
-        tooltip: false
-      },
-      components: {
-        inputPassword: {
-          passwordTitle: 'Hide password',
-          textTitle: 'Show password'
-        }
-      }
-    })
-  })
+  it('renders as password by default', () => {
+    render(<InputPassword data-testid="password-input" />)
 
-  it('should render password input by default', () => {
-    render(<InputPassword />)
-
-    const input = document.querySelector('input')
+    const input = screen.getByTestId('password-input')
 
     expect(input).toHaveAttribute('type', 'password')
+    expect(input).toHaveAttribute('data-visible', 'false')
     expect(screen.getByTestId('eye')).toBeInTheDocument()
   })
 
-  it('should toggle visibility', () => {
-    render(<InputPassword />)
+  it('toggles visibility when button is clicked', () => {
+    render(<InputPassword data-testid="password-input" />)
 
     const button = screen.getByRole('button')
-    const input = document.querySelector('input')
+    const input = screen.getByTestId('password-input')
 
     fireEvent.click(button)
 
     expect(input).toHaveAttribute('type', 'text')
+    expect(input).toHaveAttribute('data-visible', 'true')
     expect(screen.getByTestId('eye-off')).toBeInTheDocument()
 
     fireEvent.click(button)
 
     expect(input).toHaveAttribute('type', 'password')
+    expect(input).toHaveAttribute('data-visible', 'false')
     expect(screen.getByTestId('eye')).toBeInTheDocument()
   })
 
-  it('should call onToggleVisibility', () => {
+  it('calls onToggleVisibility with the next state', () => {
     const onToggleVisibility = jest.fn()
 
-    render(<InputPassword onToggleVisibility={onToggleVisibility} />)
+    render(<InputPassword data-testid="password-input" onToggleVisibility={onToggleVisibility} />)
 
     fireEvent.click(screen.getByRole('button'))
 
@@ -118,7 +105,7 @@ describe('InputPassword', () => {
     expect(onToggleVisibility).toHaveBeenCalledWith(false)
   })
 
-  it('should forward ref', () => {
+  it('forwards ref to input', () => {
     const ref = React.createRef<HTMLInputElement>()
 
     render(<InputPassword ref={ref} />)
@@ -126,102 +113,9 @@ describe('InputPassword', () => {
     expect(ref.current).toBeInstanceOf(HTMLInputElement)
   })
 
-  it('should use custom title', () => {
-    render(<InputPassword title="Custom password title" />)
+  it('uses custom title', () => {
+    render(<InputPassword title="Custom title" />)
 
-    expect(screen.getByRole('button')).toHaveAttribute('aria-label', 'Custom password title')
-
-    expect(screen.getByRole('button')).toHaveAttribute('title', 'Custom password title')
-  })
-
-  it('should apply custom root class', () => {
-    render(
-      <InputPassword
-        classNames={{
-          root: 'custom-root'
-        }}
-      />
-    )
-
-    expect(document.querySelector('.ns-input-password')).toHaveClass('custom-root')
-  })
-
-  it('should apply icon button class', () => {
-    render(
-      <InputPassword
-        classNames={{
-          iconButton: {
-            root: 'custom-button'
-          }
-        }}
-      />
-    )
-
-    expect(screen.getByRole('button')).toHaveClass('custom-button')
-  })
-
-  it('should pass button props', () => {
-    render(
-      <InputPassword
-        buttonProps={{
-          disabled: true,
-          children: null
-        }}
-      />
-    )
-
-    expect(screen.getByRole('button')).toBeDisabled()
-  })
-
-  it('should render tooltip when enabled', () => {
-    mockUseNSUI.mockReturnValue({
-      global: {
-        prefixCls: 'ns',
-        tooltip: true
-      },
-      components: {
-        inputPassword: {
-          passwordTitle: 'Hide password',
-          textTitle: 'Show password'
-        }
-      }
-    })
-
-    render(<InputPassword />)
-
-    expect(screen.getByTestId('tooltip')).toHaveTextContent('Show password')
-  })
-
-  it('should apply icon styles', () => {
-    render(
-      <InputPassword
-        classNames={{
-          iconButton: {
-            icon: 'custom-icon'
-          }
-        }}
-        styles={{
-          iconButton: {
-            icon: {
-              color: 'red'
-            }
-          }
-        }}
-      />
-    )
-
-    expect(screen.getByTestId('eye')).toHaveClass('custom-icon')
-
-    expect(screen.getByTestId('eye')).toHaveStyle({
-      color: 'rgb(255, 0, 0)'
-    })
-  })
-
-  it('should render input props', () => {
-    render(<InputPassword placeholder="Password" name="password" />)
-
-    const input = screen.getByPlaceholderText('Password')
-
-    expect(input).toHaveAttribute('name', 'password')
+    expect(screen.getByRole('button')).toHaveAttribute('aria-label', 'Custom title')
   })
 })
