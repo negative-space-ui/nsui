@@ -30,8 +30,8 @@
     "./layout": "./src/layout/index.ts",
     "./navigation": "./src/navigation/index.ts",
     "./primitive": "./src/primitive/index.ts",
-    "./system": "./src/system/index.ts",
-    "./typography": "./src/typography/index.ts"
+    "./typography": "./src/typography/index.ts",
+    "./utils": "./src/utils/index.ts"
   },
   "sideEffects": false,
   "repository": {
