@@ -1,5 +1,16 @@
 # @negative-space/feedback
 
+## 1.5.0
+
+### Minor Changes
+
+- 47a8f94: Initial release of Skeleton component
+
+### Patch Changes
+
+- Updated dependencies [47a8f94]
+  - @negative-space/skeleton@1.0.0
+
 ## 1.4.1
 
 ### Patch Changes

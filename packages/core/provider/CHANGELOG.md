@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.12.0
+
+### Minor Changes
+
+- 47a8f94: Initial release of Skeleton component
+
 ## 1.11.0
 
 ### Minor Changes

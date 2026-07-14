@@ -87,7 +87,7 @@ importers:
   apps/docs:
     dependencies:
       negative-space:
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/react
       next:
         specifier: 16.1.1
@@ -127,7 +127,7 @@ importers:
   apps/storybook:
     dependencies:
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/core/provider
       next:
         specifier: 16.0.10
@@ -176,37 +176,11 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  packages/core/hooks/ripple:
-    dependencies:
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.3
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/core/hooks/roving-focus:
-    dependencies:
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.3
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/core/provider:
     dependencies:
       '@negative-space/inject-css':
-        specifier: workspace:*
-        version: link:../utils/inject-css
+        specifier: workspace:^
+        version: link:../../utils/inject-css
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -221,7 +195,7 @@ importers:
   packages/core/system:
     dependencies:
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../provider
       clsx:
         specifier: ^2.1.1
@@ -240,8 +214,28 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/core/utils/inject-css:
+  packages/hooks/ripple:
+    dependencies:
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
     devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/hooks/roving-focus:
+    dependencies:
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -249,7 +243,7 @@ importers:
   packages/kits/action:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/action/button
     devDependencies:
       typescript:
@@ -259,7 +253,7 @@ importers:
   packages/kits/app:
     dependencies:
       '@negative-space/theme':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/app/theme
     devDependencies:
       typescript:
@@ -269,19 +263,19 @@ importers:
   packages/kits/data-display:
     dependencies:
       '@negative-space/code-block':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/code-block
       '@negative-space/list':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/list
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/popover
       '@negative-space/surface':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/surface
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/tooltip
     devDependencies:
       typescript:
@@ -291,25 +285,25 @@ importers:
   packages/kits/data-entry:
     dependencies:
       '@negative-space/checkbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/checkbox
       '@negative-space/form':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/form
       '@negative-space/input':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/input
       '@negative-space/listbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/listbox
       '@negative-space/radio':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/radio
       '@negative-space/select':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/select
       '@negative-space/switch':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/switch
     devDependencies:
       typescript:
@@ -319,22 +313,25 @@ importers:
   packages/kits/feedback:
     dependencies:
       '@negative-space/alert':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/alert
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/checkmark
       '@negative-space/modal':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/modal
       '@negative-space/notification':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/notification
       '@negative-space/progress-bar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/progress-bar
+      '@negative-space/skeleton':
+        specifier: workspace:^
+        version: link:../../ui/feedback/skeleton
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/spinner
     devDependencies:
       typescript:
@@ -344,22 +341,22 @@ importers:
   packages/kits/layout:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/divider
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/field
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/flex
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/grid
       '@negative-space/resizable':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/resizable
       '@negative-space/sidebar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/sidebar
     devDependencies:
       typescript:
@@ -369,10 +366,10 @@ importers:
   packages/kits/navigation:
     dependencies:
       '@negative-space/link':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/navigation/link
       '@negative-space/menu':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/navigation/menu
     devDependencies:
       typescript:
@@ -382,7 +379,7 @@ importers:
   packages/kits/primitive:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/primitive/collection
     devDependencies:
       typescript:
@@ -392,13 +389,13 @@ importers:
   packages/kits/typography:
     dependencies:
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/heading
       '@negative-space/info':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/info
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/text
     devDependencies:
       typescript:
@@ -408,37 +405,37 @@ importers:
   packages/react:
     dependencies:
       '@negative-space/action':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/action
       '@negative-space/app':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/app
       '@negative-space/data-display':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/data-display
       '@negative-space/data-entry':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/data-entry
       '@negative-space/feedback':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/feedback
       '@negative-space/layout':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/layout
       '@negative-space/navigation':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/navigation
       '@negative-space/primitive':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/primitive
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core/provider
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core/system
       '@negative-space/typography':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/typography
     devDependencies:
       typescript:
@@ -448,16 +445,16 @@ importers:
   packages/ui/action/button:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/ripple':
-        specifier: workspace:*
-        version: link:../../../core/hooks/ripple
+        specifier: workspace:^
+        version: link:../../../hooks/ripple
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/spinner
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -473,7 +470,7 @@ importers:
   packages/ui/app/theme:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -489,7 +486,7 @@ importers:
   packages/ui/data-display/code-block:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@types/prismjs':
         specifier: ^1.26.6
@@ -511,10 +508,10 @@ importers:
   packages/ui/data-display/list:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -531,9 +528,9 @@ importers:
     dependencies:
       '@floating-ui/react':
         specifier: ^0.27.18
-        version: 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -549,7 +546,7 @@ importers:
   packages/ui/data-display/surface:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -565,10 +562,10 @@ importers:
   packages/ui/data-display/tooltip:
     dependencies:
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -584,13 +581,13 @@ importers:
   packages/ui/data-entry/checkbox:
     dependencies:
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/checkmark
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -606,10 +603,10 @@ importers:
   packages/ui/data-entry/form:
     dependencies:
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/grid
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -619,7 +616,7 @@ importers:
         version: 4.3.6
     devDependencies:
       '@negative-space/input':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../input
       '@types/react':
         specifier: ^19.2.3
@@ -631,22 +628,22 @@ importers:
   packages/ui/data-entry/input:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/spinner
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -662,16 +659,16 @@ importers:
   packages/ui/data-entry/listbox:
     dependencies:
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/checkmark
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -687,13 +684,13 @@ importers:
   packages/ui/data-entry/radio:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -709,19 +706,19 @@ importers:
   packages/ui/data-entry/select:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/listbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../listbox
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -737,10 +734,10 @@ importers:
   packages/ui/data-entry/switch:
     dependencies:
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -756,22 +753,22 @@ importers:
   packages/ui/feedback/alert:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/info':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/info
       '@negative-space/progress-bar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../progress-bar
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -787,7 +784,7 @@ importers:
   packages/ui/feedback/checkmark:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -803,16 +800,16 @@ importers:
   packages/ui/feedback/modal:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -828,10 +825,10 @@ importers:
   packages/ui/feedback/notification:
     dependencies:
       '@negative-space/alert':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../alert
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -844,7 +841,7 @@ importers:
         version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@types/react':
         specifier: ^19.2.3
@@ -859,7 +856,23 @@ importers:
   packages/ui/feedback/progress-bar:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/feedback/skeleton:
+    dependencies:
+      '@negative-space/system':
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -875,7 +888,7 @@ importers:
   packages/ui/feedback/spinner:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -891,7 +904,7 @@ importers:
   packages/ui/layout/divider:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -907,13 +920,13 @@ importers:
   packages/ui/layout/field:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/text
       react:
         specifier: ^19.2.3
@@ -929,7 +942,7 @@ importers:
   packages/ui/layout/flex:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -945,7 +958,7 @@ importers:
   packages/ui/layout/grid:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -961,13 +974,13 @@ importers:
   packages/ui/layout/resizable:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../divider
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -983,13 +996,13 @@ importers:
   packages/ui/layout/sidebar:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/resizable':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../resizable
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1005,7 +1018,7 @@ importers:
   packages/ui/navigation/link:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1021,13 +1034,13 @@ importers:
   packages/ui/navigation/menu:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/link':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../link
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1043,22 +1056,22 @@ importers:
   packages/ui/primitive/collection:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/divider
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/grid
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/heading
       '@negative-space/roving-focus':
-        specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
+        specifier: workspace:^
+        version: link:../../../hooks/roving-focus
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1074,7 +1087,7 @@ importers:
   packages/ui/typography/heading:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1090,13 +1103,13 @@ importers:
   packages/ui/typography/info:
     dependencies:
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../heading
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../text
       react:
         specifier: ^19.2.3
@@ -1112,7 +1125,7 @@ importers:
   packages/ui/typography/text:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1121,6 +1134,12 @@ importers:
       '@types/react':
         specifier: ^19.2.3
         version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/utils/inject-css:
+    devDependencies:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1815,89 +1834,105 @@ packages:
     resolution: {integrity: sha512-excjX8DfsIcJ10x1Kzr4RcWe1edC9PquDRRPx3YVCvQv+U5p7Yin2s32ftzikXojb1PIFc/9Mt28/y+iRklkrw==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-arm@1.2.4':
     resolution: {integrity: sha512-bFI7xcKFELdiNCVov8e44Ia4u2byA+l3XtsAj+Q8tfCwO6BQ8iDojYdvoPMqsKDkuoOo+X6HZA0s0q11ANMQ8A==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-ppc64@1.2.4':
     resolution: {integrity: sha512-FMuvGijLDYG6lW+b/UvyilUWu5Ayu+3r2d1S8notiGCIyYU/76eig1UfMmkZ7vwgOrzKzlQbFSuQfgm7GYUPpA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-riscv64@1.2.4':
     resolution: {integrity: sha512-oVDbcR4zUC0ce82teubSm+x6ETixtKZBh/qbREIOcI3cULzDyb18Sr/Wcyx7NRQeQzOiHTNbZFF1UwPS2scyGA==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-s390x@1.2.4':
     resolution: {integrity: sha512-qmp9VrzgPgMoGZyPvrQHqk02uyjA0/QrTO26Tqk6l4ZV0MPWIW6LTkqOIov+J1yEu7MbFQaDpwdwJKhbJvuRxQ==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linux-x64@1.2.4':
     resolution: {integrity: sha512-tJxiiLsmHc9Ax1bz3oaOYBURTXGIRDODBqhveVHonrHJ9/+k89qbLl0bcJns+e4t4rvaNBxaEZsFtSfAdquPrw==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-libvips-linuxmusl-arm64@1.2.4':
     resolution: {integrity: sha512-FVQHuwx1IIuNow9QAbYUzJ+En8KcVm9Lk5+uGUQJHaZmMECZmOlix9HnH7n1TRkXMS0pGxIJokIVB9SuqZGGXw==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-libvips-linuxmusl-x64@1.2.4':
     resolution: {integrity: sha512-+LpyBk7L44ZIXwz/VYfglaX/okxezESc6UxDSoyo2Ks6Jxc4Y7sGjpgU9s4PMgqgjj1gZCylTieNamqA1MF7Dg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-linux-arm64@0.34.5':
     resolution: {integrity: sha512-bKQzaJRY/bkPOXyKx5EVup7qkaojECG6NLYswgktOZjaXecSAeCWiZwwiFf3/Y+O1HrauiE3FVsGxFg8c24rZg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-arm@0.34.5':
     resolution: {integrity: sha512-9dLqsvwtg1uuXBGZKsxem9595+ujv0sJ6Vi8wcTANSFpwV/GONat5eCkzQo/1O6zRIkh0m/8+5BjrRr7jDUSZw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-ppc64@0.34.5':
     resolution: {integrity: sha512-7zznwNaqW6YtsfrGGDA6BRkISKAAE1Jo0QdpNYXNMHu2+0dTrPflTLNkpc8l7MUP5M16ZJcUvysVWWrMefZquA==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-riscv64@0.34.5':
     resolution: {integrity: sha512-51gJuLPTKa7piYPaVs8GmByo7/U7/7TZOq+cnXJIHZKavIRHAP77e3N2HEl3dgiqdD/w0yUfiJnII77PuDDFdw==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-s390x@0.34.5':
     resolution: {integrity: sha512-nQtCk0PdKfho3eC5MrbQoigJ2gd1CgddUMkabUj+rBevs8tZ2cULOx46E7oyX+04WGfABgIwmMC0VqieTiR4jg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linux-x64@0.34.5':
     resolution: {integrity: sha512-MEzd8HPKxVxVenwAa+JRPwEC7QFjoPWuS5NZnBt6B3pu7EG2Ge0id1oLHZpPJdn3OQK+BQDiw9zStiHBTJQQQQ==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@img/sharp-linuxmusl-arm64@0.34.5':
     resolution: {integrity: sha512-fprJR6GtRsMt6Kyfq44IsChVZeGN97gTD331weR1ex1c1rypDEABN6Tm2xa1wE6lYb5DdEnk03NZPqA7Id21yg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-linuxmusl-x64@0.34.5':
     resolution: {integrity: sha512-Jg8wNT1MUzIvhBFxViqrEhWDGzqymo3sV7z7ZsaWbZNDLXRJZoRGrjulp60YYtV4wfY8VIKcWidjojlLcWrd8Q==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@img/sharp-wasm32@0.34.5':
     resolution: {integrity: sha512-OdWTEiVkY2PHwqkbBI8frFxQQFekHaSSkUIJkwzclWZe64O1X4UlUjqqqLaPbUpMOQk6FBu/HtlGXNblIs0huw==}
@@ -2128,48 +2163,56 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-arm64-gnu@16.1.1':
     resolution: {integrity: sha512-/fvHet+EYckFvRLQ0jPHJCUI5/B56+2DpI1xDSvi80r/3Ez+Eaa2Yq4tJcRTaB1kqj/HrYKn8Yplm9bNoMJpwQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-arm64-musl@16.0.10':
     resolution: {integrity: sha512-llA+hiDTrYvyWI21Z0L1GiXwjQaanPVQQwru5peOgtooeJ8qx3tlqRV2P7uH2pKQaUfHxI/WVarvI5oYgGxaTw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-linux-arm64-musl@16.1.1':
     resolution: {integrity: sha512-MFHrgL4TXNQbBPzkKKur4Fb5ICEJa87HM7fczFs2+HWblM7mMLdco3dvyTI+QmLBU9xgns/EeeINSZD6Ar+oLg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-linux-x64-gnu@16.0.10':
     resolution: {integrity: sha512-AK2q5H0+a9nsXbeZ3FZdMtbtu9jxW4R/NgzZ6+lrTm3d6Zb7jYrWcgjcpM1k8uuqlSy4xIyPR2YiuUr+wXsavA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-x64-gnu@16.1.1':
     resolution: {integrity: sha512-20bYDfgOQAPUkkKBnyP9PTuHiJGM7HzNBbuqmD0jiFVZ0aOldz+VnJhbxzjcSabYsnNjMPsE0cyzEudpYxsrUQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@next/swc-linux-x64-musl@16.0.10':
     resolution: {integrity: sha512-1TDG9PDKivNw5550S111gsO4RGennLVl9cipPhtkXIFVwo31YZ73nEbLjNC8qG3SgTz/QZyYyaFYMeY4BKZR/g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-linux-x64-musl@16.1.1':
     resolution: {integrity: sha512-9pRbK3M4asAHQRkwaXwu601oPZHghuSC8IXNENgbBSyImHv/zY4K5udBusgdHkvJ/Tcr96jJwQYOll0qU8+fPA==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@next/swc-win32-arm64-msvc@16.0.10':
     resolution: {integrity: sha512-aEZIS4Hh32xdJQbHz121pyuVZniSNoqDVx1yIr2hy+ZwJGipeqnMZBJHyMxv2tiuAXGx6/xpTcQJ6btIiBjgmg==}
@@ -2262,56 +2305,67 @@ packages:
     resolution: {integrity: sha512-dV3T9MyAf0w8zPVLVBptVlzaXxka6xg1f16VAQmjg+4KMSTWDvhimI/Y6mp8oHwNrmnmVl9XxJ/w/mO4uIQONA==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.53.5':
     resolution: {integrity: sha512-wIGYC1x/hyjP+KAu9+ewDI+fi5XSNiUi9Bvg6KGAh2TsNMA3tSEs+Sh6jJ/r4BV/bx/CyWu2ue9kDnIdRyafcQ==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.53.5':
     resolution: {integrity: sha512-Y+qVA0D9d0y2FRNiG9oM3Hut/DgODZbU9I8pLLPwAsU0tUKZ49cyV1tzmB/qRbSzGvY8lpgGkJuMyuhH7Ma+Vg==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.53.5':
     resolution: {integrity: sha512-juaC4bEgJsyFVfqhtGLz8mbopaWD+WeSOYr5E16y+1of6KQjc0BpwZLuxkClqY1i8sco+MdyoXPNiCkQou09+g==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.53.5':
     resolution: {integrity: sha512-rIEC0hZ17A42iXtHX+EPJVL/CakHo+tT7W0pbzdAGuWOt2jxDFh7A/lRhsNHBcqL4T36+UiAgwO8pbmn3dE8wA==}
     cpu: [loong64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-gnu@4.53.5':
     resolution: {integrity: sha512-T7l409NhUE552RcAOcmJHj3xyZ2h7vMWzcwQI0hvn5tqHh3oSoclf9WgTl+0QqffWFG8MEVZZP1/OBglKZx52Q==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.53.5':
     resolution: {integrity: sha512-7OK5/GhxbnrMcxIFoYfhV/TkknarkYC1hqUw1wU2xUN3TVRLNT5FmBv4KkheSG2xZ6IEbRAhTooTV2+R5Tk0lQ==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.53.5':
     resolution: {integrity: sha512-GwuDBE/PsXaTa76lO5eLJTyr2k8QkPipAyOrs4V/KJufHCZBJ495VCGJol35grx9xryk4V+2zd3Ri+3v7NPh+w==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.53.5':
     resolution: {integrity: sha512-IAE1Ziyr1qNfnmiQLHBURAD+eh/zH1pIeJjeShleII7Vj8kyEm2PF77o+lf3WTHDpNJcu4IXJxNO0Zluro8bOw==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.53.5':
     resolution: {integrity: sha512-Pg6E+oP7GvZ4XwgRJBuSXZjcqpIW3yCBhK4BcsANvb47qMvAbCjR6E+1a/U2WXz1JJxp9/4Dno3/iSJLcm5auw==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.53.5':
     resolution: {integrity: sha512-txGtluxDKTxaMDzUduGP0wdfng24y1rygUMnmlUJ88fzCCULCLn7oE5kb2+tRB+MWq1QDZT6ObT5RrR8HFRKqg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-openharmony-arm64@4.53.5':
     resolution: {integrity: sha512-3DFiLPnTxiOQV993fMc+KO8zXHTcIjgaInrqlG8zDp1TlhYl6WgrOHuJkJQ6M8zHEcntSJsUp1XFZSY8C1DYbg==}
@@ -2501,24 +2555,28 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@tailwindcss/oxide-linux-arm64-musl@4.1.18':
     resolution: {integrity: sha512-1px92582HkPQlaaCkdRcio71p8bc8i/ap5807tPRDK/uw953cauQBT8c5tVGkOwrHMfc2Yh6UuxaH4vtTjGvHg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@tailwindcss/oxide-linux-x64-gnu@4.1.18':
     resolution: {integrity: sha512-v3gyT0ivkfBLoZGF9LyHmts0Isc8jHZyVcbzio6Wpzifg/+5ZJpDiRiUhDLkcr7f/r38SWNe7ucxmGW3j3Kb/g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@tailwindcss/oxide-linux-x64-musl@4.1.18':
     resolution: {integrity: sha512-bhJ2y2OQNlcRwwgOAGMY0xTFStt4/wyU6pvI6LSuZpRgKQwxTec0/3Scu91O8ir7qCR3AuepQKLU/kX99FouqQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@tailwindcss/oxide-wasm32-wasi@4.1.18':
     resolution: {integrity: sha512-LffYTvPjODiP6PT16oNeUQJzNVyJl1cjIebq/rWWBF+3eDst5JGEFSc5cWxyRCJ0Mxl+KyIkqRxk1XPEs9x8TA==}
@@ -2799,41 +2857,49 @@ packages:
     resolution: {integrity: sha512-34gw7PjDGB9JgePJEmhEqBhWvCiiWCuXsL9hYphDF7crW7UgI05gyBAi6MF58uGcMOiOqSJ2ybEeCvHcq0BCmQ==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-arm64-musl@1.11.1':
     resolution: {integrity: sha512-RyMIx6Uf53hhOtJDIamSbTskA99sPHS96wxVE/bJtePJJtpdKGXO1wY90oRdXuYOGOTuqjT8ACccMc4K6QmT3w==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-ppc64-gnu@1.11.1':
     resolution: {integrity: sha512-D8Vae74A4/a+mZH0FbOkFJL9DSK2R6TFPC9M+jCWYia/q2einCubX10pecpDiTmkJVUH+y8K3BZClycD8nCShA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-gnu@1.11.1':
     resolution: {integrity: sha512-frxL4OrzOWVVsOc96+V3aqTIQl1O2TjgExV4EKgRY09AJ9leZpEg8Ak9phadbuX0BA4k8U5qtvMSQQGGmaJqcQ==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-musl@1.11.1':
     resolution: {integrity: sha512-mJ5vuDaIZ+l/acv01sHoXfpnyrNKOk/3aDoEdLO/Xtn9HuZlDD6jKxHlkN8ZhWyLJsRBxfv9GYM2utQ1SChKew==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-s390x-gnu@1.11.1':
     resolution: {integrity: sha512-kELo8ebBVtb9sA7rMe1Cph4QHreByhaZ2QEADd9NzIQsYNQpt9UkM9iqr2lhGr5afh885d/cB5QeTXSbZHTYPg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-gnu@1.11.1':
     resolution: {integrity: sha512-C3ZAHugKgovV5YvAMsxhq0gtXuwESUKc5MhEtjBpLoHPLYM+iuwSj3lflFwK3DPm68660rZ7G8BMcwSro7hD5w==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-musl@1.11.1':
     resolution: {integrity: sha512-rV0YSoyhK2nZ4vEswT/QwqzqQXw5I6CjoaYMOX0TqBlWhojUf8P94mvI7nuJTeaCkkds3QE4+zS8Ko+GdXuZtA==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-wasm32-wasi@1.11.1':
     resolution: {integrity: sha512-5u4RkfxJm+Ng7IWgkzi3qrFOvLvQYnPBmjmZQ8+szTK/b31fQCnleNl1GgEt7nIsZRIf5PLhPwT0WM+q45x/UQ==}
@@ -4490,24 +4556,28 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   lightningcss-linux-arm64-musl@1.30.2:
     resolution: {integrity: sha512-5Vh9dGeblpTxWHpOx8iauV02popZDsCYMPIgiuw97OJ5uaDsL86cnqSFs5LZkG3ghHoX5isLgWzMs+eD1YzrnA==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   lightningcss-linux-x64-gnu@1.30.2:
     resolution: {integrity: sha512-Cfd46gdmj1vQ+lR6VRTTadNHu6ALuw2pKR9lYq4FnhvgBc4zWY1EtZcAc6EffShbb1MFrIPfLDXD6Xprbnni4w==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   lightningcss-linux-x64-musl@1.30.2:
     resolution: {integrity: sha512-XJaLUUFXb6/QG2lGIW6aIk6jKdtjtcffUT0NKvIqhSBY3hh9Ch+1LCeH80dR9q9LBjG3ewbDjnumefsLsP6aiA==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   lightningcss-win32-arm64-msvc@1.30.2:
     resolution: {integrity: sha512-FZn+vaj7zLv//D/192WFFVA0RgHawIcHqLX9xuWiQt7P0PtdFEVaxgF9rjM/IRYHQXNnk61/H/gb2Ei+kUQ4xQ==}
@@ -5096,11 +5166,6 @@ packages:
     peerDependencies:
       react: ^19.2.3
 
-  react-dom@19.2.7:
-    resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
-    peerDependencies:
-      react: ^19.2.7
-
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -5583,6 +5648,7 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
+    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -6550,18 +6616,18 @@ snapshots:
       '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/react-dom@2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react-dom@2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@floating-ui/dom': 1.7.5
       react: 19.2.3
-      react-dom: 19.2.7(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
 
-  '@floating-ui/react@0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react@0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
+      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@floating-ui/utils': 0.2.10
       react: 19.2.3
-      react-dom: 19.2.7(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
       tabbable: 6.4.0
 
   '@floating-ui/utils@0.2.10': {}
@@ -7213,6 +7279,11 @@ snapshots:
       react-dom: 19.2.1(react@19.2.3)
       storybook: 10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
 
+  '@storybook/react-dom-shim@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+      react-dom: 19.2.3(react@19.2.3)
+
   '@storybook/react-dom-shim@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))':
     dependencies:
       react: 19.2.3
@@ -7257,7 +7328,7 @@ snapshots:
   '@storybook/react@10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(storybook@10.2.19(@testing-library/dom@10.4.1)(prettier@3.7.4)(react-dom@19.2.1(react@19.2.3))(react@19.2.3))
+      '@storybook/react-dom-shim': 10.2.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react: 19.2.3
       react-docgen: 8.0.2
       react-dom: 19.2.3(react@19.2.3)
@@ -8418,8 +8489,8 @@ snapshots:
       '@next/eslint-plugin-next': 16.1.1
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.2(jiti@2.6.1))
@@ -8441,7 +8512,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.3
@@ -8452,22 +8523,22 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -8478,7 +8549,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -9213,7 +9284,7 @@ snapshots:
       '@babel/parser': 7.28.5
       '@istanbuljs/schema': 0.1.6
       istanbul-lib-coverage: 3.2.2
-      semver: 7.7.3
+      semver: 7.8.5
     transitivePeerDependencies:
       - supports-color
 
@@ -10271,11 +10342,6 @@ snapshots:
       scheduler: 0.27.0
 
   react-dom@19.2.3(react@19.2.3):
-    dependencies:
-      react: 19.2.3
-      scheduler: 0.27.0
-
-  react-dom@19.2.7(react@19.2.3):
     dependencies:
       react: 19.2.3
       scheduler: 0.27.0

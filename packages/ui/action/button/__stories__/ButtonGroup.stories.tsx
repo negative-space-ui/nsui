@@ -3,7 +3,7 @@ import React from 'react'
 import { ButtonGroup, type ButtonGroupProps } from '..'
 
 export default {
-  title: 'Actions/ButtonGroup',
+  title: 'Actions/Button group',
   component: ButtonGroup,
   tags: ['autodocs'],
   args: {

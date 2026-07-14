@@ -36,13 +36,13 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/checkbox": "workspace:*",
-    "@negative-space/form": "workspace:*",
-    "@negative-space/input": "workspace:*",
-    "@negative-space/listbox": "workspace:*",
-    "@negative-space/radio": "workspace:*",
-    "@negative-space/select": "workspace:*",
-    "@negative-space/switch": "workspace:*"
+    "@negative-space/checkbox": "workspace:^",
+    "@negative-space/form": "workspace:^",
+    "@negative-space/input": "workspace:^",
+    "@negative-space/listbox": "workspace:^",
+    "@negative-space/radio": "workspace:^",
+    "@negative-space/select": "workspace:^",
+    "@negative-space/switch": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

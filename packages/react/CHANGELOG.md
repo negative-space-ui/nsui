@@ -1,5 +1,17 @@
 # negative-space
 
+## 2.9.0
+
+### Minor Changes
+
+- a4dbc0b: Rename system alias to utils
+
+### Patch Changes
+
+- Updated dependencies [47a8f94]
+  - @negative-space/provider@1.12.0
+  - @negative-space/feedback@1.5.0
+
 ## 2.8.0
 
 ### Minor Changes

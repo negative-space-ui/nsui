@@ -1,14 +1,14 @@
 import { injectStyle } from '@negative-space/inject-css'
 
-import type { GlobalConfigRequired } from '../types/global'
+import type { GlobalSettings } from '../types/global'
 
-export const baseColors = (global: GlobalConfigRequired) => {
+export const baseColors = (global: Required<GlobalSettings>) => {
   injectStyle(':root', {
     [`--${global.prefixCls}-error`]: global.colors.error
   })
 }
 
-export const baseAnimations = (global: GlobalConfigRequired) => {
+export const baseAnimations = (global: Required<GlobalSettings>) => {
   injectStyle(`.${global.prefixCls}-fade`, {
     transition: `opacity ${global.motionDurations.fade}ms ease-in-out`
   })

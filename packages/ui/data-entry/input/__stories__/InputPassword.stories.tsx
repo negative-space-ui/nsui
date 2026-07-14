@@ -3,7 +3,7 @@ import React from 'react'
 import { InputPassword, type InputPasswordProps } from '../src/'
 
 export default {
-  title: 'Data Entry/InputPassword',
+  title: 'Data Entry/Input password',
   component: InputPassword,
   tags: ['autodocs'],
   args: {

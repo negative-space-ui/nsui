@@ -6,7 +6,7 @@ const COMMIT_TYPES = 'build|chore|ci|docs|feat|fix|perf|refactor|revert|style|te
 
 const typePattern = new RegExp(`^(${COMMIT_TYPES})`)
 
-const fullPattern = new RegExp(`^(${COMMIT_TYPES})(\\([a-z0-9._/-]+\\))?(!)?: [^\\s].+$`)
+const fullPattern = new RegExp(`^(${COMMIT_TYPES})(\\([@a-z0-9._/-]+\\))?(!)?: [^\\s].+$`)
 
 function main(): void {
   const file: string | undefined = process.argv[2]
