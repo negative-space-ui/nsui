@@ -1,4 +1,11 @@
-import react from 'react'
+import React from 'react'
+
+export type GlobalSettings = {
+  colors?: Colors
+  motionDurations?: MotionDurations
+  prefixCls?: string
+  tooltip?: boolean
+}
 
 export type MotionDurations = {
   fade?: number
@@ -8,14 +15,5 @@ export type MotionDurations = {
 }
 
 export type Colors = {
-  error: NonNullable<react.CSSProperties['color']>
+  error: NonNullable<React.CSSProperties['color']>
 }
-
-export type GlobalConfig = {
-  colors?: Colors
-  motionDurations?: MotionDurations
-  prefixCls?: string
-  tooltip?: boolean
-}
-
-export type GlobalConfigRequired = Required<GlobalConfig>

@@ -1,5 +1,14 @@
 # @negative-space/list
 
+## 1.4.6
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/flex@1.2.6
+
 ## 1.4.5
 
 ### Patch Changes

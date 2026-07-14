@@ -2,13 +2,13 @@ import { createElement, ReactNode } from 'react'
 
 import { NSUIContext, type NSUIContextProps } from './ProviderContext'
 import { styles } from './styles'
-import type { ComponentsConfig } from './types/components'
-import type { GlobalConfig } from './types/global'
+import type { ComponentSettings } from './types/components'
+import type { GlobalSettings } from './types/global'
 
 export type NSUIProviderProps = {
   children: ReactNode
-  components?: ComponentsConfig
-  global?: GlobalConfig
+  components?: ComponentSettings
+  global?: GlobalSettings
 }
 
 export const NSUIProvider = ({ children, components, global }: NSUIProviderProps) => {
@@ -72,6 +72,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       },
       select: {
         animation: components?.select?.animation ?? 'none'
+      },
+      skeleton: {
+        animationDuration: components?.skeleton?.animationDuration ?? 1.8
       },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2

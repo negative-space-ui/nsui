@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/form",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "publishConfig": {
     "access": "public"
   },
@@ -36,15 +36,15 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/grid": "workspace:*",
-    "@negative-space/system": "workspace:*"
+    "@negative-space/grid": "workspace:^",
+    "@negative-space/system": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@negative-space/input": "workspace:*",
+    "@negative-space/input": "workspace:^",
     "@types/react": "^19.2.3",
     "typescript": "^5.9.3"
   },

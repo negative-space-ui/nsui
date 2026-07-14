@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/text",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "publishConfig": {
     "access": "public"
   },
@@ -35,7 +35,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/system": "workspace:*"
+    "@negative-space/system": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

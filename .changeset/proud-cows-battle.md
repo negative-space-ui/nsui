@@ -2,4 +2,4 @@
 'negative-space': minor
 ---
 
-Add system package export
+Rename system alias to utils

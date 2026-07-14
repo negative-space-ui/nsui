@@ -1,5 +1,15 @@
 # @negative-space/provider
 
+## 1.11.0
+
+### Minor Changes
+
+- b0697fa: Add PolymorphicElement and PolymorphicElementMap types
+
+### Patch Changes
+
+- 96ab878: Fix general bugs
+
 ## 1.10.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/provider",
-  "version": "1.10.1",
+  "version": "1.11.0",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/inject-css": "workspace:*"
+    "@negative-space/inject-css": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

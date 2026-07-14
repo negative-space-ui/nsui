@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -32,7 +32,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/theme": "workspace:*"
+    "@negative-space/theme": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

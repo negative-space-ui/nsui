@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/popover",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.18",
-    "@negative-space/system": "workspace:*"
+    "@negative-space/system": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

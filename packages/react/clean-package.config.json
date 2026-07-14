@@ -50,15 +50,15 @@
         "import": "./dist/primitive/index.mjs",
         "require": "./dist/primitive/index.js"
       },
-      "./system": {
-        "types": "./dist/system/index.d.ts",
-        "import": "./dist/system/index.mjs",
-        "require": "./dist/system/index.js"
-      },
       "./typography": {
         "types": "./dist/typography/index.d.ts",
         "import": "./dist/typography/index.mjs",
         "require": "./dist/typography/index.js"
+      },
+      "./utils": {
+        "types": "./dist/utils/index.d.ts",
+        "import": "./dist/utils/index.mjs",
+        "require": "./dist/utils/index.js"
       },
       "./package.json": "./package.json"
     }

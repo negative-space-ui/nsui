@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/select",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -36,11 +36,11 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/button": "workspace:*",
-    "@negative-space/field": "workspace:*",
-    "@negative-space/listbox": "workspace:*",
-    "@negative-space/popover": "workspace:*",
-    "@negative-space/system": "workspace:*"
+    "@negative-space/button": "workspace:^",
+    "@negative-space/field": "workspace:^",
+    "@negative-space/listbox": "workspace:^",
+    "@negative-space/popover": "workspace:^",
+    "@negative-space/system": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

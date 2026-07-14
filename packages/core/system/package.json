@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/system",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/provider": "workspace:*",
+    "@negative-space/provider": "workspace:^",
     "clsx": "^2.1.1",
     "lucide-react": "^0.576.0"
   },

@@ -1,8 +1,8 @@
 import { injectKeyframes, injectStyle } from '@negative-space/inject-css'
 
-import type { GlobalConfigRequired } from '../../types/global'
+import type { GlobalSettings } from '../../types/global'
 
-export const ripple = (global: GlobalConfigRequired) => {
+export const ripple = (global: Required<GlobalSettings>) => {
   injectKeyframes(`${global.prefixCls}-ripple`, {
     to: {
       transform: 'scale(2)',

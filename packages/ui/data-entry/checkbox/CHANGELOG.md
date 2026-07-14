@@ -1,5 +1,15 @@
 # @negative-space/checkbox
 
+## 1.5.4
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/checkmark@1.2.4
+  - @negative-space/field@1.1.4
+
 ## 1.5.3
 
 ### Patch Changes

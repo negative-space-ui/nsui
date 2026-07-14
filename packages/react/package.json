@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.7.3",
+  "version": "2.8.0",
   "publishConfig": {
     "access": "public"
   },
@@ -30,8 +30,8 @@
     "./layout": "./src/layout/index.ts",
     "./navigation": "./src/navigation/index.ts",
     "./primitive": "./src/primitive/index.ts",
-    "./system": "./src/system/index.ts",
-    "./typography": "./src/typography/index.ts"
+    "./typography": "./src/typography/index.ts",
+    "./utils": "./src/utils/index.ts"
   },
   "sideEffects": false,
   "repository": {
@@ -50,17 +50,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@negative-space/action": "workspace:*",
-    "@negative-space/app": "workspace:*",
-    "@negative-space/data-display": "workspace:*",
-    "@negative-space/data-entry": "workspace:*",
-    "@negative-space/feedback": "workspace:*",
-    "@negative-space/layout": "workspace:*",
-    "@negative-space/navigation": "workspace:*",
-    "@negative-space/primitive": "workspace:*",
-    "@negative-space/provider": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "@negative-space/typography": "workspace:*"
+    "@negative-space/action": "workspace:^",
+    "@negative-space/app": "workspace:^",
+    "@negative-space/data-display": "workspace:^",
+    "@negative-space/data-entry": "workspace:^",
+    "@negative-space/feedback": "workspace:^",
+    "@negative-space/layout": "workspace:^",
+    "@negative-space/navigation": "workspace:^",
+    "@negative-space/primitive": "workspace:^",
+    "@negative-space/provider": "workspace:^",
+    "@negative-space/system": "workspace:^",
+    "@negative-space/typography": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/code-block",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/system": "workspace:*",
+    "@negative-space/system": "workspace:^",
     "@types/prismjs": "^1.26.6",
     "prismjs": "^1.30.0"
   },

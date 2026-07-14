@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/button",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "publishConfig": {
     "access": "public"
   },
@@ -38,10 +38,10 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/ripple": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "@negative-space/spinner": "workspace:*"
+    "@negative-space/flex": "workspace:^",
+    "@negative-space/ripple": "workspace:^",
+    "@negative-space/system": "workspace:^",
+    "@negative-space/spinner": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

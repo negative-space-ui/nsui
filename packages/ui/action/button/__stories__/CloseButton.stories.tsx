@@ -3,7 +3,7 @@ import React from 'react'
 import { CloseButton, type CloseButtonProps } from '..'
 
 export default {
-  title: 'Actions/CloseButton',
+  title: 'Actions/Close button',
   component: CloseButton,
   tags: ['autodocs'],
   args: {

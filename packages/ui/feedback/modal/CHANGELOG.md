@@ -1,5 +1,16 @@
 # @negative-space/modal
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/button@2.8.1
+  - @negative-space/popover@1.0.4
+  - @negative-space/tooltip@1.0.4
+
 ## 1.1.3
 
 ### Patch Changes
