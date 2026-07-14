@@ -27,33 +27,59 @@ export interface PopoverProps extends Omit<
 const NON_FOCUS_TRIGGERS: PopoverTrigger[] = ['hover']
 
 export const Popover = ({
-  popover,
-  animation,
   children,
+  popover,
   classNames,
   styles,
+  animation,
   ...props
 }: PopoverProps) => {
   const { global, components } = useNSUI()
 
-  const { isOpen, floatingStyles, arrowRef, context, getFloatingProps, opts } = popover._internal
-
-  const { refs } = context
+  const {
+    isOpen,
+    isPositioned,
+    floatingStyles,
+    arrowRef,
+    context,
+    getFloatingProps,
+    opts,
+    floatingRef
+  } = popover
 
   const Animation = animation ?? components.popover.animation
 
   const [mounted, setMounted] = useState(false)
   const [visible, setVisible] = useState(false)
+  const [hasPosition, setHasPosition] = useState(false)
 
   const shouldTrapFocus = opts.trapFocus && !NON_FOCUS_TRIGGERS.includes(opts.trigger)
 
   useEffect(() => {
-    if (isOpen) setMounted(true)
-    else setVisible(false)
-  }, [isOpen])
+    if (isPositioned) {
+      setHasPosition(true)
+    }
+
+    if (!mounted) {
+      setHasPosition(false)
+    }
+  }, [isPositioned, mounted])
+
+  const positionReady = opts.fixedPosition ? true : hasPosition
 
   useEffect(() => {
-    if (!mounted) return
+    if (isOpen) {
+      setMounted(true)
+      return
+    }
+
+    setVisible(false)
+
+    if (Animation === 'none') setMounted(false)
+  }, [isOpen, Animation])
+
+  useEffect(() => {
+    if (!mounted || !positionReady) return
 
     let id2: number
     const id = requestAnimationFrame(() => {
@@ -66,25 +92,36 @@ export const Popover = ({
       cancelAnimationFrame(id)
       cancelAnimationFrame(id2)
     }
-  }, [mounted, isOpen])
+  }, [mounted, isOpen, positionReady])
 
-  const handleTransitionEnd = () => {
-    if (!visible) setMounted(false)
+  const handleTransitionEnd = (e: React.TransitionEvent) => {
+    if (e.target !== e.currentTarget) return
+
+    if (!visible) {
+      setMounted(false)
+    }
   }
 
   if (!mounted) return null
 
-  const positionStyles: React.CSSProperties = opts.fixedPosition
+  const wrapperStyles: React.CSSProperties = opts.fixedPosition
     ? {
         ...FIXED_POSITION_STYLES[opts.fixedPosition],
         zIndex: opts.zIndex,
         pointerEvents: visible ? 'auto' : 'none'
       }
-    : {
-        ...floatingStyles,
-        zIndex: opts.zIndex,
-        pointerEvents: visible ? 'auto' : 'none'
-      }
+    : positionReady
+      ? {
+          ...floatingStyles,
+          zIndex: opts.zIndex,
+          pointerEvents: visible ? 'auto' : 'none'
+        }
+      : {
+          position: floatingStyles.position,
+          zIndex: opts.zIndex,
+          visibility: 'hidden',
+          pointerEvents: 'none'
+        }
 
   const panel = (
     <>
@@ -109,36 +146,33 @@ export const Popover = ({
       )}
 
       <FloatingFocusManager context={context} disabled={!shouldTrapFocus}>
-        <div
-          ref={refs.setFloating}
-          {...getFloatingProps(props)}
-          style={{
-            ...positionStyles,
-            ...styles?.root
-          }}
-          data-visible={visible ? 'true' : 'false'}
-          data-trigger={opts.trigger}
-          onTransitionEnd={handleTransitionEnd}
-          className={cn(
-            Animation !== 'none' && `${global.prefixCls}-${Animation}`,
-            classNames?.root
-          )}
-        >
+        <div ref={floatingRef} {...getFloatingProps(props)} style={wrapperStyles}>
           <div
-            className={cn(`${global.prefixCls}-popover-content`, classNames?.content)}
-            style={styles?.content}
+            data-visible={visible ? 'true' : 'false'}
+            data-trigger={opts.trigger}
+            onTransitionEnd={handleTransitionEnd}
+            className={cn(
+              Animation !== 'none' && `${global.prefixCls}-${Animation}`,
+              classNames?.root
+            )}
+            style={styles?.root}
           >
-            {children}
-          </div>
+            <div
+              className={cn(`${global.prefixCls}-popover-content`, classNames?.content)}
+              style={styles?.content}
+            >
+              {children}
+            </div>
 
-          {opts.showArrow && (
-            <FloatingArrow
-              ref={arrowRef}
-              context={context}
-              className={cn(`${global.prefixCls}-popover-arrow`, classNames?.arrow)}
-              style={styles?.arrow}
-            />
-          )}
+            {opts.showArrow && (
+              <FloatingArrow
+                ref={arrowRef}
+                context={context}
+                className={cn(`${global.prefixCls}-popover-arrow`, classNames?.arrow)}
+                style={styles?.arrow}
+              />
+            )}
+          </div>
         </div>
       </FloatingFocusManager>
     </>

@@ -3,16 +3,20 @@ import React from 'react'
 
 import { Alert } from '..'
 
-const triggerProps = {
-  'data-testid': 'tooltip-trigger'
+const mockNSUI = {
+  tooltip: false
 }
 
 jest.mock('@negative-space/system', () => ({
   cn: (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' '),
+
   useNSUI: () => ({
     global: {
       prefixCls: 'ns',
-      tooltip: false
+      tooltip: mockNSUI.tooltip,
+      content: {
+        tooltip: mockNSUI.tooltip
+      }
     },
     components: {
       alert: {
@@ -23,11 +27,15 @@ jest.mock('@negative-space/system', () => ({
       }
     }
   }),
+
   Info: (props: React.SVGProps<SVGSVGElement>) => <svg data-testid="info-icon" {...props} />,
+
   CheckCircle2: (props: React.SVGProps<SVGSVGElement>) => (
     <svg data-testid="success-icon" {...props} />
   ),
+
   XCircle: (props: React.SVGProps<SVGSVGElement>) => <svg data-testid="error-icon" {...props} />,
+
   TriangleAlert: (props: React.SVGProps<SVGSVGElement>) => (
     <svg data-testid="warning-icon" {...props} />
   )
@@ -53,10 +61,12 @@ jest.mock('@negative-space/info', () => ({
 }))
 
 jest.mock('@negative-space/button', () => ({
-  CloseButton: ({ onClick, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-    <button onClick={onClick} {...props}>
-      Close
-    </button>
+  CloseButton: React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(
+    ({ onClick, ...props }, ref) => (
+      <button ref={ref} onClick={onClick} {...props}>
+        Close
+      </button>
+    )
   )
 }))
 
@@ -68,12 +78,20 @@ jest.mock('@negative-space/tooltip', () => ({
   Tooltip: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="tooltip">{children}</div>
   ),
+
   useTooltip: () => ({
-    triggerProps
+    referenceRef: jest.fn(),
+    getReferenceProps: () => ({
+      'data-testid': 'tooltip-trigger'
+    })
   })
 }))
 
 describe('Alert', () => {
+  afterEach(() => {
+    mockNSUI.tooltip = false
+  })
+
   it('renders heading and description', () => {
     render(<Alert heading="Title" description="Description" />)
 
@@ -93,6 +111,24 @@ describe('Alert', () => {
     expect(screen.getByTestId('success-icon')).toBeInTheDocument()
   })
 
+  it('renders error icon', () => {
+    render(<Alert heading="Title" variant="error" />)
+
+    expect(screen.getByTestId('error-icon')).toBeInTheDocument()
+  })
+
+  it('renders warning icon', () => {
+    render(<Alert heading="Title" variant="warning" />)
+
+    expect(screen.getByTestId('warning-icon')).toBeInTheDocument()
+  })
+
+  it('renders info icon', () => {
+    render(<Alert heading="Title" variant="info" />)
+
+    expect(screen.getByTestId('info-icon')).toBeInTheDocument()
+  })
+
   it('renders custom icon instead of variant icon', () => {
     render(<Alert heading="Title" variant="success" icon={<div data-testid="custom-icon" />} />)
 
@@ -110,6 +146,12 @@ describe('Alert', () => {
     expect(onClose).toHaveBeenCalledTimes(1)
   })
 
+  it('does not render close button when closable is false', () => {
+    render(<Alert heading="Title" closable={false} />)
+
+    expect(screen.queryByRole('button')).not.toBeInTheDocument()
+  })
+
   it('renders progress bar', () => {
     render(
       <Alert
@@ -123,6 +165,12 @@ describe('Alert', () => {
     expect(screen.getByTestId('progress')).toHaveTextContent('45')
   })
 
+  it('does not render progress bar without value', () => {
+    render(<Alert heading="Title" />)
+
+    expect(screen.queryByTestId('progress')).not.toBeInTheDocument()
+  })
+
   it('renders prefix and suffix', () => {
     render(<Alert heading="Title" prefix={<span>Prefix</span>} suffix={<span>Suffix</span>} />)
 
@@ -131,22 +179,19 @@ describe('Alert', () => {
   })
 
   it('renders tooltip when enabled', () => {
-    jest.doMock('@negative-space/system', () => ({
-      cn: (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' '),
-      useNSUI: () => ({
-        global: {
-          prefixCls: 'ns',
-          tooltip: true
-        },
-        components: {
-          alert: {
-            closable: true
-          },
-          modal: {
-            closeTitle: 'Close'
-          }
-        }
-      })
-    }))
+    mockNSUI.tooltip = true
+
+    render(<Alert heading="Title" />)
+
+    expect(screen.getByRole('button')).toHaveTextContent('Close')
+    expect(screen.getByTestId('tooltip')).toHaveTextContent('Close')
+  })
+
+  it('passes tooltip trigger props to close button', () => {
+    mockNSUI.tooltip = true
+
+    render(<Alert heading="Title" />)
+
+    expect(screen.getByTestId('tooltip-trigger')).toBeInTheDocument()
   })
 })

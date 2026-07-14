@@ -111,6 +111,10 @@ export type RadioConfig = {
   animation?: OverlayAnimation
 }
 
+export type SelectConfig = {
+  animation?: ClickableAnimation
+}
+
 export type SpinnerConfig = {
   animationDuration?: number
 }
@@ -133,6 +137,7 @@ export type ComponentsConfig = {
   modal?: ModalConfig
   popover?: PopoverConfig
   radio?: RadioConfig
+  select?: SelectConfig
   spinner?: SpinnerConfig
   text?: TextConfig
 }

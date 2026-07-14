@@ -8,15 +8,16 @@ export interface TooltipProps extends Omit<PopoverProps, 'popover'> {
   tooltip: TooltipHandle
 }
 
-export const Tooltip = ({ tooltip, classNames, ...popoverProps }: TooltipProps) => {
+export const Tooltip = ({ tooltip, classNames, ...props }: TooltipProps) => {
   const { global } = useNSUI()
 
   return (
     <Popover
-      {...popoverProps}
+      {...props}
       popover={tooltip}
       role="tooltip"
       classNames={{
+        ...classNames,
         root: cn(`${global.prefixCls}-tooltip`, classNames?.root),
         content: cn(`${global.prefixCls}-tooltip-content`, classNames?.content),
         arrow: cn(`${global.prefixCls}-tooltip-arrow`, classNames?.arrow),

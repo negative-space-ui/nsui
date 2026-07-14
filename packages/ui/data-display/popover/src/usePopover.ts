@@ -1,6 +1,7 @@
 import {
   arrow,
   autoUpdate,
+  type ElementProps,
   flip,
   type FlipOptions,
   offset,
@@ -15,7 +16,7 @@ import {
   useInteractions,
   useRole
 } from '@floating-ui/react'
-import { type CSSProperties, type HTMLProps, useCallback, useRef, useState } from 'react'
+import { type CSSProperties, useCallback, useRef, useState } from 'react'
 
 export type PopoverTrigger = 'click' | 'hover' | 'press'
 export type FixedPosition = 'center' | 'top' | 'bottom'
@@ -40,28 +41,30 @@ export interface UsePopoverOptions {
   fixedPosition?: FixedPosition
 }
 
-export interface PopoverInternal {
-  isOpen: boolean
-  floatingRef: (node: HTMLElement | null) => void
-  floatingStyles: CSSProperties
-  arrowRef: React.RefObject<SVGSVGElement | null>
-  context: ReturnType<typeof useFloating>['context']
-  getFloatingProps: (props?: HTMLProps<HTMLElement>) => Record<string, unknown>
-  opts: Required<
-    Pick<
-      UsePopoverOptions,
-      'showArrow' | 'trapFocus' | 'usePortal' | 'zIndex' | 'trigger' | 'overlay'
-    >
-  > & { fixedPosition: FixedPosition | false }
+export interface PopoverOpts {
+  showArrow: boolean
+  trapFocus: boolean
+  usePortal: boolean
+  zIndex: number
+  trigger: PopoverTrigger
+  overlay: boolean
+  fixedPosition: FixedPosition | false
 }
 
 export interface PopoverHandle {
-  triggerProps: Record<string, unknown>
+  isOpen: boolean
   open: () => void
   close: () => void
   toggle: () => void
-  isOpen: boolean
-  _internal: PopoverInternal
+  referenceRef: (node: Element | null) => void
+  getReferenceProps: (userProps?: React.HTMLProps<Element>) => Record<string, unknown>
+  floatingRef: (node: HTMLElement | null) => void
+  getFloatingProps: (userProps?: React.HTMLProps<HTMLElement>) => Record<string, unknown>
+  floatingStyles: CSSProperties
+  isPositioned: boolean
+  context: ReturnType<typeof useFloating>['context']
+  arrowRef: React.RefObject<SVGSVGElement | null>
+  opts: PopoverOpts
 }
 
 const FIXED_POSITION_STYLES: Record<FixedPosition, CSSProperties> = {
@@ -97,6 +100,7 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen)
   const isOpen = isControlled ? controlledOpen! : uncontrolledOpen
   const arrowRef = useRef<SVGSVGElement | null>(null)
+  const resolvedShowArrow = fixedPosition ? false : showArrow
 
   const setOpen = useCallback(
     (next: boolean) => {
@@ -117,7 +121,7 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
           offset(offsetValue),
           flip(flipOptions),
           shift({ padding: 8, ...shiftOptions }),
-          ...(showArrow ? [arrow({ element: arrowRef })] : [])
+          ...(resolvedShowArrow ? [arrow({ element: arrowRef })] : [])
         ]
   })
 
@@ -132,10 +136,19 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
     handleClose: null
   })
 
-  const pressInteraction = useClick(floating.context, {
-    enabled: trigger === 'press',
-    toggle: true
-  })
+  const pressInteraction: ElementProps | undefined =
+    trigger === 'press'
+      ? {
+          reference: {
+            onPointerDown: (event) => {
+              event.preventDefault()
+              setOpen(true)
+            },
+            onPointerUp: () => setOpen(false),
+            onPointerLeave: () => setOpen(false)
+          }
+        }
+      : undefined
 
   const dismiss = useDismiss(floating.context, {
     outsidePress: dismissOnClickOutside,
@@ -144,57 +157,37 @@ export function usePopover(options: UsePopoverOptions = {}): PopoverHandle {
 
   const role = useRole(floating.context)
 
-  const activeInteraction =
-    trigger === 'click'
-      ? clickInteraction
-      : trigger === 'hover'
-        ? hoverInteraction
-        : pressInteraction
-
   const { getReferenceProps, getFloatingProps } = useInteractions([
-    activeInteraction,
+    clickInteraction,
+    hoverInteraction,
+    pressInteraction,
     dismiss,
     role
   ])
 
-  const baseTriggerProps = getReferenceProps({ ref: floating.refs.setReference })
-
-  const triggerProps: Record<string, unknown> =
-    trigger === 'press'
-      ? {
-          ...baseTriggerProps,
-          onClick: undefined,
-          onPointerDown: (e: React.PointerEvent) => {
-            e.preventDefault()
-            setOpen(true)
-          },
-          onPointerUp: () => setOpen(false),
-          onPointerLeave: () => setOpen(false)
-        }
-      : baseTriggerProps
-
   return {
-    triggerProps,
     isOpen,
     open: () => setOpen(true),
     close: () => setOpen(false),
     toggle: () => setOpen(!isOpen),
-    _internal: {
-      isOpen,
-      floatingRef: floating.refs.setFloating,
-      floatingStyles: floating.floatingStyles,
-      arrowRef,
-      context: floating.context,
-      getFloatingProps,
-      opts: {
-        showArrow,
-        trapFocus,
-        usePortal,
-        zIndex,
-        trigger,
-        overlay,
-        fixedPosition: fixedPosition ?? false
-      }
+
+    referenceRef: floating.refs.setReference,
+    getReferenceProps,
+
+    floatingRef: floating.refs.setFloating,
+    getFloatingProps,
+    floatingStyles: floating.floatingStyles,
+    isPositioned: floating.isPositioned,
+    context: floating.context,
+    arrowRef,
+    opts: {
+      showArrow: resolvedShowArrow,
+      trapFocus,
+      usePortal,
+      zIndex,
+      trigger,
+      overlay,
+      fixedPosition: fixedPosition ?? false
     }
   }
 }

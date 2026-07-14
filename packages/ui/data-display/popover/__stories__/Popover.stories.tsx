@@ -21,7 +21,11 @@ export const Click = (args: Omit<PopoverProps, 'popover'>) => {
 
   return (
     <div>
-      <button {...popover.triggerProps} className="cursor-pointer">
+      <button
+        ref={popover.referenceRef}
+        {...popover.getReferenceProps()}
+        className="cursor-pointer"
+      >
         Click to open
       </button>
       <Popover {...args} popover={popover}>
@@ -40,7 +44,9 @@ export const Hover = (args: Omit<PopoverProps, 'popover'>) => {
 
   return (
     <div>
-      <button {...popover.triggerProps}>Hover to open</button>
+      <button ref={popover.referenceRef} {...popover.getReferenceProps()}>
+        Hover to open
+      </button>
       <Popover {...args} popover={popover}>
         Popover Content
       </Popover>
@@ -53,7 +59,11 @@ export const Press = (args: Omit<PopoverProps, 'popover'>) => {
 
   return (
     <div>
-      <button {...popover.triggerProps} className="cursor-pointer">
+      <button
+        ref={popover.referenceRef}
+        {...popover.getReferenceProps()}
+        className="cursor-pointer"
+      >
         Hold to open
       </button>
       <Popover {...args} popover={popover}>
@@ -68,7 +78,11 @@ export const Overlay = (args: Omit<PopoverProps, 'popover'>) => {
 
   return (
     <div>
-      <button {...popover.triggerProps} className="cursor-pointer">
+      <button
+        ref={popover.referenceRef}
+        {...popover.getReferenceProps()}
+        className="cursor-pointer"
+      >
         Click to open
       </button>
       <Popover {...args} popover={popover}>

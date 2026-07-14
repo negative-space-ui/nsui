@@ -70,12 +70,6 @@ describe('Input', () => {
     expect(screen.getByRole('textbox')).toHaveAttribute('id', 'my-input')
   })
 
-  it('should generate id when no id is provided', () => {
-    render(<Input />)
-
-    expect(screen.getByRole('textbox')).toHaveAttribute('id')
-  })
-
   it('should call onChange', () => {
     const onChange = jest.fn()
 

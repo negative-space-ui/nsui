@@ -9,12 +9,10 @@ import { type ModalHandle } from './useModal'
 export interface ModalProps extends Omit<PopoverProps, 'popover' | 'classNames' | 'styles'> {
   classNames?: Omit<NonNullable<PopoverProps['classNames']>, 'arrow'> & {
     closeButton?: CloseButtonProps['classNames']
-    closeIcon?: string
     tooltip?: TooltipProps['classNames']
   }
   styles?: Omit<NonNullable<PopoverProps['styles']>, 'arrow'> & {
     closeButton?: CloseButtonProps['styles']
-    closeIcon?: React.CSSProperties
     tooltip?: TooltipProps['styles']
   }
   closable?: boolean
@@ -24,9 +22,9 @@ export interface ModalProps extends Omit<PopoverProps, 'popover' | 'classNames' 
 
 export const Modal = ({
   modal,
-  closable = true,
   classNames,
   styles,
+  closable = true,
   closeTitle,
   children,
   ...popoverProps
@@ -49,24 +47,36 @@ export const Modal = ({
           overlay: cn(`${global.prefixCls}-modal-overlay`, classNames?.overlay)
         }}
         styles={{
-          root: { ...styles?.root },
-          content: { ...styles?.content },
-          overlay: { ...styles?.overlay }
+          root: styles?.root,
+          content: styles?.content,
+          overlay: styles?.overlay
         }}
       >
+        {children}
+
         {closable && (
           <CloseButton
-            {...modal.triggerProps}
-            {...tooltip.triggerProps}
+            ref={tooltip.referenceRef}
+            {...tooltip.getReferenceProps()}
             aria-label={CloseTitle}
             title={!global.tooltip ? CloseTitle : undefined}
             onClick={modal.close}
             classNames={classNames?.closeButton}
-            styles={styles?.closeButton}
+            styles={{
+              root: {
+                position: 'absolute',
+                top: 4,
+                right: 4,
+                ...styles?.closeButton?.root
+              },
+              icon: {
+                ...styles?.closeButton?.icon
+              }
+            }}
           />
         )}
-        {children}
       </Popover>
+
       {global.tooltip && modal.isOpen && (
         <Tooltip tooltip={tooltip} classNames={classNames?.tooltip} styles={styles?.tooltip}>
           {CloseTitle}

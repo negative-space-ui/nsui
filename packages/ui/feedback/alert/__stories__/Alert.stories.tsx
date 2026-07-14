@@ -16,28 +16,38 @@ export default {
 const styles = {
   neutral: {
     root: 'w-fit bg-neutral-200 border border-neutral-300/30 rounded-md',
-    content: 'py-1 pr-2',
-    icon: 'w-10 h-10 text-neutral-200 fill-neutral-600'
+    content: {
+      root: 'py-1 px-2',
+      icon: 'w-10 h-10 text-neutral-200 fill-neutral-600'
+    }
   },
   info: {
     root: 'w-fit bg-blue-200 border border-blue-300/30 rounded-md',
-    content: 'py-1 pr-2',
-    icon: 'w-10 h-10 text-blue-200 fill-blue-600'
+    content: {
+      root: 'py-1 px-2',
+      icon: 'w-10 h-10 text-blue-200 fill-blue-600'
+    }
   },
   success: {
     root: 'w-fit bg-green-200 border border-green-300/30 rounded-md',
-    content: 'py-1 pr-2',
-    icon: 'w-10 h-10 text-green-200 fill-green-600'
+    content: {
+      root: 'py-1 px-2',
+      icon: 'w-10 h-10 text-green-200 fill-green-600'
+    }
   },
   warning: {
     root: 'w-fit bg-yellow-200 border border-yellow-300/30 rounded-md',
-    content: 'py-1 pr-2',
-    icon: 'w-10 h-10 text-yellow-200 fill-yellow-600'
+    content: {
+      root: 'py-1 px-2',
+      icon: 'w-10 h-10 text-yellow-200 fill-yellow-600'
+    }
   },
   error: {
     root: 'w-fit bg-red-200 border border-red-300/30 rounded-md',
-    content: 'py-1 pr-2',
-    icon: 'w-10 h-10 text-red-200 fill-red-600'
+    content: {
+      root: 'py-1 px-2',
+      icon: 'w-10 h-10 text-red-200 fill-red-600'
+    }
   }
 } as const
 
@@ -55,10 +65,16 @@ const AlertExample = ({ variant = 'success', ...args }: AlertProps) => {
       onClose={() => setIsOpen(false)}
       classNames={{
         root: style.root,
-        content: style.content,
-        info: { heading: 'font-medium' },
-        icon: style.icon,
-        closeButton: { root: 'opacity-50 hover:opacity-100' }
+        content: {
+          root: style.content.root,
+          icon: style.content.icon,
+          info: {
+            heading: 'font-medium'
+          },
+          closeButton: {
+            root: 'opacity-50 hover:opacity-100'
+          }
+        }
       }}
     />
   )
@@ -96,8 +112,10 @@ export const AccentBar = (args: AlertProps) => {
       onClose={() => setIsOpen(false)}
       classNames={{
         root: 'w-fit pr-2 bg-green-200 border border-green-300/30 rounded-md',
-        icon: 'w-10 h-10 text-green-200 fill-green-600',
-        prefix: 'w-1 self-stretch bg-green-500'
+        content: {
+          icon: 'w-10 h-10 text-green-200 fill-green-600',
+          prefix: 'w-1 self-stretch bg-green-500'
+        }
       }}
     />
   )

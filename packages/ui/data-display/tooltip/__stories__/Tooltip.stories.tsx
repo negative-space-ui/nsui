@@ -7,7 +7,6 @@ export default {
   component: Tooltip,
   tags: ['autodocs'],
   args: {
-    children: 'Tooltip',
     classNames: {
       root: 'bg-neutral-200 px-2 py-1 rounded-md shadow-md border-1 border-neutral-300',
       arrow: 'fill-neutral-200'
@@ -20,7 +19,10 @@ export const Default = (args: Omit<TooltipProps, 'tooltip'>) => {
 
   return (
     <div>
-      <button {...tooltip.triggerProps}>Hover to open</button>
+      <button ref={tooltip.referenceRef} {...tooltip.getReferenceProps()}>
+        Hover to open
+      </button>
+
       <Tooltip {...args} tooltip={tooltip}>
         Tooltip Content
       </Tooltip>
