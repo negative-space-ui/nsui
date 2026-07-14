@@ -11,14 +11,21 @@ export default {
     classNames: {
       root: 'w-26',
       option: {
-        checkmark: 'w-4 h-4 text-neutral-600'
+        root: 'cursor-pointer',
+        checkmark: 'w-4 h-4 text-blue-600'
       }
     },
     items: [
       { option: { value: '1', children: 'Option 1' } },
       { option: { value: '2', children: 'Option 2' } },
       { option: { value: '3', children: 'Option 3' } }
-    ]
+    ].map((item) => ({
+      option: {
+        ...item.option,
+        alignItems: 'center',
+        gap: '0.4rem'
+      }
+    }))
   }
 }
 

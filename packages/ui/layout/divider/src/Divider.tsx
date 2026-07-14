@@ -1,28 +1,24 @@
 import { cn, useNSUI } from '@negative-space/system'
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 export interface DividerProps extends Omit<React.HTMLAttributes<HTMLHRElement>, 'aria-hidden'> {
   orientation?: 'horizontal' | 'vertical'
 }
 
-export const Divider = ({
-  orientation = 'horizontal',
-  className,
-  style,
-  ...props
-}: DividerProps) => {
-  const { global } = useNSUI()
+export const Divider = forwardRef<HTMLHRElement, DividerProps>(
+  ({ className, orientation = 'horizontal', ...props }, ref) => {
+    const { global } = useNSUI()
 
-  return (
-    <hr
-      {...props}
-      aria-hidden="true"
-      className={cn(
-        `${global.prefixCls}-divider`,
-        `${global.prefixCls}-divider-${orientation}`,
-        className
-      )}
-      style={style}
-    />
-  )
-}
+    return (
+      <hr
+        {...props}
+        ref={ref}
+        aria-hidden="true"
+        data-orientation={orientation}
+        className={cn(`${global.prefixCls}-divider`, className)}
+      />
+    )
+  }
+)
+
+Divider.displayName = 'Divider'

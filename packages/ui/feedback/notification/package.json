@@ -38,7 +38,7 @@
   "dependencies": {
     "@negative-space/alert": "workspace:*",
     "@negative-space/system": "workspace:*",
-    "react-dom": "^19.2.7",
+    "react-dom": "^19.2.3",
     "sonner": "^2.0.7"
   },
   "peerDependencies": {
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@negative-space/button": "workspace:*",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "@types/react-dom": "^19.2.3",
     "typescript": "^5.9.3"
   },

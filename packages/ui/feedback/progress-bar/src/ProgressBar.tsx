@@ -6,19 +6,22 @@ export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   max?: number
 }
 
-export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>((props, ref) => {
-  const { value, max = 100, className, ...rest } = props
+export const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
+  ({ className, style, value, max = 100, ...props }, ref) => {
+    const { global } = useNSUI()
 
-  const { global } = useNSUI()
-
-  return (
-    <div
-      {...rest}
-      ref={ref}
-      className={cn(`${global.prefixCls}-progress-bar`, className)}
-      style={{ width: `${(value / max) * 100}%`, ...rest.style }}
-    />
-  )
-})
+    return (
+      <div
+        {...props}
+        ref={ref}
+        role="progressbar"
+        aria-valuenow={value}
+        aria-valuemax={max}
+        className={cn(`${global.prefixCls}-progress-bar`, className)}
+        style={{ width: `${(value / max) * 100}%`, ...style }}
+      />
+    )
+  }
+)
 
 ProgressBar.displayName = 'ProgressBar'

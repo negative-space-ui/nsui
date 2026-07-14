@@ -3,7 +3,7 @@ import React from 'react'
 import { CodeBlock, type CodeBlockProps } from '..'
 
 export default {
-  title: 'Data Display/CodeBlock',
+  title: 'Data Display/Code block',
   component: CodeBlock,
   tags: ['autodocs'],
   args: {

@@ -1,52 +1,14 @@
-import { cn, useNSUI } from '@negative-space/system'
+import {
+  cn,
+  type PolymorphicElement,
+  type PolymorphicElementMap,
+  useNSUI
+} from '@negative-space/system'
 import React, { CSSProperties, forwardRef, useId, useLayoutEffect } from 'react'
 
 import { useResizable } from './useResizable'
 
-type ResizablePanelElement =
-  | 'div'
-  | 'aside'
-  | 'header'
-  | 'footer'
-  | 'main'
-  | 'section'
-  | 'nav'
-  | 'article'
-  | 'label'
-  | 'fieldset'
-  | 'a'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'dl'
-  | 'dt'
-  | 'dd'
-  | 'button'
-  | 'form'
-
-type ResizablePanelDomMap = {
-  div: HTMLDivElement
-  aside: HTMLElement
-  header: HTMLElement
-  footer: HTMLElement
-  main: HTMLElement
-  section: HTMLElement
-  nav: HTMLElement
-  article: HTMLElement
-  label: HTMLLabelElement
-  fieldset: HTMLFieldSetElement
-  a: HTMLAnchorElement
-  ol: HTMLOListElement
-  ul: HTMLUListElement
-  li: HTMLLIElement
-  dl: HTMLDListElement
-  dt: HTMLElement
-  dd: HTMLElement
-  button: HTMLButtonElement
-  form: HTMLFormElement
-}
-
-export type ResizablePanelProps<E extends ResizablePanelElement = 'div'> = {
+export type ResizablePanelProps<E extends PolymorphicElement = 'div'> = {
   as?: E
   id?: string
   defaultSize?: number
@@ -56,25 +18,28 @@ export type ResizablePanelProps<E extends ResizablePanelElement = 'div'> = {
 } & Omit<React.ComponentPropsWithoutRef<E>, 'style' | 'id'>
 
 export const ResizablePanel = forwardRef(
-  <E extends ResizablePanelElement = 'div'>(
+  <E extends PolymorphicElement = 'div'>(
     {
       as,
       id: idProp,
-      defaultSize = 50,
-      minSize = 0,
-      maxSize = Infinity,
+      children,
       className,
       style,
-      children,
+      defaultSize = 0,
+      minSize = 0,
+      maxSize = Infinity,
       ...props
     }: ResizablePanelProps<E>,
-    ref: React.Ref<ResizablePanelDomMap[E]>
+    ref: React.Ref<PolymorphicElementMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
+
     const { global } = useNSUI()
-    const { sizes, registerPanel, unregisterPanel } = useResizable()
+
     const autoId = useId()
     const id = idProp ?? autoId
+
+    const { sizes, registerPanel, unregisterPanel } = useResizable()
 
     useLayoutEffect(() => {
       registerPanel(id, defaultSize, minSize, maxSize)

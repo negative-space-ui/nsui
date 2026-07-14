@@ -1,18 +1,14 @@
 import { injectStyle } from '@negative-space/inject-css'
 
-import type { GlobalConfigRequired } from '../types'
+import type { GlobalConfigRequired } from '../types/global'
 
-export const baseStyle = (global: GlobalConfigRequired) => {
-  injectStyle(`.${global.prefixCls}-clickable`, {
-    cursor: 'pointer',
-    '&[data-disabled="true"]': { cursor: 'not-allowed' }
+export const baseColors = (global: GlobalConfigRequired) => {
+  injectStyle(':root', {
+    [`--${global.prefixCls}-error`]: global.colors.error
   })
+}
 
-  injectStyle(`.${global.prefixCls}-underline`, {
-    textDecoration: 'underline',
-    textUnderlineOffset: '0.156em'
-  })
-
+export const baseAnimations = (global: GlobalConfigRequired) => {
   injectStyle(`.${global.prefixCls}-fade`, {
     transition: `opacity ${global.motionDurations.fade}ms ease-in-out`
   })

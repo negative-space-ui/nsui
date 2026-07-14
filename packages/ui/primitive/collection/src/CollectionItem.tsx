@@ -3,24 +3,11 @@ import React, { useContext, useEffect, useId, useRef } from 'react'
 
 import { CollectionContext } from './CollectionContext'
 
-export interface CollectionItemProps extends Omit<
-  FlexProps<'li'>,
-  | 'aria-disabled'
-  | 'aria-selected'
-  | 'as'
-  | 'onClick'
-  | 'onFocus'
-  | 'onKeyDown'
-  | 'onSelect'
-  | 'ref'
-  | 'role'
-  | 'tabIndex'
-> {
+export interface CollectionItemProps extends Omit<FlexProps<'li'>, 'as' | 'onClick' | 'onSelect'> {
   value?: string
   disabled?: boolean
   selected?: boolean
   role?: React.AriaRole
-  styles?: { root?: React.CSSProperties }
   onClick?: (value: string | undefined, event: React.MouseEvent<HTMLLIElement>) => void
   onSelect?: (value: string | undefined) => void
 }
@@ -31,11 +18,8 @@ export function CollectionItem({
   disabled = false,
   selected,
   role = 'option',
-  styles,
   onClick,
   onSelect,
-  alignItems = 'center',
-  justify = 'center',
   ...props
 }: CollectionItemProps) {
   const ref = useRef<HTMLLIElement>(null)
@@ -87,19 +71,16 @@ export function CollectionItem({
 
   return (
     <Flex
+      {...props}
       ref={ref}
       as="li"
       role={role}
-      alignItems={alignItems}
-      justify={justify}
       tabIndex={tabIndex}
       aria-disabled={isDisabled || undefined}
       aria-selected={selected}
       onFocus={handleFocus}
       onClick={handleClick}
       onKeyDown={handleKeyDown}
-      style={styles?.root}
-      {...props}
     >
       {children}
     </Flex>

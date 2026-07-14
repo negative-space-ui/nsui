@@ -1,49 +1,15 @@
-import { cn, useNSUI } from '@negative-space/system'
+import {
+  cn,
+  type PolymorphicElement,
+  type PolymorphicElementMap,
+  useNSUI
+} from '@negative-space/system'
 import React, { CSSProperties, forwardRef } from 'react'
 
-type GridElement =
-  | 'div'
-  | 'aside'
-  | 'header'
-  | 'footer'
-  | 'main'
-  | 'section'
-  | 'nav'
-  | 'article'
-  | 'label'
-  | 'fieldset'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'dl'
-  | 'dt'
-  | 'dd'
-  | 'form'
-
-type GridDomMap = {
-  div: HTMLDivElement
-  aside: HTMLElement
-  header: HTMLElement
-  footer: HTMLElement
-  main: HTMLElement
-  section: HTMLElement
-  nav: HTMLElement
-  article: HTMLElement
-  label: HTMLLabelElement
-  fieldset: HTMLFieldSetElement
-  ol: HTMLOListElement
-  ul: HTMLUListElement
-  li: HTMLLIElement
-  dl: HTMLDListElement
-  dt: HTMLElement
-  dd: HTMLElement
-  form: HTMLFormElement
-}
-
-export type GridProps<E extends GridElement = 'div'> = {
+export type GridProps<E extends PolymorphicElement = 'div'> = {
   as?: E
-  columns?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
-  rows?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'auto'
+  columns?: CSSProperties['gridTemplateColumns']
+  rows?: CSSProperties['gridTemplateRows']
   gap?: CSSProperties['gap']
   alignItems?: CSSProperties['alignItems']
   justifyItems?: CSSProperties['justifyItems']
@@ -53,44 +19,43 @@ export type GridProps<E extends GridElement = 'div'> = {
 } & React.ComponentPropsWithoutRef<E>
 
 export const Grid = forwardRef(
-  <E extends GridElement = 'div'>(
+  <E extends PolymorphicElement = 'div'>(
     {
       as,
+      children,
+      className,
+      style,
       columns = 2,
       rows = 1,
-      gap = '0.5rem',
       alignItems = 'start',
       justifyItems = 'start',
       alignContent = 'start',
       justifyContent = 'start',
-      className,
-      style,
-      children,
+      gap = '0rem',
       ...props
     }: GridProps<E>,
-    ref: React.Ref<GridDomMap[E]>
+    ref: React.Ref<PolymorphicElementMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
-    const { global } = useNSUI()
 
-    const gridStyle: CSSProperties = {
-      display: 'grid',
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      gridTemplateRows: rows === 'auto' ? 'auto' : `repeat(${rows}, 1fr)`,
-      gap,
-      alignItems,
-      justifyItems,
-      alignContent,
-      justifyContent,
-      ...style
-    }
+    const { global } = useNSUI()
 
     return (
       <Component
         {...props}
         ref={ref}
         className={cn(`${global.prefixCls}-grid`, className)}
-        style={gridStyle}
+        style={{
+          display: 'grid',
+          gridTemplateColumns: `repeat(${columns}, 1fr)`,
+          gridTemplateRows: rows === 'auto' ? 'auto' : `repeat(${rows}, 1fr)`,
+          alignItems,
+          justifyItems,
+          alignContent,
+          justifyContent,
+          gap,
+          ...style
+        }}
       >
         {children}
       </Component>

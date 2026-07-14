@@ -7,7 +7,7 @@ import { useListboxContext } from './useListboxContext'
 
 export interface ListboxOptionProps extends Omit<
   CollectionItemProps,
-  'onClick' | 'selected' | 'value'
+  'style' | 'className' | 'onClick' | 'selected' | 'value'
 > {
   classNames?: {
     root?: string
@@ -24,10 +24,10 @@ export interface ListboxOptionProps extends Omit<
 
 export function ListboxOption({
   children,
-  value,
-  disabled,
   classNames,
   styles,
+  value,
+  disabled,
   checkmarkProps,
   onClick,
   ...props
@@ -67,19 +67,15 @@ export function ListboxOption({
       onClick={handleClick}
       onSelect={select}
       data-selected={isSelected}
-      className={cn(
-        `${global.prefixCls}-listbox-option`,
-        `${global.prefixCls}-clickable`,
-        classNames?.root
-      )}
-      styles={{ root: styles?.root }}
+      className={cn(`${global.prefixCls}-listbox-option`, classNames?.root)}
+      style={styles?.root}
     >
       <span>{children}</span>
       <Checkmark
+        {...checkmarkProps}
         checked={isSelected}
         className={classNames?.checkmark}
         style={styles?.checkmark}
-        {...checkmarkProps}
       />
     </CollectionItem>
   )

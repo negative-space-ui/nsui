@@ -1,0 +1,145 @@
+export type ClickableAnimation = 'ripple' | 'none'
+export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
+
+export type ValidationMode = 'onBlur' | 'onChange' | 'onSubmit' | 'all'
+
+export type PolymorphicElement =
+  | 'div'
+  | 'aside'
+  | 'header'
+  | 'footer'
+  | 'main'
+  | 'section'
+  | 'nav'
+  | 'article'
+  | 'label'
+  | 'fieldset'
+  | 'a'
+  | 'ol'
+  | 'ul'
+  | 'li'
+  | 'dl'
+  | 'dt'
+  | 'dd'
+  | 'button'
+  | 'form'
+
+export type PolymorphicElementMap = {
+  div: HTMLDivElement
+  aside: HTMLElement
+  header: HTMLElement
+  footer: HTMLElement
+  main: HTMLElement
+  section: HTMLElement
+  nav: HTMLElement
+  article: HTMLElement
+  label: HTMLLabelElement
+  fieldset: HTMLFieldSetElement
+  a: HTMLAnchorElement
+  ol: HTMLOListElement
+  ul: HTMLUListElement
+  li: HTMLLIElement
+  dl: HTMLDListElement
+  dt: HTMLElement
+  dd: HTMLElement
+  button: HTMLButtonElement
+  form: HTMLFormElement
+}
+
+export type Alert = {
+  closable?: boolean
+  closeTitle?: string
+}
+
+export type ButtonConfig = {
+  animation?: ClickableAnimation
+}
+
+export type IconButtonConfig = {
+  animation?: ClickableAnimation
+}
+
+export type CloseButton = {
+  animation?: ClickableAnimation
+}
+
+export type CheckmarkConfig = {
+  animation?: OverlayAnimation
+}
+
+export type FormConfig = {
+  disableSubmitOnError?: boolean
+  validationDelay?: number
+  validationMode?: ValidationMode
+}
+
+export type HeadingConfig = {
+  typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
+}
+
+export type InputPasswordConfig = {
+  textTitle?: string
+  passwordTitle?: string
+}
+
+export type LinkConfig = {
+  underline?: boolean
+}
+
+export type ListConfig = {
+  typeElement?: 'ol' | 'ul'
+  olMarker?:
+    | 'decimal'
+    | 'decimal-leading-zero'
+    | 'lower-alpha'
+    | 'upper-alpha'
+    | 'lower-roman'
+    | 'upper-roman'
+    | 'none'
+  ulMarker?: 'disc' | 'circle' | 'square' | 'none'
+}
+
+export type ModalConfig = {
+  closeTitle?: string
+}
+
+export type PopoverConfig = {
+  animation?: OverlayAnimation
+}
+
+export type RadioConfig = {
+  animation?: OverlayAnimation
+}
+
+export type SelectConfig = {
+  animation?: ClickableAnimation
+}
+
+export type SpinnerConfig = {
+  animationDuration?: number
+}
+
+export type TextConfig = {
+  typeElement?: 'span' | 'p' | 'label' | 'small'
+}
+
+export type ComponentsConfig = {
+  alert?: Alert
+  button?: ButtonConfig
+  iconButton?: IconButtonConfig
+  closeButton?: CloseButton
+  checkmark?: CheckmarkConfig
+  form?: FormConfig
+  heading?: HeadingConfig
+  inputPassword?: InputPasswordConfig
+  link?: LinkConfig
+  list?: ListConfig
+  modal?: ModalConfig
+  popover?: PopoverConfig
+  radio?: RadioConfig
+  select?: SelectConfig
+  spinner?: SpinnerConfig
+  text?: TextConfig
+}
+
+export type ComponentsConfigRequired = Required<ComponentsConfig>

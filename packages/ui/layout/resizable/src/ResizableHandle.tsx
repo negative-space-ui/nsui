@@ -1,9 +1,10 @@
-import { cn, useNSUI } from '@negative-space/system'
+import { Divider, type DividerProps } from '@negative-space/divider'
+import { cn, mergeRefs, useNSUI } from '@negative-space/system'
 import React, { forwardRef, useRef } from 'react'
 
 import { useResizable } from './useResizable'
 
-export type ResizableHandleProps = React.HTMLAttributes<HTMLDivElement> & {
+export type ResizableHandleProps = DividerProps & {
   disabled?: boolean
 }
 
@@ -16,21 +17,13 @@ function findPanelSibling(el: Element, dir: 'previous' | 'next'): HTMLElement | 
   return null
 }
 
-function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]) {
-  return (node: T) => {
-    refs.forEach((r) => {
-      if (!r) return
-      if (typeof r === 'function') r(node)
-      else (r as React.MutableRefObject<T | null>).current = node
-    })
-  }
-}
-
 export const ResizableHandle = forwardRef<HTMLDivElement, ResizableHandleProps>(
-  ({ className, style, disabled = false }, ref) => {
-    const handleRef = useRef<HTMLDivElement>(null)
+  ({ className, style, disabled = false, ...props }, ref) => {
     const { global } = useNSUI()
+
     const { direction, resizePair, sizes } = useResizable()
+
+    const handleRef = useRef<HTMLHRElement>(null)
 
     const onPointerDown = (e: React.PointerEvent) => {
       if (disabled) return
@@ -71,10 +64,9 @@ export const ResizableHandle = forwardRef<HTMLDivElement, ResizableHandleProps>(
     }
 
     return (
-      <div
+      <Divider
+        {...props}
         ref={mergeRefs(ref, handleRef)}
-        role="separator"
-        aria-orientation={direction === 'row' ? 'vertical' : 'horizontal'}
         aria-disabled={disabled}
         data-disabled={disabled}
         tabIndex={disabled ? -1 : 0}

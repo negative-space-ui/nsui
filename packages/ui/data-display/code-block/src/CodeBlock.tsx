@@ -9,7 +9,7 @@ export interface CodeBlockProps extends React.HTMLAttributes<HTMLPreElement> {
 }
 
 export const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
-  ({ className, language = 'javascript', children, ...rest }, ref) => {
+  ({ children, className, language = 'javascript', ...props }, ref) => {
     const { global } = useNSUI()
     const internalRef = React.useRef<HTMLPreElement>(null)
 
@@ -22,9 +22,9 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(
 
     return (
       <pre
+        {...props}
         ref={ref || internalRef}
         className={cn(`${global.prefixCls}-code-block`, className)}
-        {...rest}
       >
         <code className={`${global.prefixCls}-code language-${language}`}>{children}</code>
       </pre>

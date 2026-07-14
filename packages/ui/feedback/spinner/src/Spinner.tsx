@@ -8,7 +8,7 @@ export interface SpinnerProps extends Omit<
   loading?: boolean
 }
 
-export const Spinner = ({ loading = true, className, style, ...props }: SpinnerProps) => {
+export const Spinner = ({ className, loading = true, ...props }: SpinnerProps) => {
   if (!loading) return null
 
   const { global } = useNSUI()
@@ -19,7 +19,6 @@ export const Spinner = ({ loading = true, className, style, ...props }: SpinnerP
       role="status"
       aria-busy="true"
       className={cn(`${global.prefixCls}-spinner`, className)}
-      style={{ ...style }}
     />
   )
 }

@@ -4,21 +4,17 @@ import React from 'react'
 
 export type ListboxGroupProps = CollectionGroupProps
 
-export function ListboxGroup({ children, classNames, styles, label, ...props }: ListboxGroupProps) {
+export function ListboxGroup({ classNames, ...props }: ListboxGroupProps) {
   const { global } = useNSUI()
 
   return (
     <CollectionGroup
       {...props}
-      label={label}
       classNames={{
         root: cn(`${global.prefixCls}-listbox-group`, classNames?.root),
-        label: cn(`${global.prefixCls}-listbox-group-label`, classNames?.label)
+        heading: cn(`${global.prefixCls}-listbox-group-heading`, classNames?.heading)
       }}
-      styles={styles}
-    >
-      {children}
-    </CollectionGroup>
+    />
   )
 }
 

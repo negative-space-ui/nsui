@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ProgressBar, type ProgressBarProps } from '..'
 
 export default {
-  title: 'Feedback/ProgressBar',
+  title: 'Feedback/Progress bar',
   component: ProgressBar,
   tags: ['autodocs'],
   args: {
@@ -22,5 +22,9 @@ export const Default = (args: ProgressBarProps) => {
     return () => clearInterval(interval)
   }, [])
 
-  return <ProgressBar value={value} {...args} />
+  return (
+    <div className="bg-neutral-200">
+      <ProgressBar {...args} value={value} />
+    </div>
+  )
 }

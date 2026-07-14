@@ -7,37 +7,37 @@ export interface CollectionGroupProps extends Omit<
 > {
   classNames?: {
     root?: string
-    label?: string
+    heading?: string
   }
   styles?: {
     root?: React.CSSProperties
-    label?: React.CSSProperties
+    heading?: React.CSSProperties
   }
-  label?: string
-  headingAs?: HeadingElement
+  heading?: string
+  headingProps?: Omit<HeadingElement, 'children' | 'className' | 'style'>
 }
 
 export function CollectionGroup({
   children,
   classNames,
   styles,
-  label,
-  headingAs = 'h3',
+  heading,
+  headingProps,
   ...props
 }: CollectionGroupProps) {
   const id = useId()
 
   return (
     <div
+      {...props}
       role="group"
-      aria-labelledby={label ? id : undefined}
+      aria-labelledby={heading ? id : undefined}
       className={classNames?.root}
       style={styles?.root}
-      {...props}
     >
-      {label && (
-        <Heading id={id} as={headingAs} className={classNames?.label} style={styles?.label}>
-          {label}
+      {heading && (
+        <Heading {...headingProps} id={id} className={classNames?.heading} style={styles?.heading}>
+          {heading}
         </Heading>
       )}
       {children}

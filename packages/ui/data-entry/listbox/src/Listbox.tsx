@@ -1,5 +1,5 @@
 import { Collection, type CollectionProps } from '@negative-space/collection'
-import { Field } from '@negative-space/field'
+import { Field, type FieldProps } from '@negative-space/field'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import React, { useMemo, useState } from 'react'
 
@@ -15,53 +15,35 @@ export type ListboxComponent =
 
 export interface ListboxProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {
-    field?: {
-      root?: string
-      error?: string
-    }
+    field?: FieldProps['classNames']
     root?: string
-    group?: {
-      root?: string
-      label?: string
-    }
-    option?: {
-      root?: string
-      checkmark?: string
-    }
+    group?: ListboxGroupProps['classNames']
+    option?: ListboxOptionProps['classNames']
     separator?: string
   }
   styles?: {
-    field?: {
-      root?: React.CSSProperties
-      error?: React.CSSProperties
-    }
+    field?: FieldProps['styles']
     root?: React.CSSProperties
-    group?: {
-      root?: React.CSSProperties
-      label?: React.CSSProperties
-    }
-    option?: {
-      root?: React.CSSProperties
-      checkmark?: React.CSSProperties
-    }
+    group?: ListboxGroupProps['styles']
+    option?: ListboxOptionProps['styles']
     separator?: React.CSSProperties
   }
-  error?: React.ReactNode
   items: ListboxComponent[]
   selectionMode?: SelectionMode
   defaultValue?: string | string[]
   onValueChange?: (value: string | string[]) => void
+  fieldProps?: Omit<FieldProps, 'classNames' | 'styles'>
 }
 
 export function Listbox({
   items,
   classNames,
   styles,
-  error,
   disabled,
   selectionMode = 'single',
   defaultValue,
   onValueChange,
+  fieldProps,
   ...props
 }: ListboxProps) {
   const { global } = useNSUI()
@@ -84,7 +66,7 @@ export function Listbox({
 
   return (
     <ListboxContext.Provider value={contextValue}>
-      <Field classNames={classNames?.field} styles={styles?.field} error={error}>
+      <Field {...fieldProps} classNames={classNames?.field} styles={styles?.field}>
         <Collection
           role="listbox"
           aria-multiselectable={selectionMode === 'multiple' || undefined}

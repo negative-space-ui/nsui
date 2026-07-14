@@ -11,20 +11,17 @@ type IconChildProps = {
 
 export interface IconButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
-  'className' | 'style' | 'children'
+  'children' | 'className' | 'style'
 > {
-  children: React.ReactElement<IconChildProps>
-
+  children: React.ReactNode
   classNames?: {
     root?: string
     icon?: string
   }
-
   styles?: {
     root?: React.CSSProperties
     icon?: React.CSSProperties
   }
-
   controlled?: boolean
   animation?: ClickableAnimation
 }
@@ -32,19 +29,20 @@ export interface IconButtonProps extends Omit<
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
     {
+      children,
+      onClick,
       classNames,
       styles,
       controlled,
       type = 'button',
-      children,
       disabled,
       animation,
-      onClick,
       ...props
     },
     ref
   ) => {
     const { global, components } = useNSUI()
+
     const rippleDisabled = (animation ?? components.iconButton.animation) !== 'ripple'
 
     const context = useButtonContextConditional(!!controlled)
@@ -62,17 +60,26 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       onClick?.(e)
     }
 
-    const child = React.cloneElement(children, {
-      className: cn(
-        `${global.prefixCls}-icon-button-icon`,
-        classNames?.icon,
-        children.props.className
-      ),
-      style: {
-        ...styles?.icon,
-        ...children.props.style
-      }
-    })
+    const child = React.isValidElement<IconChildProps>(children) ? (
+      React.cloneElement(children, {
+        className: cn(
+          `${global.prefixCls}-icon-button-icon`,
+          classNames?.icon,
+          children.props.className
+        ),
+        style: {
+          ...styles?.icon,
+          ...children.props.style
+        }
+      })
+    ) : (
+      <span
+        className={cn(`${global.prefixCls}-icon-button-icon`, classNames?.icon)}
+        style={styles?.icon}
+      >
+        {children}
+      </span>
+    )
 
     return (
       <button
@@ -80,12 +87,11 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         ref={ref}
         type={type}
         disabled={isDisabled}
+        aria-disabled={isDisabled}
         data-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
         onClick={handleClick}
-        className={cn(
-          `${global.prefixCls}-icon-button ${global.prefixCls}-clickable`,
-          classNames?.root
-        )}
+        className={cn(`${global.prefixCls}-icon-button`, classNames?.root)}
         style={styles?.root}
       >
         {child}

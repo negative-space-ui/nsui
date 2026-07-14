@@ -4,7 +4,7 @@ import React from 'react'
 export type ListItemProps = React.LiHTMLAttributes<HTMLLIElement>
 
 export const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ children, className, ...props }, ref) => {
     const { global } = useNSUI()
 
     return (

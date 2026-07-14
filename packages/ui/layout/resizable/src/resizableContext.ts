@@ -3,7 +3,7 @@ import { createContext } from 'react'
 export type Constraints = { min: number; max: number }
 
 export type ResizableContextValue = {
-  direction: 'row' | 'column'
+  direction: React.CSSProperties['flexDirection']
   sizes: Record<string, number>
   registerPanel: (id: string, size: number, min: number, max: number) => void
   unregisterPanel: (id: string) => void

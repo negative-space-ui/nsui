@@ -27,31 +27,33 @@ const ALERT_ICONS: Partial<
 type flexProps = Omit<FlexProps, 'className' | 'style' | 'prefix' | 'children'>
 
 export interface AlertProps {
-  rootProps?: flexProps
-  contentProps?: flexProps
   classNames?: {
     root?: string
-    content?: string
-    prefix?: string
-    iconWrapper?: string
-    icon?: string
-    info?: InfoProps['classNames']
-    suffix?: string
-    closeButton?: CloseButtonProps['classNames']
+    content?: {
+      root?: string
+      prefix?: string
+      iconWrapper?: string
+      icon?: string
+      info?: InfoProps['classNames']
+      suffix?: string
+      closeButton?: CloseButtonProps['classNames']
+      tooltip?: TooltipProps['classNames']
+    }
     progressBar?: string
-    tooltip?: TooltipProps['classNames']
   }
   styles?: {
     root?: React.CSSProperties
-    content?: React.CSSProperties
-    prefix?: React.CSSProperties
-    iconWrapper?: React.CSSProperties
-    icon?: React.CSSProperties
-    info?: InfoProps['styles']
-    suffix?: React.CSSProperties
-    closeButton?: CloseButtonProps['styles']
+    content?: {
+      root?: React.CSSProperties
+      prefix?: React.CSSProperties
+      iconWrapper?: React.CSSProperties
+      icon?: React.CSSProperties
+      info?: InfoProps['styles']
+      suffix?: React.CSSProperties
+      closeButton?: CloseButtonProps['styles']
+      tooltip?: TooltipProps['styles']
+    }
     progressBar?: React.CSSProperties
-    tooltip?: TooltipProps['styles']
   }
   open?: boolean
   closable?: boolean
@@ -65,6 +67,8 @@ export interface AlertProps {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   tooltip?: boolean
+  rootProps?: flexProps
+  contentProps?: flexProps
 }
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
@@ -104,8 +108,8 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       icon ??
       (VariantIcon ? (
         <VariantIcon
-          className={cn(`${global.prefixCls}-alert-icon`, classNames?.icon)}
-          style={styles?.icon}
+          className={cn(`${global.prefixCls}-alert-icon`, classNames?.content?.icon)}
+          style={styles?.content?.icon}
         />
       ) : null)
     return (
@@ -113,27 +117,28 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         <Flex
           {...rootProps}
           ref={ref}
-          className={cn(
-            `${global.prefixCls}-alert ${global.prefixCls}-alert-${variant}`,
-            classNames?.root
-          )}
+          className={cn(`${global.prefixCls}-alert`, classNames?.root)}
+          data-variant={variant}
           style={{ position: 'relative', ...styles?.root }}
         >
           <Flex
             {...contentProps}
-            className={cn(`${global.prefixCls}-alert-content`, classNames?.content)}
-            style={styles?.content}
+            className={cn(`${global.prefixCls}-alert-content`, classNames?.content?.root)}
+            style={styles?.content?.root}
           >
             <div
-              className={cn(`${global.prefixCls}-alert-prefix`, classNames?.prefix)}
-              style={styles?.prefix}
+              className={cn(`${global.prefixCls}-alert-prefix`, classNames?.content?.prefix)}
+              style={styles?.content?.prefix}
             >
               {prefix}
             </div>
 
             <div
-              className={cn(`${global.prefixCls}-alert-icon-wrapper`, classNames?.iconWrapper)}
-              style={styles?.iconWrapper}
+              className={cn(
+                `${global.prefixCls}-alert-icon-wrapper`,
+                classNames?.content?.iconWrapper
+              )}
+              style={styles?.content?.iconWrapper}
             >
               {renderedIcon}
             </div>
@@ -141,22 +146,23 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
             <Info
               heading={heading}
               description={description}
-              classNames={classNames?.info}
-              styles={styles?.info}
+              classNames={classNames?.content?.info}
+              styles={styles?.content?.info}
             />
 
             <div
-              className={cn(`${global.prefixCls}-alert-suffix`, classNames?.suffix)}
-              style={styles?.suffix}
+              className={cn(`${global.prefixCls}-alert-suffix`, classNames?.content?.suffix)}
+              style={styles?.content?.suffix}
             >
               {suffix}
             </div>
 
             {Closable && (
               <CloseButton
-                {...tooltip.triggerProps}
-                classNames={classNames?.closeButton}
-                styles={styles?.closeButton}
+                ref={tooltip.referenceRef}
+                {...tooltip.getReferenceProps()}
+                classNames={classNames?.content?.closeButton}
+                styles={styles?.content?.closeButton}
                 onClick={onClose}
                 aria-label={CloseTitle}
                 title={!global.tooltip ? CloseTitle : undefined}
@@ -175,7 +181,11 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         </Flex>
 
         {ShowTooltip && (
-          <Tooltip tooltip={tooltip} classNames={classNames?.tooltip} styles={styles?.tooltip}>
+          <Tooltip
+            tooltip={tooltip}
+            classNames={classNames?.content?.tooltip}
+            styles={styles?.content?.tooltip}
+          >
             {CloseTitle}
           </Tooltip>
         )}

@@ -4,7 +4,3 @@ packages:
 
 ignoredBuiltDependencies:
   - esbuild
-
-peerDependencyRules:
-  allowedVersions:
-    storybook: '10.x'

@@ -34,12 +34,19 @@ function ConnectedField({
   const { validationMode, touched, errors } = ctx
   const showError = validationMode === 'onChange' || validationMode === 'all' || touched[name]
 
+  const error = showError ? errors[name] : undefined
+
   return (
     <Component
       {...props}
       name={name}
       value={ctx.values[name] ?? ''}
-      error={showError ? errors[name] : undefined}
+      fieldProps={{
+        ...(typeof props.fieldProps === 'object' && props.fieldProps !== null
+          ? props.fieldProps
+          : {}),
+        error
+      }}
       onChange={handlers.current.onChange}
       onBlur={handlers.current.onBlur}
     />
