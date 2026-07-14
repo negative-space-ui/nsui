@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "build": "turbo run build --filter=!docs",
-    "clean:pkgs": "turbo run clean",
+    "build:fast": "turbo run build:fast --filter=!./packages/kits/** --filter=!negative-space --filter=!docs",
+    "clean:pkgs": "turbo run clean --concurrency=10",
     "clean:node-modules": "pnpm tsx tools/clean-node-modules.ts",
     "create:pkg": "plop && pnpm install",
     "lint": "eslint",
