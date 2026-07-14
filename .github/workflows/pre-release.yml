@@ -36,8 +36,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Lint
+        run: pnpm lint
+
       - name: Build
-        run: pnpm build
+        run: pnpm build:fast
 
       - name: Create or update Release PR
         uses: changesets/action@v1
