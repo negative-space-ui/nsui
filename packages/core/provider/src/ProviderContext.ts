@@ -1,21 +1,11 @@
-import { createContext, useContext } from 'react'
+import { createContext } from 'react'
 
-import type { ComponentsConfigRequired } from './types/components'
-import type { GlobalConfigRequired } from './types/global'
+import type { ComponentSettings } from './types/components'
+import type { GlobalSettings } from './types/global'
 
 export type NSUIContextProps = {
-  components: ComponentsConfigRequired
-  global: GlobalConfigRequired
+  components: Required<ComponentSettings>
+  global: Required<GlobalSettings>
 }
 
 export const NSUIContext = createContext<NSUIContextProps | undefined>(undefined)
-
-export const useNSUI = () => {
-  const context = useContext(NSUIContext)
-  if (!context) {
-    throw new Error(
-      'useNSUI must be used within an NSUIProvider. Wrap your app with <NSUIProvider />'
-    )
-  }
-  return context
-}

@@ -1,5 +1,4 @@
 export { NSUIProvider, type NSUIProviderProps } from './Provider'
-export { useNSUI } from './ProviderContext'
 export type {
   ClickableAnimation,
   OverlayAnimation,
@@ -7,3 +6,4 @@ export type {
   PolymorphicElementMap,
   ValidationMode
 } from './types/components'
+export { useNSUI } from './useNSUI'

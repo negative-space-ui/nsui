@@ -5,7 +5,6 @@ export {
   Eye,
   EyeOff,
   Info,
-  type LucideProps,
   PanelLeft,
   PanelRight,
   TriangleAlert,

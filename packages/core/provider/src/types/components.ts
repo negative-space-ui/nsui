@@ -1,3 +1,22 @@
+export type ComponentSettings = {
+  alert?: Alert
+  button?: ButtonSettings
+  iconButton?: IconButtonSettings
+  closeButton?: CloseButtonSettings
+  checkmark?: CheckmarkSettings
+  form?: FormSettings
+  heading?: HeadingSettings
+  inputPassword?: InputPasswordSettings
+  link?: LinkSettings
+  list?: ListSettings
+  modal?: ModalSettings
+  popover?: PopoverSettings
+  radio?: RadioSettings
+  select?: SelectSettings
+  spinner?: SpinnerSettings
+  text?: TextSettings
+}
+
 export type ClickableAnimation = 'ripple' | 'none'
 export type OverlayAnimation = 'fade' | 'fade-scale' | 'pop' | 'none'
 
@@ -51,42 +70,42 @@ export type Alert = {
   closeTitle?: string
 }
 
-export type ButtonConfig = {
+export type ButtonSettings = {
   animation?: ClickableAnimation
 }
 
-export type IconButtonConfig = {
+export type IconButtonSettings = {
   animation?: ClickableAnimation
 }
 
-export type CloseButton = {
+export type CloseButtonSettings = {
   animation?: ClickableAnimation
 }
 
-export type CheckmarkConfig = {
+export type CheckmarkSettings = {
   animation?: OverlayAnimation
 }
 
-export type FormConfig = {
+export type FormSettings = {
   disableSubmitOnError?: boolean
   validationDelay?: number
   validationMode?: ValidationMode
 }
 
-export type HeadingConfig = {
+export type HeadingSettings = {
   typeElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span'
 }
 
-export type InputPasswordConfig = {
+export type InputPasswordSettings = {
   textTitle?: string
   passwordTitle?: string
 }
 
-export type LinkConfig = {
+export type LinkSettings = {
   underline?: boolean
 }
 
-export type ListConfig = {
+export type ListSettings = {
   typeElement?: 'ol' | 'ul'
   olMarker?:
     | 'decimal'
@@ -99,47 +118,26 @@ export type ListConfig = {
   ulMarker?: 'disc' | 'circle' | 'square' | 'none'
 }
 
-export type ModalConfig = {
+export type ModalSettings = {
   closeTitle?: string
 }
 
-export type PopoverConfig = {
+export type PopoverSettings = {
   animation?: OverlayAnimation
 }
 
-export type RadioConfig = {
+export type RadioSettings = {
   animation?: OverlayAnimation
 }
 
-export type SelectConfig = {
+export type SelectSettings = {
   animation?: ClickableAnimation
 }
 
-export type SpinnerConfig = {
+export type SpinnerSettings = {
   animationDuration?: number
 }
 
-export type TextConfig = {
+export type TextSettings = {
   typeElement?: 'span' | 'p' | 'label' | 'small'
 }
-
-export type ComponentsConfig = {
-  alert?: Alert
-  button?: ButtonConfig
-  iconButton?: IconButtonConfig
-  closeButton?: CloseButton
-  checkmark?: CheckmarkConfig
-  form?: FormConfig
-  heading?: HeadingConfig
-  inputPassword?: InputPasswordConfig
-  link?: LinkConfig
-  list?: ListConfig
-  modal?: ModalConfig
-  popover?: PopoverConfig
-  radio?: RadioConfig
-  select?: SelectConfig
-  spinner?: SpinnerConfig
-  text?: TextConfig
-}
-
-export type ComponentsConfigRequired = Required<ComponentsConfig>
