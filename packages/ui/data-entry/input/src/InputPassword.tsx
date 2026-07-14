@@ -48,7 +48,8 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
     const passwordIcon = (
       <IconButton
         {...buttonProps}
-        {...tooltip.triggerProps}
+        ref={tooltip.referenceRef}
+        {...tooltip.getReferenceProps()}
         onClick={handleToggle}
         title={!global.tooltip ? Title : undefined}
         aria-label={Title}

@@ -77,7 +77,7 @@ export const MenuItem = ({
       onClick={handleItemClick}
       onSelect={handleItemSelect}
       className={cn(`${global.prefixCls}-menu-item`, classNames?.root)}
-      styles={{ root: styles?.root }}
+      style={styles?.root}
     >
       <Link
         {...linkProps}
