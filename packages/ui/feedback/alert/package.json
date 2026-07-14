@@ -36,12 +36,12 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/button": "workspace:*",
-    "@negative-space/flex": "workspace:*",
-    "@negative-space/info": "workspace:*",
-    "@negative-space/progress-bar": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "@negative-space/tooltip": "workspace:*"
+    "@negative-space/button": "workspace:^",
+    "@negative-space/flex": "workspace:^",
+    "@negative-space/info": "workspace:^",
+    "@negative-space/progress-bar": "workspace:^",
+    "@negative-space/system": "workspace:^",
+    "@negative-space/tooltip": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

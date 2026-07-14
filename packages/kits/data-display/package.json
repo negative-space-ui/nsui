@@ -36,11 +36,11 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/code-block": "workspace:*",
-    "@negative-space/list": "workspace:*",
-    "@negative-space/popover": "workspace:*",
-    "@negative-space/surface": "workspace:*",
-    "@negative-space/tooltip": "workspace:*"
+    "@negative-space/code-block": "workspace:^",
+    "@negative-space/list": "workspace:^",
+    "@negative-space/popover": "workspace:^",
+    "@negative-space/surface": "workspace:^",
+    "@negative-space/tooltip": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

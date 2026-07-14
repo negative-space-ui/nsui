@@ -36,7 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/system": "workspace:*",
+    "@negative-space/system": "workspace:^",
     "@types/prismjs": "^1.26.6",
     "prismjs": "^1.30.0"
   },

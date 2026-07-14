@@ -36,7 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/inject-css": "workspace:*"
+    "@negative-space/inject-css": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"

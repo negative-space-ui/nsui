@@ -127,7 +127,7 @@ importers:
   apps/storybook:
     dependencies:
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../packages/core/provider
       next:
         specifier: 16.0.10
@@ -179,7 +179,7 @@ importers:
   packages/core/provider:
     dependencies:
       '@negative-space/inject-css':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../utils/inject-css
       react:
         specifier: ^19.2.3
@@ -195,7 +195,7 @@ importers:
   packages/core/system:
     dependencies:
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../provider
       clsx:
         specifier: ^2.1.1
@@ -243,7 +243,7 @@ importers:
   packages/kits/action:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/action/button
     devDependencies:
       typescript:
@@ -253,7 +253,7 @@ importers:
   packages/kits/app:
     dependencies:
       '@negative-space/theme':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/app/theme
     devDependencies:
       typescript:
@@ -263,19 +263,19 @@ importers:
   packages/kits/data-display:
     dependencies:
       '@negative-space/code-block':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/code-block
       '@negative-space/list':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/list
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/popover
       '@negative-space/surface':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/surface
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-display/tooltip
     devDependencies:
       typescript:
@@ -285,25 +285,25 @@ importers:
   packages/kits/data-entry:
     dependencies:
       '@negative-space/checkbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/checkbox
       '@negative-space/form':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/form
       '@negative-space/input':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/input
       '@negative-space/listbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/listbox
       '@negative-space/radio':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/radio
       '@negative-space/select':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/select
       '@negative-space/switch':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/data-entry/switch
     devDependencies:
       typescript:
@@ -313,22 +313,22 @@ importers:
   packages/kits/feedback:
     dependencies:
       '@negative-space/alert':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/alert
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/checkmark
       '@negative-space/modal':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/modal
       '@negative-space/notification':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/notification
       '@negative-space/progress-bar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/progress-bar
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/feedback/spinner
     devDependencies:
       typescript:
@@ -338,22 +338,22 @@ importers:
   packages/kits/layout:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/divider
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/field
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/flex
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/grid
       '@negative-space/resizable':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/resizable
       '@negative-space/sidebar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/layout/sidebar
     devDependencies:
       typescript:
@@ -363,10 +363,10 @@ importers:
   packages/kits/navigation:
     dependencies:
       '@negative-space/link':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/navigation/link
       '@negative-space/menu':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/navigation/menu
     devDependencies:
       typescript:
@@ -376,7 +376,7 @@ importers:
   packages/kits/primitive:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/primitive/collection
     devDependencies:
       typescript:
@@ -386,13 +386,13 @@ importers:
   packages/kits/typography:
     dependencies:
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/heading
       '@negative-space/info':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/info
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../ui/typography/text
     devDependencies:
       typescript:
@@ -402,37 +402,37 @@ importers:
   packages/react:
     dependencies:
       '@negative-space/action':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/action
       '@negative-space/app':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/app
       '@negative-space/data-display':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/data-display
       '@negative-space/data-entry':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/data-entry
       '@negative-space/feedback':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/feedback
       '@negative-space/layout':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/layout
       '@negative-space/navigation':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/navigation
       '@negative-space/primitive':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/primitive
       '@negative-space/provider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core/provider
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core/system
       '@negative-space/typography':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../kits/typography
     devDependencies:
       typescript:
@@ -442,16 +442,16 @@ importers:
   packages/ui/action/button:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/ripple':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../hooks/ripple
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/spinner
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -467,7 +467,7 @@ importers:
   packages/ui/app/theme:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -483,7 +483,7 @@ importers:
   packages/ui/data-display/code-block:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@types/prismjs':
         specifier: ^1.26.6
@@ -505,10 +505,10 @@ importers:
   packages/ui/data-display/list:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -527,7 +527,7 @@ importers:
         specifier: ^0.27.18
         version: 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -543,7 +543,7 @@ importers:
   packages/ui/data-display/surface:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -559,10 +559,10 @@ importers:
   packages/ui/data-display/tooltip:
     dependencies:
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -578,13 +578,13 @@ importers:
   packages/ui/data-entry/checkbox:
     dependencies:
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/checkmark
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -600,10 +600,10 @@ importers:
   packages/ui/data-entry/form:
     dependencies:
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/grid
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -613,7 +613,7 @@ importers:
         version: 4.3.6
     devDependencies:
       '@negative-space/input':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../input
       '@types/react':
         specifier: ^19.2.3
@@ -625,22 +625,22 @@ importers:
   packages/ui/data-entry/input:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/spinner':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/spinner
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -656,16 +656,16 @@ importers:
   packages/ui/data-entry/listbox:
     dependencies:
       '@negative-space/checkmark':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../feedback/checkmark
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -681,13 +681,13 @@ importers:
   packages/ui/data-entry/radio:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -703,19 +703,19 @@ importers:
   packages/ui/data-entry/select:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/listbox':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../listbox
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -731,10 +731,10 @@ importers:
   packages/ui/data-entry/switch:
     dependencies:
       '@negative-space/field':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/field
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -750,22 +750,22 @@ importers:
   packages/ui/feedback/alert:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/info':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/info
       '@negative-space/progress-bar':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../progress-bar
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -781,7 +781,7 @@ importers:
   packages/ui/feedback/checkmark:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -797,16 +797,16 @@ importers:
   packages/ui/feedback/modal:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/popover':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/popover
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/tooltip':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
@@ -822,10 +822,10 @@ importers:
   packages/ui/feedback/notification:
     dependencies:
       '@negative-space/alert':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../alert
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -838,7 +838,7 @@ importers:
         version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     devDependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@types/react':
         specifier: ^19.2.3
@@ -853,7 +853,7 @@ importers:
   packages/ui/feedback/progress-bar:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -869,7 +869,7 @@ importers:
   packages/ui/feedback/spinner:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -885,7 +885,7 @@ importers:
   packages/ui/layout/divider:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -901,13 +901,13 @@ importers:
   packages/ui/layout/field:
     dependencies:
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/text
       react:
         specifier: ^19.2.3
@@ -923,7 +923,7 @@ importers:
   packages/ui/layout/flex:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -939,7 +939,7 @@ importers:
   packages/ui/layout/grid:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -955,13 +955,13 @@ importers:
   packages/ui/layout/resizable:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../divider
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../flex
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -977,13 +977,13 @@ importers:
   packages/ui/layout/sidebar:
     dependencies:
       '@negative-space/button':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../action/button
       '@negative-space/resizable':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../resizable
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -999,7 +999,7 @@ importers:
   packages/ui/navigation/link:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1015,13 +1015,13 @@ importers:
   packages/ui/navigation/menu:
     dependencies:
       '@negative-space/collection':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../primitive/collection
       '@negative-space/link':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../link
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1037,22 +1037,22 @@ importers:
   packages/ui/primitive/collection:
     dependencies:
       '@negative-space/divider':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/divider
       '@negative-space/flex':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/flex
       '@negative-space/grid':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../layout/grid
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../typography/heading
       '@negative-space/roving-focus':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../hooks/roving-focus
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1068,7 +1068,7 @@ importers:
   packages/ui/typography/heading:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3
@@ -1084,13 +1084,13 @@ importers:
   packages/ui/typography/info:
     dependencies:
       '@negative-space/heading':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../heading
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       '@negative-space/text':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../text
       react:
         specifier: ^19.2.3
@@ -1106,7 +1106,7 @@ importers:
   packages/ui/typography/text:
     dependencies:
       '@negative-space/system':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../../../core/system
       react:
         specifier: ^19.2.3

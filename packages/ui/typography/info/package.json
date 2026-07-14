@@ -35,9 +35,9 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/heading": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "@negative-space/text": "workspace:*"
+    "@negative-space/heading": "workspace:^",
+    "@negative-space/system": "workspace:^",
+    "@negative-space/text": "workspace:^"
   },
   "peerDependencies": {
     "react": "^19.2.3"
