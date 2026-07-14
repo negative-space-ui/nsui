@@ -1,64 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Flex } from '..'
+import { Flex, type FlexProps } from '..'
 
-const meta: Meta<typeof Flex> = {
+export default {
   title: 'Layout/Flex',
   component: Flex,
   tags: ['autodocs'],
-  argTypes: {
-    as: {
-      control: 'select',
-      options: [
-        'div',
-        'aside',
-        'header',
-        'footer',
-        'main',
-        'section',
-        'nav',
-        'article',
-        'label',
-        'fieldset',
-        'ol',
-        'ul',
-        'li',
-        'dl',
-        'dt',
-        'dd',
-        'button',
-        'form'
-      ]
-    },
-    direction: {
-      control: 'select',
-      options: ['row', 'column', 'row-reverse', 'column-reverse']
-    },
-    wrap: {
-      control: 'select',
-      options: ['nowrap', 'wrap', 'wrap-reverse']
-    },
-    alignItems: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'stretch']
-    },
-    justify: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'between', 'around', 'evenly']
-    }
-  }
-}
-
-export default meta
-
-export const Default: StoryObj<typeof Flex> = {
   args: {
     children: (
       <>
-        <span>Flex Item 1</span>
-        <span>Flex Item 2</span>
+        <div>Content 1</div>
+        <div>Content 2</div>
       </>
     )
   }
 }
+
+export const Default = (args: FlexProps) => <Flex {...args} gap="0.5rem" />
+
+export const Vertical = (args: FlexProps) => <Flex {...args} direction="column" gap="0.5rem" />

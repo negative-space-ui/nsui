@@ -1,72 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
-import { Grid } from '..'
+import { Grid, type GridProps } from '..'
 
-const meta: Meta<typeof Grid> = {
+export default {
   title: 'Layout/Grid',
   component: Grid,
   tags: ['autodocs'],
-  argTypes: {
-    as: {
-      control: 'select',
-      options: [
-        'div',
-        'aside',
-        'header',
-        'footer',
-        'main',
-        'section',
-        'nav',
-        'article',
-        'label',
-        'fieldset',
-        'ol',
-        'ul',
-        'li',
-        'dl',
-        'dt',
-        'dd',
-        'form'
-      ]
-    },
-    columns: {
-      control: 'text'
-    },
-    rows: {
-      control: 'text'
-    },
-    alignItems: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'stretch']
-    },
-    justifyItems: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'stretch']
-    },
-    alignContent: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'stretch', 'between', 'around', 'evenly']
-    },
-    justifyContent: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'stretch', 'between', 'around', 'evenly']
-    }
-  }
-}
-
-export default meta
-
-export const Default: StoryObj<typeof Grid> = {
   args: {
-    className: 'w-md',
+    className: 'w-50',
     children: (
       <>
-        <span>Grid Item 1</span>
-        <span>Grid Item 2</span>
-        <span>Grid Item 3</span>
-        <span>Grid Item 4</span>
+        <div>Content 1</div>
+        <div>Content 2</div>
+        <div>Content 3</div>
+        <div>Content 4</div>
       </>
     )
   }
 }
+
+export const Default = (args: GridProps) => <Grid {...args} />

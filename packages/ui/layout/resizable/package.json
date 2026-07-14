@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/resizable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publishConfig": {
     "access": "public"
   },
@@ -36,6 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
+    "@negative-space/divider": "workspace:*",
     "@negative-space/flex": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
@@ -43,7 +44,7 @@
     "react": "^19.2.3"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "typescript": "^5.9.3"
   },
   "clean-package": "../../../../clean-package.config.json"

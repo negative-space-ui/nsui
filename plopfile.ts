@@ -13,13 +13,12 @@ type Answers = {
 export default function (plop: NodePlopAPI) {
   plop.setHelper('capitalize', (text: string) => text.charAt(0).toUpperCase() + text.slice(1))
 
-  plop.setHelper('depth', (_, options) => {
-    const answers = options.data.root
-    const fullPath = [answers.layer, answers.subLayer, answers.uiSubLayer].filter(Boolean).join('/')
-    const parts = fullPath.split('/').length + 2
-
-    return '../'.repeat(parts)
-  })
+  plop.setHelper('snakeCase', (text: string) =>
+    text
+      .replace(/([a-z])([A-Z])/g, '$1_$2')
+      .replace(/[-\s]+/g, '_')
+      .toLowerCase()
+  )
 
   plop.setGenerator('package', {
     description: 'Create a new package',
@@ -106,6 +105,20 @@ export default function (plop: NodePlopAPI) {
         templateFile: 'plop-templates/component.stories.tsx.hbs',
         skip: (answers: Answers) =>
           answers.layer !== 'ui' ? 'Stories are only available for UI packages' : false
+      },
+      {
+        type: 'add',
+        path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/__tests__/{{capitalize name}}.spec.tsx',
+        templateFile: 'plop-templates/component.spec.tsx.hbs',
+        skip: (answers: Answers) =>
+          answers.layer !== 'ui' ? 'Use ts spec for non-ui packages' : false
+      },
+      {
+        type: 'add',
+        path: 'packages/{{layer}}{{#if subLayer}}/{{subLayer}}{{/if}}{{#if uiSubLayer}}/{{uiSubLayer}}{{/if}}/{{name}}/__tests__/{{snakeCase name}}.spec.ts',
+        templateFile: 'plop-templates/component.spec.ts.hbs',
+        skip: (answers: Answers) =>
+          answers.layer === 'ui' ? 'Use tsx spec for UI packages' : false
       }
     ]
   })

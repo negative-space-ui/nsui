@@ -1,5 +1,28 @@
 # negative-space
 
+## 2.8.0
+
+### Minor Changes
+
+- 96ab878: Add system package export
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/provider@1.11.0
+  - @negative-space/system@1.5.0
+  - @negative-space/data-entry@1.5.1
+  - @negative-space/feedback@1.4.1
+  - @negative-space/action@1.0.17
+  - @negative-space/app@1.0.3
+  - @negative-space/data-display@1.3.1
+  - @negative-space/layout@1.4.1
+  - @negative-space/navigation@1.0.3
+  - @negative-space/primitive@2.0.6
+  - @negative-space/typography@2.1.1
+
 ## 2.7.3
 
 ### Patch Changes

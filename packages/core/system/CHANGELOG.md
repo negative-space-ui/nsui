@@ -1,5 +1,18 @@
 # @negative-space/system
 
+## 1.5.0
+
+### Minor Changes
+
+- 96ab878: Add ChevronDown icon export
+- b0697fa: Add PolymorphicElement and PolymorphicElementMap types
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/provider@1.11.0
+
 ## 1.4.0
 
 ### Minor Changes

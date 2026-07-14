@@ -1,94 +1,55 @@
-import { cn, useNSUI } from '@negative-space/system'
+import {
+  cn,
+  type PolymorphicElement,
+  type PolymorphicElementMap,
+  useNSUI
+} from '@negative-space/system'
 import React, { CSSProperties, forwardRef } from 'react'
 
-type FlexElement =
-  | 'div'
-  | 'aside'
-  | 'header'
-  | 'footer'
-  | 'main'
-  | 'section'
-  | 'nav'
-  | 'article'
-  | 'label'
-  | 'fieldset'
-  | 'a'
-  | 'ol'
-  | 'ul'
-  | 'li'
-  | 'dl'
-  | 'dt'
-  | 'dd'
-  | 'button'
-  | 'form'
-
-type FlexDomMap = {
-  div: HTMLDivElement
-  aside: HTMLElement
-  header: HTMLElement
-  footer: HTMLElement
-  main: HTMLElement
-  section: HTMLElement
-  nav: HTMLElement
-  article: HTMLElement
-  label: HTMLLabelElement
-  fieldset: HTMLFieldSetElement
-  a: HTMLAnchorElement
-  ol: HTMLOListElement
-  ul: HTMLUListElement
-  li: HTMLLIElement
-  dl: HTMLDListElement
-  dt: HTMLElement
-  dd: HTMLElement
-  button: HTMLButtonElement
-  form: HTMLFormElement
-}
-
-export type FlexProps<E extends FlexElement = 'div'> = {
+export type FlexProps<E extends PolymorphicElement = 'div'> = {
   as?: E
   direction?: CSSProperties['flexDirection']
   wrap?: CSSProperties['flexWrap']
   alignItems?: CSSProperties['alignItems']
-  justify?: CSSProperties['justifyContent']
+  justifyContent?: CSSProperties['justifyContent']
   gap?: CSSProperties['gap']
   style?: CSSProperties
 } & React.ComponentPropsWithoutRef<E>
 
 export const Flex = forwardRef(
-  <E extends FlexElement = 'div'>(
+  <E extends PolymorphicElement = 'div'>(
     {
       as,
-      direction = 'row',
-      wrap = 'nowrap',
-      alignItems = 'stretch',
-      justify = 'flex-start',
-      gap = '0.5rem',
+      children,
       className,
       style,
-      children,
+      direction = 'row',
+      wrap = 'nowrap',
+      alignItems = 'flex-start',
+      justifyContent = 'flex-start',
+      gap = '0',
       ...props
     }: FlexProps<E>,
-    ref: React.Ref<FlexDomMap[E]>
+    ref: React.Ref<PolymorphicElementMap[E]>
   ) => {
     const Component = as ?? ('div' as React.ElementType)
-    const { global } = useNSUI()
 
-    const flexStyle: CSSProperties = {
-      display: 'flex',
-      flexDirection: direction,
-      flexWrap: wrap,
-      alignItems,
-      justifyContent: justify,
-      gap,
-      ...style
-    }
+    const { global } = useNSUI()
 
     return (
       <Component
         {...props}
         ref={ref}
         className={cn(`${global.prefixCls}-flex`, className)}
-        style={flexStyle}
+        style={{
+          display: 'flex',
+          flexDirection: direction,
+          flexWrap: wrap,
+          alignItems,
+          justifyContent,
+          gap,
+          ...style
+        }}
       >
         {children}
       </Component>

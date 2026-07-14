@@ -1,5 +1,5 @@
-import { Field } from '@negative-space/field'
-import { Flex } from '@negative-space/flex'
+import { Field, FieldProps } from '@negative-space/field'
+import { Flex, type FlexProps } from '@negative-space/flex'
 import { Spinner, type SpinnerProps } from '@negative-space/spinner'
 import { cn, useNSUI } from '@negative-space/system'
 import React from 'react'
@@ -10,11 +10,7 @@ export interface InputProps extends Omit<
 > {
   mask?: (value: string) => string
   classNames?: {
-    field?: {
-      root?: string
-      label?: string
-      error?: string
-    }
+    field?: FieldProps['classNames']
     root?: string
     prefix?: string
     content?: string
@@ -22,52 +18,47 @@ export interface InputProps extends Omit<
     spinner?: string
   }
   styles?: {
-    field?: {
-      root?: React.CSSProperties
-      label?: React.CSSProperties
-      error?: React.CSSProperties
-    }
+    field?: FieldProps['styles']
     root?: React.CSSProperties
     prefix?: React.CSSProperties
     content?: React.CSSProperties
     suffix?: React.CSSProperties
     spinner?: React.CSSProperties
   }
-  label?: React.ReactNode
-  error?: React.ReactNode
   prefix?: React.ReactNode
   suffix?: React.ReactNode
-  htmlFor?: string
   loading?: boolean
   spinnerPosition?: 'prefix' | 'suffix'
+  flexProps?: Omit<FlexProps, 'className' | 'style'>
+  fieldProps?: Omit<FieldProps, 'htmlFor' | 'classNames' | 'styles'>
   spinnerProps?: Omit<SpinnerProps, 'loading' | 'className' | 'style'>
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      id,
+      name,
       classNames,
       styles,
-      label,
-      error,
       prefix,
       suffix,
-      htmlFor,
-      id,
       loading = false,
       spinnerPosition = 'suffix',
-      spinnerProps,
       disabled,
       mask,
       onChange,
       onPaste,
+      flexProps,
+      fieldProps,
+      spinnerProps,
       ...props
     },
     ref
   ) => {
     const { global } = useNSUI()
-    const generatedId = React.useId()
-    const inputId = id ?? generatedId
+
+    const Id = id ?? name
 
     const resolvedSpinner = (
       <Spinner loading className={classNames?.spinner} style={styles?.spinner} {...spinnerProps} />
@@ -113,21 +104,21 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <Field
+        {...fieldProps}
+        labelProps={{ htmlFor: Id, ...fieldProps?.labelProps }}
         classNames={classNames?.field}
         styles={styles?.field}
-        label={label}
-        error={error}
-        htmlFor={htmlFor ?? inputId}
       >
         <Flex
+          {...flexProps}
           alignItems="center"
           className={cn(`${global.prefixCls}-input-root`, classNames?.root)}
-          style={{ marginTop: '6px', ...styles?.root }}
+          style={styles?.root}
         >
           {showPrefix && (
             <span
               className={cn(`${global.prefixCls}-input-prefix`, classNames?.prefix)}
-              style={{ display: 'flex', alignItems: 'center', ...styles?.prefix }}
+              style={styles?.prefix}
             >
               {loading && spinnerPosition === 'prefix' ? resolvedSpinner : prefix}
             </span>
@@ -136,19 +127,20 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             {...props}
             ref={ref}
-            id={inputId}
+            id={Id}
+            name={name}
             disabled={disabled || loading}
             data-loading={loading}
             onChange={handleChange}
             onPaste={handlePaste}
             className={cn(`${global.prefixCls}-input-content`, classNames?.content)}
-            style={{ outline: 'none', flex: 1, minWidth: 0, ...styles?.content }}
+            style={{ outline: 'none', ...styles?.content }}
           />
 
           {showSuffix && (
             <span
               className={cn(`${global.prefixCls}-input-suffix`, classNames?.suffix)}
-              style={{ display: 'flex', alignItems: 'center', ...styles?.suffix }}
+              style={styles?.suffix}
             >
               {loading && spinnerPosition === 'suffix' ? resolvedSpinner : suffix}
             </span>

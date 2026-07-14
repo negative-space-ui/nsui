@@ -1,5 +1,11 @@
 # @negative-space/app
 
+## 1.0.3
+
+### Patch Changes
+
+- @negative-space/theme@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

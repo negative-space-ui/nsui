@@ -7,8 +7,9 @@ export default {
   component: CloseButton,
   tags: ['autodocs'],
   args: {
-    className:
-      'p-1 bg-neutral-300 border border-neutral-400/25 text-neutral-500 rounded-full active:scale-97'
+    classNames: {
+      root: 'cursor-pointer p-1 bg-neutral-300 border border-neutral-400/25 text-neutral-500 rounded-full active:scale-97'
+    }
   }
 }
 

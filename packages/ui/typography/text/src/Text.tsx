@@ -20,6 +20,7 @@ export const Text = forwardRef(
     ref: React.Ref<TextDomMap[E]>
   ) => {
     const { global, components } = useNSUI()
+
     const Component = as ?? (components.text.typeElement as React.ElementType)
 
     return (

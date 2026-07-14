@@ -151,7 +151,7 @@ export const NotificationProvider: React.FC<React.PropsWithChildren<Notification
   return (
     <NotificationContext.Provider value={value}>
       {children}
-      <Toaster visibleToasts={1} />
+      <Toaster />
     </NotificationContext.Provider>
   )
 }

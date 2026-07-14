@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/switch",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -43,7 +43,7 @@
     "react": "^19.2.3"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "typescript": "^5.9.3"
   },
   "clean-package": "../../../../clean-package.config.json"

@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/form",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "publishConfig": {
     "access": "public"
   },
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@negative-space/input": "workspace:*",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.3",
     "typescript": "^5.9.3"
   },
   "clean-package": "../../../../clean-package.config.json"

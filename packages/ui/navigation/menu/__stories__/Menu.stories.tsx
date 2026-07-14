@@ -19,27 +19,27 @@ export const Default = (args: MenuProps) => {
         {
           item: {
             prefix: collapsed ? '➡️' : '⬅️',
-            content: collapsed ? 'Expand Menu' : 'Collapse Menu',
+            children: collapsed ? 'Expand Menu' : 'Collapse Menu',
             onClick: () => setCollapsed((v) => !v)
           }
         },
         {
           item: {
             prefix: '📂',
-            content: 'New File',
+            children: 'New File',
             href: 'https://example.com'
           }
         },
         {
           item: {
             prefix: '🔍',
-            content: 'Open'
+            children: 'Open'
           }
         },
         {
           item: {
             prefix: '💾',
-            content: 'Save'
+            children: 'Save'
           }
         }
       ]}

@@ -1,9 +1,4 @@
-import {
-  type Placement,
-  type PopoverHandle,
-  usePopover,
-  type UsePopoverOptions
-} from '@negative-space/popover'
+import { type Placement, type PopoverHandle, usePopover } from '@negative-space/popover'
 
 export interface UseTooltipOptions {
   placement?: Placement
@@ -28,7 +23,7 @@ export function useTooltip(options: UseTooltipOptions = {}): TooltipHandle {
     onOpenChange
   } = options
 
-  const popoverOptions: UsePopoverOptions = {
+  return usePopover({
     placement,
     trigger: 'hover',
     hoverDelay: delay,
@@ -42,7 +37,5 @@ export function useTooltip(options: UseTooltipOptions = {}): TooltipHandle {
     offset: 14,
     open,
     onOpenChange
-  }
-
-  return usePopover(popoverOptions)
+  })
 }

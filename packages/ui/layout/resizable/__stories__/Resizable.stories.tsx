@@ -16,7 +16,7 @@ export const Default = (args: ResizableProps) => (
     <ResizablePanel defaultSize={50} className="bg-neutral-200 p-4 text-neutral-700">
       Panel 1
     </ResizablePanel>
-    <ResizableHandle className="w-1 bg-neutral-300" />
+    <ResizableHandle className="h-14 cursor-ew-resize border-2 border-neutral-300" />
     <ResizablePanel defaultSize={50} className="bg-neutral-200 p-4 text-neutral-700">
       Panel 2
     </ResizablePanel>
@@ -28,7 +28,10 @@ export const Vertical = (args: ResizableProps) => (
     <ResizablePanel defaultSize={50} className="bg-neutral-200 p-4 text-neutral-700">
       Panel 1
     </ResizablePanel>
-    <ResizableHandle className="h-1 bg-neutral-300" />
+    <ResizableHandle
+      orientation="vertical"
+      className="w-20 cursor-ns-resize border-2 border-neutral-300"
+    />
     <ResizablePanel defaultSize={50} className="bg-neutral-200 p-4 text-neutral-700">
       Panel 2
     </ResizablePanel>

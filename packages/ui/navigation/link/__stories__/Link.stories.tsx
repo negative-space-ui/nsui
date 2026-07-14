@@ -7,13 +7,11 @@ export default {
   component: Link,
   tags: ['autodocs'],
   args: {
-    disabled: false,
-    underline: false
+    children: 'Link',
+    href: 'https://example.com',
+    underline: true,
+    className: 'text-blue-600'
   }
 }
 
-export const Default = (args: LinkProps) => (
-  <Link {...args} href="https://example.com">
-    Link
-  </Link>
-)
+export const Default = (args: LinkProps) => <Link {...args} />

@@ -1,5 +1,17 @@
 # @negative-space/collection
 
+## 2.0.6
+
+### Patch Changes
+
+- Updated dependencies [96ab878]
+- Updated dependencies [b0697fa]
+  - @negative-space/system@1.5.0
+  - @negative-space/divider@1.1.9
+  - @negative-space/flex@1.2.6
+  - @negative-space/grid@1.3.6
+  - @negative-space/heading@1.2.5
+
 ## 2.0.5
 
 ### Patch Changes

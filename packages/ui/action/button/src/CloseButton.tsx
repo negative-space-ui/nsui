@@ -6,22 +6,22 @@ import { IconButton, type IconButtonProps } from './IconButton'
 export type CloseButtonProps = Omit<IconButtonProps, 'children'>
 
 export const CloseButton = React.forwardRef<HTMLButtonElement, CloseButtonProps>(
-  ({ animation, classNames, ...props }, ref) => {
+  ({ classNames, animation, ...props }, ref) => {
     const { global, components } = useNSUI()
 
     const Animation = animation ?? components.closeButton.animation
 
     return (
       <IconButton
+        animation={Animation}
         {...props}
         ref={ref}
         classNames={{
           root: cn(`${global.prefixCls}-close-button`, classNames?.root),
           icon: classNames?.icon
         }}
-        animation={Animation}
       >
-        <X />
+        <X className={cn(`${global.prefixCls}-close-button-icon`, classNames?.icon)} />
       </IconButton>
     )
   }

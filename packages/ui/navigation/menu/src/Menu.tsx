@@ -15,30 +15,18 @@ export type MenuComponent =
 export interface MenuProps extends Omit<CollectionProps, 'rovingOptions' | 'className' | 'style'> {
   classNames?: {
     root?: string
-    group?: { root?: string; label?: string }
-    item?: {
-      root?: string
-      prefix?: string
-      content?: string
-      suffix?: string
-      link?: string
-    }
+    group?: MenuGroupProps['classNames']
+    item?: MenuItemProps['classNames']
     separator?: string
   }
   styles?: {
     root?: React.CSSProperties
-    group?: { root?: React.CSSProperties; label?: React.CSSProperties }
-    item?: {
-      root?: React.CSSProperties
-      prefix?: React.CSSProperties
-      content?: React.CSSProperties
-      suffix?: React.CSSProperties
-      link?: React.CSSProperties
-    }
+    group?: MenuGroupProps['styles']
+    item?: MenuItemProps['styles']
     separator?: React.CSSProperties
   }
-  collapsed?: boolean
   items: MenuComponent[]
+  collapsed?: boolean
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(

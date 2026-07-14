@@ -47,13 +47,14 @@ export function Collection({
   return (
     <CollectionContext.Provider value={ctxValue}>
       <Grid
+        {...props}
         ref={ref}
         columns={columns}
         tabIndex={disabled ? -1 : roving.hasInteracted ? -1 : 0}
+        data-disabled={disabled}
         aria-disabled={disabled || undefined}
         onKeyDown={disabled ? undefined : roving.handleGroupKeyDown}
         onBlur={disabled ? undefined : roving.handleGroupBlur}
-        {...props}
       >
         {children}
       </Grid>

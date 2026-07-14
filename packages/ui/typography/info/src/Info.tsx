@@ -18,18 +18,18 @@ export interface InfoProps extends Omit<
     description?: React.CSSProperties
   }
   heading?: string
-  headingAs?: HeadingElement
+  headingProps?: Omit<HeadingElement, 'children' | 'className' | 'style'>
   description?: string
-  descriptionAs?: TextElement
+  descriptionProps?: Omit<TextElement, 'children' | 'className' | 'style'>
 }
 
 export function Info({
   classNames,
   styles,
   heading,
-  headingAs,
+  headingProps,
   description,
-  descriptionAs,
+  descriptionProps,
   ...props
 }: InfoProps) {
   const { global } = useNSUI()
@@ -41,12 +41,12 @@ export function Info({
       style={styles?.root}
     >
       {heading && (
-        <Heading as={headingAs} className={classNames?.heading} style={styles?.heading}>
+        <Heading {...headingProps} className={classNames?.heading} style={styles?.heading}>
           {heading}
         </Heading>
       )}
       {description && (
-        <Text as={descriptionAs} className={classNames?.description} style={styles?.description}>
+        <Text {...descriptionProps} className={classNames?.description} style={styles?.description}>
           {description}
         </Text>
       )}

@@ -2,7 +2,8 @@ import { createElement, ReactNode } from 'react'
 
 import { NSUIContext, type NSUIContextProps } from './ProviderContext'
 import { styles } from './styles'
-import type { ComponentsConfig, GlobalConfig } from './types'
+import type { ComponentsConfig } from './types/components'
+import type { GlobalConfig } from './types/global'
 
 export type NSUIProviderProps = {
   children: ReactNode
@@ -10,7 +11,6 @@ export type NSUIProviderProps = {
   global?: GlobalConfig
 }
 
-/** NSUIProvider wraps your app and provides global configuration for the NSUI components library. */
 export const NSUIProvider = ({ children, components, global }: NSUIProviderProps) => {
   const contextValue: NSUIContextProps = {
     global: {
@@ -69,6 +69,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       },
       radio: {
         animation: components?.radio?.animation ?? 'pop'
+      },
+      select: {
+        animation: components?.select?.animation ?? 'none'
       },
       spinner: {
         animationDuration: components?.spinner?.animationDuration ?? 1.2

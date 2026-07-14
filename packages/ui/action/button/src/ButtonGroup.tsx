@@ -4,15 +4,13 @@ import React from 'react'
 
 import { Button, type ButtonProps } from './Button'
 import { ButtonContext } from './ButtonContext'
-import { CloseButton, type CloseButtonProps } from './CloseButton'
 import { IconButton, type IconButtonProps } from './IconButton'
 
 export type ButtonComponent =
   | { button: Omit<ButtonProps, 'controlled'> }
   | { iconButton: Omit<IconButtonProps, 'controlled'> }
-  | { closeButton: Omit<CloseButtonProps, 'controlled'> }
 
-export interface ButtonGroupProps extends Omit<FlexProps, 'as' | 'className' | 'style'> {
+export interface ButtonGroupProps extends Omit<FlexProps, 'className' | 'style'> {
   classNames?: {
     root?: string
     button?: ButtonProps['classNames']
@@ -28,7 +26,7 @@ export interface ButtonGroupProps extends Omit<FlexProps, 'as' | 'className' | '
 }
 
 export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
-  ({ items, classNames, styles, disabled, ...props }, ref) => {
+  ({ classNames, styles, items, disabled, ...props }, ref) => {
     const { global } = useNSUI()
 
     return (
@@ -36,7 +34,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
         <Flex
           {...props}
           ref={ref}
-          className={cn(`${global.prefixCls}-btn-group`, classNames?.root)}
+          className={cn(`${global.prefixCls}-button-group`, classNames?.root)}
           style={styles?.root}
         >
           {items.map((item, index) => {
@@ -67,20 +65,6 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
                 />
               )
             }
-
-            if ('closeButton' in item) {
-              return (
-                <CloseButton
-                  key={index}
-                  controlled
-                  {...item.closeButton}
-                  classNames={classNames?.iconButton}
-                  styles={styles?.iconButton}
-                />
-              )
-            }
-
-            return null
           })}
         </Flex>
       </ButtonContext.Provider>
