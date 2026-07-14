@@ -20,53 +20,61 @@ export interface FieldProps extends Omit<FlexProps<'fieldset'>, 'as' | 'classNam
   errorProps?: Omit<TextProps, 'as' | 'children' | 'className' | 'style'>
 }
 
-export const Field = ({
-  children,
-  classNames,
-  styles,
-  direction = 'column',
-  alignItems = 'start',
-  label,
-  labelProps,
-  error,
-  errorProps,
-  ...props
-}: FieldProps) => {
-  const { global } = useNSUI()
+export const Field = React.forwardRef<HTMLFieldSetElement, FieldProps>(
+  (
+    {
+      children,
+      classNames,
+      styles,
+      direction = 'column',
+      alignItems = 'start',
+      label,
+      labelProps,
+      error,
+      errorProps,
+      ...props
+    },
+    ref
+  ) => {
+    const { global } = useNSUI()
 
-  return (
-    <Flex
-      {...props}
-      as="fieldset"
-      direction={direction}
-      alignItems={alignItems}
-      className={cn(`${global.prefixCls}-field`, classNames?.root)}
-      style={styles?.root}
-      data-error={!!error}
-    >
-      {label && (
-        <Text
-          {...labelProps}
-          as="label"
-          className={cn(`${global.prefixCls}-label`, classNames?.label)}
-          style={styles?.label}
-        >
-          {label}
-        </Text>
-      )}
+    return (
+      <Flex
+        {...props}
+        ref={ref}
+        as="fieldset"
+        direction={direction}
+        alignItems={alignItems}
+        className={cn(`${global.prefixCls}-field`, classNames?.root)}
+        style={styles?.root}
+        data-error={!!error}
+      >
+        {label && (
+          <Text
+            {...labelProps}
+            as="label"
+            className={cn(`${global.prefixCls}-label`, classNames?.label)}
+            style={styles?.label}
+          >
+            {label}
+          </Text>
+        )}
 
-      {children}
+        {children}
 
-      {error && (
-        <Text
-          {...errorProps}
-          as="p"
-          className={cn(`${global.prefixCls}-text-error`, classNames?.error)}
-          style={{ color: `var(--${global.prefixCls}-error)`, ...styles?.error }}
-        >
-          {error}
-        </Text>
-      )}
-    </Flex>
-  )
-}
+        {error && (
+          <Text
+            {...errorProps}
+            as="p"
+            className={cn(`${global.prefixCls}-text-error`, classNames?.error)}
+            style={{ color: `var(--${global.prefixCls}-error)`, ...styles?.error }}
+          >
+            {error}
+          </Text>
+        )}
+      </Flex>
+    )
+  }
+)
+
+Field.displayName = 'Field'

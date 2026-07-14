@@ -58,7 +58,7 @@ const AlertExample = ({ variant = 'success', ...args }: AlertProps) => {
         content: style.content,
         info: { heading: 'font-medium' },
         icon: style.icon,
-        closeButton: 'opacity-50 hover:opacity-100'
+        closeButton: { root: 'opacity-50 hover:opacity-100' }
       }}
     />
   )
@@ -96,7 +96,6 @@ export const AccentBar = (args: AlertProps) => {
       onClose={() => setIsOpen(false)}
       classNames={{
         root: 'w-fit pr-2 bg-green-200 border border-green-300/30 rounded-md',
-        content: 'pb-2',
         icon: 'w-10 h-10 text-green-200 fill-green-600',
         prefix: 'w-1 self-stretch bg-green-500'
       }}

@@ -1,4 +1,4 @@
-import { Field } from '@negative-space/field'
+import { Field, type FieldProps } from '@negative-space/field'
 import { cn, useNSUI } from '@negative-space/system'
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -7,32 +7,24 @@ export interface SwitchProps extends Omit<
   'onChange' | 'className' | 'style'
 > {
   classNames?: {
-    field: {
-      root?: string
-      label: string
-      error?: string
-    }
+    field: FieldProps['classNames']
     root?: string
     inner?: string
   }
   styles?: {
-    field?: {
-      root?: React.CSSProperties
-      label?: React.CSSProperties
-      error?: React.CSSProperties
-    }
+    field?: FieldProps['styles']
     root?: React.CSSProperties
     inner?: React.CSSProperties
   }
-  label?: React.ReactNode
-  error?: React.ReactNode
   checked?: boolean
   onChange?: (checked: boolean) => void
+  fieldProps?: Omit<FieldProps, 'classNames' | 'styles'>
 }
 
 export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
-  ({ checked = false, onChange, classNames, styles, label, error, ...props }, ref) => {
+  ({ id, name, classNames, styles, checked = false, onChange, fieldProps, ...props }, ref) => {
     const { global } = useNSUI()
+
     const buttonRef = useRef<HTMLButtonElement>(null)
     const [offset, setOffset] = useState(0)
 
@@ -53,9 +45,17 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
     }, [global.prefixCls, checked])
 
     return (
-      <Field label={label} error={error} classNames={classNames?.field} styles={styles?.field}>
+      <Field
+        {...fieldProps}
+        labelProps={{ htmlFor: id, ...fieldProps?.labelProps }}
+        classNames={classNames?.field}
+        styles={styles?.field}
+      >
         <button
+          {...props}
           type="button"
+          id={id}
+          name={name}
           data-checked={checked}
           onClick={() => onChange?.(!checked)}
           ref={(node) => {
@@ -64,12 +64,13 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
             else if (ref) ref.current = node
           }}
           className={cn(classNames?.root)}
-          style={styles?.root}
-          {...props}
+          style={{ borderRadius: '9999px', ...styles?.root }}
         >
           <span
             className={cn(`${global.prefixCls}-switch-inner`, classNames?.inner)}
             style={{
+              display: 'block',
+              borderRadius: '9999px',
               transform: checked ? `translateX(${offset}px)` : 'translateX(0)',
               ...styles?.inner
             }}

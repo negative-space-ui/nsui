@@ -38,7 +38,6 @@
   "dependencies": {
     "@negative-space/checkmark": "workspace:*",
     "@negative-space/field": "workspace:*",
-    "@negative-space/flex": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {

@@ -1,13 +1,13 @@
 import { CollectionItem, type CollectionItemProps } from '@negative-space/collection'
 import { Link, type LinkProps } from '@negative-space/link'
 import { cn, useNSUI } from '@negative-space/system'
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { useMenuContext } from './useMenuContext'
 
 export interface MenuItemProps extends Omit<
   LinkProps,
-  'content' | 'className' | 'style' | 'tabIndex' | 'aria-disabled' | 'children' | 'prefix'
+  'content' | 'className' | 'style' | 'tabIndex' | 'aria-disabled' | 'prefix'
 > {
   classNames?: {
     root?: string
@@ -23,49 +23,69 @@ export interface MenuItemProps extends Omit<
     content?: React.CSSProperties
     suffix?: React.CSSProperties
   }
-  value?: CollectionItemProps['value']
-  disabled?: CollectionItemProps['disabled']
-  gap?: CollectionItemProps['gap']
-  alignItems?: CollectionItemProps['alignItems']
-  direction?: CollectionItemProps['direction']
+  value?: string
   prefix?: React.ReactNode
-  content: React.ReactNode
   suffix?: React.ReactNode
+  itemProps?: Omit<CollectionItemProps, 'className' | 'style' | 'value'>
 }
 
 export const MenuItem = ({
+  children,
   value,
   disabled,
   prefix,
-  content,
   suffix,
   classNames,
   styles,
-  gap = '0.5rem',
-  alignItems = 'center',
-  direction = 'row',
+  itemProps,
   ...linkProps
 }: MenuItemProps) => {
   const { global } = useNSUI()
   const { disabled: groupDisabled, collapsed } = useMenuContext()
+  const linkRef = useRef<HTMLAnchorElement>(null)
 
   const isDisabled = disabled || groupDisabled
   const isCollapsed = !!collapsed
 
+  const handleItemClick = (
+    itemValue: string | undefined,
+    event: React.MouseEvent<HTMLLIElement>
+  ) => {
+    if (isDisabled) return
+    itemProps?.onClick?.(itemValue, event)
+
+    if (!linkProps.href) {
+      linkProps.onClick?.(event as unknown as React.MouseEvent<HTMLAnchorElement>)
+    }
+  }
+
+  const handleItemSelect = (itemValue: string | undefined) => {
+    if (isDisabled) return
+    itemProps?.onSelect?.(itemValue)
+
+    if (linkProps.href && linkRef.current) {
+      linkRef.current.click()
+    }
+  }
+
   return (
     <CollectionItem
+      {...itemProps}
       value={value}
       disabled={isDisabled}
       role="menuitem"
+      onClick={handleItemClick}
+      onSelect={handleItemSelect}
       className={cn(`${global.prefixCls}-menu-item`, classNames?.root)}
       styles={{ root: styles?.root }}
     >
       <Link
         {...linkProps}
+        ref={linkRef}
         disabled={isDisabled}
         tabIndex={-1}
         className={cn(`${global.prefixCls}-menu-link`, classNames?.link)}
-        style={{ display: 'flex', flexDirection: direction, gap, alignItems, ...styles?.link }}
+        style={{ display: 'flex', ...styles?.link }}
       >
         {prefix && (
           <span
@@ -81,7 +101,7 @@ export const MenuItem = ({
             className={cn(`${global.prefixCls}-menu-content`, classNames?.content)}
             style={styles?.content}
           >
-            {content}
+            {children}
           </span>
         )}
 

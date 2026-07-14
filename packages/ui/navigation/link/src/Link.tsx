@@ -7,7 +7,7 @@ export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  ({ className, disabled = false, underline, onClick, target, rel, ...props }, ref) => {
+  ({ className, style, disabled = false, underline, onClick, target, rel, ...props }, ref) => {
     const { global, components } = useNSUI()
 
     const Underline = underline ?? components.link.underline
@@ -26,6 +26,10 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         tabIndex={disabled ? -1 : undefined}
         onClick={disabled ? (e) => e.preventDefault() : onClick}
         className={cn(`${global.prefixCls}-link`, className)}
+        style={{
+          textDecoration: Underline ? 'underline' : 'none',
+          ...style
+        }}
       />
     )
   }

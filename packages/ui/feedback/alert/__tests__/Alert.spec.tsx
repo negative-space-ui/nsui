@@ -1,0 +1,152 @@
+import { fireEvent, render, screen } from '@testing-library/react'
+import React from 'react'
+
+import { Alert } from '..'
+
+const triggerProps = {
+  'data-testid': 'tooltip-trigger'
+}
+
+jest.mock('@negative-space/system', () => ({
+  cn: (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' '),
+  useNSUI: () => ({
+    global: {
+      prefixCls: 'ns',
+      tooltip: false
+    },
+    components: {
+      alert: {
+        closable: true
+      },
+      modal: {
+        closeTitle: 'Close'
+      }
+    }
+  }),
+  Info: (props: React.SVGProps<SVGSVGElement>) => <svg data-testid="info-icon" {...props} />,
+  CheckCircle2: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg data-testid="success-icon" {...props} />
+  ),
+  XCircle: (props: React.SVGProps<SVGSVGElement>) => <svg data-testid="error-icon" {...props} />,
+  TriangleAlert: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg data-testid="warning-icon" {...props} />
+  )
+}))
+
+jest.mock('@negative-space/flex', () => ({
+  Flex: React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+    ({ children, ...props }, ref) => (
+      <div ref={ref} {...props}>
+        {children}
+      </div>
+    )
+  )
+}))
+
+jest.mock('@negative-space/info', () => ({
+  Info: ({ heading, description }: { heading: string; description?: string }) => (
+    <div>
+      <span>{heading}</span>
+      {description && <span>{description}</span>}
+    </div>
+  )
+}))
+
+jest.mock('@negative-space/button', () => ({
+  CloseButton: ({ onClick, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
+    <button onClick={onClick} {...props}>
+      Close
+    </button>
+  )
+}))
+
+jest.mock('@negative-space/progress-bar', () => ({
+  ProgressBar: ({ value }: { value: number }) => <div data-testid="progress">{value}</div>
+}))
+
+jest.mock('@negative-space/tooltip', () => ({
+  Tooltip: ({ children }: { children: React.ReactNode }) => (
+    <div data-testid="tooltip">{children}</div>
+  ),
+  useTooltip: () => ({
+    triggerProps
+  })
+}))
+
+describe('Alert', () => {
+  it('renders heading and description', () => {
+    render(<Alert heading="Title" description="Description" />)
+
+    expect(screen.getByText('Title')).toBeInTheDocument()
+    expect(screen.getByText('Description')).toBeInTheDocument()
+  })
+
+  it('does not render when open is false', () => {
+    const { container } = render(<Alert heading="Title" open={false} />)
+
+    expect(container.firstChild).toBeNull()
+  })
+
+  it('renders success icon', () => {
+    render(<Alert heading="Title" variant="success" />)
+
+    expect(screen.getByTestId('success-icon')).toBeInTheDocument()
+  })
+
+  it('renders custom icon instead of variant icon', () => {
+    render(<Alert heading="Title" variant="success" icon={<div data-testid="custom-icon" />} />)
+
+    expect(screen.getByTestId('custom-icon')).toBeInTheDocument()
+    expect(screen.queryByTestId('success-icon')).not.toBeInTheDocument()
+  })
+
+  it('calls onClose when close button is clicked', () => {
+    const onClose = jest.fn()
+
+    render(<Alert heading="Title" onClose={onClose} />)
+
+    fireEvent.click(screen.getByRole('button'))
+
+    expect(onClose).toHaveBeenCalledTimes(1)
+  })
+
+  it('renders progress bar', () => {
+    render(
+      <Alert
+        heading="Title"
+        progressBar={{
+          value: 45
+        }}
+      />
+    )
+
+    expect(screen.getByTestId('progress')).toHaveTextContent('45')
+  })
+
+  it('renders prefix and suffix', () => {
+    render(<Alert heading="Title" prefix={<span>Prefix</span>} suffix={<span>Suffix</span>} />)
+
+    expect(screen.getByText('Prefix')).toBeInTheDocument()
+    expect(screen.getByText('Suffix')).toBeInTheDocument()
+  })
+
+  it('renders tooltip when enabled', () => {
+    jest.doMock('@negative-space/system', () => ({
+      cn: (...classes: Array<string | undefined>) => classes.filter(Boolean).join(' '),
+      useNSUI: () => ({
+        global: {
+          prefixCls: 'ns',
+          tooltip: true
+        },
+        components: {
+          alert: {
+            closable: true
+          },
+          modal: {
+            closeTitle: 'Close'
+          }
+        }
+      })
+    }))
+  })
+})

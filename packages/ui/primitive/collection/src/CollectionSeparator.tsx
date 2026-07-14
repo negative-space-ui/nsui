@@ -4,7 +4,7 @@ import React from 'react'
 export type CollectionSeparatorProps = Omit<DividerProps, 'role'>
 
 export function CollectionSeparator(props: CollectionSeparatorProps) {
-  return <Divider role="separator" {...props} />
+  return <Divider {...props} />
 }
 
 CollectionSeparator.displayName = 'CollectionSeparator'

@@ -4,7 +4,7 @@ import React from 'react'
 
 export type MenuGroupProps = CollectionGroupProps
 
-export const MenuGroup = ({ classNames, styles, ...props }: MenuGroupProps) => {
+export const MenuGroup = ({ classNames, ...props }: MenuGroupProps) => {
   const { global } = useNSUI()
 
   return (
@@ -12,9 +12,8 @@ export const MenuGroup = ({ classNames, styles, ...props }: MenuGroupProps) => {
       {...props}
       classNames={{
         root: cn(`${global.prefixCls}-menu-group`, classNames?.root),
-        label: cn(`${global.prefixCls}-menu-group-label`, classNames?.label)
+        heading: cn(`${global.prefixCls}-menu-group-heading`, classNames?.heading)
       }}
-      styles={styles}
     />
   )
 }

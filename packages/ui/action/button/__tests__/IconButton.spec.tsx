@@ -50,6 +50,40 @@ describe('IconButton', () => {
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 
+  it('renders text children inside an icon wrapper', () => {
+    render(<IconButton aria-label="search">🔍</IconButton>)
+
+    const icon = screen.getByText('🔍')
+
+    expect(icon).toBeInTheDocument()
+    expect(icon.tagName).toBe('SPAN')
+    expect(icon).toHaveClass('ns-icon-button-icon')
+  })
+
+  it('applies icon class and style to text children wrapper', () => {
+    render(
+      <IconButton
+        aria-label="search"
+        classNames={{ icon: 'custom-icon' }}
+        styles={{
+          icon: {
+            fontSize: 20
+          }
+        }}
+      >
+        🔍
+      </IconButton>
+    )
+
+    const icon = screen.getByText('🔍')
+
+    expect(icon).toHaveClass('ns-icon-button-icon', 'custom-icon')
+
+    expect(icon).toHaveStyle({
+      fontSize: '20px'
+    })
+  })
+
   it('calls onClick', () => {
     const onClick = jest.fn()
 

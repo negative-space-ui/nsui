@@ -415,13 +415,13 @@ importers:
         version: 1.0.2(react@19.2.3)
       '@negative-space/data-display':
         specifier: 1.3.0
-        version: 1.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 1.3.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/data-entry':
         specifier: 1.5.0
-        version: 1.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@4.3.6)
+        version: 1.5.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(zod@4.3.6)
       '@negative-space/feedback':
         specifier: 1.4.0
-        version: 1.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 1.4.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/layout':
         specifier: 1.4.0
         version: 1.4.0(react@19.2.3)
@@ -528,7 +528,7 @@ importers:
     dependencies:
       '@floating-ui/react':
         specifier: ^0.27.18
-        version: 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -586,9 +586,6 @@ importers:
       '@negative-space/field':
         specifier: workspace:*
         version: link:../../layout/field
-      '@negative-space/flex':
-        specifier: workspace:*
-        version: link:../../layout/flex
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -6761,25 +6758,11 @@ snapshots:
       '@floating-ui/core': 1.7.4
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/react-dom@2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@floating-ui/dom': 1.7.5
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
   '@floating-ui/react-dom@2.1.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@floating-ui/dom': 1.7.5
       react: 19.2.3
       react-dom: 19.2.7(react@19.2.3)
-
-  '@floating-ui/react@0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@floating-ui/react-dom': 2.1.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@floating-ui/utils': 0.2.10
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-      tabbable: 6.4.0
 
   '@floating-ui/react@0.27.18(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -7184,18 +7167,6 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  '@negative-space/alert@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@negative-space/button': 2.8.0(react@19.2.3)
-      '@negative-space/flex': 1.2.5(react@19.2.3)
-      '@negative-space/info': 1.0.0(react@19.2.3)
-      '@negative-space/progress-bar': 1.0.0(react@19.2.3)
-      '@negative-space/system': 1.4.0(react@19.2.3)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-    transitivePeerDependencies:
-      - react-dom
-
   '@negative-space/alert@1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@negative-space/button': 2.8.0(react@19.2.3)
@@ -7252,25 +7223,25 @@ snapshots:
       '@negative-space/system': 1.4.0(react@19.2.3)
       react: 19.2.3
 
-  '@negative-space/data-display@1.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@negative-space/data-display@1.3.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@negative-space/code-block': 1.0.3(react@19.2.3)
       '@negative-space/list': 1.4.5(react@19.2.3)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/surface': 1.0.0(react@19.2.3)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@negative-space/data-entry@1.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(zod@4.3.6)':
+  '@negative-space/data-entry@1.5.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)(zod@4.3.6)':
     dependencies:
       '@negative-space/checkbox': 1.5.3(react@19.2.3)
       '@negative-space/form': 1.6.1(react@19.2.3)(zod@4.3.6)
-      '@negative-space/input': 1.5.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/input': 1.5.2(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/listbox': 1.5.3(react@19.2.3)
       '@negative-space/radio': 1.7.3(react@19.2.3)
-      '@negative-space/select': 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/select': 1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/switch': 1.0.3(react@19.2.3)
     transitivePeerDependencies:
       - react
@@ -7282,11 +7253,11 @@ snapshots:
       '@negative-space/system': 1.4.0(react@19.2.3)
       react: 19.2.3
 
-  '@negative-space/feedback@1.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@negative-space/feedback@1.4.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@negative-space/alert': 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/alert': 1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/checkmark': 1.2.3(react@19.2.3)
-      '@negative-space/modal': 1.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/modal': 1.1.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/notification': 1.0.0(react@19.2.3)
       '@negative-space/progress-bar': 1.0.0(react@19.2.3)
       '@negative-space/spinner': 2.2.3(react@19.2.3)
@@ -7332,14 +7303,14 @@ snapshots:
 
   '@negative-space/inject-css@1.3.0': {}
 
-  '@negative-space/input@1.5.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@negative-space/input@1.5.2(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@negative-space/button': 2.8.0(react@19.2.3)
       '@negative-space/field': 1.1.3(react@19.2.3)
       '@negative-space/flex': 1.2.5(react@19.2.3)
       '@negative-space/spinner': 2.2.3(react@19.2.3)
       '@negative-space/system': 1.4.0(react@19.2.3)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       react: 19.2.3
     transitivePeerDependencies:
       - react-dom
@@ -7381,12 +7352,12 @@ snapshots:
       '@negative-space/system': 1.4.0(react@19.2.3)
       react: 19.2.3
 
-  '@negative-space/modal@1.1.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@negative-space/modal@1.1.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@negative-space/button': 2.8.0(react@19.2.3)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/system': 1.4.0(react@19.2.3)
-      '@negative-space/tooltip': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/tooltip': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       react: 19.2.3
     transitivePeerDependencies:
       - react-dom
@@ -7405,14 +7376,6 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.7(react@19.2.3)
       sonner: 2.0.7(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
-
-  '@negative-space/popover@1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@floating-ui/react': 0.27.18(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@negative-space/system': 1.4.0(react@19.2.3)
-      react: 19.2.3
-    transitivePeerDependencies:
-      - react-dom
 
   '@negative-space/popover@1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -7459,12 +7422,12 @@ snapshots:
     dependencies:
       react: 19.2.3
 
-  '@negative-space/select@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@negative-space/select@1.0.0(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@negative-space/button': 2.8.0(react@19.2.3)
       '@negative-space/field': 1.1.3(react@19.2.3)
       '@negative-space/listbox': 1.5.3(react@19.2.3)
-      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@negative-space/popover': 1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)
       '@negative-space/system': 1.4.0(react@19.2.3)
       react: 19.2.3
     transitivePeerDependencies:
@@ -7509,14 +7472,6 @@ snapshots:
     dependencies:
       '@negative-space/system': 1.4.0(react@19.2.3)
       react: 19.2.3
-
-  '@negative-space/tooltip@1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@negative-space/popover': 1.0.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@negative-space/system': 1.4.0(react@19.2.3)
-      react: 19.2.3
-    transitivePeerDependencies:
-      - react-dom
 
   '@negative-space/tooltip@1.0.3(react-dom@19.2.7(react@19.2.3))(react@19.2.3)':
     dependencies:

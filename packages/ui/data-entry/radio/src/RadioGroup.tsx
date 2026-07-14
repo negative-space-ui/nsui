@@ -1,5 +1,5 @@
 import { Collection, type CollectionProps } from '@negative-space/collection'
-import { Field } from '@negative-space/field'
+import { Field, type FieldProps } from '@negative-space/field'
 import { cn, mergeCn, useNSUI } from '@negative-space/system'
 import React, { useCallback, useId, useMemo, useState } from 'react'
 
@@ -8,35 +8,21 @@ import { RadioOption, type RadioOptionProps } from './RadioOption'
 
 export interface RadioGroupProps extends Omit<CollectionProps, 'rovingOptions'> {
   classNames?: {
-    field?: {
-      root?: string
-      error?: string
-    }
+    field?: FieldProps['classNames']
     root?: string
-    option?: {
-      label?: string
-      radio?: string
-      inner?: string
-    }
+    option?: RadioOptionProps['classNames']
   }
   styles?: {
-    field?: {
-      root?: React.CSSProperties
-      error?: React.CSSProperties
-    }
+    field?: FieldProps['styles']
     root?: React.CSSProperties
-    option?: {
-      label?: React.CSSProperties
-      radio?: React.CSSProperties
-      inner?: React.CSSProperties
-    }
+    option?: RadioOptionProps['styles']
   }
   name?: string
   disabled?: boolean
   options?: RadioOptionProps[]
-  error?: React.ReactNode
   defaultValue?: string
   onValueChange?: (value: string) => void
+  fieldProps?: Omit<FieldProps, 'classNames' | 'styles'>
 }
 
 export function RadioGroup({
@@ -44,10 +30,10 @@ export function RadioGroup({
   styles,
   disabled = false,
   options,
-  error,
   name: nameProp,
   defaultValue,
   onValueChange,
+  fieldProps,
   ...props
 }: RadioGroupProps) {
   const { global } = useNSUI()
@@ -76,7 +62,7 @@ export function RadioGroup({
 
   return (
     <RadioContext.Provider value={contextValue}>
-      <Field classNames={classNames?.field} styles={styles?.field} error={error}>
+      <Field {...fieldProps} classNames={classNames?.field} styles={styles?.field}>
         <Collection
           {...props}
           role="radiogroup"

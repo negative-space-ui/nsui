@@ -8,8 +8,8 @@ export default {
   tags: ['autodocs'],
   args: {
     classNames: {
-      root: 'w-12 h-6 bg-neutral-200 data-[checked=true]:bg-blue-400 rounded-full p-1 transition-colors duration-300 ease-in-out',
-      inner: 'w-4 h-4 bg-white rounded-full transition-transform duration-300 ease-in-out'
+      root: 'w-12 h-6 bg-neutral-200 data-[checked=true]:bg-blue-400 p-1 transition-colors duration-300 ease-in-out',
+      inner: 'w-4 h-4 bg-white transition-transform duration-300 ease-in-out'
     }
   }
 }

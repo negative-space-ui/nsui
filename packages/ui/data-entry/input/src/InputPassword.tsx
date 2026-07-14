@@ -10,13 +10,11 @@ export interface InputPasswordProps extends Omit<
   'classNames' | 'styles' | 'suffix' | 'type'
 > {
   classNames?: InputProps['classNames'] & {
-    button?: IconButtonProps['classNames']
-    icon?: string
+    iconButton?: IconButtonProps['classNames']
     tooltip?: TooltipProps['classNames']
   }
   styles?: InputProps['styles'] & {
-    button?: IconButtonProps['styles']
-    icon?: React.CSSProperties
+    iconButton?: IconButtonProps['styles']
     tooltip?: TooltipProps['styles']
   }
   onToggleVisibility?: (visible: boolean) => void
@@ -24,9 +22,14 @@ export interface InputPasswordProps extends Omit<
 }
 
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>(
-  ({ onToggleVisibility, title, classNames, styles, buttonProps, ...rest }, ref) => {
+  ({ classNames, styles, onToggleVisibility, title, flexProps, buttonProps, ...props }, ref) => {
     const { global, components } = useNSUI()
     const [visible, setVisible] = React.useState(false)
+
+    const mergedFlexProps = {
+      alignItems: 'center',
+      ...flexProps
+    }
 
     const Title =
       title ??
@@ -42,45 +45,49 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
       })
     }
 
+    const passwordIcon = (
+      <IconButton
+        {...buttonProps}
+        {...tooltip.triggerProps}
+        onClick={handleToggle}
+        title={!global.tooltip ? Title : undefined}
+        aria-label={Title}
+        classNames={{
+          root: cn(`${global.prefixCls}-input-password-button`, classNames?.iconButton?.root),
+          ...classNames?.iconButton
+        }}
+        styles={styles?.iconButton}
+      >
+        {visible ? (
+          <EyeOff
+            className={cn(`${global.prefixCls}-input-password-icon`, classNames?.iconButton?.icon)}
+            style={styles?.iconButton?.icon}
+          />
+        ) : (
+          <Eye
+            className={cn(`${global.prefixCls}-input-password-icon`, classNames?.iconButton?.icon)}
+            style={styles?.iconButton?.icon}
+          />
+        )}
+      </IconButton>
+    )
+
     return (
       <>
         <Input
-          {...rest}
+          {...props}
           ref={ref}
           type={visible ? 'text' : 'password'}
+          flexProps={mergedFlexProps}
           data-visible={visible}
           classNames={{
             ...classNames,
             root: cn(classNames?.root, `${global.prefixCls}-input-password`)
           }}
           styles={styles}
-          suffix={
-            <IconButton
-              {...buttonProps}
-              {...tooltip.triggerProps}
-              onClick={handleToggle}
-              title={!global.tooltip ? Title : undefined}
-              aria-label={Title}
-              classNames={{
-                root: cn(`${global.prefixCls}-input-password-button`, classNames?.button?.root),
-                ...classNames?.button
-              }}
-              styles={styles?.button}
-            >
-              {visible ? (
-                <EyeOff
-                  className={cn(`${global.prefixCls}-input-password-icon`, classNames?.icon)}
-                  style={styles?.icon}
-                />
-              ) : (
-                <Eye
-                  className={cn(`${global.prefixCls}-input-password-icon`, classNames?.icon)}
-                  style={styles?.icon}
-                />
-              )}
-            </IconButton>
-          }
+          suffix={passwordIcon}
         />
+
         {global.tooltip && (
           <Tooltip tooltip={tooltip} classNames={classNames?.tooltip} styles={styles?.tooltip}>
             {Title}

@@ -13,7 +13,7 @@ export interface IconButtonProps extends Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   'children' | 'className' | 'style'
 > {
-  children: React.ReactElement<IconChildProps>
+  children: React.ReactNode
   classNames?: {
     root?: string
     icon?: string
@@ -60,17 +60,26 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       onClick?.(e)
     }
 
-    const child = React.cloneElement(children, {
-      className: cn(
-        `${global.prefixCls}-icon-button-icon`,
-        classNames?.icon,
-        children.props.className
-      ),
-      style: {
-        ...styles?.icon,
-        ...children.props.style
-      }
-    })
+    const child = React.isValidElement<IconChildProps>(children) ? (
+      React.cloneElement(children, {
+        className: cn(
+          `${global.prefixCls}-icon-button-icon`,
+          classNames?.icon,
+          children.props.className
+        ),
+        style: {
+          ...styles?.icon,
+          ...children.props.style
+        }
+      })
+    ) : (
+      <span
+        className={cn(`${global.prefixCls}-icon-button-icon`, classNames?.icon)}
+        style={styles?.icon}
+      >
+        {children}
+      </span>
+    )
 
     return (
       <button

@@ -27,8 +27,6 @@ const ALERT_ICONS: Partial<
 type flexProps = Omit<FlexProps, 'className' | 'style' | 'prefix' | 'children'>
 
 export interface AlertProps {
-  rootProps?: flexProps
-  contentProps?: flexProps
   classNames?: {
     root?: string
     content?: string
@@ -65,6 +63,8 @@ export interface AlertProps {
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   tooltip?: boolean
+  rootProps?: flexProps
+  contentProps?: flexProps
 }
 
 export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
@@ -113,10 +113,8 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         <Flex
           {...rootProps}
           ref={ref}
-          className={cn(
-            `${global.prefixCls}-alert ${global.prefixCls}-alert-${variant}`,
-            classNames?.root
-          )}
+          className={cn(`${global.prefixCls}-alert`, classNames?.root)}
+          data-variant={variant}
           style={{ position: 'relative', ...styles?.root }}
         >
           <Flex

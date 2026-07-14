@@ -10,10 +10,13 @@ export default {
     children: 'Checkbox',
     animation: 'pop',
     classNames: {
-      label: 'w-fit px-4 py-2 border-1 border-neutral-300 rounded-md',
+      field: {
+        root: 'cursor-pointer w-fit',
+        label: 'w-fit px-4 py-2 border-1 text-lg border-neutral-300 rounded-md'
+      },
       checkbox:
-        'w-4 h-4 border-1 border-neutral-500 data-[checked=true]:border-neutral-600 rounded-sm transition-colors will-change-border',
-      checkmark: 'w-4 h-4 text-neutral-800'
+        'w-4 h-4 border flex items-center justify-center data-[checked=true]:bg-blue-500 border-neutral-500 data-[checked=true]:border-blue-600 rounded-sm transition-colors will-change-border',
+      checkmark: 'w-3 h-3 text-white'
     }
   }
 }

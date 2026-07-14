@@ -7,9 +7,10 @@ export default {
   component: Link,
   tags: ['autodocs'],
   args: {
-    underline: false,
     children: 'Link',
-    href: 'https://example.com'
+    href: 'https://example.com',
+    underline: true,
+    className: 'text-blue-600'
   }
 }
 

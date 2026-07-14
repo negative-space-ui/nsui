@@ -6,15 +6,15 @@ import { useRadioContext } from './useRadioContext'
 
 export interface RadioOptionProps extends Omit<
   CollectionItemProps,
-  'onClick' | 'selected' | 'value' | 'role' | 'classNames' | 'styles'
+  'classNames' | 'styles' | 'onClick' | 'selected' | 'value' | 'role'
 > {
   classNames?: {
-    label?: string
+    root?: string
     radio?: string
     inner?: string
   }
   styles?: {
-    label?: React.CSSProperties
+    root?: React.CSSProperties
     radio?: React.CSSProperties
     inner?: React.CSSProperties
   }
@@ -26,11 +26,11 @@ export interface RadioOptionProps extends Omit<
 
 export function RadioOption({
   value,
+  classNames,
+  styles,
   label,
   animation,
   disabled,
-  classNames,
-  styles,
   ...props
 }: RadioOptionProps) {
   const { global, components } = useNSUI()
@@ -56,13 +56,19 @@ export function RadioOption({
       data-checked={checked}
       aria-checked={checked}
       data-visible={checked}
-      className={cn(`${global.prefixCls}-radio-label`, classNames?.label)}
-      styles={{ root: styles?.label }}
+      className={cn(`${global.prefixCls}-radio-option`, classNames?.root)}
+      style={styles?.root}
     >
       <div
         data-checked={checked}
         className={cn(`${global.prefixCls}-radio`, classNames?.radio)}
-        style={styles?.radio}
+        style={{
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          ...styles?.radio
+        }}
       >
         <div
           data-visible={checked}
@@ -71,7 +77,7 @@ export function RadioOption({
             Animation !== 'none' && `${global.prefixCls}-${Animation}`,
             classNames?.inner
           )}
-          style={styles?.inner}
+          style={{ borderRadius: '50%', ...styles?.inner }}
         />
       </div>
 
