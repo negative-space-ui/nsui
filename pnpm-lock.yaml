@@ -176,37 +176,11 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  packages/core/hooks/ripple:
-    dependencies:
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.3
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
-  packages/core/hooks/roving-focus:
-    dependencies:
-      react:
-        specifier: ^19.2.3
-        version: 19.2.3
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.3
-        version: 19.2.7
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/core/provider:
     dependencies:
       '@negative-space/inject-css':
         specifier: workspace:*
-        version: link:../utils/inject-css
+        version: link:../../utils/inject-css
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -240,8 +214,28 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/core/utils/inject-css:
+  packages/hooks/ripple:
+    dependencies:
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
     devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/hooks/roving-focus:
+    dependencies:
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -452,7 +446,7 @@ importers:
         version: link:../../layout/flex
       '@negative-space/ripple':
         specifier: workspace:*
-        version: link:../../../core/hooks/ripple
+        version: link:../../../hooks/ripple
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../feedback/spinner
@@ -1056,7 +1050,7 @@ importers:
         version: link:../../typography/heading
       '@negative-space/roving-focus':
         specifier: workspace:*
-        version: link:../../../core/hooks/roving-focus
+        version: link:../../../hooks/roving-focus
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -1121,6 +1115,12 @@ importers:
       '@types/react':
         specifier: ^19.2.3
         version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/utils/inject-css:
+    devDependencies:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
