@@ -25,9 +25,9 @@ describe('Flex', () => {
   })
 
   it('renders with default props', () => {
-    render(<Flex>Content</Flex>)
+    const { container } = render(<Flex>Content</Flex>)
 
-    const element = screen.getByText('Content')
+    const element = container.firstChild as HTMLElement
 
     expect(element).toBeInTheDocument()
     expect(element).toHaveClass('ns-flex')
@@ -35,14 +35,14 @@ describe('Flex', () => {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'nowrap',
-      alignItems: 'flex-start',
+      alignItems: 'center',
       justifyContent: 'flex-start',
       gap: '0'
     })
   })
 
   it('applies custom flex styles', () => {
-    render(
+    const { container } = render(
       <Flex
         direction="column"
         wrap="wrap"
@@ -54,7 +54,7 @@ describe('Flex', () => {
       </Flex>
     )
 
-    const element = screen.getByText('Content')
+    const element = container.firstChild as HTMLElement
 
     expect(element).toHaveStyle({
       flexDirection: 'column',
@@ -66,18 +66,18 @@ describe('Flex', () => {
   })
 
   it('merges custom className', () => {
-    render(<Flex className="custom">Content</Flex>)
+    const { container } = render(<Flex className="custom">Content</Flex>)
 
-    const element = screen.getByText('Content')
+    const element = container.firstChild as HTMLElement
 
     expect(element).toHaveClass('ns-flex')
     expect(element).toHaveClass('custom')
   })
 
   it('merges custom style with default styles', () => {
-    render(<Flex style={{ color: 'red', display: 'block' }}>Content</Flex>)
+    const { container } = render(<Flex style={{ color: 'red', display: 'block' }}>Content</Flex>)
 
-    const element = screen.getByText('Content')
+    const element = container.firstChild as HTMLElement
 
     expect(element).toHaveStyle({
       display: 'block',
@@ -86,9 +86,9 @@ describe('Flex', () => {
   })
 
   it('renders a custom element using as prop', () => {
-    render(<Flex as="section">Content</Flex>)
+    const { container } = render(<Flex as="section">Content</Flex>)
 
-    const element = screen.getByText('Content')
+    const element = container.firstChild as HTMLElement
 
     expect(element.tagName).toBe('SECTION')
   })

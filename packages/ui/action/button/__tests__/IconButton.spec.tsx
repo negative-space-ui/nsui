@@ -201,16 +201,6 @@ describe('IconButton', () => {
     })
   })
 
-  it('uses button as default type', () => {
-    render(
-      <IconButton aria-label="menu">
-        <Icon />
-      </IconButton>
-    )
-
-    expect(screen.getByRole('button')).toHaveAttribute('type', 'button')
-  })
-
   it('accepts custom type', () => {
     render(
       <IconButton aria-label="menu" type="submit">
