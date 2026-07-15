@@ -7,7 +7,7 @@ export default {
   component: Skeleton,
   tags: ['autodocs'],
   args: {
-    className: 'w-40 h-20 bg-neutral-200'
+    className: 'w-40 h-40 bg-neutral-300'
   }
 }
 

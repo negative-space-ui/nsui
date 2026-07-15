@@ -7,7 +7,7 @@ export default {
   component: Resizable,
   tags: ['autodocs'],
   args: {
-    className: 'w-full h-40'
+    className: 'w-full h-12 overflow-hidden'
   }
 }
 
