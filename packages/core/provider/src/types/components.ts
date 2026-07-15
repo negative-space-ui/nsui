@@ -72,10 +72,12 @@ export type Alert = {
 }
 
 export type ButtonSettings = {
+  type?: 'button' | 'submit'
   animation?: ClickableAnimation
 }
 
 export type IconButtonSettings = {
+  type?: 'button' | 'submit'
   animation?: ClickableAnimation
 }
 

@@ -1,5 +1,16 @@
 # @negative-space/button
 
+## 2.9.0
+
+### Minor Changes
+
+- d801eaf: Add global type prop for button, and iconButton components
+
+### Patch Changes
+
+- Updated dependencies [95e5d78]
+  - @negative-space/flex@1.3.0
+
 ## 2.8.1
 
 ### Patch Changes

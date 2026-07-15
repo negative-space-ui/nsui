@@ -1,5 +1,11 @@
 # @negative-space/menu
 
+## 1.1.2
+
+### Patch Changes
+
+- ace8019: Fix onclick prop
+
 ## 1.1.1
 
 ### Patch Changes
