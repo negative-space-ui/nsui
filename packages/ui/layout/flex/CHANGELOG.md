@@ -1,5 +1,11 @@
 # @negative-space/flex
 
+## 1.3.0
+
+### Minor Changes
+
+- 95e5d78: add smart default align Items property based on direction
+
 ## 1.2.6
 
 ### Patch Changes
