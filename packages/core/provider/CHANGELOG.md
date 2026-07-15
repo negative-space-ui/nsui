@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.12.1
+
+### Patch Changes
+
+- 111a59b: Add missing global button and iconButton props
+
 ## 1.12.0
 
 ### Minor Changes

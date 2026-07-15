@@ -1,5 +1,11 @@
 # @negative-space/button
 
+## 2.9.1
+
+### Patch Changes
+
+- 111a59b: Add missing global button and iconButton props
+
 ## 2.9.0
 
 ### Minor Changes
