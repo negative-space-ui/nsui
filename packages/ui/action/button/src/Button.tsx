@@ -63,9 +63,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       loading = false,
       spinnerPosition = 'full',
       spinnerProps,
-      type = 'button',
-      alignItems = 'center',
       justifyContent = 'center',
+      type,
       ariaLabel,
       ...props
     },
@@ -75,6 +74,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const context = useButtonContextConditional(!!controlled)
     const groupDisabled = context.disabled
 
+    const Type = type ?? components.button.type
     const rippleDisabled = (animation ?? components.button.animation) !== 'ripple'
     const { createRipple } = useRipple(`${global.prefixCls}-ripple`)
 
@@ -108,8 +108,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         ref={ref}
         as="button"
-        type={type}
-        alignItems={alignItems}
+        type={Type}
         justifyContent={justifyContent}
         disabled={isDisabled}
         data-loading={loading}

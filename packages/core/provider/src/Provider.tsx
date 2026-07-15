@@ -30,9 +30,11 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         closeTitle: components?.alert?.closeTitle ?? 'Close'
       },
       button: {
+        type: components?.button?.type ?? 'button',
         animation: components?.button?.animation ?? 'ripple'
       },
       iconButton: {
+        type: components?.iconButton?.type ?? 'button',
         animation: components?.iconButton?.animation ?? 'none'
       },
       closeButton: {

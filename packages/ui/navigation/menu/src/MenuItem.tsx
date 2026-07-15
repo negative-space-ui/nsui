@@ -38,6 +38,7 @@ export const MenuItem = ({
   classNames,
   styles,
   itemProps,
+  onClick,
   ...linkProps
 }: MenuItemProps) => {
   const { global } = useNSUI()
@@ -52,15 +53,15 @@ export const MenuItem = ({
     event: React.MouseEvent<HTMLLIElement>
   ) => {
     if (isDisabled) return
+
     itemProps?.onClick?.(itemValue, event)
 
-    if (!linkProps.href) {
-      linkProps.onClick?.(event as unknown as React.MouseEvent<HTMLAnchorElement>)
-    }
+    onClick?.(event as unknown as React.MouseEvent<HTMLAnchorElement>)
   }
 
   const handleItemSelect = (itemValue: string | undefined) => {
     if (isDisabled) return
+
     itemProps?.onSelect?.(itemValue)
 
     if (linkProps.href && linkRef.current) {

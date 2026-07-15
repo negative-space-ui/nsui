@@ -25,7 +25,7 @@ export const Flex = forwardRef(
       style,
       direction = 'row',
       wrap = 'nowrap',
-      alignItems = 'flex-start',
+      alignItems,
       justifyContent = 'flex-start',
       gap = '0',
       ...props
@@ -36,6 +36,8 @@ export const Flex = forwardRef(
 
     const { global } = useNSUI()
 
+    const AlignItems = alignItems ?? (direction === 'row' ? 'center' : 'flex-start')
+
     return (
       <Component
         {...props}
@@ -45,7 +47,7 @@ export const Flex = forwardRef(
           display: 'flex',
           flexDirection: direction,
           flexWrap: wrap,
-          alignItems,
+          alignItems: AlignItems,
           justifyContent,
           gap,
           ...style

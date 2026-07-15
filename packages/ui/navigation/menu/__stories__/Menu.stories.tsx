@@ -14,6 +14,8 @@ export const Default = (args: MenuProps) => {
   return (
     <Menu
       {...args}
+      classNames={{ item: { root: 'cursor-pointer' } }}
+      gap="0.4rem"
       collapsed={collapsed}
       items={[
         {

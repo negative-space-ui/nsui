@@ -28,21 +28,12 @@ export interface IconButtonProps extends Omit<
 
 export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   (
-    {
-      children,
-      onClick,
-      classNames,
-      styles,
-      controlled,
-      type = 'button',
-      disabled,
-      animation,
-      ...props
-    },
+    { children, onClick, classNames, styles, controlled, type, disabled, animation, ...props },
     ref
   ) => {
     const { global, components } = useNSUI()
 
+    const Type = type ?? components.iconButton.type
     const rippleDisabled = (animation ?? components.iconButton.animation) !== 'ripple'
 
     const context = useButtonContextConditional(!!controlled)
@@ -85,7 +76,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
       <button
         {...props}
         ref={ref}
-        type={type}
+        type={Type}
         disabled={isDisabled}
         aria-disabled={isDisabled}
         data-disabled={isDisabled}
