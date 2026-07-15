@@ -1,5 +1,11 @@
 # @negative-space/action
 
+## 1.0.18
+
+### Patch Changes
+
+- 70f8c9a: Bump last component versions
+
 ## 1.0.17
 
 ### Patch Changes

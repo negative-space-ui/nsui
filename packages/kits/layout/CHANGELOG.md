@@ -1,5 +1,11 @@
 # @negative-space/layout
 
+## 1.4.2
+
+### Patch Changes
+
+- 70f8c9a: Bump last component versions
+
 ## 1.4.1
 
 ### Patch Changes

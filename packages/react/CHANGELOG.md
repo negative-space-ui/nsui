@@ -1,5 +1,15 @@
 # negative-space
 
+## 2.9.1
+
+### Patch Changes
+
+- 70f8c9a: Bump last component versions
+- Updated dependencies [70f8c9a]
+  - @negative-space/action@1.0.18
+  - @negative-space/feedback@1.5.1
+  - @negative-space/layout@1.4.2
+
 ## 2.9.0
 
 ### Minor Changes

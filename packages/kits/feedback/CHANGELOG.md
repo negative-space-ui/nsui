@@ -1,5 +1,11 @@
 # @negative-space/feedback
 
+## 1.5.1
+
+### Patch Changes
+
+- 70f8c9a: Bump last component versions
+
 ## 1.5.0
 
 ### Minor Changes
