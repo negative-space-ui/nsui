@@ -1,5 +1,19 @@
 # @negative-space/data-entry
 
+## 1.5.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/checkbox@1.5.5
+  - @negative-space/listbox@1.5.5
+  - @negative-space/select@1.1.1
+  - @negative-space/switch@1.0.5
+  - @negative-space/input@1.5.4
+  - @negative-space/radio@1.7.5
+  - @negative-space/form@1.6.3
+
 ## 1.5.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @negative-space/button
 
+## 2.9.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/spinner@2.2.5
+  - @negative-space/flex@1.3.1
+  - @negative-space/system@1.5.1
+
 ## 2.9.1
 
 ### Patch Changes

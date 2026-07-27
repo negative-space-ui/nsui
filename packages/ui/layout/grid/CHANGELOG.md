@@ -1,5 +1,13 @@
 # @negative-space/grid
 
+## 1.3.7
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/system@1.5.1
+
 ## 1.3.6
 
 ### Patch Changes

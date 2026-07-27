@@ -1,5 +1,15 @@
 # @negative-space/menu
 
+## 1.1.3
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/collection@2.0.7
+  - @negative-space/link@1.1.10
+  - @negative-space/system@1.5.1
+
 ## 1.1.2
 
 ### Patch Changes

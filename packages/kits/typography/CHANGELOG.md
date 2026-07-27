@@ -1,5 +1,15 @@
 # @negative-space/typography
 
+## 2.1.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/heading@1.2.6
+  - @negative-space/info@1.0.2
+  - @negative-space/text@1.2.6
+
 ## 2.1.1
 
 ### Patch Changes

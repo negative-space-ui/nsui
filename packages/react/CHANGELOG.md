@@ -1,5 +1,23 @@
 # negative-space
 
+## 2.9.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/data-display@1.3.2
+  - @negative-space/data-entry@1.5.2
+  - @negative-space/navigation@1.0.4
+  - @negative-space/typography@2.1.2
+  - @negative-space/primitive@2.0.7
+  - @negative-space/provider@1.12.2
+  - @negative-space/feedback@1.5.2
+  - @negative-space/system@1.5.1
+  - @negative-space/action@1.0.19
+  - @negative-space/layout@1.4.3
+  - @negative-space/app@1.0.4
+
 ## 2.9.1
 
 ### Patch Changes
