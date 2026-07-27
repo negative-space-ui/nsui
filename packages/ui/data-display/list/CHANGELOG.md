@@ -1,5 +1,14 @@
 # @negative-space/list
 
+## 1.4.7
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/flex@1.3.1
+  - @negative-space/system@1.5.1
+
 ## 1.4.6
 
 ### Patch Changes

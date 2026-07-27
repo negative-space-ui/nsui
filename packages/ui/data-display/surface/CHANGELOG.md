@@ -1,5 +1,13 @@
 # @negative-space/surface
 
+## 1.0.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/system@1.5.1
+
 ## 1.0.1
 
 ### Patch Changes

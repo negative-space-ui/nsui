@@ -1,5 +1,17 @@
 # @negative-space/collection
 
+## 2.0.7
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/heading@1.2.6
+  - @negative-space/divider@1.1.10
+  - @negative-space/flex@1.3.1
+  - @negative-space/grid@1.3.7
+  - @negative-space/system@1.5.1
+
 ## 2.0.6
 
 ### Patch Changes

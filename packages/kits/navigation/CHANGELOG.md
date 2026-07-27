@@ -1,5 +1,14 @@
 # @negative-space/nav
 
+## 1.0.4
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/link@1.1.10
+  - @negative-space/menu@1.1.3
+
 ## 1.0.3
 
 ### Patch Changes

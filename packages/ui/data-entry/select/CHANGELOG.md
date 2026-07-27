@@ -1,5 +1,17 @@
 # @negative-space/select
 
+## 1.1.1
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/popover@1.0.5
+  - @negative-space/listbox@1.5.5
+  - @negative-space/button@2.9.2
+  - @negative-space/field@1.1.5
+  - @negative-space/system@1.5.1
+
 ## 1.1.0
 
 ### Minor Changes
