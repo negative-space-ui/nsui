@@ -17,17 +17,37 @@ describe('zodAdaptor', () => {
     })
   })
 
-  it('uses empty string for fields without defaults', () => {
+  it('extracts nested object defaults', () => {
+    const schema = z.object({
+      user: z.object({
+        name: z.string().default('John')
+      })
+    })
+
+    const adapter = zodAdaptor(schema)
+
+    expect(adapter.initialValues).toEqual({
+      user: {
+        name: 'John'
+      }
+    })
+  })
+
+  it('uses fallback values for fields without defaults', () => {
     const schema = z.object({
       name: z.string(),
-      email: z.string().email()
+      age: z.number(),
+      active: z.boolean(),
+      tags: z.array(z.string())
     })
 
     const adapter = zodAdaptor(schema)
 
     expect(adapter.initialValues).toEqual({
       name: '',
-      email: ''
+      age: undefined,
+      active: false,
+      tags: []
     })
   })
 

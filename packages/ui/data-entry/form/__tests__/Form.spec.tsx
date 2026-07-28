@@ -67,6 +67,10 @@ function createContext(): FormContextValue<Record<string, unknown>> {
   }
 }
 
+const initialValues = {
+  name: 'John'
+}
+
 beforeEach(() => {
   mockUseFormState.mockReturnValue(createContext())
 })
@@ -74,7 +78,7 @@ beforeEach(() => {
 describe('Form', () => {
   it('renders children', () => {
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <div>content</div>
       </Form>
     )
@@ -83,7 +87,11 @@ describe('Form', () => {
   })
 
   it('supports render prop', () => {
-    render(<Form onSubmit={jest.fn()}>{(ctx) => <span>{String(ctx.values.name)}</span>}</Form>)
+    render(
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
+        {(ctx) => <span>{String(ctx.values.name)}</span>}
+      </Form>
+    )
 
     expect(screen.getByText('John')).toBeInTheDocument()
   })
@@ -94,7 +102,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <button type="submit">Save</button>
       </Form>
     )
@@ -106,7 +114,7 @@ describe('Form', () => {
 
   it('injects value into input', () => {
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input name="name" />
       </Form>
     )
@@ -120,7 +128,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input name="name" />
       </Form>
     )
@@ -140,7 +148,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input name="name" />
       </Form>
     )
@@ -158,7 +166,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <button type="submit">Save</button>
       </Form>
     )
@@ -174,7 +182,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()} disableSubmitOnError={false}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()} disableSubmitOnError={false}>
         <button type="submit">Save</button>
       </Form>
     )
@@ -196,7 +204,7 @@ describe('Form', () => {
     mockUseFormState.mockReturnValue(ctx)
 
     render(
-      <Form onSubmit={jest.fn()}>
+      <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input
           name="name"
           fieldProps={{
