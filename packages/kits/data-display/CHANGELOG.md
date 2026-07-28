@@ -1,5 +1,17 @@
 # @negative-space/data-display
 
+## 1.3.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/code-block@1.0.5
+  - @negative-space/popover@1.0.5
+  - @negative-space/surface@1.0.2
+  - @negative-space/tooltip@1.0.5
+  - @negative-space/list@1.4.7
+
 ## 1.3.1
 
 ### Patch Changes

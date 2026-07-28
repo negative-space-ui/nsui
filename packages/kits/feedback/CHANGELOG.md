@@ -1,5 +1,19 @@
 # @negative-space/feedback
 
+## 1.5.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/notification@1.0.2
+  - @negative-space/progress-bar@1.0.2
+  - @negative-space/checkmark@1.2.5
+  - @negative-space/skeleton@1.0.1
+  - @negative-space/spinner@2.2.5
+  - @negative-space/alert@1.0.2
+  - @negative-space/modal@1.1.5
+
 ## 1.5.1
 
 ### Patch Changes

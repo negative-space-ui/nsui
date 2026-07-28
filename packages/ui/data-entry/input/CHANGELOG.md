@@ -1,5 +1,18 @@
 # @negative-space/input
 
+## 1.5.4
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/tooltip@1.0.5
+  - @negative-space/spinner@2.2.5
+  - @negative-space/button@2.9.2
+  - @negative-space/field@1.1.5
+  - @negative-space/flex@1.3.1
+  - @negative-space/system@1.5.1
+
 ## 1.5.3
 
 ### Patch Changes

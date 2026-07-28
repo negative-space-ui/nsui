@@ -1,5 +1,13 @@
 # @negative-space/theme
 
+## 1.0.4
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/system@1.5.1
+
 ## 1.0.3
 
 ### Patch Changes

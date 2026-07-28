@@ -1,5 +1,18 @@
 # @negative-space/alert
 
+## 1.0.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/progress-bar@1.0.2
+  - @negative-space/tooltip@1.0.5
+  - @negative-space/info@1.0.2
+  - @negative-space/button@2.9.2
+  - @negative-space/flex@1.3.1
+  - @negative-space/system@1.5.1
+
 ## 1.0.1
 
 ### Patch Changes

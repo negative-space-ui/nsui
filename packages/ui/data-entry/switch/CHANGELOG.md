@@ -1,5 +1,14 @@
 # @negative-space/switch
 
+## 1.0.5
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/field@1.1.5
+  - @negative-space/system@1.5.1
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @negative-space/sidebar
 
+## 1.0.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/resizable@1.0.2
+  - @negative-space/button@2.9.2
+  - @negative-space/system@1.5.1
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/provider",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "publishConfig": {
     "access": "public"
   },
