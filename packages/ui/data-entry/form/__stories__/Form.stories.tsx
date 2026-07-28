@@ -5,6 +5,8 @@ import { z } from 'zod'
 
 import { Form, type FormProps, zodAdaptor } from '..'
 
+type StoryArgs = Omit<FormProps, 'schema'>
+
 export default {
   title: 'Data Entry/Form',
   component: Form,
@@ -17,7 +19,7 @@ export default {
   }
 }
 
-export const Default = (args: FormProps) => (
+export const Default = (args: StoryArgs) => (
   <Form
     {...args}
     initialValues={{ name: '', email: '' }}
@@ -27,7 +29,9 @@ export const Default = (args: FormProps) => (
       if (!values.name) errors.name = 'Name is required'
 
       if (!values.email) errors.email = 'Email is required'
-      else if (!/\S+@\S+\.\S+/.test(values.email as string)) errors.email = 'Invalid email'
+      else if (!/\S+@\S+\.\S+/.test(values.email as string)) {
+        errors.email = 'Invalid email'
+      }
 
       return errors
     }}
@@ -45,10 +49,10 @@ const schema = z.object({
   email: z.email('Invalid email').min(1, 'Email is required').default('')
 })
 
-export const WithZod = (args: FormProps) => (
+export const WithZod = (args: StoryArgs) => (
   <Form
     {...args}
-    {...zodAdaptor(schema)}
+    schema={zodAdaptor(schema)}
     onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
   >
     <Input name="name" placeholder="Name" />
@@ -63,12 +67,13 @@ function TrackedInput({
   unmountCount,
   ...props
 }: {
-  mountCount: React.MutableRefObject<number>
-  unmountCount: React.MutableRefObject<number>
+  mountCount: React.RefObject<number>
+  unmountCount: React.RefObject<number>
   [key: string]: unknown
 }) {
   useEffect(() => {
     mountCount.current += 1
+
     return () => {
       unmountCount.current += 1
     }
@@ -78,7 +83,7 @@ function TrackedInput({
 }
 
 export const BlurDoesNotUnmountChildren = {
-  render: (args: FormProps) => {
+  render: (args: StoryArgs) => {
     const mountCount = useRef(0)
     const unmountCount = useRef(0)
 
@@ -88,8 +93,10 @@ export const BlurDoesNotUnmountChildren = {
         initialValues={{ name: '', email: '' }}
         validate={(values) => {
           const errors: Record<string, string> = {}
+
           if (!values.name) errors.name = 'Name is required'
           if (!values.email) errors.email = 'Email is required'
+
           return errors
         }}
         onSubmit={() => {}}
@@ -101,7 +108,9 @@ export const BlurDoesNotUnmountChildren = {
           mountCount={mountCount}
           unmountCount={unmountCount}
         />
+
         <Input name="email" placeholder="Email" />
+
         <button type="submit">Submit</button>
       </Form>
     )
@@ -118,6 +127,7 @@ export const BlurDoesNotUnmountChildren = {
     await expect(canvas.getByText('Name is required')).toBeInTheDocument()
 
     const emailInput = canvas.getByPlaceholderText('Email')
+
     await userEvent.click(emailInput)
     await userEvent.tab()
 
@@ -129,10 +139,16 @@ export const BlurDoesNotUnmountChildren = {
 
 function PasswordLikeInput(props: Record<string, unknown>) {
   const [show, setShow] = React.useState(false)
+
   return (
     <div style={{ display: 'flex', gap: 4 }}>
       <Input {...props} type={show ? 'text' : 'password'} />
-      <button type="button" data-testid="toggle-visibility" onClick={() => setShow((s) => !s)}>
+
+      <button
+        type="button"
+        data-testid="toggle-visibility"
+        onClick={() => setShow((state) => !state)}
+      >
         {show ? 'hide' : 'show'}
       </button>
     </div>
@@ -140,9 +156,10 @@ function PasswordLikeInput(props: Record<string, unknown>) {
 }
 
 export const InternalStateSurvivesBlur = {
-  render: (args: FormProps) => (
+  render: (args: StoryArgs) => (
     <Form {...args} initialValues={{ password: '' }} onSubmit={() => {}} validationMode="onBlur">
       <PasswordLikeInput name="password" placeholder="Password" />
+
       <button type="submit">Submit</button>
     </Form>
   ),
