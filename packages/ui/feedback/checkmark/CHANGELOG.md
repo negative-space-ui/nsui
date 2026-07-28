@@ -1,5 +1,13 @@
 # @negative-space/checkmark
 
+## 1.2.5
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/system@1.5.1
+
 ## 1.2.4
 
 ### Patch Changes

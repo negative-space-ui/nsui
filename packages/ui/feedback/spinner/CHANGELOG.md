@@ -1,5 +1,13 @@
 # @negative-space/spinner
 
+## 2.2.5
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/system@1.5.1
+
 ## 2.2.4
 
 ### Patch Changes

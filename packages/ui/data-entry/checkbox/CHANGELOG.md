@@ -1,5 +1,15 @@
 # @negative-space/checkbox
 
+## 1.5.5
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/checkmark@1.2.5
+  - @negative-space/field@1.1.5
+  - @negative-space/system@1.5.1
+
 ## 1.5.4
 
 ### Patch Changes

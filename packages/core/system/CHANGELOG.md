@@ -1,5 +1,13 @@
 # @negative-space/system
 
+## 1.5.1
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/provider@1.12.2
+
 ## 1.5.0
 
 ### Minor Changes

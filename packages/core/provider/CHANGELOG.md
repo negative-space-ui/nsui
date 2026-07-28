@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.12.2
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+
 ## 1.12.1
 
 ### Patch Changes

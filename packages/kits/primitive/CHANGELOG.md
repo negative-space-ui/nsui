@@ -1,5 +1,13 @@
 # @negative-space/primitive
 
+## 2.0.7
+
+### Patch Changes
+
+- fd361ce: Fix package imports
+- Updated dependencies [fd361ce]
+  - @negative-space/collection@2.0.7
+
 ## 2.0.6
 
 ### Patch Changes
