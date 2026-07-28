@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.6.4
+
+### Patch Changes
+
+- 1cf5b42: Fix adaptor
+
 ## 1.6.3
 
 ### Patch Changes
