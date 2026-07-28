@@ -1,103 +1,18 @@
-import { Grid, GridProps } from '@negative-space/grid'
+import { Grid, type GridProps } from '@negative-space/grid'
 import { cn, useNSUI, type ValidationMode } from '@negative-space/system'
-import React, { useContext, useRef } from 'react'
+import React from 'react'
 
+import type { InferAdapter, SchemaAdapter } from './adapters/types'
 import { FormContext, type FormContextValue, type FormErrors, type FormValues } from './FormContext'
+import { injectFields } from './injectFields'
 import { useFormState } from './useFormState'
 
-function extractValue(e: unknown): unknown {
-  if (typeof e === 'object' && e !== null && 'target' in e) {
-    const t = (e as { target: HTMLInputElement }).target
-    return t.type === 'checkbox' ? t.checked : t.value
-  }
-  return e
-}
-
-function ConnectedField({
-  name,
-  __type: Component,
-  ...props
-}: {
-  name: string
-  __type: React.ElementType
-  [key: string]: unknown
-}) {
-  const ctx = useContext(FormContext)!
-  const ctxRef = useRef(ctx)
-  ctxRef.current = ctx
-
-  const handlers = useRef({
-    onChange: (e: unknown) => ctxRef.current.setValue(name, extractValue(e)),
-    onBlur: () => ctxRef.current.handleBlur(name)
-  })
-
-  const { validationMode, touched, errors } = ctx
-  const showError = validationMode === 'onChange' || validationMode === 'all' || touched[name]
-
-  const error = showError ? errors[name] : undefined
-
-  return (
-    <Component
-      {...props}
-      name={name}
-      value={ctx.values[name] ?? ''}
-      fieldProps={{
-        ...(typeof props.fieldProps === 'object' && props.fieldProps !== null
-          ? props.fieldProps
-          : {}),
-        error
-      }}
-      onChange={handlers.current.onChange}
-      onBlur={handlers.current.onBlur}
-    />
-  )
-}
-
-function injectFields<T extends FormValues>(
-  node: React.ReactNode,
-  ctx: FormContextValue<T>,
-  disableSubmitOnError: boolean
-): React.ReactNode {
-  if (!React.isValidElement(node)) return node
-
-  const el = node as React.ReactElement<Record<string, unknown>>
-  const { name, children: elChildren } = el.props
-
-  const injectedChildren = elChildren
-    ? React.Children.map(elChildren as React.ReactNode, (child) =>
-        injectFields(child, ctx, disableSubmitOnError)
-      )
-    : undefined
-
-  if (disableSubmitOnError && el.props.type === 'submit') {
-    return React.cloneElement(el, {
-      ...(injectedChildren ? { children: injectedChildren } : {}),
-      disabled: Boolean(el.props.disabled) || !ctx.isValid
-    })
-  }
-
-  if (name && typeof name === 'string') {
-    return (
-      <ConnectedField
-        key={el.key ?? name}
-        __type={el.type as React.ElementType}
-        {...el.props}
-        name={name}
-        {...(injectedChildren ? { children: injectedChildren } : {})}
-      />
-    )
-  }
-
-  return injectedChildren ? React.cloneElement(el, { children: injectedChildren }) : node
-}
-
-export interface FormProps<T extends FormValues = FormValues> extends Omit<
+type GridPassthrough = Omit<
   GridProps<'form'>,
   'as' | 'children' | 'onSubmit' | 'onChange' | 'onError' | 'onReset' | 'onInvalid' | 'onInput'
-> {
-  validate?: (values: T) => FormErrors
-  parse?: (values: T) => T
-  initialValues?: T
+>
+
+interface FormSharedProps<T extends FormValues> extends GridPassthrough {
   validationMode?: ValidationMode
   validationDelay?: number
   onSubmit: (values: T) => void | Promise<void>
@@ -108,37 +23,87 @@ export interface FormProps<T extends FormValues = FormValues> extends Omit<
   disableSubmitOnError?: boolean
   children: React.ReactNode | ((ctx: FormContextValue<T>) => React.ReactNode)
 }
-export function Form<T extends FormValues = FormValues>({
-  validate,
-  parse,
-  columns = 1,
-  initialValues = {} as T,
-  validationMode,
-  validationDelay,
-  onSubmit,
-  onChange,
-  onError,
-  onValidate,
-  onReset,
-  disableSubmitOnError,
-  children,
-  className,
-  id,
-  ...gridProps
-}: FormProps<T>) {
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface FormPropsWithSchema<A extends SchemaAdapter<any>> extends FormSharedProps<
+  InferAdapter<A>
+> {
+  schema: A
+}
+
+export interface FormPropsManual<T extends FormValues> extends FormSharedProps<T> {
+  schema?: undefined
+  initialValues: T
+  validate?: (values: T) => FormErrors
+  parse?: (values: T) => T
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type FormProps<A extends SchemaAdapter<any> = SchemaAdapter<any>> =
+  | FormPropsWithSchema<A>
+  | FormPropsManual<InferAdapter<A>>
+
+interface FormImplProps {
+  schema?: SchemaAdapter<FormValues>
+  initialValues?: FormValues
+  validate?: (values: FormValues) => FormErrors
+  parse?: (values: FormValues) => FormValues
+  columns?: GridPassthrough['columns']
+  validationMode?: ValidationMode
+  validationDelay?: number
+  onSubmit: (values: FormValues) => void | Promise<void>
+  onChange?: (values: FormValues) => void
+  onError?: (errors: FormErrors) => void
+  onValidate?: (values: FormValues) => void
+  onReset?: () => void
+  disableSubmitOnError?: boolean
+  children: React.ReactNode | ((ctx: FormContextValue<FormValues>) => React.ReactNode)
+  className?: string
+  id?: string
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Form<A extends SchemaAdapter<any>>(
+  props: FormPropsWithSchema<A>
+): React.ReactElement
+export function Form<T extends FormValues>(props: FormPropsManual<T>): React.ReactElement
+export function Form(props: unknown): React.ReactElement {
+  const {
+    schema,
+    initialValues,
+    validate,
+    parse,
+    columns = 1,
+    validationMode,
+    validationDelay,
+    onSubmit,
+    onChange,
+    onError,
+    onValidate,
+    onReset,
+    disableSubmitOnError,
+    children,
+    className,
+    id,
+    ...gridProps
+  } = props as FormImplProps & Record<string, unknown>
   const { global, components } = useNSUI()
+
+  const resolvedInitialValues = schema ? schema.initialValues : (initialValues ?? {})
+  const resolvedValidate = schema ? schema.validate : validate
+  const resolvedParse = schema ? schema.parse : parse
 
   const resolvedMode = (validationMode ?? components.form.validationMode) as ValidationMode
   const resolvedDelay = validationDelay ?? components.form.validationDelay
   const resolvedDisable = disableSubmitOnError ?? components.form.disableSubmitOnError!
 
-  const ctx = useFormState<T>({
-    initialValues,
-    validate,
+  const ctx = useFormState<FormValues>({
+    initialValues: resolvedInitialValues,
+    validate: resolvedValidate,
     validationMode: resolvedMode,
     validationDelay: resolvedDelay,
-    onSubmit: async (values: T) => {
-      const parsed = parse ? parse(values) : values
+    onSubmit: async (values) => {
+      const parsed = resolvedParse ? resolvedParse(values) : values
       await onSubmit(parsed)
     },
     onChange,
@@ -148,7 +113,7 @@ export function Form<T extends FormValues = FormValues>({
   })
 
   return (
-    <FormContext.Provider value={ctx as FormContextValue}>
+    <FormContext.Provider value={ctx}>
       <Grid
         as="form"
         id={id}
@@ -159,7 +124,7 @@ export function Form<T extends FormValues = FormValues>({
           ctx.submit()
         }}
         noValidate
-        {...gridProps}
+        {...(gridProps as GridPassthrough)}
       >
         {typeof children === 'function'
           ? children(ctx)

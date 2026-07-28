@@ -1,6 +1,7 @@
 import { z, type ZodSchema } from 'zod'
 
 import type { FormErrors, FormValues } from '../FormContext'
+import type { SchemaAdapter } from './types'
 
 interface ZodDefLike {
   defaultValue?: unknown | (() => unknown)
@@ -58,7 +59,7 @@ function extractDefaults(schema: InstanceType<typeof z.ZodObject>): Record<strin
   return result
 }
 
-export function zodAdaptor<T extends FormValues>(schema: ZodSchema<T>) {
+export function zodAdaptor<T extends FormValues>(schema: ZodSchema<T>): SchemaAdapter<T> {
   const initialValues = isZodObjectSchema(schema) ? (extractDefaults(schema) as T) : ({} as T)
 
   return {
