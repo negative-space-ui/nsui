@@ -96,6 +96,7 @@ export interface FormProps<T extends FormValues = FormValues> extends Omit<
   'as' | 'children' | 'onSubmit' | 'onChange' | 'onError' | 'onReset' | 'onInvalid' | 'onInput'
 > {
   validate?: (values: T) => FormErrors
+  parse?: (values: T) => T
   initialValues?: T
   validationMode?: ValidationMode
   validationDelay?: number
@@ -107,9 +108,9 @@ export interface FormProps<T extends FormValues = FormValues> extends Omit<
   disableSubmitOnError?: boolean
   children: React.ReactNode | ((ctx: FormContextValue<T>) => React.ReactNode)
 }
-
 export function Form<T extends FormValues = FormValues>({
   validate,
+  parse,
   columns = 1,
   initialValues = {} as T,
   validationMode,
@@ -136,7 +137,10 @@ export function Form<T extends FormValues = FormValues>({
     validate,
     validationMode: resolvedMode,
     validationDelay: resolvedDelay,
-    onSubmit,
+    onSubmit: async (values: T) => {
+      const parsed = parse ? parse(values) : values
+      await onSubmit(parsed)
+    },
     onChange,
     onError,
     onValidate,

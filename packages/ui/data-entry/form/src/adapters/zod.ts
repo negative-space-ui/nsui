@@ -1,56 +1,81 @@
-import { type ZodSchema, type ZodTypeAny } from 'zod'
+import { z, type ZodSchema } from 'zod'
 
 import type { FormErrors, FormValues } from '../FormContext'
 
-function extractDefaults(schema: ZodSchema): Record<string, unknown> {
-  const s = schema as unknown as { _def: { type: string; shape?: Record<string, ZodTypeAny> } }
-  const def = s._def
+interface ZodDefLike {
+  defaultValue?: unknown | (() => unknown)
+  innerType?: unknown
+}
 
-  if (def.type === 'object' && def.shape && typeof def.shape === 'object') {
-    const shape = def.shape
-    const result: Record<string, unknown> = {}
-    for (const key in shape) {
-      const fieldDef = (shape[key] as unknown as { _def: { type: string; defaultValue?: unknown } })
-        ._def
-      if (fieldDef.type === 'default') {
-        result[key] =
-          typeof fieldDef.defaultValue === 'function'
-            ? (fieldDef.defaultValue as () => unknown)()
-            : fieldDef.defaultValue
-      } else {
-        result[key] = ''
-      }
-    }
-    return result
+interface ZodSchemaLike {
+  _def?: ZodDefLike
+  shape?: Record<string, unknown>
+}
+
+function asSchemaLike(value: unknown): ZodSchemaLike {
+  return value as ZodSchemaLike
+}
+
+function isZodObjectSchema(value: unknown): value is InstanceType<typeof z.ZodObject> {
+  return value instanceof z.ZodObject
+}
+
+function getShape(schema: InstanceType<typeof z.ZodObject>): Record<string, unknown> {
+  return asSchemaLike(schema).shape ?? {}
+}
+
+function getDefaultFor(fieldSchema: unknown): unknown {
+  let current = fieldSchema
+  const def = asSchemaLike(current)._def
+
+  if (def && 'defaultValue' in def) {
+    const { defaultValue } = def
+    return typeof defaultValue === 'function' ? (defaultValue as () => unknown)() : defaultValue
   }
 
-  return {}
+  if (def?.innerType) {
+    current = def.innerType
+  }
+
+  if (isZodObjectSchema(current)) {
+    return extractDefaults(current)
+  }
+  if (current instanceof z.ZodArray) return []
+  if (current instanceof z.ZodBoolean) return false
+  if (current instanceof z.ZodNumber) return undefined
+
+  return ''
+}
+
+function extractDefaults(schema: InstanceType<typeof z.ZodObject>): Record<string, unknown> {
+  const shape = getShape(schema)
+  const result: Record<string, unknown> = {}
+
+  for (const key in shape) {
+    result[key] = getDefaultFor(shape[key])
+  }
+
+  return result
 }
 
 export function zodAdaptor<T extends FormValues>(schema: ZodSchema<T>) {
+  const initialValues = isZodObjectSchema(schema) ? (extractDefaults(schema) as T) : ({} as T)
+
   return {
-    initialValues: extractDefaults(schema) as T,
+    initialValues,
 
     validate: (values: T): FormErrors => {
       const result = schema.safeParse(values)
-
       if (result.success) return {}
 
       const errors: FormErrors = {}
-
       for (const issue of result.error.issues) {
         const key = issue.path.join('.')
-
-        if (!errors[key]) {
-          errors[key] = issue.message
-        }
+        if (!errors[key]) errors[key] = issue.message
       }
-
       return errors
     },
 
-    parse: (values: T): T => {
-      return schema.parse(values)
-    }
+    parse: (values: T): T => schema.parse(values)
   }
 }
