@@ -1,5 +1,12 @@
 # @negative-space/form
 
+## 1.8.0
+
+### Minor Changes
+
+- 40efd09: Add adapters export
+- 23d4a90: Update Form schema adapter support and typings
+
 ## 1.6.4
 
 ### Patch Changes

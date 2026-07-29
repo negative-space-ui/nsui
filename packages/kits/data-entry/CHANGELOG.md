@@ -1,5 +1,17 @@
 # @negative-space/data-entry
 
+## 1.7.0
+
+### Minor Changes
+
+- 40efd09: Add adapters export
+
+### Patch Changes
+
+- Updated dependencies [40efd09]
+- Updated dependencies [23d4a90]
+  - @negative-space/form@1.8.0
+
 ## 1.5.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # negative-space
 
+## 2.10.0
+
+### Minor Changes
+
+- 40efd09: Add adapters export
+
+### Patch Changes
+
+- Updated dependencies [40efd09]
+  - @negative-space/data-entry@1.7.0
+
 ## 2.9.3
 
 ### Patch Changes
