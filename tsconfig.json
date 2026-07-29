@@ -11,7 +11,6 @@
     "jsx": "react-jsx",
     "noEmit": true,
     "moduleResolution": "bundler",
-    "importsNotUsedAsValues": "remove",
     "types": ["@testing-library/jest-dom", "jest", "node"],
     "paths": {
       "@negative-space/*": ["./packages/*/src"]

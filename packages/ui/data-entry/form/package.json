@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/form",
-  "version": "1.6.4",
+  "version": "1.7.0",
   "publishConfig": {
     "access": "public"
   },
@@ -21,6 +21,10 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./adapters/*": "./src/adapters/*/index.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
@@ -37,16 +41,21 @@
   },
   "dependencies": {
     "@negative-space/grid": "workspace:*",
-    "@negative-space/system": "workspace:*",
-    "zod": "4.3.6"
+    "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^19.2.3"
+    "react": "^19.2.3",
+    "zod": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@negative-space/input": "workspace:*",
     "@types/react": "^19.2.3",
-    "typescript": "^5.9.3"
-  },
-  "clean-package": "../../../../clean-package.config.json"
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3"
+  }
 }
