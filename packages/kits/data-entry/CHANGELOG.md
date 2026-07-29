@@ -1,5 +1,12 @@
 # @negative-space/data-entry
 
+## 1.5.4
+
+### Patch Changes
+
+- Updated dependencies [23d4a90]
+  - @negative-space/form@1.7.0
+
 ## 1.5.3
 
 ### Patch Changes
