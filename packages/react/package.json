@@ -1,6 +1,6 @@
 {
   "name": "negative-space",
-  "version": "2.9.4",
+  "version": "2.10.0",
   "publishConfig": {
     "access": "public"
   },
@@ -22,16 +22,8 @@
   ],
   "exports": {
     ".": "./src/index.ts",
-    "./action": "./src/action/index.ts",
-    "./app": "./src/app/index.ts",
-    "./data-display": "./src/data-display/index.ts",
-    "./data-entry": "./src/data-entry/index.ts",
-    "./feedback": "./src/feedback/index.ts",
-    "./layout": "./src/layout/index.ts",
-    "./navigation": "./src/navigation/index.ts",
-    "./primitive": "./src/primitive/index.ts",
-    "./typography": "./src/typography/index.ts",
-    "./utils": "./src/utils/index.ts"
+    "./adapters/*": "./src/adapters/*/index.ts",
+    "./*": "./src/*/index.ts"
   },
   "sideEffects": false,
   "repository": {
@@ -46,7 +38,7 @@
     "build": "tsup",
     "clean": "rimraf dist .turbo dist",
     "postpack": "clean-package restore",
-    "prepack": "pnpm tsx tools/replace-workspace-versions.ts && clean-package",
+    "prepack": "clean-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

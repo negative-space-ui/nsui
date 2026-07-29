@@ -2,7 +2,7 @@ import { Input } from '@negative-space/input'
 import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { Form } from '..'
+import { Form } from '../src/Form'
 import type { FormContextValue } from '../src/FormContext'
 import { useFormState } from '../src/useFormState'
 
@@ -36,7 +36,9 @@ jest.mock('@negative-space/grid', () => ({
   )
 }))
 
-function createContext(): FormContextValue<Record<string, unknown>> {
+function createContext(
+  overrides: Partial<FormContextValue<Record<string, unknown>>> = {}
+): FormContextValue<Record<string, unknown>> {
   return {
     values: {
       name: 'John'
@@ -63,7 +65,9 @@ function createContext(): FormContextValue<Record<string, unknown>> {
     handleBlur: jest.fn(),
 
     reset: jest.fn(),
-    submit: jest.fn()
+    submit: jest.fn(),
+
+    ...overrides
   }
 }
 
@@ -71,8 +75,11 @@ const initialValues = {
   name: 'John'
 }
 
+let ctx: FormContextValue<Record<string, unknown>>
+
 beforeEach(() => {
-  mockUseFormState.mockReturnValue(createContext())
+  ctx = createContext()
+  mockUseFormState.mockReturnValue(ctx)
 })
 
 describe('Form', () => {
@@ -89,7 +96,7 @@ describe('Form', () => {
   it('supports render prop', () => {
     render(
       <Form initialValues={initialValues} onSubmit={jest.fn()}>
-        {(ctx) => <span>{String(ctx.values.name)}</span>}
+        {(formCtx) => <span>{String(formCtx.values.name)}</span>}
       </Form>
     )
 
@@ -97,10 +104,6 @@ describe('Form', () => {
   })
 
   it('calls submit', () => {
-    const ctx = createContext()
-
-    mockUseFormState.mockReturnValue(ctx)
-
     render(
       <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <button type="submit">Save</button>
@@ -123,10 +126,6 @@ describe('Form', () => {
   })
 
   it('calls setValue on change', () => {
-    const ctx = createContext()
-
-    mockUseFormState.mockReturnValue(ctx)
-
     render(
       <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input name="name" />
@@ -143,10 +142,6 @@ describe('Form', () => {
   })
 
   it('calls handleBlur', () => {
-    const ctx = createContext()
-
-    mockUseFormState.mockReturnValue(ctx)
-
     render(
       <Form initialValues={initialValues} onSubmit={jest.fn()}>
         <Input name="name" />
@@ -159,10 +154,7 @@ describe('Form', () => {
   })
 
   it('disables submit button when invalid', () => {
-    const ctx = createContext()
-
     ctx.isValid = false
-
     mockUseFormState.mockReturnValue(ctx)
 
     render(
@@ -175,10 +167,7 @@ describe('Form', () => {
   })
 
   it('does not disable submit button when disableSubmitOnError is false', () => {
-    const ctx = createContext()
-
     ctx.isValid = false
-
     mockUseFormState.mockReturnValue(ctx)
 
     render(
@@ -191,26 +180,13 @@ describe('Form', () => {
   })
 
   it('passes validation error to Input', () => {
-    const ctx = createContext()
-
-    ctx.touched = {
-      name: true
-    }
-
-    ctx.errors = {
-      name: 'Required'
-    }
-
+    ctx.touched = { name: true }
+    ctx.errors = { name: 'Required' }
     mockUseFormState.mockReturnValue(ctx)
 
     render(
       <Form initialValues={initialValues} onSubmit={jest.fn()}>
-        <Input
-          name="name"
-          fieldProps={{
-            error: undefined
-          }}
-        />
+        <Input name="name" />
       </Form>
     )
 

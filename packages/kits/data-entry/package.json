@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/data-entry",
-  "version": "1.5.4",
+  "version": "1.6.0",
   "publishConfig": {
     "access": "public"
   },
@@ -21,6 +21,10 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./adapters/*": "./src/adapters/*/index.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
@@ -44,8 +48,16 @@
     "@negative-space/select": "workspace:*",
     "@negative-space/switch": "workspace:*"
   },
-  "devDependencies": {
-    "typescript": "^5.9.3"
+  "peerDependencies": {
+    "zod": "^4.0.0"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3"
+  }
 }

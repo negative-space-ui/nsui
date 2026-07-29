@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.8.0
+
+### Minor Changes
+
+- 40efd09: Add adapters export
+
 ## 1.7.0
 
 ### Minor Changes
