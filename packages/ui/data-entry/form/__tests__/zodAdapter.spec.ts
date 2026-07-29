@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { zodAdaptor } from '..'
+import { zodAdapter } from '../src/adapters/zod'
 
 describe('zodAdaptor', () => {
   it('extracts default values', () => {
@@ -9,7 +9,7 @@ describe('zodAdaptor', () => {
       age: z.number().default(18)
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(adapter.initialValues).toEqual({
       name: 'John',
@@ -24,7 +24,7 @@ describe('zodAdaptor', () => {
       })
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(adapter.initialValues).toEqual({
       user: {
@@ -41,7 +41,7 @@ describe('zodAdaptor', () => {
       tags: z.array(z.string())
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(adapter.initialValues).toEqual({
       name: '',
@@ -56,7 +56,7 @@ describe('zodAdaptor', () => {
       name: z.string().min(3)
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(
       adapter.validate({
@@ -70,7 +70,7 @@ describe('zodAdaptor', () => {
       name: z.string().min(3, 'Too short')
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(
       adapter.validate({
@@ -86,7 +86,7 @@ describe('zodAdaptor', () => {
       password: z.string().min(8, 'Too short').regex(/[A-Z]/, 'Missing uppercase')
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(
       adapter.validate({
@@ -102,7 +102,7 @@ describe('zodAdaptor', () => {
       age: z.coerce.number()
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(
       adapter.parse({
@@ -118,7 +118,7 @@ describe('zodAdaptor', () => {
       age: z.number()
     })
 
-    const adapter = zodAdaptor(schema)
+    const adapter = zodAdapter(schema)
 
     expect(() =>
       adapter.parse({
