@@ -1,5 +1,11 @@
 # negative-space
 
+## 2.10.1
+
+### Patch Changes
+
+- b7ccae9: Fix adapter export
+
 ## 2.10.0
 
 ### Minor Changes
