@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.22
+
+### Patch Changes
+
+- Updated dependencies [b7ccae9]
+  - negative-space@2.10.1
+
 ## 0.0.21
 
 ### Patch Changes
