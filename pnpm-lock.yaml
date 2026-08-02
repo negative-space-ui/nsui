@@ -305,6 +305,9 @@ importers:
       '@negative-space/switch':
         specifier: workspace:*
         version: link:../../ui/data-entry/switch
+      '@negative-space/text-area':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/text-area
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -735,6 +738,25 @@ importers:
         version: 5.9.3
 
   packages/ui/data-entry/switch:
+    dependencies:
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/text-area:
     dependencies:
       '@negative-space/field':
         specifier: workspace:*
