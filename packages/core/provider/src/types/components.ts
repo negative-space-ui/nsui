@@ -1,5 +1,6 @@
 export type ComponentSettings = {
-  alert?: Alert
+  alert?: AlertSettings
+  avatar?: AvartarSettings
   button?: ButtonSettings
   iconButton?: IconButtonSettings
   closeButton?: CloseButtonSettings
@@ -66,9 +67,13 @@ export type PolymorphicElementMap = {
   form: HTMLFormElement
 }
 
-export type Alert = {
+export type AlertSettings = {
   closable?: boolean
   closeTitle?: string
+}
+
+export type AvartarSettings = {
+  backgroundColors?: string[]
 }
 
 export type ButtonSettings = {

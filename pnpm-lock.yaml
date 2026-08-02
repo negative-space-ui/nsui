@@ -262,6 +262,9 @@ importers:
 
   packages/kits/data-display:
     dependencies:
+      '@negative-space/avatar':
+        specifier: workspace:*
+        version: link:../../ui/data-display/avatar
       '@negative-space/code-block':
         specifier: workspace:*
         version: link:../../ui/data-display/code-block
@@ -474,6 +477,22 @@ importers:
         version: 5.9.3
 
   packages/ui/app/theme:
+    dependencies:
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/avatar:
     dependencies:
       '@negative-space/system':
         specifier: workspace:*

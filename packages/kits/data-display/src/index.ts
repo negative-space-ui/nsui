@@ -1,3 +1,4 @@
+export * from '@negative-space/avatar'
 export * from '@negative-space/code-block'
 export * from '@negative-space/list'
 export * from '@negative-space/popover'

@@ -29,6 +29,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         closable: components?.alert?.closable ?? true,
         closeTitle: components?.alert?.closeTitle ?? 'Close'
       },
+      avatar: {
+        backgroundColors: components?.avatar?.backgroundColors ?? []
+      },
       button: {
         type: components?.button?.type ?? 'button',
         animation: components?.button?.animation ?? 'ripple'
