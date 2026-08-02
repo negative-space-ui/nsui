@@ -26,22 +26,33 @@ export const Default = (args: MenuProps) => {
           }
         },
         {
-          item: {
-            prefix: '📂',
-            children: 'New File',
-            href: 'https://example.com'
-          }
-        },
-        {
-          item: {
-            prefix: '🔍',
-            children: 'Open'
-          }
-        },
-        {
-          item: {
-            prefix: '💾',
-            children: 'Save'
+          group: {
+            heading: 'File',
+            classNames: {
+              root: 'mb-2',
+              heading: 'text-neutral-500 font-medium'
+            },
+            items: [
+              {
+                item: {
+                  prefix: '📂',
+                  children: 'New File',
+                  href: 'https://example.com'
+                }
+              },
+              {
+                item: {
+                  prefix: '🔍',
+                  children: 'Open'
+                }
+              },
+              {
+                item: {
+                  prefix: '💾',
+                  children: 'Save'
+                }
+              }
+            ]
           }
         }
       ]}
