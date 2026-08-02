@@ -1,1 +1,1 @@
-export { List, type ListProps } from './List'
+export { List, type ListboxItems, type ListProps } from './List'

@@ -1,1 +1,1 @@
-export { Listbox, type ListboxProps } from './Listbox'
+export { Listbox, type ListboxComponent, type ListboxProps } from './Listbox'

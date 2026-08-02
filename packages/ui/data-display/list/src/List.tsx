@@ -13,6 +13,8 @@ type ListDomMap = {
 
 export type ListMarker = UnorderedMarker | OrderedMarker
 
+export type ListboxItems = Omit<ListItemProps, 'className' | 'style'>[]
+
 type UnorderedMarker = 'disc' | 'circle' | 'square'
 type OrderedMarker =
   | 'decimal'
@@ -34,7 +36,7 @@ export type ListProps<E extends ListElement = 'ol'> = {
     item?: React.CSSProperties
   }
   as?: E
-  items: Omit<ListItemProps, 'className' | 'style'>[]
+  items: ListboxItems
   marker?: MarkerByElement<E>
 } & Omit<FlexProps, 'as' | 'children' | 'className' | 'style'> &
   Omit<React.ComponentPropsWithoutRef<E>, 'className' | 'style'>
