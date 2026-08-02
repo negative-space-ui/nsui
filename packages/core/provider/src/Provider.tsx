@@ -43,6 +43,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       closeButton: {
         animation: components?.closeButton?.animation ?? 'none'
       },
+      breadcrumb: {
+        separator: components?.breadcrumb?.separator ?? '/'
+      },
       checkmark: {
         animation: components?.checkmark?.animation ?? 'pop'
       },

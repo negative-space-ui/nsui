@@ -265,6 +265,9 @@ importers:
       '@negative-space/avatar':
         specifier: workspace:*
         version: link:../../ui/data-display/avatar
+      '@negative-space/breadcrumb':
+        specifier: workspace:*
+        version: link:../../ui/data-display/breadcrumb
       '@negative-space/code-block':
         specifier: workspace:*
         version: link:../../ui/data-display/code-block
@@ -497,6 +500,28 @@ importers:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/breadcrumb:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      '@negative-space/text':
+        specifier: workspace:*
+        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3

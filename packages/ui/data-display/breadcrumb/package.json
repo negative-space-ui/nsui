@@ -1,14 +1,14 @@
 {
-  "name": "@negative-space/data-display",
-  "version": "1.3.2",
+  "name": "@negative-space/breadcrumb",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "Data Display components by Negative Space, providing flexible and accessible UI elements",
+  "description": "A lightweight and accessible breadcrumb component by Negative Space, built with React and TypeScript",
   "keywords": [
     "components",
     "data-display",
-    "kit",
+    "breadcrumb",
     "negative-space",
     "nsui",
     "react",
@@ -24,7 +24,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/kits/data-display"
+    "directory": "packages/ui/breadcrumb"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -36,16 +36,16 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/avatar": "workspace:*",
-    "@negative-space/breadcrumb": "workspace:*",
-    "@negative-space/code-block": "workspace:*",
-    "@negative-space/list": "workspace:*",
-    "@negative-space/popover": "workspace:*",
-    "@negative-space/surface": "workspace:*",
-    "@negative-space/tooltip": "workspace:*"
+    "@negative-space/flex": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/text": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
   },
   "devDependencies": {
+    "@types/react": "^19.2.3",
     "typescript": "^5.9.3"
   },
-  "clean-package": "../../../clean-package.config.json"
+  "clean-package": "../../../../clean-package.config.json"
 }

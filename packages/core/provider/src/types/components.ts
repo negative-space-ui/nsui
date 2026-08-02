@@ -4,6 +4,7 @@ export type ComponentSettings = {
   button?: ButtonSettings
   iconButton?: IconButtonSettings
   closeButton?: CloseButtonSettings
+  breadcrumb?: BreadcrumbSettings
   checkmark?: CheckmarkSettings
   form?: FormSettings
   heading?: HeadingSettings
@@ -88,6 +89,10 @@ export type IconButtonSettings = {
 
 export type CloseButtonSettings = {
   animation?: ClickableAnimation
+}
+
+export type BreadcrumbSettings = {
+  separator?: React.ReactNode
 }
 
 export type CheckmarkSettings = {
