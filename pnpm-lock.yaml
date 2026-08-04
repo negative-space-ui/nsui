@@ -245,6 +245,9 @@ importers:
       '@negative-space/button':
         specifier: workspace:*
         version: link:../../ui/action/button
+      '@negative-space/dialog':
+        specifier: workspace:*
+        version: link:../../ui/action/dialog
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -465,6 +468,31 @@ importers:
       '@negative-space/spinner':
         specifier: workspace:*
         version: link:../../feedback/spinner
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/action/dialog:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../button
+      '@negative-space/info':
+        specifier: workspace:*
+        version: link:../../typography/info
+      '@negative-space/modal':
+        specifier: workspace:*
+        version: link:../../feedback/modal
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system

@@ -49,6 +49,10 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       checkmark: {
         animation: components?.checkmark?.animation ?? 'pop'
       },
+      dialog: {
+        cancelText: components?.dialog?.cancelText ?? 'Cancel',
+        confirmText: components?.dialog?.confirmText ?? 'Confirm'
+      },
       form: {
         disableSubmitOnError: components?.form?.disableSubmitOnError ?? false,
         validationDelay: components?.form?.validationDelay ?? 0,

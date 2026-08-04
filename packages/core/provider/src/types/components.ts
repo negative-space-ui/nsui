@@ -6,6 +6,7 @@ export type ComponentSettings = {
   closeButton?: CloseButtonSettings
   breadcrumb?: BreadcrumbSettings
   checkmark?: CheckmarkSettings
+  dialog?: DialogSettings
   form?: FormSettings
   heading?: HeadingSettings
   inputPassword?: InputPasswordSettings
@@ -97,6 +98,11 @@ export type BreadcrumbSettings = {
 
 export type CheckmarkSettings = {
   animation?: OverlayAnimation
+}
+
+export type DialogSettings = {
+  cancelText?: string
+  confirmText?: string
 }
 
 export type FormSettings = {

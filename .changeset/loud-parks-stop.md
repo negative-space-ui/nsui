@@ -2,4 +2,4 @@
 '@negative-space/provider': minor
 ---
 
-Add avatar and breadcrumb settings
+Add avatar, breadcrumb, and dialog settings
