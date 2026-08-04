@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { CollectionItem } from '..'
-import { CollectionContext } from '../src/CollectionContext'
+import { CollectionContext } from '../src/collectionContext'
 
 jest.mock('@negative-space/flex', () => ({
   Flex: React.forwardRef<HTMLLIElement, React.HTMLAttributes<HTMLLIElement>>(

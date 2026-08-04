@@ -1,7 +1,7 @@
 import { Flex, type FlexProps } from '@negative-space/flex'
 import React, { useContext, useEffect, useId, useRef } from 'react'
 
-import { CollectionContext } from './CollectionContext'
+import { CollectionContext } from './collectionContext'
 
 export interface CollectionItemProps extends Omit<FlexProps<'li'>, 'as' | 'onClick' | 'onSelect'> {
   value?: string

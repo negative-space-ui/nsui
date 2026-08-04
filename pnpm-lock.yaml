@@ -1133,6 +1133,9 @@ importers:
       '@negative-space/collection':
         specifier: workspace:*
         version: link:../../primitive/collection
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
       '@negative-space/link':
         specifier: workspace:*
         version: link:../link
@@ -1164,6 +1167,9 @@ importers:
       '@negative-space/heading':
         specifier: workspace:*
         version: link:../../typography/heading
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
       '@negative-space/roving-focus':
         specifier: workspace:*
         version: link:../../../hooks/roving-focus

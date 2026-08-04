@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@negative-space/collection": "workspace:*",
+    "@negative-space/flex": "workspace:*",
     "@negative-space/link": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
