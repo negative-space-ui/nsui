@@ -1,5 +1,12 @@
 # @negative-space/system
 
+## 1.5.2
+
+### Patch Changes
+
+- Updated dependencies [e8aec5d]
+  - @negative-space/provider@1.13.0
+
 ## 1.5.1
 
 ### Patch Changes

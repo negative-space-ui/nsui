@@ -1,5 +1,11 @@
 # @negative-space/provider
 
+## 1.13.0
+
+### Minor Changes
+
+- e8aec5d: Add avatar, breadcrumb, and dialog settings
+
 ## 1.12.2
 
 ### Patch Changes

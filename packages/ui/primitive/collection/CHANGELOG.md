@@ -1,5 +1,20 @@
 # @negative-space/collection
 
+## 2.1.0
+
+### Minor Changes
+
+- 7fd3a84: Add submenu component
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/popover@1.0.6
+- @negative-space/divider@1.1.11
+- @negative-space/flex@1.3.2
+- @negative-space/grid@1.3.8
+- @negative-space/heading@1.2.7
+
 ## 2.0.7
 
 ### Patch Changes

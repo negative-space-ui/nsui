@@ -147,7 +147,8 @@ describe('Listbox', () => {
         items={[
           {
             group: {
-              children: 'Group'
+              heading: 'Group',
+              items: [{ option: { value: 'option-1', children: 'Option 1' } }]
             }
           }
         ]}

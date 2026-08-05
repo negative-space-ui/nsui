@@ -1,5 +1,21 @@
 # @negative-space/menu
 
+## 1.2.0
+
+### Minor Changes
+
+- 4b0a3bd: Update menu group api
+- fd16a98: Export menu component prop
+- 7fd3a84: Add submenu component
+
+### Patch Changes
+
+- Updated dependencies [7fd3a84]
+  - @negative-space/collection@2.1.0
+  - @negative-space/system@1.5.2
+  - @negative-space/flex@1.3.2
+  - @negative-space/link@1.1.11
+
 ## 1.1.3
 
 ### Patch Changes

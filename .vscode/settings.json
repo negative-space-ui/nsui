@@ -4,6 +4,7 @@
   "editor.detectIndentation": false,
   "json.schemaDownload.enable": true,
   "tailwindCSS.validate": false,
+  "css.lint.unknownAtRules": "ignore",
 
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"

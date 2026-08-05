@@ -39,9 +39,6 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Build
-        run: pnpm build:fast
-
       - name: Create or update Release PR
         uses: changesets/action@v1
         with:

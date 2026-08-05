@@ -1,5 +1,12 @@
 # @negative-space/spinner
 
+## 2.2.6
+
+### Patch Changes
+
+- 14af903: Fix build settings
+  - @negative-space/system@1.5.2
+
 ## 2.2.5
 
 ### Patch Changes

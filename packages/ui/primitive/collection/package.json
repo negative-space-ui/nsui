@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/collection",
-  "version": "2.0.7",
+  "version": "2.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -38,6 +38,7 @@
     "@negative-space/flex": "workspace:*",
     "@negative-space/grid": "workspace:*",
     "@negative-space/heading": "workspace:*",
+    "@negative-space/popover": "workspace:*",
     "@negative-space/roving-focus": "workspace:*",
     "@negative-space/system": "workspace:*"
   },

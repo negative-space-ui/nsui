@@ -1,5 +1,12 @@
 # @negative-space/tooltip
 
+## 1.0.6
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/popover@1.0.6
+
 ## 1.0.5
 
 ### Patch Changes

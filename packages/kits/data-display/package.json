@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/data-display",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "publishConfig": {
     "access": "public"
   },
@@ -36,6 +36,8 @@
     "prepack": "clean-package"
   },
   "dependencies": {
+    "@negative-space/avatar": "workspace:*",
+    "@negative-space/breadcrumb": "workspace:*",
     "@negative-space/code-block": "workspace:*",
     "@negative-space/list": "workspace:*",
     "@negative-space/popover": "workspace:*",

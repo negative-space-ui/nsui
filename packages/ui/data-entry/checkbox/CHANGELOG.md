@@ -1,5 +1,13 @@
 # @negative-space/checkbox
 
+## 1.5.6
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/checkmark@1.2.6
+- @negative-space/field@1.1.6
+
 ## 1.5.5
 
 ### Patch Changes

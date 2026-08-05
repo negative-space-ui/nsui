@@ -5,7 +5,8 @@ import {
   CollectionGroup,
   CollectionItem,
   type CollectionProps,
-  CollectionSeparator
+  CollectionSeparator,
+  CollectionSubmenu
 } from '..'
 
 export default {
@@ -22,6 +23,17 @@ export default {
       <CollectionGroup heading="Group 2">
         <CollectionItem>Item 3</CollectionItem>
         <CollectionItem>Item 4</CollectionItem>
+        <CollectionSubmenu
+          heading="Submenu"
+          classNames={{
+            heading: 'cursor-default',
+            popover: { content: 'bg-neutral-200 p-2 rounded-md' }
+          }}
+        >
+          <CollectionItem>Subitem 1</CollectionItem>
+          <CollectionItem>Subitem 2</CollectionItem>
+          <CollectionItem>Subitem 3</CollectionItem>
+        </CollectionSubmenu>
       </CollectionGroup>
     ]
   }

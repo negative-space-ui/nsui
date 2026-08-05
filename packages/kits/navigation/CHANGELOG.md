@@ -1,5 +1,15 @@
 # @negative-space/nav
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [4b0a3bd]
+- Updated dependencies [fd16a98]
+- Updated dependencies [7fd3a84]
+  - @negative-space/menu@1.2.0
+  - @negative-space/link@1.1.11
+
 ## 1.0.4
 
 ### Patch Changes

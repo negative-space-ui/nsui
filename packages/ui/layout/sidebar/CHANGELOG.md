@@ -1,5 +1,13 @@
 # @negative-space/sidebar
 
+## 1.0.3
+
+### Patch Changes
+
+- @negative-space/button@2.9.3
+- @negative-space/system@1.5.2
+- @negative-space/resizable@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

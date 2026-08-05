@@ -1,9 +1,12 @@
 export type ComponentSettings = {
-  alert?: Alert
+  alert?: AlertSettings
+  avatar?: AvartarSettings
   button?: ButtonSettings
   iconButton?: IconButtonSettings
   closeButton?: CloseButtonSettings
+  breadcrumb?: BreadcrumbSettings
   checkmark?: CheckmarkSettings
+  dialog?: DialogSettings
   form?: FormSettings
   heading?: HeadingSettings
   inputPassword?: InputPasswordSettings
@@ -66,9 +69,13 @@ export type PolymorphicElementMap = {
   form: HTMLFormElement
 }
 
-export type Alert = {
+export type AlertSettings = {
   closable?: boolean
   closeTitle?: string
+}
+
+export type AvartarSettings = {
+  backgroundColors?: string[]
 }
 
 export type ButtonSettings = {
@@ -85,8 +92,17 @@ export type CloseButtonSettings = {
   animation?: ClickableAnimation
 }
 
+export type BreadcrumbSettings = {
+  separator?: React.ReactNode
+}
+
 export type CheckmarkSettings = {
   animation?: OverlayAnimation
+}
+
+export type DialogSettings = {
+  cancelText?: string
+  confirmText?: string
 }
 
 export type FormSettings = {

@@ -10,7 +10,7 @@ export default defineConfig([
   ...tseslint.configs.recommended,
 
   {
-    files: ['**/*.{ts,tsx,js,jsx}'],
+    files: ['**/*.{ts,tsx,js,jsx}', '**/*.stories.{ts,tsx,js,jsx}'],
 
     plugins: {
       'simple-import-sort': simpleImportSort

@@ -245,6 +245,12 @@ importers:
       '@negative-space/button':
         specifier: workspace:*
         version: link:../../ui/action/button
+      '@negative-space/dialog':
+        specifier: workspace:*
+        version: link:../../ui/action/dialog
+      '@negative-space/dropdown':
+        specifier: workspace:*
+        version: link:../../ui/action/dropdown
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -262,6 +268,12 @@ importers:
 
   packages/kits/data-display:
     dependencies:
+      '@negative-space/avatar':
+        specifier: workspace:*
+        version: link:../../ui/data-display/avatar
+      '@negative-space/breadcrumb':
+        specifier: workspace:*
+        version: link:../../ui/data-display/breadcrumb
       '@negative-space/code-block':
         specifier: workspace:*
         version: link:../../ui/data-display/code-block
@@ -305,6 +317,9 @@ importers:
       '@negative-space/switch':
         specifier: workspace:*
         version: link:../../ui/data-entry/switch
+      '@negative-space/text-area':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/text-area
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -470,11 +485,99 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/ui/action/dialog:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../button
+      '@negative-space/info':
+        specifier: workspace:*
+        version: link:../../typography/info
+      '@negative-space/modal':
+        specifier: workspace:*
+        version: link:../../feedback/modal
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/action/dropdown:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../button
+      '@negative-space/collection':
+        specifier: workspace:*
+        version: link:../../primitive/collection
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/ui/app/theme:
     dependencies:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/avatar:
+    dependencies:
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-display/breadcrumb:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      '@negative-space/text':
+        specifier: workspace:*
+        version: link:../../typography/text
       react:
         specifier: ^19.2.3
         version: 19.2.3
@@ -735,6 +838,25 @@ importers:
         version: 5.9.3
 
   packages/ui/data-entry/switch:
+    dependencies:
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/text-area:
     dependencies:
       '@negative-space/field':
         specifier: workspace:*
@@ -1039,6 +1161,9 @@ importers:
       '@negative-space/collection':
         specifier: workspace:*
         version: link:../../primitive/collection
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
       '@negative-space/link':
         specifier: workspace:*
         version: link:../link
@@ -1070,6 +1195,9 @@ importers:
       '@negative-space/heading':
         specifier: workspace:*
         version: link:../../typography/heading
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
       '@negative-space/roving-focus':
         specifier: workspace:*
         version: link:../../../hooks/roving-focus

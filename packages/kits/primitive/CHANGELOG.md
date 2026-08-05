@@ -1,5 +1,12 @@
 # @negative-space/primitive
 
+## 2.0.8
+
+### Patch Changes
+
+- Updated dependencies [7fd3a84]
+  - @negative-space/collection@2.1.0
+
 ## 2.0.7
 
 ### Patch Changes
