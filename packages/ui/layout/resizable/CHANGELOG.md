@@ -1,5 +1,13 @@
 # @negative-space/resizable
 
+## 1.0.3
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/divider@1.1.11
+- @negative-space/flex@1.3.2
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @negative-space/notification
 
+## 1.0.3
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/alert@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

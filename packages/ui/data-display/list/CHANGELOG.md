@@ -1,5 +1,16 @@
 # @negative-space/list
 
+## 1.5.0
+
+### Minor Changes
+
+- fd16a98: Export list items props
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/flex@1.3.2
+
 ## 1.4.7
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @negative-space/layout
 
+## 1.4.4
+
+### Patch Changes
+
+- @negative-space/sidebar@1.0.3
+- @negative-space/divider@1.1.11
+- @negative-space/field@1.1.6
+- @negative-space/flex@1.3.2
+- @negative-space/grid@1.3.8
+- @negative-space/resizable@1.0.3
+
 ## 1.4.3
 
 ### Patch Changes

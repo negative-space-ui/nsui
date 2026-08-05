@@ -1,5 +1,25 @@
 # @negative-space/data-display
 
+## 1.4.0
+
+### Minor Changes
+
+- 4db776e: Add Avatar component
+- e8aec5d: Add breadcrumb component
+
+### Patch Changes
+
+- Updated dependencies [fd16a98]
+- Updated dependencies [e8aec5d]
+- Updated dependencies [4db776e]
+  - @negative-space/list@1.5.0
+  - @negative-space/breadcrumb@1.0.0
+  - @negative-space/avatar@1.0.0
+  - @negative-space/code-block@1.0.6
+  - @negative-space/popover@1.0.6
+  - @negative-space/surface@1.0.3
+  - @negative-space/tooltip@1.0.6
+
 ## 1.3.2
 
 ### Patch Changes

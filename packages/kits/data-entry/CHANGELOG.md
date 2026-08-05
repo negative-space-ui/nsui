@@ -1,5 +1,26 @@
 # @negative-space/data-entry
 
+## 1.7.0
+
+### Minor Changes
+
+- 8ec2540: Add Text Area component
+
+### Patch Changes
+
+- Updated dependencies [8ec2540]
+- Updated dependencies [fd16a98]
+- Updated dependencies [4b0a3bd]
+- Updated dependencies [fd16a98]
+  - @negative-space/text-area@1.0.0
+  - @negative-space/radio@1.8.0
+  - @negative-space/listbox@1.6.0
+  - @negative-space/input@1.5.5
+  - @negative-space/select@1.1.2
+  - @negative-space/form@1.8.1
+  - @negative-space/checkbox@1.5.6
+  - @negative-space/switch@1.0.6
+
 ## 1.6.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @negative-space/checkmark
 
+## 1.2.6
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+
 ## 1.2.5
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @negative-space/form
 
+## 1.8.1
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/grid@1.3.8
+
 ## 1.8.0
 
 ### Minor Changes

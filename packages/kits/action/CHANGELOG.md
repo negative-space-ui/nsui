@@ -1,5 +1,20 @@
 # @negative-space/action
 
+## 1.1.0
+
+### Minor Changes
+
+- 6ce8141: Add dialog component
+- 4690112: Add dropdown component
+
+### Patch Changes
+
+- Updated dependencies [4690112]
+- Updated dependencies [6ce8141]
+  - @negative-space/dropdown@1.0.0
+  - @negative-space/dialog@1.0.0
+  - @negative-space/button@2.9.3
+
 ## 1.0.19
 
 ### Patch Changes

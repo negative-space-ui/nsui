@@ -1,5 +1,14 @@
 # @negative-space/button
 
+## 2.9.3
+
+### Patch Changes
+
+- Updated dependencies [14af903]
+  - @negative-space/spinner@2.2.6
+  - @negative-space/system@1.5.2
+  - @negative-space/flex@1.3.2
+
 ## 2.9.2
 
 ### Patch Changes

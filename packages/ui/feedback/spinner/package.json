@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/spinner",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "publishConfig": {
     "access": "public"
   },

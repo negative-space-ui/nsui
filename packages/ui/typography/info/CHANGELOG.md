@@ -1,5 +1,13 @@
 # @negative-space/info
 
+## 1.0.3
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/heading@1.2.7
+- @negative-space/text@1.2.7
+
 ## 1.0.2
 
 ### Patch Changes

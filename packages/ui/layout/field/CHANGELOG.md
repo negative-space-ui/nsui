@@ -1,5 +1,13 @@
 # @negative-space/field
 
+## 1.1.6
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+- @negative-space/flex@1.3.2
+- @negative-space/text@1.2.7
+
 ## 1.1.5
 
 ### Patch Changes
