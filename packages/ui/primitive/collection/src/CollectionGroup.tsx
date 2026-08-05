@@ -13,7 +13,7 @@ export interface CollectionGroupProps extends Omit<
     root?: React.CSSProperties
     heading?: React.CSSProperties
   }
-  heading?: string
+  heading?: React.ReactNode
   headingProps?: Omit<HeadingElement, 'children' | 'className' | 'style'>
 }
 
@@ -40,6 +40,7 @@ export function CollectionGroup({
           {heading}
         </Heading>
       )}
+
       {children}
     </div>
   )

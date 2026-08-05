@@ -29,6 +29,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         closable: components?.alert?.closable ?? true,
         closeTitle: components?.alert?.closeTitle ?? 'Close'
       },
+      avatar: {
+        backgroundColors: components?.avatar?.backgroundColors ?? []
+      },
       button: {
         type: components?.button?.type ?? 'button',
         animation: components?.button?.animation ?? 'ripple'
@@ -40,8 +43,15 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       closeButton: {
         animation: components?.closeButton?.animation ?? 'none'
       },
+      breadcrumb: {
+        separator: components?.breadcrumb?.separator ?? '/'
+      },
       checkmark: {
         animation: components?.checkmark?.animation ?? 'pop'
+      },
+      dialog: {
+        cancelText: components?.dialog?.cancelText ?? 'Cancel',
+        confirmText: components?.dialog?.confirmText ?? 'Confirm'
       },
       form: {
         disableSubmitOnError: components?.form?.disableSubmitOnError ?? false,

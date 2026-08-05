@@ -33,9 +33,8 @@
   "scripts": {
     "build": "tsup",
     "clean": "rimraf dist .turbo dist",
-    "prepack": "clean-package",
     "postpack": "clean-package restore",
-    "typecheck": "tsc --noEmit"
+    "prepack": "clean-package"
   },
   "dependencies": {
     "@negative-space/system": "workspace:*"

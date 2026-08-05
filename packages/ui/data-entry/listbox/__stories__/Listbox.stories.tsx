@@ -16,16 +16,28 @@ export default {
       }
     },
     items: [
-      { option: { value: '1', children: 'Option 1' } },
-      { option: { value: '2', children: 'Option 2' } },
-      { option: { value: '3', children: 'Option 3' } }
-    ].map((item) => ({
-      option: {
-        ...item.option,
-        alignItems: 'center',
-        gap: '0.4rem'
-      }
-    }))
+      {
+        group: {
+          heading: 'Group 1',
+          classNames: {
+            root: 'mb-2',
+            heading: 'text-neutral-500 font-medium'
+          },
+          items: [
+            {
+              option: {
+                value: '1',
+                children: 'Option 1',
+                alignItems: 'center',
+                gap: '0.4rem'
+              }
+            }
+          ]
+        }
+      },
+      { option: { value: '2', children: 'Option 2', alignItems: 'center', gap: '0.4rem' } },
+      { option: { value: '3', children: 'Option 3', alignItems: 'center', gap: '0.4rem' } }
+    ]
   }
 }
 

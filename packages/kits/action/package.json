@@ -36,7 +36,9 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/button": "workspace:*"
+    "@negative-space/button": "workspace:*",
+    "@negative-space/dialog": "workspace:*",
+    "@negative-space/dropdown": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { Collection } from '..'
-import { CollectionContext } from '../src/CollectionContext'
+import { CollectionContext } from '../src/collectionContext'
 
 jest.mock('@negative-space/grid', () => ({
   Grid: React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(

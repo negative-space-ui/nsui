@@ -109,7 +109,8 @@ describe('Menu', () => {
         items={[
           {
             group: {
-              children: 'Group'
+              heading: 'Group',
+              items: [{ item: { value: 'item-1', children: 'Item 1' } }]
             }
           }
         ]}

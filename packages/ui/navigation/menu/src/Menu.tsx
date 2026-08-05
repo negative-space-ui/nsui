@@ -6,11 +6,56 @@ import { MenuContext } from './MenuContext'
 import { MenuGroup, type MenuGroupProps } from './MenuGroup'
 import { MenuItem, type MenuItemProps } from './MenuItem'
 import { MenuSeparator, type MenuSeparatorProps } from './MenuSeparator'
+import { MenuSubmenu, type MenuSubmenuProps } from './MenuSubmenu'
+
+export type MenuGroupItem =
+  | {
+      item: MenuItemProps
+      separator?: never
+      submenu?: never
+    }
+  | {
+      separator: MenuSeparatorProps
+      item?: never
+      submenu?: never
+    }
+  | {
+      submenu: Omit<MenuSubmenuProps, 'children'> & {
+        items: MenuComponent[]
+      }
+      item?: never
+      separator?: never
+    }
 
 export type MenuComponent =
-  | { group: MenuGroupProps; item?: never; separator?: never }
-  | { item: MenuItemProps; group?: never; separator?: never }
-  | { separator: MenuSeparatorProps; group?: never; item?: never }
+  | {
+      group: Omit<MenuGroupProps, 'children'> & {
+        items: MenuGroupItem[]
+      }
+      item?: never
+      separator?: never
+      submenu?: never
+    }
+  | {
+      item: MenuItemProps
+      group?: never
+      separator?: never
+      submenu?: never
+    }
+  | {
+      separator: MenuSeparatorProps
+      group?: never
+      item?: never
+      submenu?: never
+    }
+  | {
+      submenu: Omit<MenuSubmenuProps, 'children'> & {
+        items: MenuComponent[]
+      }
+      group?: never
+      item?: never
+      separator?: never
+    }
 
 export interface MenuProps extends Omit<CollectionProps, 'rovingOptions' | 'className' | 'style'> {
   classNames?: {
@@ -18,23 +63,118 @@ export interface MenuProps extends Omit<CollectionProps, 'rovingOptions' | 'clas
     group?: MenuGroupProps['classNames']
     item?: MenuItemProps['classNames']
     separator?: string
+    submenu?: MenuSubmenuProps['classNames']
   }
   styles?: {
     root?: React.CSSProperties
     group?: MenuGroupProps['styles']
     item?: MenuItemProps['styles']
     separator?: React.CSSProperties
+    submenu?: MenuSubmenuProps['styles']
   }
   items: MenuComponent[]
-  collapsed?: boolean
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
-  ({ classNames, styles, disabled, collapsed = false, items, columns = 1, ...props }, ref) => {
+  ({ classNames, styles, disabled, items, columns = 1, ...props }, ref) => {
     const { global } = useNSUI()
 
+    const renderItem = (component: MenuComponent, index: number) => {
+      if ('item' in component && component.item) {
+        const {
+          classNames: itemClassNames,
+          styles: itemStyles,
+          value,
+          ...restItem
+        } = component.item
+
+        return (
+          <MenuItem
+            key={value != null ? String(value) : `item-${index}`}
+            {...restItem}
+            value={value}
+            classNames={mergeCn(classNames?.item, itemClassNames)}
+            styles={{
+              ...styles?.item,
+              ...itemStyles
+            }}
+          />
+        )
+      }
+
+      if ('separator' in component && component.separator) {
+        const {
+          className: separatorClassName,
+          style: separatorStyle,
+          ...restSeparator
+        } = component.separator
+
+        return (
+          <MenuSeparator
+            key={`separator-${index}`}
+            {...restSeparator}
+            className={cn(classNames?.separator, separatorClassName)}
+            style={{
+              ...styles?.separator,
+              ...separatorStyle
+            }}
+          />
+        )
+      }
+
+      if ('submenu' in component && component.submenu) {
+        const {
+          items: submenuItems,
+          classNames: submenuClassNames,
+          styles: submenuStyles,
+          ...restSubmenu
+        } = component.submenu
+
+        return (
+          <MenuSubmenu
+            key={
+              component.submenu.value != null ? String(component.submenu.value) : `submenu-${index}`
+            }
+            {...restSubmenu}
+            classNames={mergeCn(classNames?.submenu, submenuClassNames)}
+            styles={{
+              ...styles?.submenu,
+              ...submenuStyles
+            }}
+          >
+            {submenuItems.map((item, itemIndex) => renderItem(item, itemIndex))}
+          </MenuSubmenu>
+        )
+      }
+
+      if ('group' in component && component.group) {
+        const {
+          items: groupItems,
+          classNames: groupClassNames,
+          styles: groupStyles,
+          ...groupProps
+        } = component.group
+
+        return (
+          <MenuGroup
+            key={`group-${index}`}
+            {...groupProps}
+            classNames={mergeCn(classNames?.group, groupClassNames)}
+            styles={{
+              ...styles?.group,
+              ...groupStyles
+            }}
+          >
+            {groupItems.map((groupComponent, groupIndex) => renderItem(groupComponent, groupIndex))}
+          </MenuGroup>
+        )
+      }
+
+      return null
+    }
+
     return (
-      <MenuContext.Provider value={{ disabled, collapsed }}>
+      <MenuContext.Provider value={{ disabled }}>
         <Collection
           {...({ ref } as object)}
           role="menu"
@@ -48,42 +188,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
           style={styles?.root}
           {...props}
         >
-          {items.map((component, index) => {
-            if ('group' in component && component.group) {
-              return (
-                <MenuGroup
-                  key={`group-${index}`}
-                  classNames={mergeCn(classNames?.group, component.group.classNames)}
-                  styles={{ ...styles?.group, ...component.group.styles }}
-                  {...component.group}
-                />
-              )
-            }
-
-            if ('item' in component && component.item) {
-              return (
-                <MenuItem
-                  key={component.item.value ?? `item-${index}`}
-                  classNames={mergeCn(classNames?.item, component.item.classNames)}
-                  styles={{ ...styles?.item, ...component.item.styles }}
-                  {...component.item}
-                />
-              )
-            }
-
-            if ('separator' in component && component.separator) {
-              return (
-                <MenuSeparator
-                  key={`separator-${index}`}
-                  className={cn(classNames?.separator, component.separator.className)}
-                  style={{ ...styles?.separator, ...component.separator.style }}
-                  {...component.separator}
-                />
-              )
-            }
-
-            return null
-          })}
+          {items.map(renderItem)}
         </Collection>
       </MenuContext.Provider>
     )

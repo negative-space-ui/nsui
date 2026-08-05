@@ -38,6 +38,7 @@
     "@negative-space/flex": "workspace:*",
     "@negative-space/grid": "workspace:*",
     "@negative-space/heading": "workspace:*",
+    "@negative-space/popover": "workspace:*",
     "@negative-space/roving-focus": "workspace:*",
     "@negative-space/system": "workspace:*"
   },

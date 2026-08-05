@@ -14,7 +14,10 @@ export const Default = (args: MenuProps) => {
   return (
     <Menu
       {...args}
-      classNames={{ item: { root: 'cursor-pointer' } }}
+      classNames={{
+        item: { root: 'cursor-pointer' },
+        submenu: { popover: { content: 'bg-neutral-100 p-2 rounded-md' } }
+      }}
       gap="0.4rem"
       collapsed={collapsed}
       items={[
@@ -26,22 +29,33 @@ export const Default = (args: MenuProps) => {
           }
         },
         {
-          item: {
-            prefix: '📂',
-            children: 'New File',
-            href: 'https://example.com'
-          }
-        },
-        {
-          item: {
-            prefix: '🔍',
-            children: 'Open'
-          }
-        },
-        {
-          item: {
-            prefix: '💾',
-            children: 'Save'
+          group: {
+            prefix: '🍿',
+            heading: 'Group',
+            classNames: {
+              heading: 'text-neutral-500 font-medium'
+            },
+            items: [
+              {
+                item: {
+                  prefix: '📂',
+                  children: 'New File',
+                  href: 'https://example.com'
+                }
+              },
+              {
+                item: {
+                  prefix: '🔍',
+                  children: 'Open'
+                }
+              },
+              {
+                item: {
+                  prefix: '💾',
+                  children: 'Save'
+                }
+              }
+            ]
           }
         }
       ]}

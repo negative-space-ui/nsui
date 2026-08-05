@@ -8,8 +8,16 @@ import { ListboxGroup, type ListboxGroupProps } from './ListboxGroup'
 import { ListboxOption, type ListboxOptionProps } from './ListboxOption'
 import { ListboxSeparator, type ListboxSeparatorProps } from './ListboxSeparator'
 
+export type ListboxGroupItem =
+  | { option: ListboxOptionProps; separator?: never }
+  | { separator: ListboxSeparatorProps; option?: never }
+
 export type ListboxComponent =
-  | { group: ListboxGroupProps; option?: never; separator?: never }
+  | {
+      group: Omit<ListboxGroupProps, 'children'> & { items: ListboxGroupItem[] }
+      option?: never
+      separator?: never
+    }
   | { option: ListboxOptionProps; group?: never; separator?: never }
   | { separator: ListboxSeparatorProps; group?: never; option?: never }
 
@@ -64,6 +72,40 @@ export function Listbox({
     [disabled, selectionMode, value, onValueChange]
   )
 
+  const renderGroupItem = (
+    groupItem: ListboxGroupItem,
+    groupIndex: number,
+    parentIndex: number
+  ) => {
+    if ('option' in groupItem && groupItem.option) {
+      const { classNames: optionClassNames, styles: optionStyles, ...restOption } = groupItem.option
+
+      return (
+        <ListboxOption
+          key={groupItem.option.value ?? `group-${parentIndex}-option-${groupIndex}`}
+          {...restOption}
+          classNames={mergeCn(classNames?.option, optionClassNames)}
+          styles={{ ...styles?.option, ...optionStyles }}
+        />
+      )
+    }
+
+    if ('separator' in groupItem && groupItem.separator) {
+      const { className: sepClassName, style: sepStyle, ...restSeparator } = groupItem.separator
+
+      return (
+        <ListboxSeparator
+          key={`group-${parentIndex}-separator-${groupIndex}`}
+          {...restSeparator}
+          className={cn(classNames?.separator, sepClassName)}
+          style={{ ...styles?.separator, ...sepStyle }}
+        />
+      )
+    }
+
+    return null
+  }
+
   return (
     <ListboxContext.Provider value={contextValue}>
       <Field {...fieldProps} classNames={classNames?.field} styles={styles?.field}>
@@ -78,35 +120,57 @@ export function Listbox({
         >
           {items.map((item, index) => {
             if ('group' in item && item.group) {
+              const {
+                items: groupItems,
+                classNames: groupClassNames,
+                styles: groupStyles,
+                ...restGroup
+              } = item.group
+
               return (
                 <ListboxGroup
-                  key={index}
-                  classNames={mergeCn(classNames?.group, item.group.classNames)}
-                  styles={{ ...styles?.group, ...item.group.styles }}
-                  {...item.group}
-                />
+                  key={`group-${index}`}
+                  {...restGroup}
+                  classNames={mergeCn(classNames?.group, groupClassNames)}
+                  styles={{ ...styles?.group, ...groupStyles }}
+                >
+                  {groupItems.map((groupItem, groupIndex) =>
+                    renderGroupItem(groupItem, groupIndex, index)
+                  )}
+                </ListboxGroup>
               )
             }
+
             if ('option' in item && item.option) {
+              const {
+                classNames: optionClassNames,
+                styles: optionStyles,
+                ...restOption
+              } = item.option
+
               return (
                 <ListboxOption
-                  key={item.option.value ?? index}
-                  classNames={mergeCn(classNames?.option, item.option.classNames)}
-                  styles={{ ...styles?.option, ...item.option.styles }}
-                  {...item.option}
+                  key={item.option.value ?? `option-${index}`}
+                  {...restOption}
+                  classNames={mergeCn(classNames?.option, optionClassNames)}
+                  styles={{ ...styles?.option, ...optionStyles }}
                 />
               )
             }
+
             if ('separator' in item && item.separator) {
+              const { className: sepClassName, style: sepStyle, ...restSeparator } = item.separator
+
               return (
                 <ListboxSeparator
-                  key={index}
-                  className={classNames?.separator}
-                  style={styles?.separator}
-                  {...item.separator}
+                  key={`separator-${index}`}
+                  {...restSeparator}
+                  className={cn(classNames?.separator, sepClassName)}
+                  style={{ ...styles?.separator, ...sepStyle }}
                 />
               )
             }
+
             return null
           })}
         </Collection>
