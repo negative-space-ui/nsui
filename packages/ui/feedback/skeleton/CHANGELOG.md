@@ -1,5 +1,11 @@
 # @negative-space/skeleton
 
+## 1.0.2
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+
 ## 1.0.1
 
 ### Patch Changes

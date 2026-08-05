@@ -1,5 +1,17 @@
 # @negative-space/select
 
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [4b0a3bd]
+- Updated dependencies [fd16a98]
+  - @negative-space/listbox@1.6.0
+  - @negative-space/button@2.9.3
+  - @negative-space/system@1.5.2
+  - @negative-space/popover@1.0.6
+  - @negative-space/field@1.1.6
+
 ## 1.1.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # docs
 
+## 0.0.23
+
+### Patch Changes
+
+- negative-space@2.10.2
+
 ## 0.0.22
 
 ### Patch Changes

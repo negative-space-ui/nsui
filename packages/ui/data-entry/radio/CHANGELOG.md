@@ -1,5 +1,18 @@
 # @negative-space/radio
 
+## 1.8.0
+
+### Minor Changes
+
+- fd16a98: Export radio option prop
+
+### Patch Changes
+
+- Updated dependencies [7fd3a84]
+  - @negative-space/collection@2.1.0
+  - @negative-space/system@1.5.2
+  - @negative-space/field@1.1.6
+
 ## 1.7.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @negative-space/divider
 
+## 1.1.11
+
+### Patch Changes
+
+- @negative-space/system@1.5.2
+
 ## 1.1.10
 
 ### Patch Changes

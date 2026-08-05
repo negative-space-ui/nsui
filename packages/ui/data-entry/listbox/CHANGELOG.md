@@ -1,5 +1,20 @@
 # @negative-space/listbox
 
+## 1.6.0
+
+### Minor Changes
+
+- 4b0a3bd: Update listbox group api
+- fd16a98: Export listbox component prop
+
+### Patch Changes
+
+- Updated dependencies [7fd3a84]
+  - @negative-space/collection@2.1.0
+  - @negative-space/system@1.5.2
+  - @negative-space/checkmark@1.2.6
+  - @negative-space/field@1.1.6
+
 ## 1.5.5
 
 ### Patch Changes
