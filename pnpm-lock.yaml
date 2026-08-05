@@ -248,6 +248,9 @@ importers:
       '@negative-space/dialog':
         specifier: workspace:*
         version: link:../../ui/action/dialog
+      '@negative-space/dropdown':
+        specifier: workspace:*
+        version: link:../../ui/action/dropdown
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -493,6 +496,31 @@ importers:
       '@negative-space/modal':
         specifier: workspace:*
         version: link:../../feedback/modal
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/action/dropdown:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../button
+      '@negative-space/collection':
+        specifier: workspace:*
+        version: link:../../primitive/collection
+      '@negative-space/popover':
+        specifier: workspace:*
+        version: link:../../data-display/popover
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system

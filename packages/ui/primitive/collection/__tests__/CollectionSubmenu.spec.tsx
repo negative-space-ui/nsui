@@ -71,9 +71,9 @@ describe('CollectionSubmenu', () => {
     )
   })
 
-  it('renders label', () => {
+  it('renders heading', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -83,7 +83,7 @@ describe('CollectionSubmenu', () => {
 
   it('renders children', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         <span>Item</span>
       </CollectionSubmenu>
     )
@@ -93,7 +93,7 @@ describe('CollectionSubmenu', () => {
 
   it('renders with default role', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -103,7 +103,7 @@ describe('CollectionSubmenu', () => {
 
   it('sets custom role', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu" role="option">
+      <CollectionSubmenu value="menu" heading="Menu" role="option">
         Item
       </CollectionSubmenu>
     )
@@ -113,7 +113,7 @@ describe('CollectionSubmenu', () => {
 
   it('passes value to useCollectionSubmenu', () => {
     render(
-      <CollectionSubmenu value="item-1" label="Menu">
+      <CollectionSubmenu value="item-1" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -127,7 +127,7 @@ describe('CollectionSubmenu', () => {
 
   it('passes disabled to useCollectionSubmenu', () => {
     render(
-      <CollectionSubmenu value="item-1" label="Menu" disabled>
+      <CollectionSubmenu value="item-1" heading="Menu" disabled>
         Item
       </CollectionSubmenu>
     )
@@ -143,7 +143,7 @@ describe('CollectionSubmenu', () => {
     const popoverOptions = {}
 
     render(
-      <CollectionSubmenu value="item-1" label="Menu" popoverOptions={popoverOptions}>
+      <CollectionSubmenu value="item-1" heading="Menu" popoverOptions={popoverOptions}>
         Item
       </CollectionSubmenu>
     )
@@ -157,7 +157,7 @@ describe('CollectionSubmenu', () => {
 
   it('applies trigger props', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -167,7 +167,7 @@ describe('CollectionSubmenu', () => {
 
   it('applies popover reference props', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -177,7 +177,7 @@ describe('CollectionSubmenu', () => {
 
   it('handles trigger click', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -189,7 +189,7 @@ describe('CollectionSubmenu', () => {
 
   it('renders popover', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         Item
       </CollectionSubmenu>
     )
@@ -199,7 +199,7 @@ describe('CollectionSubmenu', () => {
 
   it('renders collection inside popover', () => {
     render(
-      <CollectionSubmenu value="menu" label="Menu">
+      <CollectionSubmenu value="menu" heading="Menu">
         <span>Item</span>
       </CollectionSubmenu>
     )
