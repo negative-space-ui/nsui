@@ -73,10 +73,11 @@ export interface MenuProps extends Omit<CollectionProps, 'rovingOptions' | 'clas
     submenu?: MenuSubmenuProps['styles']
   }
   items: MenuComponent[]
+  collapsed?: boolean
 }
 
 export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
-  ({ classNames, styles, disabled, items, columns = 1, ...props }, ref) => {
+  ({ classNames, styles, disabled, collapsed, items, columns = 1, ...props }, ref) => {
     const { global } = useNSUI()
 
     const renderItem = (component: MenuComponent, index: number) => {
@@ -174,7 +175,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(
     }
 
     return (
-      <MenuContext.Provider value={{ disabled }}>
+      <MenuContext.Provider value={{ disabled, collapsed }}>
         <Collection
           {...({ ref } as object)}
           role="menu"

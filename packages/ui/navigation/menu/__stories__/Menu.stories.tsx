@@ -31,6 +31,7 @@ export const Default = (args: MenuProps) => {
         {
           group: {
             prefix: '🍿',
+            collapsible: true,
             heading: 'Group',
             classNames: {
               heading: 'text-neutral-500 font-medium'
