@@ -4,6 +4,8 @@ export {
   ChevronDown,
   Eye,
   EyeOff,
+  GripHorizontal,
+  GripVertical,
   Info,
   PanelLeft,
   PanelRight,

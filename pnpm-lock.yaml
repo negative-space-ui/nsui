@@ -376,6 +376,9 @@ importers:
       '@negative-space/sidebar':
         specifier: workspace:*
         version: link:../../ui/layout/sidebar
+      '@negative-space/sortable':
+        specifier: workspace:*
+        version: link:../../ui/layout/sortable
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -1126,6 +1129,25 @@ importers:
       '@negative-space/resizable':
         specifier: workspace:*
         version: link:../resizable
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/layout/sortable:
+    dependencies:
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../flex
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
@@ -3767,6 +3789,7 @@ packages:
   eslint@9.39.2:
     resolution: {integrity: sha512-LEyamqS7W5HB3ujJyvi0HQK/dtVINZvd5mAAp9eT5S/ujByGjiZLCzPcHVzuXbpJDJF/cxwHlfceVUDZ2lnSTw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
