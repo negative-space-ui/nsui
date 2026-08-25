@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "description": "A lightweight and flexible table component for React.",
+  "description": "A lightweight and flexible table component for React",
   "keywords": [
     "component",
     "data-display",

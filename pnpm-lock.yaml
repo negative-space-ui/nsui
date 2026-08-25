@@ -302,6 +302,9 @@ importers:
       '@negative-space/checkbox':
         specifier: workspace:*
         version: link:../../ui/data-entry/checkbox
+      '@negative-space/file-upload':
+        specifier: workspace:*
+        version: link:../../ui/data-entry/file-upload
       '@negative-space/form':
         specifier: workspace:*
         version: link:../../ui/data-entry/form
@@ -714,6 +717,28 @@ importers:
       '@negative-space/checkmark':
         specifier: workspace:*
         version: link:../../feedback/checkmark
+      '@negative-space/field':
+        specifier: workspace:*
+        version: link:../../layout/field
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/data-entry/file-upload:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
       '@negative-space/field':
         specifier: workspace:*
         version: link:../../layout/field

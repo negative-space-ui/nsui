@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@negative-space/checkbox": "workspace:*",
+    "@negative-space/file-upload": "workspace:*",
     "@negative-space/form": "workspace:*",
     "@negative-space/input": "workspace:*",
     "@negative-space/listbox": "workspace:*",
