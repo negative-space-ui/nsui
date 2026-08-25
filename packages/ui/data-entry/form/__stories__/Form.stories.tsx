@@ -3,7 +3,8 @@ import { expect, userEvent, within } from '@storybook/test'
 import React, { useEffect, useRef } from 'react'
 import { z } from 'zod'
 
-import { Form, type FormProps, zodAdaptor } from '..'
+import { Form, type FormProps } from '..'
+import { zodAdapter } from '../src/adapters/zod'
 
 type StoryArgs = Omit<FormProps, 'schema'>
 
@@ -52,7 +53,7 @@ const schema = z.object({
 export const WithZod = (args: StoryArgs) => (
   <Form
     {...args}
-    schema={zodAdaptor(schema)}
+    schema={zodAdapter(schema)}
     onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
   >
     <Input name="name" placeholder="Name" />
