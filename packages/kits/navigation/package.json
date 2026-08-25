@@ -36,6 +36,7 @@
     "prepack": "clean-package"
   },
   "dependencies": {
+    "@negative-space/breadcrumb": "workspace:*",
     "@negative-space/link": "workspace:*",
     "@negative-space/menu": "workspace:*"
   },

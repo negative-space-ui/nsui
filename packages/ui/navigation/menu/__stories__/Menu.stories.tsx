@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu, type MenuProps } from '..'
 
 export default {
-  title: 'Nav/Menu',
+  title: 'Navigation/Menu',
   component: Menu,
   tags: ['autodocs']
 }

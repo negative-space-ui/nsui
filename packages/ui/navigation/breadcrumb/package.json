@@ -7,8 +7,8 @@
   "description": "A lightweight and accessible breadcrumb component by Negative Space, built with React and TypeScript",
   "keywords": [
     "components",
-    "data-display",
     "breadcrumb",
+    "navigation",
     "negative-space",
     "nsui",
     "react",
