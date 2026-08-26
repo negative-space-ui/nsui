@@ -12,6 +12,7 @@ import {
   type UsePopoverOptions
 } from '@negative-space/popover'
 import { cn, Search, useNSUI } from '@negative-space/system'
+import { Tooltip, type TooltipProps, useTooltip } from '@negative-space/tooltip'
 import React from 'react'
 
 import {
@@ -33,6 +34,7 @@ export interface SearchBarProps extends Omit<
     root?: InputProps['classNames']
     clearButton?: CloseButtonProps['classNames']
     searchButton?: IconButtonProps['classNames']
+    tooltip?: TooltipProps['classNames']
     suggestion?: {
       popover?: PopoverProps['classNames']
       item?: SearchBarSuggestionItemProps['classNames']
@@ -42,11 +44,15 @@ export interface SearchBarProps extends Omit<
     root?: InputProps['styles']
     clearButton?: CloseButtonProps['styles']
     searchButton?: IconButtonProps['styles']
+    tooltip?: TooltipProps['styles']
     suggestion?: {
       popover?: PopoverProps['styles']
       item?: SearchBarSuggestionItemProps['styles']
     }
   }
+  showTooltip?: boolean
+  clearTooltip?: string
+  searchTooltip?: string
   showClearButton?: boolean
   suggestions?: SearchBarSuggestionItemProps[]
   popoverProps?: SearchBarPopoverProps
@@ -59,10 +65,13 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
     {
       classNames,
       styles,
+      showTooltip,
       showClearButton,
       suggestions = [],
       popoverProps,
       value,
+      searchTooltip,
+      clearTooltip,
       onClear,
       onSearch,
       onChange,
@@ -72,7 +81,14 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
     },
     ref
   ) => {
-    const { global } = useNSUI()
+    const { global, components } = useNSUI()
+
+    const tooltipClear = useTooltip()
+    const tooltipSearch = useTooltip()
+
+    const ShowTooltip = showTooltip ?? global.tooltip
+    const SearchTooltip = searchTooltip ?? components?.searchBar?.searchTooltip
+    const ClearTooltip = clearTooltip ?? components?.searchBar?.clearTooltip
 
     const [inputValue, setInputValue] = React.useState(value ?? '')
     const [suggestionsOpen, setSuggestionsOpen] = React.useState(false)
@@ -316,7 +332,10 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
             <>
               {showClearButton && (
                 <CloseButton
+                  ref={tooltipClear.referenceRef}
+                  {...tooltipClear.getReferenceProps()}
                   onClick={handleClear}
+                  title={!ShowTooltip ? ClearTooltip : undefined}
                   data-has-value={Boolean(inputValue)}
                   classNames={{
                     root: cn(
@@ -330,6 +349,8 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
               )}
 
               <IconButton
+                ref={tooltipSearch.referenceRef}
+                {...tooltipSearch.getReferenceProps()}
                 onClick={onSearch}
                 classNames={{
                   root: cn(
@@ -338,6 +359,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
                   ),
                   ...classNames?.searchButton
                 }}
+                title={!ShowTooltip ? SearchTooltip : undefined}
                 styles={styles?.searchButton}
               >
                 <Search />
@@ -382,6 +404,22 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
             />
           ))}
         </Popover>
+
+        {ShowTooltip && (
+          <Tooltip tooltip={tooltipClear} classNames={classNames?.tooltip} styles={styles?.tooltip}>
+            {ClearTooltip}
+          </Tooltip>
+        )}
+
+        {ShowTooltip && (
+          <Tooltip
+            tooltip={tooltipSearch}
+            classNames={classNames?.tooltip}
+            styles={styles?.tooltip}
+          >
+            {SearchTooltip}
+          </Tooltip>
+        )}
       </>
     )
   }

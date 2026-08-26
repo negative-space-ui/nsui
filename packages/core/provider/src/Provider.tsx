@@ -53,6 +53,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         cancelText: components?.dialog?.cancelText ?? 'Cancel',
         confirmText: components?.dialog?.confirmText ?? 'Confirm'
       },
+      fileUpload: {
+        animation: components?.fileUpload?.animation ?? 'none'
+      },
       form: {
         disableSubmitOnError: components?.form?.disableSubmitOnError ?? false,
         validationDelay: components?.form?.validationDelay ?? 0,
@@ -81,6 +84,10 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       },
       radio: {
         animation: components?.radio?.animation ?? 'pop'
+      },
+      searchBar: {
+        clearTooltip: components?.searchBar?.clearTooltip ?? 'Clear',
+        searchTooltip: components?.searchBar?.searchTooltip ?? 'Search'
       },
       select: {
         animation: components?.select?.animation ?? 'none'

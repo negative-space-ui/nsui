@@ -854,6 +854,9 @@ importers:
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      '@negative-space/tooltip':
+        specifier: workspace:*
+        version: link:../../data-display/tooltip
       react:
         specifier: ^19.2.3
         version: 19.2.3

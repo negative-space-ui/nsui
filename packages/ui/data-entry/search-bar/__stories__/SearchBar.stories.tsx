@@ -14,7 +14,10 @@ export default {
         suffix: 'gap-1',
         content: 'px-2 py-1'
       },
-
+      tooltip: {
+        root: 'bg-neutral-200 px-2 py-1 rounded-md shadow-md border-1 border-neutral-300',
+        arrow: 'fill-neutral-200'
+      },
       clearButton: {
         root: 'cursor-pointer opacity-100 transition-opacity duration-300 ease-in-out data-[has-value=false]:opacity-0 data-[has-value=false]:pointer-events-none',
         icon: 'w-4 h-4 text-neutral-500'
