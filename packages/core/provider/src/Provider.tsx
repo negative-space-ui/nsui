@@ -103,6 +103,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
       },
       text: {
         typeElement: components?.text?.typeElement ?? 'span'
+      },
+      toggle: {
+        animation: components?.toggle?.animation ?? 'ripple'
       }
     }
   }

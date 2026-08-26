@@ -22,6 +22,7 @@ export type ComponentSettings = {
   skeleton?: SkeletonSettings
   spinner?: SpinnerSettings
   text?: TextSettings
+  toggle?: ToggleSettings
 }
 
 export type ClickableAnimation = 'ripple' | 'none'
@@ -179,4 +180,8 @@ export type SpinnerSettings = {
 
 export type TextSettings = {
   typeElement?: 'span' | 'p' | 'label' | 'small'
+}
+
+export type ToggleSettings = {
+  animation?: ClickableAnimation
 }
