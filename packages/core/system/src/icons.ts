@@ -9,6 +9,7 @@ export {
   Info,
   PanelLeft,
   PanelRight,
+  Search,
   TriangleAlert,
   X,
   XCircle
