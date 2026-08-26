@@ -89,6 +89,9 @@ export const NSUIProvider = ({ children, components, global }: NSUIProviderProps
         clearTooltip: components?.searchBar?.clearTooltip ?? 'Clear',
         searchTooltip: components?.searchBar?.searchTooltip ?? 'Search'
       },
+      segmented: {
+        animation: components?.segmented?.animation ?? 'none'
+      },
       select: {
         animation: components?.select?.animation ?? 'none'
       },

@@ -17,6 +17,7 @@ export type ComponentSettings = {
   popover?: PopoverSettings
   radio?: RadioSettings
   searchBar?: SearchBarSettings
+  segmented?: SegmentedSettings
   select?: SelectSettings
   skeleton?: SkeletonSettings
   spinner?: SpinnerSettings
@@ -158,6 +159,10 @@ export type RadioSettings = {
 export type SearchBarSettings = {
   clearTooltip?: string
   searchTooltip?: string
+}
+
+export type SegmentedSettings = {
+  animation?: ClickableAnimation
 }
 
 export type SelectSettings = {
