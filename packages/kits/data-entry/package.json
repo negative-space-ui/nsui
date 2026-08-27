@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/data-entry",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "publishConfig": {
     "access": "public"
   },
@@ -41,10 +41,13 @@
   },
   "dependencies": {
     "@negative-space/checkbox": "workspace:*",
+    "@negative-space/file-upload": "workspace:*",
     "@negative-space/form": "workspace:*",
     "@negative-space/input": "workspace:*",
     "@negative-space/listbox": "workspace:*",
     "@negative-space/radio": "workspace:*",
+    "@negative-space/search-bar": "workspace:*",
+    "@negative-space/segmented": "workspace:*",
     "@negative-space/select": "workspace:*",
     "@negative-space/switch": "workspace:*",
     "@negative-space/text-area": "workspace:*"

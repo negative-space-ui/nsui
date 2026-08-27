@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.9.0
+
+### Minor Changes
+
+- 5f70f92: Update injectFields to accept onFilesChange
+
 ## 1.8.1
 
 ### Patch Changes

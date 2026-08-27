@@ -7,6 +7,7 @@ function extractValue(e: unknown): unknown {
     const t = (e as { target: HTMLInputElement }).target
     return t.type === 'checkbox' ? t.checked : t.value
   }
+
   return e
 }
 
@@ -25,6 +26,7 @@ function ConnectedField({
 
   const handlers = useRef({
     onChange: (e: unknown) => ctxRef.current.setValue(name, extractValue(e)),
+    onFilesChange: (files: File[]) => ctxRef.current.setValue(name, files),
     onBlur: () => ctxRef.current.handleBlur(name)
   })
 
@@ -32,19 +34,31 @@ function ConnectedField({
   const showError = validationMode === 'onChange' || validationMode === 'all' || touched[name]
 
   const error = showError ? errors[name] : undefined
+  const isFileUpload = 'onFilesChange' in props
 
   return (
     <Component
       {...props}
       name={name}
-      value={ctx.values[name] ?? ''}
+      {...(isFileUpload
+        ? {
+            onFilesChange: (files: File[]) => {
+              const onFilesChange = props.onFilesChange as ((files: File[]) => void) | undefined
+
+              onFilesChange?.(files)
+              handlers.current.onFilesChange(files)
+            }
+          }
+        : {
+            value: ctx.values[name] ?? '',
+            onChange: handlers.current.onChange
+          })}
       fieldProps={{
         ...(typeof props.fieldProps === 'object' && props.fieldProps !== null
           ? props.fieldProps
           : {}),
         error
       }}
-      onChange={handlers.current.onChange}
       onBlur={handlers.current.onBlur}
     />
   )

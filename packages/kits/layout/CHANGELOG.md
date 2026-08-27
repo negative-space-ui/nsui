@@ -1,5 +1,19 @@
 # @negative-space/layout
 
+## 1.5.0
+
+### Minor Changes
+
+- d64352c: Add Sortable, SortableItem, and SortableHandle components
+
+### Patch Changes
+
+- Updated dependencies [f1790f0]
+- Updated dependencies [d64352c]
+  - @negative-space/resizable@1.1.0
+  - @negative-space/sortable@1.0.0
+  - @negative-space/sidebar@1.0.4
+
 ## 1.4.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @negative-space/menu
 
+## 1.3.0
+
+### Minor Changes
+
+- d8f2b79: Add `collapsed` prop to MenuGroup
+
 ## 1.2.0
 
 ### Minor Changes

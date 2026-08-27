@@ -1,5 +1,16 @@
 # @negative-space/action
 
+## 1.2.0
+
+### Minor Changes
+
+- 4b84001: Add Toggle component
+
+### Patch Changes
+
+- Updated dependencies [4b84001]
+  - @negative-space/toggle@1.0.0
+
 ## 1.1.0
 
 ### Minor Changes

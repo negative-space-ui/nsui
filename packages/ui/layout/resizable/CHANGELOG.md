@@ -1,5 +1,11 @@
 # @negative-space/resizable
 
+## 1.1.0
+
+### Minor Changes
+
+- f1790f0: Update ResizableHandle hook
+
 ## 1.0.3
 
 ### Patch Changes

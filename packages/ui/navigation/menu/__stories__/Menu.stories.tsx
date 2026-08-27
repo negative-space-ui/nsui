@@ -3,7 +3,7 @@ import React from 'react'
 import { Menu, type MenuProps } from '..'
 
 export default {
-  title: 'Nav/Menu',
+  title: 'Navigation/Menu',
   component: Menu,
   tags: ['autodocs']
 }
@@ -31,6 +31,7 @@ export const Default = (args: MenuProps) => {
         {
           group: {
             prefix: '🍿',
+            collapsible: true,
             heading: 'Group',
             classNames: {
               heading: 'text-neutral-500 font-medium'

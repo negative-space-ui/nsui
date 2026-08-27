@@ -7,6 +7,7 @@ export type ComponentSettings = {
   breadcrumb?: BreadcrumbSettings
   checkmark?: CheckmarkSettings
   dialog?: DialogSettings
+  fileUpload?: FileUploadSettings
   form?: FormSettings
   heading?: HeadingSettings
   inputPassword?: InputPasswordSettings
@@ -15,10 +16,13 @@ export type ComponentSettings = {
   modal?: ModalSettings
   popover?: PopoverSettings
   radio?: RadioSettings
+  searchBar?: SearchBarSettings
+  segmented?: SegmentedSettings
   select?: SelectSettings
   skeleton?: SkeletonSettings
   spinner?: SpinnerSettings
   text?: TextSettings
+  toggle?: ToggleSettings
 }
 
 export type ClickableAnimation = 'ripple' | 'none'
@@ -105,6 +109,10 @@ export type DialogSettings = {
   confirmText?: string
 }
 
+export type FileUploadSettings = {
+  animation?: ClickableAnimation
+}
+
 export type FormSettings = {
   disableSubmitOnError?: boolean
   validationDelay?: number
@@ -149,6 +157,15 @@ export type RadioSettings = {
   animation?: OverlayAnimation
 }
 
+export type SearchBarSettings = {
+  clearTooltip?: string
+  searchTooltip?: string
+}
+
+export type SegmentedSettings = {
+  animation?: ClickableAnimation
+}
+
 export type SelectSettings = {
   animation?: ClickableAnimation
 }
@@ -163,4 +180,8 @@ export type SpinnerSettings = {
 
 export type TextSettings = {
   typeElement?: 'span' | 'p' | 'label' | 'small'
+}
+
+export type ToggleSettings = {
+  animation?: ClickableAnimation
 }

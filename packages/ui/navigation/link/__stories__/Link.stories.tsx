@@ -3,7 +3,7 @@ import React from 'react'
 import { Link, type LinkProps } from '..'
 
 export default {
-  title: 'Nav/Link',
+  title: 'Navigation/Link',
   component: Link,
   tags: ['autodocs'],
   args: {

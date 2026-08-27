@@ -1,5 +1,19 @@
 # @negative-space/nav
 
+## 1.1.0
+
+### Minor Changes
+
+- cfc5ea3: Add Tabs component
+- 79b2596: Move Breadcrumb componente from data-display to navigation kit
+
+### Patch Changes
+
+- Updated dependencies [d8f2b79]
+- Updated dependencies [cfc5ea3]
+  - @negative-space/menu@1.3.0
+  - @negative-space/tabs@1.0.0
+
 ## 1.0.5
 
 ### Patch Changes

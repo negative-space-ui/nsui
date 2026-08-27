@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/layout",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "publishConfig": {
     "access": "public"
   },
@@ -41,7 +41,8 @@
     "@negative-space/flex": "workspace:*",
     "@negative-space/grid": "workspace:*",
     "@negative-space/resizable": "workspace:*",
-    "@negative-space/sidebar": "workspace:*"
+    "@negative-space/sidebar": "workspace:*",
+    "@negative-space/sortable": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

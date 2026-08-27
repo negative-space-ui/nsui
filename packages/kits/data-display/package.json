@@ -1,6 +1,6 @@
 {
   "name": "@negative-space/data-display",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "publishConfig": {
     "access": "public"
   },
@@ -37,11 +37,11 @@
   },
   "dependencies": {
     "@negative-space/avatar": "workspace:*",
-    "@negative-space/breadcrumb": "workspace:*",
     "@negative-space/code-block": "workspace:*",
     "@negative-space/list": "workspace:*",
     "@negative-space/popover": "workspace:*",
     "@negative-space/surface": "workspace:*",
+    "@negative-space/table": "workspace:*",
     "@negative-space/tooltip": "workspace:*"
   },
   "devDependencies": {
