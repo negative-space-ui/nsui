@@ -407,6 +407,9 @@ importers:
       '@negative-space/menu':
         specifier: workspace:*
         version: link:../../ui/navigation/menu
+      '@negative-space/tabs':
+        specifier: workspace:*
+        version: link:../../ui/navigation/tabs
     devDependencies:
       typescript:
         specifier: ^5.9.3
@@ -1308,6 +1311,28 @@ importers:
       '@negative-space/collection':
         specifier: workspace:*
         version: link:../../primitive/collection
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/link':
+        specifier: workspace:*
+        version: link:../link
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/navigation/tabs:
+    dependencies:
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
