@@ -38,7 +38,8 @@
   "dependencies": {
     "@negative-space/button": "workspace:*",
     "@negative-space/dialog": "workspace:*",
-    "@negative-space/dropdown": "workspace:*"
+    "@negative-space/dropdown": "workspace:*",
+    "@negative-space/toggle": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

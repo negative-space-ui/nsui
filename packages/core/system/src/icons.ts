@@ -4,9 +4,12 @@ export {
   ChevronDown,
   Eye,
   EyeOff,
+  GripHorizontal,
+  GripVertical,
   Info,
   PanelLeft,
   PanelRight,
+  Search,
   TriangleAlert,
   X,
   XCircle

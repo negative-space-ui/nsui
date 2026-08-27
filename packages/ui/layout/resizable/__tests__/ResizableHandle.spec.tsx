@@ -2,10 +2,10 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import { ResizableHandle } from '..'
-import { useResizable } from '../src/useResizable'
+import { useOptionalResizable } from '../src/useResizable'
 
 jest.mock('../src/useResizable', () => ({
-  useResizable: jest.fn()
+  useOptionalResizable: jest.fn()
 }))
 
 jest.mock('@negative-space/system', () => ({
@@ -57,7 +57,7 @@ beforeAll(() => {
   })
 })
 
-const mockedUseResizable = useResizable as jest.Mock
+const mockedUseOptionalResizable = useOptionalResizable as jest.Mock
 
 describe('ResizableHandle', () => {
   const resizePair = jest.fn()
@@ -65,7 +65,7 @@ describe('ResizableHandle', () => {
   beforeEach(() => {
     resizePair.mockClear()
 
-    mockedUseResizable.mockReturnValue({
+    mockedUseOptionalResizable.mockReturnValue({
       direction: 'row',
       resizePair,
       sizes: {
@@ -139,7 +139,7 @@ describe('ResizableHandle', () => {
   })
 
   it('uses height when direction is column', () => {
-    mockedUseResizable.mockReturnValue({
+    mockedUseOptionalResizable.mockReturnValue({
       direction: 'column',
       resizePair,
       sizes: {

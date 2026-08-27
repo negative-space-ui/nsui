@@ -1,0 +1,53 @@
+{
+  "name": "@negative-space/search-bar",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A lightweight search bar component for React",
+  "keywords": [
+    "component",
+    "search-bar",
+    "data-entry",
+    "negative-space",
+    "nsui",
+    "react",
+    "ui"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "module": "",
+  "types": "",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/negative-space-ui/nsui",
+    "directory": "packages/ui/search-bar"
+  },
+  "bugs": {
+    "url": "https://github.com/negative-space-ui/nsui/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist .turbo dist",
+    "postpack": "clean-package restore",
+    "prepack": "clean-package"
+  },
+  "dependencies": {
+    "@negative-space/button": "workspace:*",
+    "@negative-space/input": "workspace:*",
+    "@negative-space/popover": "workspace:*",
+    "@negative-space/system": "workspace:*",
+    "@negative-space/tooltip": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "clean-package": "../../../../clean-package.config.json"
+}

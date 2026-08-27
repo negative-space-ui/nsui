@@ -3,7 +3,7 @@ import React from 'react'
 import { Breadcrumb, type BreadcrumbProps } from '..'
 
 export default {
-  title: 'Data Display/Breadcrumb',
+  title: 'Navigation/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
   args: {

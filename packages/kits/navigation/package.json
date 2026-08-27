@@ -36,8 +36,10 @@
     "prepack": "clean-package"
   },
   "dependencies": {
+    "@negative-space/breadcrumb": "workspace:*",
     "@negative-space/link": "workspace:*",
-    "@negative-space/menu": "workspace:*"
+    "@negative-space/menu": "workspace:*",
+    "@negative-space/tabs": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.9.3"
