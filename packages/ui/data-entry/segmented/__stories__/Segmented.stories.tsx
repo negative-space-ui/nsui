@@ -12,7 +12,7 @@ export default {
       root: 'w-fit px-2 py-1 bg-neutral-200 border border-neutral-300 rounded-md',
       overlay: 'bg-black/20 rounded-md transition-transform duration-300 ease-in-out',
       item: {
-        root: 'cursor-pointer px-2 text-neutral-600 data-[active=true]:text-neutral-950 data-[active=true]:font-medium'
+        root: 'cursor-pointer px-2 text-neutral-600 data-[pressed=true]:text-neutral-950 data-[pressed=true]:font-medium'
       }
     },
     items: [

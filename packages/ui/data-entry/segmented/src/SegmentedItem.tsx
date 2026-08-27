@@ -1,8 +1,8 @@
-import { Button, type ButtonProps } from '@negative-space/button'
 import { cn, useNSUI } from '@negative-space/system'
+import { Toggle, type ToggleProps } from '@negative-space/toggle'
 import React from 'react'
 
-export type SegmentedItemProps = ButtonProps
+export type SegmentedItemProps = ToggleProps
 
 export const SegmentedItem = React.forwardRef<HTMLButtonElement, SegmentedItemProps>(
   ({ classNames, children, animation, ...props }, ref) => {
@@ -11,7 +11,7 @@ export const SegmentedItem = React.forwardRef<HTMLButtonElement, SegmentedItemPr
     const Animation = animation ?? components?.segmented?.animation
 
     return (
-      <Button
+      <Toggle
         ref={ref}
         {...props}
         animation={Animation}
@@ -21,7 +21,7 @@ export const SegmentedItem = React.forwardRef<HTMLButtonElement, SegmentedItemPr
         }}
       >
         {children}
-      </Button>
+      </Toggle>
     )
   }
 )

@@ -895,15 +895,15 @@ importers:
 
   packages/ui/data-entry/segmented:
     dependencies:
-      '@negative-space/button':
-        specifier: workspace:*
-        version: link:../../action/button
       '@negative-space/flex':
         specifier: workspace:*
         version: link:../../layout/flex
       '@negative-space/system':
         specifier: workspace:*
         version: link:../../../core/system
+      '@negative-space/toggle':
+        specifier: workspace:*
+        version: link:../../action/toggle
       react:
         specifier: ^19.2.3
         version: 19.2.3

@@ -30,6 +30,7 @@ export const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>(
     const setItemRef = React.useCallback(
       (id: string | undefined) => (node: HTMLButtonElement | null) => {
         if (!id) return
+
         if (node) itemRefs.current.set(id, node)
         else itemRefs.current.delete(id)
       },
@@ -87,10 +88,8 @@ export const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>(
             {...item}
             key={item.id ?? index}
             ref={setItemRef(item.id)}
-            data-active={item.id === selected}
-            aria-pressed={item.id === selected}
-            onClick={(event) => {
-              item.onClick?.(event)
+            pressed={item.id === selected}
+            onPressedChange={() => {
               setSelected(item.id)
             }}
             classNames={classNames?.item}
