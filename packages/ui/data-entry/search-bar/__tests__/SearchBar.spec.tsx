@@ -95,6 +95,7 @@ jest.mock('@negative-space/popover', () => ({
 
   usePopover: () => ({
     referenceRef: jest.fn(),
+    getReferenceProps: () => ({}),
     close: jest.fn()
   })
 }))

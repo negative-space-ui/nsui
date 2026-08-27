@@ -10,10 +10,16 @@ interface FlexMockProps extends React.PropsWithChildren {
   style?: React.CSSProperties
 }
 
-interface SegmentedItemMockProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode
-  classNames?: unknown
+interface SegmentedItemMockProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'onChange'
+> {
+  pressed?: boolean
+  classNames?: {
+    root?: string
+  }
   styles?: React.CSSProperties
+  onPressedChange?: (pressed: boolean) => void
 }
 
 jest.mock('@negative-space/system', () => ({
@@ -43,8 +49,18 @@ jest.mock('@negative-space/flex', () => ({
 
 jest.mock('../src/SegmentedItem', () => ({
   SegmentedItem: React.forwardRef<HTMLButtonElement, SegmentedItemMockProps>(
-    ({ children, ...props }, ref) => (
-      <button ref={ref} {...props}>
+    ({ children, pressed = false, classNames, onPressedChange, onClick, ...props }, ref) => (
+      <button
+        ref={ref}
+        {...props}
+        className={classNames?.root}
+        aria-pressed={pressed}
+        data-active={pressed}
+        onClick={(event) => {
+          onClick?.(event)
+          onPressedChange?.(!pressed)
+        }}
+      >
         {children}
       </button>
     )
@@ -100,7 +116,10 @@ describe('Segmented', () => {
     expect(screen.getByRole('button', { name: 'Day' })).toHaveAttribute('data-active', 'true')
 
     expect(screen.getByRole('button', { name: 'Week' })).toHaveAttribute('aria-pressed', 'false')
+    expect(screen.getByRole('button', { name: 'Week' })).toHaveAttribute('data-active', 'false')
+
     expect(screen.getByRole('button', { name: 'Month' })).toHaveAttribute('aria-pressed', 'false')
+    expect(screen.getByRole('button', { name: 'Month' })).toHaveAttribute('data-active', 'false')
   })
 
   it('changes the selected item when clicked', () => {

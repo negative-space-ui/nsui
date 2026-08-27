@@ -43,39 +43,39 @@ describe('Toggle', () => {
     expect(screen.getByRole('button', { name: 'Toggle' })).toBeInTheDocument()
   })
 
-  it('should be inactive by default', () => {
+  it('should be inpressed by default', () => {
     render(<Toggle>Toggle</Toggle>)
 
     const toggle = screen.getByRole('button', { name: 'Toggle' })
 
-    expect(toggle).toHaveAttribute('data-active', 'false')
+    expect(toggle).toHaveAttribute('data-pressed', 'false')
     expect(toggle).toHaveAttribute('aria-pressed', 'false')
   })
 
-  it('should render as active', () => {
-    render(<Toggle active>Toggle</Toggle>)
+  it('should render as pressed', () => {
+    render(<Toggle pressed>Toggle</Toggle>)
 
     const toggle = screen.getByRole('button', { name: 'Toggle' })
 
-    expect(toggle).toHaveAttribute('data-active', 'true')
+    expect(toggle).toHaveAttribute('data-pressed', 'true')
     expect(toggle).toHaveAttribute('aria-pressed', 'true')
   })
 
-  it('should toggle active state when clicked', () => {
+  it('should toggle pressed state when clicked', () => {
     render(<Toggle>Toggle</Toggle>)
 
     const toggle = screen.getByRole('button', { name: 'Toggle' })
 
-    expect(toggle).toHaveAttribute('data-active', 'false')
+    expect(toggle).toHaveAttribute('data-pressed', 'false')
 
     fireEvent.click(toggle)
 
-    expect(toggle).toHaveAttribute('data-active', 'true')
+    expect(toggle).toHaveAttribute('data-pressed', 'true')
     expect(toggle).toHaveAttribute('aria-pressed', 'true')
 
     fireEvent.click(toggle)
 
-    expect(toggle).toHaveAttribute('data-active', 'false')
+    expect(toggle).toHaveAttribute('data-pressed', 'false')
     expect(toggle).toHaveAttribute('aria-pressed', 'false')
   })
 
