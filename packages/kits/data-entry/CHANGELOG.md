@@ -1,5 +1,24 @@
 # @negative-space/data-entry
 
+## 1.8.0
+
+### Minor Changes
+
+- 3006c8e: Add Segmented component
+- 06dabb8: Add SearchBar component
+- 5f70f92: Add FileUpload component
+
+### Patch Changes
+
+- Updated dependencies [5f70f92]
+- Updated dependencies [5f70f92]
+- Updated dependencies [3006c8e]
+- Updated dependencies [06dabb8]
+  - @negative-space/form@1.9.0
+  - @negative-space/file-upload@1.0.0
+  - @negative-space/segmented@1.0.0
+  - @negative-space/search-bar@1.0.0
+
 ## 1.7.0
 
 ### Minor Changes

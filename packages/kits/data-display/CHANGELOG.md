@@ -1,5 +1,17 @@
 # @negative-space/data-display
 
+## 1.5.0
+
+### Minor Changes
+
+- f1790f0: Add Table component
+- 79b2596: Move Breadcrumb componente from data-display to navigation kit
+
+### Patch Changes
+
+- Updated dependencies [f1790f0]
+  - @negative-space/table@1.0.0
+
 ## 1.4.0
 
 ### Minor Changes
