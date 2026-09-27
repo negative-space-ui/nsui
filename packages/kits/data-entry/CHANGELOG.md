@@ -1,5 +1,13 @@
 # @negative-space/data-entry
 
+## 1.8.1
+
+### Patch Changes
+
+- Updated dependencies [6f985b7]
+  - @negative-space/form@1.9.1
+  - @negative-space/radio@1.8.1
+
 ## 1.8.0
 
 ### Minor Changes

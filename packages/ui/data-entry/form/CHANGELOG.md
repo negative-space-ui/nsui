@@ -1,5 +1,11 @@
 # @negative-space/form
 
+## 1.9.1
+
+### Patch Changes
+
+- 6f985b7: Fix radio use in form component
+
 ## 1.9.0
 
 ### Minor Changes
