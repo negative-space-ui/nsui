@@ -26,6 +26,7 @@ function ConnectedField({
 
   const handlers = useRef({
     onChange: (e: unknown) => ctxRef.current.setValue(name, extractValue(e)),
+    onValueChange: (value: string) => ctxRef.current.setValue(name, value),
     onFilesChange: (files: File[]) => ctxRef.current.setValue(name, files),
     onBlur: () => ctxRef.current.handleBlur(name)
   })
@@ -35,9 +36,12 @@ function ConnectedField({
 
   const error = showError ? errors[name] : undefined
   const isFileUpload = 'onFilesChange' in props
+  const isRadioGroup = Boolean((Component as { isFormRadioGroup?: boolean }).isFormRadioGroup)
+
+  const Comp = Component as React.ComponentType<Record<string, unknown>>
 
   return (
-    <Component
+    <Comp
       {...props}
       name={name}
       {...(isFileUpload
@@ -49,10 +53,20 @@ function ConnectedField({
               handlers.current.onFilesChange(files)
             }
           }
-        : {
-            value: ctx.values[name] ?? '',
-            onChange: handlers.current.onChange
-          })}
+        : isRadioGroup
+          ? {
+              value: (ctx.values[name] as string | undefined) ?? '',
+              onValueChange: (value: string) => {
+                const onValueChange = props.onValueChange as ((value: string) => void) | undefined
+
+                onValueChange?.(value)
+                handlers.current.onValueChange(value)
+              }
+            }
+          : {
+              value: ctx.values[name] ?? '',
+              onChange: handlers.current.onChange
+            })}
       fieldProps={{
         ...(typeof props.fieldProps === 'object' && props.fieldProps !== null
           ? props.fieldProps

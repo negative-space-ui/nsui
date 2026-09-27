@@ -20,6 +20,7 @@ export interface RadioGroupProps extends Omit<CollectionProps, 'rovingOptions'> 
   name?: string
   disabled?: boolean
   options?: RadioOptionProps[]
+  value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
   fieldProps?: Omit<FieldProps, 'classNames' | 'styles'>
@@ -31,6 +32,7 @@ export function RadioGroup({
   disabled = false,
   options,
   name: nameProp,
+  value: valueProp,
   defaultValue,
   onValueChange,
   fieldProps,
@@ -40,14 +42,16 @@ export function RadioGroup({
   const autoName = useId()
   const name = nameProp ?? autoName
 
-  const [selectedValue, setSelectedValue] = useState(defaultValue)
+  const isControlled = valueProp !== undefined
+  const [internalValue, setInternalValue] = useState(defaultValue)
+  const selectedValue = isControlled ? valueProp : internalValue
 
   const handleChange = useCallback(
     (value: string) => {
-      setSelectedValue(value)
+      if (!isControlled) setInternalValue(value)
       onValueChange?.(value)
     },
-    [onValueChange]
+    [isControlled, onValueChange]
   )
 
   const contextValue = useMemo(
@@ -86,3 +90,4 @@ export function RadioGroup({
 }
 
 RadioGroup.displayName = 'RadioGroup'
+RadioGroup.isFormRadioGroup = true
