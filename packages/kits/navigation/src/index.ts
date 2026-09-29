@@ -1,4 +1,5 @@
 export * from '@negative-space/breadcrumb'
+export * from '@negative-space/file-tree'
 export * from '@negative-space/link'
 export * from '@negative-space/menu'
 export * from '@negative-space/tabs'
