@@ -24,6 +24,7 @@ export interface MenuItemProps extends Omit<
     suffix?: React.CSSProperties
   }
   value?: string
+  active?: boolean
   prefix?: React.ReactNode
   suffix?: React.ReactNode
   itemProps?: Omit<CollectionItemProps, 'className' | 'style' | 'value'>
@@ -36,6 +37,7 @@ export const MenuItem = ({
   prefix,
   suffix,
   classNames,
+  active,
   styles,
   itemProps,
   onClick,
@@ -75,6 +77,7 @@ export const MenuItem = ({
       value={value}
       disabled={isDisabled}
       role="menuitem"
+      data-active={active}
       onClick={handleItemClick}
       onSelect={handleItemSelect}
       className={cn(`${global.prefixCls}-menu-item`, classNames?.root)}

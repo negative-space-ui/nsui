@@ -1,5 +1,12 @@
 # negative-space
 
+## 2.10.5
+
+### Patch Changes
+
+- Updated dependencies [278f872]
+  - @negative-space/navigation@1.2.0
+
 ## 2.10.4
 
 ### Patch Changes

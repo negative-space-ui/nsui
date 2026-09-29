@@ -1,5 +1,11 @@
 # @negative-space/menu
 
+## 1.4.0
+
+### Minor Changes
+
+- 050f4eb: Add `active` prop in MenuItem
+
 ## 1.3.0
 
 ### Minor Changes

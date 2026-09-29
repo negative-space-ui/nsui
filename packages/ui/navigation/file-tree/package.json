@@ -1,13 +1,13 @@
 {
-  "name": "@negative-space/menu",
-  "version": "1.4.0",
+  "name": "@negative-space/file-tree",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
-  "description": "",
+  "description": "A lightweight and flexible file tree component for React",
   "keywords": [
-    "component",
-    "menu",
+    "components",
+    "file-tree",
     "navigation",
     "negative-space",
     "nsui",
@@ -24,7 +24,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/negative-space-ui/nsui",
-    "directory": "packages/ui/menu"
+    "directory": "packages/ui/file-tree"
   },
   "bugs": {
     "url": "https://github.com/negative-space-ui/nsui/issues"
@@ -36,9 +36,8 @@
     "prepack": "clean-package"
   },
   "dependencies": {
-    "@negative-space/collection": "workspace:*",
+    "@negative-space/button": "workspace:*",
     "@negative-space/flex": "workspace:*",
-    "@negative-space/link": "workspace:*",
     "@negative-space/system": "workspace:*"
   },
   "peerDependencies": {
