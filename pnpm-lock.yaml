@@ -401,6 +401,9 @@ importers:
       '@negative-space/breadcrumb':
         specifier: workspace:*
         version: link:../../ui/navigation/breadcrumb
+      '@negative-space/file-tree':
+        specifier: workspace:*
+        version: link:../../ui/navigation/file-tree
       '@negative-space/link':
         specifier: workspace:*
         version: link:../../ui/navigation/link
@@ -1279,6 +1282,28 @@ importers:
       '@negative-space/text':
         specifier: workspace:*
         version: link:../../typography/text
+      react:
+        specifier: ^19.2.3
+        version: 19.2.3
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/ui/navigation/file-tree:
+    dependencies:
+      '@negative-space/button':
+        specifier: workspace:*
+        version: link:../../action/button
+      '@negative-space/flex':
+        specifier: workspace:*
+        version: link:../../layout/flex
+      '@negative-space/system':
+        specifier: workspace:*
+        version: link:../../../core/system
       react:
         specifier: ^19.2.3
         version: 19.2.3
