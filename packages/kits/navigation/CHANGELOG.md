@@ -1,5 +1,18 @@
 # @negative-space/nav
 
+## 1.2.0
+
+### Minor Changes
+
+- 278f872: Add File tree component
+
+### Patch Changes
+
+- Updated dependencies [050f4eb]
+- Updated dependencies [278f872]
+  - @negative-space/menu@1.4.0
+  - @negative-space/file-tree@1.0.0
+
 ## 1.1.0
 
 ### Minor Changes
