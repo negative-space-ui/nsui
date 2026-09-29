@@ -21,16 +21,18 @@ export interface FileTreeItemProps extends Omit<
   prefix?: React.ReactNode
   label?: React.ReactNode
   suffix?: React.ReactNode
+  active?: boolean
 }
 
 export const FileTreeItem = React.forwardRef<HTMLDivElement, FileTreeItemProps>(
-  ({ classNames, styles, prefix, label, suffix, ...props }, ref) => {
+  ({ classNames, styles, prefix, label, suffix, active, ...props }, ref) => {
     const { global } = useNSUI()
 
     return (
       <Flex
         ref={ref}
         className={cn(`${global?.prefixCls}-file-tree-item`, classNames?.root)}
+        data-active={active}
         style={styles?.root}
         {...props}
       >
