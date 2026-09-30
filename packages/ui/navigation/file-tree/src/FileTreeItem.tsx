@@ -31,10 +31,10 @@ export const FileTreeItem = React.forwardRef<HTMLDivElement, FileTreeItemProps>(
     return (
       <Flex
         ref={ref}
+        {...props}
         className={cn(`${global?.prefixCls}-file-tree-item`, classNames?.root)}
         data-active={active}
         style={styles?.root}
-        {...props}
       >
         {prefix && (
           <div
