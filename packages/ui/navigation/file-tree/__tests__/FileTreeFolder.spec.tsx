@@ -359,7 +359,7 @@ describe('FileTreeFolder', () => {
     render(<FileTreeFolder ref={ref} label="Folder" />)
 
     expect(ref.current).toBeInstanceOf(HTMLDivElement)
-    expect(ref.current).toHaveClass('ns-file-tree-folder')
+    expect(ref.current).toHaveClass('ns-file-tree-folder-header')
   })
 
   it('renders React nodes as prefix, label and suffix', () => {

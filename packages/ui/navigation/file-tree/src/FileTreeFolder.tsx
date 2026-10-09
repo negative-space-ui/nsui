@@ -38,6 +38,7 @@ export interface FileTreeFolderProps extends Omit<
 export const FileTreeFolder = React.forwardRef<HTMLDivElement, FileTreeFolderProps>(
   (
     {
+      children,
       classNames,
       styles,
       collapsable = true,
@@ -47,7 +48,6 @@ export const FileTreeFolder = React.forwardRef<HTMLDivElement, FileTreeFolderPro
       label,
       suffix,
       active,
-      children,
       ...props
     },
     ref
@@ -70,14 +70,14 @@ export const FileTreeFolder = React.forwardRef<HTMLDivElement, FileTreeFolderPro
 
     return (
       <Flex
-        ref={ref}
         direction="column"
         className={cn(`${global?.prefixCls}-file-tree-folder`, classNames?.root)}
         data-active={active}
         style={styles?.root}
-        {...props}
       >
         <Flex
+          ref={ref}
+          {...props}
           className={cn(`${global?.prefixCls}-file-tree-folder-header`, classNames?.header)}
           data-active={active}
           data-collapsed={isCollapsed}

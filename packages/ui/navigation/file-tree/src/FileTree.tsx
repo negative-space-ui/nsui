@@ -17,7 +17,7 @@ export type FileTreeEntry =
       items?: never
     }
 
-export interface FileTreeProps extends Omit<FlexProps, 'children'> {
+export interface FileTreeProps extends Omit<FlexProps, 'children' | 'className' | 'style'> {
   classNames?: {
     root?: string
     folders?: FileTreeFolderProps['classNames']
@@ -32,7 +32,7 @@ export interface FileTreeProps extends Omit<FlexProps, 'children'> {
 }
 
 export const FileTree = React.forwardRef<HTMLDivElement, FileTreeProps>(
-  ({ className, classNames, styles, items = [], ...props }, ref) => {
+  ({ classNames, styles, items = [], ...props }, ref) => {
     const { global } = useNSUI()
 
     const renderEntries = (entries: FileTreeEntry[]) =>
@@ -75,10 +75,10 @@ export const FileTree = React.forwardRef<HTMLDivElement, FileTreeProps>(
     return (
       <Flex
         ref={ref}
-        direction="column"
-        className={cn(`${global?.prefixCls}-file-tree`, className, classNames?.root)}
-        style={styles?.root}
         {...props}
+        direction="column"
+        className={cn(`${global?.prefixCls}-file-tree`, classNames?.root)}
+        style={styles?.root}
       >
         {renderEntries(items)}
       </Flex>
